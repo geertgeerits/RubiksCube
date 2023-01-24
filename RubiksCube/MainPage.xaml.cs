@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-23 (YYYY-MM-DD)
+// Date ........: 2023-01-24 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -62,17 +62,23 @@ public partial class MainPage : ContentPage
 
         plgColorSelect.Fill = Color.FromArgb("000000");
     }
+    
     // Solve the cube.
     private void OnBtnSolveClicked(object sender, EventArgs e)
     {
-        if (!CheckNumberColorsCube(sender, e))
+        if (!CheckNumberColorsCube())
+        {
+            return;
+        }
+
+        if (!CheckIfCubeIsSolved())
         {
             return;
         }
     }
 
     // Check the number of colors of the cube.
-    private bool CheckNumberColorsCube(object sender, EventArgs e)
+    private bool CheckNumberColorsCube()
     {
         int nNumberOfColors1 = 0;
         int nNumberOfColors2 = 0;
@@ -767,18 +773,68 @@ public partial class MainPage : ContentPage
 
         if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
         {
-            DisplayAlert("Error", "There must be nine colors of each color!", "OK");
+            DisplayAlert("Error", "There must be nine of the same color from each available color!", "OK");
             return false;
         }
 
         return true;
     }
 
-    // Turn the layers of the cube.
-    // Turn the top front to the right.
-    private void imgbtnTurnTopFrontToRight_Clicked(object sender, EventArgs e)
+    // Check if the cube is solved.
+    private bool CheckIfCubeIsSolved()
     {
-        TurnTopFrontTo("Right");
+        bool bColorsTop = false;
+        bool bColorsFront = false;
+        bool bColorsRight = false;
+        bool bColorsLeft = false;
+        bool bColorsBack = false;
+        bool bColorsBottom = false;
+
+        if (plgTop1.Fill == plgTop2.Fill && plgTop1.Fill == plgTop3.Fill && plgTop1.Fill == plgTop4.Fill && plgTop1.Fill == plgTop5.Fill && plgTop1.Fill == plgTop6.Fill && plgTop1.Fill == plgTop7.Fill && plgTop1.Fill == plgTop8.Fill && plgTop1.Fill == plgTop9.Fill)
+        {
+            bColorsTop = true;
+        }
+
+        if (plgFront1.Fill == plgFront2.Fill && plgFront1.Fill == plgFront3.Fill && plgFront1.Fill == plgFront4.Fill && plgFront1.Fill == plgFront5.Fill && plgFront1.Fill == plgFront6.Fill && plgFront1.Fill == plgFront7.Fill && plgFront1.Fill == plgFront8.Fill && plgFront1.Fill == plgFront9.Fill)
+        {
+            bColorsFront = true;
+        }
+
+        if (plgRight1.Fill == plgRight2.Fill && plgRight1.Fill == plgRight3.Fill && plgRight1.Fill == plgRight4.Fill && plgRight1.Fill == plgRight5.Fill && plgRight1.Fill == plgRight6.Fill && plgRight1.Fill == plgRight7.Fill && plgRight1.Fill == plgRight8.Fill && plgRight1.Fill == plgRight9.Fill)
+        {
+            bColorsRight = true;
+        }
+
+        if (plgLeft1.Fill == plgLeft2.Fill && plgLeft1.Fill == plgLeft3.Fill && plgLeft1.Fill == plgLeft4.Fill && plgLeft1.Fill == plgLeft5.Fill && plgLeft1.Fill == plgLeft6.Fill && plgLeft1.Fill == plgLeft7.Fill && plgLeft1.Fill == plgLeft8.Fill && plgLeft1.Fill == plgLeft9.Fill)
+        {
+            bColorsLeft = true;
+        }
+
+        if (plgBack1.Fill == plgBack2.Fill && plgBack1.Fill == plgBack3.Fill && plgBack1.Fill == plgBack4.Fill && plgBack1.Fill == plgBack5.Fill && plgBack1.Fill == plgBack6.Fill && plgBack1.Fill == plgBack7.Fill && plgBack1.Fill == plgBack8.Fill && plgBack1.Fill == plgBack9.Fill)
+        {
+            bColorsBack = true;
+        }
+
+        if (plgBottom1.Fill == plgBottom2.Fill && plgBottom1.Fill == plgBottom3.Fill && plgBottom1.Fill == plgBottom4.Fill && plgBottom1.Fill == plgBottom5.Fill && plgBottom1.Fill == plgBottom6.Fill && plgBottom1.Fill == plgBottom7.Fill && plgBottom1.Fill == plgBottom8.Fill && plgBottom1.Fill == plgBottom9.Fill)
+        {
+            bColorsBottom = true;
+        }
+
+        if (!bColorsTop || !bColorsFront || !bColorsRight || !bColorsLeft || !bColorsBack || !bColorsBottom)
+        {
+            DisplayAlert("Rubik's Cube", "The cube is not solved!", "OK");
+            return false;
+        }
+        
+        DisplayAlert("Rubik's Cube", "Congratulations, the cube has been solved.", "OK");
+        return true;
+    }
+
+    // Turn the layers of the cube.
+    // Turn the front side to right.
+    private void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
+    {
+        TurnFrontSideTo("Right");
     }
 
     // Turn the top middle to the right.
@@ -786,17 +842,17 @@ public partial class MainPage : ContentPage
     {
         TurnTopMiddleTo("Right");
     }
-
-    // Turn the top back to the right.
-    private void imgbtnTurnTopBackToRight_Clicked(object sender, EventArgs e)
+                                                            
+    // Turn the back side to left.
+    private void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
     {
-        TurnTopBackTo("Right");
+        TurnBackSideTo("Left");
     }
 
-    // Turn the top left to the front.
-    private void imgbtnTurnTopLeftToFront_Clicked(object sender, EventArgs e)
+    // Turn the left side to right.
+    private void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
     {
-        TurnTopLeftTo("Left");
+        TurnLeftSideTo("Right");
     }
 
     // Turn the top middle to the front.
@@ -805,16 +861,16 @@ public partial class MainPage : ContentPage
         TurnFrontTopMiddleTo("Left");
     }
 
-    // Turn the top right to the front.
-    private void imgbtnTurnTopRightToFront_Clicked(object sender, EventArgs e)
+    // Turn the right side to left.
+    private void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
     {
-        TurnFrontRightToTop("Left");
+        TurnRightSideTo("Left");
     }
 
-    // Turn the front top to the right.
-    private void imgbtnTurnFrontTopToRight_Clicked(object sender, EventArgs e)
+    // Turn the top side to left.
+    private void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
     {
-        TurnHorizontalTopLayerTo("Left");
+        TurnTopSideTo("Left");
     }
 
     // Turn the front middle to the right.
@@ -823,16 +879,16 @@ public partial class MainPage : ContentPage
         TurnHorizontalMiddleLayerTo("Left");
     }
     
-    // Turn the front bottom to the right.
-    private void imgbtnTurnFrontBottomToRight_Clicked(object sender, EventArgs e)
+    // Turn the bottom side to right.
+    private void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
     {
-        TurnHorizontalBottomLayerTo("Left");
+        TurnBottomSideTo("Right");
     }
 
-    // Turn the right top to the front.
-    private void imgbtnTurnRightTopToFront_Clicked(object sender, EventArgs e)
+    // Turn the top side to right.
+    private void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
     {
-        TurnHorizontalTopLayerTo("Right");
+        TurnTopSideTo("Right");
     }
 
     // Turn the right middle to the front.
@@ -841,16 +897,16 @@ public partial class MainPage : ContentPage
         TurnHorizontalMiddleLayerTo("Right");
     }
 
-    // Turn the right bottom to the front.
-    private void imgbtnTurnRightBottomToFront_Clicked(object sender, EventArgs e)
+    // Turn the bottom side to left.
+    private void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
     {
-        TurnHorizontalBottomLayerTo("Right");
+        TurnBottomSideTo("Left");
     }
 
-    // Turn the front left to the top.
-    private void imgbtnTurnFrontLeftToTop_Clicked(object sender, EventArgs e)
+    // Turn the left side to left.
+    private void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
     {
-        TurnTopLeftTo("Right");
+        TurnLeftSideTo("Left");
     }
 
     // Turn the front middle to the top.
@@ -859,16 +915,16 @@ public partial class MainPage : ContentPage
         TurnFrontTopMiddleTo("Right");
     }
 
-    // Turn the front right to the top.
-    private void imgbtnTurnFrontRightToTop_Clicked(object sender, EventArgs e)
+    // Turn the right side to right.
+    private void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
     {
-        TurnFrontRightToTop("Right");
+        TurnRightSideTo("Right");
     }
 
-    // Turn the right left to the top.
-    private void imgbtnTurnRightLeftToTop_Clicked(object sender, EventArgs e)
+    // Turn the front side to left.
+    private void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
     {
-        TurnTopFrontTo("Left");
+        TurnFrontSideTo("Left");
     }
 
     // Turn the right middle to the top.
@@ -877,14 +933,14 @@ public partial class MainPage : ContentPage
         TurnTopMiddleTo("Left");
     }
 
-    // Turn the right back to the top.
-    private void imgbtnTurnRightBackToTop_Clicked(object sender, EventArgs e)
+    // Turn the back side to right.
+    private void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
     {
-        TurnTopBackTo("Left");
+        TurnBackSideTo("Right");
     }
 
-    // Turn the top front to the right or left.
-    private void TurnTopFrontTo(string cDirection)
+    // Turn the entire front side to right or left.
+    private void TurnFrontSideTo(string cDirection)
     {
         Brush ColorFront1 = plgFront1.Fill;
         Brush ColorFront2 = plgFront2.Fill;
@@ -1026,8 +1082,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the top back to the right or left.
-    private void TurnTopBackTo(string cDirection)
+    // Turn the entire back side to right or left.
+    private void TurnBackSideTo(string cDirection)
     {
         Brush ColorBack1 = plgBack1.Fill;
         Brush ColorBack2 = plgBack2.Fill;
@@ -1056,34 +1112,6 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "Right")
         {
-            plgBack1.Fill = ColorBack3;
-            plgBack2.Fill = ColorBack6;
-            plgBack3.Fill = ColorBack9;
-            plgBack4.Fill = ColorBack2;
-            plgBack6.Fill = ColorBack8;
-            plgBack7.Fill = ColorBack1;
-            plgBack8.Fill = ColorBack4;
-            plgBack9.Fill = ColorBack7;
-
-            plgTop1.Fill = ColorLeft7;
-            plgTop2.Fill = ColorLeft4;
-            plgTop3.Fill = ColorLeft1;
-
-            plgRight3.Fill = ColorTop1;
-            plgRight6.Fill = ColorTop2;
-            plgRight9.Fill = ColorTop3;
-
-            plgBottom7.Fill = ColorRight9;
-            plgBottom8.Fill = ColorRight6;
-            plgBottom9.Fill = ColorRight3;
-
-            plgLeft1.Fill = ColorBottom7;
-            plgLeft4.Fill = ColorBottom8;
-            plgLeft7.Fill = ColorBottom9;
-        }
-
-        if (cDirection == "Left")
-        {
             plgBack1.Fill = ColorBack7;
             plgBack2.Fill = ColorBack4;
             plgBack3.Fill = ColorBack1;
@@ -1109,10 +1137,38 @@ public partial class MainPage : ContentPage
             plgLeft4.Fill = ColorTop2;
             plgLeft7.Fill = ColorTop1;
         }
+
+        if (cDirection == "Left")
+        {
+            plgBack1.Fill = ColorBack3;
+            plgBack2.Fill = ColorBack6;
+            plgBack3.Fill = ColorBack9;
+            plgBack4.Fill = ColorBack2;
+            plgBack6.Fill = ColorBack8;
+            plgBack7.Fill = ColorBack1;
+            plgBack8.Fill = ColorBack4;
+            plgBack9.Fill = ColorBack7;
+
+            plgTop1.Fill = ColorLeft7;
+            plgTop2.Fill = ColorLeft4;
+            plgTop3.Fill = ColorLeft1;
+
+            plgRight3.Fill = ColorTop1;
+            plgRight6.Fill = ColorTop2;
+            plgRight9.Fill = ColorTop3;
+
+            plgBottom7.Fill = ColorRight9;
+            plgBottom8.Fill = ColorRight6;
+            plgBottom9.Fill = ColorRight3;
+
+            plgLeft1.Fill = ColorBottom7;
+            plgLeft4.Fill = ColorBottom8;
+            plgLeft7.Fill = ColorBottom9;
+        }
     }
 
-    // Turn the top back to the right or left.
-    private void TurnTopLeftTo(string cDirection)
+    // Turn the entire left side to right or left.
+    private void TurnLeftSideTo(string cDirection)
     {
         Brush ColorLeft1 = plgLeft1.Fill;
         Brush ColorLeft2 = plgLeft2.Fill;
@@ -1141,34 +1197,6 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "Right")
         {
-            plgLeft1.Fill = ColorLeft3;
-            plgLeft2.Fill = ColorLeft6;
-            plgLeft3.Fill = ColorLeft9;
-            plgLeft4.Fill = ColorLeft2;
-            plgLeft6.Fill = ColorLeft8;
-            plgLeft7.Fill = ColorLeft1;
-            plgLeft8.Fill = ColorLeft4;
-            plgLeft9.Fill = ColorLeft7;
-
-            plgTop1.Fill = ColorFront1;
-            plgTop4.Fill = ColorFront4;
-            plgTop7.Fill = ColorFront7;
-
-            plgFront1.Fill = ColorBottom1;
-            plgFront4.Fill = ColorBottom4;
-            plgFront7.Fill = ColorBottom7;
-
-            plgBottom1.Fill = ColorBack9;
-            plgBottom4.Fill = ColorBack6;
-            plgBottom7.Fill = ColorBack3;
-
-            plgBack3.Fill = ColorTop7;
-            plgBack6.Fill = ColorTop4;
-            plgBack9.Fill = ColorTop1;
-        }
-
-        if (cDirection == "Left")
-        {
             plgLeft1.Fill = ColorLeft7;
             plgLeft2.Fill = ColorLeft4;
             plgLeft3.Fill = ColorLeft1;
@@ -1193,6 +1221,34 @@ public partial class MainPage : ContentPage
             plgBack3.Fill = ColorBottom7;
             plgBack6.Fill = ColorBottom4;
             plgBack9.Fill = ColorBottom1;
+        }
+
+        if (cDirection == "Left")
+        {
+            plgLeft1.Fill = ColorLeft3;
+            plgLeft2.Fill = ColorLeft6;
+            plgLeft3.Fill = ColorLeft9;
+            plgLeft4.Fill = ColorLeft2;
+            plgLeft6.Fill = ColorLeft8;
+            plgLeft7.Fill = ColorLeft1;
+            plgLeft8.Fill = ColorLeft4;
+            plgLeft9.Fill = ColorLeft7;
+
+            plgTop1.Fill = ColorFront1;
+            plgTop4.Fill = ColorFront4;
+            plgTop7.Fill = ColorFront7;
+
+            plgFront1.Fill = ColorBottom1;
+            plgFront4.Fill = ColorBottom4;
+            plgFront7.Fill = ColorBottom7;
+
+            plgBottom1.Fill = ColorBack9;
+            plgBottom4.Fill = ColorBack6;
+            plgBottom7.Fill = ColorBack3;
+
+            plgBack3.Fill = ColorTop7;
+            plgBack6.Fill = ColorTop4;
+            plgBack9.Fill = ColorTop1;
         }
     }
     private void TurnFrontTopMiddleTo(string cDirection)
@@ -1252,8 +1308,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the front right to right or left.
-    private void TurnFrontRightToTop(string cDirection)
+    // Turn the entire right side to right or left.
+    private void TurnRightSideTo(string cDirection)
     {
         Brush ColorRight1 = plgRight1.Fill;
         Brush ColorRight2 = plgRight2.Fill;
@@ -1337,8 +1393,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the horizontal top layer to right or left.
-    private void TurnHorizontalTopLayerTo(string cDirection)
+    // Turn the entire top side to right or left.
+    private void TurnTopSideTo(string cDirection)
     {
         Brush ColorTop1 = plgTop1.Fill;
         Brush ColorTop2 = plgTop2.Fill;
@@ -1480,8 +1536,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the horizontal bottom layer to right or left.
-    private void TurnHorizontalBottomLayerTo(string cDirection)
+    // Turn the entire bottom side to right or left.
+    private void TurnBottomSideTo(string cDirection)
     {
         Brush ColorBottom1 = plgBottom1.Fill;
         Brush ColorBottom2 = plgBottom2.Fill;
@@ -1510,34 +1566,6 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "Right")
         {
-            plgBottom1.Fill = ColorBottom3;
-            plgBottom2.Fill = ColorBottom6;
-            plgBottom3.Fill = ColorBottom9;
-            plgBottom4.Fill = ColorBottom2;
-            plgBottom6.Fill = ColorBottom8;
-            plgBottom7.Fill = ColorBottom1;
-            plgBottom8.Fill = ColorBottom4;
-            plgBottom9.Fill = ColorBottom7;
-
-            plgLeft7.Fill = ColorFront7;
-            plgLeft8.Fill = ColorFront8;
-            plgLeft9.Fill = ColorFront9;
-
-            plgFront7.Fill = ColorRight7;
-            plgFront8.Fill = ColorRight8;
-            plgFront9.Fill = ColorRight9;
-
-            plgRight7.Fill = ColorBack7;
-            plgRight8.Fill = ColorBack8;
-            plgRight9.Fill = ColorBack9;
-
-            plgBack7.Fill = ColorLeft7;
-            plgBack8.Fill = ColorLeft8;
-            plgBack9.Fill = ColorLeft9;
-        }
-
-        if (cDirection == "Left")
-        {
             plgBottom1.Fill = ColorBottom7;
             plgBottom2.Fill = ColorBottom4;
             plgBottom3.Fill = ColorBottom1;
@@ -1562,6 +1590,34 @@ public partial class MainPage : ContentPage
             plgBack7.Fill = ColorRight7;
             plgBack8.Fill = ColorRight8;
             plgBack9.Fill = ColorRight9;
+        }
+
+        if (cDirection == "Left")
+        {
+            plgBottom1.Fill = ColorBottom3;
+            plgBottom2.Fill = ColorBottom6;
+            plgBottom3.Fill = ColorBottom9;
+            plgBottom4.Fill = ColorBottom2;
+            plgBottom6.Fill = ColorBottom8;
+            plgBottom7.Fill = ColorBottom1;
+            plgBottom8.Fill = ColorBottom4;
+            plgBottom9.Fill = ColorBottom7;
+
+            plgLeft7.Fill = ColorFront7;
+            plgLeft8.Fill = ColorFront8;
+            plgLeft9.Fill = ColorFront9;
+
+            plgFront7.Fill = ColorRight7;
+            plgFront8.Fill = ColorRight8;
+            plgFront9.Fill = ColorRight9;
+
+            plgRight7.Fill = ColorBack7;
+            plgRight8.Fill = ColorBack8;
+            plgRight9.Fill = ColorBack9;
+
+            plgBack7.Fill = ColorLeft7;
+            plgBack8.Fill = ColorLeft8;
+            plgBack9.Fill = ColorLeft9;
         }
     }
 

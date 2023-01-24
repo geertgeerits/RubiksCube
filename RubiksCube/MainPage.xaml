@@ -119,11 +119,11 @@
                     Grid.Column="1">
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopFrontToRight"
+                        x:Name="imgbtnTurnFrontSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
-                        Clicked="imgbtnTurnTopFrontToRight_Clicked">
+                        Clicked="imgbtnTurnFrontSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -136,21 +136,21 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopBackToRight"
+                        x:Name="imgbtnTurnBackSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
-                        Clicked="imgbtnTurnTopBackToRight_Clicked">
+                        Clicked="imgbtnTurnBackSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopLeftToFront"
+                        x:Name="imgbtnTurnLeftSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         VerticalOptions="End"
                         Margin="40,0,0,0"
                         Source="arrow_down_left_32p.png"
-                        Clicked="imgbtnTurnTopLeftToFront_Clicked">
+                        Clicked="imgbtnTurnLeftSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -163,12 +163,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopRightToFront"
+                        x:Name="imgbtnTurnRightSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
-                        Clicked="imgbtnTurnTopRightToFront_Clicked">
+                        Clicked="imgbtnTurnRightSideToLeft_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -177,12 +177,12 @@
                     Grid.Column="0">
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontTopToRight"
+                        x:Name="imgbtnTurnTopSideToLeft"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="0,82,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
-                        Clicked="imgbtnTurnFrontTopToRight_Clicked">
+                        Clicked="imgbtnTurnTopSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -195,12 +195,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontBottomToRight"
+                        x:Name="imgbtnTurnBottomSideToRight"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="0,29,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
-                        Clicked="imgbtnTurnFrontBottomToRight_Clicked">
+                        Clicked="imgbtnTurnBottomSideToRight_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -209,12 +209,12 @@
                     Grid.Column="2">
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightTopToFront"
+                        x:Name="imgbtnTurnTopSideToRight"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="5,46,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
-                        Clicked="imgbtnTurnRightTopToFront_Clicked">
+                        Clicked="imgbtnTurnTopSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -227,12 +227,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightBottomToFront"
+                        x:Name="imgbtnTurnBottomSideToLeft"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="5,31,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
-                        Clicked="imgbtnTurnRightBottomToFront_Clicked">
+                        Clicked="imgbtnTurnBottomSideToLeft_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -241,12 +241,12 @@
                     Grid.Column="1">
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontLeftToTop"
+                        x:Name="imgbtnTurnLeftSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="16,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        Clicked="imgbtnTurnFrontLeftToTop_Clicked">
+                        Clicked="imgbtnTurnLeftSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -259,21 +259,21 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontRightToTop"
+                        x:Name="imgbtnTurnRightSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="30,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        Clicked="imgbtnTurnFrontRightToTop_Clicked">
+                        Clicked="imgbtnTurnRightSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightLeftToTop"
+                        x:Name="imgbtnTurnFrontSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="34,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        Clicked="imgbtnTurnRightLeftToTop_Clicked">
+                        Clicked="imgbtnTurnFrontSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -286,12 +286,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightBackToTop"
+                        x:Name="imgbtnTurnBackSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="20,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        Clicked="imgbtnTurnRightBackToTop_Clicked">
+                        Clicked="imgbtnTurnBackSideToRight_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
