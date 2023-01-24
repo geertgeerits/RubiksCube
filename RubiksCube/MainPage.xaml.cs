@@ -831,130 +831,130 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the layers of the cube.
-    // Turn the front side to right.
+    // Turn the front side clockwise (to right +).
     private void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front side to right (clockwise).", "OK");
-        TurnFrontSideTo("Right");
+        DisplayAlert("", "Turn the front side clockwise (+).", "OK");
+        TurnFrontSideTo("+");
     }
 
-    // Turn the top middle to the right side.
+    // Turn the top middle to the right side (+).
     private void imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top middle to the right side (clockwise).", "OK");
-        TurnTopMiddleTo("Right");
+        DisplayAlert("", "Turn the top middle to the right side (+).", "OK");
+        TurnTopMiddleTo("+");
     }
-                                                            
-    // Turn the back side to left.
+
+    // Turn the back side counter clockwise (to left -).
     private void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the back side to left (counter clockwise).", "OK");
-        TurnBackSideTo("Left");
+        DisplayAlert("", "Turn the back side counter clockwise (-).", "OK");
+        TurnBackSideTo("-");
     }
 
-    // Turn the left side to right.
+    // Turn the left side clockwise (to right +).
     private void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the left side to right (clockwise).", "OK");
-        TurnLeftSideTo("Right");
+        DisplayAlert("", "Turn the left side clockwise (+).", "OK");
+        TurnLeftSideTo("+");
     }
 
-    // Turn the top middle to the front side.
+    // Turn the top middle to the front side (-).
     private void imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top middle to the front side (counter clockwise).", "OK");
-        TurnFrontTopMiddleTo("Left");
+        DisplayAlert("", "Turn the top middle to the front side (-).", "OK");
+        TurnFrontTopMiddleTo("-");
     }
 
-    // Turn the right side to left.
+    // Turn the right side counter clockwise (to left -).
     private void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right side to left (counter clockwise).", "OK");
-        TurnRightSideTo("Left");
+        DisplayAlert("", "Turn the right side counter clockwise (-).", "OK");
+        TurnRightSideTo("-");
     }
 
-    // Turn the top side to left.
+    // Turn the top side counter clockwise (to left -).
     private void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top side to left (counter clockwise).", "OK");
-        TurnTopSideTo("Left");
+        DisplayAlert("", "Turn the top side counter clockwise (-).", "OK");
+        TurnTopSideTo("-");
     }
 
-    // Turn the front middle to the right side.
+    // Turn the front middle to the right side (-).
     private void imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front middle to the right side (counter clockwise).", "OK");
-        TurnHorizontalMiddleLayerTo("Left");
+        DisplayAlert("", "Turn the front middle to the right side (-).", "OK");
+        TurnHorizontalMiddleLayerTo("-");
     }
-    
-    // Turn the bottom side to right.
+
+    // Turn the bottom side clockwise (to right +).
     private void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the bottom side to right (clockwise).", "OK");
-        TurnBottomSideTo("Right");
+        DisplayAlert("", "Turn the bottom side clockwise (+).", "OK");
+        TurnBottomSideTo("+");
     }
 
-    // Turn the top side to right.
+    // Turn the top side clockwise (to right +).
     private void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top side to right (clockwise).", "OK");
-        TurnTopSideTo("Right");
+        DisplayAlert("", "Turn the top side clockwise (+).", "OK");
+        TurnTopSideTo("+");
     }
 
-    // Turn the right middle to the front side.
+    // Turn the right middle to the front side (+).
     private void imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right middle to the front side (clockwise).", "OK");
-        TurnHorizontalMiddleLayerTo("Right");
+        DisplayAlert("", "Turn the right middle to the front side (+).", "OK");
+        TurnHorizontalMiddleLayerTo("+");
     }
 
-    // Turn the bottom side to left.
+    // Turn the bottom side counter clockwise (to left -).
     private void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the bottom side to left (counter clockwise).", "OK");
-        TurnBottomSideTo("Left");
+        DisplayAlert("", "Turn the bottom side counter clockwise (-).", "OK");
+        TurnBottomSideTo("-");
     }
 
-    // Turn the left side to left.
+    // Turn the left side counter clockwise (to left -).
     private void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the left side to left (counter clockwise).", "OK");
-        TurnLeftSideTo("Left");
+        DisplayAlert("", "Turn the left side counter clockwise (-).", "OK");
+        TurnLeftSideTo("-");
     }
 
-    // Turn the front middle to the top side.
+    // Turn the front middle to the top side (+).
     private void imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front middle to the top side (clockwise).", "OK");
-        TurnFrontTopMiddleTo("Right");
+        DisplayAlert("", "Turn the front middle to the top side (+).", "OK");
+        TurnFrontTopMiddleTo("+");
     }
 
-    // Turn the right side to right.
+    // Turn the right side clockwise (to right +).
     private void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right side to right (clockwise).", "OK");
-        TurnRightSideTo("Right");
+        DisplayAlert("", "Turn the right side clockwise (+).", "OK");
+        TurnRightSideTo("+");
     }
 
-    // Turn the front side to left.
+    // Turn the front side counter clockwise (to left -).
     private void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front side to left (counter clockwise).", "OK");
-        TurnFrontSideTo("Left");
+        DisplayAlert("", "Turn the front side counter clockwise (-).", "OK");
+        TurnFrontSideTo("-");
     }
 
-    // Turn the right middle to the top side.
+    // Turn the right middle to the top side (-).
     private void imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right middle to the top side (counter clockwise).", "OK");
-        TurnTopMiddleTo("Left");
+        DisplayAlert("", "Turn the right middle to the top side (-).", "OK");
+        TurnTopMiddleTo("-");
     }
 
-    // Turn the back side to right.
+    // Turn the back side clockwise (to right +).
     private void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the back side to right (clockwise).", "OK");
-        TurnBackSideTo("Right");
+        DisplayAlert("", "Turn the back side clockwise (+).", "OK");
+        TurnBackSideTo("+");
     }
 
     // Turn the entire front side to right or left.
@@ -985,7 +985,7 @@ public partial class MainPage : ContentPage
         Brush ColorLeft6 = plgLeft6.Fill;
         Brush ColorLeft9 = plgLeft9.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgFront1.Fill = ColorFront7;
             plgFront2.Fill = ColorFront4;
@@ -1013,7 +1013,7 @@ public partial class MainPage : ContentPage
             plgLeft9.Fill = ColorBottom3;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgFront1.Fill = ColorFront3;
             plgFront2.Fill = ColorFront6;
@@ -1061,7 +1061,7 @@ public partial class MainPage : ContentPage
         Brush ColorLeft5 = plgLeft5.Fill;
         Brush ColorLeft8 = plgLeft8.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgTop4.Fill = ColorLeft8;
             plgTop5.Fill = ColorLeft5;
@@ -1080,7 +1080,7 @@ public partial class MainPage : ContentPage
             plgLeft8.Fill = ColorBottom6;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgTop4.Fill = ColorRight2;
             plgTop5.Fill = ColorRight5;
@@ -1128,7 +1128,7 @@ public partial class MainPage : ContentPage
         Brush ColorLeft4 = plgLeft4.Fill;
         Brush ColorLeft7 = plgLeft7.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgBack1.Fill = ColorBack7;
             plgBack2.Fill = ColorBack4;
@@ -1156,7 +1156,7 @@ public partial class MainPage : ContentPage
             plgLeft7.Fill = ColorTop1;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgBack1.Fill = ColorBack3;
             plgBack2.Fill = ColorBack6;
@@ -1213,7 +1213,7 @@ public partial class MainPage : ContentPage
         Brush ColorBack6 = plgBack6.Fill;
         Brush ColorBack9 = plgBack9.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgLeft1.Fill = ColorLeft7;
             plgLeft2.Fill = ColorLeft4;
@@ -1241,7 +1241,7 @@ public partial class MainPage : ContentPage
             plgBack9.Fill = ColorBottom1;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgLeft1.Fill = ColorLeft3;
             plgLeft2.Fill = ColorLeft6;
@@ -1287,7 +1287,7 @@ public partial class MainPage : ContentPage
         Brush ColorBack5 = plgBack5.Fill;
         Brush ColorBack8 = plgBack8.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgTop2.Fill = ColorFront2;
             plgTop5.Fill = ColorFront5;
@@ -1306,7 +1306,7 @@ public partial class MainPage : ContentPage
             plgBack8.Fill = ColorTop2;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgTop2.Fill = ColorBack8;
             plgTop5.Fill = ColorBack5;
@@ -1354,7 +1354,7 @@ public partial class MainPage : ContentPage
         Brush ColorBack4 = plgBack4.Fill;
         Brush ColorBack7 = plgBack7.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgRight1.Fill = ColorRight7;
             plgRight2.Fill = ColorRight4;
@@ -1382,7 +1382,7 @@ public partial class MainPage : ContentPage
             plgBack7.Fill = ColorTop3;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgRight1.Fill = ColorRight3;
             plgRight2.Fill = ColorRight6;
@@ -1439,7 +1439,7 @@ public partial class MainPage : ContentPage
         Brush ColorBack2 = plgBack2.Fill;
         Brush ColorBack3 = plgBack3.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgTop1.Fill = ColorTop7;
             plgTop2.Fill = ColorTop4;
@@ -1467,7 +1467,7 @@ public partial class MainPage : ContentPage
             plgBack3.Fill = ColorLeft3;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgTop1.Fill = ColorTop3;
             plgTop2.Fill = ColorTop6;
@@ -1515,7 +1515,7 @@ public partial class MainPage : ContentPage
         Brush ColorLeft5 = plgLeft5.Fill;
         Brush ColorLeft6 = plgLeft6.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgFront4.Fill = ColorRight4;
             plgFront5.Fill = ColorRight5;
@@ -1534,7 +1534,7 @@ public partial class MainPage : ContentPage
             plgLeft6.Fill = ColorFront6;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgFront4.Fill = ColorLeft4;
             plgFront5.Fill = ColorLeft5;
@@ -1582,7 +1582,7 @@ public partial class MainPage : ContentPage
         Brush ColorBack8 = plgBack8.Fill;
         Brush ColorBack9 = plgBack9.Fill;
 
-        if (cDirection == "Right")
+        if (cDirection == "+")
         {
             plgBottom1.Fill = ColorBottom7;
             plgBottom2.Fill = ColorBottom4;
@@ -1610,7 +1610,7 @@ public partial class MainPage : ContentPage
             plgBack9.Fill = ColorRight9;
         }
 
-        if (cDirection == "Left")
+        if (cDirection == "-")
         {
             plgBottom1.Fill = ColorBottom3;
             plgBottom2.Fill = ColorBottom6;
