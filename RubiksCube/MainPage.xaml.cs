@@ -834,108 +834,126 @@ public partial class MainPage : ContentPage
     // Turn the front side to right.
     private void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the front side to right (clockwise).", "OK");
         TurnFrontSideTo("Right");
     }
 
-    // Turn the top middle to the right.
-    private void imgbtnTurnTopMiddleToRight_Clicked(object sender, EventArgs e)
+    // Turn the top middle to the right side.
+    private void imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the top middle to the right side (clockwise).", "OK");
         TurnTopMiddleTo("Right");
     }
                                                             
     // Turn the back side to left.
     private void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the back side to left (counter clockwise).", "OK");
         TurnBackSideTo("Left");
     }
 
     // Turn the left side to right.
     private void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the left side to right (clockwise).", "OK");
         TurnLeftSideTo("Right");
     }
 
-    // Turn the top middle to the front.
-    private void imgbtnTurnTopMiddleToFront_Clicked(object sender, EventArgs e)
+    // Turn the top middle to the front side.
+    private void imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the top middle to the front side (counter clockwise).", "OK");
         TurnFrontTopMiddleTo("Left");
     }
 
     // Turn the right side to left.
     private void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the right side to left (counter clockwise).", "OK");
         TurnRightSideTo("Left");
     }
 
     // Turn the top side to left.
     private void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the top side to left (counter clockwise).", "OK");
         TurnTopSideTo("Left");
     }
 
-    // Turn the front middle to the right.
-    private void imgbtnTurnFrontMiddleToRight_Clicked(object sender, EventArgs e)
+    // Turn the front middle to the right side.
+    private void imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the front middle to the right side (counter clockwise).", "OK");
         TurnHorizontalMiddleLayerTo("Left");
     }
     
     // Turn the bottom side to right.
     private void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the bottom side to right (clockwise).", "OK");
         TurnBottomSideTo("Right");
     }
 
     // Turn the top side to right.
     private void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the top side to right (clockwise).", "OK");
         TurnTopSideTo("Right");
     }
 
-    // Turn the right middle to the front.
-    private void imgbtnTurnRightMiddleToFront_Clicked(object sender, EventArgs e)
+    // Turn the right middle to the front side.
+    private void imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the right middle to the front side (clockwise).", "OK");
         TurnHorizontalMiddleLayerTo("Right");
     }
 
     // Turn the bottom side to left.
     private void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the bottom side to left (counter clockwise).", "OK");
         TurnBottomSideTo("Left");
     }
 
     // Turn the left side to left.
     private void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the left side to left (counter clockwise).", "OK");
         TurnLeftSideTo("Left");
     }
 
-    // Turn the front middle to the top.
-    private void imgbtnTurnFrontMiddleToTop_Clicked(object sender, EventArgs e)
+    // Turn the front middle to the top side.
+    private void imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the front middle to the top side (clockwise).", "OK");
         TurnFrontTopMiddleTo("Right");
     }
 
     // Turn the right side to right.
     private void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the right side to right (clockwise).", "OK");
         TurnRightSideTo("Right");
     }
 
     // Turn the front side to left.
     private void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the front side to left (counter clockwise).", "OK");
         TurnFrontSideTo("Left");
     }
 
-    // Turn the right middle to the top.
-    private void imgbtnTurnRightMiddleToTop_Clicked(object sender, EventArgs e)
+    // Turn the right middle to the top side.
+    private void imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the right middle to the top side (counter clockwise).", "OK");
         TurnTopMiddleTo("Left");
     }
 
     // Turn the back side to right.
     private void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
     {
+        DisplayAlert("", "Turn the back side to right (clockwise).", "OK");
         TurnBackSideTo("Right");
     }
 

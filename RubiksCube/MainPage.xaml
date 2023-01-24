@@ -127,12 +127,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopMiddleToRight"
+                        x:Name="imgbtnTurnTopMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
-                        Clicked="imgbtnTurnTopMiddleToRight_Clicked">
+                        Clicked="imgbtnTurnTopMiddleToRightSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -154,12 +154,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopMiddleToFront"
+                        x:Name="imgbtnTurnTopMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
-                        Clicked="imgbtnTurnTopMiddleToFront_Clicked">
+                        Clicked="imgbtnTurnTopMiddleToFrontSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -186,12 +186,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToRight"
+                        x:Name="imgbtnTurnFrontMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="0,28,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
-                        Clicked="imgbtnTurnFrontMiddleToRight_Clicked">
+                        Clicked="imgbtnTurnFrontMiddleToRightSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -218,12 +218,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToFront"
+                        x:Name="imgbtnTurnRightMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="5,29,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
-                        Clicked="imgbtnTurnRightMiddleToFront_Clicked">
+                        Clicked="imgbtnTurnRightMiddleToFrontSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -250,12 +250,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToTop"
+                        x:Name="imgbtnTurnFrontMiddleToTopSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="26,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        Clicked="imgbtnTurnFrontMiddleToTop_Clicked">
+                        Clicked="imgbtnTurnFrontMiddleToTopSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -277,12 +277,12 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToTop"
+                        x:Name="imgbtnTurnRightMiddleToTopSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="22,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        Clicked="imgbtnTurnRightMiddleToTop_Clicked">
+                        Clicked="imgbtnTurnRightMiddleToTopSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
