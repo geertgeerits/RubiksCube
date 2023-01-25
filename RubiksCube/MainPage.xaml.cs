@@ -17,12 +17,14 @@ namespace RubiksCube;
 public partial class MainPage : ContentPage
 {
     // Variables for colors.
-    private readonly string cColor1 = "FF0000";     // Red
-    private readonly string cColor2 = "FFFF00";     // Yellow
-    private readonly string cColor3 = "0000FF";     // Blue
-    private readonly string cColor4 = "008000";     // Green
-    private readonly string cColor5 = "FFFFFF";     // White
-    private readonly string cColor6 = "FF8000";     // Orange
+    private readonly string cColor1 = "FF0000";                 // Red
+    private readonly string cColor2 = "FFFF00";                 // Yellow
+    private readonly string cColor3 = "0000FF";                 // Blue
+    private readonly string cColor4 = "008000";                 // Green
+    private readonly string cColor5 = "FFFFFF";                 // White
+    private readonly string cColor6 = "FF8000";                 // Orange
+    private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
+    private readonly string cColorArrowActive = "00FF00";       // Green
 
     //private readonly int[] aTop = new int[9];
     //private readonly int[] aFront = new int[9];
@@ -82,7 +84,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        if (!CheckIfCubeIsSolved())
+        if (!CheckIfCubeIsSolved(false))
         {
             return;
         }
@@ -792,7 +794,7 @@ public partial class MainPage : ContentPage
     }
 
     // Check if the cube is solved.
-    private bool CheckIfCubeIsSolved()
+    private bool CheckIfCubeIsSolved(bool bShowMessage)
     {
         bool bColorsTop = false;
         bool bColorsFront = false;
@@ -833,7 +835,10 @@ public partial class MainPage : ContentPage
 
         if (!bColorsTop || !bColorsFront || !bColorsRight || !bColorsLeft || !bColorsBack || !bColorsBottom)
         {
-            DisplayAlert("Rubik's Cube", "The cube is not solved!", "OK");
+            if (bShowMessage)
+            {
+                DisplayAlert("Rubik's Cube", "The cube is not solved!", "OK");
+            }
             return false;
         }
         
@@ -843,132 +848,169 @@ public partial class MainPage : ContentPage
 
     // Turn the layers of the cube.
     // Turn the front side clockwise (to right +).
-    private void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front side 'clockwise' (+).", "OK");
+        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontSideTo("+");
+        await DisplayAlert("", "Turn the front side 'clockwise' (+).", "OK");
+        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the top middle to the right side (+).
-    private void imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top middle to the right side (+).", "OK");
+        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopMiddleTo("+");
+        await DisplayAlert("", "Turn the top middle to the right side (+).", "OK");
+        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+
     }
 
     // Turn the back side counter clockwise (to left -).
-    private void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the back side 'counter clockwise' (-).", "OK");
+        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBackSideTo("-");
+        await DisplayAlert("", "Turn the back side 'counter clockwise' (-).", "OK");
+        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the left side clockwise (to right +).
-    private void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the left side 'clockwise' (+).", "OK");
+        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnLeftSideTo("+");
+        await DisplayAlert("", "Turn the left side 'clockwise' (+).", "OK");
+        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the top middle to the front side (-).
-    private void imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top middle to the front side (-).", "OK");
+        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontTopMiddleTo("-");
+        await DisplayAlert("", "Turn the top middle to the front side (-).", "OK");
+        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the right side counter clockwise (to left -).
-    private void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right side 'counter clockwise' (-).", "OK");
+        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnRightSideTo("-");
+        await DisplayAlert("", "Turn the right side 'counter clockwise' (-).", "OK");
+        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the top side counter clockwise (to left -).
-    private void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top side 'counter clockwise' (-).", "OK");
+        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopSideTo("-");
+        await DisplayAlert("", "Turn the top side 'counter clockwise' (-).", "OK");
+        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the front middle to the right side (-).
-    private void imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front middle to the right side (-).", "OK");
+        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnHorizontalMiddleLayerTo("-");
+        await DisplayAlert("", "Turn the front middle to the right side (-).", "OK");
+        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the bottom side clockwise (to right +).
-    private void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the bottom side 'clockwise' (+).", "OK");
+        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBottomSideTo("+");
+        await DisplayAlert("", "Turn the bottom side 'clockwise' (+).", "OK");
+        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the top side clockwise (to right +).
-    private void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top side 'clockwise' (+).", "OK");
+        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopSideTo("+");
+        await DisplayAlert("", "Turn the top side 'clockwise' (+).", "OK");
+        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the right middle to the front side (+).
-    private void imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right middle to the front side (+).", "OK");
+        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnHorizontalMiddleLayerTo("+");
+        await DisplayAlert("", "Turn the right middle to the front side (+).", "OK");
+        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the bottom side counter clockwise (to left -).
-    private void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the bottom side 'counter clockwise' (-).", "OK");
+        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBottomSideTo("-");
+        await DisplayAlert("", "Turn the bottom side 'counter clockwise' (-).", "OK");
+        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the left side counter clockwise (to left -).
-    private void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the left side 'counter clockwise' (-).", "OK");
+        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnLeftSideTo("-");
+        await DisplayAlert("", "Turn the left side 'counter clockwise' (-).", "OK");
+        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the front middle to the top side (+).
-    private void imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front middle to the top side (+).", "OK");
+        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontTopMiddleTo("+");
+        await DisplayAlert("", "Turn the front middle to the top side (+).", "OK");
+        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the right side clockwise (to right +).
-    private void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right side 'clockwise' (+).", "OK");
+        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnRightSideTo("+");
+        await DisplayAlert("", "Turn the right side 'clockwise' (+).", "OK");
+        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the front side counter clockwise (to left -).
-    private void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front side 'counter clockwise' (-).", "OK");
+        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontSideTo("-");
+        await DisplayAlert("", "Turn the front side 'counter clockwise' (-).", "OK");
+        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the right middle to the top side (-).
-    private void imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right middle to the top side (-).", "OK");
+        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopMiddleTo("-");
+        await DisplayAlert("", "Turn the right middle to the top side (-).", "OK");
+        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // Turn the back side clockwise (to right +).
-    private void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
+    private async void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the back side 'clockwise' (+).", "OK");
+        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBackSideTo("+");
+        await DisplayAlert("", "Turn the back side 'clockwise' (+).", "OK");
+        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
-    // Turn the entire front side to right or left.
+    // Turn the entire front side clockwise or counter clockwise.
     private void TurnFrontSideTo(string cDirection)
     {
         Brush ColorFront1 = plgFront1.Fill;
@@ -1111,7 +1153,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the entire back side to right or left.
+    // Turn the entire back side clockwise or counter clockwise.
     private void TurnBackSideTo(string cDirection)
     {
         Brush ColorBack1 = plgBack1.Fill;
@@ -1196,7 +1238,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the entire left side to right or left.
+    // Turn the entire left side clockwise or counter clockwise.
     private void TurnLeftSideTo(string cDirection)
     {
         Brush ColorLeft1 = plgLeft1.Fill;
@@ -1280,6 +1322,8 @@ public partial class MainPage : ContentPage
             plgBack9.Fill = ColorTop1;
         }
     }
+
+    // Turn the top middle layer to right or left.
     private void TurnFrontTopMiddleTo(string cDirection)
     {
         Brush ColorTop2 = plgTop2.Fill;
@@ -1337,7 +1381,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the entire right side to right or left.
+    // Turn the entire right side clockwise or counter clockwise.
     private void TurnRightSideTo(string cDirection)
     {
         Brush ColorRight1 = plgRight1.Fill;
@@ -1422,7 +1466,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the entire top side to right or left.
+    // Turn the entire top side clockwise or counter clockwise.
     private void TurnTopSideTo(string cDirection)
     {
         Brush ColorTop1 = plgTop1.Fill;
@@ -1565,7 +1609,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the entire bottom side to right or left.
+    // Turn the entire bottom side clockwise or counter clockwise.
     private void TurnBottomSideTo(string cDirection)
     {
         Brush ColorBottom1 = plgBottom1.Fill;

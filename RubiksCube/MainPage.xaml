@@ -163,6 +163,7 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
+                        ToolTipProperties.Text="Turn the front side 'clockwise' (+)"
                         Clicked="imgbtnTurnFrontSideToRight_Clicked">
                     </ImageButton>
 
@@ -172,6 +173,7 @@
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
+                        ToolTipProperties.Text="Turn the top middle to the right side (+)"
                         Clicked="imgbtnTurnTopMiddleToRightSide_Clicked">
                     </ImageButton>
 
@@ -181,6 +183,7 @@
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
+                        ToolTipProperties.Text="Turn the back side 'counter clockwise' (-)"
                         Clicked="imgbtnTurnBackSideToLeft_Clicked">
                     </ImageButton>
 
@@ -190,6 +193,7 @@
                         VerticalOptions="End"
                         Margin="40,0,0,0"
                         Source="arrow_down_left_32p.png"
+                        ToolTipProperties.Text="Turn the left side 'clockwise' (+)"
                         Clicked="imgbtnTurnLeftSideToRight_Clicked">
                     </ImageButton>
 
@@ -199,6 +203,7 @@
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
+                        ToolTipProperties.Text="Turn the top middle to the front side (-)"
                         Clicked="imgbtnTurnTopMiddleToFrontSide_Clicked">
                     </ImageButton>
 
@@ -208,6 +213,7 @@
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
+                        ToolTipProperties.Text="Turn the right side 'counter clockwise' (-)"
                         Clicked="imgbtnTurnRightSideToLeft_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
@@ -222,6 +228,7 @@
                         Margin="0,82,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
+                        ToolTipProperties.Text="Turn the top side 'counter clockwise' (-)"
                         Clicked="imgbtnTurnTopSideToLeft_Clicked">
                     </ImageButton>
 
@@ -231,6 +238,7 @@
                         Margin="0,28,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
+                        ToolTipProperties.Text="Turn the front middle to the right side (-)"
                         Clicked="imgbtnTurnFrontMiddleToRightSide_Clicked">
                     </ImageButton>
 
@@ -240,6 +248,7 @@
                         Margin="0,29,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
+                        ToolTipProperties.Text="Turn the bottom side 'clockwise' (+)"
                         Clicked="imgbtnTurnBottomSideToRight_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
@@ -254,6 +263,7 @@
                         Margin="5,46,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
+                        ToolTipProperties.Text="Turn the top side 'clockwise' (+)"
                         Clicked="imgbtnTurnTopSideToRight_Clicked">
                     </ImageButton>
 
@@ -263,6 +273,7 @@
                         Margin="5,29,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
+                        ToolTipProperties.Text="Turn the right middle to the front side (+)"
                         Clicked="imgbtnTurnRightMiddleToFrontSide_Clicked">
                     </ImageButton>
 
@@ -272,6 +283,7 @@
                         Margin="5,31,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
+                        ToolTipProperties.Text="Turn the bottom side 'counter clockwise' (-)"
                         Clicked="imgbtnTurnBottomSideToLeft_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
@@ -286,6 +298,7 @@
                         Margin="16,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="Turn the left side 'counter clockwise' (-)"
                         Clicked="imgbtnTurnLeftSideToLeft_Clicked">
                     </ImageButton>
 
@@ -295,6 +308,7 @@
                         Margin="26,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="Turn the front middle to the top side (+)."
                         Clicked="imgbtnTurnFrontMiddleToTopSide_Clicked">
                     </ImageButton>
 
@@ -304,6 +318,7 @@
                         Margin="30,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="Turn the right side 'clockwise' (+)"
                         Clicked="imgbtnTurnRightSideToRight_Clicked">
                     </ImageButton>
 
@@ -313,6 +328,7 @@
                         Margin="34,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="Turn the front side 'counter clockwise' (-)"
                         Clicked="imgbtnTurnFrontSideToLeft_Clicked">
                     </ImageButton>
 
@@ -322,6 +338,7 @@
                         Margin="22,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="Turn the right middle to the top side (-)"
                         Clicked="imgbtnTurnRightMiddleToTopSide_Clicked">
                     </ImageButton>
 
@@ -331,6 +348,7 @@
                         Margin="20,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="Turn the back side 'clockwise' (+)"
                         Clicked="imgbtnTurnBackSideToRight_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>

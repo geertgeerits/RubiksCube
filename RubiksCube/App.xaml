@@ -229,13 +229,13 @@
             <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">
                 <Setter Property="HeightRequest" Value="24" />
                 <Setter Property="WidthRequest" Value="22" />
-                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="BackgroundColor" Value="#E2E2E2" />
             </Style>
 
             <Style x:Key="imageButtonArrowVertical" TargetType="ImageButton">
                 <Setter Property="HeightRequest" Value="22" />
                 <Setter Property="WidthRequest" Value="24" />
-                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="BackgroundColor" Value="#E2E2E2" />
             </Style>
 
         </ResourceDictionary>

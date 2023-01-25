@@ -3,18 +3,118 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RubiksCube.PageAbout"
              Title="PageAbout">
-    <VerticalStackLayout>
 
-        <NavigationPage.TitleView>
+    <NavigationPage.TitleView>
+        <Label
+        x:Name="lblTitle"
+        Style="{StaticResource labelStyleShellTitleView}"
+        Text="About" />
+    </NavigationPage.TitleView>
+
+    <ScrollView>
+        <StackLayout Margin="15" Spacing="4">
             <Label
-            x:Name="lblTitle"
-            Style="{StaticResource labelStyleShellTitleView}"
-            Text="About" />
-        </NavigationPage.TitleView>
+                x:Name="lblNameProgram"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Rubik's Cube"
+                FontSize="20"
+                FontAttributes="Bold" />
 
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+                <Label
+                x:Name="lblDescription"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Solve the cube." />
+
+                <Label
+                x:Name="lblVersion"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Version: 2.0.10" />
+
+                <Label
+                x:Name="lblCopyright"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Text="Copyright © 1981-2023 Geert Geerits" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label
+                    x:Name="lblEmail"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"
+                    Text="geertgeerits@gmail.com"/>
+
+                    <ImageButton
+                    Source="circled_envelope_24p.png"                         
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="24"
+                    WidthRequest="24"
+                    Clicked="OnbtnEmailLinkClicked">
+                    </ImageButton>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label
+                    x:Name="lblWebsite"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"
+                    Text="../rubikscube"/>
+
+                    <ImageButton
+                    Source="internet_24p.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HeightRequest="24"
+                    WidthRequest="24"
+                    Clicked="OnbtnWebsiteLinkClicked">
+                    </ImageButton>
+                </HorizontalStackLayout>
+
+                <Label></Label>
+
+                <Label
+                x:Name="lblPrivacyPolicy"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+
+                <Label></Label>
+
+                <Label
+                x:Name="lblLicense"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="License: This application may be used freely for non-commercial purposes.
+                      &#10; &#10;Use this program entirely at your own risk." />
+
+                <Label></Label>
+
+                <Label
+                x:Name="lblLicenseMit"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
+                      &#10;The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981." />
+
+                <Label></Label>
+
+                <Label
+                x:Name="lblAboutExplanation"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="Google Translate was used for the translation of the text.  This is not a guarantee that all translations are correct.
+                      &#10;The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+                      &#10; &#10;You can always contact me for any corrections.
+                      &#10; &#10;Use this program entirely at your own risk.">
+                </Label>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
