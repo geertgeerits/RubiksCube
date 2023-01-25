@@ -26,7 +26,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mailto</string>
+		<string>lyft</string>
+		<string>fb</string>
+	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>CFBundleDisplayName</key>
+	<string>Rubik's Cube</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.10</string>
+	<key>CFBundleVersion</key>
+	<string>10</string>
 </dict>
 </plist>

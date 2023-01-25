@@ -32,10 +32,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\cube_appicon_128p.png" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\cube_splash_128p.png" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -49,12 +49,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\AppIcon\cube_128p.png" />
+	  <None Remove="Resources\AppIcon\cube_appicon_128p.png" />
 	  <None Remove="Resources\Images\arrow_left.png" />
 	  <None Remove="Resources\Images\arrow_right.png" />
 	  <None Remove="Resources\Images\circled_envelope_24p.png" />
 	  <None Remove="Resources\Images\info_32p.png" />
 	  <None Remove="Resources\Images\internet_24p.png" />
 	  <None Remove="Resources\Images\settings_32p.png" />
+	  <None Remove="Resources\Splash\cube_128p.png" />
+	  <None Remove="Resources\Splash\cube_splash_128p.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -72,6 +76,13 @@
 
 	<ItemGroup>
 	  <Folder Include="Resources\Languages\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\AppIcon\cube_128p.png" />
+	  <MauiImage Include="Resources\AppIcon\cube_appicon_128p.png" />
+	  <MauiImage Include="Resources\Splash\cube_128p.png" />
+	  <MauiImage Include="Resources\Splash\cube_splash_128p.png" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
