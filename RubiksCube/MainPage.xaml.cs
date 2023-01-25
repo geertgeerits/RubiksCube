@@ -845,7 +845,7 @@ public partial class MainPage : ContentPage
     // Turn the front side clockwise (to right +).
     private void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front side clockwise (+).", "OK");
+        DisplayAlert("", "Turn the front side 'clockwise' (+).", "OK");
         TurnFrontSideTo("+");
     }
 
@@ -859,14 +859,14 @@ public partial class MainPage : ContentPage
     // Turn the back side counter clockwise (to left -).
     private void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the back side counter clockwise (-).", "OK");
+        DisplayAlert("", "Turn the back side 'counter clockwise' (-).", "OK");
         TurnBackSideTo("-");
     }
 
     // Turn the left side clockwise (to right +).
     private void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the left side clockwise (+).", "OK");
+        DisplayAlert("", "Turn the left side 'clockwise' (+).", "OK");
         TurnLeftSideTo("+");
     }
 
@@ -880,14 +880,14 @@ public partial class MainPage : ContentPage
     // Turn the right side counter clockwise (to left -).
     private void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right side counter clockwise (-).", "OK");
+        DisplayAlert("", "Turn the right side 'counter clockwise' (-).", "OK");
         TurnRightSideTo("-");
     }
 
     // Turn the top side counter clockwise (to left -).
     private void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top side counter clockwise (-).", "OK");
+        DisplayAlert("", "Turn the top side 'counter clockwise' (-).", "OK");
         TurnTopSideTo("-");
     }
 
@@ -901,14 +901,14 @@ public partial class MainPage : ContentPage
     // Turn the bottom side clockwise (to right +).
     private void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the bottom side clockwise (+).", "OK");
+        DisplayAlert("", "Turn the bottom side 'clockwise' (+).", "OK");
         TurnBottomSideTo("+");
     }
 
     // Turn the top side clockwise (to right +).
     private void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the top side clockwise (+).", "OK");
+        DisplayAlert("", "Turn the top side 'clockwise' (+).", "OK");
         TurnTopSideTo("+");
     }
 
@@ -922,14 +922,14 @@ public partial class MainPage : ContentPage
     // Turn the bottom side counter clockwise (to left -).
     private void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the bottom side counter clockwise (-).", "OK");
+        DisplayAlert("", "Turn the bottom side 'counter clockwise' (-).", "OK");
         TurnBottomSideTo("-");
     }
 
     // Turn the left side counter clockwise (to left -).
     private void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the left side counter clockwise (-).", "OK");
+        DisplayAlert("", "Turn the left side 'counter clockwise' (-).", "OK");
         TurnLeftSideTo("-");
     }
 
@@ -943,14 +943,14 @@ public partial class MainPage : ContentPage
     // Turn the right side clockwise (to right +).
     private void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the right side clockwise (+).", "OK");
+        DisplayAlert("", "Turn the right side 'clockwise' (+).", "OK");
         TurnRightSideTo("+");
     }
 
     // Turn the front side counter clockwise (to left -).
     private void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the front side counter clockwise (-).", "OK");
+        DisplayAlert("", "Turn the front side 'counter clockwise' (-).", "OK");
         TurnFrontSideTo("-");
     }
 
@@ -964,7 +964,7 @@ public partial class MainPage : ContentPage
     // Turn the back side clockwise (to right +).
     private void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "Turn the back side clockwise (+).", "OK");
+        DisplayAlert("", "Turn the back side 'clockwise' (+).", "OK");
         TurnBackSideTo("+");
     }
 
