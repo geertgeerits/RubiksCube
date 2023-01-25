@@ -4,6 +4,14 @@
              x:Class="RubiksCube.PageAbout"
              Title="PageAbout">
     <VerticalStackLayout>
+
+        <NavigationPage.TitleView>
+            <Label
+            x:Name="lblTitle"
+            Style="{StaticResource labelStyleShellTitleView}"
+            Text="About" />
+        </NavigationPage.TitleView>
+
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-24 (YYYY-MM-DD)
+// Date ........: 2023-01-25 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -45,6 +45,17 @@ public partial class MainPage : ContentPage
 
         // Reset the colors of the cube.
         ResetCube();
+    }
+
+    // TitleView buttons clicked events.
+    private async void OnPageAboutClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PageAbout());
+    }
+
+    private async void OnPageSettingsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PageSettings());
     }
 
     // Select a color for dropping on a cube and put it in a tempory rectangle.

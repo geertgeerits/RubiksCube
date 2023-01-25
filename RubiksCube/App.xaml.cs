@@ -6,8 +6,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+		//MainPage = new AppShell();
+        MainPage = new NavigationPage(new MainPage());
+    }
 
     // Window dimensions and location for desktop apps.
     protected override Window CreateWindow(IActivationState activationState)

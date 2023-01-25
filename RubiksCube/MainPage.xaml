@@ -2,7 +2,47 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RubiksCube.MainPage"
-             Title="Rubik's Cube">
+             NavigationPage.HasBackButton="False">
+    
+    <NavigationPage.TitleView>
+        <Grid RowDefinitions="50"
+              ColumnDefinitions="60, 140*, 60"
+              Margin="5"
+              BackgroundColor="#00bfff">
+
+            <ImageButton
+                x:Name="imgbtnAbout"
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="info_32p.png"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                Clicked="OnPageAboutClicked">
+            </ImageButton>
+
+            <Label
+                x:Name="lblTitle"
+                Style="{StaticResource labelStyleShellTitleView}"
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="Rubik's Cube">
+            </Label>
+
+            <ImageButton
+                x:Name="imgbtnSettings"
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="settings_32p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                Clicked="OnPageSettingsClicked">
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
 
     <Grid
         RowDefinitions="auto, *, auto"
