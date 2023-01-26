@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-25 (YYYY-MM-DD)
+// Date ........: 2023-01-26 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -24,7 +24,7 @@ public partial class MainPage : ContentPage
     private readonly string cColor5 = "FFFFFF";                 // White
     private readonly string cColor6 = "FF8000";                 // Orange
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
-    private readonly string cColorArrowActive = "00FF00";       // Green
+    private readonly string cColorArrowActive = "FFD000";       // Light orange
 
     //private readonly int[] aTop = new int[9];
     //private readonly int[] aFront = new int[9];
