@@ -75,14 +75,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Languages\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiImage Include="Resources\AppIcon\cube_128p.png" />
 	  <MauiImage Include="Resources\AppIcon\cube_appicon_128p.png" />
 	  <MauiImage Include="Resources\Splash\cube_128p.png" />
 	  <MauiImage Include="Resources\Splash\cube_splash_128p.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Resources\Languages\CubeLang.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>CubeLang.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Languages\CubeLang.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>CubeLang.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">

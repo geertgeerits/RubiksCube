@@ -11,21 +11,21 @@ public partial class PageAbout : ContentPage
 		InitializeComponent();
 
         // Put text in the chosen language in the controls.
-        //lblTitle.Text = CodeLang.About_Text;
+        //lblTitle.Text = CubeLang.About_Text;
 
-        //lblNameProgram.Text = CodeLang.NameProgram_Text;
-        //lblDescription.Text = CodeLang.Description_Text;
-        //lblVersion.Text = CodeLang.Version_Text + " 1.0.26";
-        //lblCopyright.Text = CodeLang.Copyright_Text + " © 2022-2023 Geert Geerits";
-        //lblEmail.Text = CodeLang.Email_Text + " " + lblEmail.Text;
-        //lblWebsite.Text = CodeLang.Website_Text + " " + lblWebsite.Text;
-        //lblPrivacyPolicy.Text = CodeLang.PrivacyPolicyTitle_Text + " " + CodeLang.PrivacyPolicy_Text;
-        //lblLicense.Text = CodeLang.LicenseTitle_Text + ": " + CodeLang.License_Text;
-        //lblLicenseMit.Text = CodeLang.Copyright_Text + " © " + CodeLang.LicenseMit_Text + "\n\n" + CodeLang.LicenseMit2_Text;
-        //lblAboutExplanation.Text = CodeLang.AboutExplanation_Text;
+        //lblNameProgram.Text = CubeLang.NameProgram_Text;
+        //lblDescription.Text = CubeLang.Description_Text;
+        //lblVersion.Text = CubeLang.Version_Text + " 1.0.26";
+        //lblCopyright.Text = CubeLang.Copyright_Text + " © 2022-2023 Geert Geerits";
+        //lblEmail.Text = CubeLang.Email_Text + " " + lblEmail.Text;
+        //lblWebsite.Text = CubeLang.Website_Text + " " + lblWebsite.Text;
+        //lblPrivacyPolicy.Text = CubeLang.PrivacyPolicyTitle_Text + " " + CubeLang.PrivacyPolicy_Text;
+        //lblLicense.Text = CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
+        //lblLicenseMit.Text = CubeLang.Copyright_Text + " © " + CubeLang.LicenseMit_Text + "\n\n" + CubeLang.LicenseMit2_Text;
+        //lblAboutExplanation.Text = CubeLang.AboutExplanation_Text;
 
-        //cButtonClose = CodeLang.ButtonClose_Text;
-        //cErrorTitle = CodeLang.ErrorTitle_Text;
+        //cButtonClose = CubeLang.ButtonClose_Text;
+        //cErrorTitle = CubeLang.ErrorTitle_Text;
         cButtonClose = "Close";
         cErrorTitle = "Error";
 

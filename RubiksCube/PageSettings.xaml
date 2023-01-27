@@ -11,10 +11,231 @@
             Text="Settings" />
     </NavigationPage.TitleView>
 
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid
+        RowDefinitions="*, auto"
+        ColumnDefinitions="150, 190*"
+        HorizontalOptions="Start"
+        Margin="10"
+        ColumnSpacing="8"
+        RowSpacing="0">
+
+        <ScrollView
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical">
+
+            <Grid
+                RowDefinitions="Auto, 40, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
+                ColumnDefinitions="40, 110, 190*"
+                Margin="0"
+                ColumnSpacing="8"
+                RowSpacing="4">
+
+                <BoxView
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"/>
+
+                <Label
+                    x:Name="lblExplanation"
+                    Style="{StaticResource labelStyleExplanation}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Text="Some changed settings must be saved in order to apply them." />
+
+                <Label
+                    x:Name="lblLanguage"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="Center"
+                    Text="Language:" />
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+
+                    <Picker
+                        x:Name="pckLanguage"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        WidthRequest="180"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Deutsch</x:String>
+                                <x:String>English</x:String>
+                                <x:String>Español</x:String>
+                                <x:String>Français</x:String>
+                                <x:String>Italiano</x:String>
+                                <x:String>Nederlands</x:String>
+                                <x:String>Português</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+                <Label
+                    x:Name="lblLanguageSpeech"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="Center"
+                    Text="Language speech:" />
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+
+                    <Picker
+                        x:Name="pckLanguageSpeech"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        WidthRequest="180"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerLanguageSpeechChanged">
+                    </Picker>
+                </Border>
+
+                <Label
+                    x:Name="lblTheme"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalTextAlignment="Center"
+                    Text="Theme:" />
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+
+                    <Picker
+                        x:Name="pckTheme"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        WidthRequest="180"
+                        VerticalTextAlignment="Center"
+                        SelectedIndexChanged="OnPickerThemeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>System</x:String>
+                                <x:String>Light</x:String>
+                                <x:String>Dark</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+                <Label
+                    x:Name="lblForgroundColor"
+                    Grid.Row="8"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Start"
+                    Text="Forground color:" />
+
+                <Slider
+                    x:Name="sldColorFgRed"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="8"
+                    Grid.Column="2"
+                    ThumbColor="#FF0000"
+                    MinimumTrackColor="#FF0000"
+                    ValueChanged="OnSliderColorForgroundValueChanged" />
+
+                <Button
+                    Style="{StaticResource buttonStyleHelp}"
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Clicked="OnSettingsHexColorClicked"/>
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand">
+
+                    <Entry
+                        x:Name="entHexColorFg"
+                        Grid.Row="9"
+                        Grid.Column="1"
+                        ClearButtonVisibility="WhileEditing"
+                        Keyboard="Text"
+                        ReturnType="Next"
+                        Completed="EntryHexColorUnfocused"
+                        MaxLength="8"
+                        TextChanged="EntryHexColorTextChanged"
+                        Unfocused="EntryHexColorUnfocused" />
+                </Border>
+
+                <Slider
+                    x:Name="sldColorFgGreen"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="9"
+                    Grid.Column="2"
+                    ThumbColor="#00FF00"
+                    MinimumTrackColor="#00FF00"
+                    ValueChanged="OnSliderColorForgroundValueChanged" />
+
+                <BoxView
+                    x:Name="bxvColorFg"
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Color="Black" />
+
+                <Slider
+                    x:Name="sldColorFgBlue"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="10"
+                    Grid.Column="2"
+                    ThumbColor="#0000FF"
+                    MinimumTrackColor="#0000FF"
+                    ValueChanged="OnSliderColorForgroundValueChanged" />
+
+            </Grid>
+        </ScrollView>
+
+        <Button
+            x:Name="btnSettingsSave"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Start"
+            Text="Save"
+            Clicked="OnSettingsSaveClicked" />
+
+        <Button
+            x:Name="btnSettingsReset"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalOptions="End"
+            Text="Reset"
+            Clicked="OnSettingsResetClicked" />
+
+    </Grid>
+
 </ContentPage>

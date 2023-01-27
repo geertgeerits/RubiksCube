@@ -11,7 +11,7 @@
               BackgroundColor="#FFD000">
 
             <ImageButton
-                x:Name="imgbtnAbout"
+                x:Name="ImgbtnAbout"
                 Grid.Row="0"
                 Grid.Column="0"
                 Source="info_32p.png"
@@ -31,7 +31,7 @@
             </Label>
 
             <ImageButton
-                x:Name="imgbtnSettings"
+                x:Name="ImgbtnSettings"
                 Grid.Row="0"
                 Grid.Column="2"
                 Source="settings_32p.png"
@@ -61,14 +61,14 @@
             VerticalOptions="Center">
 
             <Polygon
-                x:Name="plgColorSelect"
+                x:Name="PlgColorSelect"
                 Style="{StaticResource polygonStyleColor}"
                 Points="0,0 20,0 20,30 0,30"
                 Fill="Black">
             </Polygon>
 
             <Polygon
-                x:Name="plgColor1"
+                x:Name="PlgColor1"
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Red">
                 <Polygon.GestureRecognizers>
@@ -77,7 +77,7 @@
             </Polygon>
 
             <Polygon
-                x:Name="plgColor2"
+                x:Name="PlgColor2"
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Yellow">
                 <Polygon.GestureRecognizers>
@@ -86,7 +86,7 @@
             </Polygon>
 
             <Polygon
-                x:Name="plgColor3"
+                x:Name="PlgColor3"
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Blue">
                 <Polygon.GestureRecognizers>
@@ -95,7 +95,7 @@
             </Polygon>
 
             <Polygon
-                x:Name="plgColor4"
+                x:Name="PlgColor4"
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Green">
                 <Polygon.GestureRecognizers>
@@ -104,7 +104,7 @@
             </Polygon>
 
             <Polygon
-                x:Name="plgColor5"
+                x:Name="PlgColor5"
                 Style="{StaticResource polygonStyleColor}"
                 Fill="White">
                 <Polygon.GestureRecognizers>
@@ -113,7 +113,7 @@
             </Polygon>
 
             <Polygon
-                x:Name="plgColor6"
+                x:Name="PlgColor6"
                 Style="{StaticResource polygonStyleColor}"
                 HorizontalOptions="End"
                 Fill="Orange">
@@ -159,62 +159,62 @@
                     Grid.Column="1">
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontSideToRight"
+                        x:Name="ImgbtnTurnFrontSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="Turn the front side 'clockwise' (+)"
-                        Clicked="imgbtnTurnFrontSideToRight_Clicked">
+                        Clicked="ImgbtnTurnFrontSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopMiddleToRightSide"
+                        x:Name="ImgbtnTurnTopMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="Turn the top middle to the right side (+)"
-                        Clicked="imgbtnTurnTopMiddleToRightSide_Clicked">
+                        Clicked="ImgbtnTurnTopMiddleToRightSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnBackSideToLeft"
+                        x:Name="ImgbtnTurnBackSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="Turn the back side 'counter clockwise' (-)"
-                        Clicked="imgbtnTurnBackSideToLeft_Clicked">
+                        Clicked="ImgbtnTurnBackSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnLeftSideToRight"
+                        x:Name="ImgbtnTurnLeftSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         VerticalOptions="End"
                         Margin="40,0,0,0"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="Turn the left side 'clockwise' (+)"
-                        Clicked="imgbtnTurnLeftSideToRight_Clicked">
+                        Clicked="ImgbtnTurnLeftSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopMiddleToFrontSide"
+                        x:Name="ImgbtnTurnTopMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="Turn the top middle to the front side (-)"
-                        Clicked="imgbtnTurnTopMiddleToFrontSide_Clicked">
+                        Clicked="ImgbtnTurnTopMiddleToFrontSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightSideToLeft"
+                        x:Name="ImgbtnTurnRightSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="Turn the right side 'counter clockwise' (-)"
-                        Clicked="imgbtnTurnRightSideToLeft_Clicked">
+                        Clicked="ImgbtnTurnRightSideToLeft_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -223,33 +223,33 @@
                     Grid.Column="0">
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopSideToLeft"
+                        x:Name="ImgbtnTurnTopSideToLeft"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="0,82,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="Turn the top side 'counter clockwise' (-)"
-                        Clicked="imgbtnTurnTopSideToLeft_Clicked">
+                        Clicked="ImgbtnTurnTopSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToRightSide"
+                        x:Name="ImgbtnTurnFrontMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="0,28,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="Turn the front middle to the right side (-)"
-                        Clicked="imgbtnTurnFrontMiddleToRightSide_Clicked">
+                        Clicked="ImgbtnTurnFrontMiddleToRightSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnBottomSideToRight"
+                        x:Name="ImgbtnTurnBottomSideToRight"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="0,29,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="Turn the bottom side 'clockwise' (+)"
-                        Clicked="imgbtnTurnBottomSideToRight_Clicked">
+                        Clicked="ImgbtnTurnBottomSideToRight_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -258,33 +258,33 @@
                     Grid.Column="2">
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopSideToRight"
+                        x:Name="ImgbtnTurnTopSideToRight"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="5,46,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="Turn the top side 'clockwise' (+)"
-                        Clicked="imgbtnTurnTopSideToRight_Clicked">
+                        Clicked="ImgbtnTurnTopSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToFrontSide"
+                        x:Name="ImgbtnTurnRightMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="5,29,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="Turn the right middle to the front side (+)"
-                        Clicked="imgbtnTurnRightMiddleToFrontSide_Clicked">
+                        Clicked="ImgbtnTurnRightMiddleToFrontSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnBottomSideToLeft"
+                        x:Name="ImgbtnTurnBottomSideToLeft"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         Margin="5,31,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="Turn the bottom side 'counter clockwise' (-)"
-                        Clicked="imgbtnTurnBottomSideToLeft_Clicked">
+                        Clicked="ImgbtnTurnBottomSideToLeft_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -293,63 +293,63 @@
                     Grid.Column="1">
 
                     <ImageButton
-                        x:Name="imgbtnTurnLeftSideToLeft"
+                        x:Name="ImgbtnTurnLeftSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="16,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="Turn the left side 'counter clockwise' (-)"
-                        Clicked="imgbtnTurnLeftSideToLeft_Clicked">
+                        Clicked="ImgbtnTurnLeftSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToTopSide"
+                        x:Name="ImgbtnTurnFrontMiddleToTopSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="26,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="Turn the front middle to the top side (+)."
-                        Clicked="imgbtnTurnFrontMiddleToTopSide_Clicked">
+                        Clicked="ImgbtnTurnFrontMiddleToTopSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightSideToRight"
+                        x:Name="ImgbtnTurnRightSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="30,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="Turn the right side 'clockwise' (+)"
-                        Clicked="imgbtnTurnRightSideToRight_Clicked">
+                        Clicked="ImgbtnTurnRightSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontSideToLeft"
+                        x:Name="ImgbtnTurnFrontSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="34,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="Turn the front side 'counter clockwise' (-)"
-                        Clicked="imgbtnTurnFrontSideToLeft_Clicked">
+                        Clicked="ImgbtnTurnFrontSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToTopSide"
+                        x:Name="ImgbtnTurnRightMiddleToTopSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="22,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="Turn the right middle to the top side (-)"
-                        Clicked="imgbtnTurnRightMiddleToTopSide_Clicked">
+                        Clicked="ImgbtnTurnRightMiddleToTopSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnBackSideToRight"
+                        x:Name="ImgbtnTurnBackSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
                         Margin="20,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="Turn the back side 'clockwise' (+)"
-                        Clicked="imgbtnTurnBackSideToRight_Clicked">
+                        Clicked="ImgbtnTurnBackSideToRight_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -379,7 +379,7 @@
                         Margin="91,0,0,0">
                     
                         <Polygon
-                            x:Name="plgTop1"
+                            x:Name="PlgTop1"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,0 0,20 50,30 90,10"
                             Margin="0,0,0,0"
@@ -390,7 +390,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgTop2"
+                            x:Name="PlgTop2"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,10 0,30 50,40 90,20"
                             Margin="-40,0,0,0"
@@ -401,7 +401,7 @@
                         </Polygon>
                 
                         <Polygon
-                            x:Name="plgTop3"
+                            x:Name="PlgTop3"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,20 0,40 50,50 90,30"
                             Margin="-80,0,0,0"
@@ -416,7 +416,7 @@
                         Margin="46,-32,0,0">
                     
                         <Polygon
-                            x:Name="plgTop4"
+                            x:Name="PlgTop4"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Red">
@@ -426,7 +426,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgTop5"
+                            x:Name="PlgTop5"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,10 0,30 50,40 90,20"
                             Margin="-40,0,0,0"
@@ -437,7 +437,7 @@
                         </Polygon>
                 
                         <Polygon
-                            x:Name="plgTop6"
+                            x:Name="PlgTop6"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,20 0,40 50,50 90,30"
                             Margin="-80,0,0,0"
@@ -452,7 +452,7 @@
                         Margin="0,-32,0,0">
                     
                         <Polygon
-                            x:Name="plgTop7"
+                            x:Name="PlgTop7"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Red">
@@ -462,7 +462,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgTop8"
+                            x:Name="PlgTop8"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,10 0,30 50,40 90,20"
                             Margin="-40,0,0,0"
@@ -473,7 +473,7 @@
                         </Polygon>
                 
                         <Polygon
-                            x:Name="plgTop9"
+                            x:Name="PlgTop9"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="40,20 0,40 50,50 90,30"
                             Margin="-80,0,0,0"
@@ -488,7 +488,7 @@
                         Margin="0,-32,0,0">
 
                         <Polygon
-                            x:Name="plgFront1"
+                            x:Name="PlgFront1"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,0 0,50 50,60 50,10"
                             Fill="Yellow">
@@ -498,7 +498,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgFront2"
+                            x:Name="PlgFront2"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,10 0,60 50,70 50,20"
                             Fill="Yellow">
@@ -508,7 +508,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgFront3"
+                            x:Name="PlgFront3"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,20 0,70 50,80 50,30"
                             Fill="Yellow">
@@ -518,7 +518,7 @@
                         </Polygon>
                 
                         <Polygon
-                            x:Name="plgRight1"
+                            x:Name="PlgRight1"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Fill="Blue">
@@ -528,7 +528,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight2"
+                            x:Name="PlgRight2"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Margin="0,-22,0,0"
@@ -539,7 +539,7 @@
                         </Polygon>
                 
                         <Polygon
-                            x:Name="plgRight3"
+                            x:Name="PlgRight3"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Margin="0,-43,0,0"
@@ -554,7 +554,7 @@
                         Margin="0,-30,0,0">
 
                         <Polygon
-                            x:Name="plgFront4"
+                            x:Name="PlgFront4"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,0 0,50 50,60 50,10"
                             Fill="Yellow">
@@ -564,7 +564,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgFront5"
+                            x:Name="PlgFront5"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,10 0,60 50,70 50,20"
                             Fill="Yellow">
@@ -574,7 +574,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgFront6"
+                            x:Name="PlgFront6"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,20 0,70 50,80 50,30"
                             Fill="Yellow">
@@ -584,7 +584,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight4"
+                            x:Name="PlgRight4"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Fill="Blue">
@@ -594,7 +594,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight5"
+                            x:Name="PlgRight5"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Margin="0,-22,0,0"
@@ -605,7 +605,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight6"
+                            x:Name="PlgRight6"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Margin="0,-43,0,0"
@@ -620,7 +620,7 @@
                         Margin="0,-30,0,0">
 
                         <Polygon
-                            x:Name="plgFront7"
+                            x:Name="PlgFront7"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,0 0,50 50,60 50,10"
                             Fill="Yellow">
@@ -630,7 +630,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgFront8"
+                            x:Name="PlgFront8"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,10 0,60 50,70 50,20"
                             Fill="Yellow">
@@ -640,7 +640,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgFront9"
+                            x:Name="PlgFront9"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,20 0,70 50,80 50,30"
                             Fill="Yellow">
@@ -650,7 +650,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight7"
+                            x:Name="PlgRight7"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Fill="Blue">
@@ -660,7 +660,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight8"
+                            x:Name="PlgRight8"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Margin="0,-22,0,0"
@@ -671,7 +671,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgRight9"
+                            x:Name="PlgRight9"
                             Style="{StaticResource polygonStyleCubeOutside}"
                             Points="0,30 0,80 40,60 40,10"
                             Margin="0,-43,0,0"
@@ -718,7 +718,7 @@
                 
                     <HorizontalStackLayout>
                         <Polygon
-                            x:Name="plgLeft3"
+                            x:Name="PlgLeft3"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,44 40,94 0,114 0,64"
                             Fill="Green">
@@ -728,7 +728,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgLeft2"
+                            x:Name="PlgLeft2"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,22 40,72 0,92 0,42"
                             Fill="Green">
@@ -738,7 +738,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgLeft1"
+                            x:Name="PlgLeft1"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
@@ -748,7 +748,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack3"
+                            x:Name="PlgBack3"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,0 0,50 50,60 50,10"
                             Fill="White">
@@ -758,7 +758,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack2"
+                            x:Name="PlgBack2"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,11 0,61 50,71 50,21"
                             Fill="White">
@@ -768,7 +768,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack1"
+                            x:Name="PlgBack1"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,22 0,72 50,82 50,32"
                             Fill="White">
@@ -782,7 +782,7 @@
                         Margin="0,-64,0,0">
 
                         <Polygon
-                            x:Name="plgLeft6"
+                            x:Name="PlgLeft6"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,44 40,94 0,114 0,64"
                             Fill="Green">
@@ -792,7 +792,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgLeft5"
+                            x:Name="PlgLeft5"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,22 40,72 0,92 0,42"
                             Fill="Green">
@@ -802,7 +802,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgLeft4"
+                            x:Name="PlgLeft4"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
@@ -812,7 +812,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack6"
+                            x:Name="PlgBack6"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,0 0,50 50,60 50,10"
                             Fill="White">
@@ -822,7 +822,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack5"
+                            x:Name="PlgBack5"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,11 0,61 50,71 50,21"
                             Fill="White">
@@ -832,7 +832,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack4"
+                            x:Name="PlgBack4"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,21 0,71 50,81 50,31"
                             Fill="White">
@@ -846,7 +846,7 @@
                         Margin="0,-64,0,0">
 
                         <Polygon
-                            x:Name="plgLeft9"
+                            x:Name="PlgLeft9"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,44 40,94 0,114 0,64"
                             Fill="Green">
@@ -856,7 +856,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgLeft8"
+                            x:Name="PlgLeft8"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,22 40,72 0,92 0,42"
                             Fill="Green">
@@ -866,7 +866,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgLeft7"
+                            x:Name="PlgLeft7"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
@@ -876,7 +876,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack9"
+                            x:Name="PlgBack9"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,0 0,50 50,60 50,10"
                             Fill="White">
@@ -886,7 +886,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack8"
+                            x:Name="PlgBack8"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,11 0,61 50,71 50,21"
                             Fill="White">
@@ -896,7 +896,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBack7"
+                            x:Name="PlgBack7"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="0,21 0,71 50,81 50,31"
                             Fill="White">
@@ -910,7 +910,7 @@
                         Margin="88,-66,0,0">
                     
                         <Polygon
-                            x:Name="plgBottom7"
+                            x:Name="PlgBottom7"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
@@ -920,7 +920,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBottom8"
+                            x:Name="PlgBottom8"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,10 0,30 50,40 90,20"
                             Margin="-40,0,0,0"
@@ -931,7 +931,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBottom9"
+                            x:Name="PlgBottom9"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,20 0,40 50,50 90,30"
                             Margin="-80,0,0,0"
@@ -946,7 +946,7 @@
                         Margin="43,-31,0,0">
 
                         <Polygon
-                            x:Name="plgBottom4"
+                            x:Name="PlgBottom4"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
@@ -956,7 +956,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBottom5"
+                            x:Name="PlgBottom5"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,10 0,30 50,40 90,20"
                             Margin="-40,0,0,0"
@@ -967,7 +967,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBottom6"
+                            x:Name="PlgBottom6"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,20 0,40 50,50 90,30"
                             Margin="-80,0,0,0"
@@ -982,7 +982,7 @@
                         Margin="-2,-31,0,0">
                     
                         <Polygon
-                            x:Name="plgBottom1"
+                            x:Name="PlgBottom1"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
@@ -992,7 +992,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBottom2"
+                            x:Name="PlgBottom2"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,10 0,30 50,40 90,20"
                             Margin="-40,0,0,0"
@@ -1003,7 +1003,7 @@
                         </Polygon>
 
                         <Polygon
-                            x:Name="plgBottom3"
+                            x:Name="PlgBottom3"
                             Style="{StaticResource polygonStyleCubeInside}"
                             Points="40,20 0,40 50,50 90,30"
                             Margin="-80,0,0,0"
