@@ -441,6 +441,168 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Turn the back side &apos;counter clockwise&apos; (-)..
+        /// </summary>
+        internal static string TurnBackSideToLeft_Text {
+            get {
+                return ResourceManager.GetString("TurnBackSideToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the back side &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnBackSideToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnBackSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the bottom side &apos;counter clockwise&apos; (-)..
+        /// </summary>
+        internal static string TurnBottomSideToLeft_Text {
+            get {
+                return ResourceManager.GetString("TurnBottomSideToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the bottom side &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnBottomSideToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnBottomSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front middle to the right side (-)..
+        /// </summary>
+        internal static string TurnFrontMiddleToRightSide_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontMiddleToRightSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front middle to the top side (+)..
+        /// </summary>
+        internal static string TurnFrontMiddleToTopSide_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontMiddleToTopSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front side &apos;counter clockwise&apos; (-)..
+        /// </summary>
+        internal static string TurnFrontSideToLeft_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontSideToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front side &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnFrontSideToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the left side &apos;counter clockwise&apos; (-)..
+        /// </summary>
+        internal static string TurnLeftSideToLeft_Text {
+            get {
+                return ResourceManager.GetString("TurnLeftSideToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the left side &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnLeftSideToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnLeftSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the right middle to the front side (+)..
+        /// </summary>
+        internal static string TurnRightMiddleToFrontSide_Text {
+            get {
+                return ResourceManager.GetString("TurnRightMiddleToFrontSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the right middle to the top side (-)..
+        /// </summary>
+        internal static string TurnRightMiddleToTopSide_Text {
+            get {
+                return ResourceManager.GetString("TurnRightMiddleToTopSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the right side &apos;counter clockwise&apos; (-)..
+        /// </summary>
+        internal static string TurnRightSideToLeft_Text {
+            get {
+                return ResourceManager.GetString("TurnRightSideToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the right side &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnRightSideToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnRightSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top middle to the front side (-)..
+        /// </summary>
+        internal static string TurnTopMiddleToFrontSide_Text {
+            get {
+                return ResourceManager.GetString("TurnTopMiddleToFrontSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top middle to the right side (+)..
+        /// </summary>
+        internal static string TurnTopMiddleToRightSide_Text {
+            get {
+                return ResourceManager.GetString("TurnTopMiddleToRightSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top side &apos;counter clockwise&apos; (-)..
+        /// </summary>
+        internal static string TurnTopSideToLeft_Text {
+            get {
+                return ResourceManager.GetString("TurnTopSideToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top side &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnTopSideToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnTopSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         internal static string Version_Text {

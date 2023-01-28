@@ -308,7 +308,7 @@
                         Margin="26,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the front middle to the top side (+)."
+                        ToolTipProperties.Text="Turn the front middle to the top side (+)"
                         Clicked="imgbtnTurnFrontMiddleToTopSide_Clicked">
                     </ImageButton>
 

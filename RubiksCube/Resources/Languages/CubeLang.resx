@@ -254,6 +254,60 @@ Not allowed:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Theme:</value>
   </data>
+  <data name="TurnBackSideToLeft_Text" xml:space="preserve">
+    <value>Turn the back side 'counter clockwise' (-).</value>
+  </data>
+  <data name="TurnBackSideToRight_Text" xml:space="preserve">
+    <value>Turn the back side 'clockwise' (+).</value>
+  </data>
+  <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
+    <value>Turn the bottom side 'counter clockwise' (-).</value>
+  </data>
+  <data name="TurnBottomSideToRight_Text" xml:space="preserve">
+    <value>Turn the bottom side 'clockwise' (+).</value>
+  </data>
+  <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
+    <value>Turn the front middle to the right side (-).</value>
+  </data>
+  <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
+    <value>Turn the front middle to the top side (+).</value>
+  </data>
+  <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
+    <value>Turn the front side 'counter clockwise' (-).</value>
+  </data>
+  <data name="TurnFrontSideToRight_Text" xml:space="preserve">
+    <value>Turn the front side 'clockwise' (+).</value>
+  </data>
+  <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
+    <value>Turn the left side 'counter clockwise' (-).</value>
+  </data>
+  <data name="TurnLeftSideToRight_Text" xml:space="preserve">
+    <value>Turn the left side 'clockwise' (+).</value>
+  </data>
+  <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
+    <value>Turn the right middle to the front side (+).</value>
+  </data>
+  <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
+    <value>Turn the right middle to the top side (-).</value>
+  </data>
+  <data name="TurnRightSideToLeft_Text" xml:space="preserve">
+    <value>Turn the right side 'counter clockwise' (-).</value>
+  </data>
+  <data name="TurnRightSideToRight_Text" xml:space="preserve">
+    <value>Turn the right side 'clockwise' (+).</value>
+  </data>
+  <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
+    <value>Turn the top middle to the front side (-).</value>
+  </data>
+  <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
+    <value>Turn the top middle to the right side (+).</value>
+  </data>
+  <data name="TurnTopSideToLeft_Text" xml:space="preserve">
+    <value>Turn the top side 'counter clockwise' (-).</value>
+  </data>
+  <data name="TurnTopSideToRight_Text" xml:space="preserve">
+    <value>Turn the top side 'clockwise' (+).</value>
+  </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>
   </data>

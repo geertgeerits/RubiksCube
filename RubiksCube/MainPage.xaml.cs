@@ -1793,9 +1793,16 @@ public partial class MainPage : ContentPage
     // Explain the turn of the cube.
     private async void ExplainTurnCube(string cTurnCubeText)
     {
+        string cTurnCubeSpeech = cTurnCubeText;
+
         if (bExplainSpeech)
         {
-            ConvertTextToSpeech(cTurnCubeText);
+            if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
+            {
+                cTurnCubeSpeech = cTurnCubeSpeech.Substring(0, cTurnCubeSpeech.Length - 5);
+            }
+            
+            ConvertTextToSpeech(cTurnCubeSpeech);
         }
 
         if (bExplainText)
@@ -1934,6 +1941,25 @@ public partial class MainPage : ContentPage
         cDisagree = CubeLang.Disagree_Text;
         cCloseApplication = CubeLang.CloseApplication_Text;
         cTextToSpeechError = CubeLang.TextToSpeechError_Text;
+
+//        imgbtnTurnFrontSideToRight.ToolTipProperties.Text = CubeLang.TurnFrontSideToRight_Text;
+//        TurnTopMiddleToRightSide_Text
+//TurnBackSideToLeft_Text
+//TurnLeftSideToRight_Text
+//TurnTopMiddleToFrontSide_Text
+//TurnRightSideToLeft_Text
+//TurnTopSideToLeft_Text
+//TurnFrontMiddleToRightSide_Text
+//TurnBottomSideToRight_Text
+//TurnTopSideToRight_Text
+//TurnRightMiddleToFrontSide_Text
+//TurnBottomSideToLeft_Text
+//TurnLeftSideToLeft_Text
+//TurnFrontMiddleToTopSide_Text
+//TurnRightSideToRight_Text
+//TurnFrontSideToLeft_Text
+//TurnRightMiddleToTopSide_Text
+//TurnBackSideToRight_Text
 
         //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
     }
