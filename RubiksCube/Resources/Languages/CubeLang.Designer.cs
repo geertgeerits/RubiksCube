@@ -173,6 +173,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cube colors:.
+        /// </summary>
+        internal static string CubeColors_Text {
+            get {
+                return ResourceManager.GetString("CubeColors_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
         internal static string Default_Text {
@@ -214,15 +223,6 @@ namespace RubiksCube.Resources.Languages {
         internal static string ErrorTitle_Text {
             get {
                 return ResourceManager.GetString("ErrorTitle_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Forground color:.
-        /// </summary>
-        internal static string ForgroundColor_Text {
-            get {
-                return ResourceManager.GetString("ForgroundColor_Text", resourceCulture);
             }
         }
         
@@ -336,6 +336,15 @@ namespace RubiksCube.Resources.Languages {
         internal static string RestartApp_Text {
             get {
                 return ResourceManager.GetString("RestartApp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rubik&apos;s Cube.
+        /// </summary>
+        internal static string RubiksCube_Text {
+            get {
+                return ResourceManager.GetString("RubiksCube_Text", resourceCulture);
             }
         }
         

@@ -27,8 +27,8 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 6, 40, 40, 40, 40"
-                ColumnDefinitions="40, 110, 190*"
+                RowDefinitions="Auto, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40"
+                ColumnDefinitions="150, 150, 40*"
                 Margin="0"
                 ColumnSpacing="8"
                 RowSpacing="4">
@@ -50,21 +50,22 @@
                     x:Name="lblLanguage"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
                     Text="Language:" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="1"
-                    Grid.Column="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                         x:Name="pckLanguage"
                         Grid.Row="1"
-                        Grid.Column="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         WidthRequest="180"
@@ -95,14 +96,16 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="2"
-                    Grid.Column="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                         x:Name="pckLanguageSpeech"
                         Grid.Row="2"
-                        Grid.Column="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         WidthRequest="180"
@@ -122,14 +125,16 @@
                 <Border
                     Style="{StaticResource borderStyleDefault}"
                     Grid.Row="3"
-                    Grid.Column="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
 
                     <Picker
                         x:Name="pckTheme"
                         Grid.Row="3"
-                        Grid.Column="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         WidthRequest="180"
@@ -150,13 +155,15 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="Explain by text">
+                    VerticalOptions="Center"
+                    Text="Explained by text:">
                 </Label>
 
                 <Switch
                     x:Name="swtExplainText"
                     Grid.Row="4"
-                    Grid.Column="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     Toggled="swtExplainText_Toggled">
                 </Switch>
@@ -165,53 +172,47 @@
                     x:Name="lblExplainSpeech"
                     Grid.Row="5"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Text="Explain by speech">
+                    VerticalOptions="Center"
+                    Text="Explained by speech:">
                 </Label>
 
                 <Switch
                     x:Name="swtExplainSpeech"
                     Grid.Row="5"
-                    Grid.Column="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     Toggled="swtExplainSpeech_Toggled">
                 </Switch>
 
                 <Label
-                    x:Name="lblForgroundColor"
-                    Grid.Row="8"
+                    x:Name="lblCubeColors"
+                    Grid.Row="6"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    VerticalTextAlignment="Start"
-                    Text="Forground color:" />
-
-                <Slider
-                    x:Name="sldColorRed"
-                    Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="8"
-                    Grid.Column="2"
-                    ThumbColor="#FF0000"
-                    MinimumTrackColor="#FF0000"
-                    ValueChanged="OnSliderColorValueChanged" />
+                    Text="Cube colors:">
+                </Label>
 
                 <Button
                     Style="{StaticResource buttonStyleHelp}"
-                    Grid.Row="9"
-                    Grid.Column="0"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
                     Clicked="OnSettingsHexColorClicked"/>
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
-                    Grid.Row="9"
+                    Grid.Row="6"
                     Grid.Column="1"
-                    HorizontalOptions="FillAndExpand">
+                    WidthRequest="140"
+                    HorizontalOptions="Start">
 
                     <Entry
                         x:Name="entHexColor"
-                        Grid.Row="9"
+                        Grid.Row="6"
                         Grid.Column="1"
+                        HorizontalOptions="Start"
+                        WidthRequest="140"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
                         ReturnType="Next"
@@ -221,27 +222,140 @@
                         Unfocused="EntryHexColorUnfocused" />
                 </Border>
 
+                <HorizontalStackLayout
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="Gray"
+                    Padding="5"
+                    Spacing="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+
+                    <Polygon
+                        x:Name="plgCubeColor1"
+                        Style="{StaticResource polygonStyleColor}"
+                        Fill="Red">
+                    </Polygon>
+
+                    <Polygon
+                        x:Name="plgCubeColor2"
+                        Style="{StaticResource polygonStyleColor}"
+                        Fill="Yellow">
+                    </Polygon>
+
+                    <Polygon
+                        x:Name="plgCubeColor3"
+                        Style="{StaticResource polygonStyleColor}"
+                        Fill="Blue">
+                    </Polygon>
+
+                    <Polygon
+                        x:Name="plgCubeColor4"
+                        Style="{StaticResource polygonStyleColor}"
+                        Fill="Green">
+                    </Polygon>
+
+                    <Polygon
+                        x:Name="plgCubeColor5"
+                        Style="{StaticResource polygonStyleColor}"
+                        Fill="White">
+                    </Polygon>
+
+                    <Polygon
+                        x:Name="plgCubeColor6"
+                        Style="{StaticResource polygonStyleColor}"
+                        HorizontalOptions="End"
+                        Fill="Orange">
+                    </Polygon>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Grid.Row="8"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Padding="5"
+                    Spacing="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+
+                    <RadioButton
+                        x:Name="rbnCubeColor1"
+                        GroupName="rbgCubeColors"
+                        Value="rbnCubeColor1"
+                        WidthRequest="30"
+                        IsChecked="True"
+                        CheckedChanged="rbnCubeColorCheckedChanged">
+                    </RadioButton>
+
+                    <RadioButton
+                        x:Name="rbnCubeColor2"
+                        GroupName="rbgCubeColors"
+                        Value="rbnCubeColor2"
+                        WidthRequest="30"
+                        CheckedChanged="rbnCubeColorCheckedChanged">
+                    </RadioButton>
+
+                    <RadioButton
+                        x:Name="rbnCubeColor3"
+                        GroupName="rbgCubeColors"
+                        Value="rbnCubeColor3"
+                        WidthRequest="30"
+                        CheckedChanged="rbnCubeColorCheckedChanged">
+                    </RadioButton>
+
+                    <RadioButton
+                        x:Name="rbnCubeColor4"
+                        GroupName="rbgCubeColors"
+                        Value="rbnCubeColor4"
+                        WidthRequest="30"
+                        CheckedChanged="rbnCubeColorCheckedChanged">
+                    </RadioButton>
+
+                    <RadioButton
+                        x:Name="rbnCubeColor5"
+                        GroupName="rbgCubeColors"
+                        Value="rbnCubeColor5"
+                        WidthRequest="30"
+                        CheckedChanged="rbnCubeColorCheckedChanged">
+                    </RadioButton>
+
+                    <RadioButton
+                        x:Name="rbnCubeColor6"
+                        GroupName="rbgCubeColors"
+                        Value="rbnCubeColor6"
+                        HorizontalOptions="End"
+                        WidthRequest="30"
+                        CheckedChanged="rbnCubeColorCheckedChanged">
+                    </RadioButton>
+                </HorizontalStackLayout>
+
+                <Slider
+                    x:Name="sldColorRed"
+                    Style="{StaticResource sliderStyleColor}"
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    ThumbColor="#FF0000"
+                    MinimumTrackColor="#FF0000"
+                    ValueChanged="OnSliderColorValueChanged" />
+
                 <Slider
                     x:Name="sldColorGreen"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="9"
-                    Grid.Column="2"
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
                     ValueChanged="OnSliderColorValueChanged" />
 
-                <BoxView
-                    x:Name="bxvColorFg"
-                    Grid.Row="10"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Color="Black" />
-
                 <Slider
                     x:Name="sldColorBlue"
                     Style="{StaticResource sliderStyleColor}"
-                    Grid.Row="10"
-                    Grid.Column="2"
+                    Grid.Row="11"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     ValueChanged="OnSliderColorValueChanged" />

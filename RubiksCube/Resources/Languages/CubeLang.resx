@@ -160,6 +160,9 @@ You can always contact me for any corrections.</value>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Copyright</value>
   </data>
+  <data name="CubeColors_Text" xml:space="preserve">
+    <value>Cube colors:</value>
+  </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Default</value>
   </data>
@@ -174,9 +177,6 @@ You can always contact me for any corrections.</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Error</value>
-  </data>
-  <data name="ForgroundColor_Text" xml:space="preserve">
-    <value>Forground color:</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimal color codes:
@@ -218,6 +218,9 @@ Use this program entirely at your own risk.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>The application will be restarted.</value>
+  </data>
+  <data name="RubiksCube_Text" xml:space="preserve">
+    <value>Rubik's Cube</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Reset</value>

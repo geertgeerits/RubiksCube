@@ -12,6 +12,7 @@ public partial class PageSettings : ContentPage
     private readonly string cAllowedChar;
     private readonly string cAllowedCharNot;
     private readonly string cHexColorCodes;
+    private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -33,7 +34,7 @@ public partial class PageSettings : ContentPage
         lblLanguage.Text = CubeLang.Language_Text;
         lblLanguageSpeech.Text = CubeLang.LanguageSpeech_Text;
         lblTheme.Text = CubeLang.Theme_Text;
-        lblForgroundColor.Text = CubeLang.ForgroundColor_Text;
+        lblCubeColors.Text = CubeLang.CubeColors_Text;
         btnSettingsSave.Text = CubeLang.SettingsSave_Text;
         btnSettingsReset.Text = CubeLang.SettingsReset_Text;
 
@@ -96,6 +97,14 @@ public partial class PageSettings : ContentPage
         swtExplainText.IsToggled = MainPage.bExplainText;
         swtExplainSpeech.IsToggled = MainPage.bExplainSpeech;
 
+        // Initialize the cube colors.
+        plgCubeColor1.Fill = Color.FromArgb(MainPage.cCubeColor1);
+        plgCubeColor2.Fill = Color.FromArgb(MainPage.cCubeColor2);
+        plgCubeColor3.Fill = Color.FromArgb(MainPage.cCubeColor3);
+        plgCubeColor4.Fill = Color.FromArgb(MainPage.cCubeColor4);
+        plgCubeColor5.Fill = Color.FromArgb(MainPage.cCubeColor5);
+        plgCubeColor6.Fill = Color.FromArgb(MainPage.cCubeColor6);
+
         // Workaround for !!!BUG!!! in iOS with the Slider right margin.
 #if IOS
         Slider slider = new Slider
@@ -108,22 +117,11 @@ public partial class PageSettings : ContentPage
         sldColorBlue.Margin = slider.Margin;
 #endif
 
-        //Set the current color in the entry and on the sliders.
-        int nRed = 0;
-        int nGreen = 0;
-        int nBlue = 0;
-
-        entHexColor.Text = MainPage.cCodeColor1;
-
-        HexToRgbColor(MainPage.cCodeColor1, ref nRed, ref nGreen, ref nBlue);
-
-        sldColorRed.Value = nRed;
-        sldColorGreen.Value = nGreen;
-        sldColorBlue.Value = nBlue;
+        // // Set the first hex colorcode in the entry field and set the slider positions.
+        SetCubeHexColor();
 
         // Start the stopWatch for resetting all the settings.
         stopWatch.Start();
-
     }
 
     // Picker language clicked event.
@@ -255,29 +253,59 @@ public partial class PageSettings : ContentPage
     {
         var entry = (Entry)sender;
 
-        string cTextToCode = entry.Text;
-
-        if (TestAllowedCharacters("0123456789ABCDEFabcdef", cTextToCode) == false)
+        if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
         {
             entry.Focus();
         }
     }
 
-    // Test for allowed characters.
-    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    // Radiobutton checked changed event.
+    private void rbnCubeColorCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        foreach (char cChar in cTextToCode)
-        {
-            bool bResult = cAllowedCharacters.Contains(cChar);
+        SetCubeHexColor();
+    }
 
-            if (bResult == false)
-            {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
-                return false;
-            }
+    // Set the hex colorcode in the entry field and set the slider positions.
+    private void SetCubeHexColor()
+    {
+        int nRed = 0;
+        int nGreen = 0;
+        int nBlue = 0;
+
+        if (rbnCubeColor1.IsChecked)
+        {
+            entHexColor.Text = MainPage.cCubeColor1;
+            HexToRgbColor(MainPage.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor2.IsChecked)
+        {
+            entHexColor.Text = MainPage.cCubeColor2;
+            HexToRgbColor(MainPage.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor3.IsChecked)
+        {
+            entHexColor.Text = MainPage.cCubeColor3;
+            HexToRgbColor(MainPage.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor4.IsChecked)
+        {
+            entHexColor.Text = MainPage.cCubeColor4;
+            HexToRgbColor(MainPage.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor5.IsChecked)
+        {
+            entHexColor.Text = MainPage.cCubeColor5;
+            HexToRgbColor(MainPage.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor6.IsChecked)
+        {
+            entHexColor.Text = MainPage.cCubeColor6;
+            HexToRgbColor(MainPage.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
         }
 
-        return true;
+        sldColorRed.Value = nRed;
+        sldColorGreen.Value = nGreen;
+        sldColorBlue.Value = nBlue;
     }
 
     // Display help for Hex color.
@@ -290,6 +318,13 @@ public partial class PageSettings : ContentPage
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
         var entry = (Entry)sender;
+
+        //Test for allowed characters.
+        if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
+        {
+            entry.Focus();
+            return;
+        }
 
         // Length must be 6 characters.
         if (entry.Text.Length != 6)
@@ -305,9 +340,36 @@ public partial class PageSettings : ContentPage
 
         if (entry == entHexColor)
         {
-            MainPage.cCodeColor1 = entHexColor.Text;
-
-            HexToRgbColor(MainPage.cCodeColor1, ref nRed, ref nGreen, ref nBlue);
+            if (rbnCubeColor1.IsChecked)
+            {
+                MainPage.cCubeColor1 = entHexColor.Text;
+                HexToRgbColor(MainPage.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
+            }
+            else if (rbnCubeColor2.IsChecked)
+            {
+                MainPage.cCubeColor2 = entHexColor.Text;
+                HexToRgbColor(MainPage.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
+            }
+            else if (rbnCubeColor3.IsChecked)
+            {
+                MainPage.cCubeColor3 = entHexColor.Text;
+                HexToRgbColor(MainPage.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
+            }
+            else if (rbnCubeColor4.IsChecked)
+            {
+                MainPage.cCubeColor4 = entHexColor.Text;
+                HexToRgbColor(MainPage.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
+            }
+            else if (rbnCubeColor5.IsChecked)
+            {
+                MainPage.cCubeColor5 = entHexColor.Text;
+                HexToRgbColor(MainPage.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
+            }
+            else if (rbnCubeColor6.IsChecked)
+            {
+                MainPage.cCubeColor6 = entHexColor.Text;
+                HexToRgbColor(MainPage.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
+            }
 
             sldColorRed.Value = nRed;
             sldColorGreen.Value = nGreen;
@@ -327,6 +389,23 @@ public partial class PageSettings : ContentPage
 
             _ = btnSettingsSave.Focus();
         }
+    }
+
+    // Test for allowed characters.
+    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    {
+        foreach (char cChar in cTextToCode)
+        {
+            bool bResult = cAllowedCharacters.Contains(cChar);
+
+            if (bResult == false)
+            {
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                return false;
+            }
+        }
+
+        return true;
     }
 
     // Slider color cube value change.
@@ -359,9 +438,37 @@ public partial class PageSettings : ContentPage
 
         string cColorFgHex = nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
         entHexColor.Text = cColorFgHex;
-        bxvColorFg.Color = Color.FromArgb(cColorFgHex);
-
-        MainPage.cCodeColor1 = cColorFgHex;
+        
+        if (rbnCubeColor1.IsChecked)
+        {
+            plgCubeColor1.Fill = Color.FromArgb(cColorFgHex);
+            MainPage.cCubeColor1 = cColorFgHex;
+        }
+        else if(rbnCubeColor2.IsChecked)
+        {
+            plgCubeColor2.Fill = Color.FromArgb(cColorFgHex);
+            MainPage.cCubeColor2 = cColorFgHex;
+        }
+        else if (rbnCubeColor3.IsChecked)
+        {
+            plgCubeColor3.Fill = Color.FromArgb(cColorFgHex);
+            MainPage.cCubeColor3 = cColorFgHex;
+        }
+        else if (rbnCubeColor4.IsChecked)
+        {
+            plgCubeColor4.Fill = Color.FromArgb(cColorFgHex);
+            MainPage.cCubeColor4 = cColorFgHex;
+        }
+        else if (rbnCubeColor5.IsChecked)
+        {
+            plgCubeColor5.Fill = Color.FromArgb(cColorFgHex);
+            MainPage.cCubeColor5 = cColorFgHex;
+        }
+        else if (rbnCubeColor6.IsChecked)
+        {
+            plgCubeColor6.Fill = Color.FromArgb(cColorFgHex);
+            MainPage.cCubeColor6 = cColorFgHex;
+        }
     }
 
     // Convert RRGGBB Hex color to RGB color.
@@ -386,7 +493,12 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingLanguageSpeech", MainPage.cLanguageSpeech);
         Preferences.Default.Set("SettingExplainText", MainPage.bExplainText);
         Preferences.Default.Set("SettingExplainSpeech", MainPage.bExplainSpeech);
-        Preferences.Default.Set("SettingCodeColor1", MainPage.cCodeColor1);
+        Preferences.Default.Set("SettingCubeColor1", MainPage.cCubeColor1);
+        Preferences.Default.Set("SettingCubeColor2", MainPage.cCubeColor2);
+        Preferences.Default.Set("SettingCubeColor3", MainPage.cCubeColor3);
+        Preferences.Default.Set("SettingCubeColor4", MainPage.cCubeColor4);
+        Preferences.Default.Set("SettingCubeColor5", MainPage.cCubeColor5);
+        Preferences.Default.Set("SettingCubeColor6", MainPage.cCubeColor6);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
@@ -415,7 +527,12 @@ public partial class PageSettings : ContentPage
             Preferences.Default.Remove("SettingLanguageSpeech");
             Preferences.Default.Remove("SettingExplainText");
             Preferences.Default.Remove("SettingExplainSpeech");
-            Preferences.Default.Remove("SettingCodeColor1");
+            Preferences.Default.Remove("SettingCubeColor1");
+            Preferences.Default.Remove("SettingCubeColor2");
+            Preferences.Default.Remove("SettingCubeColor3");
+            Preferences.Default.Remove("SettingCubeColor4");
+            Preferences.Default.Remove("SettingCubeColor5");
+            Preferences.Default.Remove("SettingCubeColor6");
         }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
