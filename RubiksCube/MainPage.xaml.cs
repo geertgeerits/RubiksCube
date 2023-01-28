@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-27 (YYYY-MM-DD)
+// Date ........: 2023-01-28 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -28,6 +28,9 @@ public partial class MainPage : ContentPage
     public static bool bLanguageLocalesExist = false;
     public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
     public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
+    public static bool bExplainText = false;
+    public static bool bExplainSpeech = false;
+    public static string cCodeColor1;
 
     // Local variables.
     private string cButtonClose;
@@ -42,8 +45,6 @@ public partial class MainPage : ContentPage
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
-    private bool bToDoText = false;
-    private bool bToDoSpeech = false;
 
     // Variables for colors.
     private readonly string cColor1 = "FF0000";                 // Red
@@ -64,18 +65,24 @@ public partial class MainPage : ContentPage
 
     public MainPage()
 	{
-		InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
+            return;
+        }
 
         // Get the saved settings.
         cTheme = Preferences.Default.Get("SettingTheme", "System");
         cLanguage = Preferences.Default.Get("SettingLanguage", "");
         cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
-        bToDoText = Preferences.Default.Get("SettingToDoText", false);
-        bToDoSpeech = Preferences.Default.Get("SettingToDoSpeech", false);
-
-        bToDoText = true;
-        bToDoSpeech = true;
+        bExplainText = Preferences.Default.Get("SettingExplainText", true);
+        bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
+        cCodeColor1 = Preferences.Default.Get("SettingCodeColor1", "000000");
 
         // Set the theme.
         if (cTheme == "Light")
@@ -1783,12 +1790,12 @@ public partial class MainPage : ContentPage
     // Explain the turn of the cube.
     private async void ExplainTurnCube(string cTurnCubeText)
     {
-        if (bToDoSpeech)
+        if (bExplainSpeech)
         {
             ConvertTextToSpeech(cTurnCubeText);
         }
 
-        if (bToDoText)
+        if (bExplainText)
         {
             await DisplayAlert("", cTurnCubeText, "OK");
         }

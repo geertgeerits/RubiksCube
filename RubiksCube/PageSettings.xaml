@@ -27,7 +27,7 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 40, 6, 40, 40, 40, 40, 6, 40, 40, 40, 40"
+                RowDefinitions="Auto, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 6, 40, 40, 40, 40"
                 ColumnDefinitions="40, 110, 190*"
                 Margin="0"
                 ColumnSpacing="8"
@@ -146,6 +146,38 @@
                 </Border>
 
                 <Label
+                    x:Name="lblExplainText"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="Explain by text">
+                </Label>
+
+                <Switch
+                    x:Name="swtExplainText"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    Toggled="swtExplainText_Toggled">
+                </Switch>
+
+                <Label
+                    x:Name="lblExplainSpeech"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="Explain by speech">
+                </Label>
+
+                <Switch
+                    x:Name="swtExplainSpeech"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                    Toggled="swtExplainSpeech_Toggled">
+                </Switch>
+
+                <Label
                     x:Name="lblForgroundColor"
                     Grid.Row="8"
                     Grid.Column="0"
@@ -156,13 +188,13 @@
                     Text="Forground color:" />
 
                 <Slider
-                    x:Name="sldColorFgRed"
+                    x:Name="sldColorRed"
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="8"
                     Grid.Column="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorValueChanged" />
 
                 <Button
                     Style="{StaticResource buttonStyleHelp}"
@@ -177,26 +209,26 @@
                     HorizontalOptions="FillAndExpand">
 
                     <Entry
-                        x:Name="entHexColorFg"
+                        x:Name="entHexColor"
                         Grid.Row="9"
                         Grid.Column="1"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
                         ReturnType="Next"
                         Completed="EntryHexColorUnfocused"
-                        MaxLength="8"
+                        MaxLength="6"
                         TextChanged="EntryHexColorTextChanged"
                         Unfocused="EntryHexColorUnfocused" />
                 </Border>
 
                 <Slider
-                    x:Name="sldColorFgGreen"
+                    x:Name="sldColorGreen"
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="9"
                     Grid.Column="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorValueChanged" />
 
                 <BoxView
                     x:Name="bxvColorFg"
@@ -206,13 +238,13 @@
                     Color="Black" />
 
                 <Slider
-                    x:Name="sldColorFgBlue"
+                    x:Name="sldColorBlue"
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="10"
                     Grid.Column="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
-                    ValueChanged="OnSliderColorForgroundValueChanged" />
+                    ValueChanged="OnSliderColorValueChanged" />
 
             </Grid>
         </ScrollView>

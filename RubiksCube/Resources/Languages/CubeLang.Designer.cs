@@ -59,5 +59,403 @@ namespace RubiksCube.Resources.Languages {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string About_Text {
+            get {
+                return ResourceManager.GetString("About_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text to speech: Not all languages are supported that are provided in the application settings.
+        ///Speech to text: Activate it through your device settings. A microphone will then appear in the virtual keyboard.
+        ///Both of these options depend from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+        ///
+        ///Google Translate was used for the translation of the text. This is not a guarantee that all  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AboutExplanation_Text {
+            get {
+                return ResourceManager.GetString("AboutExplanation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agree.
+        /// </summary>
+        internal static string Agree_Text {
+            get {
+                return ResourceManager.GetString("Agree_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allowed characters:.
+        /// </summary>
+        internal static string AllowedChar_Text {
+            get {
+                return ResourceManager.GetString("AllowedChar_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not allowed:.
+        /// </summary>
+        internal static string AllowedCharNot_Text {
+            get {
+                return ResourceManager.GetString("AllowedCharNot_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string ButtonClose_Text {
+            get {
+                return ResourceManager.GetString("ButtonClose_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please close the application..
+        /// </summary>
+        internal static string CloseApplication_Text {
+            get {
+                return ResourceManager.GetString("CloseApplication_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The code should be.
+        /// </summary>
+        internal static string CodeLengthPart1_Text {
+            get {
+                return ResourceManager.GetString("CodeLengthPart1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (without checksum digit) or.
+        /// </summary>
+        internal static string CodeLengthPart2_Text {
+            get {
+                return ResourceManager.GetString("CodeLengthPart2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to digits long..
+        /// </summary>
+        internal static string CodeLengthPart3_Text {
+            get {
+                return ResourceManager.GetString("CodeLengthPart3_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact:.
+        /// </summary>
+        internal static string Contact_Text {
+            get {
+                return ResourceManager.GetString("Contact_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copyright.
+        /// </summary>
+        internal static string Copyright_Text {
+            get {
+                return ResourceManager.GetString("Copyright_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string Default_Text {
+            get {
+                return ResourceManager.GetString("Default_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play and solve the cube..
+        /// </summary>
+        internal static string Description_Text {
+            get {
+                return ResourceManager.GetString("Description_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disagree.
+        /// </summary>
+        internal static string Disagree_Text {
+            get {
+                return ResourceManager.GetString("Disagree_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail:.
+        /// </summary>
+        internal static string Email_Text {
+            get {
+                return ResourceManager.GetString("Email_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string ErrorTitle_Text {
+            get {
+                return ResourceManager.GetString("ErrorTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forground color:.
+        /// </summary>
+        internal static string ForgroundColor_Text {
+            get {
+                return ResourceManager.GetString("ForgroundColor_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hexadecimal color codes:
+        ///
+        ///Characters 1-2: Red
+        ///Characters 3-4: Green
+        ///Characters 5-6: Blue.
+        /// </summary>
+        internal static string HexColorCodes_Text {
+            get {
+                return ResourceManager.GetString("HexColorCodes_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        internal static string Language_Text {
+            get {
+                return ResourceManager.GetString("Language_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language speech:.
+        /// </summary>
+        internal static string LanguageSpeech_Text {
+            get {
+                return ResourceManager.GetString("LanguageSpeech_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application may be used freely for non-commercial purposes.
+        ///Use this program entirely at your own risk..
+        /// </summary>
+        internal static string License_Text {
+            get {
+                return ResourceManager.GetString("License_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The software is provided &apos;as is&apos;, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software..
+        /// </summary>
+        internal static string LicenseMit2_Text {
+            get {
+                return ResourceManager.GetString("LicenseMit2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License.
+        /// </summary>
+        internal static string LicenseTitle_Text {
+            get {
+                return ResourceManager.GetString("LicenseTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rubik&apos;s Cube.
+        /// </summary>
+        internal static string NameProgram_Text {
+            get {
+                return ResourceManager.GetString("NameProgram_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No_Text {
+            get {
+                return ResourceManager.GetString("No_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website link.
+        /// </summary>
+        internal static string OpenLinkTitle_Text {
+            get {
+                return ResourceManager.GetString("OpenLinkTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No personal and other data is stored or passed on to myself and others..
+        /// </summary>
+        internal static string PrivacyPolicy_Text {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy:.
+        /// </summary>
+        internal static string PrivacyPolicyTitle_Text {
+            get {
+                return ResourceManager.GetString("PrivacyPolicyTitle_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The application will be restarted..
+        /// </summary>
+        internal static string RestartApp_Text {
+            get {
+                return ResourceManager.GetString("RestartApp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string Settings_Text {
+            get {
+                return ResourceManager.GetString("Settings_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        internal static string SettingsReset_Text {
+            get {
+                return ResourceManager.GetString("SettingsReset_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string SettingsSave_Text {
+            get {
+                return ResourceManager.GetString("SettingsSave_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some changed settings must be saved in order to apply them..
+        /// </summary>
+        internal static string SettingsSaved_Text {
+            get {
+                return ResourceManager.GetString("SettingsSaved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text contains one or more characters that are not allowed.
+        ///
+        ///Not allowed:.
+        /// </summary>
+        internal static string TextContainsChar_Text {
+            get {
+                return ResourceManager.GetString("TextContainsChar_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text to speech is not supported on this device..
+        /// </summary>
+        internal static string TextToSpeechError_Text {
+            get {
+                return ResourceManager.GetString("TextToSpeechError_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme:.
+        /// </summary>
+        internal static string Theme_Text {
+            get {
+                return ResourceManager.GetString("Theme_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        internal static string ThemeDark_Text {
+            get {
+                return ResourceManager.GetString("ThemeDark_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        internal static string ThemeLight_Text {
+            get {
+                return ResourceManager.GetString("ThemeLight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        internal static string ThemeSystem_Text {
+            get {
+                return ResourceManager.GetString("ThemeSystem_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        internal static string Version_Text {
+            get {
+                return ResourceManager.GetString("Version_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website:.
+        /// </summary>
+        internal static string Website_Text {
+            get {
+                return ResourceManager.GetString("Website_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes_Text {
+            get {
+                return ResourceManager.GetString("Yes_Text", resourceCulture);
+            }
+        }
     }
 }

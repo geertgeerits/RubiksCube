@@ -9,35 +9,47 @@ public partial class PageSettings : ContentPage
     // Local variables.
     private readonly string cButtonClose;
     private readonly string cErrorTitle;
+    private readonly string cAllowedChar;
+    private readonly string cAllowedCharNot;
     private readonly string cHexColorCodes;
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
 	{
-		InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
+            return;
+        }
 
         // Put text in the chosen language in the controls and variables.
-        //lblTitle.Text = CubeLang.Settings_Text;
+        lblTitle.Text = CubeLang.Settings_Text;
 
-        //lblExplanation.Text = CubeLang.SettingsSaved_Text;
-        //lblLanguage.Text = CubeLang.Language_Text;
-        //lblLanguageSpeech.Text = CubeLang.LanguageSpeech_Text;
-        //lblTheme.Text = CubeLang.Theme_Text;
-        //lblForgroundColor.Text = CubeLang.ForgroundColor_Text;
-        //btnSettingsSave.Text = CubeLang.SettingsSave_Text;
-        //btnSettingsReset.Text = CubeLang.SettingsReset_Text;
+        lblExplanation.Text = CubeLang.SettingsSaved_Text;
+        lblLanguage.Text = CubeLang.Language_Text;
+        lblLanguageSpeech.Text = CubeLang.LanguageSpeech_Text;
+        lblTheme.Text = CubeLang.Theme_Text;
+        lblForgroundColor.Text = CubeLang.ForgroundColor_Text;
+        btnSettingsSave.Text = CubeLang.SettingsSave_Text;
+        btnSettingsReset.Text = CubeLang.SettingsReset_Text;
 
         var ThemeList = new List<string>
         {
-            //CubeLang.ThemeSystem_Text,
-            //CubeLang.ThemeLight_Text,
-            //CubeLang.ThemeDark_Text
+            CubeLang.ThemeSystem_Text,
+            CubeLang.ThemeLight_Text,
+            CubeLang.ThemeDark_Text
         };
         pckTheme.ItemsSource = ThemeList;
 
-        //cButtonClose = CubeLang.ButtonClose_Text;
-        //cErrorTitle = CubeLang.ErrorTitle_Text;
-        //cHexColorCodes = CubeLang.HexColorCodes_Text;
+        cButtonClose = CubeLang.ButtonClose_Text;
+        cErrorTitle = CubeLang.ErrorTitle_Text;
+        cAllowedChar = CubeLang.AllowedChar_Text;
+        cAllowedCharNot = CubeLang.AllowedCharNot_Text;
+        cHexColorCodes = CubeLang.HexColorCodes_Text;
 
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
@@ -80,6 +92,10 @@ public partial class PageSettings : ContentPage
             _ => 0,
         };
 
+        // Set the explaination of text and speech to false or true.
+        swtExplainText.IsToggled = MainPage.bExplainText;
+        swtExplainSpeech.IsToggled = MainPage.bExplainSpeech;
+
         // Workaround for !!!BUG!!! in iOS with the Slider right margin.
 #if IOS
         Slider slider = new Slider
@@ -87,26 +103,23 @@ public partial class PageSettings : ContentPage
             Margin = new Thickness(0, 0, 25, 0)
         };
 
-        //sldOpacityFg.Margin = slider.Margin;
-        sldColorFgRed.Margin = slider.Margin;
-        sldColorFgGreen.Margin = slider.Margin;
-        sldColorFgBlue.Margin = slider.Margin;
+        sldColorRed.Margin = slider.Margin;
+        sldColorGreen.Margin = slider.Margin;
+        sldColorBlue.Margin = slider.Margin;
 #endif
 
-        // Set the current color in the entry and on the sliders.
-        int nOpacity = 0;
+        //Set the current color in the entry and on the sliders.
         int nRed = 0;
         int nGreen = 0;
         int nBlue = 0;
 
-        //entHexColorFg.Text = MainPage.cCodeColorFg;
+        entHexColor.Text = MainPage.cCodeColor1;
 
-        //HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+        HexToRgbColor(MainPage.cCodeColor1, ref nRed, ref nGreen, ref nBlue);
 
-        //sldOpacityFg.Value = nOpacity;
-        sldColorFgRed.Value = nRed;
-        sldColorFgGreen.Value = nGreen;
-        sldColorFgBlue.Value = nBlue;
+        sldColorRed.Value = nRed;
+        sldColorGreen.Value = nGreen;
+        sldColorBlue.Value = nBlue;
 
         // Start the stopWatch for resetting all the settings.
         stopWatch.Start();
@@ -225,6 +238,18 @@ public partial class PageSettings : ContentPage
         }
     }
 
+    // Switch explain text toggled.
+    private void swtExplainText_Toggled(object sender, ToggledEventArgs e)
+    {
+        MainPage.bExplainText = swtExplainText.IsToggled;
+    }
+
+    // Switch explain speech toggled.
+    private void swtExplainSpeech_Toggled(object sender, ToggledEventArgs e)
+    {
+        MainPage.bExplainSpeech = swtExplainSpeech.IsToggled;
+    }
+
     // On entry HexColor text changed event.
     private void EntryHexColorTextChanged(object sender, EventArgs e)
     {
@@ -247,7 +272,7 @@ public partial class PageSettings : ContentPage
 
             if (bResult == false)
             {
-                //DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
                 return false;
             }
         }
@@ -266,39 +291,31 @@ public partial class PageSettings : ContentPage
     {
         var entry = (Entry)sender;
 
-        // Add the opacity if length = 6 characters.
-        if (entry.Text.Length == 6)
-        {
-            entry.Text = "FF" + entry.Text;
-        }
-
-        // Length must be 8 characters.
-        if (entry.Text.Length != 8)
+        // Length must be 6 characters.
+        if (entry.Text.Length != 6)
         {
             entry.Focus();
             return;
         }
 
         // Set the sliders position.
-        int nOpacity = 0;
         int nRed = 0;
         int nGreen = 0;
         int nBlue = 0;
 
-        if (entry == entHexColorFg)
+        if (entry == entHexColor)
         {
-            //MainPage.cCodeColorFg = entHexColorFg.Text;
+            MainPage.cCodeColor1 = entHexColor.Text;
 
-            //HexToRgbColor(MainPage.cCodeColorFg, ref nOpacity, ref nRed, ref nGreen, ref nBlue);
+            HexToRgbColor(MainPage.cCodeColor1, ref nRed, ref nGreen, ref nBlue);
 
-            //sldOpacityFg.Value = nOpacity;
-            sldColorFgRed.Value = nRed;
-            sldColorFgGreen.Value = nGreen;
-            sldColorFgBlue.Value = nBlue;
+            sldColorRed.Value = nRed;
+            sldColorGreen.Value = nGreen;
+            sldColorBlue.Value = nBlue;
         }
 
         // Set focus to the next or save button.
-        if (sender.Equals(entHexColorFg))
+        if (sender.Equals(entHexColor))
         {
             //entHexColorBg.Focus();
         }
@@ -312,54 +329,43 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Slider color barcode forground value change.
-    private void OnSliderColorForgroundValueChanged(object sender, ValueChangedEventArgs args)
+    // Slider color cube value change.
+    private void OnSliderColorValueChanged(object sender, ValueChangedEventArgs args)
     {
-        int nAmountOpacity = 0;
         int nColorRed = 0;
         int nColorGreen = 0;
         int nColorBlue = 0;
 
         var slider = (Slider)sender;
 
-        //if (slider == sldOpacityFg)
-        //{
-        //    nAmountOpacity = (int)args.NewValue;
-        //    nColorRed = (int)sldColorFgRed.Value;
-        //    nColorGreen = (int)sldColorFgGreen.Value;
-        //    nColorBlue = (int)sldColorFgBlue.Value;
-        //}
-        //else if (slider == sldColorFgRed)
-        //{
-        //    nAmountOpacity = (int)sldOpacityFg.Value;
-        //    nColorRed = (int)args.NewValue;
-        //    nColorGreen = (int)sldColorFgGreen.Value;
-        //    nColorBlue = (int)sldColorFgBlue.Value;
-        //}
-        //else if (slider == sldColorFgGreen)
-        //{
-        //    nAmountOpacity = (int)sldOpacityFg.Value;
-        //    nColorRed = (int)sldColorFgRed.Value;
-        //    nColorGreen = (int)args.NewValue;
-        //    nColorBlue = (int)sldColorFgBlue.Value;
-        //}
-        //else if (slider == sldColorFgBlue)
-        //{
-        //    nAmountOpacity = (int)sldOpacityFg.Value;
-        //    nColorRed = (int)sldColorFgRed.Value;
-        //    nColorGreen = (int)sldColorFgGreen.Value;
-        //    nColorBlue = (int)args.NewValue;
-        //}
+        if (slider == sldColorRed)
+        {
+            nColorRed = (int)args.NewValue;
+            nColorGreen = (int)sldColorGreen.Value;
+            nColorBlue = (int)sldColorBlue.Value;
+        }
+        else if (slider == sldColorGreen)
+        {
+            nColorRed = (int)sldColorRed.Value;
+            nColorGreen = (int)args.NewValue;
+            nColorBlue = (int)sldColorBlue.Value;
+        }
+        else if (slider == sldColorBlue)
+        {
+            nColorRed = (int)sldColorRed.Value;
+            nColorGreen = (int)sldColorGreen.Value;
+            nColorBlue = (int)args.NewValue;
+        }
 
-        //string cColorFgHex = nAmountOpacity.ToString("X2") + nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
-        //entHexColorFg.Text = cColorFgHex;
-        //bxvColorFg.Color = Color.FromArgb(cColorFgHex);
+        string cColorFgHex = nColorRed.ToString("X2") + nColorGreen.ToString("X2") + nColorBlue.ToString("X2");
+        entHexColor.Text = cColorFgHex;
+        bxvColorFg.Color = Color.FromArgb(cColorFgHex);
 
-        //MainPage.cCodeColorFg = cColorFgHex;
+        MainPage.cCodeColor1 = cColorFgHex;
     }
 
-    // Convert OORRGGBB Hex color to RGB color.
-    private static void HexToRgbColor(string cHexColor, ref int nOpacity, ref int nRed, ref int nGreen, ref int nBlue)
+    // Convert RRGGBB Hex color to RGB color.
+    private static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
     {
         // Remove leading # if present.
         if (cHexColor[..1] == "#")
@@ -367,10 +373,9 @@ public partial class PageSettings : ContentPage
             cHexColor = cHexColor[1..];
         }
 
-        nOpacity = int.Parse(cHexColor[..2], NumberStyles.AllowHexSpecifier);
-        nRed = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
-        nGreen = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
-        nBlue = int.Parse(cHexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
+        nRed = int.Parse(cHexColor[..2], NumberStyles.AllowHexSpecifier);
+        nGreen = int.Parse(cHexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+        nBlue = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
     }
 
     // Button save settings clicked event.
@@ -379,6 +384,9 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingTheme", MainPage.cTheme);
         Preferences.Default.Set("SettingLanguage", MainPage.cLanguage);
         Preferences.Default.Set("SettingLanguageSpeech", MainPage.cLanguageSpeech);
+        Preferences.Default.Set("SettingExplainText", MainPage.bExplainText);
+        Preferences.Default.Set("SettingExplainSpeech", MainPage.bExplainSpeech);
+        Preferences.Default.Set("SettingCodeColor1", MainPage.cCodeColor1);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
@@ -403,12 +411,11 @@ public partial class PageSettings : ContentPage
         {
             // Reset some settings.
             Preferences.Default.Remove("SettingTheme");
-            Preferences.Default.Remove("SettingFormatGeneratorIndex");
-            Preferences.Default.Remove("SettingFormatScannerIndex");
-            Preferences.Default.Remove("SettingCodeColorFg");
-            Preferences.Default.Remove("SettingCodeColorBg");
             Preferences.Default.Remove("SettingLanguage");
             Preferences.Default.Remove("SettingLanguageSpeech");
+            Preferences.Default.Remove("SettingExplainText");
+            Preferences.Default.Remove("SettingExplainSpeech");
+            Preferences.Default.Remove("SettingCodeColor1");
         }
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
