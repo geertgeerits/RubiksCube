@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
              x:Class="RubiksCube.PageSettings"
              Title="PageSettings">
 
@@ -8,7 +9,7 @@
         <Label
             x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
-            Text="Settings" />
+            Text="{x:Static resx:CubeLang.Settings_Text}" />
     </NavigationPage.TitleView>
 
     <Grid
@@ -44,14 +45,14 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Text="Some changed settings must be saved in order to apply them." />
+                    Text="{x:Static resx:CubeLang.SettingsSaved_Text}" />
 
                 <Label
                     x:Name="lblLanguage"
                     Grid.Row="1"
                     Grid.Column="0"
                     VerticalTextAlignment="Center"
-                    Text="Language:" />
+                    Text="{x:Static resx:CubeLang.Language_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -91,7 +92,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Language speech:" />
+                    Text="{x:Static resx:CubeLang.LanguageSpeech_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -120,7 +121,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalTextAlignment="Center"
-                    Text="Theme:" />
+                    Text="{x:Static resx:CubeLang.Theme_Text}" />
 
                 <Border
                     Style="{StaticResource borderStyleDefault}"
@@ -156,7 +157,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     VerticalOptions="Center"
-                    Text="Explained by text:">
+                    Text="{x:Static resx:CubeLang.ExplainedByText_Text}">
                 </Label>
 
                 <Switch
@@ -173,7 +174,7 @@
                     Grid.Row="5"
                     Grid.Column="0"
                     VerticalOptions="Center"
-                    Text="Explained by speech:">
+                    Text="{x:Static resx:CubeLang.ExplainedBySpeech_Text}">
                 </Label>
 
                 <Switch
@@ -190,7 +191,7 @@
                     Grid.Row="6"
                     Grid.Column="0"
                     VerticalOptions="Center"
-                    Text="Cube colors:">
+                    Text="{x:Static resx:CubeLang.CubeColors_Text}">
                 </Label>
 
                 <HorizontalStackLayout
@@ -370,7 +371,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalOptions="Start"
-            Text="Save"
+            Text="{x:Static resx:CubeLang.SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked" />
 
         <Button
@@ -379,7 +380,7 @@
             Grid.Row="1"
             Grid.Column="1"
             HorizontalOptions="End"
-            Text="Reset"
+            Text="{x:Static resx:CubeLang.SettingsReset_Text}"
             Clicked="OnSettingsResetClicked" />
 
     </Grid>

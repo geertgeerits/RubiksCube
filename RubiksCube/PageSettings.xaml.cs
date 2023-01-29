@@ -28,16 +28,6 @@ public partial class PageSettings : ContentPage
         }
 
         // Put text in the chosen language in the controls and variables.
-        lblTitle.Text = CubeLang.Settings_Text;
-
-        lblExplanation.Text = CubeLang.SettingsSaved_Text;
-        lblLanguage.Text = CubeLang.Language_Text;
-        lblLanguageSpeech.Text = CubeLang.LanguageSpeech_Text;
-        lblTheme.Text = CubeLang.Theme_Text;
-        lblCubeColors.Text = CubeLang.CubeColors_Text;
-        btnSettingsSave.Text = CubeLang.SettingsSave_Text;
-        btnSettingsReset.Text = CubeLang.SettingsReset_Text;
-
         var ThemeList = new List<string>
         {
             CubeLang.ThemeSystem_Text,
@@ -156,7 +146,7 @@ public partial class PageSettings : ContentPage
 
                 // English.
                 _ => "en",
-            };
+            };           
         }
 
         if (cLanguageOld != MainPage.cLanguage)

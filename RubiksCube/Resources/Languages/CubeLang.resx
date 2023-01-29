@@ -151,15 +151,6 @@ You can always contact me for any corrections.</value>
   <data name="CloseApplication_Text" xml:space="preserve">
     <value>Please close the application.</value>
   </data>
-  <data name="CodeLengthPart1_Text" xml:space="preserve">
-    <value>The code should be</value>
-  </data>
-  <data name="CodeLengthPart2_Text" xml:space="preserve">
-    <value>(without checksum digit) or</value>
-  </data>
-  <data name="CodeLengthPart3_Text" xml:space="preserve">
-    <value>digits long.</value>
-  </data>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contact:</value>
   </data>
@@ -207,6 +198,12 @@ You can always contact me for any corrections.</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="ExplainedBySpeech_Text" xml:space="preserve">
+    <value>Explained by speech:</value>
+  </data>
+  <data name="ExplainedByText_Text" xml:space="preserve">
+    <value>Explained by text:</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimal color codes:

@@ -21,10 +21,6 @@ public partial class PageAbout : ContentPage
         }
 
         // Put text in the chosen language in the controls.
-        lblTitle.Text = CubeLang.About_Text;
-
-        lblNameProgram.Text = CubeLang.NameProgram_Text;
-        lblDescription.Text = CubeLang.Description_Text;
         lblVersion.Text = CubeLang.Version_Text + " 2.0.10";
         lblCopyright.Text = CubeLang.Copyright_Text + " © 1981-2023 Geert Geerits";
         lblEmail.Text = CubeLang.Email_Text + " " + lblEmail.Text;
@@ -33,7 +29,6 @@ public partial class PageAbout : ContentPage
         lblLicense.Text = CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
         //lblLicenseMit.Text = CubeLang.Copyright_Text + " © " + CubeLang.LicenseMit_Text + "\n\n" + CubeLang.LicenseMit2_Text;
         lblLicenseMit.Text = CubeLang.Copyright_Text + " © " + CubeLang.LicenseMit2_Text;
-        lblAboutExplanation.Text = CubeLang.AboutExplanation_Text;
 
         cButtonClose = CubeLang.ButtonClose_Text;
         cErrorTitle = CubeLang.ErrorTitle_Text;

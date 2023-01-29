@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
              x:Class="RubiksCube.PageAbout"
              Title="PageAbout">
 
@@ -8,7 +9,7 @@
         <Label
         x:Name="lblTitle"
         Style="{StaticResource labelStyleShellTitleView}"
-        Text="About" />
+        Text="{x:Static resx:CubeLang.About_Text}" />
     </NavigationPage.TitleView>
 
     <ScrollView>
@@ -17,7 +18,7 @@
                 x:Name="lblNameProgram"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Rubik's Cube"
+                Text="{x:Static resx:CubeLang.NameProgram_Text}"
                 FontSize="20"
                 FontAttributes="Bold" />
 
@@ -25,7 +26,7 @@
                 x:Name="lblDescription"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Solve the cube." />
+                Text="{x:Static resx:CubeLang.Description_Text}" />
 
                 <Label
                 x:Name="lblVersion"
@@ -109,9 +110,7 @@
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
                     FontSize="13"
-                    Text="Google Translate was used for the translation of the text.  This is not a guarantee that all translations are correct.
-                          &#10;The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
-                          &#10; &#10;You can always contact me for any corrections.">
+                    Text="{x:Static resx:CubeLang.AboutExplanation_Text}">
                 </Label>
 
         </StackLayout>

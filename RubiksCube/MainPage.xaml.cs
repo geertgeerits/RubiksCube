@@ -49,8 +49,6 @@ public partial class MainPage : ContentPage
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
-
-    // Variables for colors.
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "FFD000";       // Light orange
 
@@ -60,6 +58,9 @@ public partial class MainPage : ContentPage
     //private readonly int[] aLeft = new int[9];
     //private readonly int[] aBack = new int[9];
     //private readonly int[] aBottom = new int[9];
+
+    //public LocalizationResourceManager LocalizationResourceManager
+    //=> LocalizationResourceManager.Instance;
 
     public MainPage()
 	{
@@ -1899,6 +1900,8 @@ public partial class MainPage : ContentPage
                 //Thread.CurrentThread.Abort();  // Not allowed in iOS.
                 imgbtnAbout.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
+                BtnSolve.IsEnabled = false;
+                BtnReset.IsEnabled= false;
 
                 await DisplayAlert(cLicenseTitle, cCloseApplication, cButtonClose);
 #else
@@ -1918,20 +1921,16 @@ public partial class MainPage : ContentPage
 
             //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
         }
-
-        //lblTextToSpeech.Text = GetIsoLanguageCode();
     }
 
     // Put text in the chosen language in the controls.
     private void SetTextLanguage()
     {
-        //cLanguage = "es";  // For testing.
+        //cLanguage = "nl";  // For testing.
         //App.Current.MainPage.DisplayAlert("cLanguage", cLanguage, "OK");  // For testing.
 
         // Set the current UI culture of the selected language.
         SetCultureSelectedLanguage();
-
-        lblTitle.Text = CubeLang.RubiksCube_Text;
 
         cButtonClose = CubeLang.ButtonClose_Text;
         cErrorTitle = CubeLang.ErrorTitle_Text;
@@ -1942,7 +1941,6 @@ public partial class MainPage : ContentPage
         cCloseApplication = CubeLang.CloseApplication_Text;
         cTextToSpeechError = CubeLang.TextToSpeechError_Text;
 
-
         //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
     }
 
@@ -1951,7 +1949,16 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cLanguage);
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cLanguage);
+
+            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cLanguage);
+            //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cLanguage);
+
+            var switchToCulture = CubeLang.Culture.TwoLetterISOLanguageName
+                .Equals("nl", StringComparison.InvariantCultureIgnoreCase) ?
+                new CultureInfo(cLanguage) : new CultureInfo(cLanguage);
+
+            LocalizationResourceManager.Instance.SetCulture(switchToCulture);
         }
         catch
         {
@@ -2003,8 +2010,6 @@ public partial class MainPage : ContentPage
             SearchArrayWithSpeechLanguages(cCultureName);
         }
         //await DisplayAlert("cLanguageSpeech", cLanguageSpeech, "OK");  // For testing.
-
-        //lblTextToSpeech.Text = GetIsoLanguageCode();
     }
 
     // Search for the language after a first start or reset of the application.
