@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
              x:Class="RubiksCube.MainPage"
              NavigationPage.HasBackButton="False">
     
@@ -27,7 +28,7 @@
                 Style="{StaticResource labelStyleShellTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
-                Text="Rubik's Cube">
+                Text="{x:Static resx:CubeLang.NameProgram_Text}">
             </Label>
 
             <ImageButton
@@ -142,7 +143,7 @@
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
                     TextDecorations="Underline"
-                    Text="Outside view">
+                    Text="{x:Static resx:CubeLang.CubeOutsideView_Text}">
                 </Label>
 
                 <Label
@@ -151,7 +152,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalTextAlignment="End"
-                    Text="Top">
+                    Text="{x:Static resx:CubeLang.CubeTopSide_Text}">
                 </Label>
 
                 <HorizontalStackLayout
@@ -163,7 +164,7 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
-                        ToolTipProperties.Text="Turn the front side 'clockwise' (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnFrontSideToRight_Text}"
                         Clicked="imgbtnTurnFrontSideToRight_Clicked">
                     </ImageButton>
 
@@ -173,7 +174,7 @@
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
-                        ToolTipProperties.Text="Turn the top middle to the right side (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnTopMiddleToRightSide_Text}"
                         Clicked="imgbtnTurnTopMiddleToRightSide_Clicked">
                     </ImageButton>
 
@@ -183,7 +184,7 @@
                         Margin="20,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
-                        ToolTipProperties.Text="Turn the back side 'counter clockwise' (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnBackSideToLeft_Text}"
                         Clicked="imgbtnTurnBackSideToLeft_Clicked">
                     </ImageButton>
 
@@ -193,7 +194,7 @@
                         VerticalOptions="End"
                         Margin="40,0,0,0"
                         Source="arrow_down_left_32p.png"
-                        ToolTipProperties.Text="Turn the left side 'clockwise' (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnLeftSideToRight_Text}"
                         Clicked="imgbtnTurnLeftSideToRight_Clicked">
                     </ImageButton>
 
@@ -203,7 +204,7 @@
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
-                        ToolTipProperties.Text="Turn the top middle to the front side (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnTopMiddleToFrontSide_Text}"
                         Clicked="imgbtnTurnTopMiddleToFrontSide_Clicked">
                     </ImageButton>
 
@@ -213,7 +214,7 @@
                         Margin="30,0,0,0"
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
-                        ToolTipProperties.Text="Turn the right side 'counter clockwise' (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnRightSideToLeft_Text}"
                         Clicked="imgbtnTurnRightSideToLeft_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
@@ -228,7 +229,7 @@
                         Margin="0,82,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
-                        ToolTipProperties.Text="Turn the top side 'counter clockwise' (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnTopSideToLeft_Text}"
                         Clicked="imgbtnTurnTopSideToLeft_Clicked">
                     </ImageButton>
 
@@ -238,7 +239,7 @@
                         Margin="0,28,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
-                        ToolTipProperties.Text="Turn the front middle to the right side (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnFrontMiddleToRightSide_Text}"
                         Clicked="imgbtnTurnFrontMiddleToRightSide_Clicked">
                     </ImageButton>
 
@@ -248,7 +249,7 @@
                         Margin="0,29,0,0"
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
-                        ToolTipProperties.Text="Turn the bottom side 'clockwise' (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnBottomSideToRight_Text}"
                         Clicked="imgbtnTurnBottomSideToRight_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
@@ -263,7 +264,7 @@
                         Margin="5,46,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
-                        ToolTipProperties.Text="Turn the top side 'clockwise' (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnTopSideToRight_Text}"
                         Clicked="imgbtnTurnTopSideToRight_Clicked">
                     </ImageButton>
 
@@ -273,7 +274,7 @@
                         Margin="5,29,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
-                        ToolTipProperties.Text="Turn the right middle to the front side (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnRightMiddleToFrontSide_Text}"
                         Clicked="imgbtnTurnRightMiddleToFrontSide_Clicked">
                     </ImageButton>
 
@@ -283,7 +284,7 @@
                         Margin="5,31,0,0"
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
-                        ToolTipProperties.Text="Turn the bottom side 'counter clockwise' (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnBottomSideToLeft_Text}"
                         Clicked="imgbtnTurnBottomSideToLeft_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
@@ -298,7 +299,7 @@
                         Margin="16,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the left side 'counter clockwise' (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnLeftSideToLeft_Text}"
                         Clicked="imgbtnTurnLeftSideToLeft_Clicked">
                     </ImageButton>
 
@@ -308,7 +309,7 @@
                         Margin="26,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the front middle to the top side (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnFrontMiddleToTopSide_Text}"
                         Clicked="imgbtnTurnFrontMiddleToTopSide_Clicked">
                     </ImageButton>
 
@@ -318,7 +319,7 @@
                         Margin="30,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the right side 'clockwise' (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnRightSideToRight_Text}"
                         Clicked="imgbtnTurnRightSideToRight_Clicked">
                     </ImageButton>
 
@@ -328,7 +329,7 @@
                         Margin="34,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the front side 'counter clockwise' (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnFrontSideToLeft_Text}"
                         Clicked="imgbtnTurnFrontSideToLeft_Clicked">
                     </ImageButton>
 
@@ -338,7 +339,7 @@
                         Margin="22,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the right middle to the top side (-)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnRightMiddleToTopSide_Text}"
                         Clicked="imgbtnTurnRightMiddleToTopSide_Clicked">
                     </ImageButton>
 
@@ -348,7 +349,7 @@
                         Margin="20,0,0,0"
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="Turn the back side 'clockwise' (+)"
+                        ToolTipProperties.Text="{x:Static resx:CubeLang.TurnBackSideToRight_Text}"
                         Clicked="imgbtnTurnBackSideToRight_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
@@ -359,7 +360,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Start"
                     VerticalTextAlignment="Start"
-                    Text="Front">
+                    Text="{x:Static resx:CubeLang.CubeFrontSide_Text}">
                 </Label>
 
                 <Label
@@ -368,7 +369,7 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalTextAlignment="Start"
-                    Text="Right">
+                    Text="{x:Static resx:CubeLang.CubeRightSide_Text}">
                 </Label>
 
                 <VerticalStackLayout
@@ -691,7 +692,7 @@
                     HorizontalOptions="Start"
                     VerticalTextAlignment="End"
                     TextDecorations="Underline"
-                    Text="Inside view">
+                    Text="{x:Static resx:CubeLang.CubeInsideView_Text}">
                 </Label>
 
                 <Label
@@ -700,7 +701,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Start"
                     VerticalTextAlignment="End"
-                    Text="Left">
+                    Text="{x:Static resx:CubeLang.CubeLeftSide_Text}">
                 </Label>
 
                 <Label
@@ -709,7 +710,7 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalTextAlignment="End"
-                    Text="Back">
+                    Text="{x:Static resx:CubeLang.CubeBackSide_Text}">
                 </Label>
 
                 <VerticalStackLayout
@@ -1021,7 +1022,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="Bottom">
+                    Text="{x:Static resx:CubeLang.CubeBottomSide_Text}">
                 </Label>
             </Grid>
         </ScrollView>
@@ -1032,7 +1033,7 @@
             Grid.Column="1"
             HorizontalOptions="Start"
             WidthRequest="100"
-            Text="Solve"
+            Text="{x:Static resx:CubeLang.ButtonSolve_Text}"
             Clicked="OnBtnSolveClicked">
         </Button>
 
@@ -1042,7 +1043,7 @@
             Grid.Column="1"
             HorizontalOptions="End"
             WidthRequest="100"
-            Text="Reset"
+            Text="{x:Static resx:CubeLang.ButtonReset_Text}"
             Clicked="OnBtnResetClicked">
         </Button>
     </Grid>

@@ -119,6 +119,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        internal static string ButtonReset_Text {
+            get {
+                return ResourceManager.GetString("ButtonReset_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solve.
+        /// </summary>
+        internal static string ButtonSolve_Text {
+            get {
+                return ResourceManager.GetString("ButtonSolve_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please close the application..
         /// </summary>
         internal static string CloseApplication_Text {
@@ -173,11 +191,83 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string CubeBackSide_Text {
+            get {
+                return ResourceManager.GetString("CubeBackSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string CubeBottomSide_Text {
+            get {
+                return ResourceManager.GetString("CubeBottomSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cube colors:.
         /// </summary>
         internal static string CubeColors_Text {
             get {
                 return ResourceManager.GetString("CubeColors_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Front.
+        /// </summary>
+        internal static string CubeFrontSide_Text {
+            get {
+                return ResourceManager.GetString("CubeFrontSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inside view.
+        /// </summary>
+        internal static string CubeInsideView_Text {
+            get {
+                return ResourceManager.GetString("CubeInsideView_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        internal static string CubeLeftSide_Text {
+            get {
+                return ResourceManager.GetString("CubeLeftSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outside view.
+        /// </summary>
+        internal static string CubeOutsideView_Text {
+            get {
+                return ResourceManager.GetString("CubeOutsideView_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        internal static string CubeRightSide_Text {
+            get {
+                return ResourceManager.GetString("CubeRightSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        internal static string CubeTopSide_Text {
+            get {
+                return ResourceManager.GetString("CubeTopSide_Text", resourceCulture);
             }
         }
         

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-28 (YYYY-MM-DD)
+// Date ........: 2023-01-29 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -949,7 +949,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontSideTo("+");
-        ExplainTurnCube("Turn the front side 'clockwise' (+).");
+        ExplainTurnCube(CubeLang.TurnFrontSideToRight_Text);
         imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -958,7 +958,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopMiddleTo("+");
-        ExplainTurnCube("Turn the top middle to the right side (+).");
+        ExplainTurnCube(CubeLang.TurnTopMiddleToRightSide_Text);
         imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -967,7 +967,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBackSideTo("-");
-        ExplainTurnCube("Turn the back side 'counter clockwise' (-).");
+        ExplainTurnCube(CubeLang.TurnBackSideToLeft_Text);
         imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -976,7 +976,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnLeftSideTo("+");
-        ExplainTurnCube("Turn the left side 'clockwise' (+).");
+        ExplainTurnCube(CubeLang.TurnLeftSideToRight_Text);
         imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -985,7 +985,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontTopMiddleTo("-");
-        ExplainTurnCube("Turn the top middle to the front side (-).");
+        ExplainTurnCube(CubeLang.TurnTopMiddleToFrontSide_Text);
         imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -994,7 +994,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnRightSideTo("-");
-        ExplainTurnCube("Turn the right side 'counter clockwise' (-).");
+        ExplainTurnCube(CubeLang.TurnRightSideToLeft_Text);
         imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1003,7 +1003,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopSideTo("-");
-        ExplainTurnCube("Turn the top side 'counter clockwise' (-).");
+        ExplainTurnCube(CubeLang.TurnTopSideToLeft_Text);
         imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1012,7 +1012,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnHorizontalMiddleLayerTo("-");
-        ExplainTurnCube("Turn the front middle to the right side (-).");
+        ExplainTurnCube(CubeLang.TurnFrontMiddleToRightSide_Text);
         imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1021,7 +1021,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBottomSideTo("+");
-        ExplainTurnCube("Turn the bottom side 'clockwise' (+).");
+        ExplainTurnCube(CubeLang.TurnBottomSideToRight_Text);
         imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1030,7 +1030,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopSideTo("+");
-        ExplainTurnCube("Turn the top side 'clockwise' (+).");
+        ExplainTurnCube(CubeLang.TurnTopSideToRight_Text);
         imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1039,7 +1039,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnHorizontalMiddleLayerTo("+");
-        ExplainTurnCube("Turn the right middle to the front side (+).");
+        ExplainTurnCube(CubeLang.TurnRightMiddleToFrontSide_Text);
         imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1048,7 +1048,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBottomSideTo("-");
-        ExplainTurnCube("Turn the bottom side 'counter clockwise' (-).");
+        ExplainTurnCube(CubeLang.TurnBottomSideToLeft_Text);
         imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1057,7 +1057,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnLeftSideTo("-");
-        ExplainTurnCube("Turn the left side 'counter clockwise' (-).");
+        ExplainTurnCube(CubeLang.TurnLeftSideToLeft_Text);
         imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1066,7 +1066,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontTopMiddleTo("+");
-        ExplainTurnCube("Turn the front middle to the top side (+).");
+        ExplainTurnCube(CubeLang.TurnFrontMiddleToTopSide_Text);
         imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1075,7 +1075,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnRightSideTo("+");
-        ExplainTurnCube("Turn the right side 'clockwise' (+).");
+        ExplainTurnCube(CubeLang.TurnRightSideToRight_Text);
         imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1084,7 +1084,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontSideTo("-");
-        ExplainTurnCube("Turn the front side 'counter clockwise' (-).");
+        ExplainTurnCube(CubeLang.TurnFrontSideToLeft_Text);
         imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1093,7 +1093,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopMiddleTo("-");
-        ExplainTurnCube("Turn the right middle to the top side (-).");
+        ExplainTurnCube(CubeLang.TurnRightMiddleToTopSide_Text);
         imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1102,7 +1102,7 @@ public partial class MainPage : ContentPage
     {
         imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBackSideTo("+");
-        ExplainTurnCube("Turn the back side 'clockwise' (+).");
+        ExplainTurnCube(CubeLang.TurnBackSideToRight_Text);
         imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
@@ -1942,24 +1942,6 @@ public partial class MainPage : ContentPage
         cCloseApplication = CubeLang.CloseApplication_Text;
         cTextToSpeechError = CubeLang.TextToSpeechError_Text;
 
-//        imgbtnTurnFrontSideToRight.ToolTipProperties.Text = CubeLang.TurnFrontSideToRight_Text;
-//        TurnTopMiddleToRightSide_Text
-//TurnBackSideToLeft_Text
-//TurnLeftSideToRight_Text
-//TurnTopMiddleToFrontSide_Text
-//TurnRightSideToLeft_Text
-//TurnTopSideToLeft_Text
-//TurnFrontMiddleToRightSide_Text
-//TurnBottomSideToRight_Text
-//TurnTopSideToRight_Text
-//TurnRightMiddleToFrontSide_Text
-//TurnBottomSideToLeft_Text
-//TurnLeftSideToLeft_Text
-//TurnFrontMiddleToTopSide_Text
-//TurnRightSideToRight_Text
-//TurnFrontSideToLeft_Text
-//TurnRightMiddleToTopSide_Text
-//TurnBackSideToRight_Text
 
         //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
     }

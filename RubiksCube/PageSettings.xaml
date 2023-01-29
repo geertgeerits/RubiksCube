@@ -27,8 +27,8 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40"
-                ColumnDefinitions="150, 150, 40*"
+                RowDefinitions="Auto, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40"
+                ColumnDefinitions="150, 190*"
                 Margin="0"
                 ColumnSpacing="8"
                 RowSpacing="4">
@@ -36,14 +36,14 @@
                 <BoxView
                     Grid.Row="0"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"/>
+                    Grid.ColumnSpan="2"/>
 
                 <Label
                     x:Name="lblExplanation"
                     Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     Text="Some changed settings must be saved in order to apply them." />
 
                 <Label
@@ -193,39 +193,39 @@
                     Text="Cube colors:">
                 </Label>
 
-                <Button
-                    Style="{StaticResource buttonStyleHelp}"
-                    Grid.Row="6"
-                    Grid.Column="2"
-                    HorizontalOptions="Start"
-                    Clicked="OnSettingsHexColorClicked"/>
-
-                <Border
-                    Style="{StaticResource borderStyleDefault}"
+                <HorizontalStackLayout
                     Grid.Row="6"
                     Grid.Column="1"
-                    WidthRequest="140"
-                    HorizontalOptions="Start">
+                    Spacing="10">
 
-                    <Entry
-                        x:Name="entHexColor"
-                        Grid.Row="6"
-                        Grid.Column="1"
+                    <Border
+                        Style="{StaticResource borderStyleDefault}"
+                        WidthRequest="130"
+                        HorizontalOptions="Start">
+
+                        <Entry
+                            x:Name="entHexColor"
+                            HorizontalOptions="Start"
+                            WidthRequest="130"
+                            ClearButtonVisibility="WhileEditing"
+                            Keyboard="Text"
+                            ReturnType="Next"
+                            Completed="EntryHexColorUnfocused"
+                            MaxLength="6"
+                            TextChanged="EntryHexColorTextChanged"
+                            Unfocused="EntryHexColorUnfocused" />
+                    </Border>
+
+                    <Button
+                        Style="{StaticResource buttonStyleHelp}"
                         HorizontalOptions="Start"
-                        WidthRequest="140"
-                        ClearButtonVisibility="WhileEditing"
-                        Keyboard="Text"
-                        ReturnType="Next"
-                        Completed="EntryHexColorUnfocused"
-                        MaxLength="6"
-                        TextChanged="EntryHexColorTextChanged"
-                        Unfocused="EntryHexColorUnfocused" />
-                </Border>
+                        Clicked="OnSettingsHexColorClicked"/>
+                </HorizontalStackLayout>
 
                 <HorizontalStackLayout
                     Grid.Row="7"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     BackgroundColor="Gray"
                     Padding="5"
                     Spacing="20"
@@ -273,7 +273,7 @@
                 <HorizontalStackLayout
                     Grid.Row="8"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     Padding="5"
                     Spacing="20"
                     HorizontalOptions="Center"
@@ -335,7 +335,7 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="9"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     ThumbColor="#FF0000"
                     MinimumTrackColor="#FF0000"
                     ValueChanged="OnSliderColorValueChanged" />
@@ -345,7 +345,7 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="10"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     ThumbColor="#00FF00"
                     MinimumTrackColor="#00FF00"
                     ValueChanged="OnSliderColorValueChanged" />
@@ -355,7 +355,7 @@
                     Style="{StaticResource sliderStyleColor}"
                     Grid.Row="11"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.ColumnSpan="2"
                     ThumbColor="#0000FF"
                     MinimumTrackColor="#0000FF"
                     ValueChanged="OnSliderColorValueChanged" />
