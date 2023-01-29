@@ -253,7 +253,8 @@ Gebruik dit programma geheel op eigen risico.</value>
     <value>Reset</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Sommige gewijzigde instellingen moeten worden opgeslagen om ze toe te passen.</value>
+    <value>Sommige gewijzigde instellingen moeten worden opgeslagen om ze toe te passen.
+Na het bewaren wordt de toepassing opnieuw opgestart en wordt de kubus gereset.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Opslaan</value>

@@ -1949,15 +1949,7 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cLanguage);
-
-            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cLanguage);
-            //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cLanguage);
-
-            var switchToCulture = CubeLang.Culture.TwoLetterISOLanguageName
-                .Equals("nl", StringComparison.InvariantCultureIgnoreCase) ?
-                new CultureInfo(cLanguage) : new CultureInfo(cLanguage);
-
+            var switchToCulture = new CultureInfo(cLanguage);
             LocalizationResourceManager.Instance.SetCulture(switchToCulture);
         }
         catch

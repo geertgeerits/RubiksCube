@@ -20,15 +20,13 @@ public partial class PageAbout : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls.
+        // Put text in the chosen language in the controls and variables.
         lblVersion.Text = CubeLang.Version_Text + " 2.0.10";
         lblCopyright.Text = CubeLang.Copyright_Text + " © 1981-2023 Geert Geerits";
-        lblEmail.Text = CubeLang.Email_Text + " " + lblEmail.Text;
-        lblWebsite.Text = CubeLang.Website_Text + " " + lblWebsite.Text;
+        lblEmail.Text = CubeLang.Email_Text + " geertgeerits@gmail.com";
+        lblWebsite.Text = CubeLang.Website_Text + " ../rubikscube";
         lblPrivacyPolicy.Text = CubeLang.PrivacyPolicyTitle_Text + " " + CubeLang.PrivacyPolicy_Text;
         lblLicense.Text = CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
-        //lblLicenseMit.Text = CubeLang.Copyright_Text + " © " + CubeLang.LicenseMit_Text + "\n\n" + CubeLang.LicenseMit2_Text;
-        lblLicenseMit.Text = CubeLang.Copyright_Text + " © " + CubeLang.LicenseMit2_Text;
 
         cButtonClose = CubeLang.ButtonClose_Text;
         cErrorTitle = CubeLang.ErrorTitle_Text;

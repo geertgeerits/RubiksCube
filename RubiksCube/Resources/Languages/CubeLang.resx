@@ -253,7 +253,8 @@ Use this program entirely at your own risk.</value>
     <value>Reset</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Some changed settings must be saved in order to apply them.
+After saving, the application is restarted and the cube is reset.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
     <value>Save</value>

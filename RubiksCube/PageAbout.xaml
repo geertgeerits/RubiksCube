@@ -7,111 +7,127 @@
 
     <NavigationPage.TitleView>
         <Label
-        x:Name="lblTitle"
-        Style="{StaticResource labelStyleShellTitleView}"
-        Text="{x:Static resx:CubeLang.About_Text}" />
+            x:Name="lblTitle"
+            Style="{StaticResource labelStyleShellTitleView}"
+            Text="{x:Static resx:CubeLang.About_Text}">
+        </Label>
     </NavigationPage.TitleView>
 
     <ScrollView>
-        <StackLayout Margin="15" Spacing="4">
+        <StackLayout
+            Margin="15"
+            Spacing="4">
+            
             <Label
                 x:Name="lblNameProgram"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 Text="{x:Static resx:CubeLang.NameProgram_Text}"
                 FontSize="20"
-                FontAttributes="Bold" />
+                FontAttributes="Bold">
+            </Label>
 
-                <Label
+            <Label
                 x:Name="lblDescription"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="{x:Static resx:CubeLang.Description_Text}" />
+                Text="{x:Static resx:CubeLang.Description_Text}">
+            </Label>
 
-                <Label
+            <Label
                 x:Name="lblVersion"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Version: 2.0.10" />
+                Text="Version:">
+            </Label>
 
-                <Label
+            <Label
                 x:Name="lblCopyright"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
-                Text="Copyright © 1981-2023 Geert Geerits" />
+                Text="Copyright ©">
+            </Label>
 
-                <HorizontalStackLayout Spacing="10">
-                    <Label
+            <HorizontalStackLayout
+                Spacing="10">
+                
+                <Label
                     x:Name="lblEmail"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
-                    Text="geertgeerits@gmail.com"/>
+                    Text="E-mail:">
+                </Label>
 
-                    <ImageButton
+                <ImageButton
                     Source="circled_envelope_24p.png"                         
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     HeightRequest="24"
                     WidthRequest="24"
                     Clicked="OnbtnEmailLinkClicked">
-                    </ImageButton>
-                </HorizontalStackLayout>
+                </ImageButton>
+            </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="10">
-                    <Label
+            <HorizontalStackLayout
+                Spacing="10">
+                
+                <Label
                     x:Name="lblWebsite"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start"
-                    Text="../rubikscube"/>
+                    Text="Website:">
+                </Label>
 
-                    <ImageButton
+                <ImageButton
                     Source="internet_24p.png"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     HeightRequest="24"
                     WidthRequest="24"
                     Clicked="OnbtnWebsiteLinkClicked">
-                    </ImageButton>
-                </HorizontalStackLayout>
+                </ImageButton>
+            </HorizontalStackLayout>
 
-                <Label></Label>
+            <Label></Label>
 
-                <Label
-                    x:Name="lblPrivacyPolicy"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Start"
-                    FontSize="13"
-                    Text="Privacy Policy: No personal and other data is stored or passed on to myself and others." />
+            <Label
+                x:Name="lblPrivacyPolicy"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="Privacy Policy: No personal and other data is stored or passed on to myself and others.">
+            </Label>
 
-                <Label></Label>
+            <Label></Label>
 
-                <Label
-                    x:Name="lblLicense"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Start"
-                    FontSize="13"
-                    Text="License: This application may be used freely for non-commercial purposes.
-                          &#10; &#10;Use this program entirely at your own risk." />
+            <Label
+                x:Name="lblLicense"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="License: This application may be used freely for non-commercial purposes.
+                      &#10; &#10;Use this program entirely at your own risk.">
+            </Label>
 
-                <Label></Label>
+            <Label></Label>
 
-                <Label
-                    x:Name="lblLicenseMit"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Start"
-                    FontSize="13"
-                    Text="This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
-                          &#10;The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981." />
+            <Label
+                x:Name="lblLicenseMit"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="{x:Static resx:CubeLang.LicenseMit2_Text}">
+            </Label>
 
-                <Label></Label>
+            <Label></Label>
 
-                <Label
-                    x:Name="lblAboutExplanation"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Start"
-                    FontSize="13"
-                    Text="{x:Static resx:CubeLang.AboutExplanation_Text}">
-                </Label>
+            <Label
+                x:Name="lblAboutExplanation"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="{x:Static resx:CubeLang.AboutExplanation_Text}">
+            </Label>
 
         </StackLayout>
     </ScrollView>

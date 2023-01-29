@@ -457,7 +457,8 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Some changed settings must be saved in order to apply them..
+        ///   Looks up a localized string similar to Some changed settings must be saved in order to apply them.
+        ///After saving, the application is restarted and the cube is reset..
         /// </summary>
         internal static string SettingsSaved_Text {
             get {
