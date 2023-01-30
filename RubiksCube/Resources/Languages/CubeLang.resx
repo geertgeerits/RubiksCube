@@ -188,7 +188,7 @@ You can always contact me for any corrections.</value>
     <value>Default</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Play and solve the cube.</value>
+    <value>Play or solve the cube.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Disagree</value>
@@ -235,7 +235,7 @@ Use this program entirely at your own risk.</value>
     <value>The cube is not solved!</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
-    <value>There must be nine of the same color from each available color!</value>
+    <value>Of each available color, there must be nine of the same color!</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -304,10 +304,10 @@ Not allowed:</value>
     <value>Turn the bottom side 'clockwise' (+).</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
-    <value>Turn the front-middle layer to the right side (-).</value>
+    <value>Turn the front-middle row to the right side (-).</value>
   </data>
   <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
-    <value>Turn the front-middle layer to the top side (+).</value>
+    <value>Turn the front-middle row to the top side (+).</value>
   </data>
   <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
     <value>Turn the front side 'counter clockwise' (-).</value>
@@ -322,10 +322,10 @@ Not allowed:</value>
     <value>Turn the left side 'clockwise' (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Turn the right-middle layer to the front side (+).</value>
+    <value>Turn the right-middle row to the front side (+).</value>
   </data>
   <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
-    <value>Turn the right-middle layer to the top side (-).</value>
+    <value>Turn the right-middle row to the top side (-).</value>
   </data>
   <data name="TurnRightSideToLeft_Text" xml:space="preserve">
     <value>Turn the right side 'counter clockwise' (-).</value>
@@ -334,10 +334,10 @@ Not allowed:</value>
     <value>Turn the right side 'clockwise' (+).</value>
   </data>
   <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Turn the top-middle layer to the front side (-).</value>
+    <value>Turn the top-middle row to the front side (-).</value>
   </data>
   <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
-    <value>Turn the top-middle layer to the right side (+).</value>
+    <value>Turn the top-middle row to the right side (+).</value>
   </data>
   <data name="TurnTopSideToLeft_Text" xml:space="preserve">
     <value>Turn the top side 'counter clockwise' (-).</value>

@@ -188,7 +188,7 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
     <value>Standaard</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Speel en los de kubus op.</value>
+    <value>Speel of los de kubus op.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
     <value>Niet akkoord</value>
@@ -304,10 +304,10 @@ Niet toegestaan:</value>
     <value>Draai de onderkant 'met de klok mee' (+).</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
-    <value>Draai de voor-midden laag naar de rechterkant (-).</value>
+    <value>Draai de voor-midden rij naar de rechterkant (-).</value>
   </data>
   <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
-    <value>Draai de voor-midden laag naar de bovenkant (+).</value>
+    <value>Draai de voor-midden rij naar de bovenkant (+).</value>
   </data>
   <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
     <value>Draai de voorkant 'tegen de klok in' (-).</value>
@@ -322,10 +322,10 @@ Niet toegestaan:</value>
     <value>Draai de linkerkant 'met de klok mee' (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Draai de rechts-midden laag naar de voorkant (+).</value>
+    <value>Draai de rechts-midden rij naar de voorkant (+).</value>
   </data>
   <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
-    <value>Draai de rechts-midden laag naar de bovenkant (-).</value>
+    <value>Draai de rechts-midden rij naar de bovenkant (-).</value>
   </data>
   <data name="TurnRightSideToLeft_Text" xml:space="preserve">
     <value>Draai de rechterkant 'tegen de klok in' (-).</value>
@@ -334,10 +334,10 @@ Niet toegestaan:</value>
     <value>Draai de rechterkant 'met de klok mee' (+).</value>
   </data>
   <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Draai de boven-midden laag naar de voorkant (-).</value>
+    <value>Draai de boven-midden rij naar de voorkant (-).</value>
   </data>
   <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
-    <value>Draai de boven-midden laag naar de rechterkant (+).</value>
+    <value>Draai de boven-midden rij naar de rechterkant (+).</value>
   </data>
   <data name="TurnTopSideToLeft_Text" xml:space="preserve">
     <value>Draai de bovenkant 'tegen de klok in' (-).</value>

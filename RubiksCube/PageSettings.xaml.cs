@@ -7,11 +7,6 @@ namespace RubiksCube;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private string cButtonClose;
-    private string cErrorTitle;
-    private string cAllowedChar;
-    private string cAllowedCharNot;
-    private string cHexColorCodes;
     private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -28,19 +23,7 @@ public partial class PageSettings : ContentPage
         }
 
         // Put text in the chosen language in the controls and variables.
-        var ThemeList = new List<string>
-        {
-            CubeLang.ThemeSystem_Text,
-            CubeLang.ThemeLight_Text,
-            CubeLang.ThemeDark_Text
-        };
-        pckTheme.ItemsSource = ThemeList;
-
-        cButtonClose = CubeLang.ButtonClose_Text;
-        cErrorTitle = CubeLang.ErrorTitle_Text;
-        cAllowedChar = CubeLang.AllowedChar_Text;
-        cAllowedCharNot = CubeLang.AllowedCharNot_Text;
-        cHexColorCodes = CubeLang.HexColorCodes_Text;
+        SetLanguage();
 
         // Set the current language in the picker.
         pckLanguage.SelectedIndex = MainPage.cLanguage switch
@@ -69,19 +52,6 @@ public partial class PageSettings : ContentPage
 
         // Fill the picker with the speech languages and set the saved language in the picker.
         FillPickerWithSpeechLanguages();
-
-        // Set the current theme in the picker.
-        pckTheme.SelectedIndex = MainPage.cTheme switch
-        {
-            // Light.
-            "Light" => 1,
-
-            // Dark.
-            "Dark" => 2,
-
-            // System.
-            _ => 0,
-        };
 
         // Set the explaination of text and speech to false or true.
         swtExplainText.IsToggled = MainPage.bExplainText;
@@ -156,12 +126,36 @@ public partial class PageSettings : ContentPage
             // Set the current UI culture of the selected language.
             MainPage.SetCultureSelectedLanguage();
 
-            cButtonClose = CubeLang.ButtonClose_Text;
-            cErrorTitle = CubeLang.ErrorTitle_Text;
-            cAllowedChar = CubeLang.AllowedChar_Text;
-            cAllowedCharNot = CubeLang.AllowedCharNot_Text;
-            cHexColorCodes = CubeLang.HexColorCodes_Text;
+            // Put text in the chosen language in the controls and variables.
+            SetLanguage();
         }
+    }
+
+    // Put text in the chosen language in the controls and variables.
+    private void SetLanguage()
+    {
+        var ThemeList = new List<string>
+        {
+            CubeLang.ThemeSystem_Text,
+            CubeLang.ThemeLight_Text,
+            CubeLang.ThemeDark_Text
+        };
+        pckTheme.ItemsSource = ThemeList;
+
+        // Set the current theme in the picker.
+        pckTheme.SelectedIndex = MainPage.cTheme switch
+        {
+            // Light.
+            "Light" => 1,
+
+            // Dark.
+            "Dark" => 2,
+
+            // System.
+            _ => 0,
+        };
+
+        lblExplanation.Text = CubeLang.SettingsSaved_Text + "\n";  // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
     }
 
     // Fill the picker with the speech languages from the array.
@@ -307,7 +301,7 @@ public partial class PageSettings : ContentPage
     // Display help for Hex color.
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("?", cHexColorCodes, cButtonClose);
+        await DisplayAlert("?", CubeLang.HexColorCodes_Text, CubeLang.ButtonClose_Text);
     }
 
     // Entry HexColor Unfocused event.
@@ -396,7 +390,7 @@ public partial class PageSettings : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(cErrorTitle, cAllowedChar + "\n" + cAllowedCharacters + "\n\n" + cAllowedCharNot + " " + cChar, cButtonClose);
+                DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CubeLang.AllowedCharNot_Text + " " + cChar, CubeLang.ButtonClose_Text);
                 return false;
             }
         }
