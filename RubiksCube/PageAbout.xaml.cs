@@ -4,10 +4,6 @@ namespace RubiksCube;
 
 public partial class PageAbout : ContentPage
 {
-    // Local variables.
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
-
     public PageAbout()
 	{
         try
@@ -27,9 +23,6 @@ public partial class PageAbout : ContentPage
         lblWebsite.Text = CubeLang.Website_Text + " ../rubikscube";
         lblPrivacyPolicy.Text = CubeLang.PrivacyPolicyTitle_Text + " " + CubeLang.PrivacyPolicy_Text;
         lblLicense.Text = CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
-
-        cButtonClose = CubeLang.ButtonClose_Text;
-        cErrorTitle = CubeLang.ErrorTitle_Text;
     }
 
     // Open e-mail program.
@@ -44,7 +37,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
         }
 #else
         if (Email.Default.IsComposeSupported)
@@ -67,7 +60,7 @@ public partial class PageAbout : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             }
         }
 #endif
@@ -83,7 +76,7 @@ public partial class PageAbout : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace RubiksCube;
 
 public partial class MainPage : ContentPage
 {
-    // Global variables for all pages part of Barcode Generator.
+    // Global variables for all pages part of Rubik's Cube.
     public static string cTheme;
     public static string cLanguage;
     public static bool bLanguageChanged = false;
@@ -37,15 +37,7 @@ public partial class MainPage : ContentPage
     public static string cCubeColor6;
 
     // Local variables.
-    private string cButtonClose;
-    private string cErrorTitle;
-    private string cLicenseTitle;
-    private string cLicense;
-    private string cAgree;
-    private string cDisagree;
     private readonly bool bLicense;
-    private string cCloseApplication;
-    private string cTextToSpeechError;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
@@ -884,7 +876,7 @@ public partial class MainPage : ContentPage
 
         if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
         {
-            DisplayAlert("Error", CubeLang.MessageNineSameColor_Text, "OK");
+            DisplayAlert("Error", CubeLang.MessageNineSameColor_Text, CubeLang.ButtonClose_Text);
             return false;
         }
 
@@ -935,12 +927,12 @@ public partial class MainPage : ContentPage
         {
             if (bShowMessage)
             {
-                DisplayAlert("Rubik's Cube", CubeLang.MessageCubeNotSolved_Text, "OK");
+                DisplayAlert("Rubik's Cube", CubeLang.MessageCubeNotSolved_Text, CubeLang.ButtonClose_Text);
             }
             return false;
         }
         
-        DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, "OK");
+        DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
         return true;
     }
 
@@ -1776,7 +1768,7 @@ public partial class MainPage : ContentPage
 
         if (bExplainText)
         {
-            await DisplayAlert("", cTurnCubeText, "OK");
+            await DisplayAlert("", cTurnCubeText, CubeLang.ButtonClose_Text);
         }
 
         imagebutton.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
@@ -1856,9 +1848,11 @@ public partial class MainPage : ContentPage
     private async void OnPageLoad(object sender, EventArgs e)
     {
         // Show license.
+        string cLicense = CubeLang.License_Text + "\n\n" + CubeLang.LicenseMit2_Text;
+
         if (bLicense == false)
         {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert(cLicenseTitle, cLicense, cAgree, cDisagree);
+            bool bAnswer = await Application.Current.MainPage.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
 
             if (bAnswer)
             {
@@ -1873,7 +1867,7 @@ public partial class MainPage : ContentPage
                 BtnSolve.IsEnabled = false;
                 BtnReset.IsEnabled= false;
 
-                await DisplayAlert(cLicenseTitle, cCloseApplication, cButtonClose);
+                await DisplayAlert(CubeLang.LicenseTitle_Text, CubeLang.CloseApplication_Text, CubeLang.ButtonClose_Text);
 #else
                 Application.Current.Quit();
 #endif
@@ -1888,30 +1882,14 @@ public partial class MainPage : ContentPage
         {
             SetTextLanguage();
             bLanguageChanged = false;
-
-            //DisplayAlert("bLanguageChanged", "true", "OK");  // For testing.
         }
     }
 
     // Put text in the chosen language in the controls.
-    private void SetTextLanguage()
+    private static void SetTextLanguage()
     {
-        //cLanguage = "nl";  // For testing.
-        //App.Current.MainPage.DisplayAlert("cLanguage", cLanguage, "OK");  // For testing.
-
         // Set the current UI culture of the selected language.
         SetCultureSelectedLanguage();
-
-        cButtonClose = CubeLang.ButtonClose_Text;
-        cErrorTitle = CubeLang.ErrorTitle_Text;
-        cLicenseTitle = CubeLang.LicenseTitle_Text;
-        cLicense = CubeLang.License_Text + "\n\n" + CubeLang.LicenseMit2_Text;
-        cAgree = CubeLang.Agree_Text;
-        cDisagree = CubeLang.Disagree_Text;
-        cCloseApplication = CubeLang.CloseApplication_Text;
-        cTextToSpeechError = CubeLang.TextToSpeechError_Text;
-
-        //App.Current.MainPage.DisplayAlert(cErrorTitleText, cLanguage, cButtonCloseText);  // For testing.
     }
 
     // Set the current UI culture of the selected language.
@@ -1948,7 +1926,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert(cErrorTitle, ex.Message + "\n\n" + cTextToSpeechError, cButtonClose);
+            await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
             return;
         }
 
@@ -2011,7 +1989,7 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
-            DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+            DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
         }
     }
 
@@ -2046,7 +2024,7 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert(cErrorTitle, ex.Message, cButtonClose);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             }
         }
     }

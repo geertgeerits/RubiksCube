@@ -1031,20 +1031,22 @@
 
         <Button
             x:Name="BtnSolve"
+            Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
-            Grid.Column="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
             HorizontalOptions="Start"
-            WidthRequest="100"
             Text="{local:Translate ButtonSolve_Text}"
             Clicked="OnBtnSolveClicked">
         </Button>
 
         <Button
             x:Name="BtnReset"
+            Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
             Grid.Column="1"
+            Grid.ColumnSpan="2"
             HorizontalOptions="End"
-            WidthRequest="100"
             Text="{local:Translate ButtonReset_Text}"
             Clicked="OnBtnResetClicked">
         </Button>
