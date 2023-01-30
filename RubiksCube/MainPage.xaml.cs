@@ -174,6 +174,8 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        EnableDisableArrows(false);
+
         if (!CheckIfCubeIsSolved(false))
         {
             return;
@@ -1842,6 +1844,31 @@ public partial class MainPage : ContentPage
         plgBottom7.Fill = plgCubeColor6.Fill;
         plgBottom8.Fill = plgCubeColor6.Fill;
         plgBottom9.Fill = plgCubeColor6.Fill;
+
+        EnableDisableArrows(true);
+    }
+
+    // Enable or Disable the arrows.
+    private void EnableDisableArrows(bool bEnableDisable)
+    {
+        imgbtnTurnFrontSideToRight.IsEnabled = bEnableDisable;
+        imgbtnTurnTopMiddleToRightSide.IsEnabled = bEnableDisable;
+        imgbtnTurnBackSideToLeft.IsEnabled = bEnableDisable;
+        imgbtnTurnLeftSideToRight.IsEnabled = bEnableDisable;
+        imgbtnTurnTopMiddleToFrontSide.IsEnabled = bEnableDisable;
+        imgbtnTurnRightSideToLeft.IsEnabled = bEnableDisable;
+        imgbtnTurnTopSideToLeft.IsEnabled = bEnableDisable;
+        imgbtnTurnFrontMiddleToRightSide.IsEnabled = bEnableDisable;
+        imgbtnTurnBottomSideToRight.IsEnabled = bEnableDisable;
+        imgbtnTurnTopSideToRight.IsEnabled = bEnableDisable;
+        imgbtnTurnRightMiddleToFrontSide.IsEnabled = bEnableDisable;
+        imgbtnTurnBottomSideToLeft.IsEnabled = bEnableDisable;
+        imgbtnTurnLeftSideToLeft.IsEnabled = bEnableDisable;
+        imgbtnTurnFrontMiddleToTopSide.IsEnabled = bEnableDisable;
+        imgbtnTurnRightSideToRight.IsEnabled = bEnableDisable;
+        imgbtnTurnFrontSideToLeft.IsEnabled = bEnableDisable;
+        imgbtnTurnRightMiddleToTopSide.IsEnabled = bEnableDisable;
+        imgbtnTurnBackSideToRight.IsEnabled = bEnableDisable;
     }
 
     // Show license using the Loaded event of the MainPage.xaml.
