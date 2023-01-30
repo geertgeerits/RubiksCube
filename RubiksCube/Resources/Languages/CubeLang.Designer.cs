@@ -367,6 +367,33 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Congratulations, the cube has been solved..
+        /// </summary>
+        internal static string MessageCubeIsSolved_Text {
+            get {
+                return ResourceManager.GetString("MessageCubeIsSolved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The cube is not solved!.
+        /// </summary>
+        internal static string MessageCubeNotSolved_Text {
+            get {
+                return ResourceManager.GetString("MessageCubeNotSolved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There must be nine of the same color from each available color!.
+        /// </summary>
+        internal static string MessageNineSameColor_Text {
+            get {
+                return ResourceManager.GetString("MessageNineSameColor_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rubik&apos;s Cube.
         /// </summary>
         internal static string NameProgram_Text {
@@ -559,7 +586,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front middle to the right side (-)..
+        ///   Looks up a localized string similar to Turn the front-middle layer to the right side (-)..
         /// </summary>
         internal static string TurnFrontMiddleToRightSide_Text {
             get {
@@ -568,7 +595,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front middle to the top side (+)..
+        ///   Looks up a localized string similar to Turn the front-middle layer to the top side (+)..
         /// </summary>
         internal static string TurnFrontMiddleToTopSide_Text {
             get {
@@ -613,7 +640,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right middle to the front side (+)..
+        ///   Looks up a localized string similar to Turn the right-middle layer to the front side (+)..
         /// </summary>
         internal static string TurnRightMiddleToFrontSide_Text {
             get {
@@ -622,7 +649,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right middle to the top side (-)..
+        ///   Looks up a localized string similar to Turn the right-middle layer to the top side (-)..
         /// </summary>
         internal static string TurnRightMiddleToTopSide_Text {
             get {
@@ -649,7 +676,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top middle to the front side (-)..
+        ///   Looks up a localized string similar to Turn the top-middle layer to the front side (-)..
         /// </summary>
         internal static string TurnTopMiddleToFrontSide_Text {
             get {
@@ -658,7 +685,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top middle to the right side (+)..
+        ///   Looks up a localized string similar to Turn the top-middle layer to the right side (+)..
         /// </summary>
         internal static string TurnTopMiddleToRightSide_Text {
             get {

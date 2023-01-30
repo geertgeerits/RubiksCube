@@ -75,7 +75,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Red">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnDragStarting" />
+                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
 
@@ -84,7 +84,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Yellow">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnDragStarting" />
+                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
 
@@ -93,7 +93,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Blue">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnDragStarting" />
+                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
 
@@ -102,7 +102,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Fill="Green">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnDragStarting" />
+                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
 
@@ -111,7 +111,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Fill="White">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnDragStarting" />
+                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
 
@@ -121,7 +121,7 @@
                 HorizontalOptions="End"
                 Fill="Orange">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnDragStarting" />
+                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
         </HorizontalStackLayout>
@@ -167,7 +167,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontSideToRight_Text}"
-                        Clicked="imgbtnTurnFrontSideToRight_Clicked">
+                        Clicked="On_imgbtnTurnFrontSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -177,7 +177,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopMiddleToRightSide_Text}"
-                        Clicked="imgbtnTurnTopMiddleToRightSide_Clicked">
+                        Clicked="On_imgbtnTurnTopMiddleToRightSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -187,7 +187,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBackSideToLeft_Text}"
-                        Clicked="imgbtnTurnBackSideToLeft_Clicked">
+                        Clicked="On_imgbtnTurnBackSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -197,7 +197,7 @@
                         Margin="40,0,0,0"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnLeftSideToRight_Text}"
-                        Clicked="imgbtnTurnLeftSideToRight_Clicked">
+                        Clicked="On_imgbtnTurnLeftSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -207,7 +207,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopMiddleToFrontSide_Text}"
-                        Clicked="imgbtnTurnTopMiddleToFrontSide_Clicked">
+                        Clicked="On_imgbtnTurnTopMiddleToFrontSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -217,7 +217,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightSideToLeft_Text}"
-                        Clicked="imgbtnTurnRightSideToLeft_Clicked">
+                        Clicked="On_imgbtnTurnRightSideToLeft_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -232,7 +232,7 @@
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopSideToLeft_Text}"
-                        Clicked="imgbtnTurnTopSideToLeft_Clicked">
+                        Clicked="On_imgbtnTurnTopSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -242,7 +242,7 @@
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontMiddleToRightSide_Text}"
-                        Clicked="imgbtnTurnFrontMiddleToRightSide_Clicked">
+                        Clicked="On_imgbtnTurnFrontMiddleToRightSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -252,7 +252,7 @@
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBottomSideToRight_Text}"
-                        Clicked="imgbtnTurnBottomSideToRight_Clicked">
+                        Clicked="On_imgbtnTurnBottomSideToRight_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -267,7 +267,7 @@
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopSideToRight_Text}"
-                        Clicked="imgbtnTurnTopSideToRight_Clicked">
+                        Clicked="On_imgbtnTurnTopSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -277,7 +277,7 @@
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightMiddleToFrontSide_Text}"
-                        Clicked="imgbtnTurnRightMiddleToFrontSide_Clicked">
+                        Clicked="On_imgbtnTurnRightMiddleToFrontSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -287,7 +287,7 @@
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBottomSideToLeft_Text}"
-                        Clicked="imgbtnTurnBottomSideToLeft_Clicked">
+                        Clicked="On_imgbtnTurnBottomSideToLeft_Clicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -302,7 +302,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnLeftSideToLeft_Text}"
-                        Clicked="imgbtnTurnLeftSideToLeft_Clicked">
+                        Clicked="On_imgbtnTurnLeftSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -312,7 +312,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontMiddleToTopSide_Text}"
-                        Clicked="imgbtnTurnFrontMiddleToTopSide_Clicked">
+                        Clicked="On_imgbtnTurnFrontMiddleToTopSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -322,7 +322,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightSideToRight_Text}"
-                        Clicked="imgbtnTurnRightSideToRight_Clicked">
+                        Clicked="On_imgbtnTurnRightSideToRight_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -332,7 +332,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontSideToLeft_Text}"
-                        Clicked="imgbtnTurnFrontSideToLeft_Clicked">
+                        Clicked="On_imgbtnTurnFrontSideToLeft_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -342,7 +342,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightMiddleToTopSide_Text}"
-                        Clicked="imgbtnTurnRightMiddleToTopSide_Clicked">
+                        Clicked="On_imgbtnTurnRightMiddleToTopSide_Clicked">
                     </ImageButton>
 
                     <ImageButton
@@ -352,7 +352,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBackSideToRight_Text}"
-                        Clicked="imgbtnTurnBackSideToRight_Clicked">
+                        Clicked="On_imgbtnTurnBackSideToRight_Clicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -388,7 +388,7 @@
                             Margin="0,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -399,7 +399,7 @@
                             Margin="-40,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                 
@@ -410,7 +410,7 @@
                             Margin="-80,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -424,7 +424,7 @@
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -435,7 +435,7 @@
                             Margin="-40,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                 
@@ -446,7 +446,7 @@
                             Margin="-80,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -460,7 +460,7 @@
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -471,7 +471,7 @@
                             Margin="-40,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                 
@@ -482,7 +482,7 @@
                             Margin="-80,0,0,0"
                             Fill="Red">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -496,7 +496,7 @@
                             Points="0,0 0,50 50,60 50,10"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -506,7 +506,7 @@
                             Points="0,10 0,60 50,70 50,20"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -516,7 +516,7 @@
                             Points="0,20 0,70 50,80 50,30"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                 
@@ -526,7 +526,7 @@
                             Points="0,30 0,80 40,60 40,10"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -537,7 +537,7 @@
                             Margin="0,-22,0,0"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                 
@@ -548,7 +548,7 @@
                             Margin="0,-43,0,0"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -562,7 +562,7 @@
                             Points="0,0 0,50 50,60 50,10"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -572,7 +572,7 @@
                             Points="0,10 0,60 50,70 50,20"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -582,7 +582,7 @@
                             Points="0,20 0,70 50,80 50,30"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -592,7 +592,7 @@
                             Points="0,30 0,80 40,60 40,10"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -603,7 +603,7 @@
                             Margin="0,-22,0,0"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -614,7 +614,7 @@
                             Margin="0,-43,0,0"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -628,7 +628,7 @@
                             Points="0,0 0,50 50,60 50,10"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -638,7 +638,7 @@
                             Points="0,10 0,60 50,70 50,20"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -648,7 +648,7 @@
                             Points="0,20 0,70 50,80 50,30"
                             Fill="Yellow">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -658,7 +658,7 @@
                             Points="0,30 0,80 40,60 40,10"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -669,7 +669,7 @@
                             Margin="0,-22,0,0"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -680,7 +680,7 @@
                             Margin="0,-43,0,0"
                             Fill="Blue">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -726,7 +726,7 @@
                             Points="40,44 40,94 0,114 0,64"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -736,7 +736,7 @@
                             Points="40,22 40,72 0,92 0,42"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -746,7 +746,7 @@
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -756,7 +756,7 @@
                             Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -766,7 +766,7 @@
                             Points="0,11 0,61 50,71 50,21"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -776,7 +776,7 @@
                             Points="0,22 0,72 50,82 50,32"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -790,7 +790,7 @@
                             Points="40,44 40,94 0,114 0,64"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -800,7 +800,7 @@
                             Points="40,22 40,72 0,92 0,42"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -810,7 +810,7 @@
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -820,7 +820,7 @@
                             Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -830,7 +830,7 @@
                             Points="0,11 0,61 50,71 50,21"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -840,7 +840,7 @@
                             Points="0,21 0,71 50,81 50,31"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -854,7 +854,7 @@
                             Points="40,44 40,94 0,114 0,64"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -864,7 +864,7 @@
                             Points="40,22 40,72 0,92 0,42"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -874,7 +874,7 @@
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -884,7 +884,7 @@
                             Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -894,7 +894,7 @@
                             Points="0,11 0,61 50,71 50,21"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -904,7 +904,7 @@
                             Points="0,21 0,71 50,81 50,31"
                             Fill="White">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -918,7 +918,7 @@
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -929,7 +929,7 @@
                             Margin="-40,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -940,7 +940,7 @@
                             Margin="-80,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -954,7 +954,7 @@
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -965,7 +965,7 @@
                             Margin="-40,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -976,7 +976,7 @@
                             Margin="-80,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>
@@ -990,7 +990,7 @@
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -1001,7 +1001,7 @@
                             Margin="-40,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
 
@@ -1012,7 +1012,7 @@
                             Margin="-80,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
-                                <DropGestureRecognizer Drop="OnDrop" />
+                                <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
                         </Polygon>
                     </HorizontalStackLayout>

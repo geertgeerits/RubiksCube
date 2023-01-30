@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
              xmlns:local="clr-namespace:RubiksCube"
              x:Class="RubiksCube.PageSettings"
              Title="PageSettings">
@@ -173,7 +172,7 @@
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
-                    Toggled="swtExplainText_Toggled">
+                    Toggled="OnSwtExplainTextToggled">
                 </Switch>
 
                 <Label
@@ -190,7 +189,7 @@
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Start"
-                    Toggled="swtExplainSpeech_Toggled">
+                    Toggled="OnSwtExplainSpeechToggled">
                 </Switch>
 
                 <Label
@@ -295,7 +294,7 @@
                         Value="rbnCubeColor1"
                         WidthRequest="30"
                         IsChecked="True"
-                        CheckedChanged="rbnCubeColorCheckedChanged">
+                        CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
@@ -303,7 +302,7 @@
                         GroupName="rbgCubeColors"
                         Value="rbnCubeColor2"
                         WidthRequest="30"
-                        CheckedChanged="rbnCubeColorCheckedChanged">
+                        CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
@@ -311,7 +310,7 @@
                         GroupName="rbgCubeColors"
                         Value="rbnCubeColor3"
                         WidthRequest="30"
-                        CheckedChanged="rbnCubeColorCheckedChanged">
+                        CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
@@ -319,7 +318,7 @@
                         GroupName="rbgCubeColors"
                         Value="rbnCubeColor4"
                         WidthRequest="30"
-                        CheckedChanged="rbnCubeColorCheckedChanged">
+                        CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
@@ -327,7 +326,7 @@
                         GroupName="rbgCubeColors"
                         Value="rbnCubeColor5"
                         WidthRequest="30"
-                        CheckedChanged="rbnCubeColorCheckedChanged">
+                        CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
@@ -336,7 +335,7 @@
                         Value="rbnCubeColor6"
                         HorizontalOptions="End"
                         WidthRequest="30"
-                        CheckedChanged="rbnCubeColorCheckedChanged">
+                        CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
                 </HorizontalStackLayout>
 

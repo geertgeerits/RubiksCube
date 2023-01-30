@@ -7,11 +7,11 @@ namespace RubiksCube;
 public partial class PageSettings : ContentPage
 {
     // Local variables.
-    private readonly string cButtonClose;
-    private readonly string cErrorTitle;
-    private readonly string cAllowedChar;
-    private readonly string cAllowedCharNot;
-    private readonly string cHexColorCodes;
+    private string cButtonClose;
+    private string cErrorTitle;
+    private string cAllowedChar;
+    private string cAllowedCharNot;
+    private string cHexColorCodes;
     private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -146,7 +146,7 @@ public partial class PageSettings : ContentPage
 
                 // English.
                 _ => "en",
-            };           
+            };
         }
 
         if (cLanguageOld != MainPage.cLanguage)
@@ -155,6 +155,12 @@ public partial class PageSettings : ContentPage
 
             // Set the current UI culture of the selected language.
             MainPage.SetCultureSelectedLanguage();
+
+            cButtonClose = CubeLang.ButtonClose_Text;
+            cErrorTitle = CubeLang.ErrorTitle_Text;
+            cAllowedChar = CubeLang.AllowedChar_Text;
+            cAllowedCharNot = CubeLang.AllowedCharNot_Text;
+            cHexColorCodes = CubeLang.HexColorCodes_Text;
         }
     }
 
@@ -227,13 +233,13 @@ public partial class PageSettings : ContentPage
     }
 
     // Switch explain text toggled.
-    private void swtExplainText_Toggled(object sender, ToggledEventArgs e)
+    private void OnSwtExplainTextToggled(object sender, ToggledEventArgs e)
     {
         MainPage.bExplainText = swtExplainText.IsToggled;
     }
 
     // Switch explain speech toggled.
-    private void swtExplainSpeech_Toggled(object sender, ToggledEventArgs e)
+    private void OnSwtExplainSpeechToggled(object sender, ToggledEventArgs e)
     {
         MainPage.bExplainSpeech = swtExplainSpeech.IsToggled;
     }
@@ -250,7 +256,7 @@ public partial class PageSettings : ContentPage
     }
 
     // Radiobutton checked changed event.
-    private void rbnCubeColorCheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void OnRbnCubeColorCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         SetCubeHexColor();
     }

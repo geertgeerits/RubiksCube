@@ -33,7 +33,7 @@ public partial class PageAbout : ContentPage
     }
 
     // Open e-mail program.
-    private async void OnbtnEmailLinkClicked(object sender, EventArgs e)
+    private async void OnBtnEmailLinkClicked(object sender, EventArgs e)
     {
 #if IOS || MACCATALYST
         string cAddress = "geertgeerits@gmail.com";
@@ -74,7 +74,7 @@ public partial class PageAbout : ContentPage
     }
 
     // Open website in default browser.
-    private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
+    private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
     {
         try
         {

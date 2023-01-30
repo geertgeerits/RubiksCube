@@ -228,6 +228,15 @@ Karakters 5-6: blauw</value>
     <value>Deze applicatie mag vrij worden gebruikt voor niet-commerciële doeleinden.
 Gebruik dit programma geheel op eigen risico.</value>
   </data>
+  <data name="MessageCubeIsSolved_Text" xml:space="preserve">
+    <value>Gefeliciteerd, de kubus is opgelost.</value>
+  </data>
+  <data name="MessageCubeNotSolved_Text" xml:space="preserve">
+    <value>De kubus is niet opgelost!</value>
+  </data>
+  <data name="MessageNineSameColor_Text" xml:space="preserve">
+    <value>Van elke beschikbare kleur moeten er negen van dezelfde kleur zijn!</value>
+  </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
@@ -295,10 +304,10 @@ Niet toegestaan:</value>
     <value>Draai de onderkant 'met de klok mee' (+).</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
-    <value>Draai de voor midden naar de rechterkant (-).</value>
+    <value>Draai de voor-midden laag naar de rechterkant (-).</value>
   </data>
   <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
-    <value>Draai de voor midden naar de bovenkant (+).</value>
+    <value>Draai de voor-midden laag naar de bovenkant (+).</value>
   </data>
   <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
     <value>Draai de voorkant 'tegen de klok in' (-).</value>
@@ -313,10 +322,10 @@ Niet toegestaan:</value>
     <value>Draai de linkerkant 'met de klok mee' (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Draai de rechts midden naar de voorkant (+).</value>
+    <value>Draai de rechts-midden laag naar de voorkant (+).</value>
   </data>
   <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
-    <value>Draai de rechts midden naar de bovenkant (-).</value>
+    <value>Draai de rechts-midden laag naar de bovenkant (-).</value>
   </data>
   <data name="TurnRightSideToLeft_Text" xml:space="preserve">
     <value>Draai de rechterkant 'tegen de klok in' (-).</value>
@@ -325,10 +334,10 @@ Niet toegestaan:</value>
     <value>Draai de rechterkant 'met de klok mee' (+).</value>
   </data>
   <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Draai de boven midden naar de voorkant (-).</value>
+    <value>Draai de boven-midden laag naar de voorkant (-).</value>
   </data>
   <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
-    <value>Draai de boven midden naar de rechterkant (+).</value>
+    <value>Draai de boven-midden laag naar de rechterkant (+).</value>
   </data>
   <data name="TurnTopSideToLeft_Text" xml:space="preserve">
     <value>Draai de bovenkant 'tegen de klok in' (-).</value>

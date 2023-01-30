@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-29 (YYYY-MM-DD)
+// Date ........: 2023-01-30 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -159,14 +159,14 @@ public partial class MainPage : ContentPage
     }
 
     // Select a color for dropping on a cube and put it in a tempory rectangle.
-    private void OnDragStarting(object sender, DragStartingEventArgs e)
+    private void OnColorDragStarting(object sender, DragStartingEventArgs e)
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
         plgCubeColorSelect.Fill = polygon.Fill;        
     }
 
     // Drop the selected color on the cube and fill the cube with the color of the tempory rectangle.
-    private void OnDrop(object sender, DropEventArgs e)
+    private void OnColorDrop(object sender, DropEventArgs e)
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
         polygon.Fill = plgCubeColorSelect.Fill;
@@ -884,7 +884,7 @@ public partial class MainPage : ContentPage
 
         if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
         {
-            DisplayAlert("Error", "There must be nine of the same color from each available color!", "OK");
+            DisplayAlert("Error", CubeLang.MessageNineSameColor_Text, "OK");
             return false;
         }
 
@@ -935,176 +935,140 @@ public partial class MainPage : ContentPage
         {
             if (bShowMessage)
             {
-                DisplayAlert("Rubik's Cube", "The cube is not solved!", "OK");
+                DisplayAlert("Rubik's Cube", CubeLang.MessageCubeNotSolved_Text, "OK");
             }
             return false;
         }
         
-        DisplayAlert("Rubik's Cube", "Congratulations, the cube has been solved.", "OK");
+        DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, "OK");
         return true;
     }
 
     // Turn the layers of the cube.
     // Turn the front side clockwise (to right +).
-    private void imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontSideTo("+");
-        ExplainTurnCube(CubeLang.TurnFrontSideToRight_Text);
-        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnFrontSideToRight_Text);
     }
 
     // Turn the top middle to the right side (+).
-    private void imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopMiddleTo("+");
-        ExplainTurnCube(CubeLang.TurnTopMiddleToRightSide_Text);
-        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnTopMiddleToRightSide_Text);
     }
 
     // Turn the back side counter clockwise (to left -).
-    private void imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBackSideTo("-");
-        ExplainTurnCube(CubeLang.TurnBackSideToLeft_Text);
-        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnBackSideToLeft_Text);
     }
 
     // Turn the left side clockwise (to right +).
-    private void imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnLeftSideTo("+");
-        ExplainTurnCube(CubeLang.TurnLeftSideToRight_Text);
-        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnLeftSideToRight_Text);
     }
 
     // Turn the top middle to the front side (-).
-    private void imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontTopMiddleTo("-");
-        ExplainTurnCube(CubeLang.TurnTopMiddleToFrontSide_Text);
-        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnTopMiddleToFrontSide_Text);
     }
 
     // Turn the right side counter clockwise (to left -).
-    private void imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnRightSideTo("-");
-        ExplainTurnCube(CubeLang.TurnRightSideToLeft_Text);
-        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnRightSideToLeft_Text);
     }
 
     // Turn the top side counter clockwise (to left -).
-    private void imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopSideTo("-");
-        ExplainTurnCube(CubeLang.TurnTopSideToLeft_Text);
-        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnTopSideToLeft_Text);
     }
 
     // Turn the front middle to the right side (-).
-    private void imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnHorizontalMiddleLayerTo("-");
-        ExplainTurnCube(CubeLang.TurnFrontMiddleToRightSide_Text);
-        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnFrontMiddleToRightSide_Text);
     }
 
     // Turn the bottom side clockwise (to right +).
-    private void imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBottomSideTo("+");
-        ExplainTurnCube(CubeLang.TurnBottomSideToRight_Text);
-        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnBottomSideToRight_Text);
     }
 
     // Turn the top side clockwise (to right +).
-    private void imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopSideTo("+");
-        ExplainTurnCube(CubeLang.TurnTopSideToRight_Text);
-        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnTopSideToRight_Text);
     }
 
     // Turn the right middle to the front side (+).
-    private void imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnHorizontalMiddleLayerTo("+");
-        ExplainTurnCube(CubeLang.TurnRightMiddleToFrontSide_Text);
-        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnRightMiddleToFrontSide_Text);
     }
 
     // Turn the bottom side counter clockwise (to left -).
-    private void imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBottomSideTo("-");
-        ExplainTurnCube(CubeLang.TurnBottomSideToLeft_Text);
-        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnBottomSideToLeft_Text);
     }
 
     // Turn the left side counter clockwise (to left -).
-    private void imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnLeftSideTo("-");
-        ExplainTurnCube(CubeLang.TurnLeftSideToLeft_Text);
-        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnLeftSideToLeft_Text);
     }
 
     // Turn the front middle to the top side (+).
-    private void imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontTopMiddleTo("+");
-        ExplainTurnCube(CubeLang.TurnFrontMiddleToTopSide_Text);
-        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnFrontMiddleToTopSide_Text);
     }
 
     // Turn the right side clockwise (to right +).
-    private void imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnRightSideTo("+");
-        ExplainTurnCube(CubeLang.TurnRightSideToRight_Text);
-        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnRightSideToRight_Text);
     }
 
     // Turn the front side counter clockwise (to left -).
-    private void imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnFrontSideTo("-");
-        ExplainTurnCube(CubeLang.TurnFrontSideToLeft_Text);
-        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnFrontSideToLeft_Text);
     }
 
     // Turn the right middle to the top side (-).
-    private void imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnTopMiddleTo("-");
-        ExplainTurnCube(CubeLang.TurnRightMiddleToTopSide_Text);
-        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnRightMiddleToTopSide_Text);
     }
 
     // Turn the back side clockwise (to right +).
-    private void imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
+    private void On_imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
     {
-        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         TurnBackSideTo("+");
-        ExplainTurnCube(CubeLang.TurnBackSideToRight_Text);
-        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        ExplainTurnCube(sender, CubeLang.TurnBackSideToRight_Text);
     }
 
     // Turn the entire front side clockwise or counter clockwise.
@@ -1792,12 +1756,16 @@ public partial class MainPage : ContentPage
     }
 
     // Explain the turn of the cube.
-    private async void ExplainTurnCube(string cTurnCubeText)
+    private async void ExplainTurnCube(object sender, string cTurnCubeText)
     {
+        var imagebutton = (ImageButton)sender;
+        imagebutton.BackgroundColor = Color.FromArgb(cColorArrowActive);
+
         string cTurnCubeSpeech = cTurnCubeText;
 
         if (bExplainSpeech)
         {
+            // if the right of the text = ' (+).' or ' (-).' remove it.
             if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
             {
                 cTurnCubeSpeech = cTurnCubeSpeech.Substring(0, cTurnCubeSpeech.Length - 5);
@@ -1810,6 +1778,8 @@ public partial class MainPage : ContentPage
         {
             await DisplayAlert("", cTurnCubeText, "OK");
         }
+
+        imagebutton.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
     }
 
     // On clicked event: Reset the colors of the cube.
@@ -2055,7 +2025,6 @@ public partial class MainPage : ContentPage
                 return;
 
             cts.Cancel();
-            return;
         }
 
         // Start with the text to speech.
