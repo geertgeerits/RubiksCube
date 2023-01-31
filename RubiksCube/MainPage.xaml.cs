@@ -8,7 +8,7 @@
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
 //                The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
 // Dependencies : 
-// Thanks to ...: 
+// Thanks to ...: Gerald Versluis
 
 using Microsoft.Maui.Controls.Shapes;
 using RubiksCube.Resources.Languages;
@@ -25,8 +25,6 @@ public partial class MainPage : ContentPage
     public static string cLanguageSpeech;
     public static string[] cLanguageLocales;
     public static bool bLanguageLocalesExist = false;
-    public static string cImageTextToSpeech = "speaker_64p_blue_green.png";
-    public static string cImageTextToSpeechCancel = "speaker_cancel_64p_blue_red.png";
     public static bool bExplainText = false;
     public static bool bExplainSpeech = false;
     public static string cCubeColor1;
@@ -43,16 +41,6 @@ public partial class MainPage : ContentPage
     private bool bTextToSpeechIsBusy = false;
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "FFD000";       // Light orange
-
-    //private readonly int[] aTop = new int[9];
-    //private readonly int[] aFront = new int[9];
-    //private readonly int[] aRight = new int[9];
-    //private readonly int[] aLeft = new int[9];
-    //private readonly int[] aBack = new int[9];
-    //private readonly int[] aBottom = new int[9];
-
-    //public LocalizationResourceManager LocalizationResourceManager
-    //=> LocalizationResourceManager.Instance;
 
     public MainPage()
 	{
@@ -176,16 +164,16 @@ public partial class MainPage : ContentPage
 
         EnableDisableArrows(false);
 
-        //TurnCubeFrontSideToLeftSide(sender, e);
+        TurnCubeFrontSideToLeftSide(sender, e);
         //TurnCubeFrontSideToRightSide(sender, e);
         //TurnCubeFrontSideToTopSide(sender, e);
-        TurnCubeFrontSideToBottomSide(sender, e);
+        //TurnCubeFrontSideToBottomSide(sender, e);
 
         if (!CheckIfCubeIsSolved(false))
         {
             return;
         }
-
+        
         EnableDisableArrows(true);
     }
 

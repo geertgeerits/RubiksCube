@@ -137,6 +137,7 @@ public partial class PageSettings : ContentPage
                 if (MainPage.cLanguageLocales[nItem].StartsWith(MainPage.cLanguage))
                 {
                     pckLanguageSpeech.SelectedIndex = nItem;
+                    break;
                 }
             }
         }
