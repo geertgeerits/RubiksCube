@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-30 (YYYY-MM-DD)
+// Date ........: 2023-01-31 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -176,10 +176,17 @@ public partial class MainPage : ContentPage
 
         EnableDisableArrows(false);
 
+        //TurnCubeFrontSideToLeftSide(sender, e);
+        //TurnCubeFrontSideToRightSide(sender, e);
+        //TurnCubeFrontSideToTopSide(sender, e);
+        TurnCubeFrontSideToBottomSide(sender, e);
+
         if (!CheckIfCubeIsSolved(false))
         {
             return;
         }
+
+        EnableDisableArrows(true);
     }
 
     // Check the number of colors of the cube.
@@ -1065,6 +1072,43 @@ public partial class MainPage : ContentPage
         ExplainTurnCube(sender, CubeLang.TurnBackSideToRight_Text);
     }
 
+    // Turn the the cube.
+    // Turn the cube front side to the left side.
+    private void TurnCubeFrontSideToLeftSide(object sender, EventArgs e)
+    {
+        TurnTopSideTo("+");
+        TurnHorizontalMiddleLayerTo("+");
+        TurnBottomSideTo("-");
+        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToLeftSide_Text);
+    }
+
+    // Turn the cube front side to the right side.
+    private void TurnCubeFrontSideToRightSide(object sender, EventArgs e)
+    {
+        TurnTopSideTo("-");
+        TurnHorizontalMiddleLayerTo("-");
+        TurnBottomSideTo("+");
+        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToRightSide_Text);
+    }
+
+    // Turn the cube front side to the top side.
+    private void TurnCubeFrontSideToTopSide(object sender, EventArgs e)
+    {
+        TurnRightSideTo("+");
+        TurnFrontTopMiddleTo("+");
+        TurnLeftSideTo("-");
+        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToTopSide_Text);
+    }
+
+    // Turn the cube front side to the bottom side.
+    private void TurnCubeFrontSideToBottomSide(object sender, EventArgs e)
+    {
+        TurnRightSideTo("-");
+        TurnFrontTopMiddleTo("-");
+        TurnLeftSideTo("+");
+        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToBottomSide_Text);
+    }
+
     // Turn the entire front side clockwise or counter clockwise.
     private void TurnFrontSideTo(string cDirection)
     {
@@ -1752,8 +1796,11 @@ public partial class MainPage : ContentPage
     // Explain the turn of the cube.
     private async void ExplainTurnCube(object sender, string cTurnCubeText)
     {
-        var imagebutton = (ImageButton)sender;
-        imagebutton.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        if (sender != null)
+        {
+            var imagebutton = (ImageButton)sender;
+            imagebutton.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        }
 
         string cTurnCubeSpeech = cTurnCubeText;
 
@@ -1773,7 +1820,11 @@ public partial class MainPage : ContentPage
             await DisplayAlert("", cTurnCubeText, CubeLang.ButtonClose_Text);
         }
 
-        imagebutton.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        if (sender != null)
+        {
+            var imagebutton = (ImageButton)sender;
+            imagebutton.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+        }
     }
 
     // On clicked event: Reset the colors of the cube.

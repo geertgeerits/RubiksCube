@@ -242,9 +242,6 @@ Use this program entirely at your own risk.</value>
   <data name="No_Text" xml:space="preserve">
     <value>No</value>
   </data>
-  <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
-  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Privacy Policy:</value>
   </data>
@@ -301,6 +298,18 @@ Not allowed:</value>
   </data>
   <data name="TurnBottomSideToRight_Text" xml:space="preserve">
     <value>Turn the bottom side 'clockwise' (+).</value>
+  </data>
+  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+    <value>Turn the front of the cube to the bottom side.</value>
+  </data>
+  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+    <value>Turn the front of the cube to the left side.</value>
+  </data>
+  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+    <value>Turn the front of the cube to the right side.</value>
+  </data>
+  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+    <value>Turn the front of the cube to the top side.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Turn the front-middle layer to the right side (-).</value>

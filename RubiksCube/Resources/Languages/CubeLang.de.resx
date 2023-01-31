@@ -242,9 +242,6 @@ Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
   <data name="No_Text" xml:space="preserve">
     <value>Nein</value>
   </data>
-  <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website-Link</value>
-  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Datenschutz-Bestimmungen:</value>
   </data>
@@ -301,6 +298,18 @@ Nicht erlaubt:</value>
   </data>
   <data name="TurnBottomSideToRight_Text" xml:space="preserve">
     <value>Drehen Sie die Unterseite 'im Uhrzeigersinn' (+).</value>
+  </data>
+  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorderseite des Würfels auf die Unterseite.</value>
+  </data>
+  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorderseite des Würfels auf die linke Seite.</value>
+  </data>
+  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorderseite des Würfels auf die rechte Seite.</value>
+  </data>
+  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorderseite des Würfels nach oben.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Drehen Sie die vordere mittlere Schicht auf die rechte Seite (-).</value>

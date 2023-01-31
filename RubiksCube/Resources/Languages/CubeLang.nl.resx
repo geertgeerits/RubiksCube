@@ -242,9 +242,6 @@ Gebruik dit programma geheel op eigen risico.</value>
   <data name="No_Text" xml:space="preserve">
     <value>Neen</value>
   </data>
-  <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
-  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
     <value>Privacybeleid:</value>
   </data>
@@ -301,6 +298,18 @@ Niet toegestaan:</value>
   </data>
   <data name="TurnBottomSideToRight_Text" xml:space="preserve">
     <value>Draai de onderkant 'met de klok mee' (+).</value>
+  </data>
+  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+    <value>Draai de voorkant van de kubus naar de onderkant.</value>
+  </data>
+  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+    <value>Draai de voorkant van de kubus naar de linkerkant.</value>
+  </data>
+  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+    <value>Draai de voorkant van de kubus naar de rechterkant.</value>
+  </data>
+  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+    <value>Draai de voorkant van de kubus naar de bovenkant.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Draai de voor-midden laag naar de rechterkant (-).</value>

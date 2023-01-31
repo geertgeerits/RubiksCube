@@ -118,123 +118,123 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Text to speech: Not all languages are supported that are provided in the application settings.
-This option varies from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+    <value>Sintesi vocale: non sono supportate tutte le lingue fornite nelle impostazioni dell'applicazione.
+Questa opzione varia da dispositivo a dispositivo e dalle lingue installate. È possibile che per alcune lingue la traduzione da e verso il parlato venga effettuata tramite Internet dai servizi interessati.
 
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+Per la traduzione del testo è stato utilizzato Google Translate. Questa non è una garanzia che tutte le traduzioni siano corrette.
+Le lingue di supporto sono: olandese, inglese, francese, tedesco, italiano, portoghese e spagnolo.
 
-You can always contact me for any corrections.</value>
+Puoi sempre contattarmi per eventuali correzioni.</value>
   </data>
   <data name="About_Text" xml:space="preserve">
-    <value>About</value>
+    <value>Informazioni</value>
   </data>
   <data name="Agree_Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Accetto</value>
   </data>
   <data name="AllowedCharNot_Text" xml:space="preserve">
-    <value>Not allowed:</value>
+    <value>Non autorizzato:</value>
   </data>
   <data name="AllowedChar_Text" xml:space="preserve">
-    <value>Allowed characters:</value>
+    <value>Caratteri consentiti:</value>
   </data>
   <data name="ButtonClose_Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Chiudere</value>
   </data>
   <data name="ButtonReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Ripristina</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
-    <value>Solve</value>
+    <value>Risolvere</value>
   </data>
   <data name="CloseApplication_Text" xml:space="preserve">
-    <value>Please close the application.</value>
+    <value>Si prega di chiudere l'applicazione.</value>
   </data>
   <data name="Contact_Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>Contatto:</value>
   </data>
   <data name="Copyright_Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Diritto d'autore</value>
   </data>
   <data name="CubeBackSide_Text" xml:space="preserve">
-    <value>Back</value>
+    <value>Didietro</value>
   </data>
   <data name="CubeBottomSide_Text" xml:space="preserve">
-    <value>Bottom</value>
+    <value>Il fondo</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
-    <value>Cube colors:</value>
+    <value>Colori cubo:</value>
   </data>
   <data name="CubeFrontSide_Text" xml:space="preserve">
-    <value>Front</value>
+    <value>Fronte</value>
   </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
-    <value>Inside view</value>
+    <value>Vista interna</value>
   </data>
   <data name="CubeLeftSide_Text" xml:space="preserve">
-    <value>Left</value>
+    <value>Lato sinistro</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
-    <value>Outside view</value>
+    <value>Vista esterna</value>
   </data>
   <data name="CubeRightSide_Text" xml:space="preserve">
-    <value>Right</value>
+    <value>Lato destro</value>
   </data>
   <data name="CubeTopSide_Text" xml:space="preserve">
-    <value>Top</value>
+    <value>Fesa</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
-    <value>Default</value>
+    <value>Predefinito</value>
   </data>
   <data name="Description_Text" xml:space="preserve">
-    <value>Play or solve the cube.</value>
+    <value>Gioca o risolvi il cubo.</value>
   </data>
   <data name="Disagree_Text" xml:space="preserve">
-    <value>Disagree</value>
+    <value>Non accetto</value>
   </data>
   <data name="Email_Text" xml:space="preserve">
     <value>E-mail:</value>
   </data>
   <data name="ErrorTitle_Text" xml:space="preserve">
-    <value>Error</value>
+    <value>Errore</value>
   </data>
   <data name="ExplainedBySpeech_Text" xml:space="preserve">
-    <value>Explained by speech:</value>
+    <value>Spiegato con il discorso:</value>
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
-    <value>Explained by text:</value>
+    <value>Spiegato dal testo:</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
-    <value>Hexadecimal color codes:
+    <value>Codici colore esadecimali:
 
-Characters 1-2: Red
-Characters 3-4: Green
-Characters 5-6: Blue</value>
+Caratteri 1-2: Rosso
+Caratteri 3-4: Verde
+Caratteri 5-6: Blu</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
-    <value>Language speech:</value>
+    <value>Discorso in lingua:</value>
   </data>
   <data name="Language_Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>Lingua:</value>
   </data>
   <data name="LicenseMit2_Text" xml:space="preserve">
-    <value>The software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the author and/or publisher be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</value>
+    <value>Il software viene fornito "così com'è", senza garanzie di alcun tipo, esplicite o implicite, incluse, a titolo esemplificativo ma non esaustivo, le garanzie di commerciabilità, idoneità per uno scopo particolare e non violazione. In nessun caso l'autore e/o l'editore possono essere ritenuti responsabili per qualsiasi pretesa, danno o altra responsabilità, sia in un'azione contrattuale, illecita o altro, derivante da, fuori o in connessione con il software o l'uso o altri rapporti in il software.</value>
   </data>
   <data name="LicenseTitle_Text" xml:space="preserve">
-    <value>License</value>
+    <value>Licenza</value>
   </data>
   <data name="License_Text" xml:space="preserve">
-    <value>This application may be used freely for non-commercial purposes.
-Use this program entirely at your own risk.</value>
+    <value>Questa applicazione può essere utilizzata liberamente per scopi non commerciali.
+Utilizzare questo programma interamente a proprio rischio.</value>
   </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
-    <value>Congratulations, the cube has been solved.</value>
+    <value>Congratulazioni, il cubo è stato risolto.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
-    <value>The cube is not solved!</value>
+    <value>Il cubo non è risolto!</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
-    <value>Of each available color, there must be nine of the same color!</value>
+    <value>Di ogni colore disponibile, devono essercene nove dello stesso colore!</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -242,115 +242,124 @@ Use this program entirely at your own risk.</value>
   <data name="No_Text" xml:space="preserve">
     <value>No</value>
   </data>
-  <data name="OpenLinkTitle_Text" xml:space="preserve">
-    <value>Website link</value>
-  </data>
   <data name="PrivacyPolicyTitle_Text" xml:space="preserve">
-    <value>Privacy Policy:</value>
+    <value>Politica sulla riservatezza:</value>
   </data>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
-    <value>No personal and other data is stored or passed on to myself and others.</value>
+    <value>Nessun dato personale e di altro tipo viene memorizzato o trasmesso a me stesso e ad altri.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>L'applicazione verrà riavviata.</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Ripristina</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.
-After saving, the application is restarted and the cube is reset.</value>
+    <value>Alcune impostazioni modificate devono essere salvate per poterle applicare.
+Dopo il salvataggio, l'applicazione viene riavviata e il cubo viene reimpostato.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Salva</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Impostazioni</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.
+    <value>Il testo contiene uno o più caratteri non consentiti.
 
-Not allowed:</value>
+Non autorizzato:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>La sintesi vocale non è supportata su questo dispositivo.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Buio</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Leggero</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Sistema</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Tema:</value>
   </data>
   <data name="TurnBackSideToLeft_Text" xml:space="preserve">
-    <value>Turn the back side 'counter clockwise' (-).</value>
+    <value>Girare il lato posteriore 'in senso antiorario' (-).</value>
   </data>
   <data name="TurnBackSideToRight_Text" xml:space="preserve">
-    <value>Turn the back side 'clockwise' (+).</value>
+    <value>Girare il lato posteriore 'in senso orario' (+).</value>
   </data>
   <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
-    <value>Turn the bottom side 'counter clockwise' (-).</value>
+    <value>Girare il lato inferiore 'in senso antiorario' (-).</value>
   </data>
   <data name="TurnBottomSideToRight_Text" xml:space="preserve">
-    <value>Turn the bottom side 'clockwise' (+).</value>
+    <value>Girare il lato inferiore 'in senso orario' (+).</value>
+  </data>
+  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+    <value>Gira la parte anteriore del cubo verso il basso.</value>
+  </data>
+  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+    <value>Girare la parte anteriore del cubo sul lato sinistro.</value>
+  </data>
+  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+    <value>Gira la parte anteriore del cubo sul lato destro.</value>
+  </data>
+  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+    <value>Gira la parte anteriore del cubo verso l'alto.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
-    <value>Turn the front-middle layer to the right side (-).</value>
+    <value>Ruota lo strato centrale anteriore sul lato destro (-).</value>
   </data>
   <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
-    <value>Turn the front-middle layer to the top side (+).</value>
+    <value>Gira lo strato centrale anteriore verso l'alto (+).</value>
   </data>
   <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
-    <value>Turn the front side 'counter clockwise' (-).</value>
+    <value>Girare il lato anteriore 'in senso antiorario' (-).</value>
   </data>
   <data name="TurnFrontSideToRight_Text" xml:space="preserve">
-    <value>Turn the front side 'clockwise' (+).</value>
+    <value>Ruotare il lato anteriore 'in senso orario' (+).</value>
   </data>
   <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
-    <value>Turn the left side 'counter clockwise' (-).</value>
+    <value>Girare il lato sinistro 'in senso antiorario' (-).</value>
   </data>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
-    <value>Turn the left side 'clockwise' (+).</value>
+    <value>Girare il lato sinistro 'in senso orario' (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Turn the right-middle layer to the front side (+).</value>
+    <value>Gira lo strato centrale destro sul lato anteriore (+).</value>
   </data>
   <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
-    <value>Turn the right-middle layer to the top side (-).</value>
+    <value>Ruota lo strato centrale destro sul lato superiore (-).</value>
   </data>
   <data name="TurnRightSideToLeft_Text" xml:space="preserve">
-    <value>Turn the right side 'counter clockwise' (-).</value>
+    <value>Girare il lato destro 'in senso antiorario' (-).</value>
   </data>
   <data name="TurnRightSideToRight_Text" xml:space="preserve">
-    <value>Turn the right side 'clockwise' (+).</value>
+    <value>Girare il lato destro 'in senso orario' (+).</value>
   </data>
   <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Turn the top-middle layer to the front side (-).</value>
+    <value>Girare lo strato medio superiore sul lato anteriore (-).</value>
   </data>
   <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
-    <value>Turn the top-middle layer to the right side (+).</value>
+    <value>Ruota lo strato superiore centrale sul lato destro (+).</value>
   </data>
   <data name="TurnTopSideToLeft_Text" xml:space="preserve">
-    <value>Turn the top side 'counter clockwise' (-).</value>
+    <value>Girare il lato superiore 'in senso antiorario' (-).</value>
   </data>
   <data name="TurnTopSideToRight_Text" xml:space="preserve">
-    <value>Turn the top side 'clockwise' (+).</value>
+    <value>Ruotare il lato superiore 'in senso orario' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versione:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website:</value>
+    <value>Sito web:</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Sì</value>
   </data>
 </root>

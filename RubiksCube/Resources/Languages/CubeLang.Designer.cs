@@ -413,15 +413,6 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Website link.
-        /// </summary>
-        internal static string OpenLinkTitle_Text {
-            get {
-                return ResourceManager.GetString("OpenLinkTitle_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to No personal and other data is stored or passed on to myself and others..
         /// </summary>
         internal static string PrivacyPolicy_Text {
@@ -583,6 +574,42 @@ namespace RubiksCube.Resources.Languages {
         internal static string TurnBottomSideToRight_Text {
             get {
                 return ResourceManager.GetString("TurnBottomSideToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front of the cube to the bottom side..
+        /// </summary>
+        internal static string TurnCubeFrontSideToBottomSide_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeFrontSideToBottomSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front of the cube to the left side..
+        /// </summary>
+        internal static string TurnCubeFrontSideToLeftSide_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeFrontSideToLeftSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front of the cube to the right side..
+        /// </summary>
+        internal static string TurnCubeFrontSideToRightSide_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeFrontSideToRightSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front of the cube to the top side..
+        /// </summary>
+        internal static string TurnCubeFrontSideToTopSide_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeFrontSideToTopSide_Text", resourceCulture);
             }
         }
         
