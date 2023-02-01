@@ -171,6 +171,11 @@ Puoi sempre contattarmi per eventuali correzioni.</value>
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Fronte</value>
   </data>
+  <data name="CubeHelp_Text" xml:space="preserve">
+    <value>Ruota i lati del cubo in senso orario e antiorario:
+Se viene dato il comando di girare la parte anteriore 'in senso orario', allora questo è nella direzione in cui le lancette stanno girando. 'In senso antiorario' sta girando nella direzione opposta.
+Per gli altri lati devi sempre 'immaginare' di essere direttamente davanti al lato da girare. Quindi, se dice gira la parte posteriore 'in senso orario', immagina di essere dall'altra parte del cubo e poi gira la parte posteriore 'in senso orario'. Non ruotare il cubo stesso.</value>
+  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vista interna</value>
   </data>

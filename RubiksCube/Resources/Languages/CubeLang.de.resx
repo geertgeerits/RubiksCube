@@ -171,6 +171,11 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Vorderseite</value>
   </data>
+  <data name="CubeHelp_Text" xml:space="preserve">
+    <value>Drehen Sie die Würfelseiten im Uhrzeigersinn und im Gegenuhrzeigersinn:
+Wenn der Befehl gegeben wird, die Vorderseite 'im Uhrzeigersinn' zu drehen, dann in die Richtung, in die sich die Zeiger drehen. 'Gegen den Uhrzeigersinn' dreht sich in die andere Richtung.
+Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor der zu wendenden Seite steht. Wenn es also heißt, drehen Sie die Rückseite im Uhrzeigersinn, stellen Sie sich vor, Sie befinden sich auf der anderen Seite des Würfels und drehen Sie dann die Rückseite im Uhrzeigersinn. Drehen Sie nicht den Würfel selbst.</value>
+  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Innenansicht</value>
   </data>

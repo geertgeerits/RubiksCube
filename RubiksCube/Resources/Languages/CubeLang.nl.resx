@@ -171,6 +171,11 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Voor</value>
   </data>
+  <data name="CubeHelp_Text" xml:space="preserve">
+    <value>De kubuszijden 'met de klok mee' en 'tegen de klok in' draaien:
+Als de opdracht wordt gegeven om de voorzijde 'met de klok mee' te draaien dan is dit in de richting waarin de wijzers draaien.  'Tegen de klok in' is draaien in de andere richting.
+Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draaien zijde staat. Dus als er staat draai de achterkant 'met de klok mee' stel u zich dan voor dat u aan de andere kant van de kubus staat en draai dan de achterkant 'met de klok mee'. Draai de kubus zelf niet.</value>
+  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Binnenkant</value>
   </data>

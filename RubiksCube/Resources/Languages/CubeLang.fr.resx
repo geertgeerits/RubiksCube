@@ -171,6 +171,11 @@ Vous pouvez toujours me contacter pour toute correction.</value>
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Face avant</value>
   </data>
+  <data name="CubeHelp_Text" xml:space="preserve">
+    <value>Faites pivoter les côtés du cube dans le sens des aiguilles d'une montre et dans le sens inverse des aiguilles d'une montre:
+Si la commande est donnée de tourner le devant dans le sens des aiguilles d'une montre, c'est dans le sens dans lequel les aiguilles tournent. 'Dans le sens contraire des aiguilles d'une montre' tourne dans l'autre sens.
+Pour les autres côtés, vous devez toujours « imaginer » que vous êtes directement devant le côté à tourner. Donc, s'il est indiqué de tourner le dos dans le sens des aiguilles d'une montre, imaginez que vous êtes de l'autre côté du cube, puis tournez le dos dans le sens des aiguilles d'une montre. Ne faites pas pivoter le cube lui-même.</value>
+  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vue de l'intérieur</value>
   </data>

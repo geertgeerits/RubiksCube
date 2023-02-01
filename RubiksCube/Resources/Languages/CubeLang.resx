@@ -171,6 +171,11 @@ You can always contact me for any corrections.</value>
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Front</value>
   </data>
+  <data name="CubeHelp_Text" xml:space="preserve">
+    <value>Rotate the cube sides 'clockwise' and 'counter clockwise':
+If the command is given to turn the front 'clockwise' then this is in the direction the hands are turning. 'Counter clockwise' is turning in the other direction.
+For the other sides you always have to 'imagine' that you are directly in front of the side to be turned. So if it says turn the back 'clockwise' imagine you are on the other side of the cube and then turn the back 'clockwise'. Do not rotate the cube itself.</value>
+  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Inside view</value>
   </data>

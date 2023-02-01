@@ -171,6 +171,11 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Frente</value>
   </data>
+  <data name="CubeHelp_Text" xml:space="preserve">
+    <value>Gire os lados do cubo 'no sentido horário' e 'no sentido anti-horário':
+Se for dado o comando para girar a frente 'no sentido horário', isso ocorre na direção em que os ponteiros estão girando. 'Sentido anti-horário' está girando na outra direção.
+Para os outros lados, você sempre deve 'imaginar' que está diretamente na frente do lado a ser virado. Portanto, se ele disser para virar no sentido horário, imagine que você está do outro lado do cubo e, em seguida, vire no sentido horário. Não gire o próprio cubo.</value>
+  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vista interior</value>
   </data>

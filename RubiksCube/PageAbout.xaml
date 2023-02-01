@@ -122,6 +122,14 @@
             <Label></Label>
 
             <Label
+                x:Name="lblCubeHelp"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                FontSize="13"
+                Text="{x:Static resx:CubeLang.CubeHelp_Text}">
+            </Label>
+
+            <Label
                 x:Name="lblAboutExplanation"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
