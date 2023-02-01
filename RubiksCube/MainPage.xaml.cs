@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-01-31 (YYYY-MM-DD)
+// Date ........: 2023-02-01 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -155,7 +155,7 @@ public partial class MainPage : ContentPage
     }
     
     // Solve the cube.
-    private void OnBtnSolveClicked(object sender, EventArgs e)
+    private async void OnBtnSolveClicked(object sender, EventArgs e)
     {
         if (!CheckNumberColorsCube())
         {
@@ -164,15 +164,31 @@ public partial class MainPage : ContentPage
 
         EnableDisableArrows(false);
 
-        TurnCubeFrontSideToLeftSide(sender, e);
-        //TurnCubeFrontSideToRightSide(sender, e);
-        //TurnCubeFrontSideToTopSide(sender, e);
-        //TurnCubeFrontSideToBottomSide(sender, e);
+        bool bExplainTextSaved = bExplainText;
+        bExplainText = false;
+
+        TurnCubeFrontSideToLeftSide();
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
+
+        TurnCubeFrontSideToRightSide();
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
+
+        TurnCubeFrontSideToTopSide();
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToTopSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
+
+        TurnCubeFrontSideToBottomSide();
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToBottomSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
 
         if (!CheckIfCubeIsSolved(false))
         {
             return;
         }
+
+        bExplainText = bExplainTextSaved;
         
         EnableDisableArrows(true);
     }
@@ -928,7 +944,12 @@ public partial class MainPage : ContentPage
             }
             return false;
         }
-        
+
+        if (bExplainSpeech)
+        {
+            ConvertTextToSpeech(CubeLang.MessageCubeIsSolved_Text);
+        }
+
         DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
         return true;
     }
@@ -1062,7 +1083,7 @@ public partial class MainPage : ContentPage
 
     // Turn the the cube.
     // Turn the cube front side to the left side.
-    private void TurnCubeFrontSideToLeftSide(object sender, EventArgs e)
+    private void TurnCubeFrontSideToLeftSide()
     {
         TurnTopSideTo("+");
         TurnHorizontalMiddleLayerTo("+");
@@ -1071,7 +1092,7 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the cube front side to the right side.
-    private void TurnCubeFrontSideToRightSide(object sender, EventArgs e)
+    private void TurnCubeFrontSideToRightSide()
     {
         TurnTopSideTo("-");
         TurnHorizontalMiddleLayerTo("-");
@@ -1080,7 +1101,7 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the cube front side to the top side.
-    private void TurnCubeFrontSideToTopSide(object sender, EventArgs e)
+    private void TurnCubeFrontSideToTopSide()
     {
         TurnRightSideTo("+");
         TurnFrontTopMiddleTo("+");
@@ -1089,7 +1110,7 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the cube front side to the bottom side.
-    private void TurnCubeFrontSideToBottomSide(object sender, EventArgs e)
+    private void TurnCubeFrontSideToBottomSide()
     {
         TurnRightSideTo("-");
         TurnFrontTopMiddleTo("-");
@@ -1931,7 +1952,8 @@ public partial class MainPage : ContentPage
                 imgbtnAbout.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
                 BtnSolve.IsEnabled = false;
-                BtnReset.IsEnabled= false;
+                BtnReset.IsEnabled = false;
+                EnableDisableArrows(false);
 
                 await DisplayAlert(CubeLang.LicenseTitle_Text, CubeLang.CloseApplication_Text, CubeLang.ButtonClose_Text);
 #else

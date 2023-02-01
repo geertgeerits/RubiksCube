@@ -156,6 +156,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        internal static string Continue_Text {
+            get {
+                return ResourceManager.GetString("Continue_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copyright.
         /// </summary>
         internal static string Copyright_Text {
@@ -482,6 +491,24 @@ namespace RubiksCube.Resources.Languages {
         internal static string SettingsSaved_Text {
             get {
                 return ResourceManager.GetString("SettingsSaved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solve.
+        /// </summary>
+        internal static string Solve_Text {
+            get {
+                return ResourceManager.GetString("Solve_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string Stop_Text {
+            get {
+                return ResourceManager.GetString("Stop_Text", resourceCulture);
             }
         }
         

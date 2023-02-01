@@ -128,8 +128,8 @@ public partial class PageSettings : ContentPage
 
             // Put text in the chosen language in the controls and variables.
             SetLanguage();
-            
-            // Search the new language in the locales array and select the new speech language.
+
+            // Search the new language in the cLanguageLocales array and select the new speech language.
             int nTotalItems = MainPage.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)

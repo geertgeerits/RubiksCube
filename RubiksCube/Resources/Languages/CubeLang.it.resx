@@ -153,6 +153,9 @@ Puoi sempre contattarmi per eventuali correzioni.</value>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contatto:</value>
   </data>
+  <data name="Continue_Text" xml:space="preserve">
+    <value>Continua</value>
+  </data>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Diritto d'autore</value>
   </data>
@@ -266,6 +269,12 @@ Dopo il salvataggio, l'applicazione viene riavviata e il cubo viene reimpostato.
   </data>
   <data name="Settings_Text" xml:space="preserve">
     <value>Impostazioni</value>
+  </data>
+  <data name="Solve_Text" xml:space="preserve">
+    <value>Risolvere</value>
+  </data>
+  <data name="Stop_Text" xml:space="preserve">
+    <value>Fermare</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
     <value>Il testo contiene uno o più caratteri non consentiti.

@@ -153,6 +153,9 @@ Vous pouvez toujours me contacter pour toute correction.</value>
   <data name="Contact_Text" xml:space="preserve">
     <value>Contact:</value>
   </data>
+  <data name="Continue_Text" xml:space="preserve">
+    <value>Continuez</value>
+  </data>
   <data name="Copyright_Text" xml:space="preserve">
     <value>Droits d'auteur</value>
   </data>
@@ -266,6 +269,12 @@ Après l'enregistrement, l'application est redémarrée et le cube est réinitia
   </data>
   <data name="Settings_Text" xml:space="preserve">
     <value>Réglages</value>
+  </data>
+  <data name="Solve_Text" xml:space="preserve">
+    <value>Résoudre</value>
+  </data>
+  <data name="Stop_Text" xml:space="preserve">
+    <value>Arrêter</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
     <value>Le texte contient un ou plusieurs caractères non autorisés.
