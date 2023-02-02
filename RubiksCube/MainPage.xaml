@@ -26,7 +26,6 @@
             </ImageButton>
 
             <Label
-                x:Name="lblTitle"
                 Style="{StaticResource labelStyleShellTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
@@ -139,7 +138,6 @@
                 ColumnSpacing="5">
 
                 <Label
-                    x:Name="txtOutsideView"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -149,7 +147,6 @@
                 </Label>
 
                 <Label
-                    x:Name="txtTopSide"
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="Center"
@@ -357,7 +354,6 @@
                 </HorizontalStackLayout>
 
                 <Label
-                    x:Name="txtFrontSide"
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="Start"
@@ -366,7 +362,6 @@
                 </Label>
 
                 <Label
-                    x:Name="txtRightSide"
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -687,7 +682,6 @@
                 </VerticalStackLayout>
 
                 <Label
-                    x:Name="txtInsideView"
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -698,7 +692,6 @@
                 </Label>
 
                 <Label
-                    x:Name="txtLeftSide"
                     Grid.Row="6"
                     Grid.Column="1"
                     HorizontalOptions="Start"
@@ -707,7 +700,6 @@
                 </Label>
 
                 <Label
-                    x:Name="txtBackSide"
                     Grid.Row="6"
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -1019,7 +1011,6 @@
                 </VerticalStackLayout>
 
                 <Label
-                    x:Name="txtBottomSide"
                     Grid.Row="8"
                     Grid.Column="1"
                     HorizontalOptions="Center"

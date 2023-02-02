@@ -7,7 +7,6 @@
 
     <NavigationPage.TitleView>
         <Label
-            x:Name="lblTitle"
             Style="{StaticResource labelStyleShellTitleView}"
             Text="{local:Translate Settings_Text}">
         </Label>
@@ -51,7 +50,6 @@
                 </Label>
 
                 <Label
-                    x:Name="lblLanguage"
                     Grid.Row="1"
                     Grid.Column="0"
                     VerticalTextAlignment="Center"
@@ -91,7 +89,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblLanguageSpeech"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -121,7 +118,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblTheme"
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -158,7 +154,6 @@
                 </Border>
 
                 <Label
-                    x:Name="lblExplainText"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -176,7 +171,6 @@
                 </Switch>
 
                 <Label
-                    x:Name="lblExplainSpeech"
                     Grid.Row="5"
                     Grid.Column="0"
                     VerticalOptions="Center"
@@ -193,7 +187,6 @@
                 </Switch>
 
                 <Label
-                    x:Name="lblCubeColors"
                     Grid.Row="6"
                     Grid.Column="0"
                     VerticalOptions="Center"
@@ -387,7 +380,6 @@
         </Button>
 
         <Button
-            x:Name="btnSettingsReset"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="1"
             Grid.Column="1"
