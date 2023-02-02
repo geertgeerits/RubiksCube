@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-02-01 (YYYY-MM-DD)
+// Date ........: 2023-02-02 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -138,14 +138,14 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new PageSettings());
     }
 
-    // Select a color for dropping on a cube and put it in a tempory rectangle.
+    // Select a color for dropping on a cube and put it in a tempory polygon.
     private void OnColorDragStarting(object sender, DragStartingEventArgs e)
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
         plgCubeColorSelect.Fill = polygon.Fill;        
     }
 
-    // Drop the selected color on the cube and fill the cube with the color of the tempory rectangle.
+    // Drop the selected color on the cube and fill the cube with the color of the tempory polygon.
     private void OnColorDrop(object sender, DropEventArgs e)
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
@@ -166,7 +166,17 @@ public partial class MainPage : ContentPage
 
         bool bExplainTextSaved = bExplainText;
         bExplainText = false;
+        
+        await SolveTheCube();
+        
+        bExplainText = bExplainTextSaved;
+        
+        EnableDisableArrows(true);
+    }
 
+    // Solve the cube.
+    private async Task SolveTheCube()
+    {
         TurnCubeFrontSideToLeftSide();
         if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
             return;
@@ -187,10 +197,6 @@ public partial class MainPage : ContentPage
         {
             return;
         }
-
-        bExplainText = bExplainTextSaved;
-        
-        EnableDisableArrows(true);
     }
 
     // Check the number of colors of the cube.
