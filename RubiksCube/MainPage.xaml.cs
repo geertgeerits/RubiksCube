@@ -177,23 +177,56 @@ public partial class MainPage : ContentPage
     // Solve the cube.
     private async Task SolveTheCube()
     {
-        TurnCubeFrontSideToLeftSide();
-        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            return;
+        // Solve the edges of the top layer.
+        Brush ColorFront1 = plgFront1.Fill;
 
-        TurnCubeFrontSideToRightSide();
-        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            return;
+        if (plgTop5.Fill == plgBottom2.Fill && plgFront5.Fill == plgFront8.Fill)
+        {
+            TurnFrontSideTo("+");
+            TurnFrontSideTo("+");
+            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnFrontSideToRight_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                return;
+        }
 
-        TurnCubeFrontSideToTopSide();
-        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToTopSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            return;
+        if (plgTop5.Fill == plgBottom4.Fill && plgLeft5.Fill == plgLeft8.Fill)
+        {
+            TurnLeftSideTo("+");
+            TurnLeftSideTo("+");
+            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnLeftSideToRight_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                return;
+        }
 
-        TurnCubeFrontSideToBottomSide();
-        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToBottomSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            return;
+            // Solve the corners of the top layer.
 
-        if (!CheckIfCubeIsSolved(false))
+            // Solve the middle layer.
+
+            // Solve the bottom layer.
+
+            // Put the edges on the correct place.
+
+            // Flip the corners.
+
+            // Turning the edges.
+
+
+
+            //TurnCubeFrontSideToLeftSide();
+            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            //    return;
+
+            //TurnCubeFrontSideToRightSide();
+            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            //    return;
+
+            //TurnCubeFrontSideToTopSide();
+            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToTopSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            //    return;
+
+            //TurnCubeFrontSideToBottomSide();
+            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToBottomSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            //    return;
+
+            if (!CheckIfCubeIsSolved(false))
         {
             return;
         }
@@ -323,118 +356,118 @@ public partial class MainPage : ContentPage
         if (plgTop9.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
 
-        if (PlgFront1.Fill == plgCubeColor1.Fill) 
+        if (plgFront1.Fill == plgCubeColor1.Fill) 
             nNumberOfColors1++;
-        if (PlgFront2.Fill == plgCubeColor1.Fill)
+        if (plgFront2.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront3.Fill == plgCubeColor1.Fill)
+        if (plgFront3.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront4.Fill == plgCubeColor1.Fill)
+        if (plgFront4.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront5.Fill == plgCubeColor1.Fill)
+        if (plgFront5.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront6.Fill == plgCubeColor1.Fill)
+        if (plgFront6.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront7.Fill == plgCubeColor1.Fill)
+        if (plgFront7.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront8.Fill == plgCubeColor1.Fill)
+        if (plgFront8.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
-        if (PlgFront9.Fill == plgCubeColor1.Fill)
+        if (plgFront9.Fill == plgCubeColor1.Fill)
             nNumberOfColors1++;
 
-        if (PlgFront1.Fill == plgCubeColor2.Fill)
+        if (plgFront1.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront2.Fill == plgCubeColor2.Fill)
+        if (plgFront2.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront3.Fill == plgCubeColor2.Fill)
+        if (plgFront3.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront4.Fill == plgCubeColor2.Fill)
+        if (plgFront4.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront5.Fill == plgCubeColor2.Fill)
+        if (plgFront5.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront6.Fill == plgCubeColor2.Fill)
+        if (plgFront6.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront7.Fill == plgCubeColor2.Fill)
+        if (plgFront7.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront8.Fill == plgCubeColor2.Fill)
+        if (plgFront8.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
-        if (PlgFront9.Fill == plgCubeColor2.Fill)
+        if (plgFront9.Fill == plgCubeColor2.Fill)
             nNumberOfColors2++;
 
-        if (PlgFront1.Fill == plgCubeColor3.Fill)
+        if (plgFront1.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront2.Fill == plgCubeColor3.Fill)
+        if (plgFront2.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront3.Fill == plgCubeColor3.Fill)
+        if (plgFront3.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront4.Fill == plgCubeColor3.Fill)
+        if (plgFront4.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront5.Fill == plgCubeColor3.Fill)
+        if (plgFront5.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront6.Fill == plgCubeColor3.Fill)
+        if (plgFront6.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront7.Fill == plgCubeColor3.Fill)
+        if (plgFront7.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront8.Fill == plgCubeColor3.Fill)
+        if (plgFront8.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
-        if (PlgFront9.Fill == plgCubeColor3.Fill)
+        if (plgFront9.Fill == plgCubeColor3.Fill)
             nNumberOfColors3++;
 
-        if (PlgFront1.Fill == plgCubeColor4.Fill)
+        if (plgFront1.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront2.Fill == plgCubeColor4.Fill)
+        if (plgFront2.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront3.Fill == plgCubeColor4.Fill)
+        if (plgFront3.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront4.Fill == plgCubeColor4.Fill)
+        if (plgFront4.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront5.Fill == plgCubeColor4.Fill)
+        if (plgFront5.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront6.Fill == plgCubeColor4.Fill)
+        if (plgFront6.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront7.Fill == plgCubeColor4.Fill)
+        if (plgFront7.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront8.Fill == plgCubeColor4.Fill)
+        if (plgFront8.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
-        if (PlgFront9.Fill == plgCubeColor4.Fill)
+        if (plgFront9.Fill == plgCubeColor4.Fill)
             nNumberOfColors4++;
 
-        if (PlgFront1.Fill == plgCubeColor5.Fill)
+        if (plgFront1.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront2.Fill == plgCubeColor5.Fill)
+        if (plgFront2.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront3.Fill == plgCubeColor5.Fill)
+        if (plgFront3.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront4.Fill == plgCubeColor5.Fill)
+        if (plgFront4.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront5.Fill == plgCubeColor5.Fill)
+        if (plgFront5.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront6.Fill == plgCubeColor5.Fill)
+        if (plgFront6.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront7.Fill == plgCubeColor5.Fill)
+        if (plgFront7.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront8.Fill == plgCubeColor5.Fill)
+        if (plgFront8.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
-        if (PlgFront9.Fill == plgCubeColor5.Fill)
+        if (plgFront9.Fill == plgCubeColor5.Fill)
             nNumberOfColors5++;
 
-        if (PlgFront1.Fill == plgCubeColor6.Fill)
+        if (plgFront1.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront2.Fill == plgCubeColor6.Fill)
+        if (plgFront2.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront3.Fill == plgCubeColor6.Fill)
+        if (plgFront3.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront4.Fill == plgCubeColor6.Fill)
+        if (plgFront4.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront5.Fill == plgCubeColor6.Fill)
+        if (plgFront5.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront6.Fill == plgCubeColor6.Fill)
+        if (plgFront6.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront7.Fill == plgCubeColor6.Fill)
+        if (plgFront7.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront8.Fill == plgCubeColor6.Fill)
+        if (plgFront8.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
-        if (PlgFront9.Fill == plgCubeColor6.Fill)
+        if (plgFront9.Fill == plgCubeColor6.Fill)
             nNumberOfColors6++;
 
         if (plgRight1.Fill == plgCubeColor1.Fill)
@@ -917,7 +950,7 @@ public partial class MainPage : ContentPage
             bColorsTop = true;
         }
 
-        if (PlgFront1.Fill == PlgFront2.Fill && PlgFront1.Fill == PlgFront3.Fill && PlgFront1.Fill == PlgFront4.Fill && PlgFront1.Fill == PlgFront5.Fill && PlgFront1.Fill == PlgFront6.Fill && PlgFront1.Fill == PlgFront7.Fill && PlgFront1.Fill == PlgFront8.Fill && PlgFront1.Fill == PlgFront9.Fill)
+        if (plgFront1.Fill == plgFront2.Fill && plgFront1.Fill == plgFront3.Fill && plgFront1.Fill == plgFront4.Fill && plgFront1.Fill == plgFront5.Fill && plgFront1.Fill == plgFront6.Fill && plgFront1.Fill == plgFront7.Fill && plgFront1.Fill == plgFront8.Fill && plgFront1.Fill == plgFront9.Fill)
         {
             bColorsFront = true;
         }
@@ -1127,14 +1160,14 @@ public partial class MainPage : ContentPage
     // Turn the entire front side clockwise or counter clockwise.
     private void TurnFrontSideTo(string cDirection)
     {
-        Brush ColorFront1 = PlgFront1.Fill;
-        Brush ColorFront2 = PlgFront2.Fill;
-        Brush ColorFront3 = PlgFront3.Fill;
-        Brush ColorFront4 = PlgFront4.Fill;
-        Brush ColorFront6 = PlgFront6.Fill;
-        Brush ColorFront7 = PlgFront7.Fill;
-        Brush ColorFront8 = PlgFront8.Fill;
-        Brush ColorFront9 = PlgFront9.Fill;
+        Brush ColorFront1 = plgFront1.Fill;
+        Brush ColorFront2 = plgFront2.Fill;
+        Brush ColorFront3 = plgFront3.Fill;
+        Brush ColorFront4 = plgFront4.Fill;
+        Brush ColorFront6 = plgFront6.Fill;
+        Brush ColorFront7 = plgFront7.Fill;
+        Brush ColorFront8 = plgFront8.Fill;
+        Brush ColorFront9 = plgFront9.Fill;
 
         Brush ColorTop7 = plgTop7.Fill;
         Brush ColorTop8 = plgTop8.Fill;
@@ -1154,14 +1187,14 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "+")
         {
-            PlgFront1.Fill = ColorFront7;
-            PlgFront2.Fill = ColorFront4;
-            PlgFront3.Fill = ColorFront1;
-            PlgFront4.Fill = ColorFront8;
-            PlgFront6.Fill = ColorFront2;
-            PlgFront7.Fill = ColorFront9;
-            PlgFront8.Fill = ColorFront6;
-            PlgFront9.Fill = ColorFront3;
+            plgFront1.Fill = ColorFront7;
+            plgFront2.Fill = ColorFront4;
+            plgFront3.Fill = ColorFront1;
+            plgFront4.Fill = ColorFront8;
+            plgFront6.Fill = ColorFront2;
+            plgFront7.Fill = ColorFront9;
+            plgFront8.Fill = ColorFront6;
+            plgFront9.Fill = ColorFront3;
 
             plgTop7.Fill = ColorLeft9;
             plgTop8.Fill = ColorLeft6;
@@ -1182,14 +1215,14 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "-")
         {
-            PlgFront1.Fill = ColorFront3;
-            PlgFront2.Fill = ColorFront6;
-            PlgFront3.Fill = ColorFront9;
-            PlgFront4.Fill = ColorFront2;
-            PlgFront6.Fill = ColorFront8;
-            PlgFront7.Fill = ColorFront1;
-            PlgFront8.Fill = ColorFront4;
-            PlgFront9.Fill = ColorFront7;
+            plgFront1.Fill = ColorFront3;
+            plgFront2.Fill = ColorFront6;
+            plgFront3.Fill = ColorFront9;
+            plgFront4.Fill = ColorFront2;
+            plgFront6.Fill = ColorFront8;
+            plgFront7.Fill = ColorFront1;
+            plgFront8.Fill = ColorFront4;
+            plgFront9.Fill = ColorFront7;
 
             plgTop7.Fill = ColorRight1;
             plgTop8.Fill = ColorRight4;
@@ -1368,9 +1401,9 @@ public partial class MainPage : ContentPage
         Brush ColorTop4 = plgTop4.Fill;
         Brush ColorTop7 = plgTop7.Fill;
 
-        Brush ColorFront1 = PlgFront1.Fill;
-        Brush ColorFront4 = PlgFront4.Fill;
-        Brush ColorFront7 = PlgFront7.Fill;
+        Brush ColorFront1 = plgFront1.Fill;
+        Brush ColorFront4 = plgFront4.Fill;
+        Brush ColorFront7 = plgFront7.Fill;
 
         Brush ColorBottom1 = plgBottom1.Fill;
         Brush ColorBottom4 = plgBottom4.Fill;
@@ -1395,9 +1428,9 @@ public partial class MainPage : ContentPage
             plgTop4.Fill = ColorBack6;
             plgTop7.Fill = ColorBack3;
 
-            PlgFront1.Fill = ColorTop1;
-            PlgFront4.Fill = ColorTop4;
-            PlgFront7.Fill = ColorTop7;
+            plgFront1.Fill = ColorTop1;
+            plgFront4.Fill = ColorTop4;
+            plgFront7.Fill = ColorTop7;
 
             plgBottom1.Fill = ColorFront1;
             plgBottom4.Fill = ColorFront4;
@@ -1423,9 +1456,9 @@ public partial class MainPage : ContentPage
             plgTop4.Fill = ColorFront4;
             plgTop7.Fill = ColorFront7;
 
-            PlgFront1.Fill = ColorBottom1;
-            PlgFront4.Fill = ColorBottom4;
-            PlgFront7.Fill = ColorBottom7;
+            plgFront1.Fill = ColorBottom1;
+            plgFront4.Fill = ColorBottom4;
+            plgFront7.Fill = ColorBottom7;
 
             plgBottom1.Fill = ColorBack9;
             plgBottom4.Fill = ColorBack6;
@@ -1444,9 +1477,9 @@ public partial class MainPage : ContentPage
         Brush ColorTop5 = plgTop5.Fill;
         Brush ColorTop8 = plgTop8.Fill;
 
-        Brush ColorFront2 = PlgFront2.Fill;
-        Brush ColorFront5 = PlgFront5.Fill;
-        Brush ColorFront8 = PlgFront8.Fill;
+        Brush ColorFront2 = plgFront2.Fill;
+        Brush ColorFront5 = plgFront5.Fill;
+        Brush ColorFront8 = plgFront8.Fill;
 
         Brush ColorBottom2 = plgBottom2.Fill;
         Brush ColorBottom5 = plgBottom5.Fill;
@@ -1462,9 +1495,9 @@ public partial class MainPage : ContentPage
             plgTop5.Fill = ColorFront5;
             plgTop8.Fill = ColorFront8;
 
-            PlgFront2.Fill = ColorBottom2;
-            PlgFront5.Fill = ColorBottom5;
-            PlgFront8.Fill = ColorBottom8;
+            plgFront2.Fill = ColorBottom2;
+            plgFront5.Fill = ColorBottom5;
+            plgFront8.Fill = ColorBottom8;
 
             plgBottom2.Fill = ColorBack8;
             plgBottom5.Fill = ColorBack5;
@@ -1481,9 +1514,9 @@ public partial class MainPage : ContentPage
             plgTop5.Fill = ColorBack5;
             plgTop8.Fill = ColorBack2;
 
-            PlgFront2.Fill = ColorTop2;
-            PlgFront5.Fill = ColorTop5;
-            PlgFront8.Fill = ColorTop8;
+            plgFront2.Fill = ColorTop2;
+            plgFront5.Fill = ColorTop5;
+            plgFront8.Fill = ColorTop8;
 
             plgBottom2.Fill = ColorFront2;
             plgBottom5.Fill = ColorFront5;
@@ -1511,9 +1544,9 @@ public partial class MainPage : ContentPage
         Brush ColorTop6 = plgTop6.Fill;
         Brush ColorTop9 = plgTop9.Fill;
 
-        Brush ColorFront3 = PlgFront3.Fill;
-        Brush ColorFront6 = PlgFront6.Fill;
-        Brush ColorFront9 = PlgFront9.Fill;
+        Brush ColorFront3 = plgFront3.Fill;
+        Brush ColorFront6 = plgFront6.Fill;
+        Brush ColorFront9 = plgFront9.Fill;
 
         Brush ColorBottom3 = plgBottom3.Fill;
         Brush ColorBottom6 = plgBottom6.Fill;
@@ -1538,9 +1571,9 @@ public partial class MainPage : ContentPage
             plgTop6.Fill = ColorFront6;
             plgTop9.Fill = ColorFront9;
 
-            PlgFront3.Fill = ColorBottom3;
-            PlgFront6.Fill = ColorBottom6;
-            PlgFront9.Fill = ColorBottom9;
+            plgFront3.Fill = ColorBottom3;
+            plgFront6.Fill = ColorBottom6;
+            plgFront9.Fill = ColorBottom9;
 
             plgBottom3.Fill = ColorBack7;
             plgBottom6.Fill = ColorBack4;
@@ -1566,9 +1599,9 @@ public partial class MainPage : ContentPage
             plgTop6.Fill = ColorBack4;
             plgTop9.Fill = ColorBack1;
 
-            PlgFront3.Fill = ColorTop3;
-            PlgFront6.Fill = ColorTop6;
-            PlgFront9.Fill = ColorTop9;
+            plgFront3.Fill = ColorTop3;
+            plgFront6.Fill = ColorTop6;
+            plgFront9.Fill = ColorTop9;
 
             plgBottom3.Fill = ColorFront3;
             plgBottom6.Fill = ColorFront6;
@@ -1596,9 +1629,9 @@ public partial class MainPage : ContentPage
         Brush ColorLeft2 = plgLeft2.Fill;
         Brush ColorLeft3 = plgLeft3.Fill;
 
-        Brush ColorFront1 = PlgFront1.Fill;
-        Brush ColorFront2 = PlgFront2.Fill;
-        Brush ColorFront3 = PlgFront3.Fill;
+        Brush ColorFront1 = plgFront1.Fill;
+        Brush ColorFront2 = plgFront2.Fill;
+        Brush ColorFront3 = plgFront3.Fill;
 
         Brush ColorRight1 = plgRight1.Fill;
         Brush ColorRight2 = plgRight2.Fill;
@@ -1623,9 +1656,9 @@ public partial class MainPage : ContentPage
             plgLeft2.Fill = ColorFront2;
             plgLeft3.Fill = ColorFront3;
 
-            PlgFront1.Fill = ColorRight1;
-            PlgFront2.Fill = ColorRight2;
-            PlgFront3.Fill = ColorRight3;
+            plgFront1.Fill = ColorRight1;
+            plgFront2.Fill = ColorRight2;
+            plgFront3.Fill = ColorRight3;
 
             plgRight1.Fill = ColorBack1;
             plgRight2.Fill = ColorBack2;
@@ -1651,9 +1684,9 @@ public partial class MainPage : ContentPage
             plgLeft2.Fill = ColorBack2;
             plgLeft3.Fill = ColorBack3;
 
-            PlgFront1.Fill = ColorLeft1;
-            PlgFront2.Fill = ColorLeft2;
-            PlgFront3.Fill = ColorLeft3;
+            plgFront1.Fill = ColorLeft1;
+            plgFront2.Fill = ColorLeft2;
+            plgFront3.Fill = ColorLeft3;
 
             plgRight1.Fill = ColorFront1;
             plgRight2.Fill = ColorFront2;
@@ -1668,9 +1701,9 @@ public partial class MainPage : ContentPage
     // Turn the horizontal middle layer to right or left.
     private void TurnHorizontalMiddleLayerTo(string cDirection)
     {
-        Brush ColorFront4 = PlgFront4.Fill;
-        Brush ColorFront5 = PlgFront5.Fill;
-        Brush ColorFront6 = PlgFront6.Fill;
+        Brush ColorFront4 = plgFront4.Fill;
+        Brush ColorFront5 = plgFront5.Fill;
+        Brush ColorFront6 = plgFront6.Fill;
 
         Brush ColorRight4 = plgRight4.Fill;
         Brush ColorRight5 = plgRight5.Fill;
@@ -1686,9 +1719,9 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "+")
         {
-            PlgFront4.Fill = ColorRight4;
-            PlgFront5.Fill = ColorRight5;
-            PlgFront6.Fill = ColorRight6;
+            plgFront4.Fill = ColorRight4;
+            plgFront5.Fill = ColorRight5;
+            plgFront6.Fill = ColorRight6;
 
             plgRight4.Fill = ColorBack4;
             plgRight5.Fill = ColorBack5;
@@ -1705,9 +1738,9 @@ public partial class MainPage : ContentPage
 
         if (cDirection == "-")
         {
-            PlgFront4.Fill = ColorLeft4;
-            PlgFront5.Fill = ColorLeft5;
-            PlgFront6.Fill = ColorLeft6;
+            plgFront4.Fill = ColorLeft4;
+            plgFront5.Fill = ColorLeft5;
+            plgFront6.Fill = ColorLeft6;
 
             plgRight4.Fill = ColorFront4;
             plgRight5.Fill = ColorFront5;
@@ -1739,9 +1772,9 @@ public partial class MainPage : ContentPage
         Brush ColorLeft8 = plgLeft8.Fill;
         Brush ColorLeft9 = plgLeft9.Fill;
 
-        Brush ColorFront7 = PlgFront7.Fill;
-        Brush ColorFront8 = PlgFront8.Fill;
-        Brush ColorFront9 = PlgFront9.Fill;
+        Brush ColorFront7 = plgFront7.Fill;
+        Brush ColorFront8 = plgFront8.Fill;
+        Brush ColorFront9 = plgFront9.Fill;
 
         Brush ColorRight7 = plgRight7.Fill;
         Brush ColorRight8 = plgRight8.Fill;
@@ -1766,9 +1799,9 @@ public partial class MainPage : ContentPage
             plgLeft8.Fill = ColorBack8;
             plgLeft9.Fill = ColorBack9;
 
-            PlgFront7.Fill = ColorLeft7;
-            PlgFront8.Fill = ColorLeft8;
-            PlgFront9.Fill = ColorLeft9;
+            plgFront7.Fill = ColorLeft7;
+            plgFront8.Fill = ColorLeft8;
+            plgFront9.Fill = ColorLeft9;
 
             plgRight7.Fill = ColorFront7;
             plgRight8.Fill = ColorFront8;
@@ -1794,9 +1827,9 @@ public partial class MainPage : ContentPage
             plgLeft8.Fill = ColorFront8;
             plgLeft9.Fill = ColorFront9;
 
-            PlgFront7.Fill = ColorRight7;
-            PlgFront8.Fill = ColorRight8;
-            PlgFront9.Fill = ColorRight9;
+            plgFront7.Fill = ColorRight7;
+            plgFront8.Fill = ColorRight8;
+            plgFront9.Fill = ColorRight9;
 
             plgRight7.Fill = ColorBack7;
             plgRight8.Fill = ColorBack8;
@@ -1861,15 +1894,15 @@ public partial class MainPage : ContentPage
         plgTop8.Fill = plgCubeColor1.Fill;
         plgTop9.Fill = plgCubeColor1.Fill;
 
-        PlgFront1.Fill = plgCubeColor2.Fill;
-        PlgFront2.Fill = plgCubeColor2.Fill;
-        PlgFront3.Fill = plgCubeColor2.Fill;
-        PlgFront4.Fill = plgCubeColor2.Fill;
-        PlgFront5.Fill = plgCubeColor2.Fill;
-        PlgFront6.Fill = plgCubeColor2.Fill;
-        PlgFront7.Fill = plgCubeColor2.Fill;
-        PlgFront8.Fill = plgCubeColor2.Fill;
-        PlgFront9.Fill = plgCubeColor2.Fill;
+        plgFront1.Fill = plgCubeColor2.Fill;
+        plgFront2.Fill = plgCubeColor2.Fill;
+        plgFront3.Fill = plgCubeColor2.Fill;
+        plgFront4.Fill = plgCubeColor2.Fill;
+        plgFront5.Fill = plgCubeColor2.Fill;
+        plgFront6.Fill = plgCubeColor2.Fill;
+        plgFront7.Fill = plgCubeColor2.Fill;
+        plgFront8.Fill = plgCubeColor2.Fill;
+        plgFront9.Fill = plgCubeColor2.Fill;
 
         plgRight1.Fill = plgCubeColor3.Fill;
         plgRight2.Fill = plgCubeColor3.Fill;
