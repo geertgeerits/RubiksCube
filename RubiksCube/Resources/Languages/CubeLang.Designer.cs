@@ -580,7 +580,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the back side &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the back side half a turn..
+        /// </summary>
+        internal static string TurnBackSideHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnBackSideHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the back side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string TurnBackSideToLeft_Text {
             get {
@@ -589,7 +598,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the back side &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the back side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string TurnBackSideToRight_Text {
             get {
@@ -598,7 +607,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom side &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the bottom side half a turn..
+        /// </summary>
+        internal static string TurnBottomSideHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnBottomSideHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the bottom side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string TurnBottomSideToLeft_Text {
             get {
@@ -607,7 +625,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom side &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the bottom side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string TurnBottomSideToRight_Text {
             get {
@@ -652,7 +670,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front-middle layer to the right side (-)..
+        ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the right side (-)..
         /// </summary>
         internal static string TurnFrontMiddleToRightSide_Text {
             get {
@@ -661,7 +679,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front-middle layer to the top side (+)..
+        ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the top side (+)..
         /// </summary>
         internal static string TurnFrontMiddleToTopSide_Text {
             get {
@@ -670,7 +688,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front side &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the front side half a turn..
+        /// </summary>
+        internal static string TurnFrontSideHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontSideHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string TurnFrontSideToLeft_Text {
             get {
@@ -679,7 +706,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front side &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the front side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string TurnFrontSideToRight_Text {
             get {
@@ -688,7 +715,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the left side &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the left side half a turn..
+        /// </summary>
+        internal static string TurnLeftSideHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnLeftSideHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the left side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string TurnLeftSideToLeft_Text {
             get {
@@ -697,7 +733,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the left side &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the left side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string TurnLeftSideToRight_Text {
             get {
@@ -706,7 +742,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right-middle layer to the front side (+)..
+        ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the front side (+)..
         /// </summary>
         internal static string TurnRightMiddleToFrontSide_Text {
             get {
@@ -715,7 +751,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right-middle layer to the top side (-)..
+        ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the top side (-)..
         /// </summary>
         internal static string TurnRightMiddleToTopSide_Text {
             get {
@@ -724,7 +760,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right side &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the right side half a turn..
+        /// </summary>
+        internal static string TurnRightSideHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnRightSideHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the right side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string TurnRightSideToLeft_Text {
             get {
@@ -733,7 +778,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right side &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the right side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string TurnRightSideToRight_Text {
             get {
@@ -742,7 +787,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top-middle layer to the front side (-)..
+        ///   Looks up a localized string similar to Turn the top-middle layer a quarter turn to the front side (-)..
         /// </summary>
         internal static string TurnTopMiddleToFrontSide_Text {
             get {
@@ -751,7 +796,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top-middle layer to the right side (+)..
+        ///   Looks up a localized string similar to Turn the top-middle layer a quarter turn to the right side (+)..
         /// </summary>
         internal static string TurnTopMiddleToRightSide_Text {
             get {
@@ -760,7 +805,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top side &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the top side half a turn..
+        /// </summary>
+        internal static string TurnTopSideHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnTopSideHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string TurnTopSideToLeft_Text {
             get {
@@ -769,7 +823,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top side &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the top side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string TurnTopSideToRight_Text {
             get {

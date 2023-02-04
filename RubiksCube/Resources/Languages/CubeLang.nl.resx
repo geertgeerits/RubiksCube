@@ -301,17 +301,23 @@ Niet toegestaan:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
   </data>
+  <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
+    <value>Draai de achterkant een halve slag.</value>
+  </data>
   <data name="TurnBackSideToLeft_Text" xml:space="preserve">
-    <value>Draai de achterkant 'tegen de klok in' (-).</value>
+    <value>Draai de achterkant een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="TurnBackSideToRight_Text" xml:space="preserve">
-    <value>Draai de achterkant 'met de klok mee' (+).</value>
+    <value>Draai de achterkant een kwartslag 'met de klok mee' (+).</value>
+  </data>
+  <data name="TurnBottomSideHalfTurn_Text" xml:space="preserve">
+    <value>Draai de onderkant een halve slag.</value>
   </data>
   <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
-    <value>Draai de onderkant 'tegen de klok in' (-).</value>
+    <value>Draai de onderkant een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="TurnBottomSideToRight_Text" xml:space="preserve">
-    <value>Draai de onderkant 'met de klok mee' (+).</value>
+    <value>Draai de onderkant een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
     <value>Draai de voorkant van de kubus naar de onderkant.</value>
@@ -326,46 +332,58 @@ Niet toegestaan:</value>
     <value>Draai de voorkant van de kubus naar de bovenkant.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
-    <value>Draai de voor-midden laag naar de rechterkant (-).</value>
+    <value>Draai de voor-midden laag een kwartslag naar de rechterkant (-).</value>
   </data>
   <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
-    <value>Draai de voor-midden laag naar de bovenkant (+).</value>
+    <value>Draai de voor-midden laag een kwartslag naar de bovenkant (+).</value>
+  </data>
+  <data name="TurnFrontSideHalfTurn_Text" xml:space="preserve">
+    <value>Draai de voorkant een halve slag.</value>
   </data>
   <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
-    <value>Draai de voorkant 'tegen de klok in' (-).</value>
+    <value>Draai de voorkant een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="TurnFrontSideToRight_Text" xml:space="preserve">
-    <value>Draai de voorkant 'met de klok mee' (+).</value>
+    <value>Draai de voorkant een kwartslag 'met de klok mee' (+).</value>
+  </data>
+  <data name="TurnLeftSideHalfTurn_Text" xml:space="preserve">
+    <value>Draai de linkerkant een halve slag.</value>
   </data>
   <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
-    <value>Draai de linkerkant 'tegen de klok in' (-).</value>
+    <value>Draai de linkerkant een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
-    <value>Draai de linkerkant 'met de klok mee' (+).</value>
+    <value>Draai de linkerkant een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Draai de rechts-midden laag naar de voorkant (+).</value>
+    <value>Draai de rechts-midden laag een kwartslag naar de voorkant (+).</value>
   </data>
   <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
-    <value>Draai de rechts-midden laag naar de bovenkant (-).</value>
+    <value>Draai de rechts-midden laag een kwartslag naar de bovenkant (-).</value>
+  </data>
+  <data name="TurnRightSideHalfTurn_Text" xml:space="preserve">
+    <value>Draai de rechterkant een halve slag.</value>
   </data>
   <data name="TurnRightSideToLeft_Text" xml:space="preserve">
-    <value>Draai de rechterkant 'tegen de klok in' (-).</value>
+    <value>Draai de rechterkant een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="TurnRightSideToRight_Text" xml:space="preserve">
-    <value>Draai de rechterkant 'met de klok mee' (+).</value>
+    <value>Draai de rechterkant een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Draai de boven-midden laag naar de voorkant (-).</value>
+    <value>Draai de boven-midden laag een kwartslag naar de voorkant (-).</value>
   </data>
   <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
-    <value>Draai de boven-midden laag naar de rechterkant (+).</value>
+    <value>Draai de boven-midden laag een kwartslag naar de rechterkant (+).</value>
+  </data>
+  <data name="TurnTopSideHalfTurn_Text" xml:space="preserve">
+    <value>Draai de bovenkant een halve slag.</value>
   </data>
   <data name="TurnTopSideToLeft_Text" xml:space="preserve">
-    <value>Draai de bovenkant 'tegen de klok in' (-).</value>
+    <value>Draai de bovenkant een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="TurnTopSideToRight_Text" xml:space="preserve">
-    <value>Draai de bovenkant 'met de klok mee' (+).</value>
+    <value>Draai de bovenkant een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Versie:</value>

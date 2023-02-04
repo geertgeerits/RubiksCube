@@ -301,17 +301,23 @@ Not allowed:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Theme:</value>
   </data>
+  <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
+    <value>Turn the back side half a turn.</value>
+  </data>
   <data name="TurnBackSideToLeft_Text" xml:space="preserve">
-    <value>Turn the back side 'counter clockwise' (-).</value>
+    <value>Turn the back side a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="TurnBackSideToRight_Text" xml:space="preserve">
-    <value>Turn the back side 'clockwise' (+).</value>
+    <value>Turn the back side a quarter turn 'clockwise' (+).</value>
+  </data>
+  <data name="TurnBottomSideHalfTurn_Text" xml:space="preserve">
+    <value>Turn the bottom side half a turn.</value>
   </data>
   <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
-    <value>Turn the bottom side 'counter clockwise' (-).</value>
+    <value>Turn the bottom side a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="TurnBottomSideToRight_Text" xml:space="preserve">
-    <value>Turn the bottom side 'clockwise' (+).</value>
+    <value>Turn the bottom side a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
     <value>Turn the front of the cube to the bottom side.</value>
@@ -326,46 +332,58 @@ Not allowed:</value>
     <value>Turn the front of the cube to the top side.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
-    <value>Turn the front-middle layer to the right side (-).</value>
+    <value>Turn the front-middle layer a quarter turn to the right side (-).</value>
   </data>
   <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
-    <value>Turn the front-middle layer to the top side (+).</value>
+    <value>Turn the front-middle layer a quarter turn to the top side (+).</value>
+  </data>
+  <data name="TurnFrontSideHalfTurn_Text" xml:space="preserve">
+    <value>Turn the front side half a turn.</value>
   </data>
   <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
-    <value>Turn the front side 'counter clockwise' (-).</value>
+    <value>Turn the front side a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="TurnFrontSideToRight_Text" xml:space="preserve">
-    <value>Turn the front side 'clockwise' (+).</value>
+    <value>Turn the front side a quarter turn 'clockwise' (+).</value>
+  </data>
+  <data name="TurnLeftSideHalfTurn_Text" xml:space="preserve">
+    <value>Turn the left side half a turn.</value>
   </data>
   <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
-    <value>Turn the left side 'counter clockwise' (-).</value>
+    <value>Turn the left side a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
-    <value>Turn the left side 'clockwise' (+).</value>
+    <value>Turn the left side a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Turn the right-middle layer to the front side (+).</value>
+    <value>Turn the right-middle layer a quarter turn to the front side (+).</value>
   </data>
   <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
-    <value>Turn the right-middle layer to the top side (-).</value>
+    <value>Turn the right-middle layer a quarter turn to the top side (-).</value>
+  </data>
+  <data name="TurnRightSideHalfTurn_Text" xml:space="preserve">
+    <value>Turn the right side half a turn.</value>
   </data>
   <data name="TurnRightSideToLeft_Text" xml:space="preserve">
-    <value>Turn the right side 'counter clockwise' (-).</value>
+    <value>Turn the right side a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="TurnRightSideToRight_Text" xml:space="preserve">
-    <value>Turn the right side 'clockwise' (+).</value>
+    <value>Turn the right side a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
-    <value>Turn the top-middle layer to the front side (-).</value>
+    <value>Turn the top-middle layer a quarter turn to the front side (-).</value>
   </data>
   <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
-    <value>Turn the top-middle layer to the right side (+).</value>
+    <value>Turn the top-middle layer a quarter turn to the right side (+).</value>
+  </data>
+  <data name="TurnTopSideHalfTurn_Text" xml:space="preserve">
+    <value>Turn the top side half a turn.</value>
   </data>
   <data name="TurnTopSideToLeft_Text" xml:space="preserve">
-    <value>Turn the top side 'counter clockwise' (-).</value>
+    <value>Turn the top side a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="TurnTopSideToRight_Text" xml:space="preserve">
-    <value>Turn the top side 'clockwise' (+).</value>
+    <value>Turn the top side a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Version:</value>

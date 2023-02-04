@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-02-03 (YYYY-MM-DD)
+// Date ........: 2023-02-04 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -41,6 +41,7 @@ public partial class MainPage : ContentPage
     private bool bTextToSpeechIsBusy = false;
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "FFD000";       // Light orange
+    //private Brush[] aCube;
 
     public MainPage()
 	{
@@ -178,13 +179,11 @@ public partial class MainPage : ContentPage
     private async Task SolveTheCube()
     {
         // Solve the edges of the top layer.
-        Brush ColorFront1 = plgFront1.Fill;
-
         if (plgTop5.Fill == plgBottom2.Fill && plgFront5.Fill == plgFront8.Fill)
         {
             TurnFrontSideTo("+");
             TurnFrontSideTo("+");
-            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnFrontSideToRight_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnFrontSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
                 return;
         }
 
@@ -192,7 +191,7 @@ public partial class MainPage : ContentPage
         {
             TurnLeftSideTo("+");
             TurnLeftSideTo("+");
-            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnLeftSideToRight_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnLeftSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
                 return;
         }
 
