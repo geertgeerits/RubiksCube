@@ -1020,26 +1020,41 @@
             </Grid>
         </ScrollView>
 
-        <Button
-            x:Name="BtnSolve"
-            Style="{StaticResource buttonStyleDefault}"
+        <HorizontalStackLayout
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalOptions="Start"
-            Text="{local:Translate ButtonSolve_Text}"
-            Clicked="OnBtnSolveClicked">
-        </Button>
+            HorizontalOptions="Center">
+            
+            <Button
+                x:Name="BtnSolve"
+                Style="{StaticResource buttonStyleDefault}"
+                HorizontalOptions="Start"
+                Text="{local:Translate ButtonSolve_Text}"
+                Clicked="OnBtnSolveClicked">
+            </Button>
 
-        <Button
-            x:Name="BtnReset"
-            Style="{StaticResource buttonStyleDefault}"
-            Grid.Row="2"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            HorizontalOptions="End"
-            Text="{local:Translate ButtonReset_Text}"
-            Clicked="OnBtnResetClicked">
-        </Button>
+            <Button
+                x:Name="BtnOpen"
+                Style="{StaticResource buttonStyleDefault}"
+                Text="Open"
+                Clicked="OnBtnOpenClicked">
+            </Button>
+
+            <Button
+                x:Name="BtnSave"
+                Style="{StaticResource buttonStyleDefault}"
+                Text="Save"
+                Clicked="OnBtnSaveClicked">
+            </Button>
+
+            <Button
+                x:Name="BtnReset"
+                Style="{StaticResource buttonStyleDefault}"
+                HorizontalOptions="End"
+                Text="{local:Translate ButtonReset_Text}"
+                Clicked="OnBtnResetClicked">
+            </Button>
+        </HorizontalStackLayout>
     </Grid>
 </ContentPage>

@@ -41,7 +41,13 @@ public partial class MainPage : ContentPage
     private bool bTextToSpeechIsBusy = false;
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "FFD000";       // Light orange
-    //private Brush[] aCube;
+    private string[] aTopSide = new string[10];
+    private string[] aFrontSide = new string[10];
+    private string[] aRightSide = new string[10];
+    private string[] aLeftSide = new string[10];
+    private string[] aBackSide = new string[10];
+    private string[] aBottomSide = new string[10];
+    private string[] aCubeColors = new string[7];
 
     public MainPage()
 	{
@@ -1874,10 +1880,249 @@ public partial class MainPage : ContentPage
         }
     }
 
+    // On clicked event: Save the cube.
+    private void OnBtnSaveClicked(object sender, EventArgs e)
+    {
+        //string cFileName = Path.Combine(FileSystem.CacheDirectory, "RubiksCube");
+        string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
+        int nRow;
+
+        SetCubeColorsInArrays(sender, e);
+        
+        return;
+        
+        try
+        {
+            using StreamWriter sw = new(cFileName, false);
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                //sw.WriteLine(TypeConverter.ConvertToString(aTopSide[nRow]));
+            }
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                sw.WriteLine(aFrontSide[nRow]);
+            }
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                sw.WriteLine(aRightSide[nRow]);
+            }
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                sw.WriteLine(aLeftSide[nRow]);
+            }
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                sw.WriteLine(aBackSide[nRow]);
+            }
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                sw.WriteLine(aBottomSide[nRow]);
+            }
+
+                        // Close the StreamWriter object.
+            sw.Close();
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+            return;
+        }
+
+    }
+
+    // On clicked event: Open, restore the cube.
+    private void OnBtnOpenClicked(object sender, EventArgs e)
+    {
+        string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
+        int nRow;
+
+        try
+        {
+            // Open the text file using a stream reader.
+            //using (var sr = new StreamReader(cFileName))
+            using StreamReader sr = new(cFileName, false);
+
+            // Read the stream as a string, and write the string to the console.
+            //Console.WriteLine(sr.ReadToEnd());
+
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                //aTopSide[nRow] = ConvertFromString(sr.ReadLine());
+            }
+
+
+
+
+
+
+
+            // Close the StreamWriter object.
+            sr.Close();
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+            return;
+        }
+
+        GetCubeColorsFromArrays();
+    }
+
     // On clicked event: Reset the colors of the cube.
     private void OnBtnResetClicked(object sender, EventArgs e)
     {
         ResetCube();
+    }
+
+    // Store the cube colors in arrays.
+    private void SetCubeColorsInArrays(object sender, EventArgs e)
+    {
+        string test = GetHexColorPolygon(plgFront1, e);
+        DisplayAlert("", test, "OK");
+
+        aTopSide[1] = GetHexColorPolygon(plgTop1, e);
+        aTopSide[2] = GetHexColorPolygon(plgTop2, e);
+        aTopSide[3] = GetHexColorPolygon(plgTop3, e);
+        aTopSide[4] = GetHexColorPolygon(plgTop4, e);
+        aTopSide[5] = GetHexColorPolygon(plgTop5, e);
+        aTopSide[6] = GetHexColorPolygon(plgTop6, e);
+        aTopSide[7] = GetHexColorPolygon(plgTop7, e);
+        aTopSide[8] = GetHexColorPolygon(plgTop8, e);
+        aTopSide[9] = GetHexColorPolygon(plgTop9, e);
+
+        //aFrontSide[1] = GetHexColorPolygon(plgFront1, e);
+        //aFrontSide[2] = plgFront2.Fill;
+        //aFrontSide[3] = plgFront3.Fill;
+        //aFrontSide[4] = plgFront4.Fill;
+        //aFrontSide[5] = plgFront5.Fill;
+        //aFrontSide[6] = plgFront6.Fill;
+        //aFrontSide[7] = plgFront7.Fill;
+        //aFrontSide[8] = plgFront8.Fill;
+        //aFrontSide[9] = plgFront9.Fill;
+
+        //aRightSide[1] = GetHexColorPolygon(plgRight1, e);
+        //aRightSide[2] = plgRight2.Fill;
+        //aRightSide[3] = plgRight3.Fill;
+        //aRightSide[4] = plgRight4.Fill;
+        //aRightSide[5] = plgRight5.Fill;
+        //aRightSide[6] = plgRight6.Fill;
+        //aRightSide[7] = plgRight7.Fill;
+        //aRightSide[8] = plgRight8.Fill;
+        //aRightSide[9] = plgRight9.Fill;
+
+        //aLeftSide[1] = GetHexColorPolygon(plgLeft1, e);
+        //aLeftSide[2] = plgLeft2.Fill;
+        //aLeftSide[3] = plgLeft3.Fill;
+        //aLeftSide[4] = plgLeft4.Fill;
+        //aLeftSide[5] = plgLeft5.Fill;
+        //aLeftSide[6] = plgLeft6.Fill;
+        //aLeftSide[7] = plgLeft7.Fill;
+        //aLeftSide[8] = plgLeft8.Fill;
+        //aLeftSide[9] = plgLeft9.Fill;
+
+        //aBackSide[1] = GetHexColorPolygon(plgBack1, e);
+        //aBackSide[2] = plgBack2.Fill;
+        //aBackSide[3] = plgBack3.Fill;
+        //aBackSide[4] = plgBack4.Fill;
+        //aBackSide[5] = plgBack5.Fill;
+        //aBackSide[6] = plgBack6.Fill;
+        //aBackSide[7] = plgBack7.Fill;
+        //aBackSide[8] = plgBack8.Fill;
+        //aBackSide[9] = plgBack9.Fill;
+
+        //aBottomSide[1] = GetHexColorPolygon(plgBottom1, e);
+        //aBottomSide[2] = plgBottom2.Fill;
+        //aBottomSide[3] = plgBottom3.Fill;
+        //aBottomSide[4] = plgBottom4.Fill;
+        //aBottomSide[5] = plgBottom5.Fill;
+        //aBottomSide[6] = plgBottom6.Fill;
+        //aBottomSide[7] = plgBottom7.Fill;
+        //aBottomSide[8] = plgBottom8.Fill;
+        //aBottomSide[9] = plgBottom9.Fill;
+
+        aCubeColors[1] = GetHexColorPolygon(plgCubeColor1, e);
+        //aCubeColors[2] = plgCubeColor2.Fill;
+        //aCubeColors[3] = plgCubeColor3.Fill;
+        //aCubeColors[4] = plgCubeColor4.Fill;
+        //aCubeColors[5] = plgCubeColor5.Fill;
+        //aCubeColors[6] = plgCubeColor6.Fill;
+    }
+
+    // Restore the cube colors from the arrays.
+    private void GetCubeColorsFromArrays()
+    {
+        //plgTop1.Fill = aTopSide[1];
+        //plgTop2.Fill = aTopSide[2];
+        //plgTop3.Fill = aTopSide[3];
+        //plgTop4.Fill = aTopSide[4];
+        //plgTop5.Fill = aTopSide[5];
+        //plgTop6.Fill = aTopSide[6];
+        //plgTop7.Fill = aTopSide[7];
+        //plgTop8.Fill = aTopSide[8];
+        //plgTop9.Fill = aTopSide[9];
+
+        //plgFront1.Fill = aFrontSide[1];
+        //plgFront2.Fill = aFrontSide[2];
+        //plgFront3.Fill = aFrontSide[3];
+        //plgFront4.Fill = aFrontSide[4];
+        //plgFront5.Fill = aFrontSide[5];
+        //plgFront6.Fill = aFrontSide[6];
+        //plgFront7.Fill = aFrontSide[7];
+        //plgFront8.Fill = aFrontSide[8];
+        //plgFront9.Fill = aFrontSide[9];
+
+        //plgRight1.Fill = aRightSide[1];
+        //plgRight2.Fill = aRightSide[2];
+        //plgRight3.Fill = aRightSide[3];
+        //plgRight4.Fill = aRightSide[4];
+        //plgRight5.Fill = aRightSide[5];
+        //plgRight6.Fill = aRightSide[6];
+        //plgRight7.Fill = aRightSide[7];
+        //plgRight8.Fill = aRightSide[8];
+        //plgRight9.Fill = aRightSide[9];
+
+        //plgLeft1.Fill = aLeftSide[1];
+        //plgLeft2.Fill = aLeftSide[2];
+        //plgLeft3.Fill = aLeftSide[3];
+        //plgLeft4.Fill = aLeftSide[4];
+        //plgLeft5.Fill = aLeftSide[5];
+        //plgLeft6.Fill = aLeftSide[6];
+        //plgLeft7.Fill = aLeftSide[7];
+        //plgLeft8.Fill = aLeftSide[8];
+        //plgLeft9.Fill = aLeftSide[9];
+
+        //plgBack1.Fill = aBackSide[1];
+        //plgBack2.Fill = aBackSide[2];
+        //plgBack3.Fill = aBackSide[3];
+        //plgBack4.Fill = aBackSide[4];
+        //plgBack5.Fill = aBackSide[5];
+        //plgBack6.Fill = aBackSide[6];
+        //plgBack7.Fill = aBackSide[7];
+        //plgBack8.Fill = aBackSide[8];
+        //plgBack9.Fill = aBackSide[9];
+
+        //plgBottom1.Fill = aBottomSide[1];
+        //plgBottom2.Fill = aBottomSide[2];
+        //plgBottom3.Fill = aBottomSide[3];
+        //plgBottom4.Fill = aBottomSide[4];
+        //plgBottom5.Fill = aBottomSide[5];
+        //plgBottom6.Fill = aBottomSide[6];
+        //plgBottom7.Fill = aBottomSide[7];
+        //plgBottom8.Fill = aBottomSide[8];
+        //plgBottom9.Fill = aBottomSide[9];
+
+        //plgCubeColor1.Fill = aCubeColors[1];
+        //plgCubeColor2.Fill = aCubeColors[2];
+        //plgCubeColor3.Fill = aCubeColors[3];
+        //plgCubeColor4.Fill = aCubeColors[4];
+        //plgCubeColor5.Fill = aCubeColors[5];
+        //plgCubeColor6.Fill = aCubeColors[6];
     }
 
     // Reset the colors of the cube.
@@ -2153,6 +2398,27 @@ public partial class MainPage : ContentPage
                 await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             }
         }
+    }
+
+    private string GetHexColorPolygon(object sender, EventArgs e)
+    {
+        var polygon = (Polygon)sender;
+
+        //SolidColorBrush brush = (SolidColorBrush)plgCubeColor1.Fill;
+        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
+        Color c = brush.Color;
+        
+        var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
+                         where p.PropertyType.Equals(typeof(System.Drawing.Color))
+                         let value = (System.Drawing.Color)p.GetValue(null, null)
+                         where value.R == c.Red &&
+                               value.G == c.Green &&
+                               value.B == c.Blue &&
+                               value.A == c.Alpha
+                         select p.Name).DefaultIfEmpty("unknown").First();
+
+        c = Color.FromRgb(c.Red, c.Green, c.Blue);
+        return c.ToHex();
     }
 }
 
