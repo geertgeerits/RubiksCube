@@ -41,13 +41,13 @@ public partial class MainPage : ContentPage
     private bool bTextToSpeechIsBusy = false;
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "FFD000";       // Light orange
+    private string[] aCubeColors = new string[7];
     private string[] aTopSide = new string[10];
     private string[] aFrontSide = new string[10];
     private string[] aRightSide = new string[10];
     private string[] aLeftSide = new string[10];
     private string[] aBackSide = new string[10];
     private string[] aBottomSide = new string[10];
-    private string[] aCubeColors = new string[7];
 
     public MainPage()
 	{
@@ -164,12 +164,13 @@ public partial class MainPage : ContentPage
     // Solve the cube.
     private async void OnBtnSolveClicked(object sender, EventArgs e)
     {
-        if (!CheckNumberColorsCube())
+        if (!CheckNumberColorsCube(sender, e))
         {
             return;
         }
 
-        EnableDisableArrows(false);
+        //EnableDisableArrows(false);
+        VisibleInvisibleArrows(false);
 
         bool bExplainTextSaved = bExplainText;
         bExplainText = false;
@@ -179,6 +180,7 @@ public partial class MainPage : ContentPage
         bExplainText = bExplainTextSaved;
         
         EnableDisableArrows(true);
+        VisibleInvisibleArrows(true);
     }
 
     // Solve the cube.
@@ -238,7 +240,7 @@ public partial class MainPage : ContentPage
     }
 
     // Check the number of colors of the cube.
-    private bool CheckNumberColorsCube()
+    private bool CheckNumberColorsCube(object sender, EventArgs e)
     {
         int nNumberOfColors1 = 0;
         int nNumberOfColors2 = 0;
@@ -246,690 +248,232 @@ public partial class MainPage : ContentPage
         int nNumberOfColors4 = 0;
         int nNumberOfColors5 = 0;
         int nNumberOfColors6 = 0;
+        
+        SetCubeColorsInArrays(sender, e);
+        
+        int nRow;
 
-        if (plgTop1.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop2.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop3.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop4.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop5.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop6.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop7.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop8.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgTop9.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
+        // Top side.
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aTopSide[nRow] == aCubeColors[1])
+                nNumberOfColors1++;
+        }
 
-        if (plgTop1.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop2.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop3.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop4.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop5.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop6.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop7.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop8.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgTop9.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aTopSide[nRow] == aCubeColors[2])
+                nNumberOfColors2++;
+        }
 
-        if (plgTop1.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop2.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop3.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop4.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop5.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop6.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop7.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop8.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgTop9.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aTopSide[nRow] == aCubeColors[3])
+                nNumberOfColors3++;
+        }
 
-        if (plgTop1.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop2.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop3.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop4.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop5.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop6.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop7.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop8.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgTop9.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aTopSide[nRow] == aCubeColors[4])
+                nNumberOfColors4++;
+        }
 
-        if (plgTop1.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop2.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop3.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop4.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop5.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop6.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop7.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop8.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgTop9.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aTopSide[nRow] == aCubeColors[5])
+                nNumberOfColors5++;
+        }
 
-        if (plgTop1.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop2.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop3.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop4.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop5.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop6.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop7.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop8.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgTop9.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aTopSide[nRow] == aCubeColors[6])
+                nNumberOfColors6++;
+        }
 
-        if (plgFront1.Fill == plgCubeColor1.Fill) 
-            nNumberOfColors1++;
-        if (plgFront2.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront3.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront4.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront5.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront6.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront7.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront8.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgFront9.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
+        // Front side.
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aFrontSide[nRow] == aCubeColors[1])
+                nNumberOfColors1++;
+        }
 
-        if (plgFront1.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront2.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront3.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront4.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront5.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront6.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront7.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront8.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgFront9.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aFrontSide[nRow] == aCubeColors[2])
+                nNumberOfColors2++;
+        }
 
-        if (plgFront1.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront2.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront3.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront4.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront5.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront6.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront7.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront8.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgFront9.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aFrontSide[nRow] == aCubeColors[3])
+                nNumberOfColors3++;
+        }
 
-        if (plgFront1.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront2.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront3.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront4.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront5.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront6.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront7.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront8.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgFront9.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aFrontSide[nRow] == aCubeColors[4])
+                nNumberOfColors4++;
+        }
 
-        if (plgFront1.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront2.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront3.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront4.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront5.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront6.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront7.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront8.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgFront9.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aFrontSide[nRow] == aCubeColors[5])
+                nNumberOfColors5++;
+        }
 
-        if (plgFront1.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront2.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront3.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront4.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront5.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront6.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront7.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront8.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgFront9.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aFrontSide[nRow] == aCubeColors[6])
+                nNumberOfColors6++;
+        }
 
-        if (plgRight1.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight2.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight3.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight4.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight5.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight6.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight7.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight8.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgRight9.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
+        // Right side.
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aRightSide[nRow] == aCubeColors[1])
+                nNumberOfColors1++;
+        }
 
-        if (plgRight1.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight2.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight3.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight4.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight5.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight6.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight7.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight8.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgRight9.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aRightSide[nRow] == aCubeColors[2])
+                nNumberOfColors2++;
+        }
 
-        if (plgRight1.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight2.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight3.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight4.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight5.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight6.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight7.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight8.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgRight9.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aRightSide[nRow] == aCubeColors[3])
+                nNumberOfColors3++;
+        }
 
-        if (plgRight1.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight2.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight3.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight4.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight5.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight6.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight7.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight8.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgRight9.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aRightSide[nRow] == aCubeColors[4])
+                nNumberOfColors4++;
+        }
 
-        if (plgRight1.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight2.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight3.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight4.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight5.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight6.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight7.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight8.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgRight9.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aRightSide[nRow] == aCubeColors[5])
+                nNumberOfColors5++;
+        }
 
-        if (plgRight1.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight2.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight3.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight4.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight5.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight6.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight7.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight8.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgRight9.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aRightSide[nRow] == aCubeColors[6])
+                nNumberOfColors6++;
+        }
 
-        if (plgLeft1.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft2.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft3.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft4.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft5.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft6.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft7.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft8.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgLeft9.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
+        // Left side.
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aLeftSide[nRow] == aCubeColors[1])
+                nNumberOfColors1++;
+        }
 
-        if (plgLeft1.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft2.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft3.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft4.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft5.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft6.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft7.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft8.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgLeft9.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aLeftSide[nRow] == aCubeColors[2])
+                nNumberOfColors2++;
+        }
 
-        if (plgLeft1.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft2.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft3.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft4.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft5.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft6.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft7.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft8.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgLeft9.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aLeftSide[nRow] == aCubeColors[3])
+                nNumberOfColors3++;
+        }
 
-        if (plgLeft1.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft2.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft3.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft4.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft5.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft6.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft7.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft8.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgLeft9.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aLeftSide[nRow] == aCubeColors[4])
+                nNumberOfColors4++;
+        }
 
-        if (plgLeft1.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft2.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft3.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft4.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft5.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft6.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft7.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft8.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgLeft9.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aLeftSide[nRow] == aCubeColors[5])
+                nNumberOfColors5++;
+        }
 
-        if (plgLeft1.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft2.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft3.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft4.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft5.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft6.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft7.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft8.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgLeft9.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aLeftSide[nRow] == aCubeColors[6])
+                nNumberOfColors6++;
+        }
 
-        if (plgBack1.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack2.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack3.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack4.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack5.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack6.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack7.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack8.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBack9.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
+        // Back side.
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBackSide[nRow] == aCubeColors[1])
+                nNumberOfColors1++;
+        }
 
-        if (plgBack1.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack2.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack3.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack4.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack5.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack6.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack7.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack8.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBack9.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBackSide[nRow] == aCubeColors[2])
+                nNumberOfColors2++;
+        }
 
-        if (plgBack1.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack2.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack3.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack4.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack5.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack6.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack7.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack8.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBack9.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBackSide[nRow] == aCubeColors[3])
+                nNumberOfColors3++;
+        }
 
-        if (plgBack1.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack2.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack3.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack4.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack5.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack6.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack7.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack8.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBack9.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBackSide[nRow] == aCubeColors[4])
+                nNumberOfColors4++;
+        }
 
-        if (plgBack1.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack2.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack3.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack4.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack5.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack6.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack7.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack8.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBack9.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBackSide[nRow] == aCubeColors[5])
+                nNumberOfColors5++;
+        }
 
-        if (plgBack1.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack2.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack3.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack4.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack5.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack6.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack7.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack8.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBack9.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBackSide[nRow] == aCubeColors[6])
+                nNumberOfColors6++;
+        }
 
-        if (plgBottom1.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom2.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom3.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom4.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom5.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom6.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom7.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom8.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
-        if (plgBottom9.Fill == plgCubeColor1.Fill)
-            nNumberOfColors1++;
+        // Bottom side.
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBottomSide[nRow] == aCubeColors[1])
+                nNumberOfColors1++;
+        }
 
-        if (plgBottom1.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom2.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom3.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom4.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom5.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom6.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom7.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom8.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
-        if (plgBottom9.Fill == plgCubeColor2.Fill)
-            nNumberOfColors2++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBottomSide[nRow] == aCubeColors[2])
+                nNumberOfColors2++;
+        }
 
-        if (plgBottom1.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom2.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom3.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom4.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom5.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom6.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom7.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom8.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
-        if (plgBottom9.Fill == plgCubeColor3.Fill)
-            nNumberOfColors3++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBottomSide[nRow] == aCubeColors[3])
+                nNumberOfColors3++;
+        }
 
-        if (plgBottom1.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom2.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom3.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom4.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom5.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom6.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom7.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom8.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
-        if (plgBottom9.Fill == plgCubeColor4.Fill)
-            nNumberOfColors4++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBottomSide[nRow] == aCubeColors[4])
+                nNumberOfColors4++;
+        }
 
-        if (plgBottom1.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom2.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom3.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom4.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom5.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom6.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom7.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom8.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
-        if (plgBottom9.Fill == plgCubeColor5.Fill)
-            nNumberOfColors5++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBottomSide[nRow] == aCubeColors[5])
+                nNumberOfColors5++;
+        }
 
-        if (plgBottom1.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom2.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom3.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom4.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom5.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom6.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom7.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom8.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
-        if (plgBottom9.Fill == plgCubeColor6.Fill)
-            nNumberOfColors6++;
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            if (aBottomSide[nRow] == aCubeColors[6])
+                nNumberOfColors6++;
+        }
 
         if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
         {
@@ -1889,15 +1433,18 @@ public partial class MainPage : ContentPage
 
         SetCubeColorsInArrays(sender, e);
         
-        return;
-        
         try
         {
             using StreamWriter sw = new(cFileName, false);
 
+            for (nRow = 1; nRow < 7; nRow++)
+            {
+                sw.WriteLine(aCubeColors[nRow]);
+            }
+
             for (nRow = 1; nRow < 10; nRow++)
             {
-                //sw.WriteLine(TypeConverter.ConvertToString(aTopSide[nRow]));
+                sw.WriteLine(aTopSide[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
@@ -1925,7 +1472,7 @@ public partial class MainPage : ContentPage
                 sw.WriteLine(aBottomSide[nRow]);
             }
 
-                        // Close the StreamWriter object.
+            // Close the StreamWriter object.
             sw.Close();
         }
         catch (Exception ex)
@@ -1933,34 +1480,62 @@ public partial class MainPage : ContentPage
             DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             return;
         }
-
     }
 
     // On clicked event: Open, restore the cube.
     private void OnBtnOpenClicked(object sender, EventArgs e)
     {
         string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
-        int nRow;
 
+        //File.Delete(cFileName);
+
+        if (File.Exists(cFileName) == false)
+        {
+            return;
+        }
+
+        int nRow;
+       
         try
         {
             // Open the text file using a stream reader.
             //using (var sr = new StreamReader(cFileName))
             using StreamReader sr = new(cFileName, false);
 
-            // Read the stream as a string, and write the string to the console.
-            //Console.WriteLine(sr.ReadToEnd());
+            for (nRow = 1; nRow < 7; nRow++)
+            {
+                aCubeColors[nRow] = sr.ReadLine();
+            }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                //aTopSide[nRow] = ConvertFromString(sr.ReadLine());
+                aTopSide[nRow] = sr.ReadLine();
             }
 
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                aFrontSide[nRow] = sr.ReadLine();
+            }
 
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                aRightSide[nRow] = sr.ReadLine();
+            }
 
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                aLeftSide[nRow] = sr.ReadLine();
+            }
 
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                aBackSide[nRow] = sr.ReadLine();
+            }
 
-
+            for (nRow = 1; nRow < 10; nRow++)
+            {
+                aBottomSide[nRow] = sr.ReadLine();
+            }
 
             // Close the StreamWriter object.
             sr.Close();
@@ -1983,8 +1558,15 @@ public partial class MainPage : ContentPage
     // Store the cube colors in arrays.
     private void SetCubeColorsInArrays(object sender, EventArgs e)
     {
-        string test = GetHexColorPolygon(plgFront1, e);
-        DisplayAlert("", test, "OK");
+        //string test = GetHexColorPolygon(plgFront1, e);
+        //DisplayAlert("", test, "OK");
+
+        aCubeColors[1] = GetHexColorPolygon(plgCubeColor1, e);
+        aCubeColors[2] = GetHexColorPolygon(plgCubeColor2, e);
+        aCubeColors[3] = GetHexColorPolygon(plgCubeColor3, e);
+        aCubeColors[4] = GetHexColorPolygon(plgCubeColor4, e);
+        aCubeColors[5] = GetHexColorPolygon(plgCubeColor5, e);
+        aCubeColors[6] = GetHexColorPolygon(plgCubeColor6, e);
 
         aTopSide[1] = GetHexColorPolygon(plgTop1, e);
         aTopSide[2] = GetHexColorPolygon(plgTop2, e);
@@ -1996,133 +1578,134 @@ public partial class MainPage : ContentPage
         aTopSide[8] = GetHexColorPolygon(plgTop8, e);
         aTopSide[9] = GetHexColorPolygon(plgTop9, e);
 
-        //aFrontSide[1] = GetHexColorPolygon(plgFront1, e);
-        //aFrontSide[2] = plgFront2.Fill;
-        //aFrontSide[3] = plgFront3.Fill;
-        //aFrontSide[4] = plgFront4.Fill;
-        //aFrontSide[5] = plgFront5.Fill;
-        //aFrontSide[6] = plgFront6.Fill;
-        //aFrontSide[7] = plgFront7.Fill;
-        //aFrontSide[8] = plgFront8.Fill;
-        //aFrontSide[9] = plgFront9.Fill;
+        aFrontSide[1] = GetHexColorPolygon(plgFront1, e);
+        aFrontSide[2] = GetHexColorPolygon(plgFront2, e);
+        aFrontSide[3] = GetHexColorPolygon(plgFront3, e);
+        aFrontSide[4] = GetHexColorPolygon(plgFront4, e);
+        aFrontSide[5] = GetHexColorPolygon(plgFront5, e);
+        aFrontSide[6] = GetHexColorPolygon(plgFront6, e);
+        aFrontSide[7] = GetHexColorPolygon(plgFront7, e);
+        aFrontSide[8] = GetHexColorPolygon(plgFront8, e);
+        aFrontSide[9] = GetHexColorPolygon(plgFront9, e);
 
-        //aRightSide[1] = GetHexColorPolygon(plgRight1, e);
-        //aRightSide[2] = plgRight2.Fill;
-        //aRightSide[3] = plgRight3.Fill;
-        //aRightSide[4] = plgRight4.Fill;
-        //aRightSide[5] = plgRight5.Fill;
-        //aRightSide[6] = plgRight6.Fill;
-        //aRightSide[7] = plgRight7.Fill;
-        //aRightSide[8] = plgRight8.Fill;
-        //aRightSide[9] = plgRight9.Fill;
+        aRightSide[1] = GetHexColorPolygon(plgRight1, e);
+        aRightSide[2] = GetHexColorPolygon(plgRight2, e);
+        aRightSide[3] = GetHexColorPolygon(plgRight3, e);
+        aRightSide[4] = GetHexColorPolygon(plgRight4, e);
+        aRightSide[5] = GetHexColorPolygon(plgRight5, e);
+        aRightSide[6] = GetHexColorPolygon(plgRight6, e);
+        aRightSide[7] = GetHexColorPolygon(plgRight7, e);
+        aRightSide[8] = GetHexColorPolygon(plgRight8, e);
+        aRightSide[9] = GetHexColorPolygon(plgRight9, e);
 
-        //aLeftSide[1] = GetHexColorPolygon(plgLeft1, e);
-        //aLeftSide[2] = plgLeft2.Fill;
-        //aLeftSide[3] = plgLeft3.Fill;
-        //aLeftSide[4] = plgLeft4.Fill;
-        //aLeftSide[5] = plgLeft5.Fill;
-        //aLeftSide[6] = plgLeft6.Fill;
-        //aLeftSide[7] = plgLeft7.Fill;
-        //aLeftSide[8] = plgLeft8.Fill;
-        //aLeftSide[9] = plgLeft9.Fill;
+        aLeftSide[1] = GetHexColorPolygon(plgLeft1, e);
+        aLeftSide[2] = GetHexColorPolygon(plgLeft2, e);
+        aLeftSide[3] = GetHexColorPolygon(plgLeft3, e);
+        aLeftSide[4] = GetHexColorPolygon(plgLeft4, e);
+        aLeftSide[5] = GetHexColorPolygon(plgLeft5, e);
+        aLeftSide[6] = GetHexColorPolygon(plgLeft6, e);
+        aLeftSide[7] = GetHexColorPolygon(plgLeft7, e);
+        aLeftSide[8] = GetHexColorPolygon(plgLeft8, e);
+        aLeftSide[9] = GetHexColorPolygon(plgLeft9, e);
 
-        //aBackSide[1] = GetHexColorPolygon(plgBack1, e);
-        //aBackSide[2] = plgBack2.Fill;
-        //aBackSide[3] = plgBack3.Fill;
-        //aBackSide[4] = plgBack4.Fill;
-        //aBackSide[5] = plgBack5.Fill;
-        //aBackSide[6] = plgBack6.Fill;
-        //aBackSide[7] = plgBack7.Fill;
-        //aBackSide[8] = plgBack8.Fill;
-        //aBackSide[9] = plgBack9.Fill;
+        aBackSide[1] = GetHexColorPolygon(plgBack1, e);
+        aBackSide[2] = GetHexColorPolygon(plgBack2, e);
+        aBackSide[3] = GetHexColorPolygon(plgBack3, e);
+        aBackSide[4] = GetHexColorPolygon(plgBack4, e);
+        aBackSide[5] = GetHexColorPolygon(plgBack5, e);
+        aBackSide[6] = GetHexColorPolygon(plgBack6, e);
+        aBackSide[7] = GetHexColorPolygon(plgBack7, e);
+        aBackSide[8] = GetHexColorPolygon(plgBack8, e);
+        aBackSide[9] = GetHexColorPolygon(plgBack9, e);
 
-        //aBottomSide[1] = GetHexColorPolygon(plgBottom1, e);
-        //aBottomSide[2] = plgBottom2.Fill;
-        //aBottomSide[3] = plgBottom3.Fill;
-        //aBottomSide[4] = plgBottom4.Fill;
-        //aBottomSide[5] = plgBottom5.Fill;
-        //aBottomSide[6] = plgBottom6.Fill;
-        //aBottomSide[7] = plgBottom7.Fill;
-        //aBottomSide[8] = plgBottom8.Fill;
-        //aBottomSide[9] = plgBottom9.Fill;
-
-        aCubeColors[1] = GetHexColorPolygon(plgCubeColor1, e);
-        //aCubeColors[2] = plgCubeColor2.Fill;
-        //aCubeColors[3] = plgCubeColor3.Fill;
-        //aCubeColors[4] = plgCubeColor4.Fill;
-        //aCubeColors[5] = plgCubeColor5.Fill;
-        //aCubeColors[6] = plgCubeColor6.Fill;
+        aBottomSide[1] = GetHexColorPolygon(plgBottom1, e);
+        aBottomSide[2] = GetHexColorPolygon(plgBottom2, e);
+        aBottomSide[3] = GetHexColorPolygon(plgBottom3, e);
+        aBottomSide[4] = GetHexColorPolygon(plgBottom4, e);
+        aBottomSide[5] = GetHexColorPolygon(plgBottom5, e);
+        aBottomSide[6] = GetHexColorPolygon(plgBottom6, e);
+        aBottomSide[7] = GetHexColorPolygon(plgBottom7, e);
+        aBottomSide[8] = GetHexColorPolygon(plgBottom8, e);
+        aBottomSide[9] = GetHexColorPolygon(plgBottom9, e);
     }
 
     // Restore the cube colors from the arrays.
     private void GetCubeColorsFromArrays()
     {
-        //plgTop1.Fill = aTopSide[1];
-        //plgTop2.Fill = aTopSide[2];
-        //plgTop3.Fill = aTopSide[3];
-        //plgTop4.Fill = aTopSide[4];
-        //plgTop5.Fill = aTopSide[5];
-        //plgTop6.Fill = aTopSide[6];
-        //plgTop7.Fill = aTopSide[7];
-        //plgTop8.Fill = aTopSide[8];
-        //plgTop9.Fill = aTopSide[9];
+        //cCubeColor1 = aCubeColors[1];
+        //cCubeColor2 = aCubeColors[2];
+        //cCubeColor3 = aCubeColors[3];
+        //cCubeColor4 = aCubeColors[4];
+        //cCubeColor5 = aCubeColors[5];
+        //cCubeColor6 = aCubeColors[6];
+        //DisplayAlert("", cCubeColor1, "OK");
 
-        //plgFront1.Fill = aFrontSide[1];
-        //plgFront2.Fill = aFrontSide[2];
-        //plgFront3.Fill = aFrontSide[3];
-        //plgFront4.Fill = aFrontSide[4];
-        //plgFront5.Fill = aFrontSide[5];
-        //plgFront6.Fill = aFrontSide[6];
-        //plgFront7.Fill = aFrontSide[7];
-        //plgFront8.Fill = aFrontSide[8];
-        //plgFront9.Fill = aFrontSide[9];
+        plgCubeColor1.Fill = Color.FromArgb(aCubeColors[1]);
+        plgCubeColor2.Fill = Color.FromArgb(aCubeColors[2]);
+        plgCubeColor3.Fill = Color.FromArgb(aCubeColors[3]);
+        plgCubeColor4.Fill = Color.FromArgb(aCubeColors[4]);
+        plgCubeColor5.Fill = Color.FromArgb(aCubeColors[5]);
+        plgCubeColor6.Fill = Color.FromArgb(aCubeColors[6]);
 
-        //plgRight1.Fill = aRightSide[1];
-        //plgRight2.Fill = aRightSide[2];
-        //plgRight3.Fill = aRightSide[3];
-        //plgRight4.Fill = aRightSide[4];
-        //plgRight5.Fill = aRightSide[5];
-        //plgRight6.Fill = aRightSide[6];
-        //plgRight7.Fill = aRightSide[7];
-        //plgRight8.Fill = aRightSide[8];
-        //plgRight9.Fill = aRightSide[9];
+        plgTop1.Fill = Color.FromArgb(aTopSide[1]);
+        plgTop2.Fill = Color.FromArgb(aTopSide[2]);
+        plgTop3.Fill = Color.FromArgb(aTopSide[3]);
+        plgTop4.Fill = Color.FromArgb(aTopSide[4]);
+        plgTop5.Fill = Color.FromArgb(aTopSide[5]);
+        plgTop6.Fill = Color.FromArgb(aTopSide[6]);
+        plgTop7.Fill = Color.FromArgb(aTopSide[7]);
+        plgTop8.Fill = Color.FromArgb(aTopSide[8]);
+        plgTop9.Fill = Color.FromArgb(aTopSide[9]);
 
-        //plgLeft1.Fill = aLeftSide[1];
-        //plgLeft2.Fill = aLeftSide[2];
-        //plgLeft3.Fill = aLeftSide[3];
-        //plgLeft4.Fill = aLeftSide[4];
-        //plgLeft5.Fill = aLeftSide[5];
-        //plgLeft6.Fill = aLeftSide[6];
-        //plgLeft7.Fill = aLeftSide[7];
-        //plgLeft8.Fill = aLeftSide[8];
-        //plgLeft9.Fill = aLeftSide[9];
+        plgFront1.Fill = Color.FromArgb(aFrontSide[1]);
+        plgFront2.Fill = Color.FromArgb(aFrontSide[2]);
+        plgFront3.Fill = Color.FromArgb(aFrontSide[3]);
+        plgFront4.Fill = Color.FromArgb(aFrontSide[4]);
+        plgFront5.Fill = Color.FromArgb(aFrontSide[5]);
+        plgFront6.Fill = Color.FromArgb(aFrontSide[6]);
+        plgFront7.Fill = Color.FromArgb(aFrontSide[7]);
+        plgFront8.Fill = Color.FromArgb(aFrontSide[8]);
+        plgFront9.Fill = Color.FromArgb(aFrontSide[9]);
 
-        //plgBack1.Fill = aBackSide[1];
-        //plgBack2.Fill = aBackSide[2];
-        //plgBack3.Fill = aBackSide[3];
-        //plgBack4.Fill = aBackSide[4];
-        //plgBack5.Fill = aBackSide[5];
-        //plgBack6.Fill = aBackSide[6];
-        //plgBack7.Fill = aBackSide[7];
-        //plgBack8.Fill = aBackSide[8];
-        //plgBack9.Fill = aBackSide[9];
+        plgRight1.Fill = Color.FromArgb(aRightSide[1]);
+        plgRight2.Fill = Color.FromArgb(aRightSide[2]);
+        plgRight3.Fill = Color.FromArgb(aRightSide[3]);
+        plgRight4.Fill = Color.FromArgb(aRightSide[4]);
+        plgRight5.Fill = Color.FromArgb(aRightSide[5]);
+        plgRight6.Fill = Color.FromArgb(aRightSide[6]);
+        plgRight7.Fill = Color.FromArgb(aRightSide[7]);
+        plgRight8.Fill = Color.FromArgb(aRightSide[8]);
+        plgRight9.Fill = Color.FromArgb(aRightSide[9]);
 
-        //plgBottom1.Fill = aBottomSide[1];
-        //plgBottom2.Fill = aBottomSide[2];
-        //plgBottom3.Fill = aBottomSide[3];
-        //plgBottom4.Fill = aBottomSide[4];
-        //plgBottom5.Fill = aBottomSide[5];
-        //plgBottom6.Fill = aBottomSide[6];
-        //plgBottom7.Fill = aBottomSide[7];
-        //plgBottom8.Fill = aBottomSide[8];
-        //plgBottom9.Fill = aBottomSide[9];
+        plgLeft1.Fill = Color.FromArgb(aLeftSide[1]);
+        plgLeft2.Fill = Color.FromArgb(aLeftSide[2]);
+        plgLeft3.Fill = Color.FromArgb(aLeftSide[3]);
+        plgLeft4.Fill = Color.FromArgb(aLeftSide[4]);
+        plgLeft5.Fill = Color.FromArgb(aLeftSide[5]);
+        plgLeft6.Fill = Color.FromArgb(aLeftSide[6]);
+        plgLeft7.Fill = Color.FromArgb(aLeftSide[7]);
+        plgLeft8.Fill = Color.FromArgb(aLeftSide[8]);
+        plgLeft9.Fill = Color.FromArgb(aLeftSide[9]);
 
-        //plgCubeColor1.Fill = aCubeColors[1];
-        //plgCubeColor2.Fill = aCubeColors[2];
-        //plgCubeColor3.Fill = aCubeColors[3];
-        //plgCubeColor4.Fill = aCubeColors[4];
-        //plgCubeColor5.Fill = aCubeColors[5];
-        //plgCubeColor6.Fill = aCubeColors[6];
+        plgBack1.Fill = Color.FromArgb(aBackSide[1]);
+        plgBack2.Fill = Color.FromArgb(aBackSide[2]);
+        plgBack3.Fill = Color.FromArgb(aBackSide[3]);
+        plgBack4.Fill = Color.FromArgb(aBackSide[4]);
+        plgBack5.Fill = Color.FromArgb(aBackSide[5]);
+        plgBack6.Fill = Color.FromArgb(aBackSide[6]);
+        plgBack7.Fill = Color.FromArgb(aBackSide[7]);
+        plgBack8.Fill = Color.FromArgb(aBackSide[8]);
+        plgBack9.Fill = Color.FromArgb(aBackSide[9]);
+
+        plgBottom1.Fill = Color.FromArgb(aBottomSide[1]);
+        plgBottom2.Fill = Color.FromArgb(aBottomSide[2]);
+        plgBottom3.Fill = Color.FromArgb(aBottomSide[3]);
+        plgBottom4.Fill = Color.FromArgb(aBottomSide[4]);
+        plgBottom5.Fill = Color.FromArgb(aBottomSide[5]);
+        plgBottom6.Fill = Color.FromArgb(aBottomSide[6]);
+        plgBottom7.Fill = Color.FromArgb(aBottomSide[7]);
+        plgBottom8.Fill = Color.FromArgb(aBottomSide[8]);
+        plgBottom9.Fill = Color.FromArgb(aBottomSide[9]);
     }
 
     // Reset the colors of the cube.
@@ -2214,6 +1797,51 @@ public partial class MainPage : ContentPage
         imgbtnTurnBackSideToRight.IsEnabled = bEnableDisable;
     }
 
+    // Make the arrows visible or invisible.
+    private void VisibleInvisibleArrows(bool bVisibleInvisible)
+    {
+        imgbtnTurnFrontSideToRight.IsVisible = bVisibleInvisible;
+        imgbtnTurnTopMiddleToRightSide.IsVisible = bVisibleInvisible;
+        imgbtnTurnBackSideToLeft.IsVisible = bVisibleInvisible;
+        imgbtnTurnLeftSideToRight.IsVisible = bVisibleInvisible;
+        imgbtnTurnTopMiddleToFrontSide.IsVisible = bVisibleInvisible;
+        imgbtnTurnRightSideToLeft.IsVisible = bVisibleInvisible;
+        imgbtnTurnTopSideToLeft.IsVisible = bVisibleInvisible;
+        imgbtnTurnFrontMiddleToRightSide.IsVisible = bVisibleInvisible;
+        imgbtnTurnBottomSideToRight.IsVisible = bVisibleInvisible;
+        imgbtnTurnTopSideToRight.IsVisible = bVisibleInvisible;
+        imgbtnTurnRightMiddleToFrontSide.IsVisible = bVisibleInvisible;
+        imgbtnTurnBottomSideToLeft.IsVisible = bVisibleInvisible;
+        imgbtnTurnLeftSideToLeft.IsVisible = bVisibleInvisible;
+        imgbtnTurnFrontMiddleToTopSide.IsVisible = bVisibleInvisible;
+        imgbtnTurnRightSideToRight.IsVisible = bVisibleInvisible;
+        imgbtnTurnFrontSideToLeft.IsVisible = bVisibleInvisible;
+        imgbtnTurnRightMiddleToTopSide.IsVisible = bVisibleInvisible;
+        imgbtnTurnBackSideToRight.IsVisible = bVisibleInvisible;
+    }
+
+    // Get the hex color code from a polygon fill property.
+    // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
+    private string GetHexColorPolygon(object sender, EventArgs e)
+    {
+        var polygon = (Polygon)sender;
+
+        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
+        Color c = brush.Color;
+
+        var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
+                         where p.PropertyType.Equals(typeof(System.Drawing.Color))
+                         let value = (System.Drawing.Color)p.GetValue(null, null)
+                         where value.R == c.Red &&
+                               value.G == c.Green &&
+                               value.B == c.Blue &&
+                               value.A == c.Alpha
+                         select p.Name).DefaultIfEmpty("unknown").First();
+
+        c = Color.FromRgb(c.Red, c.Green, c.Blue);
+        return c.ToHex();
+    }
+    
     // Show license using the Loaded event of the MainPage.xaml.
     private async void OnPageLoad(object sender, EventArgs e)
     {
@@ -2398,27 +2026,6 @@ public partial class MainPage : ContentPage
                 await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             }
         }
-    }
-
-    private string GetHexColorPolygon(object sender, EventArgs e)
-    {
-        var polygon = (Polygon)sender;
-
-        //SolidColorBrush brush = (SolidColorBrush)plgCubeColor1.Fill;
-        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
-        Color c = brush.Color;
-        
-        var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
-                         where p.PropertyType.Equals(typeof(System.Drawing.Color))
-                         let value = (System.Drawing.Color)p.GetValue(null, null)
-                         where value.R == c.Red &&
-                               value.G == c.Green &&
-                               value.B == c.Blue &&
-                               value.A == c.Alpha
-                         select p.Name).DefaultIfEmpty("unknown").First();
-
-        c = Color.FromRgb(c.Red, c.Green, c.Blue);
-        return c.ToHex();
     }
 }
 
