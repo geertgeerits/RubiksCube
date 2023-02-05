@@ -39,8 +39,8 @@ public partial class MainPage : ContentPage
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
-    private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
-    private readonly string cColorArrowActive = "FFD000";       // Light orange
+    private readonly string cColorArrowNotActive = "#E2E2E2";    // Lightgray
+    private readonly string cColorArrowActive = "#FFD000";       // Light orange
     private readonly string[] aCubeColors = new string[7];
     private readonly string[] aTopSide = new string[10];
     private readonly string[] aFrontSide = new string[10];
@@ -68,12 +68,12 @@ public partial class MainPage : ContentPage
         bLicense = Preferences.Default.Get("SettingLicense", false);
         bExplainText = Preferences.Default.Get("SettingExplainText", true);
         bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
-        cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "FF0000");   // Red
-        cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "FFFF00");   // Yellow
-        cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "0000FF");   // Blue
-        cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "008000");   // Green
-        cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "FFFFFF");   // White
-        cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "FF8000");   // Orange
+        cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Red
+        cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#FFFF00");   // Yellow
+        cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#0000FF");   // Blue
+        cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
+        cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // White
+        cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FF8000");   // Orange
 
         // Set the theme.
         if (cTheme == "Light")
@@ -158,7 +158,7 @@ public partial class MainPage : ContentPage
         Polygon polygon = (sender as Element).Parent as Polygon;
         polygon.Fill = plgCubeColorSelect.Fill;
 
-        plgCubeColorSelect.Fill = Color.FromArgb("000000");
+        plgCubeColorSelect.Fill = Color.FromArgb("#000000");
     }
     
     // Solve the cube.
@@ -493,33 +493,35 @@ public partial class MainPage : ContentPage
         bool bColorsLeft = false;
         bool bColorsBack = false;
         bool bColorsBottom = false;
-
-        if (plgTop1.Fill == plgTop2.Fill && plgTop1.Fill == plgTop3.Fill && plgTop1.Fill == plgTop4.Fill && plgTop1.Fill == plgTop5.Fill && plgTop1.Fill == plgTop6.Fill && plgTop1.Fill == plgTop7.Fill && plgTop1.Fill == plgTop8.Fill && plgTop1.Fill == plgTop9.Fill)
+        
+        SetCubeColorsInArrays();
+        
+        if (aTopSide[1] == aTopSide[2] && aTopSide[1] == aTopSide[3] && aTopSide[1] == aTopSide[4] && aTopSide[1] == aTopSide[5] && aTopSide[1] == aTopSide[6] && aTopSide[1] == aTopSide[7] && aTopSide[1] == aTopSide[8] && aTopSide[1] == aTopSide[9])
         {
             bColorsTop = true;
         }
 
-        if (plgFront1.Fill == plgFront2.Fill && plgFront1.Fill == plgFront3.Fill && plgFront1.Fill == plgFront4.Fill && plgFront1.Fill == plgFront5.Fill && plgFront1.Fill == plgFront6.Fill && plgFront1.Fill == plgFront7.Fill && plgFront1.Fill == plgFront8.Fill && plgFront1.Fill == plgFront9.Fill)
+        if (aFrontSide[1] == aFrontSide[2] && aFrontSide[1] == aFrontSide[3] && aFrontSide[1] == aFrontSide[4] && aFrontSide[1] == aFrontSide[5] && aFrontSide[1] == aFrontSide[6] && aFrontSide[1] == aFrontSide[7] && aFrontSide[1] == aFrontSide[8] && aFrontSide[1] == aFrontSide[9])
         {
             bColorsFront = true;
         }
 
-        if (plgRight1.Fill == plgRight2.Fill && plgRight1.Fill == plgRight3.Fill && plgRight1.Fill == plgRight4.Fill && plgRight1.Fill == plgRight5.Fill && plgRight1.Fill == plgRight6.Fill && plgRight1.Fill == plgRight7.Fill && plgRight1.Fill == plgRight8.Fill && plgRight1.Fill == plgRight9.Fill)
+        if (aRightSide[1] == aRightSide[2] && aRightSide[1] == aRightSide[3] && aRightSide[1] == aRightSide[4] && aRightSide[1] == aRightSide[5] && aRightSide[1] == aRightSide[6] && aRightSide[1] == aRightSide[7] && aRightSide[1] == aRightSide[8] && aRightSide[1] == aRightSide[9])
         {
             bColorsRight = true;
         }
 
-        if (plgLeft1.Fill == plgLeft2.Fill && plgLeft1.Fill == plgLeft3.Fill && plgLeft1.Fill == plgLeft4.Fill && plgLeft1.Fill == plgLeft5.Fill && plgLeft1.Fill == plgLeft6.Fill && plgLeft1.Fill == plgLeft7.Fill && plgLeft1.Fill == plgLeft8.Fill && plgLeft1.Fill == plgLeft9.Fill)
+        if (aLeftSide[1] == aLeftSide[2] && aLeftSide[1] == aLeftSide[3] && aLeftSide[1] == aLeftSide[4] && aLeftSide[1] == aLeftSide[5] && aLeftSide[1] == aLeftSide[6] && aLeftSide[1] == aLeftSide[7] && aLeftSide[1] == aLeftSide[8] && aLeftSide[1] == aLeftSide[9])
         {
             bColorsLeft = true;
         }
 
-        if (plgBack1.Fill == plgBack2.Fill && plgBack1.Fill == plgBack3.Fill && plgBack1.Fill == plgBack4.Fill && plgBack1.Fill == plgBack5.Fill && plgBack1.Fill == plgBack6.Fill && plgBack1.Fill == plgBack7.Fill && plgBack1.Fill == plgBack8.Fill && plgBack1.Fill == plgBack9.Fill)
+        if (aBackSide[1] == aBackSide[2] && aBackSide[1] == aBackSide[3] && aBackSide[1] == aBackSide[4] && aBackSide[1] == aBackSide[5] && aBackSide[1] == aBackSide[6] && aBackSide[1] == aBackSide[7] && aBackSide[1] == aBackSide[8] && aBackSide[1] == aBackSide[9])
         {
             bColorsBack = true;
         }
 
-        if (plgBottom1.Fill == plgBottom2.Fill && plgBottom1.Fill == plgBottom3.Fill && plgBottom1.Fill == plgBottom4.Fill && plgBottom1.Fill == plgBottom5.Fill && plgBottom1.Fill == plgBottom6.Fill && plgBottom1.Fill == plgBottom7.Fill && plgBottom1.Fill == plgBottom8.Fill && plgBottom1.Fill == plgBottom9.Fill)
+        if (aBottomSide[1] == aBottomSide[2] && aBottomSide[1] == aBottomSide[3] && aBottomSide[1] == aBottomSide[4] && aBottomSide[1] == aBottomSide[5] && aBottomSide[1] == aBottomSide[6] && aBottomSide[1] == aBottomSide[7] && aBottomSide[1] == aBottomSide[8] && aBottomSide[1] == aBottomSide[9])
         {
             bColorsBottom = true;
         }
@@ -1428,10 +1430,16 @@ public partial class MainPage : ContentPage
     private void OnBtnSaveClicked(object sender, EventArgs e)
     {
         string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
-        int nRow;
+
+        if (File.Exists(cFileName))
+        {
+            File.Delete(cFileName);
+        }
 
         SetCubeColorsInArrays();
-        
+
+        int nRow;
+
         try
         {
             using StreamWriter sw = new(cFileName, false);
@@ -1486,8 +1494,6 @@ public partial class MainPage : ContentPage
     {
         string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
 
-        //File.Delete(cFileName);
-
         if (File.Exists(cFileName) == false)
         {
             return;
@@ -1535,7 +1541,7 @@ public partial class MainPage : ContentPage
                 aBottomSide[nRow] = sr.ReadLine();
             }
 
-            // Close the StreamWriter object.
+            // Close the StreamReader object.
             sr.Close();
         }
         catch (Exception ex)
@@ -1765,7 +1771,8 @@ public partial class MainPage : ContentPage
         plgBottom8.Fill = plgCubeColor6.Fill;
         plgBottom9.Fill = plgCubeColor6.Fill;
 
-        EnableDisableArrows(true);
+        //EnableDisableArrows(true);
+        VisibleInvisibleArrows(true);
     }
 
     // Enable or Disable the arrows.

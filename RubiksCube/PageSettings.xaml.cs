@@ -276,32 +276,32 @@ public partial class PageSettings : ContentPage
 
         if (rbnCubeColor1.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor1;
+            entHexColor.Text = MainPage.cCubeColor1[1..];
             HexToRgbColor(MainPage.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor2.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor2;
+            entHexColor.Text = MainPage.cCubeColor2[1..];
             HexToRgbColor(MainPage.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor3.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor3;
+            entHexColor.Text = MainPage.cCubeColor3[1..];
             HexToRgbColor(MainPage.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor4.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor4;
+            entHexColor.Text = MainPage.cCubeColor4[1..];
             HexToRgbColor(MainPage.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor5.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor5;
+            entHexColor.Text = MainPage.cCubeColor5[1..];
             HexToRgbColor(MainPage.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor6.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor6;
+            entHexColor.Text = MainPage.cCubeColor6[1..];
             HexToRgbColor(MainPage.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
         }
 
@@ -344,32 +344,32 @@ public partial class PageSettings : ContentPage
         {
             if (rbnCubeColor1.IsChecked)
             {
-                MainPage.cCubeColor1 = entHexColor.Text;
+                MainPage.cCubeColor1 = "#" + entHexColor.Text;
                 HexToRgbColor(MainPage.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor2.IsChecked)
             {
-                MainPage.cCubeColor2 = entHexColor.Text;
+                MainPage.cCubeColor2 = "#" + entHexColor.Text;
                 HexToRgbColor(MainPage.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor3.IsChecked)
             {
-                MainPage.cCubeColor3 = entHexColor.Text;
+                MainPage.cCubeColor3 = "#" + entHexColor.Text;
                 HexToRgbColor(MainPage.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor4.IsChecked)
             {
-                MainPage.cCubeColor4 = entHexColor.Text;
+                MainPage.cCubeColor4 = "#" + entHexColor.Text;
                 HexToRgbColor(MainPage.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor5.IsChecked)
             {
-                MainPage.cCubeColor5 = entHexColor.Text;
+                MainPage.cCubeColor5 = "#" + entHexColor.Text;
                 HexToRgbColor(MainPage.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor6.IsChecked)
             {
-                MainPage.cCubeColor6 = entHexColor.Text;
+                MainPage.cCubeColor6 = "#" + entHexColor.Text;
                 HexToRgbColor(MainPage.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
             }
 
@@ -393,10 +393,16 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Test for allowed characters.
-    private bool TestAllowedCharacters(string cAllowedCharacters, string cTextToCode)
+    // Test for allowed characters in hex value.
+    private bool TestAllowedCharacters(string cAllowedCharacters, string cHexColor)
     {
-        foreach (char cChar in cTextToCode)
+        // Remove leading # if present.
+        if (cHexColor[..1] == "#")
+        {
+            cHexColor = cHexColor[1..];
+        }
+
+        foreach (char cChar in cHexColor)
         {
             bool bResult = cAllowedCharacters.Contains(cChar);
 
@@ -444,32 +450,32 @@ public partial class PageSettings : ContentPage
         if (rbnCubeColor1.IsChecked)
         {
             plgCubeColor1.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor1 = cColorFgHex;
+            MainPage.cCubeColor1 = "#" + cColorFgHex;
         }
         else if(rbnCubeColor2.IsChecked)
         {
             plgCubeColor2.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor2 = cColorFgHex;
+            MainPage.cCubeColor2 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor3.IsChecked)
         {
             plgCubeColor3.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor3 = cColorFgHex;
+            MainPage.cCubeColor3 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor4.IsChecked)
         {
             plgCubeColor4.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor4 = cColorFgHex;
+            MainPage.cCubeColor4 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor5.IsChecked)
         {
             plgCubeColor5.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor5 = cColorFgHex;
+            MainPage.cCubeColor5 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor6.IsChecked)
         {
             plgCubeColor6.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor6 = cColorFgHex;
+            MainPage.cCubeColor6 = "#" + cColorFgHex;
         }
     }
 
