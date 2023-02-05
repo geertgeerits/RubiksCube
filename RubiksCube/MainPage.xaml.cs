@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-02-04 (YYYY-MM-DD)
+// Date ........: 2023-02-05 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -41,13 +41,13 @@ public partial class MainPage : ContentPage
     private bool bTextToSpeechIsBusy = false;
     private readonly string cColorArrowNotActive = "E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "FFD000";       // Light orange
-    private string[] aCubeColors = new string[7];
-    private string[] aTopSide = new string[10];
-    private string[] aFrontSide = new string[10];
-    private string[] aRightSide = new string[10];
-    private string[] aLeftSide = new string[10];
-    private string[] aBackSide = new string[10];
-    private string[] aBottomSide = new string[10];
+    private readonly string[] aCubeColors = new string[7];
+    private readonly string[] aTopSide = new string[10];
+    private readonly string[] aFrontSide = new string[10];
+    private readonly string[] aRightSide = new string[10];
+    private readonly string[] aLeftSide = new string[10];
+    private readonly string[] aBackSide = new string[10];
+    private readonly string[] aBottomSide = new string[10];
 
     public MainPage()
 	{
@@ -164,7 +164,7 @@ public partial class MainPage : ContentPage
     // Solve the cube.
     private async void OnBtnSolveClicked(object sender, EventArgs e)
     {
-        if (!CheckNumberColorsCube(sender, e))
+        if (!CheckNumberColorsCube())
         {
             return;
         }
@@ -179,7 +179,7 @@ public partial class MainPage : ContentPage
         
         bExplainText = bExplainTextSaved;
         
-        EnableDisableArrows(true);
+        //EnableDisableArrows(true);
         VisibleInvisibleArrows(true);
     }
 
@@ -240,7 +240,7 @@ public partial class MainPage : ContentPage
     }
 
     // Check the number of colors of the cube.
-    private bool CheckNumberColorsCube(object sender, EventArgs e)
+    private bool CheckNumberColorsCube()
     {
         int nNumberOfColors1 = 0;
         int nNumberOfColors2 = 0;
@@ -249,7 +249,7 @@ public partial class MainPage : ContentPage
         int nNumberOfColors5 = 0;
         int nNumberOfColors6 = 0;
         
-        SetCubeColorsInArrays(sender, e);
+        SetCubeColorsInArrays();
         
         int nRow;
 
@@ -1427,11 +1427,10 @@ public partial class MainPage : ContentPage
     // On clicked event: Save the cube.
     private void OnBtnSaveClicked(object sender, EventArgs e)
     {
-        //string cFileName = Path.Combine(FileSystem.CacheDirectory, "RubiksCube");
-        string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
+        string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
         int nRow;
 
-        SetCubeColorsInArrays(sender, e);
+        SetCubeColorsInArrays();
         
         try
         {
@@ -1499,7 +1498,6 @@ public partial class MainPage : ContentPage
         try
         {
             // Open the text file using a stream reader.
-            //using (var sr = new StreamReader(cFileName))
             using StreamReader sr = new(cFileName, false);
 
             for (nRow = 1; nRow < 7; nRow++)
@@ -1556,89 +1554,85 @@ public partial class MainPage : ContentPage
     }
 
     // Store the cube colors in arrays.
-    private void SetCubeColorsInArrays(object sender, EventArgs e)
+    private void SetCubeColorsInArrays()
     {
-        //string test = GetHexColorPolygon(plgFront1, e);
-        //DisplayAlert("", test, "OK");
+        aCubeColors[1] = GetHexColorPolygon(plgCubeColor1);
+        aCubeColors[2] = GetHexColorPolygon(plgCubeColor2);
+        aCubeColors[3] = GetHexColorPolygon(plgCubeColor3);
+        aCubeColors[4] = GetHexColorPolygon(plgCubeColor4);
+        aCubeColors[5] = GetHexColorPolygon(plgCubeColor5);
+        aCubeColors[6] = GetHexColorPolygon(plgCubeColor6);
 
-        aCubeColors[1] = GetHexColorPolygon(plgCubeColor1, e);
-        aCubeColors[2] = GetHexColorPolygon(plgCubeColor2, e);
-        aCubeColors[3] = GetHexColorPolygon(plgCubeColor3, e);
-        aCubeColors[4] = GetHexColorPolygon(plgCubeColor4, e);
-        aCubeColors[5] = GetHexColorPolygon(plgCubeColor5, e);
-        aCubeColors[6] = GetHexColorPolygon(plgCubeColor6, e);
+        aTopSide[1] = GetHexColorPolygon(plgTop1);
+        aTopSide[2] = GetHexColorPolygon(plgTop2);
+        aTopSide[3] = GetHexColorPolygon(plgTop3);
+        aTopSide[4] = GetHexColorPolygon(plgTop4);
+        aTopSide[5] = GetHexColorPolygon(plgTop5);
+        aTopSide[6] = GetHexColorPolygon(plgTop6);
+        aTopSide[7] = GetHexColorPolygon(plgTop7);
+        aTopSide[8] = GetHexColorPolygon(plgTop8);
+        aTopSide[9] = GetHexColorPolygon(plgTop9);
 
-        aTopSide[1] = GetHexColorPolygon(plgTop1, e);
-        aTopSide[2] = GetHexColorPolygon(plgTop2, e);
-        aTopSide[3] = GetHexColorPolygon(plgTop3, e);
-        aTopSide[4] = GetHexColorPolygon(plgTop4, e);
-        aTopSide[5] = GetHexColorPolygon(plgTop5, e);
-        aTopSide[6] = GetHexColorPolygon(plgTop6, e);
-        aTopSide[7] = GetHexColorPolygon(plgTop7, e);
-        aTopSide[8] = GetHexColorPolygon(plgTop8, e);
-        aTopSide[9] = GetHexColorPolygon(plgTop9, e);
+        aFrontSide[1] = GetHexColorPolygon(plgFront1);
+        aFrontSide[2] = GetHexColorPolygon(plgFront2);
+        aFrontSide[3] = GetHexColorPolygon(plgFront3);
+        aFrontSide[4] = GetHexColorPolygon(plgFront4);
+        aFrontSide[5] = GetHexColorPolygon(plgFront5);
+        aFrontSide[6] = GetHexColorPolygon(plgFront6);
+        aFrontSide[7] = GetHexColorPolygon(plgFront7);
+        aFrontSide[8] = GetHexColorPolygon(plgFront8);
+        aFrontSide[9] = GetHexColorPolygon(plgFront9);
 
-        aFrontSide[1] = GetHexColorPolygon(plgFront1, e);
-        aFrontSide[2] = GetHexColorPolygon(plgFront2, e);
-        aFrontSide[3] = GetHexColorPolygon(plgFront3, e);
-        aFrontSide[4] = GetHexColorPolygon(plgFront4, e);
-        aFrontSide[5] = GetHexColorPolygon(plgFront5, e);
-        aFrontSide[6] = GetHexColorPolygon(plgFront6, e);
-        aFrontSide[7] = GetHexColorPolygon(plgFront7, e);
-        aFrontSide[8] = GetHexColorPolygon(plgFront8, e);
-        aFrontSide[9] = GetHexColorPolygon(plgFront9, e);
+        aRightSide[1] = GetHexColorPolygon(plgRight1);
+        aRightSide[2] = GetHexColorPolygon(plgRight2);
+        aRightSide[3] = GetHexColorPolygon(plgRight3);
+        aRightSide[4] = GetHexColorPolygon(plgRight4);
+        aRightSide[5] = GetHexColorPolygon(plgRight5);
+        aRightSide[6] = GetHexColorPolygon(plgRight6);
+        aRightSide[7] = GetHexColorPolygon(plgRight7);
+        aRightSide[8] = GetHexColorPolygon(plgRight8);
+        aRightSide[9] = GetHexColorPolygon(plgRight9);
 
-        aRightSide[1] = GetHexColorPolygon(plgRight1, e);
-        aRightSide[2] = GetHexColorPolygon(plgRight2, e);
-        aRightSide[3] = GetHexColorPolygon(plgRight3, e);
-        aRightSide[4] = GetHexColorPolygon(plgRight4, e);
-        aRightSide[5] = GetHexColorPolygon(plgRight5, e);
-        aRightSide[6] = GetHexColorPolygon(plgRight6, e);
-        aRightSide[7] = GetHexColorPolygon(plgRight7, e);
-        aRightSide[8] = GetHexColorPolygon(plgRight8, e);
-        aRightSide[9] = GetHexColorPolygon(plgRight9, e);
+        aLeftSide[1] = GetHexColorPolygon(plgLeft1);
+        aLeftSide[2] = GetHexColorPolygon(plgLeft2);
+        aLeftSide[3] = GetHexColorPolygon(plgLeft3);
+        aLeftSide[4] = GetHexColorPolygon(plgLeft4);
+        aLeftSide[5] = GetHexColorPolygon(plgLeft5);
+        aLeftSide[6] = GetHexColorPolygon(plgLeft6);
+        aLeftSide[7] = GetHexColorPolygon(plgLeft7);
+        aLeftSide[8] = GetHexColorPolygon(plgLeft8);
+        aLeftSide[9] = GetHexColorPolygon(plgLeft9);
 
-        aLeftSide[1] = GetHexColorPolygon(plgLeft1, e);
-        aLeftSide[2] = GetHexColorPolygon(plgLeft2, e);
-        aLeftSide[3] = GetHexColorPolygon(plgLeft3, e);
-        aLeftSide[4] = GetHexColorPolygon(plgLeft4, e);
-        aLeftSide[5] = GetHexColorPolygon(plgLeft5, e);
-        aLeftSide[6] = GetHexColorPolygon(plgLeft6, e);
-        aLeftSide[7] = GetHexColorPolygon(plgLeft7, e);
-        aLeftSide[8] = GetHexColorPolygon(plgLeft8, e);
-        aLeftSide[9] = GetHexColorPolygon(plgLeft9, e);
+        aBackSide[1] = GetHexColorPolygon(plgBack1);
+        aBackSide[2] = GetHexColorPolygon(plgBack2);
+        aBackSide[3] = GetHexColorPolygon(plgBack3);
+        aBackSide[4] = GetHexColorPolygon(plgBack4);
+        aBackSide[5] = GetHexColorPolygon(plgBack5);
+        aBackSide[6] = GetHexColorPolygon(plgBack6);
+        aBackSide[7] = GetHexColorPolygon(plgBack7);
+        aBackSide[8] = GetHexColorPolygon(plgBack8);
+        aBackSide[9] = GetHexColorPolygon(plgBack9);
 
-        aBackSide[1] = GetHexColorPolygon(plgBack1, e);
-        aBackSide[2] = GetHexColorPolygon(plgBack2, e);
-        aBackSide[3] = GetHexColorPolygon(plgBack3, e);
-        aBackSide[4] = GetHexColorPolygon(plgBack4, e);
-        aBackSide[5] = GetHexColorPolygon(plgBack5, e);
-        aBackSide[6] = GetHexColorPolygon(plgBack6, e);
-        aBackSide[7] = GetHexColorPolygon(plgBack7, e);
-        aBackSide[8] = GetHexColorPolygon(plgBack8, e);
-        aBackSide[9] = GetHexColorPolygon(plgBack9, e);
-
-        aBottomSide[1] = GetHexColorPolygon(plgBottom1, e);
-        aBottomSide[2] = GetHexColorPolygon(plgBottom2, e);
-        aBottomSide[3] = GetHexColorPolygon(plgBottom3, e);
-        aBottomSide[4] = GetHexColorPolygon(plgBottom4, e);
-        aBottomSide[5] = GetHexColorPolygon(plgBottom5, e);
-        aBottomSide[6] = GetHexColorPolygon(plgBottom6, e);
-        aBottomSide[7] = GetHexColorPolygon(plgBottom7, e);
-        aBottomSide[8] = GetHexColorPolygon(plgBottom8, e);
-        aBottomSide[9] = GetHexColorPolygon(plgBottom9, e);
+        aBottomSide[1] = GetHexColorPolygon(plgBottom1);
+        aBottomSide[2] = GetHexColorPolygon(plgBottom2);
+        aBottomSide[3] = GetHexColorPolygon(plgBottom3);
+        aBottomSide[4] = GetHexColorPolygon(plgBottom4);
+        aBottomSide[5] = GetHexColorPolygon(plgBottom5);
+        aBottomSide[6] = GetHexColorPolygon(plgBottom6);
+        aBottomSide[7] = GetHexColorPolygon(plgBottom7);
+        aBottomSide[8] = GetHexColorPolygon(plgBottom8);
+        aBottomSide[9] = GetHexColorPolygon(plgBottom9);
     }
 
     // Restore the cube colors from the arrays.
     private void GetCubeColorsFromArrays()
     {
-        //cCubeColor1 = aCubeColors[1];
-        //cCubeColor2 = aCubeColors[2];
-        //cCubeColor3 = aCubeColors[3];
-        //cCubeColor4 = aCubeColors[4];
-        //cCubeColor5 = aCubeColors[5];
-        //cCubeColor6 = aCubeColors[6];
-        //DisplayAlert("", cCubeColor1, "OK");
+        cCubeColor1 = aCubeColors[1];
+        cCubeColor2 = aCubeColors[2];
+        cCubeColor3 = aCubeColors[3];
+        cCubeColor4 = aCubeColors[4];
+        cCubeColor5 = aCubeColors[5];
+        cCubeColor6 = aCubeColors[6];
 
         plgCubeColor1.Fill = Color.FromArgb(aCubeColors[1]);
         plgCubeColor2.Fill = Color.FromArgb(aCubeColors[2]);
@@ -1822,7 +1816,7 @@ public partial class MainPage : ContentPage
 
     // Get the hex color code from a polygon fill property.
     // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
-    private string GetHexColorPolygon(object sender, EventArgs e)
+    private static string GetHexColorPolygon(object sender)
     {
         var polygon = (Polygon)sender;
 
