@@ -120,11 +120,29 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open.
+        /// </summary>
+        internal static string ButtonOpen_Text {
+            get {
+                return ResourceManager.GetString("ButtonOpen_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         internal static string ButtonReset_Text {
             get {
                 return ResourceManager.GetString("ButtonReset_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string ButtonSave_Text {
+            get {
+                return ResourceManager.GetString("ButtonSave_Text", resourceCulture);
             }
         }
         

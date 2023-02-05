@@ -141,8 +141,14 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Schließen</value>
   </data>
+  <data name="ButtonOpen_Text" xml:space="preserve">
+    <value>Offen</value>
+  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Zurücksetzen</value>
+  </data>
+  <data name="ButtonSave_Text" xml:space="preserve">
+    <value>Speichern</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Lösen</value>

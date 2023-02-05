@@ -370,20 +370,26 @@
 
         <Button
             x:Name="btnSettingsSave"
-            Style="{StaticResource buttonStyleDefault}"
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalOptions="Start"
+            VerticalOptions="Center"
+            HeightRequest="40"
+            WidthRequest="140"
+            FontSize="15"
             Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
         </Button>
 
         <Button
-            Style="{StaticResource buttonStyleDefault}"
             Grid.Row="1"
             Grid.Column="1"
             HorizontalOptions="End"
+            VerticalOptions="Center"
+            HeightRequest="40"
+            WidthRequest="140"
+            FontSize="15"
             Text="{local:Translate SettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
         </Button>

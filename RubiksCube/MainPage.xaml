@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RubiksCube"
@@ -1023,13 +1023,13 @@
         <HorizontalStackLayout
             Grid.Row="2"
             Grid.Column="0"
-            Grid.ColumnSpan="2"
-            HorizontalOptions="Center">
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Center"
+            Spacing="0">
             
             <Button
                 x:Name="BtnSolve"
                 Style="{StaticResource buttonStyleDefault}"
-                HorizontalOptions="Start"
                 Text="{local:Translate ButtonSolve_Text}"
                 Clicked="OnBtnSolveClicked">
             </Button>
@@ -1037,21 +1037,20 @@
             <Button
                 x:Name="BtnOpen"
                 Style="{StaticResource buttonStyleDefault}"
-                Text="Open"
+                Text="{local:Translate ButtonOpen_Text}"
                 Clicked="OnBtnOpenClicked">
             </Button>
 
             <Button
                 x:Name="BtnSave"
                 Style="{StaticResource buttonStyleDefault}"
-                Text="Save"
+                Text="{local:Translate ButtonSave_Text}"
                 Clicked="OnBtnSaveClicked">
             </Button>
 
             <Button
                 x:Name="BtnReset"
                 Style="{StaticResource buttonStyleDefault}"
-                HorizontalOptions="End"
                 Text="{local:Translate ButtonReset_Text}"
                 Clicked="OnBtnResetClicked">
             </Button>

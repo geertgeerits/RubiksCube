@@ -203,37 +203,53 @@ public partial class MainPage : ContentPage
                 return;
         }
 
-            // Solve the corners of the top layer.
+        if (plgTop5.Fill == plgBottom6.Fill && plgRight5.Fill == plgRight8.Fill)
+        {
+            TurnRightSideTo("+");
+            TurnRightSideTo("+");
+            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnRightSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                return;
+        }
 
-            // Solve the middle layer.
+        if (plgTop5.Fill == plgBottom8.Fill && plgBack5.Fill == plgBack8.Fill)
+        {
+            TurnBackSideTo("+");
+            TurnBackSideTo("+");
+            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnBackSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                return;
+        }
 
-            // Solve the bottom layer.
+        // Solve the corners of the top layer.
 
-            // Put the edges on the correct place.
+        // Solve the middle layer.
 
-            // Flip the corners.
+        // Solve the bottom layer.
 
-            // Turning the edges.
+        // Put the edges on the correct place.
+
+        // Flip the corners.
+
+        // Turning the edges.
 
 
 
-            //TurnCubeFrontSideToLeftSide();
-            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            //    return;
+        TurnCubeFrontSideToLeftSide();
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
 
-            //TurnCubeFrontSideToRightSide();
-            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            //    return;
+        //TurnCubeFrontSideToRightSide();
+        //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+        //    return;
 
-            //TurnCubeFrontSideToTopSide();
-            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToTopSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            //    return;
+        //TurnCubeFrontSideToTopSide();
+        //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToTopSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+        //    return;
 
-            //TurnCubeFrontSideToBottomSide();
-            //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToBottomSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            //    return;
+        //TurnCubeFrontSideToBottomSide();
+        //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToBottomSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+        //    return;
 
-            if (!CheckIfCubeIsSolved(false))
+        if (!CheckIfCubeIsSolved(false))
         {
             return;
         }

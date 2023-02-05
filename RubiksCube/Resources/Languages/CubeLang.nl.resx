@@ -141,8 +141,14 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sluiten</value>
   </data>
+  <data name="ButtonOpen_Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="ButtonSave_Text" xml:space="preserve">
+    <value>Opslaan</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Los op</value>

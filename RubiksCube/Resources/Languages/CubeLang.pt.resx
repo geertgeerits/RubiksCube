@@ -141,8 +141,14 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Perto</value>
   </data>
+  <data name="ButtonOpen_Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Redefinir</value>
+  </data>
+  <data name="ButtonSave_Text" xml:space="preserve">
+    <value>Salvar</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Resolver</value>
