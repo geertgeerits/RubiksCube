@@ -39,6 +39,7 @@ public partial class MainPage : ContentPage
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
+    //private bool bColorDrop = false;
     private readonly string cColorArrowNotActive = "#E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "#FFD000";       // Light orange
     private readonly string[] aCubeColors = new string[7];
@@ -157,8 +158,10 @@ public partial class MainPage : ContentPage
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
         polygon.Fill = plgCubeColorSelect.Fill;
-
+        
         plgCubeColorSelect.Fill = Color.FromArgb("#000000");
+
+        SetCubeColorsInArrays();
     }
     
     // Solve the cube.
@@ -242,9 +245,9 @@ public partial class MainPage : ContentPage
         if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
             return;
 
-        //TurnCubeFrontSideToRightSide();
-        //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-        //    return;
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
+        TurnCubeFrontSideToRightSide();
 
         //TurnCubeFrontSideToTopSide();
         //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToTopSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
@@ -1786,6 +1789,17 @@ public partial class MainPage : ContentPage
         plgBottom9.Fill = Color.FromArgb(aBottomSide[9]);
     }
 
+    // Enable or Disable the cube colors for drag and drop.
+    private void EnableDisableCubeColors(bool bEnableDisable)
+    {
+        plgCubeColor1.IsEnabled = bEnableDisable;
+        plgCubeColor2.IsEnabled = bEnableDisable;
+        plgCubeColor3.IsEnabled = bEnableDisable;
+        plgCubeColor4.IsEnabled = bEnableDisable;
+        plgCubeColor5.IsEnabled = bEnableDisable;
+        plgCubeColor6.IsEnabled = bEnableDisable;
+    }
+    
     // Enable or Disable the arrows.
     private void EnableDisableArrows(bool bEnableDisable)
     {
