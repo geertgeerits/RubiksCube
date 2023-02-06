@@ -1466,6 +1466,8 @@ public partial class MainPage : ContentPage
     // On clicked event: Save the cube.
     private void OnBtnSaveClicked(object sender, EventArgs e)
     {
+        SetCubeColorsInArrays();
+
         string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
 
         if (File.Exists(cFileName))
