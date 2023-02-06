@@ -238,9 +238,9 @@ public partial class MainPage : ContentPage
 
 
 
-        //TurnCubeFrontSideToLeftSide();
-        //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-        //    return;
+        TurnCubeFrontSideToLeftSide();
+        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+            return;
 
         //TurnCubeFrontSideToRightSide();
         //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
@@ -269,9 +269,9 @@ public partial class MainPage : ContentPage
         int nNumberOfColors4 = 0;
         int nNumberOfColors5 = 0;
         int nNumberOfColors6 = 0;
-        
+
         SetCubeColorsInArrays();
-        
+
         int nRow;
 
         // Top side.
@@ -514,8 +514,6 @@ public partial class MainPage : ContentPage
         bool bColorsLeft = false;
         bool bColorsBack = false;
         bool bColorsBottom = false;
-        
-        SetCubeColorsInArrays();
         
         if (aTopSide[1] == aTopSide[2] && aTopSide[1] == aTopSide[3] && aTopSide[1] == aTopSide[4] && aTopSide[1] == aTopSide[5] && aTopSide[1] == aTopSide[6] && aTopSide[1] == aTopSide[7] && aTopSide[1] == aTopSide[8] && aTopSide[1] == aTopSide[9])
         {
@@ -1475,8 +1473,6 @@ public partial class MainPage : ContentPage
             File.Delete(cFileName);
         }
 
-        SetCubeColorsInArrays();
-
         int nRow;
 
         try
@@ -1877,6 +1873,8 @@ public partial class MainPage : ContentPage
                 imgbtnAbout.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
                 BtnSolve.IsEnabled = false;
+                BtnOpen.IsEnabled = false;
+                BtnSave.IsEnabled = false;
                 BtnReset.IsEnabled = false;
                 EnableDisableArrows(false);
 
