@@ -326,16 +326,16 @@ Interdit:</value>
     <value>Tournez le côté inférieur d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
   <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
-    <value>Tournez l'avant du cube vers le bas.</value>
+    <value>Tournez le cube entier de sorte que l'avant aille vers le bas.</value>
   </data>
   <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
-    <value>Tourner l'avant du cube vers la gauche.</value>
+    <value>Tournez le cube entier de sorte que l'avant aille vers le côté gauche.</value>
   </data>
   <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
-    <value>Tournez l'avant du cube vers la droite.</value>
+    <value>Tournez le cube entier de sorte que l'avant aille vers la droite.</value>
   </data>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
-    <value>Tournez l'avant du cube vers le haut.</value>
+    <value>Tournez le cube entier de sorte que l'avant aille vers le haut.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Tournez la couche centrale avant d'un quart de tour vers la droite (-).</value>

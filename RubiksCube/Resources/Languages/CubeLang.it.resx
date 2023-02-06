@@ -326,16 +326,16 @@ Non autorizzato:</value>
     <value>Girare il lato inferiore di un quarto di giro 'in senso orario' (+).</value>
   </data>
   <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
-    <value>Gira la parte anteriore del cubo verso il basso.</value>
+    <value>Gira l'intero cubo in modo che la parte anteriore vada verso il basso.</value>
   </data>
   <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
-    <value>Girare la parte anteriore del cubo sul lato sinistro.</value>
+    <value>Gira l'intero cubo in modo che la parte anteriore vada a sinistra.</value>
   </data>
   <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
-    <value>Gira la parte anteriore del cubo sul lato destro.</value>
+    <value>Gira l'intero cubo in modo che la parte anteriore vada sul lato destro.</value>
   </data>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
-    <value>Gira la parte anteriore del cubo verso l'alto.</value>
+    <value>Gira l'intero cubo in modo che la parte anteriore vada verso l'alto.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Ruota lo strato centrale anteriore di un quarto di giro sul lato destro (-).</value>

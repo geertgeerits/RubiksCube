@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-02-05 (YYYY-MM-DD)
+// Date ........: 2023-02-06 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -123,12 +123,12 @@ public partial class MainPage : ContentPage
         InitializeTextToSpeech(cCultureName);
 
         // Initialize the cube colors.
-        plgCubeColor1.Fill = Color.FromArgb(cCubeColor1);
-        plgCubeColor2.Fill = Color.FromArgb(cCubeColor2);
-        plgCubeColor3.Fill = Color.FromArgb(cCubeColor3);
-        plgCubeColor4.Fill = Color.FromArgb(cCubeColor4);
-        plgCubeColor5.Fill = Color.FromArgb(cCubeColor5);
-        plgCubeColor6.Fill = Color.FromArgb(cCubeColor6);
+        aCubeColors[1] = cCubeColor1;
+        aCubeColors[2] = cCubeColor2;
+        aCubeColors[3] = cCubeColor3;
+        aCubeColors[4] = cCubeColor4;
+        aCubeColors[5] = cCubeColor5;
+        aCubeColors[6] = cCubeColor6;
 
         // Reset the colors of the cube.
         ResetCube();
@@ -187,37 +187,42 @@ public partial class MainPage : ContentPage
     private async Task SolveTheCube()
     {
         // Solve the edges of the top layer.
-        if (plgTop5.Fill == plgBottom2.Fill && plgFront5.Fill == plgFront8.Fill)
+        
+        for (int nTimes = 1; nTimes < 5; nTimes++)
         {
-            TurnFrontSideTo("+");
-            TurnFrontSideTo("+");
-            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnFrontSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-                return;
+            if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
+            {
+                TurnFrontSideTo("+");
+                TurnFrontSideTo("+");
+                if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnFrontSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                    return;
+            }
+
+            if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
+            {
+                TurnLeftSideTo("+");
+                TurnLeftSideTo("+");
+                if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnLeftSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                    return;
+            }
+
+            if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
+            {
+                TurnRightSideTo("+");
+                TurnRightSideTo("+");
+                if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnRightSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                    return;
+            }
+
+            if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
+            {
+                TurnBackSideTo("+");
+                TurnBackSideTo("+");
+                if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnBackSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+                    return;
+            }
         }
 
-        if (plgTop5.Fill == plgBottom4.Fill && plgLeft5.Fill == plgLeft8.Fill)
-        {
-            TurnLeftSideTo("+");
-            TurnLeftSideTo("+");
-            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnLeftSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-                return;
-        }
-
-        if (plgTop5.Fill == plgBottom6.Fill && plgRight5.Fill == plgRight8.Fill)
-        {
-            TurnRightSideTo("+");
-            TurnRightSideTo("+");
-            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnRightSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-                return;
-        }
-
-        if (plgTop5.Fill == plgBottom8.Fill && plgBack5.Fill == plgBack8.Fill)
-        {
-            TurnBackSideTo("+");
-            TurnBackSideTo("+");
-            if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnBackSideHalfTurn_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-                return;
-        }
 
         // Solve the corners of the top layer.
 
@@ -233,9 +238,9 @@ public partial class MainPage : ContentPage
 
 
 
-        TurnCubeFrontSideToLeftSide();
-        if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
-            return;
+        //TurnCubeFrontSideToLeftSide();
+        //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToLeftSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+        //    return;
 
         //TurnCubeFrontSideToRightSide();
         //if (await DisplayAlert(CubeLang.Solve_Text, CubeLang.TurnCubeFrontSideToRightSide_Text, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
@@ -688,7 +693,7 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the the cube.
-    // Turn the cube front side to the left side.
+    // Rotate the entire cube so that the front goes to the left side.
     private void TurnCubeFrontSideToLeftSide()
     {
         TurnTopSideTo("+");
@@ -697,7 +702,7 @@ public partial class MainPage : ContentPage
         ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToLeftSide_Text);
     }
 
-    // Turn the cube front side to the right side.
+    // Rotate the entire cube so that the front goes to the right side.
     private void TurnCubeFrontSideToRightSide()
     {
         TurnTopSideTo("-");
@@ -706,7 +711,7 @@ public partial class MainPage : ContentPage
         ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToRightSide_Text);
     }
 
-    // Turn the cube front side to the top side.
+    // Rotate the entire cube so that the front goes to the top side.
     private void TurnCubeFrontSideToTopSide()
     {
         TurnRightSideTo("+");
@@ -715,7 +720,7 @@ public partial class MainPage : ContentPage
         ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToTopSide_Text);
     }
 
-    // Turn the cube front side to the bottom side.
+    // Rotate the entire cube so that the front goes to the bottom side.
     private void TurnCubeFrontSideToBottomSide()
     {
         TurnRightSideTo("-");
@@ -727,685 +732,703 @@ public partial class MainPage : ContentPage
     // Turn the entire front side clockwise or counter clockwise.
     private void TurnFrontSideTo(string cDirection)
     {
-        Brush ColorFront1 = plgFront1.Fill;
-        Brush ColorFront2 = plgFront2.Fill;
-        Brush ColorFront3 = plgFront3.Fill;
-        Brush ColorFront4 = plgFront4.Fill;
-        Brush ColorFront6 = plgFront6.Fill;
-        Brush ColorFront7 = plgFront7.Fill;
-        Brush ColorFront8 = plgFront8.Fill;
-        Brush ColorFront9 = plgFront9.Fill;
+        string cColorFront1 = aFrontSide[1];
+        string cColorFront2 = aFrontSide[2];
+        string cColorFront3 = aFrontSide[3];
+        string cColorFront4 = aFrontSide[4];
+        string cColorFront6 = aFrontSide[6];
+        string cColorFront7 = aFrontSide[7];
+        string cColorFront8 = aFrontSide[8];
+        string cColorFront9 = aFrontSide[9];
 
-        Brush ColorTop7 = plgTop7.Fill;
-        Brush ColorTop8 = plgTop8.Fill;
-        Brush ColorTop9 = plgTop9.Fill;
+        string cColorTop7 = aTopSide[7];
+        string cColorTop8 = aTopSide[8];
+        string cColorTop9 = aTopSide[9];
 
-        Brush ColorRight1 = plgRight1.Fill;
-        Brush ColorRight4 = plgRight4.Fill;
-        Brush ColorRight7 = plgRight7.Fill;
+        string cColorRight1 = aRightSide[1];
+        string cColorRight4 = aRightSide[4];
+        string cColorRight7 = aRightSide[7];
 
-        Brush ColorBottom1 = plgBottom1.Fill;
-        Brush ColorBottom2 = plgBottom2.Fill;
-        Brush ColorBottom3 = plgBottom3.Fill;
+        string cColorBottom1 = aBottomSide[1];
+        string cColorBottom2 = aBottomSide[2];
+        string cColorBottom3 = aBottomSide[3];
 
-        Brush ColorLeft3 = plgLeft3.Fill;
-        Brush ColorLeft6 = plgLeft6.Fill;
-        Brush ColorLeft9 = plgLeft9.Fill;
+        string cColorLeft3 = aLeftSide[3];
+        string cColorLeft6 = aLeftSide[6];
+        string cColorLeft9 = aLeftSide[9];
 
         if (cDirection == "+")
         {
-            plgFront1.Fill = ColorFront7;
-            plgFront2.Fill = ColorFront4;
-            plgFront3.Fill = ColorFront1;
-            plgFront4.Fill = ColorFront8;
-            plgFront6.Fill = ColorFront2;
-            plgFront7.Fill = ColorFront9;
-            plgFront8.Fill = ColorFront6;
-            plgFront9.Fill = ColorFront3;
+            aFrontSide[1] = cColorFront7;
+            aFrontSide[2] = cColorFront4;
+            aFrontSide[3] = cColorFront1;
+            aFrontSide[4] = cColorFront8;
+            aFrontSide[6] = cColorFront2;
+            aFrontSide[7] = cColorFront9;
+            aFrontSide[8] = cColorFront6;
+            aFrontSide[9] = cColorFront3;
 
-            plgTop7.Fill = ColorLeft9;
-            plgTop8.Fill = ColorLeft6;
-            plgTop9.Fill = ColorLeft3;
+            aTopSide[7] = cColorLeft9;
+            aTopSide[8] = cColorLeft6;
+            aTopSide[9] = cColorLeft3;
 
-            plgRight1.Fill = ColorTop7;
-            plgRight4.Fill = ColorTop8;
-            plgRight7.Fill = ColorTop9;
+            aRightSide[1] = cColorTop7;
+            aRightSide[4] = cColorTop8;
+            aRightSide[7] = cColorTop9;
 
-            plgBottom1.Fill = ColorRight7;
-            plgBottom2.Fill = ColorRight4;
-            plgBottom3.Fill = ColorRight1;
+            aBottomSide[1] = cColorRight7;
+            aBottomSide[2] = cColorRight4;
+            aBottomSide[3] = cColorRight1;
 
-            plgLeft3.Fill = ColorBottom1;
-            plgLeft6.Fill = ColorBottom2;
-            plgLeft9.Fill = ColorBottom3;
+            aLeftSide[3] = cColorBottom1;
+            aLeftSide[6] = cColorBottom2;
+            aLeftSide[9] = cColorBottom3;
         }
 
         if (cDirection == "-")
         {
-            plgFront1.Fill = ColorFront3;
-            plgFront2.Fill = ColorFront6;
-            plgFront3.Fill = ColorFront9;
-            plgFront4.Fill = ColorFront2;
-            plgFront6.Fill = ColorFront8;
-            plgFront7.Fill = ColorFront1;
-            plgFront8.Fill = ColorFront4;
-            plgFront9.Fill = ColorFront7;
+            aFrontSide[1] = cColorFront3;
+            aFrontSide[2] = cColorFront6;
+            aFrontSide[3] = cColorFront9;
+            aFrontSide[4] = cColorFront2;
+            aFrontSide[6] = cColorFront8;
+            aFrontSide[7] = cColorFront1;
+            aFrontSide[8] = cColorFront4;
+            aFrontSide[9] = cColorFront7;
 
-            plgTop7.Fill = ColorRight1;
-            plgTop8.Fill = ColorRight4;
-            plgTop9.Fill = ColorRight7;
+            aTopSide[7] = cColorRight1;
+            aTopSide[8] = cColorRight4;
+            aTopSide[9] = cColorRight7;
 
-            plgRight1.Fill = ColorBottom3;
-            plgRight4.Fill = ColorBottom2;
-            plgRight7.Fill = ColorBottom1;
+            aRightSide[1] = cColorBottom3;
+            aRightSide[4] = cColorBottom2;
+            aRightSide[7] = cColorBottom1;
 
-            plgBottom1.Fill = ColorLeft3;
-            plgBottom2.Fill = ColorLeft6;
-            plgBottom3.Fill = ColorLeft9;
+            aBottomSide[1] = cColorLeft3;
+            aBottomSide[2] = cColorLeft6;
+            aBottomSide[3] = cColorLeft9;
 
-            plgLeft3.Fill = ColorTop9;
-            plgLeft6.Fill = ColorTop8;
-            plgLeft9.Fill = ColorTop7;
+            aLeftSide[3] = cColorTop9;
+            aLeftSide[6] = cColorTop8;
+            aLeftSide[9] = cColorTop7;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the top middle to the right or left.
     private void TurnTopMiddleTo(string cDirection)
     {
-        Brush ColorTop4 = plgTop4.Fill;
-        Brush ColorTop5 = plgTop5.Fill;
-        Brush ColorTop6 = plgTop6.Fill;
+        string cColorTop4 = aTopSide[4];
+        string cColorTop5 = aTopSide[5];
+        string cColorTop6 = aTopSide[6];
 
-        Brush ColorRight2 = plgRight2.Fill;
-        Brush ColorRight5 = plgRight5.Fill;
-        Brush ColorRight8 = plgRight8.Fill;
+        string cColorRight2 = aRightSide[2];
+        string cColorRight5 = aRightSide[5];
+        string cColorRight8 = aRightSide[8];
 
-        Brush ColorBottom4 = plgBottom4.Fill;
-        Brush ColorBottom5 = plgBottom5.Fill;
-        Brush ColorBottom6 = plgBottom6.Fill;
+        string cColorBottom4 = aBottomSide[4];
+        string cColorBottom5 = aBottomSide[5];
+        string cColorBottom6 = aBottomSide[6];
 
-        Brush ColorLeft2 = plgLeft2.Fill;
-        Brush ColorLeft5 = plgLeft5.Fill;
-        Brush ColorLeft8 = plgLeft8.Fill;
+        string cColorLeft2 = aLeftSide[2];
+        string cColorLeft5 = aLeftSide[5];
+        string cColorLeft8 = aLeftSide[8];
 
         if (cDirection == "+")
         {
-            plgTop4.Fill = ColorLeft8;
-            plgTop5.Fill = ColorLeft5;
-            plgTop6.Fill = ColorLeft2;
+            aTopSide[4] = cColorLeft8;
+            aTopSide[5] = cColorLeft5;
+            aTopSide[6] = cColorLeft2;
 
-            plgRight2.Fill = ColorTop4;
-            plgRight5.Fill = ColorTop5;
-            plgRight8.Fill = ColorTop6;
+            aRightSide[2] = cColorTop4;
+            aRightSide[5] = cColorTop5;
+            aRightSide[8] = cColorTop6;
 
-            plgBottom4.Fill = ColorRight8;
-            plgBottom5.Fill = ColorRight5;
-            plgBottom6.Fill = ColorRight2;
+            aBottomSide[4] = cColorRight8;
+            aBottomSide[5] = cColorRight5;
+            aBottomSide[6] = cColorRight2;
 
-            plgLeft2.Fill = ColorBottom4;
-            plgLeft5.Fill = ColorBottom5;
-            plgLeft8.Fill = ColorBottom6;
+            aLeftSide[2] = cColorBottom4;
+            aLeftSide[5] = cColorBottom5;
+            aLeftSide[8] = cColorBottom6;
         }
 
         if (cDirection == "-")
         {
-            plgTop4.Fill = ColorRight2;
-            plgTop5.Fill = ColorRight5;
-            plgTop6.Fill = ColorRight8;
+            aTopSide[4] = cColorRight2;
+            aTopSide[5] = cColorRight5;
+            aTopSide[6] = cColorRight8;
 
-            plgRight2.Fill = ColorBottom6;
-            plgRight5.Fill = ColorBottom5;
-            plgRight8.Fill = ColorBottom4;
+            aRightSide[2] = cColorBottom6;
+            aRightSide[5] = cColorBottom5;
+            aRightSide[8] = cColorBottom4;
 
-            plgBottom4.Fill = ColorLeft2;
-            plgBottom5.Fill = ColorLeft5;
-            plgBottom6.Fill = ColorLeft8;
+            aBottomSide[4] = cColorLeft2;
+            aBottomSide[5] = cColorLeft5;
+            aBottomSide[6] = cColorLeft8;
 
-            plgLeft2.Fill = ColorTop6;
-            plgLeft5.Fill = ColorTop5;
-            plgLeft8.Fill = ColorTop4;
+            aLeftSide[2] = cColorTop6;
+            aLeftSide[5] = cColorTop5;
+            aLeftSide[8] = cColorTop4;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the entire back side clockwise or counter clockwise.
     private void TurnBackSideTo(string cDirection)
     {
-        Brush ColorBack1 = plgBack1.Fill;
-        Brush ColorBack2 = plgBack2.Fill;
-        Brush ColorBack3 = plgBack3.Fill;
-        Brush ColorBack4 = plgBack4.Fill;
-        Brush ColorBack6 = plgBack6.Fill;
-        Brush ColorBack7 = plgBack7.Fill;
-        Brush ColorBack8 = plgBack8.Fill;
-        Brush ColorBack9 = plgBack9.Fill;
+        string cColorBack1 = aBackSide[1];
+        string cColorBack2 = aBackSide[2];
+        string cColorBack3 = aBackSide[3];
+        string cColorBack4 = aBackSide[4];
+        string cColorBack6 = aBackSide[6];
+        string cColorBack7 = aBackSide[7];
+        string cColorBack8 = aBackSide[8];
+        string cColorBack9 = aBackSide[9];
 
-        Brush ColorTop1 = plgTop1.Fill;
-        Brush ColorTop2 = plgTop2.Fill;
-        Brush ColorTop3 = plgTop3.Fill;
+        string cColorTop1 = aTopSide[1];
+        string cColorTop2 = aTopSide[2];
+        string cColorTop3 = aTopSide[3];
 
-        Brush ColorRight3 = plgRight3.Fill;
-        Brush ColorRight6 = plgRight6.Fill;
-        Brush ColorRight9 = plgRight9.Fill;
+        string cColorRight3 = aRightSide[3];
+        string cColorRight6 = aRightSide[6];
+        string cColorRight9 = aRightSide[9];
 
-        Brush ColorBottom7 = plgBottom7.Fill;
-        Brush ColorBottom8 = plgBottom8.Fill;
-        Brush ColorBottom9 = plgBottom9.Fill;
+        string cColorBottom7 = aBottomSide[7];
+        string cColorBottom8 = aBottomSide[8];
+        string cColorBottom9 = aBottomSide[9];
 
-        Brush ColorLeft1 = plgLeft1.Fill;
-        Brush ColorLeft4 = plgLeft4.Fill;
-        Brush ColorLeft7 = plgLeft7.Fill;
+        string cColorLeft1 = aLeftSide[1];
+        string cColorLeft4 = aLeftSide[4];
+        string cColorLeft7 = aLeftSide[7];
 
         if (cDirection == "+")
         {
-            plgBack1.Fill = ColorBack7;
-            plgBack2.Fill = ColorBack4;
-            plgBack3.Fill = ColorBack1;
-            plgBack4.Fill = ColorBack8;
-            plgBack6.Fill = ColorBack2;
-            plgBack7.Fill = ColorBack9;
-            plgBack8.Fill = ColorBack6;
-            plgBack9.Fill = ColorBack3;
+            aBackSide[1] = cColorBack7;
+            aBackSide[2] = cColorBack4;
+            aBackSide[3] = cColorBack1;
+            aBackSide[4] = cColorBack8;
+            aBackSide[6] = cColorBack2;
+            aBackSide[7] = cColorBack9;
+            aBackSide[8] = cColorBack6;
+            aBackSide[9] = cColorBack3;
 
-            plgTop1.Fill = ColorRight3;
-            plgTop2.Fill = ColorRight6;
-            plgTop3.Fill = ColorRight9;
+            aTopSide[1] = cColorRight3;
+            aTopSide[2] = cColorRight6;
+            aTopSide[3] = cColorRight9;
 
-            plgRight3.Fill = ColorBottom9;
-            plgRight6.Fill = ColorBottom8;
-            plgRight9.Fill = ColorBottom7;
+            aRightSide[3] = cColorBottom9;
+            aRightSide[6] = cColorBottom8;
+            aRightSide[9] = cColorBottom7;
 
-            plgBottom7.Fill = ColorLeft1;
-            plgBottom8.Fill = ColorLeft4;
-            plgBottom9.Fill = ColorLeft7;
+            aBottomSide[7] = cColorLeft1;
+            aBottomSide[8] = cColorLeft4;
+            aBottomSide[9] = cColorLeft7;
 
-            plgLeft1.Fill = ColorTop3;
-            plgLeft4.Fill = ColorTop2;
-            plgLeft7.Fill = ColorTop1;
+            aLeftSide[1] = cColorTop3;
+            aLeftSide[4] = cColorTop2;
+            aLeftSide[7] = cColorTop1;
         }
 
         if (cDirection == "-")
         {
-            plgBack1.Fill = ColorBack3;
-            plgBack2.Fill = ColorBack6;
-            plgBack3.Fill = ColorBack9;
-            plgBack4.Fill = ColorBack2;
-            plgBack6.Fill = ColorBack8;
-            plgBack7.Fill = ColorBack1;
-            plgBack8.Fill = ColorBack4;
-            plgBack9.Fill = ColorBack7;
+            aBackSide[1] = cColorBack3;
+            aBackSide[2] = cColorBack6;
+            aBackSide[3] = cColorBack9;
+            aBackSide[4] = cColorBack2;
+            aBackSide[6] = cColorBack8;
+            aBackSide[7] = cColorBack1;
+            aBackSide[8] = cColorBack4;
+            aBackSide[9] = cColorBack7;
 
-            plgTop1.Fill = ColorLeft7;
-            plgTop2.Fill = ColorLeft4;
-            plgTop3.Fill = ColorLeft1;
+            aTopSide[1] = cColorLeft7;
+            aTopSide[2] = cColorLeft4;
+            aTopSide[3] = cColorLeft1;
 
-            plgRight3.Fill = ColorTop1;
-            plgRight6.Fill = ColorTop2;
-            plgRight9.Fill = ColorTop3;
+            aRightSide[3] = cColorTop1;
+            aRightSide[6] = cColorTop2;
+            aRightSide[9] = cColorTop3;
 
-            plgBottom7.Fill = ColorRight9;
-            plgBottom8.Fill = ColorRight6;
-            plgBottom9.Fill = ColorRight3;
+            aBottomSide[7] = cColorRight9;
+            aBottomSide[8] = cColorRight6;
+            aBottomSide[9] = cColorRight3;
 
-            plgLeft1.Fill = ColorBottom7;
-            plgLeft4.Fill = ColorBottom8;
-            plgLeft7.Fill = ColorBottom9;
+            aLeftSide[1] = cColorBottom7;
+            aLeftSide[4] = cColorBottom8;
+            aLeftSide[7] = cColorBottom9;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the entire left side clockwise or counter clockwise.
     private void TurnLeftSideTo(string cDirection)
     {
-        Brush ColorLeft1 = plgLeft1.Fill;
-        Brush ColorLeft2 = plgLeft2.Fill;
-        Brush ColorLeft3 = plgLeft3.Fill;
-        Brush ColorLeft4 = plgLeft4.Fill;
-        Brush ColorLeft6 = plgLeft6.Fill;
-        Brush ColorLeft7 = plgLeft7.Fill;
-        Brush ColorLeft8 = plgLeft8.Fill;
-        Brush ColorLeft9 = plgLeft9.Fill;
+        string cColorLeft1 = aLeftSide[1];
+        string cColorLeft2 = aLeftSide[2];
+        string cColorLeft3 = aLeftSide[3];
+        string cColorLeft4 = aLeftSide[4];
+        string cColorLeft6 = aLeftSide[6];
+        string cColorLeft7 = aLeftSide[7];
+        string cColorLeft8 = aLeftSide[8];
+        string cColorLeft9 = aLeftSide[9];
 
-        Brush ColorTop1 = plgTop1.Fill;
-        Brush ColorTop4 = plgTop4.Fill;
-        Brush ColorTop7 = plgTop7.Fill;
+        string cColorTop1 = aTopSide[1];
+        string cColorTop4 = aTopSide[4];
+        string cColorTop7 = aTopSide[7];
 
-        Brush ColorFront1 = plgFront1.Fill;
-        Brush ColorFront4 = plgFront4.Fill;
-        Brush ColorFront7 = plgFront7.Fill;
+        string cColorFront1 = aFrontSide[1];
+        string cColorFront4 = aFrontSide[4];
+        string cColorFront7 = aFrontSide[7];
 
-        Brush ColorBottom1 = plgBottom1.Fill;
-        Brush ColorBottom4 = plgBottom4.Fill;
-        Brush ColorBottom7 = plgBottom7.Fill;
+        string cColorBottom1 = aBottomSide[1];
+        string cColorBottom4 = aBottomSide[4];
+        string cColorBottom7 = aBottomSide[7];
 
-        Brush ColorBack3 = plgBack3.Fill;
-        Brush ColorBack6 = plgBack6.Fill;
-        Brush ColorBack9 = plgBack9.Fill;
+        string cColorBack3 = aBackSide[3];
+        string cColorBack6 = aBackSide[6];
+        string cColorBack9 = aBackSide[9];
 
         if (cDirection == "+")
         {
-            plgLeft1.Fill = ColorLeft7;
-            plgLeft2.Fill = ColorLeft4;
-            plgLeft3.Fill = ColorLeft1;
-            plgLeft4.Fill = ColorLeft8;
-            plgLeft6.Fill = ColorLeft2;
-            plgLeft7.Fill = ColorLeft9;
-            plgLeft8.Fill = ColorLeft6;
-            plgLeft9.Fill = ColorLeft3;
+            aLeftSide[1] = cColorLeft7;
+            aLeftSide[2] = cColorLeft4;
+            aLeftSide[3] = cColorLeft1;
+            aLeftSide[4] = cColorLeft8;
+            aLeftSide[6] = cColorLeft2;
+            aLeftSide[7] = cColorLeft9;
+            aLeftSide[8] = cColorLeft6;
+            aLeftSide[9] = cColorLeft3;
 
-            plgTop1.Fill = ColorBack9;
-            plgTop4.Fill = ColorBack6;
-            plgTop7.Fill = ColorBack3;
+            aTopSide[1] = cColorBack9;
+            aTopSide[4] = cColorBack6;
+            aTopSide[7] = cColorBack3;
 
-            plgFront1.Fill = ColorTop1;
-            plgFront4.Fill = ColorTop4;
-            plgFront7.Fill = ColorTop7;
+            aFrontSide[1] = cColorTop1;
+            aFrontSide[4] = cColorTop4;
+            aFrontSide[7] = cColorTop7;
 
-            plgBottom1.Fill = ColorFront1;
-            plgBottom4.Fill = ColorFront4;
-            plgBottom7.Fill = ColorFront7;
+            aBottomSide[1] = cColorFront1;
+            aBottomSide[4] = cColorFront4;
+            aBottomSide[7] = cColorFront7;
 
-            plgBack3.Fill = ColorBottom7;
-            plgBack6.Fill = ColorBottom4;
-            plgBack9.Fill = ColorBottom1;
+            aBackSide[3] = cColorBottom7;
+            aBackSide[6] = cColorBottom4;
+            aBackSide[9] = cColorBottom1;
         }
 
         if (cDirection == "-")
         {
-            plgLeft1.Fill = ColorLeft3;
-            plgLeft2.Fill = ColorLeft6;
-            plgLeft3.Fill = ColorLeft9;
-            plgLeft4.Fill = ColorLeft2;
-            plgLeft6.Fill = ColorLeft8;
-            plgLeft7.Fill = ColorLeft1;
-            plgLeft8.Fill = ColorLeft4;
-            plgLeft9.Fill = ColorLeft7;
+            aLeftSide[1] = cColorLeft3;
+            aLeftSide[2] = cColorLeft6;
+            aLeftSide[3] = cColorLeft9;
+            aLeftSide[4] = cColorLeft2;
+            aLeftSide[6] = cColorLeft8;
+            aLeftSide[7] = cColorLeft1;
+            aLeftSide[8] = cColorLeft4;
+            aLeftSide[9] = cColorLeft7;
 
-            plgTop1.Fill = ColorFront1;
-            plgTop4.Fill = ColorFront4;
-            plgTop7.Fill = ColorFront7;
+            aTopSide[1] = cColorFront1;
+            aTopSide[4] = cColorFront4;
+            aTopSide[7] = cColorFront7;
 
-            plgFront1.Fill = ColorBottom1;
-            plgFront4.Fill = ColorBottom4;
-            plgFront7.Fill = ColorBottom7;
+            aFrontSide[1] = cColorBottom1;
+            aFrontSide[4] = cColorBottom4;
+            aFrontSide[7] = cColorBottom7;
 
-            plgBottom1.Fill = ColorBack9;
-            plgBottom4.Fill = ColorBack6;
-            plgBottom7.Fill = ColorBack3;
+            aBottomSide[1] = cColorBack9;
+            aBottomSide[4] = cColorBack6;
+            aBottomSide[7] = cColorBack3;
 
-            plgBack3.Fill = ColorTop7;
-            plgBack6.Fill = ColorTop4;
-            plgBack9.Fill = ColorTop1;
+            aBackSide[3] = cColorTop7;
+            aBackSide[6] = cColorTop4;
+            aBackSide[9] = cColorTop1;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the top middle layer to right or left.
     private void TurnFrontTopMiddleTo(string cDirection)
     {
-        Brush ColorTop2 = plgTop2.Fill;
-        Brush ColorTop5 = plgTop5.Fill;
-        Brush ColorTop8 = plgTop8.Fill;
+        string cColorTop2 = aTopSide[2];
+        string cColorTop5 = aTopSide[5];
+        string cColorTop8 = aTopSide[8];
 
-        Brush ColorFront2 = plgFront2.Fill;
-        Brush ColorFront5 = plgFront5.Fill;
-        Brush ColorFront8 = plgFront8.Fill;
+        string cColorFront2 = aFrontSide[2];
+        string cColorFront5 = aFrontSide[5];
+        string cColorFront8 = aFrontSide[8];
 
-        Brush ColorBottom2 = plgBottom2.Fill;
-        Brush ColorBottom5 = plgBottom5.Fill;
-        Brush ColorBottom8 = plgBottom8.Fill;
+        string cColorBottom2 = aBottomSide[2];
+        string cColorBottom5 = aBottomSide[5];
+        string cColorBottom8 = aBottomSide[8];
 
-        Brush ColorBack2 = plgBack2.Fill;
-        Brush ColorBack5 = plgBack5.Fill;
-        Brush ColorBack8 = plgBack8.Fill;
+        string cColorBack2 = aBackSide[2];
+        string cColorBack5 = aBackSide[5];
+        string cColorBack8 = aBackSide[8];
 
         if (cDirection == "+")
         {
-            plgTop2.Fill = ColorFront2;
-            plgTop5.Fill = ColorFront5;
-            plgTop8.Fill = ColorFront8;
+            aTopSide[2] = cColorFront2;
+            aTopSide[5] = cColorFront5;
+            aTopSide[8] = cColorFront8;
 
-            plgFront2.Fill = ColorBottom2;
-            plgFront5.Fill = ColorBottom5;
-            plgFront8.Fill = ColorBottom8;
+            aFrontSide[2] = cColorBottom2;
+            aFrontSide[5] = cColorBottom5;
+            aFrontSide[8] = cColorBottom8;
 
-            plgBottom2.Fill = ColorBack8;
-            plgBottom5.Fill = ColorBack5;
-            plgBottom8.Fill = ColorBack2;
+            aBottomSide[2] = cColorBack8;
+            aBottomSide[5] = cColorBack5;
+            aBottomSide[8] = cColorBack2;
 
-            plgBack2.Fill = ColorTop8;
-            plgBack5.Fill = ColorTop5;
-            plgBack8.Fill = ColorTop2;
+            aBackSide[2] = cColorTop8;
+            aBackSide[5] = cColorTop5;
+            aBackSide[8] = cColorTop2;
         }
 
         if (cDirection == "-")
         {
-            plgTop2.Fill = ColorBack8;
-            plgTop5.Fill = ColorBack5;
-            plgTop8.Fill = ColorBack2;
+            aTopSide[2] = cColorBack8;
+            aTopSide[5] = cColorBack5;
+            aTopSide[8] = cColorBack2;
 
-            plgFront2.Fill = ColorTop2;
-            plgFront5.Fill = ColorTop5;
-            plgFront8.Fill = ColorTop8;
+            aFrontSide[2] = cColorTop2;
+            aFrontSide[5] = cColorTop5;
+            aFrontSide[8] = cColorTop8;
 
-            plgBottom2.Fill = ColorFront2;
-            plgBottom5.Fill = ColorFront5;
-            plgBottom8.Fill = ColorFront8;
+            aBottomSide[2] = cColorFront2;
+            aBottomSide[5] = cColorFront5;
+            aBottomSide[8] = cColorFront8;
 
-            plgBack2.Fill = ColorBottom8;
-            plgBack5.Fill = ColorBottom5;
-            plgBack8.Fill = ColorBottom2;
+            aBackSide[2] = cColorBottom8;
+            aBackSide[5] = cColorBottom5;
+            aBackSide[8] = cColorBottom2;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the entire right side clockwise or counter clockwise.
     private void TurnRightSideTo(string cDirection)
     {
-        Brush ColorRight1 = plgRight1.Fill;
-        Brush ColorRight2 = plgRight2.Fill;
-        Brush ColorRight3 = plgRight3.Fill;
-        Brush ColorRight4 = plgRight4.Fill;
-        Brush ColorRight6 = plgRight6.Fill;
-        Brush ColorRight7 = plgRight7.Fill;
-        Brush ColorRight8 = plgRight8.Fill;
-        Brush ColorRight9 = plgRight9.Fill;
+        string cColorRight1 = aRightSide[1];
+        string cColorRight2 = aRightSide[2];
+        string cColorRight3 = aRightSide[3];
+        string cColorRight4 = aRightSide[4];
+        string cColorRight6 = aRightSide[6];
+        string cColorRight7 = aRightSide[7];
+        string cColorRight8 = aRightSide[8];
+        string cColorRight9 = aRightSide[9];
 
-        Brush ColorTop3 = plgTop3.Fill;
-        Brush ColorTop6 = plgTop6.Fill;
-        Brush ColorTop9 = plgTop9.Fill;
+        string cColorTop3 = aTopSide[3];
+        string cColorTop6 = aTopSide[6];
+        string cColorTop9 = aTopSide[9];
 
-        Brush ColorFront3 = plgFront3.Fill;
-        Brush ColorFront6 = plgFront6.Fill;
-        Brush ColorFront9 = plgFront9.Fill;
+        string cColorFront3 = aFrontSide[3];
+        string cColorFront6 = aFrontSide[6];
+        string cColorFront9 = aFrontSide[9];
 
-        Brush ColorBottom3 = plgBottom3.Fill;
-        Brush ColorBottom6 = plgBottom6.Fill;
-        Brush ColorBottom9 = plgBottom9.Fill;
+        string cColorBottom3 = aBottomSide[3];
+        string cColorBottom6 = aBottomSide[6];
+        string cColorBottom9 = aBottomSide[9];
 
-        Brush ColorBack1 = plgBack1.Fill;
-        Brush ColorBack4 = plgBack4.Fill;
-        Brush ColorBack7 = plgBack7.Fill;
+        string cColorBack1 = aBackSide[1];
+        string cColorBack4 = aBackSide[4];
+        string cColorBack7 = aBackSide[7];
 
         if (cDirection == "+")
         {
-            plgRight1.Fill = ColorRight7;
-            plgRight2.Fill = ColorRight4;
-            plgRight3.Fill = ColorRight1;
-            plgRight4.Fill = ColorRight8;
-            plgRight6.Fill = ColorRight2;
-            plgRight7.Fill = ColorRight9;
-            plgRight8.Fill = ColorRight6;
-            plgRight9.Fill = ColorRight3;
+            aRightSide[1] = cColorRight7;
+            aRightSide[2] = cColorRight4;
+            aRightSide[3] = cColorRight1;
+            aRightSide[4] = cColorRight8;
+            aRightSide[6] = cColorRight2;
+            aRightSide[7] = cColorRight9;
+            aRightSide[8] = cColorRight6;
+            aRightSide[9] = cColorRight3;
 
-            plgTop3.Fill = ColorFront3;
-            plgTop6.Fill = ColorFront6;
-            plgTop9.Fill = ColorFront9;
+            aTopSide[3] = cColorFront3;
+            aTopSide[6] = cColorFront6;
+            aTopSide[9] = cColorFront9;
 
-            plgFront3.Fill = ColorBottom3;
-            plgFront6.Fill = ColorBottom6;
-            plgFront9.Fill = ColorBottom9;
+            aFrontSide[3] = cColorBottom3;
+            aFrontSide[6] = cColorBottom6;
+            aFrontSide[9] = cColorBottom9;
 
-            plgBottom3.Fill = ColorBack7;
-            plgBottom6.Fill = ColorBack4;
-            plgBottom9.Fill = ColorBack1;
+            aBottomSide[3] = cColorBack7;
+            aBottomSide[6] = cColorBack4;
+            aBottomSide[9] = cColorBack1;
 
-            plgBack1.Fill = ColorTop9;
-            plgBack4.Fill = ColorTop6;
-            plgBack7.Fill = ColorTop3;
+            aBackSide[1] = cColorTop9;
+            aBackSide[4] = cColorTop6;
+            aBackSide[7] = cColorTop3;
         }
 
         if (cDirection == "-")
         {
-            plgRight1.Fill = ColorRight3;
-            plgRight2.Fill = ColorRight6;
-            plgRight3.Fill = ColorRight9;
-            plgRight4.Fill = ColorRight2;
-            plgRight6.Fill = ColorRight8;
-            plgRight7.Fill = ColorRight1;
-            plgRight8.Fill = ColorRight4;
-            plgRight9.Fill = ColorRight7;
+            aRightSide[1] = cColorRight3;
+            aRightSide[2] = cColorRight6;
+            aRightSide[3] = cColorRight9;
+            aRightSide[4] = cColorRight2;
+            aRightSide[6] = cColorRight8;
+            aRightSide[7] = cColorRight1;
+            aRightSide[8] = cColorRight4;
+            aRightSide[9] = cColorRight7;
 
-            plgTop3.Fill = ColorBack7;
-            plgTop6.Fill = ColorBack4;
-            plgTop9.Fill = ColorBack1;
+            aTopSide[3] = cColorBack7;
+            aTopSide[6] = cColorBack4;
+            aTopSide[9] = cColorBack1;
 
-            plgFront3.Fill = ColorTop3;
-            plgFront6.Fill = ColorTop6;
-            plgFront9.Fill = ColorTop9;
+            aFrontSide[3] = cColorTop3;
+            aFrontSide[6] = cColorTop6;
+            aFrontSide[9] = cColorTop9;
 
-            plgBottom3.Fill = ColorFront3;
-            plgBottom6.Fill = ColorFront6;
-            plgBottom9.Fill = ColorFront9;
+            aBottomSide[3] = cColorFront3;
+            aBottomSide[6] = cColorFront6;
+            aBottomSide[9] = cColorFront9;
 
-            plgBack1.Fill = ColorBottom9;
-            plgBack4.Fill = ColorBottom6;
-            plgBack7.Fill = ColorBottom3;
+            aBackSide[1] = cColorBottom9;
+            aBackSide[4] = cColorBottom6;
+            aBackSide[7] = cColorBottom3;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the entire top side clockwise or counter clockwise.
     private void TurnTopSideTo(string cDirection)
     {
-        Brush ColorTop1 = plgTop1.Fill;
-        Brush ColorTop2 = plgTop2.Fill;
-        Brush ColorTop3 = plgTop3.Fill;
-        Brush ColorTop4 = plgTop4.Fill;
-        Brush ColorTop6 = plgTop6.Fill;
-        Brush ColorTop7 = plgTop7.Fill;
-        Brush ColorTop8 = plgTop8.Fill;
-        Brush ColorTop9 = plgTop9.Fill;
+        string cColorTop1 = aTopSide[1];
+        string cColorTop2 = aTopSide[2];
+        string cColorTop3 = aTopSide[3];
+        string cColorTop4 = aTopSide[4];
+        string cColorTop6 = aTopSide[6];
+        string cColorTop7 = aTopSide[7];
+        string cColorTop8 = aTopSide[8];
+        string cColorTop9 = aTopSide[9];
 
-        Brush ColorLeft1 = plgLeft1.Fill;
-        Brush ColorLeft2 = plgLeft2.Fill;
-        Brush ColorLeft3 = plgLeft3.Fill;
+        string cColorLeft1 = aLeftSide[1];
+        string cColorLeft2 = aLeftSide[2];
+        string cColorLeft3 = aLeftSide[3];
 
-        Brush ColorFront1 = plgFront1.Fill;
-        Brush ColorFront2 = plgFront2.Fill;
-        Brush ColorFront3 = plgFront3.Fill;
+        string cColorFront1 = aFrontSide[1];
+        string cColorFront2 = aFrontSide[2];
+        string cColorFront3 = aFrontSide[3];
 
-        Brush ColorRight1 = plgRight1.Fill;
-        Brush ColorRight2 = plgRight2.Fill;
-        Brush ColorRight3 = plgRight3.Fill;
+        string cColorRight1 = aRightSide[1];
+        string cColorRight2 = aRightSide[2];
+        string cColorRight3 = aRightSide[3];
 
-        Brush ColorBack1 = plgBack1.Fill;
-        Brush ColorBack2 = plgBack2.Fill;
-        Brush ColorBack3 = plgBack3.Fill;
+        string cColorBack1 = aBackSide[1];
+        string cColorBack2 = aBackSide[2];
+        string cColorBack3 = aBackSide[3];
 
         if (cDirection == "+")
         {
-            plgTop1.Fill = ColorTop7;
-            plgTop2.Fill = ColorTop4;
-            plgTop3.Fill = ColorTop1;
-            plgTop4.Fill = ColorTop8;
-            plgTop6.Fill = ColorTop2;
-            plgTop7.Fill = ColorTop9;
-            plgTop8.Fill = ColorTop6;
-            plgTop9.Fill = ColorTop3;
+            aTopSide[1] = cColorTop7;
+            aTopSide[2] = cColorTop4;
+            aTopSide[3] = cColorTop1;
+            aTopSide[4] = cColorTop8;
+            aTopSide[6] = cColorTop2;
+            aTopSide[7] = cColorTop9;
+            aTopSide[8] = cColorTop6;
+            aTopSide[9] = cColorTop3;
 
-            plgLeft1.Fill = ColorFront1;
-            plgLeft2.Fill = ColorFront2;
-            plgLeft3.Fill = ColorFront3;
+            aLeftSide[1] = cColorFront1;
+            aLeftSide[2] = cColorFront2;
+            aLeftSide[3] = cColorFront3;
 
-            plgFront1.Fill = ColorRight1;
-            plgFront2.Fill = ColorRight2;
-            plgFront3.Fill = ColorRight3;
+            aFrontSide[1] = cColorRight1;
+            aFrontSide[2] = cColorRight2;
+            aFrontSide[3] = cColorRight3;
 
-            plgRight1.Fill = ColorBack1;
-            plgRight2.Fill = ColorBack2;
-            plgRight3.Fill = ColorBack3;
+            aRightSide[1] = cColorBack1;
+            aRightSide[2] = cColorBack2;
+            aRightSide[3] = cColorBack3;
 
-            plgBack1.Fill = ColorLeft1;
-            plgBack2.Fill = ColorLeft2;
-            plgBack3.Fill = ColorLeft3;
+            aBackSide[1] = cColorLeft1;
+            aBackSide[2] = cColorLeft2;
+            aBackSide[3] = cColorLeft3;
         }
 
         if (cDirection == "-")
         {
-            plgTop1.Fill = ColorTop3;
-            plgTop2.Fill = ColorTop6;
-            plgTop3.Fill = ColorTop9;
-            plgTop4.Fill = ColorTop2;
-            plgTop6.Fill = ColorTop8;
-            plgTop7.Fill = ColorTop1;
-            plgTop8.Fill = ColorTop4;
-            plgTop9.Fill = ColorTop7;
+            aTopSide[1] = cColorTop3;
+            aTopSide[2] = cColorTop6;
+            aTopSide[3] = cColorTop9;
+            aTopSide[4] = cColorTop2;
+            aTopSide[6] = cColorTop8;
+            aTopSide[7] = cColorTop1;
+            aTopSide[8] = cColorTop4;
+            aTopSide[9] = cColorTop7;
 
-            plgLeft1.Fill = ColorBack1;
-            plgLeft2.Fill = ColorBack2;
-            plgLeft3.Fill = ColorBack3;
+            aLeftSide[1] = cColorBack1;
+            aLeftSide[2] = cColorBack2;
+            aLeftSide[3] = cColorBack3;
 
-            plgFront1.Fill = ColorLeft1;
-            plgFront2.Fill = ColorLeft2;
-            plgFront3.Fill = ColorLeft3;
+            aFrontSide[1] = cColorLeft1;
+            aFrontSide[2] = cColorLeft2;
+            aFrontSide[3] = cColorLeft3;
 
-            plgRight1.Fill = ColorFront1;
-            plgRight2.Fill = ColorFront2;
-            plgRight3.Fill = ColorFront3;
+            aRightSide[1] = cColorFront1;
+            aRightSide[2] = cColorFront2;
+            aRightSide[3] = cColorFront3;
 
-            plgBack1.Fill = ColorRight1;
-            plgBack2.Fill = ColorRight2;
-            plgBack3.Fill = ColorRight3;
+            aBackSide[1] = cColorRight1;
+            aBackSide[2] = cColorRight2;
+            aBackSide[3] = cColorRight3;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the horizontal middle layer to right or left.
     private void TurnHorizontalMiddleLayerTo(string cDirection)
     {
-        Brush ColorFront4 = plgFront4.Fill;
-        Brush ColorFront5 = plgFront5.Fill;
-        Brush ColorFront6 = plgFront6.Fill;
+        string cColorFront4 = aFrontSide[4];
+        string cColorFront5 = aFrontSide[5];
+        string cColorFront6 = aFrontSide[6];
 
-        Brush ColorRight4 = plgRight4.Fill;
-        Brush ColorRight5 = plgRight5.Fill;
-        Brush ColorRight6 = plgRight6.Fill;
+        string cColorRight4 = aRightSide[4];
+        string cColorRight5 = aRightSide[5];
+        string cColorRight6 = aRightSide[6];
 
-        Brush ColorBack4 = plgBack4.Fill;
-        Brush ColorBack5 = plgBack5.Fill;
-        Brush ColorBack6 = plgBack6.Fill;
+        string cColorBack4 = aBackSide[4];
+        string cColorBack5 = aBackSide[5];
+        string cColorBack6 = aBackSide[6];
 
-        Brush ColorLeft4 = plgLeft4.Fill;
-        Brush ColorLeft5 = plgLeft5.Fill;
-        Brush ColorLeft6 = plgLeft6.Fill;
+        string cColorLeft4 = aLeftSide[4];
+        string cColorLeft5 = aLeftSide[5];
+        string cColorLeft6 = aLeftSide[6];
 
         if (cDirection == "+")
         {
-            plgFront4.Fill = ColorRight4;
-            plgFront5.Fill = ColorRight5;
-            plgFront6.Fill = ColorRight6;
+            aFrontSide[4] = cColorRight4;
+            aFrontSide[5] = cColorRight5;
+            aFrontSide[6] = cColorRight6;
 
-            plgRight4.Fill = ColorBack4;
-            plgRight5.Fill = ColorBack5;
-            plgRight6.Fill = ColorBack6;
+            aRightSide[4] = cColorBack4;
+            aRightSide[5] = cColorBack5;
+            aRightSide[6] = cColorBack6;
 
-            plgBack4.Fill = ColorLeft4;
-            plgBack5.Fill = ColorLeft5;
-            plgBack6.Fill = ColorLeft6;
+            aBackSide[4] = cColorLeft4;
+            aBackSide[5] = cColorLeft5;
+            aBackSide[6] = cColorLeft6;
 
-            plgLeft4.Fill = ColorFront4;
-            plgLeft5.Fill = ColorFront5;
-            plgLeft6.Fill = ColorFront6;
+            aLeftSide[4] = cColorFront4;
+            aLeftSide[5] = cColorFront5;
+            aLeftSide[6] = cColorFront6;
         }
 
         if (cDirection == "-")
         {
-            plgFront4.Fill = ColorLeft4;
-            plgFront5.Fill = ColorLeft5;
-            plgFront6.Fill = ColorLeft6;
+            aFrontSide[4] = cColorLeft4;
+            aFrontSide[5] = cColorLeft5;
+            aFrontSide[6] = cColorLeft6;
 
-            plgRight4.Fill = ColorFront4;
-            plgRight5.Fill = ColorFront5;
-            plgRight6.Fill = ColorFront6;
+            aRightSide[4] = cColorFront4;
+            aRightSide[5] = cColorFront5;
+            aRightSide[6] = cColorFront6;
 
-            plgBack4.Fill = ColorRight4;
-            plgBack5.Fill = ColorRight5;
-            plgBack6.Fill = ColorRight6;
+            aBackSide[4] = cColorRight4;
+            aBackSide[5] = cColorRight5;
+            aBackSide[6] = cColorRight6;
 
-            plgLeft4.Fill = ColorBack4;
-            plgLeft5.Fill = ColorBack5;
-            plgLeft6.Fill = ColorBack6;
+            aLeftSide[4] = cColorBack4;
+            aLeftSide[5] = cColorBack5;
+            aLeftSide[6] = cColorBack6;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Turn the entire bottom side clockwise or counter clockwise.
     private void TurnBottomSideTo(string cDirection)
     {
-        Brush ColorBottom1 = plgBottom1.Fill;
-        Brush ColorBottom2 = plgBottom2.Fill;
-        Brush ColorBottom3 = plgBottom3.Fill;
-        Brush ColorBottom4 = plgBottom4.Fill;
-        Brush ColorBottom6 = plgBottom6.Fill;
-        Brush ColorBottom7 = plgBottom7.Fill;
-        Brush ColorBottom8 = plgBottom8.Fill;
-        Brush ColorBottom9 = plgBottom9.Fill;
+        string cColorBottom1 = aBottomSide[1];
+        string cColorBottom2 = aBottomSide[2];
+        string cColorBottom3 = aBottomSide[3];
+        string cColorBottom4 = aBottomSide[4];
+        string cColorBottom6 = aBottomSide[6];
+        string cColorBottom7 = aBottomSide[7];
+        string cColorBottom8 = aBottomSide[8];
+        string cColorBottom9 = aBottomSide[9];
 
-        Brush ColorLeft7 = plgLeft7.Fill;
-        Brush ColorLeft8 = plgLeft8.Fill;
-        Brush ColorLeft9 = plgLeft9.Fill;
+        string cColorLeft7 = aLeftSide[7];
+        string cColorLeft8 = aLeftSide[8];
+        string cColorLeft9 = aLeftSide[9];
 
-        Brush ColorFront7 = plgFront7.Fill;
-        Brush ColorFront8 = plgFront8.Fill;
-        Brush ColorFront9 = plgFront9.Fill;
+        string cColorFront7 = aFrontSide[7];
+        string cColorFront8 = aFrontSide[8];
+        string cColorFront9 = aFrontSide[9];
 
-        Brush ColorRight7 = plgRight7.Fill;
-        Brush ColorRight8 = plgRight8.Fill;
-        Brush ColorRight9 = plgRight9.Fill;
+        string cColorRight7 = aRightSide[7];
+        string cColorRight8 = aRightSide[8];
+        string cColorRight9 = aRightSide[9];
 
-        Brush ColorBack7 = plgBack7.Fill;
-        Brush ColorBack8 = plgBack8.Fill;
-        Brush ColorBack9 = plgBack9.Fill;
+        string cColorBack7 = aBackSide[7];
+        string cColorBack8 = aBackSide[8];
+        string cColorBack9 = aBackSide[9];
 
         if (cDirection == "+")
         {
-            plgBottom1.Fill = ColorBottom7;
-            plgBottom2.Fill = ColorBottom4;
-            plgBottom3.Fill = ColorBottom1;
-            plgBottom4.Fill = ColorBottom8;
-            plgBottom6.Fill = ColorBottom2;
-            plgBottom7.Fill = ColorBottom9;
-            plgBottom8.Fill = ColorBottom6;
-            plgBottom9.Fill = ColorBottom3;
+            aBottomSide[1] = cColorBottom7;
+            aBottomSide[2] = cColorBottom4;
+            aBottomSide[3] = cColorBottom1;
+            aBottomSide[4] = cColorBottom8;
+            aBottomSide[6] = cColorBottom2;
+            aBottomSide[7] = cColorBottom9;
+            aBottomSide[8] = cColorBottom6;
+            aBottomSide[9] = cColorBottom3;
 
-            plgLeft7.Fill = ColorBack7;
-            plgLeft8.Fill = ColorBack8;
-            plgLeft9.Fill = ColorBack9;
+            aLeftSide[7] = cColorBack7;
+            aLeftSide[8] = cColorBack8;
+            aLeftSide[9] = cColorBack9;
 
-            plgFront7.Fill = ColorLeft7;
-            plgFront8.Fill = ColorLeft8;
-            plgFront9.Fill = ColorLeft9;
+            aFrontSide[7] = cColorLeft7;
+            aFrontSide[8] = cColorLeft8;
+            aFrontSide[9] = cColorLeft9;
 
-            plgRight7.Fill = ColorFront7;
-            plgRight8.Fill = ColorFront8;
-            plgRight9.Fill = ColorFront9;
+            aRightSide[7] = cColorFront7;
+            aRightSide[8] = cColorFront8;
+            aRightSide[9] = cColorFront9;
 
-            plgBack7.Fill = ColorRight7;
-            plgBack8.Fill = ColorRight8;
-            plgBack9.Fill = ColorRight9;
+            aBackSide[7] = cColorRight7;
+            aBackSide[8] = cColorRight8;
+            aBackSide[9] = cColorRight9;
         }
 
         if (cDirection == "-")
         {
-            plgBottom1.Fill = ColorBottom3;
-            plgBottom2.Fill = ColorBottom6;
-            plgBottom3.Fill = ColorBottom9;
-            plgBottom4.Fill = ColorBottom2;
-            plgBottom6.Fill = ColorBottom8;
-            plgBottom7.Fill = ColorBottom1;
-            plgBottom8.Fill = ColorBottom4;
-            plgBottom9.Fill = ColorBottom7;
+            aBottomSide[1] = cColorBottom3;
+            aBottomSide[2] = cColorBottom6;
+            aBottomSide[3] = cColorBottom9;
+            aBottomSide[4] = cColorBottom2;
+            aBottomSide[6] = cColorBottom8;
+            aBottomSide[7] = cColorBottom1;
+            aBottomSide[8] = cColorBottom4;
+            aBottomSide[9] = cColorBottom7;
 
-            plgLeft7.Fill = ColorFront7;
-            plgLeft8.Fill = ColorFront8;
-            plgLeft9.Fill = ColorFront9;
+            aLeftSide[7] = cColorFront7;
+            aLeftSide[8] = cColorFront8;
+            aLeftSide[9] = cColorFront9;
 
-            plgFront7.Fill = ColorRight7;
-            plgFront8.Fill = ColorRight8;
-            plgFront9.Fill = ColorRight9;
+            aFrontSide[7] = cColorRight7;
+            aFrontSide[8] = cColorRight8;
+            aFrontSide[9] = cColorRight9;
 
-            plgRight7.Fill = ColorBack7;
-            plgRight8.Fill = ColorBack8;
-            plgRight9.Fill = ColorBack9;
+            aRightSide[7] = cColorBack7;
+            aRightSide[8] = cColorBack8;
+            aRightSide[9] = cColorBack9;
 
-            plgBack7.Fill = ColorLeft7;
-            plgBack8.Fill = ColorLeft8;
-            plgBack9.Fill = ColorLeft9;
+            aBackSide[7] = cColorLeft7;
+            aBackSide[8] = cColorLeft8;
+            aBackSide[9] = cColorLeft9;
         }
+
+        GetCubeColorsFromArrays();
     }
 
     // Explain the turn of the cube.
@@ -1575,6 +1598,47 @@ public partial class MainPage : ContentPage
         ResetCube();
     }
 
+    // Reset the colors of the cube.
+    private void ResetCube()
+    {
+        int nRow;
+
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            aTopSide[nRow] = aCubeColors[1];
+        }
+
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            aFrontSide[nRow] = aCubeColors[2];
+        }
+
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            aRightSide[nRow] = aCubeColors[3];
+        }
+
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            aLeftSide[nRow] = aCubeColors[4];
+        }
+
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            aBackSide[nRow] = aCubeColors[5];
+        }
+
+        for (nRow = 1; nRow < 10; nRow++)
+        {
+            aBottomSide[nRow] = aCubeColors[6];
+        }
+
+        GetCubeColorsFromArrays();
+
+        //EnableDisableArrows(true);
+        VisibleInvisibleArrows(true);
+    }
+
     // Store the cube colors in arrays.
     private void SetCubeColorsInArrays()
     {
@@ -1722,73 +1786,6 @@ public partial class MainPage : ContentPage
         plgBottom7.Fill = Color.FromArgb(aBottomSide[7]);
         plgBottom8.Fill = Color.FromArgb(aBottomSide[8]);
         plgBottom9.Fill = Color.FromArgb(aBottomSide[9]);
-    }
-
-    // Reset the colors of the cube.
-    private void ResetCube()
-    {
-        plgTop1.Fill = plgCubeColor1.Fill;
-        plgTop2.Fill = plgCubeColor1.Fill;
-        plgTop3.Fill = plgCubeColor1.Fill;
-        plgTop4.Fill = plgCubeColor1.Fill;
-        plgTop5.Fill = plgCubeColor1.Fill;
-        plgTop6.Fill = plgCubeColor1.Fill;
-        plgTop7.Fill = plgCubeColor1.Fill;
-        plgTop8.Fill = plgCubeColor1.Fill;
-        plgTop9.Fill = plgCubeColor1.Fill;
-
-        plgFront1.Fill = plgCubeColor2.Fill;
-        plgFront2.Fill = plgCubeColor2.Fill;
-        plgFront3.Fill = plgCubeColor2.Fill;
-        plgFront4.Fill = plgCubeColor2.Fill;
-        plgFront5.Fill = plgCubeColor2.Fill;
-        plgFront6.Fill = plgCubeColor2.Fill;
-        plgFront7.Fill = plgCubeColor2.Fill;
-        plgFront8.Fill = plgCubeColor2.Fill;
-        plgFront9.Fill = plgCubeColor2.Fill;
-
-        plgRight1.Fill = plgCubeColor3.Fill;
-        plgRight2.Fill = plgCubeColor3.Fill;
-        plgRight3.Fill = plgCubeColor3.Fill;
-        plgRight4.Fill = plgCubeColor3.Fill;
-        plgRight5.Fill = plgCubeColor3.Fill;
-        plgRight6.Fill = plgCubeColor3.Fill;
-        plgRight7.Fill = plgCubeColor3.Fill;
-        plgRight8.Fill = plgCubeColor3.Fill;
-        plgRight9.Fill = plgCubeColor3.Fill;
-
-        plgLeft1.Fill = plgCubeColor4.Fill;
-        plgLeft2.Fill = plgCubeColor4.Fill;
-        plgLeft3.Fill = plgCubeColor4.Fill;
-        plgLeft4.Fill = plgCubeColor4.Fill;
-        plgLeft5.Fill = plgCubeColor4.Fill;
-        plgLeft6.Fill = plgCubeColor4.Fill;
-        plgLeft7.Fill = plgCubeColor4.Fill;
-        plgLeft8.Fill = plgCubeColor4.Fill;
-        plgLeft9.Fill = plgCubeColor4.Fill;
-
-        plgBack1.Fill = plgCubeColor5.Fill;
-        plgBack2.Fill = plgCubeColor5.Fill;
-        plgBack3.Fill = plgCubeColor5.Fill;
-        plgBack4.Fill = plgCubeColor5.Fill;
-        plgBack5.Fill = plgCubeColor5.Fill;
-        plgBack6.Fill = plgCubeColor5.Fill;
-        plgBack7.Fill = plgCubeColor5.Fill;
-        plgBack8.Fill = plgCubeColor5.Fill;
-        plgBack9.Fill = plgCubeColor5.Fill;
-
-        plgBottom1.Fill = plgCubeColor6.Fill;
-        plgBottom2.Fill = plgCubeColor6.Fill;
-        plgBottom3.Fill = plgCubeColor6.Fill;
-        plgBottom4.Fill = plgCubeColor6.Fill;
-        plgBottom5.Fill = plgCubeColor6.Fill;
-        plgBottom6.Fill = plgCubeColor6.Fill;
-        plgBottom7.Fill = plgCubeColor6.Fill;
-        plgBottom8.Fill = plgCubeColor6.Fill;
-        plgBottom9.Fill = plgCubeColor6.Fill;
-
-        //EnableDisableArrows(true);
-        VisibleInvisibleArrows(true);
     }
 
     // Enable or Disable the arrows.

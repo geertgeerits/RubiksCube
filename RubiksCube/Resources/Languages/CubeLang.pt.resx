@@ -326,16 +326,16 @@ Não permitido:</value>
     <value>Gire o lado inferior um quarto de volta 'no sentido horário' (+).</value>
   </data>
   <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
-    <value>Vire a frente do cubo para o lado inferior.</value>
+    <value>Vire o cubo inteiro para que a frente vá para o lado de baixo.</value>
   </data>
   <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
-    <value>Vire a frente do cubo para o lado esquerdo.</value>
+    <value>Vire o cubo inteiro para que a frente vá para o lado esquerdo.</value>
   </data>
   <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
-    <value>Vire a frente do cubo para o lado direito.</value>
+    <value>Vire o cubo inteiro para que a frente vá para o lado direito.</value>
   </data>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
-    <value>Vire a frente do cubo para o lado superior.</value>
+    <value>Vire o cubo inteiro para que a frente vá para o lado superior.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Vire a camada frontal do meio um quarto de volta para o lado direito (-).</value>

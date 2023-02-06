@@ -326,16 +326,16 @@ Nicht erlaubt:</value>
     <value>Drehen Sie die Unterseite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
   <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
-    <value>Drehen Sie die Vorderseite des Würfels auf die Unterseite.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Unterseite geht.</value>
   </data>
   <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
-    <value>Drehen Sie die Vorderseite des Würfels auf die linke Seite.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur linken Seite geht.</value>
   </data>
   <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
-    <value>Drehen Sie die Vorderseite des Würfels auf die rechte Seite.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite auf die rechte Seite geht.</value>
   </data>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
-    <value>Drehen Sie die Vorderseite des Würfels nach oben.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Oberseite geht.</value>
   </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Drehen Sie die vordere mittlere Schicht um eine Vierteldrehung auf die rechte Seite (-).</value>
