@@ -390,9 +390,27 @@ namespace RubiksCube.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to The color of the central square can only occur once..
         /// </summary>
-        internal static string MessageColorcentralSquare_Text {
+        internal static string MessageColorCentralCube_Text {
             get {
-                return ResourceManager.GetString("MessageColorcentralSquare_Text", resourceCulture);
+                return ResourceManager.GetString("MessageColorCentralCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The colors of a corner cube must be different..
+        /// </summary>
+        internal static string MessageColorCornerCube_Text {
+            get {
+                return ResourceManager.GetString("MessageColorCornerCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The colors of an edge cube must be different..
+        /// </summary>
+        internal static string MessageColorEdgeCube_Text {
+            get {
+                return ResourceManager.GetString("MessageColorEdgeCube_Text", resourceCulture);
             }
         }
         

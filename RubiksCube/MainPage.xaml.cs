@@ -592,7 +592,68 @@ public partial class MainPage : ContentPage
 
         if (!bColorCenterCube)
         {
-            DisplayAlert("Error", CubeLang.MessageColorcentralSquare_Text, CubeLang.ButtonClose_Text);
+            DisplayAlert("Error", CubeLang.MessageColorCentralCube_Text, CubeLang.ButtonClose_Text);
+            return false;
+        }
+
+        // Check the number of colors of the corner cubes of the cube.
+        bool bColorCornerCube = true;
+        
+        if (aTopSide[7] == aLeftSide[3] || aTopSide[7] == aFrontSide[1] || aFrontSide[1] == aLeftSide[3])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aTopSide[1] == aLeftSide[1] || aTopSide[1] == aBackSide[3] || aLeftSide[1] == aBackSide[3])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aTopSide[3] == aRightSide[3] || aTopSide[3] == aBackSide[1] || aRightSide[3] == aBackSide[1])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aTopSide[9] == aFrontSide[3] || aTopSide[9] == aRightSide[1] || aFrontSide[3] == aRightSide[1])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aBottomSide[1] == aLeftSide[9] || aBottomSide[1] == aFrontSide[7] || aFrontSide[7] == aLeftSide[9])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aBottomSide[7] == aLeftSide[7] || aBottomSide[7] == aBackSide[9] || aBackSide[9] == aLeftSide[7])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aBottomSide[9] == aRightSide[9] || aBottomSide[9] == aBackSide[7] || aBackSide[7] == aRightSide[9])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (aBottomSide[3] == aRightSide[7] || aBottomSide[3] == aFrontSide[9] || aFrontSide[9] == aRightSide[7])
+        {
+            bColorCornerCube = false;
+        }
+
+        if (!bColorCornerCube)
+        {
+            DisplayAlert("Error", CubeLang.MessageColorCornerCube_Text, CubeLang.ButtonClose_Text);
+            return false;
+        }
+
+        // Check the number of colors of the edge cubes of the cube.
+        bool bColorEdgeCube = true;
+
+
+
+
+        if (!bColorEdgeCube)
+        {
+            DisplayAlert("Error", CubeLang.MessageColorEdgeCube_Text, CubeLang.ButtonClose_Text);
             return false;
         }
 

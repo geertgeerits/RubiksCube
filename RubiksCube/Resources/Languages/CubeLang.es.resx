@@ -235,8 +235,14 @@ Caracteres 5-6: Azul</value>
     <value>Esta aplicación se puede utilizar libremente para fines no comerciales.
 Utilice este programa bajo su propio riesgo.</value>
   </data>
-  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+  <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>El color del cuadrado central solo puede ocurrir una vez.</value>
+  </data>
+  <data name="MessageColorCornerCube_Text" xml:space="preserve">
+    <value>The colors of a corner cube must be different.</value>
+  </data>
+  <data name="MessageColorEdgeCube_Text" xml:space="preserve">
+    <value>The colors of an edge cube must be different.</value>
   </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Felicitaciones, el cubo ha sido resuelto.</value>

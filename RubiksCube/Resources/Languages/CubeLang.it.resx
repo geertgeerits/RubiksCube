@@ -235,8 +235,14 @@ Caratteri 5-6: Blu</value>
     <value>Questa applicazione può essere utilizzata liberamente per scopi non commerciali.
 Utilizzare questo programma interamente a proprio rischio.</value>
   </data>
-  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+  <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Il colore del quadrato centrale può verificarsi solo una volta.</value>
+  </data>
+  <data name="MessageColorCornerCube_Text" xml:space="preserve">
+    <value>The colors of a corner cube must be different.</value>
+  </data>
+  <data name="MessageColorEdgeCube_Text" xml:space="preserve">
+    <value>The colors of an edge cube must be different.</value>
   </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Congratulazioni, il cubo è stato risolto.</value>

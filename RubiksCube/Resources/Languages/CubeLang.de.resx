@@ -238,6 +238,12 @@ Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
   <data name="MessageColorcentralSquare_Text" xml:space="preserve">
     <value>Die Farbe des zentralen Quadrats darf nur einmal vorkommen.</value>
   </data>
+  <data name="MessageColorCornerCube_Text" xml:space="preserve">
+    <value>The colors of a corner cube must be different.</value>
+  </data>
+  <data name="MessageColorEdgeCube_Text" xml:space="preserve">
+    <value>The colors of an edge cube must be different.</value>
+  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Herzlichen Glückwunsch, der Würfel ist gelöst.</value>
   </data>
