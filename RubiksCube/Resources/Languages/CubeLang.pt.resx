@@ -141,14 +141,8 @@ Você sempre pode entrar em contato comigo para quaisquer correções.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Perto</value>
   </data>
-  <data name="ButtonOpen_Text" xml:space="preserve">
-    <value>Abrir</value>
-  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Redefinir</value>
-  </data>
-  <data name="ButtonSave_Text" xml:space="preserve">
-    <value>Salvar</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Resolver</value>
@@ -306,6 +300,15 @@ Não permitido:</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
+  </data>
+  <data name="ToolTipOpen_Text" xml:space="preserve">
+    <value>Abra o cubo.</value>
+  </data>
+  <data name="ToolTipSave_Text" xml:space="preserve">
+    <value>Salve o cubo.</value>
+  </data>
+  <data name="ToolTipSetColors_Text" xml:space="preserve">
+    <value>Botão de alternância: Arraste as cores para o cubo.</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Vire a parte de trás meia volta.</value>

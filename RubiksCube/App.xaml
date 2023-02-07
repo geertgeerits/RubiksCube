@@ -189,7 +189,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="40" />
-                <Setter Property="MinimumWidthRequest" Value="75" />
+                <Setter Property="MinimumWidthRequest" Value="100" />
                 <Setter Property="FontSize" Value="13"/>
             </Style>
 
@@ -214,6 +214,7 @@
 
             <Style x:Key="polygonStyleColor" TargetType="Polygon">
                 <Setter Property="Points" Value="0,0 30,0 30,30 0,30" />
+                <Setter Property="IsEnabled" Value="False" />
             </Style>
 
             <Style x:Key="polygonStyleCubeOutside" TargetType="Polygon">

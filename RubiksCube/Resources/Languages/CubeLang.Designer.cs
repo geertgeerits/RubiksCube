@@ -120,29 +120,11 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open.
-        /// </summary>
-        internal static string ButtonOpen_Text {
-            get {
-                return ResourceManager.GetString("ButtonOpen_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         internal static string ButtonReset_Text {
             get {
                 return ResourceManager.GetString("ButtonReset_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save.
-        /// </summary>
-        internal static string ButtonSave_Text {
-            get {
-                return ResourceManager.GetString("ButtonSave_Text", resourceCulture);
             }
         }
         
@@ -594,6 +576,33 @@ namespace RubiksCube.Resources.Languages {
         internal static string ThemeSystem_Text {
             get {
                 return ResourceManager.GetString("ThemeSystem_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open the cube..
+        /// </summary>
+        internal static string ToolTipOpen_Text {
+            get {
+                return ResourceManager.GetString("ToolTipOpen_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save the cube..
+        /// </summary>
+        internal static string ToolTipSave_Text {
+            get {
+                return ResourceManager.GetString("ToolTipSave_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle button: Drag the colors onto the cube..
+        /// </summary>
+        internal static string ToolTipSetColors_Text {
+            get {
+                return ResourceManager.GetString("ToolTipSetColors_Text", resourceCulture);
             }
         }
         

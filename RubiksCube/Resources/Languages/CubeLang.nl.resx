@@ -141,14 +141,8 @@ Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sluiten</value>
   </data>
-  <data name="ButtonOpen_Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Reset</value>
-  </data>
-  <data name="ButtonSave_Text" xml:space="preserve">
-    <value>Opslaan</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Los op</value>
@@ -306,6 +300,15 @@ Niet toegestaan:</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
+  </data>
+  <data name="ToolTipOpen_Text" xml:space="preserve">
+    <value>Open de kubus.</value>
+  </data>
+  <data name="ToolTipSave_Text" xml:space="preserve">
+    <value>Bewaar de kubus.</value>
+  </data>
+  <data name="ToolTipSetColors_Text" xml:space="preserve">
+    <value>Wisselknop: sleep de kleuren naar de kubus.</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Draai de achterkant een halve slag.</value>

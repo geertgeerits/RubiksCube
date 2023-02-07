@@ -1025,7 +1025,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="3"
             HorizontalOptions="Center"
-            Spacing="0">
+            Spacing="10">
             
             <Button
                 x:Name="BtnSolve"
@@ -1034,19 +1034,41 @@
                 Clicked="OnBtnSolveClicked">
             </Button>
 
-            <Button
-                x:Name="BtnOpen"
-                Style="{StaticResource buttonStyleDefault}"
-                Text="{local:Translate ButtonOpen_Text}"
-                Clicked="OnBtnOpenClicked">
-            </Button>
+            <ImageButton
+                x:Name="btnSetColors"
+                Source="cube_mixedcolors_48p.png"
+                HeightRequest="38"
+                WidthRequest="38"
+                BorderWidth="2"
+                BorderColor="Black"
+                BackgroundColor="#FFD000"
+                ToolTipProperties.Text="{local:Translate ToolTipSetColors_Text}"
+                Clicked="OnDragDropSetColorsClicked">
+            </ImageButton>
 
-            <Button
-                x:Name="BtnSave"
-                Style="{StaticResource buttonStyleDefault}"
-                Text="{local:Translate ButtonSave_Text}"
+            <ImageButton
+                x:Name="btnOpen"
+                Source="arrow_up_32p.png"
+                HeightRequest="38"
+                WidthRequest="38"
+                BorderWidth="2"
+                BorderColor="Black"
+                BackgroundColor="#FFD000"
+                ToolTipProperties.Text="{local:Translate ToolTipOpen_Text}"
+                Clicked="OnBtnOpenClicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="btnSave"
+                Source="arrow_down_32p.png"
+                HeightRequest="38"
+                WidthRequest="38"
+                BorderWidth="2"
+                BorderColor="Black"
+                BackgroundColor="#FFD000"
+                ToolTipProperties.Text="{local:Translate ToolTipSave_Text}"
                 Clicked="OnBtnSaveClicked">
-            </Button>
+            </ImageButton>
 
             <Button
                 x:Name="BtnReset"

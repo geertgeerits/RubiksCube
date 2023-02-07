@@ -141,14 +141,8 @@ You can always contact me for any corrections.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="ButtonOpen_Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Reset</value>
-  </data>
-  <data name="ButtonSave_Text" xml:space="preserve">
-    <value>Save</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Solve</value>
@@ -306,6 +300,15 @@ Not allowed:</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
     <value>Theme:</value>
+  </data>
+  <data name="ToolTipOpen_Text" xml:space="preserve">
+    <value>Open the cube.</value>
+  </data>
+  <data name="ToolTipSave_Text" xml:space="preserve">
+    <value>Save the cube.</value>
+  </data>
+  <data name="ToolTipSetColors_Text" xml:space="preserve">
+    <value>Toggle button: Drag the colors onto the cube.</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Turn the back side half a turn.</value>

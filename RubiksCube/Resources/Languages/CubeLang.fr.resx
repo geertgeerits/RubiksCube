@@ -141,14 +141,8 @@ Vous pouvez toujours me contacter pour toute correction.</value>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="ButtonOpen_Text" xml:space="preserve">
-    <value>Ouvrir</value>
-  </data>
   <data name="ButtonReset_Text" xml:space="preserve">
     <value>Réinitialiser</value>
-  </data>
-  <data name="ButtonSave_Text" xml:space="preserve">
-    <value>Sauvegarder</value>
   </data>
   <data name="ButtonSolve_Text" xml:space="preserve">
     <value>Résoudre</value>
@@ -306,6 +300,15 @@ Interdit:</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thème:</value>
+  </data>
+  <data name="ToolTipOpen_Text" xml:space="preserve">
+    <value>Ouvrez le cube.</value>
+  </data>
+  <data name="ToolTipSave_Text" xml:space="preserve">
+    <value>Enregistrez le cube.</value>
+  </data>
+  <data name="ToolTipSetColors_Text" xml:space="preserve">
+    <value>Bouton bascule: faites glisser les couleurs sur le cube.</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Tournez la face arrière d'un demi-tour.</value>
