@@ -388,6 +388,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The color of the central square can only occur once..
+        /// </summary>
+        internal static string MessageColorcentralSquare_Text {
+            get {
+                return ResourceManager.GetString("MessageColorcentralSquare_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Congratulations, the cube has been solved..
         /// </summary>
         internal static string MessageCubeIsSolved_Text {

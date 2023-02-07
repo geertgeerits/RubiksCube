@@ -164,7 +164,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontSideToRight_Text}"
-                        Clicked="On_imgbtnTurnFrontSideToRight_Clicked">
+                        Clicked="OnTurnFrontSideToRightClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -174,7 +174,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopMiddleToRightSide_Text}"
-                        Clicked="On_imgbtnTurnTopMiddleToRightSide_Clicked">
+                        Clicked="OnTurnTopMiddleToRightSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -184,7 +184,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBackSideToLeft_Text}"
-                        Clicked="On_imgbtnTurnBackSideToLeft_Clicked">
+                        Clicked="OnTurnBackSideToLeftClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -194,7 +194,7 @@
                         Margin="40,0,0,0"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnLeftSideToRight_Text}"
-                        Clicked="On_imgbtnTurnLeftSideToRight_Clicked">
+                        Clicked="OnTurnLeftSideToRightClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -204,7 +204,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopMiddleToFrontSide_Text}"
-                        Clicked="On_imgbtnTurnTopMiddleToFrontSide_Clicked">
+                        Clicked="OnTurnTopMiddleToFrontSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -214,7 +214,7 @@
                         VerticalOptions="End"
                         Source="arrow_down_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightSideToLeft_Text}"
-                        Clicked="On_imgbtnTurnRightSideToLeft_Clicked">
+                        Clicked="OnTurnRightSideToLeftClicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -229,7 +229,7 @@
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopSideToLeft_Text}"
-                        Clicked="On_imgbtnTurnTopSideToLeft_Clicked">
+                        Clicked="OnTurnTopSideToLeftClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -239,7 +239,7 @@
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontMiddleToRightSide_Text}"
-                        Clicked="On_imgbtnTurnFrontMiddleToRightSide_Clicked">
+                        Clicked="OnTurnFrontMiddleToRightSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -249,7 +249,7 @@
                         HorizontalOptions="End"
                         Source="arrow_right_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBottomSideToRight_Text}"
-                        Clicked="On_imgbtnTurnBottomSideToRight_Clicked">
+                        Clicked="OnTurnBottomSideToRightClicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -264,7 +264,7 @@
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnTopSideToRight_Text}"
-                        Clicked="On_imgbtnTurnTopSideToRight_Clicked">
+                        Clicked="OnTurnTopSideToRightClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -274,7 +274,7 @@
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightMiddleToFrontSide_Text}"
-                        Clicked="On_imgbtnTurnRightMiddleToFrontSide_Clicked">
+                        Clicked="OnTurnRightMiddleToFrontSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -284,7 +284,7 @@
                         HorizontalOptions="Start"
                         Source="arrow_left_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBottomSideToLeft_Text}"
-                        Clicked="On_imgbtnTurnBottomSideToLeft_Clicked">
+                        Clicked="OnTurnBottomSideToLeftClicked">
                     </ImageButton>
                 </VerticalStackLayout>
 
@@ -299,7 +299,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnLeftSideToLeft_Text}"
-                        Clicked="On_imgbtnTurnLeftSideToLeft_Clicked">
+                        Clicked="OnTurnLeftSideToLeftClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -309,7 +309,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontMiddleToTopSide_Text}"
-                        Clicked="On_imgbtnTurnFrontMiddleToTopSide_Clicked">
+                        Clicked="OnTurnFrontMiddleToTopSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -319,7 +319,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightSideToRight_Text}"
-                        Clicked="On_imgbtnTurnRightSideToRight_Clicked">
+                        Clicked="OnTurnRightSideToRightClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -329,7 +329,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnFrontSideToLeft_Text}"
-                        Clicked="On_imgbtnTurnFrontSideToLeft_Clicked">
+                        Clicked="OnTurnFrontSideToLeftClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -339,7 +339,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnRightMiddleToTopSide_Text}"
-                        Clicked="On_imgbtnTurnRightMiddleToTopSide_Clicked">
+                        Clicked="OnTurnRightMiddleToTopSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -349,7 +349,7 @@
                         VerticalOptions="Start"
                         Source="arrow_up_32p.png"
                         ToolTipProperties.Text="{local:Translate TurnBackSideToRight_Text}"
-                        Clicked="On_imgbtnTurnBackSideToRight_Clicked">
+                        Clicked="OnTurnBackSideToRightClicked">
                     </ImageButton>
                 </HorizontalStackLayout>
 
@@ -1035,7 +1035,7 @@
             </Button>
 
             <ImageButton
-                x:Name="btnSetColors"
+                x:Name="imgbtnSetColors"
                 Source="cube_mixedcolors_48p.png"
                 HeightRequest="38"
                 WidthRequest="38"
@@ -1043,11 +1043,11 @@
                 BorderColor="Black"
                 BackgroundColor="#FFD000"
                 ToolTipProperties.Text="{local:Translate ToolTipSetColors_Text}"
-                Clicked="OnDragDropSetColorsClicked">
+                Clicked="OnButtonSetColorsClicked">
             </ImageButton>
 
             <ImageButton
-                x:Name="btnOpen"
+                x:Name="imgbtnOpen"
                 Source="arrow_up_32p.png"
                 HeightRequest="38"
                 WidthRequest="38"
@@ -1055,11 +1055,11 @@
                 BorderColor="Black"
                 BackgroundColor="#FFD000"
                 ToolTipProperties.Text="{local:Translate ToolTipOpen_Text}"
-                Clicked="OnBtnOpenClicked">
+                Clicked="OnButtonOpenClicked">
             </ImageButton>
 
             <ImageButton
-                x:Name="btnSave"
+                x:Name="imgbtnSave"
                 Source="arrow_down_32p.png"
                 HeightRequest="38"
                 WidthRequest="38"
@@ -1067,7 +1067,7 @@
                 BorderColor="Black"
                 BackgroundColor="#FFD000"
                 ToolTipProperties.Text="{local:Translate ToolTipSave_Text}"
-                Clicked="OnBtnSaveClicked">
+                Clicked="OnButtonSaveClicked">
             </ImageButton>
 
             <Button

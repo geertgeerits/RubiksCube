@@ -235,6 +235,9 @@ Zeichen 5-6: Blau</value>
     <value>Diese Anwendung darf für nichtkommerzielle Zwecke frei verwendet werden.
 Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
   </data>
+  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+    <value>Die Farbe des zentralen Quadrats darf nur einmal vorkommen.</value>
+  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Herzlichen Glückwunsch, der Würfel ist gelöst.</value>
   </data>

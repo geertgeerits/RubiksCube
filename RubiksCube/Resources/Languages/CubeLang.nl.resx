@@ -235,6 +235,9 @@ Karakters 5-6: blauw</value>
     <value>Deze applicatie mag vrij worden gebruikt voor niet-commerciële doeleinden.
 Gebruik dit programma geheel op eigen risico.</value>
   </data>
+  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+    <value>De kleur van het centrale vierkant kan maar één keer voorkomen.</value>
+  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Gefeliciteerd, de kubus is opgelost.</value>
   </data>

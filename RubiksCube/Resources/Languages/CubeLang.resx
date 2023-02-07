@@ -235,6 +235,9 @@ Characters 5-6: Blue</value>
     <value>This application may be used freely for non-commercial purposes.
 Use this program entirely at your own risk.</value>
   </data>
+  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+    <value>The color of the central square can only occur once.</value>
+  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Congratulations, the cube has been solved.</value>
   </data>

@@ -164,7 +164,7 @@ public partial class MainPage : ContentPage
     }
     
     // Drag and drop colors on the cube.
-    private void OnDragDropSetColorsClicked(object sender, EventArgs e)
+    private void OnButtonSetColorsClicked(object sender, EventArgs e)
     {
         bColorDrop = !bColorDrop;
 
@@ -328,6 +328,7 @@ public partial class MainPage : ContentPage
 
         int nRow;
 
+        // Check the number of colors of the cube.
         // Top side.
         for (nRow = 1; nRow < 10; nRow++)
         {
@@ -556,6 +557,45 @@ public partial class MainPage : ContentPage
             return false;
         }
 
+        // Check the number of colors of the central square of the cube.
+        bool bColorCenterCube = true;
+
+        if (aTopSide[5] == aFrontSide[5] || aTopSide[5] == aRightSide[5] || aTopSide[5] == aLeftSide[5] || aTopSide[5] == aBackSide[5] || aTopSide[5] == aBottomSide[5])
+        {
+            bColorCenterCube = false;
+        }
+
+        if (aFrontSide[5] == aTopSide[5] || aFrontSide[5] == aRightSide[5] || aFrontSide[5] == aLeftSide[5] || aFrontSide[5] == aBackSide[5] || aFrontSide[5] == aBottomSide[5])
+        {
+            bColorCenterCube = false;
+        }
+
+        if (aRightSide[5] == aFrontSide[5] || aRightSide[5] == aTopSide[5] || aRightSide[5] == aLeftSide[5] || aRightSide[5] == aBackSide[5] || aRightSide[5] == aBottomSide[5])
+        {
+            bColorCenterCube = false;
+        }
+
+        if (aLeftSide[5] == aFrontSide[5] || aLeftSide[5] == aRightSide[5] || aLeftSide[5] == aTopSide[5] || aLeftSide[5] == aBackSide[5] || aLeftSide[5] == aBottomSide[5])
+        {
+            bColorCenterCube = false;
+        }
+
+        if (aBackSide[5] == aFrontSide[5] || aBackSide[5] == aRightSide[5] || aBackSide[5] == aLeftSide[5] || aBackSide[5] == aTopSide[5] || aBackSide[5] == aBottomSide[5])
+        {
+            bColorCenterCube = false;
+        }
+
+        if (aBottomSide[5] == aFrontSide[5] || aBottomSide[5] == aRightSide[5] || aBottomSide[5] == aLeftSide[5] || aBottomSide[5] == aBackSide[5] || aBottomSide[5] == aTopSide[5])
+        {
+            bColorCenterCube = false;
+        }
+
+        if (!bColorCenterCube)
+        {
+            DisplayAlert("Error", CubeLang.MessageColorcentralSquare_Text, CubeLang.ButtonClose_Text);
+            return false;
+        }
+
         return true;
     }
 
@@ -619,14 +659,14 @@ public partial class MainPage : ContentPage
 
     // Turn the layers of the cube.
     // Turn the front side clockwise (to right +).
-    private void On_imgbtnTurnFrontSideToRight_Clicked(object sender, EventArgs e)
+    private void OnTurnFrontSideToRightClicked(object sender, EventArgs e)
     {
         TurnFrontSideTo("+");
         ExplainTurnCube(sender, CubeLang.TurnFrontSideToRight_Text);
     }
 
     // Turn the top middle to the right side (+).
-    private void On_imgbtnTurnTopMiddleToRightSide_Clicked(object sender, EventArgs e)
+    private void OnTurnTopMiddleToRightSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -641,21 +681,21 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the back side counter clockwise (to left -).
-    private void On_imgbtnTurnBackSideToLeft_Clicked(object sender, EventArgs e)
+    private void OnTurnBackSideToLeftClicked(object sender, EventArgs e)
     {
         TurnBackSideTo("-");
         ExplainTurnCube(sender, CubeLang.TurnBackSideToLeft_Text);
     }
 
     // Turn the left side clockwise (to right +).
-    private void On_imgbtnTurnLeftSideToRight_Clicked(object sender, EventArgs e)
+    private void OnTurnLeftSideToRightClicked(object sender, EventArgs e)
     {
         TurnLeftSideTo("+");
         ExplainTurnCube(sender, CubeLang.TurnLeftSideToRight_Text);
     }
 
     // Turn the top middle to the front side (-).
-    private void On_imgbtnTurnTopMiddleToFrontSide_Clicked(object sender, EventArgs e)
+    private void OnTurnTopMiddleToFrontSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -670,21 +710,21 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the right side counter clockwise (to left -).
-    private void On_imgbtnTurnRightSideToLeft_Clicked(object sender, EventArgs e)
+    private void OnTurnRightSideToLeftClicked(object sender, EventArgs e)
     {
         TurnRightSideTo("-");
         ExplainTurnCube(sender, CubeLang.TurnRightSideToLeft_Text);
     }
 
     // Turn the top side counter clockwise (to left -).
-    private void On_imgbtnTurnTopSideToLeft_Clicked(object sender, EventArgs e)
+    private void OnTurnTopSideToLeftClicked(object sender, EventArgs e)
     {
         TurnTopSideTo("-");
         ExplainTurnCube(sender, CubeLang.TurnTopSideToLeft_Text);
     }
 
     // Turn the front middle to the right side (-).
-    private void On_imgbtnTurnFrontMiddleToRightSide_Clicked(object sender, EventArgs e)
+    private void OnTurnFrontMiddleToRightSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -699,21 +739,21 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the bottom side clockwise (to right +).
-    private void On_imgbtnTurnBottomSideToRight_Clicked(object sender, EventArgs e)
+    private void OnTurnBottomSideToRightClicked(object sender, EventArgs e)
     {
         TurnBottomSideTo("+");
         ExplainTurnCube(sender, CubeLang.TurnBottomSideToRight_Text);
     }
 
     // Turn the top side clockwise (to right +).
-    private void On_imgbtnTurnTopSideToRight_Clicked(object sender, EventArgs e)
+    private void OnTurnTopSideToRightClicked(object sender, EventArgs e)
     {
         TurnTopSideTo("+");
         ExplainTurnCube(sender, CubeLang.TurnTopSideToRight_Text);
     }
 
     // Turn the right middle to the front side (+).
-    private void On_imgbtnTurnRightMiddleToFrontSide_Clicked(object sender, EventArgs e)
+    private void OnTurnRightMiddleToFrontSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -728,21 +768,21 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the bottom side counter clockwise (to left -).
-    private void On_imgbtnTurnBottomSideToLeft_Clicked(object sender, EventArgs e)
+    private void OnTurnBottomSideToLeftClicked(object sender, EventArgs e)
     {
         TurnBottomSideTo("-");
         ExplainTurnCube(sender, CubeLang.TurnBottomSideToLeft_Text);
     }
 
     // Turn the left side counter clockwise (to left -).
-    private void On_imgbtnTurnLeftSideToLeft_Clicked(object sender, EventArgs e)
+    private void OnTurnLeftSideToLeftClicked(object sender, EventArgs e)
     {
         TurnLeftSideTo("-");
         ExplainTurnCube(sender, CubeLang.TurnLeftSideToLeft_Text);
     }
 
     // Turn the front middle to the top side (+).
-    private void On_imgbtnTurnFrontMiddleToTopSide_Clicked(object sender, EventArgs e)
+    private void OnTurnFrontMiddleToTopSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -757,21 +797,21 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the right side clockwise (to right +).
-    private void On_imgbtnTurnRightSideToRight_Clicked(object sender, EventArgs e)
+    private void OnTurnRightSideToRightClicked(object sender, EventArgs e)
     {
         TurnRightSideTo("+");
         ExplainTurnCube(sender, CubeLang.TurnRightSideToRight_Text);
     }
 
     // Turn the front side counter clockwise (to left -).
-    private void On_imgbtnTurnFrontSideToLeft_Clicked(object sender, EventArgs e)
+    private void OnTurnFrontSideToLeftClicked(object sender, EventArgs e)
     {
         TurnFrontSideTo("-");
         ExplainTurnCube(sender, CubeLang.TurnFrontSideToLeft_Text);
     }
 
     // Turn the right middle to the top side (-).
-    private void On_imgbtnTurnRightMiddleToTopSide_Clicked(object sender, EventArgs e)
+    private void OnTurnRightMiddleToTopSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -786,7 +826,7 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the back side clockwise (to right +).
-    private void On_imgbtnTurnBackSideToRight_Clicked(object sender, EventArgs e)
+    private void OnTurnBackSideToRightClicked(object sender, EventArgs e)
     {
         TurnBackSideTo("+");
         ExplainTurnCube(sender, CubeLang.TurnBackSideToRight_Text);
@@ -1566,7 +1606,7 @@ public partial class MainPage : ContentPage
     }
 
     // On clicked event: Save the cube.
-    private void OnBtnSaveClicked(object sender, EventArgs e)
+    private void OnButtonSaveClicked(object sender, EventArgs e)
     {
         SetCubeColorsInArrays();
 
@@ -1629,7 +1669,7 @@ public partial class MainPage : ContentPage
     }
 
     // On clicked event: Open, restore the cube.
-    private void OnBtnOpenClicked(object sender, EventArgs e)
+    private void OnButtonOpenClicked(object sender, EventArgs e)
     {
         string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
 
@@ -1988,8 +2028,9 @@ public partial class MainPage : ContentPage
                 imgbtnAbout.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
                 BtnSolve.IsEnabled = false;
-                BtnOpen.IsEnabled = false;
-                BtnSave.IsEnabled = false;
+                imgbtnSetColors.IsEnabled = false;
+                imgbtnOpen.IsEnabled = false;
+                imgbtnSave.IsEnabled = false;
                 BtnReset.IsEnabled = false;
                 IsEnabledArrows(false);
 

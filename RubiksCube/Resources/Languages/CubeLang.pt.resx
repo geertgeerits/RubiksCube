@@ -235,6 +235,9 @@ Caracteres 5-6: Azul</value>
     <value>Este aplicativo pode ser usado livremente para fins não comerciais.
 Use este programa inteiramente por sua conta e risco.</value>
   </data>
+  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+    <value>A cor do quadrado central só pode ocorrer uma vez.</value>
+  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Parabéns, o cubo foi resolvido.</value>
   </data>
