@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.10
-// Date ........: 2023-02-07 (YYYY-MM-DD)
+// Date ........: 2023-02-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -10,6 +10,8 @@
 // Dependencies : 
 // Thanks to ...: Gerald Versluis
 
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
 using RubiksCube.Resources.Languages;
 using System.Globalization;
@@ -171,8 +173,8 @@ public partial class MainPage : ContentPage
         if (bColorDrop)
         {
             BtnSolve.IsEnabled= false;
-
-            IsEnabledCubeColors(true);
+            hslCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
+            IsVisibleCubeColors(true);
             IsEnabledArrows(false);
 
             imgbtnTurnTopMiddleToRightSide.IsEnabled = true;
@@ -189,7 +191,12 @@ public partial class MainPage : ContentPage
             imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
             imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
 
-            IsEnabledCubeColors(true);
+            //ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, "Turn");
+            //ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, "Turn");
+            //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, "Turn");
+            //ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, "Turn");
+            //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, "Turn");
+            //ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, "Turn");
         }
         else
         {
@@ -206,8 +213,16 @@ public partial class MainPage : ContentPage
             imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
             imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
 
+            //ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
+            //ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
+            //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
+            //ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
+            //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
+            //ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
+
             IsEnabledArrows(true);
-            IsEnabledCubeColors(false);
+            IsVisibleCubeColors(false);
+            hslCubeColorSelect.BackgroundColor = Color.FromArgb("#00000000");
 
             BtnSolve.IsEnabled = true;
         }
@@ -648,8 +663,15 @@ public partial class MainPage : ContentPage
         // Check the number of colors of the edge cubes of the cube.
         bool bColorEdgeCube = true;
 
+        if (aTopSide[2] == aBackSide[2] || aTopSide[4] == aLeftSide[2] || aTopSide[6] == aRightSide[2] || aTopSide[8] == aFrontSide[2])
+        {
+            bColorEdgeCube = false;
+        }
 
-
+        if (aBottomSide[2] == aFrontSide[8] || aBottomSide[4] == aLeftSide[8] || aBottomSide[6] == aRightSide[8] || aBottomSide[8] == aBackSide[8])
+        {
+            bColorEdgeCube = false;
+        }
 
         if (!bColorEdgeCube)
         {
@@ -1999,7 +2021,19 @@ public partial class MainPage : ContentPage
         plgCubeColor5.IsEnabled = bEnableDisable;
         plgCubeColor6.IsEnabled = bEnableDisable;
     }
-    
+
+    // Set the cube colors for drag and drop to visible or invisible.
+    private void IsVisibleCubeColors(bool bEnableDisable)
+    {
+        plgCubeColorSelect.IsVisible = bEnableDisable;
+        plgCubeColor1.IsVisible = bEnableDisable;
+        plgCubeColor2.IsVisible = bEnableDisable;
+        plgCubeColor3.IsVisible = bEnableDisable;
+        plgCubeColor4.IsVisible = bEnableDisable;
+        plgCubeColor5.IsVisible = bEnableDisable;
+        plgCubeColor6.IsVisible = bEnableDisable;
+    }
+
     // Enable or Disable the arrows.
     private void IsEnabledArrows(bool bEnableDisable)
     {
@@ -2023,7 +2057,7 @@ public partial class MainPage : ContentPage
         imgbtnTurnBackSideToRight.IsEnabled = bEnableDisable;
     }
 
-    // Make the arrows visible or invisible.
+    // Set the arrows to visible or invisible.
     private void IsVisibleArrows(bool bVisibleInvisible)
     {
         imgbtnTurnFrontSideToRight.IsVisible = bVisibleInvisible;

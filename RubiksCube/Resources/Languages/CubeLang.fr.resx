@@ -239,10 +239,10 @@ Utilisez ce programme entièrement à vos propres risques.</value>
     <value>La couleur du carré central ne peut apparaître qu'une seule fois.</value>
   </data>
   <data name="MessageColorCornerCube_Text" xml:space="preserve">
-    <value>The colors of a corner cube must be different.</value>
+    <value>Les couleurs d'un cube de coin doivent être différentes</value>
   </data>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
-    <value>The colors of an edge cube must be different.</value>
+    <value>Les couleurs d'un cube de bord doivent être différentes.</value>
   </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Félicitations, le cube a été résolu.</value>

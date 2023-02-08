@@ -53,10 +53,11 @@
         Margin="5">
 
         <HorizontalStackLayout
+            x:Name="hslCubeColorSelect"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="3"
-            BackgroundColor="Gray"
+            BackgroundColor="Transparent"
             Padding="5"
             Spacing="20"
             HorizontalOptions="Center"

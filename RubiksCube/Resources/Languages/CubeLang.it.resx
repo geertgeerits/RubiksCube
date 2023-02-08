@@ -239,10 +239,10 @@ Utilizzare questo programma interamente a proprio rischio.</value>
     <value>Il colore del quadrato centrale può verificarsi solo una volta.</value>
   </data>
   <data name="MessageColorCornerCube_Text" xml:space="preserve">
-    <value>The colors of a corner cube must be different.</value>
+    <value>As cores de um cubo de canto devem ser diferentes.</value>
   </data>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
-    <value>The colors of an edge cube must be different.</value>
+    <value>I colori di un cubo di spigolo devono essere diversi.</value>
   </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Congratulazioni, il cubo è stato risolto.</value>

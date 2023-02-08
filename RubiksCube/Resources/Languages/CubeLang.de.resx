@@ -239,10 +239,10 @@ Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
     <value>Die Farbe des zentralen Quadrats darf nur einmal vorkommen.</value>
   </data>
   <data name="MessageColorCornerCube_Text" xml:space="preserve">
-    <value>The colors of a corner cube must be different.</value>
+    <value>Die Farben eines Eckwürfels müssen unterschiedlich sein.</value>
   </data>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
-    <value>The colors of an edge cube must be different.</value>
+    <value>Die Farben eines Kantenwürfels müssen unterschiedlich sein.</value>
   </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Herzlichen Glückwunsch, der Würfel ist gelöst.</value>
