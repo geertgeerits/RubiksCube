@@ -349,6 +349,12 @@ Not allowed:</value>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
     <value>Turn the entire cube so that the front goes to the top side.</value>
   </data>
+  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+    <value>Turn the entire cube so that the top goes to the left side.</value>
+  </data>
+  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+    <value>Turn the entire cube so that the top goes to the right side.</value>
+  </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Turn the front-middle layer a quarter turn to the right side (-).</value>
   </data>

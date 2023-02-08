@@ -724,6 +724,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the left side..
+        /// </summary>
+        internal static string TurnCubeTopSideToLeftSide_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeTopSideToLeftSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the right side..
+        /// </summary>
+        internal static string TurnCubeTopSideToRightSide_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeTopSideToRightSide_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the right side (-)..
         /// </summary>
         internal static string TurnFrontMiddleToRightSide_Text {

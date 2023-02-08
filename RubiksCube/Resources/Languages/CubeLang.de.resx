@@ -349,6 +349,12 @@ Nicht erlaubt:</value>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Oberseite geht.</value>
   </data>
+  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite zur linken Seite geht.</value>
+  </data>
+  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite auf die rechte Seite geht.</value>
+  </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Drehen Sie die vordere mittlere Schicht um eine Vierteldrehung auf die rechte Seite (-).</value>
   </data>

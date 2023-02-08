@@ -349,6 +349,12 @@ No permitido:</value>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
     <value>Gire todo el cubo para que el frente vaya hacia el lado superior.</value>
   </data>
+  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+    <value>Gire todo el cubo para que la parte superior vaya hacia el lado izquierdo.</value>
+  </data>
+  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+    <value>Gire todo el cubo para que la parte superior vaya hacia el lado derecho.</value>
+  </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Gire la capa frontal-media un cuarto de vuelta hacia el lado derecho (-).</value>
   </data>

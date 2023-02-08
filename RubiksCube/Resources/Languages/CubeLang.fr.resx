@@ -349,6 +349,12 @@ Interdit:</value>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que l'avant aille vers le haut.</value>
   </data>
+  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+    <value>Tournez le cube entier de sorte que le haut aille vers le côté gauche.</value>
+  </data>
+  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+    <value>Tournez le cube entier de sorte que le haut aille vers la droite.</value>
+  </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Tournez la couche centrale avant d'un quart de tour vers la droite (-).</value>
   </data>

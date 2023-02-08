@@ -349,6 +349,12 @@ Non autorizzato:</value>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
     <value>Gira l'intero cubo in modo che la parte anteriore vada verso l'alto.</value>
   </data>
+  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+    <value>Gira l'intero cubo in modo che la parte superiore vada a sinistra.</value>
+  </data>
+  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+    <value>Gira l'intero cubo in modo che la parte superiore vada sul lato destro.</value>
+  </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Ruota lo strato centrale anteriore di un quarto di giro sul lato destro (-).</value>
   </data>

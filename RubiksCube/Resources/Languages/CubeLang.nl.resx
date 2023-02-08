@@ -349,6 +349,12 @@ Niet toegestaan:</value>
   <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
     <value>Draai de hele kubus zodat de voorkant naar de bovenkant gaat.</value>
   </data>
+  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+    <value>Draai de hele kubus zodat de bovenkant naar de linkerkant gaat.</value>
+  </data>
+  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+    <value>Draai de hele kubus zodat de bovenkant naar de rechterkant gaat.</value>
+  </data>
   <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
     <value>Draai de voor-midden laag een kwartslag naar de rechterkant (-).</value>
   </data>
