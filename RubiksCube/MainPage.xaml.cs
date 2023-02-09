@@ -257,6 +257,39 @@ public partial class MainPage : ContentPage
         // Solve the edges of the top layer.
 
         // Page 14-2.
+        if (aTopSide[5] == aFrontSide[4])
+        {
+            if (await ExplainTurnCubeQuestion(null, CubeLang.TurnLeftSideToRight_Text) == false)
+                return;
+            TurnLeftSideTo("+");
+            GetCubeColorsFromArrays();
+
+            if (aLeftSide[8] == aFrontSide[5])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToRight_Text) == false)
+                    return;
+                TurnBottomSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aLeftSide[8] == aBackSide[5])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToLeft_Text) == false)
+                    return;
+                TurnBottomSideTo("-");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aLeftSide[8] == aRightSide[5])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideHalfTurn_Text) == false)
+                    return;
+                TurnBottomSideTo("+");
+                TurnBottomSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+        }
+
         if (aTopSide[5] == aFrontSide[6])
         {
             if (await ExplainTurnCubeQuestion(null, CubeLang.TurnRightSideToLeft_Text) == false)
@@ -290,7 +323,7 @@ public partial class MainPage : ContentPage
             }
         }
 
-
+        
         // Page 14-3.
         for (int nTimes = 1; nTimes < 5; nTimes++)
         {
