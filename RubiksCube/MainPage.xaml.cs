@@ -255,7 +255,43 @@ public partial class MainPage : ContentPage
     private async Task SolveTheCube()
     {
         // Solve the edges of the top layer.
-        
+
+        // Page 14-2.
+        if (aTopSide[5] == aFrontSide[6])
+        {
+            if (await ExplainTurnCubeQuestion(null, CubeLang.TurnRightSideToLeft_Text) == false)
+                return;
+            TurnRightSideTo("-");
+            GetCubeColorsFromArrays();
+
+            if (aRightSide[8] == aFrontSide[5])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToLeft_Text) == false)
+                    return;
+                TurnBottomSideTo("-");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aRightSide[8] == aBackSide[5])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToRight_Text) == false)
+                    return;
+                TurnBottomSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aRightSide[8] == aLeftSide[5])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideHalfTurn_Text) == false)
+                    return;
+                TurnBottomSideTo("+");
+                TurnBottomSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+        }
+
+
+        // Page 14-3.
         for (int nTimes = 1; nTimes < 5; nTimes++)
         {
             if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
@@ -311,21 +347,21 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToLeftSide_Text) == false)
-            return;
-        TurnCubeFrontSideToLeftSide(true);
+        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToLeftSide_Text) == false)
+        //    return;
+        //TurnCubeFrontSideToLeftSide(true);
 
-        if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToRightSide_Text) == false)
-            return;
-        TurnCubeFrontSideToRightSide(true);
+        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToRightSide_Text) == false)
+        //    return;
+        //TurnCubeFrontSideToRightSide(true);
 
-        if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToTopSide_Text) == false)
-            return;
-        TurnCubeFrontSideToTopSide(true);
+        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToTopSide_Text) == false)
+        //    return;
+        //TurnCubeFrontSideToTopSide(true);
 
-        if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToBottomSide_Text) == false)
-            return;
-        TurnCubeFrontSideToBottomSide(true);
+        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToBottomSide_Text) == false)
+        //    return;
+        //TurnCubeFrontSideToBottomSide(true);
 
         if (!CheckIfCubeIsSolved(false))
         {

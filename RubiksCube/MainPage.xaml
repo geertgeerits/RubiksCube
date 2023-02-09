@@ -67,13 +67,15 @@
                 x:Name="plgCubeColorSelect"
                 Style="{StaticResource polygonStyleColor}"
                 Points="0,0 20,0 20,30 0,30"
-                Fill="Black">
+                Fill="Black"
+                IsVisible="False">
             </Polygon>
 
             <Polygon
                 x:Name="plgCubeColor1"
                 Style="{StaticResource polygonStyleColor}"
-                Fill="Red">
+                Fill="Red"
+                IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
@@ -82,7 +84,8 @@
             <Polygon
                 x:Name="plgCubeColor2"
                 Style="{StaticResource polygonStyleColor}"
-                Fill="Yellow">
+                Fill="Yellow"
+                IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
@@ -91,7 +94,8 @@
             <Polygon
                 x:Name="plgCubeColor3"
                 Style="{StaticResource polygonStyleColor}"
-                Fill="Blue">
+                Fill="Blue"
+                IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
@@ -100,7 +104,8 @@
             <Polygon
                 x:Name="plgCubeColor4"
                 Style="{StaticResource polygonStyleColor}"
-                Fill="Green">
+                Fill="Green"
+                IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
@@ -109,7 +114,8 @@
             <Polygon
                 x:Name="plgCubeColor5"
                 Style="{StaticResource polygonStyleColor}"
-                Fill="White">
+                Fill="White"
+                IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
@@ -119,7 +125,8 @@
                 x:Name="plgCubeColor6"
                 Style="{StaticResource polygonStyleColor}"
                 HorizontalOptions="End"
-                Fill="Orange">
+                Fill="Orange"
+                IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>

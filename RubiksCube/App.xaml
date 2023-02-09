@@ -214,7 +214,6 @@
 
             <Style x:Key="polygonStyleColor" TargetType="Polygon">
                 <Setter Property="Points" Value="0,0 30,0 30,30 0,30" />
-                <Setter Property="IsVisible" Value="False" />
             </Style>
 
             <Style x:Key="polygonStyleCubeOutside" TargetType="Polygon">
