@@ -1,11 +1,11 @@
 ﻿// Program .....: RubiksCube.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
-// Version .....: 2.0.10
-// Date ........: 2023-02-09 (YYYY-MM-DD)
+// Version .....: 2.0.11
+// Date ........: 2023-02-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
-// Note ........: This program is based on a program I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
+// Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
 //                The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
 // Dependencies : 
 // Thanks to ...: Gerald Versluis
@@ -254,9 +254,13 @@ public partial class MainPage : ContentPage
     // Solve the cube.
     private async Task SolveTheCube()
     {
-        // Solve the edges of the top layer.
+        // Solve the edges of the top layer - Chapter 4, page 14-3.
+        if (await SolveEdgesTopLayer() == false)
+        {
+            return;
+        }
 
-        // Page 14-2.
+        // Solve the edges of the top layer - Chapter 4, page 14-2.
         if (aTopSide[5] == aFrontSide[4])
         {
             if (await ExplainTurnCubeQuestion(null, CubeLang.TurnLeftSideToRight_Text) == false)
@@ -323,53 +327,19 @@ public partial class MainPage : ContentPage
             }
         }
 
-        
-        // Page 14-3.
-        for (int nTimes = 1; nTimes < 5; nTimes++)
+
+
+        // Solve the edges of the top layer - Chapter 4, page 14-3.
+        if (await SolveEdgesTopLayer() == false)
         {
-            if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
-            {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnFrontSideHalfTurn_Text) == false)
-                    return;
-                TurnFrontSideTo("+");
-                TurnFrontSideTo("+");
-                GetCubeColorsFromArrays();
-            }
-
-            if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
-            {
-                if(await ExplainTurnCubeQuestion(null, CubeLang.TurnLeftSideHalfTurn_Text) == false)
-                    return;
-                TurnLeftSideTo("+");
-                TurnLeftSideTo("+");
-                GetCubeColorsFromArrays();
-            }
-
-            if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
-            {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnRightSideHalfTurn_Text) == false)
-                    return;
-                TurnRightSideTo("+");
-                TurnRightSideTo("+");
-                GetCubeColorsFromArrays();
-            }
-
-            if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
-            {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBackSideHalfTurn_Text) == false)
-                    return;
-                TurnBackSideTo("+");
-                TurnBackSideTo("+");
-                GetCubeColorsFromArrays();
-            }
+            return;
         }
 
+        // Solve the corners of the top layer - Chapter 6, page 16.
 
-        // Solve the corners of the top layer.
+        // Solve the middle layer - Chapter 10, page 21.
 
-        // Solve the middle layer.
-
-        // Solve the bottom layer.
+        // Solve the bottom layer - Chapter 11, page 23.
 
         // Put the edges on the correct place.
 
@@ -400,6 +370,51 @@ public partial class MainPage : ContentPage
         {
             return;
         }
+    }
+
+    // Solve the edges of the top layer - Chapter 4, page 14-3.
+    private async Task<bool> SolveEdgesTopLayer()
+    {
+        for (int nTimes = 1; nTimes < 5; nTimes++)
+        {
+            if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnFrontSideHalfTurn_Text) == false)
+                    return false;
+                TurnFrontSideTo("+");
+                TurnFrontSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnLeftSideHalfTurn_Text) == false)
+                    return false;
+                TurnLeftSideTo("+");
+                TurnLeftSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnRightSideHalfTurn_Text) == false)
+                    return false;
+                TurnRightSideTo("+");
+                TurnRightSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+
+            if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
+            {
+                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBackSideHalfTurn_Text) == false)
+                    return false;
+                TurnBackSideTo("+");
+                TurnBackSideTo("+");
+                GetCubeColorsFromArrays();
+            }
+        }
+
+        return true;
     }
 
     // Check the number of colors of the cube.
@@ -1778,7 +1793,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Explain the turn of the cube with a question.
+    // Explain the turn of the cube with the option to continue or to stop.
     private async Task<bool> ExplainTurnCubeQuestion(object sender, string cTurnCubeText)
     {
         string cTurnCubeSpeech = cTurnCubeText;
