@@ -71,7 +71,7 @@ public partial class PageAbout : ContentPage
     {
         try
         {
-            Uri uri = new Uri("https://geertgeerits.wixsite.com/rubikscube");
+            Uri uri = new("https://geertgeerits.wixsite.com/rubikscube");
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
         catch (Exception ex)

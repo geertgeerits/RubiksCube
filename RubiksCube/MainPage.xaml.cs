@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-02-16 (YYYY-MM-DD)
+// Date ........: 2023-03-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -263,14 +263,14 @@ public partial class MainPage : ContentPage
         // Solve the edges of the top layer - Chapter 4, page 14-2.
         if (aTopSide[5] == aFrontSide[4])
         {
-            if (await ExplainTurnCubeQuestion(null, CubeLang.TurnLeftSideToRight_Text) == false)
+            if (await ExplainTurnCubeQuestion(CubeLang.TurnLeftSideToRight_Text) == false)
                 return;
             TurnLeftSideTo("+");
             GetCubeColorsFromArrays();
 
             if (aLeftSide[8] == aFrontSide[5])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToRight_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBottomSideToRight_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -278,7 +278,7 @@ public partial class MainPage : ContentPage
 
             if (aLeftSide[8] == aBackSide[5])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToLeft_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBottomSideToLeft_Text) == false)
                     return;
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
@@ -286,7 +286,7 @@ public partial class MainPage : ContentPage
 
             if (aLeftSide[8] == aRightSide[5])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBottomSideHalfTurn_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
@@ -296,14 +296,14 @@ public partial class MainPage : ContentPage
 
         if (aTopSide[5] == aFrontSide[6])
         {
-            if (await ExplainTurnCubeQuestion(null, CubeLang.TurnRightSideToLeft_Text) == false)
+            if (await ExplainTurnCubeQuestion(CubeLang.TurnRightSideToLeft_Text) == false)
                 return;
             TurnRightSideTo("-");
             GetCubeColorsFromArrays();
 
             if (aRightSide[8] == aFrontSide[5])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToLeft_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBottomSideToLeft_Text) == false)
                     return;
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
@@ -311,7 +311,7 @@ public partial class MainPage : ContentPage
 
             if (aRightSide[8] == aBackSide[5])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideToRight_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBottomSideToRight_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -319,7 +319,7 @@ public partial class MainPage : ContentPage
 
             if (aRightSide[8] == aLeftSide[5])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBottomSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBottomSideHalfTurn_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
@@ -350,19 +350,19 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToLeftSide_Text) == false)
+        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToLeftSide_Text) == false)
         //    return;
         //TurnCubeFrontSideToLeftSide(true);
 
-        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToRightSide_Text) == false)
+        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToRightSide_Text) == false)
         //    return;
         //TurnCubeFrontSideToRightSide(true);
 
-        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToTopSide_Text) == false)
+        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToTopSide_Text) == false)
         //    return;
         //TurnCubeFrontSideToTopSide(true);
 
-        //if (await ExplainTurnCubeQuestion(null, CubeLang.TurnCubeFrontSideToBottomSide_Text) == false)
+        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToBottomSide_Text) == false)
         //    return;
         //TurnCubeFrontSideToBottomSide(true);
 
@@ -379,7 +379,7 @@ public partial class MainPage : ContentPage
         {
             if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnFrontSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnFrontSideHalfTurn_Text) == false)
                     return false;
                 TurnFrontSideTo("+");
                 TurnFrontSideTo("+");
@@ -388,7 +388,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnLeftSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnLeftSideHalfTurn_Text) == false)
                     return false;
                 TurnLeftSideTo("+");
                 TurnLeftSideTo("+");
@@ -397,7 +397,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnRightSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnRightSideHalfTurn_Text) == false)
                     return false;
                 TurnRightSideTo("+");
                 TurnRightSideTo("+");
@@ -406,7 +406,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
             {
-                if (await ExplainTurnCubeQuestion(null, CubeLang.TurnBackSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestion(CubeLang.TurnBackSideHalfTurn_Text) == false)
                     return false;
                 TurnBackSideTo("+");
                 TurnBackSideTo("+");
@@ -1794,7 +1794,7 @@ public partial class MainPage : ContentPage
     }
 
     // Explain the turn of the cube with the option to continue or to stop.
-    private async Task<bool> ExplainTurnCubeQuestion(object sender, string cTurnCubeText)
+    private async Task<bool> ExplainTurnCubeQuestion(string cTurnCubeText)
     {
         string cTurnCubeSpeech = cTurnCubeText;
 
@@ -2406,7 +2406,7 @@ public partial class MainPage : ContentPage
             {
                 cts = new CancellationTokenSource();
 
-                SpeechOptions options = new SpeechOptions()
+                SpeechOptions options = new()
                 {
                     Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
                 };
