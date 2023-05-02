@@ -607,6 +607,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go back..
+        /// </summary>
+        internal static string ToolTipGoBack_Text {
+            get {
+                return ResourceManager.GetString("ToolTipGoBack_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go forward..
+        /// </summary>
+        internal static string ToolTipGoForward_Text {
+            get {
+                return ResourceManager.GetString("ToolTipGoForward_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open the cube..
         /// </summary>
         internal static string ToolTipOpen_Text {
@@ -913,7 +931,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Website:.
+        ///   Looks up a localized string similar to Website.
         /// </summary>
         internal static string Website_Text {
             get {

@@ -310,6 +310,12 @@ Niet toegestaan:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thema:</value>
   </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Ga terug.</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Ga vooruit.</value>
+  </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
     <value>Open de kubus.</value>
   </data>
@@ -413,7 +419,7 @@ Niet toegestaan:</value>
     <value>Versie:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website:</value>
+    <value>Website</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>

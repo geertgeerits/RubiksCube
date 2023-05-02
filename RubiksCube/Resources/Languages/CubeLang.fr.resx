@@ -310,6 +310,12 @@ Interdit:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Thème:</value>
   </data>
+  <data name="ToolTipGoBack_Text" xml:space="preserve">
+    <value>Retourner.</value>
+  </data>
+  <data name="ToolTipGoForward_Text" xml:space="preserve">
+    <value>Aller de l'avant.</value>
+  </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
     <value>Ouvrez le cube.</value>
   </data>
@@ -413,7 +419,7 @@ Interdit:</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Site Internet:</value>
+    <value>Site Internet</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
     <value>Oui</value>
