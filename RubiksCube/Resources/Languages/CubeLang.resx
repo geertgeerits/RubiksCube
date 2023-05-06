@@ -311,19 +311,19 @@ Not allowed:</value>
     <value>Theme:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back.</value>
+    <value>Go back</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward.</value>
+    <value>Go forward</value>
   </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
-    <value>Open the cube.</value>
+    <value>Open the cube</value>
   </data>
   <data name="ToolTipSave_Text" xml:space="preserve">
-    <value>Save the cube.</value>
+    <value>Save the cube</value>
   </data>
   <data name="ToolTipSetColors_Text" xml:space="preserve">
-    <value>Toggle button: Drag the colors onto the cube.</value>
+    <value>Toggle button: Drag the colors onto the cube</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Turn the back side half a turn.</value>

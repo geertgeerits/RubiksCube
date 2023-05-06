@@ -311,19 +311,19 @@ Nicht erlaubt:</value>
     <value>Thema:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Geh zurück.</value>
+    <value>Geh zurück</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Vorwärts gehen.</value>
+    <value>Vorwärts gehen</value>
   </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
-    <value>Öffne den Würfel.</value>
+    <value>Öffne den Würfel</value>
   </data>
   <data name="ToolTipSave_Text" xml:space="preserve">
-    <value>Speichern Sie den Würfel.</value>
+    <value>Speichern Sie den Würfel</value>
   </data>
   <data name="ToolTipSetColors_Text" xml:space="preserve">
-    <value>Umschaltknopf: Ziehen Sie die Farben auf den Würfel.</value>
+    <value>Umschaltknopf: Ziehen Sie die Farben auf den Würfel</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die Rückseite um eine halbe Umdrehung.</value>

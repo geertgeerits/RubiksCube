@@ -607,7 +607,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go back..
+        ///   Looks up a localized string similar to Go back.
         /// </summary>
         internal static string ToolTipGoBack_Text {
             get {
@@ -616,7 +616,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Go forward..
+        ///   Looks up a localized string similar to Go forward.
         /// </summary>
         internal static string ToolTipGoForward_Text {
             get {
@@ -625,7 +625,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open the cube..
+        ///   Looks up a localized string similar to Open the cube.
         /// </summary>
         internal static string ToolTipOpen_Text {
             get {
@@ -634,7 +634,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save the cube..
+        ///   Looks up a localized string similar to Save the cube.
         /// </summary>
         internal static string ToolTipSave_Text {
             get {
@@ -643,7 +643,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toggle button: Drag the colors onto the cube..
+        ///   Looks up a localized string similar to Toggle button: Drag the colors onto the cube.
         /// </summary>
         internal static string ToolTipSetColors_Text {
             get {

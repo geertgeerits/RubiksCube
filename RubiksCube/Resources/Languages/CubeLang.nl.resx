@@ -311,19 +311,19 @@ Niet toegestaan:</value>
     <value>Thema:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Ga terug.</value>
+    <value>Ga terug</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Ga vooruit.</value>
+    <value>Ga vooruit</value>
   </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
-    <value>Open de kubus.</value>
+    <value>Open de kubus</value>
   </data>
   <data name="ToolTipSave_Text" xml:space="preserve">
-    <value>Bewaar de kubus.</value>
+    <value>Bewaar de kubus</value>
   </data>
   <data name="ToolTipSetColors_Text" xml:space="preserve">
-    <value>Wisselknop: sleep de kleuren naar de kubus.</value>
+    <value>Wisselknop: sleep de kleuren naar de kubus</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Draai de achterkant een halve slag.</value>

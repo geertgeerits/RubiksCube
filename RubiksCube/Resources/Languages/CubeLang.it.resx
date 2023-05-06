@@ -311,19 +311,19 @@ Non autorizzato:</value>
     <value>Tema:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Torna indietro.</value>
+    <value>Torna indietro</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Vai avanti.</value>
+    <value>Vai avanti</value>
   </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
-    <value>Apri il cubo.</value>
+    <value>Apri il cubo</value>
   </data>
   <data name="ToolTipSave_Text" xml:space="preserve">
-    <value>Salva il cubo.</value>
+    <value>Salva il cubo</value>
   </data>
   <data name="ToolTipSetColors_Text" xml:space="preserve">
-    <value>Pulsante di commutazione: trascina i colori sul cubo.</value>
+    <value>Pulsante di commutazione: trascina i colori sul cubo</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Girare il lato posteriore di mezzo giro.</value>

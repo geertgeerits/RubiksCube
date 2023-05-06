@@ -311,19 +311,19 @@ Interdit:</value>
     <value>Thème:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Retourner.</value>
+    <value>Retourner</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Aller de l'avant.</value>
+    <value>Aller de l'avant</value>
   </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
-    <value>Ouvrez le cube.</value>
+    <value>Ouvrez le cube</value>
   </data>
   <data name="ToolTipSave_Text" xml:space="preserve">
-    <value>Enregistrez le cube.</value>
+    <value>Enregistrez le cube</value>
   </data>
   <data name="ToolTipSetColors_Text" xml:space="preserve">
-    <value>Bouton bascule: faites glisser les couleurs sur le cube.</value>
+    <value>Bouton bascule: faites glisser les couleurs sur le cube</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
     <value>Tournez la face arrière d'un demi-tour.</value>
