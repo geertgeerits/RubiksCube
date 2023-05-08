@@ -85,41 +85,37 @@
                 </ImageButton>
             </HorizontalStackLayout>
 
-            <Label></Label>
-
             <Label
                 x:Name="lblPrivacyPolicy"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
+                Margin="0,10,0,0"
                 FontSize="13"
                 Text="Privacy Policy: No personal and other data is stored or passed on to myself and others.">
             </Label>
-
-            <Label></Label>
 
             <Label
                 x:Name="lblLicense"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
+                Margin="0,10,0,0"
                 FontSize="13"
                 Text="License: This application may be used freely for non-commercial purposes.
                       &#10; &#10;Use this program entirely at your own risk.">
             </Label>
 
-            <Label></Label>
-
             <Label
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
+                Margin="0,10,0,0"
                 FontSize="13"
                 Text="{x:Static resx:CubeLang.LicenseMit2_Text}">
             </Label>
 
-            <Label></Label>
-
             <Label
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
+                Margin="0,10,0,0"
                 FontSize="13"
                 Text="{x:Static resx:CubeLang.CubeHelp_Text}">
             </Label>
