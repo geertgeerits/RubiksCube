@@ -126,9 +126,6 @@ The supporting languages are: Dutch, English, French, German, Italian, Portugues
 
 You can always contact me for any corrections.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Agree</value>
   </data>
@@ -218,6 +215,9 @@ For the other sides you always have to 'imagine' that you are directly in front 
 Characters 1-2: Red
 Characters 3-4: Green
 Characters 5-6: Blue</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Information</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Language speech:</value>

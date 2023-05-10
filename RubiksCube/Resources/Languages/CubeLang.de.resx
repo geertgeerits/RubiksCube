@@ -126,9 +126,6 @@ Die unterstützenden Sprachen sind: Niederländisch, Englisch, Französisch, Deu
 
 Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Über</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Zustimmen</value>
   </data>
@@ -218,6 +215,9 @@ Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor de
 Zeichen 1-2: Rot
 Zeichen 3-4: Grün
 Zeichen 5-6: Blau</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Information</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Sprache Rede:</value>

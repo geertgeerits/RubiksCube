@@ -8,7 +8,7 @@
     <NavigationPage.TitleView>
         <Label
             Style="{StaticResource labelStyleShellTitleView}"
-            Text="{x:Static resx:CubeLang.About_Text}">
+            Text="{x:Static resx:CubeLang.Info_Text}">
         </Label>
     </NavigationPage.TitleView>
 

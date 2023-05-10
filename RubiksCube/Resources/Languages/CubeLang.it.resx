@@ -126,9 +126,6 @@ Le lingue di supporto sono: olandese, inglese, francese, tedesco, italiano, port
 
 Puoi sempre contattarmi per eventuali correzioni.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Informazioni</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Accetto</value>
   </data>
@@ -218,6 +215,9 @@ Per gli altri lati devi sempre 'immaginare' di essere direttamente davanti al la
 Caratteri 1-2: Rosso
 Caratteri 3-4: Verde
 Caratteri 5-6: Blu</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informazione</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Discorso in lingua:</value>

@@ -126,9 +126,6 @@ De ondersteunende talen zijn: Nederlands, Engels, Frans, Duits, Italiaans, Portu
 
 Voor eventuele correcties kunt u altijd contact met mij opnemen.</value>
   </data>
-  <data name="About_Text" xml:space="preserve">
-    <value>Info</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Akkoord</value>
   </data>
@@ -218,6 +215,9 @@ Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draa
 Karakters 1-2: rood
 Karakters 3-4: groen
 Karakters 5-6: blauw</value>
+  </data>
+  <data name="Info_Text" xml:space="preserve">
+    <value>Informatie</value>
   </data>
   <data name="LanguageSpeech_Text" xml:space="preserve">
     <value>Taal spraak:</value>
