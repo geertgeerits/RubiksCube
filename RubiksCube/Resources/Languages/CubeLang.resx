@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Text to speech: Not all languages are supported that are provided in the application settings.
-This option varies from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
-
-Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
-The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
-
-You can always contact me for any corrections.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Agree</value>
   </data>
@@ -215,6 +206,15 @@ For the other sides you always have to 'imagine' that you are directly in front 
 Characters 1-2: Red
 Characters 3-4: Green
 Characters 5-6: Blue</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Text to speech: Not all languages are supported that are provided in the application settings.
+This option varies from device to device and the installed languages. It is possible that for some languages the translation to and from speech is done over the internet by the concerned services.
+
+Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
+The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
+
+You can always contact me for any corrections.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>

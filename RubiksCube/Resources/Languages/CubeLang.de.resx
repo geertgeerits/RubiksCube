@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutExplanation_Text" xml:space="preserve">
-    <value>Text-zu-Sprache: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
-Diese Option variiert von Gerät zu Gerät und den installierten Sprachen. Es ist möglich, dass für einige Sprachen die Übersetzung in und aus der Sprache von den betreffenden Diensten über das Internet durchgeführt wird.
-
-Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
-Die unterstützenden Sprachen sind: Niederländisch, Englisch, Französisch, Deutsch, Italienisch, Portugiesisch und Spanisch.
-
-Sie können mich jederzeit für Korrekturen kontaktieren.</value>
-  </data>
   <data name="Agree_Text" xml:space="preserve">
     <value>Zustimmen</value>
   </data>
@@ -215,6 +206,15 @@ Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor de
 Zeichen 1-2: Rot
 Zeichen 3-4: Grün
 Zeichen 5-6: Blau</value>
+  </data>
+  <data name="InfoExplanation_Text" xml:space="preserve">
+    <value>Text-zu-Sprache: Es werden nicht alle Sprachen unterstützt, die in den Anwendungseinstellungen bereitgestellt werden.
+Diese Option variiert von Gerät zu Gerät und den installierten Sprachen. Es ist möglich, dass für einige Sprachen die Übersetzung in und aus der Sprache von den betreffenden Diensten über das Internet durchgeführt wird.
+
+Für die Übersetzung des Textes wurde Google Translate verwendet. Dies ist keine Garantie dafür, dass alle Übersetzungen korrekt sind.
+Die unterstützenden Sprachen sind: Niederländisch, Englisch, Französisch, Deutsch, Italienisch, Portugiesisch und Spanisch.
+
+Sie können mich jederzeit für Korrekturen kontaktieren.</value>
   </data>
   <data name="Info_Text" xml:space="preserve">
     <value>Information</value>

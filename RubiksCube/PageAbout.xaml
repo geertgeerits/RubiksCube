@@ -124,7 +124,7 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 FontSize="13"
-                Text="{x:Static resx:CubeLang.AboutExplanation_Text}">
+                Text="{x:Static resx:CubeLang.InfoExplanation_Text}">
             </Label>
 
         </StackLayout>
