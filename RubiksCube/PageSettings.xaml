@@ -50,9 +50,9 @@
                 </Label>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="1"
                     Grid.Column="0"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate Language_Text}">
                 </Label>
 
@@ -89,10 +89,9 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="2"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate LanguageSpeech_Text}">
                 </Label>
 
@@ -118,10 +117,9 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="3"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalTextAlignment="Center"
                     Text="{local:Translate Theme_Text}">
                 </Label>
 
@@ -154,10 +152,9 @@
                 </Border>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    VerticalOptions="Center"
                     Text="{local:Translate ExplainedByText_Text}">
                 </Label>
 
@@ -171,9 +168,9 @@
                 </Switch>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="5"
                     Grid.Column="0"
-                    VerticalOptions="Center"
                     Text="{local:Translate ExplainedBySpeech_Text}">
                 </Label>
 
@@ -187,9 +184,9 @@
                 </Switch>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="6"
                     Grid.Column="0"
-                    VerticalOptions="Center"
                     Text="{local:Translate CubeColors_Text}">
                 </Label>
 
