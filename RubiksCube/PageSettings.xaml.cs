@@ -389,7 +389,7 @@ public partial class PageSettings : ContentPage
             entry.IsEnabled = false;
             entry.IsEnabled = true;
 
-            _ = btnSettingsSave.Focus();
+            //_ = btnSettingsSave.Focus();
         }
     }
 
