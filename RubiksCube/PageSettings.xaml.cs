@@ -167,7 +167,7 @@ public partial class PageSettings : ContentPage
             _ => 0,
         };
 
-        lblExplanation.Text = CubeLang.SettingsSaved_Text + "\n";  // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
+        //lblExplanation.Text = CubeLang.SettingsSaved_Text + "\n";  // Workaround for !!!BUG!!! auto sizing label for small screens.  Add a new line to solve the bug.
     }
 
     // Fill the picker with the speech languages from the array.

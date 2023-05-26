@@ -1041,6 +1041,7 @@
                 x:Name="BtnSolve"
                 Style="{StaticResource buttonStyleDefault}"
                 Text="{local:Translate ButtonSolve_Text}"
+                ToolTipProperties.Text="{local:Translate ButtonSolve_Text}"
                 Clicked="OnBtnSolveClicked">
             </Button>
 
@@ -1084,6 +1085,7 @@
                 x:Name="BtnReset"
                 Style="{StaticResource buttonStyleDefault}"
                 Text="{local:Translate ButtonReset_Text}"
+                ToolTipProperties.Text="{local:Translate ButtonReset_Text}"
                 Clicked="OnBtnResetClicked">
             </Button>
         </HorizontalStackLayout>

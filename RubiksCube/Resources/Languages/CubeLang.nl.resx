@@ -316,6 +316,9 @@ Niet toegestaan:</value>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
     <value>Ga vooruit</value>
   </data>
+  <data name="ToolTipHelp_Text" xml:space="preserve">
+    <value>Hulp</value>
+  </data>
   <data name="ToolTipOpen_Text" xml:space="preserve">
     <value>Open de kubus</value>
   </data>

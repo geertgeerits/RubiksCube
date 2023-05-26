@@ -625,6 +625,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        internal static string ToolTipHelp_Text {
+            get {
+                return ResourceManager.GetString("ToolTipHelp_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open the cube.
         /// </summary>
         internal static string ToolTipOpen_Text {

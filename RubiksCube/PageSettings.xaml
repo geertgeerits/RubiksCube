@@ -28,7 +28,7 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                 ColumnDefinitions="150, 190*"
                 Margin="0"
                 ColumnSpacing="8"
@@ -220,6 +220,7 @@
                     <Button
                         Style="{StaticResource buttonStyleHelp}"
                         HorizontalOptions="Start"
+                        ToolTipProperties.Text="{local:Translate ToolTipHelp_Text}"
                         Clicked="OnSettingsHexColorClicked">
                     </Button>
                 </HorizontalStackLayout>
@@ -379,6 +380,7 @@
             WidthRequest="140"
             FontSize="15"
             Text="{local:Translate SettingsSave_Text}"
+            ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
             Clicked="OnSettingsSaveClicked">
         </Button>
 
@@ -391,6 +393,7 @@
             WidthRequest="140"
             FontSize="15"
             Text="{local:Translate SettingsReset_Text}"
+            ToolTipProperties.Text="{local:Translate SettingsReset_Text}"
             Clicked="OnSettingsResetClicked">
         </Button>
 
