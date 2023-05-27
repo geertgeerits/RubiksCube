@@ -27,7 +27,7 @@
             </ImageButton>
 
             <Label
-                Style="{StaticResource labelStyleShellTitleView}"
+                Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
                 Text="{local:Translate NameProgram_Text}">
@@ -49,9 +49,9 @@
     </NavigationPage.TitleView>
 
     <Grid
-        RowDefinitions="auto, *, auto"
-        ColumnDefinitions="40*, 290, 40*"
-        HorizontalOptions="Start"
+        RowDefinitions="Auto, *, Auto"
+        ColumnDefinitions="Auto, Auto, Auto"
+        HorizontalOptions="Center"
         Margin="5">
 
         <HorizontalStackLayout
@@ -143,20 +143,21 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="25, 30, 265, 30, 25, 25, 25, 265, 25"
-                ColumnDefinitions="40*, 290, 40*"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+                ColumnDefinitions="25, 290, 35"
                 ColumnSpacing="5">
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
                     TextDecorations="Underline"
                     Text="{local:Translate CubeOutsideView_Text}">
                 </Label>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="0"
                     Grid.Column="1"
                     HorizontalOptions="Center"
@@ -364,14 +365,15 @@
                 </HorizontalStackLayout>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
                     Grid.Column="1"
-                    HorizontalOptions="Start"
                     VerticalTextAlignment="Start"
                     Text="{local:Translate CubeFrontSide_Text}">
                 </Label>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -692,24 +694,25 @@
                 </VerticalStackLayout>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
                     VerticalTextAlignment="End"
                     TextDecorations="Underline"
                     Text="{local:Translate CubeInsideView_Text}">
                 </Label>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="6"
                     Grid.Column="1"
-                    HorizontalOptions="Start"
                     VerticalTextAlignment="End"
                     Text="{local:Translate CubeLeftSide_Text}">
                 </Label>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="6"
                     Grid.Column="1"
                     HorizontalOptions="End"
@@ -1021,6 +1024,7 @@
                 </VerticalStackLayout>
 
                 <Label
+                    Style="{StaticResource labelStyleDefault}"
                     Grid.Row="8"
                     Grid.Column="1"
                     HorizontalOptions="Center"
@@ -1040,6 +1044,7 @@
             <Button
                 x:Name="BtnSolve"
                 Style="{StaticResource buttonStyleDefault}"
+                WidthRequest="100"
                 Text="{local:Translate ButtonSolve_Text}"
                 ToolTipProperties.Text="{local:Translate ButtonSolve_Text}"
                 Clicked="OnBtnSolveClicked">
@@ -1084,6 +1089,7 @@
             <Button
                 x:Name="BtnReset"
                 Style="{StaticResource buttonStyleDefault}"
+                WidthRequest="100"
                 Text="{local:Translate ButtonReset_Text}"
                 ToolTipProperties.Text="{local:Translate ButtonReset_Text}"
                 Clicked="OnBtnResetClicked">
