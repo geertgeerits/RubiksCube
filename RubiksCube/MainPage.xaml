@@ -143,9 +143,9 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                 ColumnDefinitions="25, 290, 35"
-                ColumnSpacing="5">
+                ColumnSpacing="2">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -158,15 +158,14 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="0"
+                    Grid.Row="1"
                     Grid.Column="1"
                     HorizontalOptions="Center"
-                    VerticalTextAlignment="End"
                     Text="{local:Translate CubeTopSide_Text}">
                 </Label>
 
                 <HorizontalStackLayout
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="1">
 
                     <ImageButton
@@ -230,7 +229,7 @@
                 </HorizontalStackLayout>
 
                 <VerticalStackLayout
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="0">
 
                     <ImageButton
@@ -265,7 +264,7 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="2">
 
                     <ImageButton
@@ -299,90 +298,8 @@
                     </ImageButton>
                 </VerticalStackLayout>
 
-                <HorizontalStackLayout
-                    Grid.Row="3"
-                    Grid.Column="1">
-
-                    <ImageButton
-                        x:Name="imgbtnTurnLeftSideToLeft"
-                        Style="{StaticResource imageButtonArrowVertical}"
-                        Margin="16,0,0,0"
-                        VerticalOptions="Start"
-                        Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnLeftSideToLeft_Text}"
-                        Clicked="OnTurnLeftSideToLeftClicked">
-                    </ImageButton>
-
-                    <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToTopSide"
-                        Style="{StaticResource imageButtonArrowVertical}"
-                        Margin="26,0,0,0"
-                        VerticalOptions="Start"
-                        Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnFrontMiddleToTopSide_Text}"
-                        Clicked="OnTurnFrontMiddleToTopSideClicked">
-                    </ImageButton>
-
-                    <ImageButton
-                        x:Name="imgbtnTurnRightSideToRight"
-                        Style="{StaticResource imageButtonArrowVertical}"
-                        Margin="30,0,0,0"
-                        VerticalOptions="Start"
-                        Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnRightSideToRight_Text}"
-                        Clicked="OnTurnRightSideToRightClicked">
-                    </ImageButton>
-
-                    <ImageButton
-                        x:Name="imgbtnTurnFrontSideToLeft"
-                        Style="{StaticResource imageButtonArrowVertical}"
-                        Margin="34,0,0,0"
-                        VerticalOptions="Start"
-                        Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnFrontSideToLeft_Text}"
-                        Clicked="OnTurnFrontSideToLeftClicked">
-                    </ImageButton>
-
-                    <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToTopSide"
-                        Style="{StaticResource imageButtonArrowVertical}"
-                        Margin="22,0,0,0"
-                        VerticalOptions="Start"
-                        Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnRightMiddleToTopSide_Text}"
-                        Clicked="OnTurnRightMiddleToTopSideClicked">
-                    </ImageButton>
-
-                    <ImageButton
-                        x:Name="imgbtnTurnBackSideToRight"
-                        Style="{StaticResource imageButtonArrowVertical}"
-                        Margin="20,0,0,0"
-                        VerticalOptions="Start"
-                        Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnBackSideToRight_Text}"
-                        Clicked="OnTurnBackSideToRightClicked">
-                    </ImageButton>
-                </HorizontalStackLayout>
-
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="4"
-                    Grid.Column="1"
-                    VerticalTextAlignment="Start"
-                    Text="{local:Translate CubeFrontSide_Text}">
-                </Label>
-
-                <Label
-                    Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="4"
-                    Grid.Column="1"
-                    HorizontalOptions="End"
-                    VerticalTextAlignment="Start"
-                    Text="{local:Translate CubeRightSide_Text}">
-                </Label>
-
                 <VerticalStackLayout
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="1">
 
                     <HorizontalStackLayout
@@ -693,19 +610,100 @@
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
 
+                <HorizontalStackLayout
+                    Grid.Row="4"
+                    Grid.Column="1">
+
+                    <ImageButton
+                        x:Name="imgbtnTurnLeftSideToLeft"
+                        Style="{StaticResource imageButtonArrowVertical}"
+                        Margin="16,0,0,0"
+                        VerticalOptions="Start"
+                        Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="{local:Translate TurnLeftSideToLeft_Text}"
+                        Clicked="OnTurnLeftSideToLeftClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnTurnFrontMiddleToTopSide"
+                        Style="{StaticResource imageButtonArrowVertical}"
+                        Margin="26,0,0,0"
+                        VerticalOptions="Start"
+                        Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="{local:Translate TurnFrontMiddleToTopSide_Text}"
+                        Clicked="OnTurnFrontMiddleToTopSideClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnTurnRightSideToRight"
+                        Style="{StaticResource imageButtonArrowVertical}"
+                        Margin="30,0,0,0"
+                        VerticalOptions="Start"
+                        Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="{local:Translate TurnRightSideToRight_Text}"
+                        Clicked="OnTurnRightSideToRightClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnTurnFrontSideToLeft"
+                        Style="{StaticResource imageButtonArrowVertical}"
+                        Margin="34,0,0,0"
+                        VerticalOptions="Start"
+                        Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="{local:Translate TurnFrontSideToLeft_Text}"
+                        Clicked="OnTurnFrontSideToLeftClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnTurnRightMiddleToTopSide"
+                        Style="{StaticResource imageButtonArrowVertical}"
+                        Margin="22,0,0,0"
+                        VerticalOptions="Start"
+                        Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="{local:Translate TurnRightMiddleToTopSide_Text}"
+                        Clicked="OnTurnRightMiddleToTopSideClicked">
+                    </ImageButton>
+
+                    <ImageButton
+                        x:Name="imgbtnTurnBackSideToRight"
+                        Style="{StaticResource imageButtonArrowVertical}"
+                        Margin="20,0,0,0"
+                        VerticalOptions="Start"
+                        Source="arrow_up_32p.png"
+                        ToolTipProperties.Text="{local:Translate TurnBackSideToRight_Text}"
+                        Clicked="OnTurnBackSideToRightClicked">
+                    </ImageButton>
+                </HorizontalStackLayout>
+
                 <Label
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="5"
+                    Grid.Column="1"
+                    VerticalTextAlignment="Start"
+                    Text="{local:Translate CubeFrontSide_Text}">
+                </Label>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    VerticalTextAlignment="Start"
+                    Text="{local:Translate CubeRightSide_Text}">
+                </Label>
+
+                <Label
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    VerticalTextAlignment="End"
                     TextDecorations="Underline"
                     Text="{local:Translate CubeInsideView_Text}">
                 </Label>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="1"
                     VerticalTextAlignment="End"
                     Text="{local:Translate CubeLeftSide_Text}">
@@ -713,7 +711,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalTextAlignment="End"
@@ -721,7 +719,7 @@
                 </Label>
 
                 <VerticalStackLayout
-                    Grid.Row="7"
+                    Grid.Row="8"
                     Grid.Column="1">
                 
                     <HorizontalStackLayout>
@@ -1025,7 +1023,7 @@
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalTextAlignment="Start"
@@ -1035,7 +1033,7 @@
         </ScrollView>
 
         <HorizontalStackLayout
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             HorizontalOptions="Center"
