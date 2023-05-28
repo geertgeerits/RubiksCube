@@ -13,8 +13,7 @@
 
     <ScrollView>
         <StackLayout
-            Margin="15"
-            Spacing="4">
+            Margin="10">
 
             <Label
                 Style="{StaticResource labelStyleDefault}"
@@ -29,23 +28,18 @@
 
             <Label
                 x:Name="lblVersion"
-                Style="{StaticResource labelStyleDefault}"
-                Text="{x:Static resx:CubeLang.Version_Text}">
+                Style="{StaticResource labelStyleDefault}">
             </Label>
 
             <Label
                 x:Name="lblCopyright"
-                Style="{StaticResource labelStyleDefault}"
-                Text="{x:Static resx:CubeLang.Copyright_Text}">
+                Style="{StaticResource labelStyleDefault}">
             </Label>
 
-            <HorizontalStackLayout
-                Spacing="10">
-                
+            <HorizontalStackLayout>
                 <Label
                     x:Name="lblEmail"
-                    Style="{StaticResource labelStyleDefault}"
-                    Text="{x:Static resx:CubeLang.Email_Text}">
+                    Style="{StaticResource labelStyleDefault}">
                 </Label>
 
                 <ImageButton
@@ -58,13 +52,10 @@
                 </ImageButton>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout
-                Spacing="10">
-                
+            <HorizontalStackLayout>
                 <Label
                     x:Name="lblWebsite"
-                    Style="{StaticResource labelStyleDefault}"
-                    Text="{x:Static resx:CubeLang.Website_Text}">
+                    Style="{StaticResource labelStyleDefault}">
                 </Label>
 
                 <ImageButton
@@ -79,14 +70,12 @@
 
             <Label
                 x:Name="lblPrivacyPolicy"
-                Style="{StaticResource labelStyleInfo}"
-                Text="{x:Static resx:CubeLang.PrivacyPolicy_Text}">
+                Style="{StaticResource labelStyleInfo}">
             </Label>
 
             <Label
                 x:Name="lblLicense"
-                Style="{StaticResource labelStyleInfo}"
-                Text="{x:Static resx:CubeLang.License_Text}">
+                Style="{StaticResource labelStyleInfo}">
             </Label>
 
             <Label
