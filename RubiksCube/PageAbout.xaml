@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
-             x:Class="RubiksCube.PageAbout"
-             Title="PageAbout">
+             x:Class="RubiksCube.PageAbout">
 
     <NavigationPage.TitleView>
         <Label
@@ -16,33 +15,28 @@
         <StackLayout
             Margin="15"
             Spacing="4">
-            
+
             <Label
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
+                Style="{StaticResource labelStyleDefault}"
                 Text="{x:Static resx:CubeLang.NameProgram_Text}"
-                FontSize="20"
-                FontAttributes="Bold">
+                FontSize="18">
             </Label>
 
             <Label
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
+                Style="{StaticResource labelStyleDefault}"
                 Text="{x:Static resx:CubeLang.Description_Text}">
             </Label>
 
             <Label
                 x:Name="lblVersion"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                Text="Version:">
+                Style="{StaticResource labelStyleDefault}"
+                Text="{x:Static resx:CubeLang.Version_Text}">
             </Label>
 
             <Label
                 x:Name="lblCopyright"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                Text="Copyright ©">
+                Style="{StaticResource labelStyleDefault}"
+                Text="{x:Static resx:CubeLang.Copyright_Text}">
             </Label>
 
             <HorizontalStackLayout
@@ -50,9 +44,8 @@
                 
                 <Label
                     x:Name="lblEmail"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Start"
-                    Text="E-mail:">
+                    Style="{StaticResource labelStyleDefault}"
+                    Text="{x:Static resx:CubeLang.Email_Text}">
                 </Label>
 
                 <ImageButton
@@ -70,9 +63,8 @@
                 
                 <Label
                     x:Name="lblWebsite"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Start"
-                    Text="Website:">
+                    Style="{StaticResource labelStyleDefault}"
+                    Text="{x:Static resx:CubeLang.Website_Text}">
                 </Label>
 
                 <ImageButton
@@ -87,43 +79,28 @@
 
             <Label
                 x:Name="lblPrivacyPolicy"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                Margin="0,10,0,0"
-                FontSize="13"
-                Text="Privacy Policy: No personal and other data is stored or passed on to myself and others.">
+                Style="{StaticResource labelStyleInfo}"
+                Text="{x:Static resx:CubeLang.PrivacyPolicy_Text}">
             </Label>
 
             <Label
                 x:Name="lblLicense"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                Margin="0,10,0,0"
-                FontSize="13"
-                Text="License: This application may be used freely for non-commercial purposes.
-                      &#10; &#10;Use this program entirely at your own risk.">
+                Style="{StaticResource labelStyleInfo}"
+                Text="{x:Static resx:CubeLang.License_Text}">
             </Label>
 
             <Label
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                Margin="0,10,0,0"
-                FontSize="13"
+                Style="{StaticResource labelStyleInfo}"
                 Text="{x:Static resx:CubeLang.LicenseMit2_Text}">
             </Label>
 
             <Label
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                Margin="0,10,0,0"
-                FontSize="13"
+                Style="{StaticResource labelStyleInfo}"
                 Text="{x:Static resx:CubeLang.CubeHelp_Text}">
             </Label>
 
             <Label
-                VerticalOptions="Center" 
-                HorizontalOptions="Start"
-                FontSize="13"
+                Style="{StaticResource labelStyleInfo}"
                 Text="{x:Static resx:CubeLang.InfoExplanation_Text}">
             </Label>
 
