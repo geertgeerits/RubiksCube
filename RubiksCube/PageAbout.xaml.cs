@@ -21,8 +21,10 @@ public partial class PageAbout : ContentPage
         lblCopyright.Text = CubeLang.Copyright_Text + " © 1981-2023 Geert Geerits";
         lblEmail.Text = CubeLang.Email_Text + " geertgeerits@gmail.com";
         lblWebsite.Text = CubeLang.Website_Text + ": ../rubikscube";
-        lblPrivacyPolicy.Text = CubeLang.PrivacyPolicyTitle_Text + " " + CubeLang.PrivacyPolicy_Text;
-        lblLicense.Text = CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
+        lblPrivacyPolicy.Text = "\n" + CubeLang.PrivacyPolicyTitle_Text + " " + CubeLang.PrivacyPolicy_Text;
+        lblLicense.Text = "\n" + CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
+        lblHelp.Text = "\n" + CubeLang.CubeHelp_Text;
+        lblExplanation.Text = "\n" + CubeLang.InfoExplanation_Text;
     }
 
     // Open e-mail program.
