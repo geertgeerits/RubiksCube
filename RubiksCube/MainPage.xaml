@@ -50,7 +50,7 @@
 
     <Grid
         RowDefinitions="Auto, *, Auto"
-        ColumnDefinitions="Auto, Auto, Auto"
+        ColumnDefinitions="100*, 150, 100*"
         HorizontalOptions="Center"
         Margin="5">
 
@@ -143,9 +143,8 @@
             Orientation="Vertical">
 
             <Grid
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-                ColumnDefinitions="25, 290, 35"
-                ColumnSpacing="2">
+                Style="{StaticResource gridStyleCube}"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -1032,22 +1031,22 @@
             </Grid>
         </ScrollView>
 
-        <HorizontalStackLayout
+        <Button
+            x:Name="BtnSolve"
+            Style="{StaticResource buttonStyleDefault}"
             Grid.Row="3"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
+            Text="{local:Translate ButtonSolve_Text}"
+            ToolTipProperties.Text="{local:Translate ButtonSolve_Text}"
+            Clicked="OnBtnSolveClicked">
+        </Button>
+
+        <HorizontalStackLayout
+            Grid.Row="3"
+            Grid.Column="1"
             HorizontalOptions="Center"
             Spacing="10">
             
-            <Button
-                x:Name="BtnSolve"
-                Style="{StaticResource buttonStyleDefault}"
-                WidthRequest="100"
-                Text="{local:Translate ButtonSolve_Text}"
-                ToolTipProperties.Text="{local:Translate ButtonSolve_Text}"
-                Clicked="OnBtnSolveClicked">
-            </Button>
-
             <ImageButton
                 x:Name="imgbtnSetColors"
                 Source="cube_mixedcolors_48p.png"
@@ -1083,15 +1082,17 @@
                 ToolTipProperties.Text="{local:Translate ToolTipSave_Text}"
                 Clicked="OnButtonSaveClicked">
             </ImageButton>
-
-            <Button
-                x:Name="BtnReset"
-                Style="{StaticResource buttonStyleDefault}"
-                WidthRequest="100"
-                Text="{local:Translate ButtonReset_Text}"
-                ToolTipProperties.Text="{local:Translate ButtonReset_Text}"
-                Clicked="OnBtnResetClicked">
-            </Button>
         </HorizontalStackLayout>
+
+        <Button
+            x:Name="BtnReset"
+            Style="{StaticResource buttonStyleDefault}"
+            Grid.Row="3"
+            Grid.Column="2"
+            Text="{local:Translate ButtonReset_Text}"
+            ToolTipProperties.Text="{local:Translate ButtonReset_Text}"
+            Clicked="OnBtnResetClicked">
+        </Button>
+        
     </Grid>
 </ContentPage>
