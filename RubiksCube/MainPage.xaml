@@ -6,12 +6,13 @@
              NavigationPage.HasBackButton="False"
              Loaded="OnPageLoad"
              Appearing="OnPageAppearing">
-    
+
     <NavigationPage.TitleView>
-        <Grid RowDefinitions="50"
-              ColumnDefinitions="60, 140*, 60"
-              Margin="5"
-              BackgroundColor="#FFD000">
+        <Grid
+            RowDefinitions="50"
+            ColumnDefinitions="60, 140*, 60"
+            Margin="5"
+            BackgroundColor="#FFD000">
 
             <ImageButton
                 x:Name="imgbtnAbout"

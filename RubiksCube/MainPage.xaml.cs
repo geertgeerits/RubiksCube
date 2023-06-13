@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-06-08 (YYYY-MM-DD)
+// Date ........: 2023-06-13 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -11,29 +11,11 @@
 // Thanks to ...: Gerald Versluis
 
 using Microsoft.Maui.Controls.Shapes;
-using RubiksCube.Resources.Languages;
-using System.Globalization;
 
 namespace RubiksCube;
 
 public partial class MainPage : ContentPage
 {
-    // Global variables for all pages part of Rubik's Cube.
-    public static string cTheme;
-    public static string cLanguage;
-    public static bool bLanguageChanged = false;
-    public static string cLanguageSpeech;
-    public static string[] cLanguageLocales;
-    public static bool bLanguageLocalesExist = false;
-    public static bool bExplainText = false;
-    public static bool bExplainSpeech = false;
-    public static string cCubeColor1;
-    public static string cCubeColor2;
-    public static string cCubeColor3;
-    public static string cCubeColor4;
-    public static string cCubeColor5;
-    public static string cCubeColor6;
-
     // Local variables.
     private readonly bool bLicense;
     private IEnumerable<Locale> locales;
@@ -63,25 +45,25 @@ public partial class MainPage : ContentPage
         }
 
         // Get the saved settings.
-        cTheme = Preferences.Default.Get("SettingTheme", "System");
-        cLanguage = Preferences.Default.Get("SettingLanguage", "");
-        cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
+        Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
+        Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
+        Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         bLicense = Preferences.Default.Get("SettingLicense", false);
-        bExplainText = Preferences.Default.Get("SettingExplainText", true);
-        bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
-        cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Red
-        cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#FFFF00");   // Yellow
-        cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#0000FF");   // Blue
-        cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
-        cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // White
-        cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FF8000");   // Orange
+        Globals.bExplainText = Preferences.Default.Get("SettingExplainText", true);
+        Globals.bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
+        Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Red
+        Globals.cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#FFFF00");   // Yellow
+        Globals.cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#0000FF");   // Blue
+        Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
+        Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // White
+        Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FF8000");   // Orange
 
         // Set the theme.
-        if (cTheme == "Light")
+        if (Globals.cTheme == "Light")
         {
             Application.Current.UserAppTheme = AppTheme.Light;
         }
-        else if (cTheme == "Dark")
+        else if (Globals.cTheme == "Dark")
         {
             Application.Current.UserAppTheme = AppTheme.Dark;
         }
@@ -93,14 +75,14 @@ public partial class MainPage : ContentPage
         // Get and set the system OS user language.
         try
         {
-            if (cLanguage == "")
+            if (Globals.cLanguage == "")
             {
-                cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+                Globals.cLanguage = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
             }
         }
         catch (Exception)
         {
-            cLanguage = "en";
+            Globals.cLanguage = "en";
         }
 
         SetTextLanguage();
@@ -110,7 +92,7 @@ public partial class MainPage : ContentPage
 
         try
         {
-            if (cLanguageSpeech == "")
+            if (Globals.cLanguageSpeech == "")
             {
                 cCultureName = Thread.CurrentThread.CurrentCulture.Name;
             }
@@ -124,12 +106,12 @@ public partial class MainPage : ContentPage
         InitializeTextToSpeech(cCultureName);
 
         // Initialize the cube colors.
-        aCubeColors[1] = cCubeColor1;
-        aCubeColors[2] = cCubeColor2;
-        aCubeColors[3] = cCubeColor3;
-        aCubeColors[4] = cCubeColor4;
-        aCubeColors[5] = cCubeColor5;
-        aCubeColors[6] = cCubeColor6;
+        aCubeColors[1] = Globals.cCubeColor1;
+        aCubeColors[2] = Globals.cCubeColor2;
+        aCubeColors[3] = Globals.cCubeColor3;
+        aCubeColors[4] = Globals.cCubeColor4;
+        aCubeColors[5] = Globals.cCubeColor5;
+        aCubeColors[6] = Globals.cCubeColor6;
 
         // Reset the colors of the cube.
         ResetCube();
@@ -240,12 +222,12 @@ public partial class MainPage : ContentPage
         //IsEnabledArrows(false);
         IsVisibleArrows(false);
 
-        bool bExplainTextSaved = bExplainText;
-        bExplainText = false;
+        bool bExplainTextSaved = Globals.bExplainText;
+        Globals.bExplainText = false;
         
         await SolveTheCube();
         
-        bExplainText = bExplainTextSaved;
+        Globals.bExplainText = bExplainTextSaved;
 
         //IsEnabledArrows(true);
         IsVisibleArrows(true);
@@ -819,7 +801,7 @@ public partial class MainPage : ContentPage
             return false;
         }
 
-        if (bExplainSpeech)
+        if (Globals.bExplainSpeech)
         {
             ConvertTextToSpeech(CubeLang.MessageCubeIsSolved_Text);
         }
@@ -1770,7 +1752,7 @@ public partial class MainPage : ContentPage
 
         string cTurnCubeSpeech = cTurnCubeText;
 
-        if (bExplainSpeech)
+        if (Globals.bExplainSpeech)
         {
             // If the right of the text = ' (+).' or ' (-).' remove it.
             if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
@@ -1781,7 +1763,7 @@ public partial class MainPage : ContentPage
             ConvertTextToSpeech(cTurnCubeSpeech);
         }
 
-        if (bExplainText)
+        if (Globals.bExplainText)
         {
             await DisplayAlert("", cTurnCubeText, CubeLang.ButtonClose_Text);
         }
@@ -1798,7 +1780,7 @@ public partial class MainPage : ContentPage
     {
         string cTurnCubeSpeech = cTurnCubeText;
 
-        if (bExplainSpeech)
+        if (Globals.bExplainSpeech)
         {
             // If the right of the text = ' (+).' or ' (-).' remove it.
             if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
@@ -2066,12 +2048,12 @@ public partial class MainPage : ContentPage
     // Restore the cube colors from the arrays.
     private void GetCubeColorsFromArrays()
     {
-        cCubeColor1 = aCubeColors[1];
-        cCubeColor2 = aCubeColors[2];
-        cCubeColor3 = aCubeColors[3];
-        cCubeColor4 = aCubeColors[4];
-        cCubeColor5 = aCubeColors[5];
-        cCubeColor6 = aCubeColors[6];
+        Globals.cCubeColor1 = aCubeColors[1];
+        Globals.cCubeColor2 = aCubeColors[2];
+        Globals.cCubeColor3 = aCubeColors[3];
+        Globals.cCubeColor4 = aCubeColors[4];
+        Globals.cCubeColor5 = aCubeColors[5];
+        Globals.cCubeColor6 = aCubeColors[6];
 
         plgCubeColor1.Fill = Color.FromArgb(aCubeColors[1]);
         plgCubeColor2.Fill = Color.FromArgb(aCubeColors[2]);
@@ -2270,10 +2252,10 @@ public partial class MainPage : ContentPage
     // Set language using the Appearing event of the MainPage.xaml.
     private void OnPageAppearing(object sender, EventArgs e)
     {
-        if (bLanguageChanged)
+        if (Globals.bLanguageChanged)
         {
             SetTextLanguage();
-            bLanguageChanged = false;
+            Globals.bLanguageChanged = false;
         }
     }
 
@@ -2281,21 +2263,7 @@ public partial class MainPage : ContentPage
     private static void SetTextLanguage()
     {
         // Set the current UI culture of the selected language.
-        SetCultureSelectedLanguage();
-    }
-
-    // Set the current UI culture of the selected language.
-    public static void SetCultureSelectedLanguage()
-    {
-        try
-        {
-            var switchToCulture = new CultureInfo(cLanguage);
-            LocalizationResourceManager.Instance.SetCulture(switchToCulture);
-        }
-        catch
-        {
-            // Do nothing.
-        }
+        Globals.SetCultureSelectedLanguage();
     }
 
     // Initialize text to speech and fill the the array with the speech languages.
@@ -2322,26 +2290,26 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        bLanguageLocalesExist = true;
+        Globals.bLanguageLocalesExist = true;
 
         // Put the locales in the array and sort the array.
-        cLanguageLocales = new string[nTotalItems];
+        Globals.cLanguageLocales = new string[nTotalItems];
         int nItem = 0;
 
         foreach (var l in locales)
         {
-            cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
+            Globals.cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
             nItem++;
         }
 
-        Array.Sort(cLanguageLocales);
+        Array.Sort(Globals.cLanguageLocales);
 
         // Search for the language after a first start or reset of the application.
-        if (cLanguageSpeech == "")
+        if (Globals.cLanguageSpeech == "")
         {
             SearchArrayWithSpeechLanguages(cCultureName);
         }
-        //await DisplayAlert("cLanguageSpeech", cLanguageSpeech, "OK");  // For testing.
+        //await DisplayAlert("Globals.cLanguageSpeech", Globals.cLanguageSpeech, "OK");  // For testing.
     }
 
     // Search for the language after a first start or reset of the application.
@@ -2349,34 +2317,34 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            int nTotalItems = cLanguageLocales.Length;
+            int nTotalItems = Globals.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
-                if (cLanguageLocales[nItem].StartsWith(cCultureName))
+                if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
                 {
-                    cLanguageSpeech = cLanguageLocales[nItem];
+                    Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
                     break;
                 }
             }
 
-            // If the language is not found try it with the language (cLanguage) of the user setting for this app.
-            if (cLanguageSpeech == "")
+            // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app.
+            if (Globals.cLanguageSpeech == "")
             {
                 for (int nItem = 0; nItem < nTotalItems; nItem++)
                 {
-                    if (cLanguageLocales[nItem].StartsWith(cLanguage))
+                    if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
                     {
-                        cLanguageSpeech = cLanguageLocales[nItem];
+                        Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
                         break;
                     }
                 }
             }
 
             // If the language is still not found use the first language in the array.
-            if (cLanguageSpeech == "")
+            if (Globals.cLanguageSpeech == "")
             {
-                cLanguageSpeech = cLanguageLocales[0];
+                Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
             }
         }
         catch (Exception ex)
@@ -2408,7 +2376,7 @@ public partial class MainPage : ContentPage
 
                 SpeechOptions options = new()
                 {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == cLanguageSpeech)
+                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
                 };
 
                 await TextToSpeech.Default.SpeakAsync(cTurnCubeText, options, cancelToken: cts.Token);

@@ -1,5 +1,3 @@
-using RubiksCube.Resources.Languages;
-
 namespace RubiksCube;
 
 public partial class PageAbout : ContentPage

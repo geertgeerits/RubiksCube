@@ -1,6 +1,4 @@
-using RubiksCube.Resources.Languages;
 using System.Diagnostics;
-using System.Globalization;
 
 namespace RubiksCube;
 
@@ -26,7 +24,7 @@ public partial class PageSettings : ContentPage
         SetLanguage();
 
         // Set the current language in the picker.
-        pckLanguage.SelectedIndex = MainPage.cLanguage switch
+        pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
             // German (Deutsch).
             "de" => 0,
@@ -54,16 +52,16 @@ public partial class PageSettings : ContentPage
         FillPickerWithSpeechLanguages();
 
         // Set the explaination of text and speech to false or true.
-        swtExplainText.IsToggled = MainPage.bExplainText;
-        swtExplainSpeech.IsToggled = MainPage.bExplainSpeech;
+        swtExplainText.IsToggled = Globals.bExplainText;
+        swtExplainSpeech.IsToggled = Globals.bExplainSpeech;
 
         // Initialize the cube colors.
-        plgCubeColor1.Fill = Color.FromArgb(MainPage.cCubeColor1);
-        plgCubeColor2.Fill = Color.FromArgb(MainPage.cCubeColor2);
-        plgCubeColor3.Fill = Color.FromArgb(MainPage.cCubeColor3);
-        plgCubeColor4.Fill = Color.FromArgb(MainPage.cCubeColor4);
-        plgCubeColor5.Fill = Color.FromArgb(MainPage.cCubeColor5);
-        plgCubeColor6.Fill = Color.FromArgb(MainPage.cCubeColor6);
+        plgCubeColor1.Fill = Color.FromArgb(Globals.cCubeColor1);
+        plgCubeColor2.Fill = Color.FromArgb(Globals.cCubeColor2);
+        plgCubeColor3.Fill = Color.FromArgb(Globals.cCubeColor3);
+        plgCubeColor4.Fill = Color.FromArgb(Globals.cCubeColor4);
+        plgCubeColor5.Fill = Color.FromArgb(Globals.cCubeColor5);
+        plgCubeColor6.Fill = Color.FromArgb(Globals.cCubeColor6);
 
         // Workaround for !!!BUG!!! in iOS with the Slider right margin.
 #if IOS
@@ -87,14 +85,14 @@ public partial class PageSettings : ContentPage
     // Picker language clicked event.
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
-        string cLanguageOld = MainPage.cLanguage;
+        string cLanguageOld = Globals.cLanguage;
 
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
         {
-            MainPage.cLanguage = selectedIndex switch
+            Globals.cLanguage = selectedIndex switch
             {
                 // German (Deutsch).
                 0 => "de",
@@ -119,22 +117,22 @@ public partial class PageSettings : ContentPage
             };
         }
 
-        if (cLanguageOld != MainPage.cLanguage)
+        if (cLanguageOld != Globals.cLanguage)
         {
-            MainPage.bLanguageChanged = true;
+            Globals.bLanguageChanged = true;
 
             // Set the current UI culture of the selected language.
-            MainPage.SetCultureSelectedLanguage();
+            Globals.SetCultureSelectedLanguage();
 
             // Put text in the chosen language in the controls and variables.
             SetLanguage();
 
             // Search the new language in the cLanguageLocales array and select the new speech language.
-            int nTotalItems = MainPage.cLanguageLocales.Length;
+            int nTotalItems = Globals.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
             {
-                if (MainPage.cLanguageLocales[nItem].StartsWith(MainPage.cLanguage))
+                if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
                 {
                     pckLanguageSpeech.SelectedIndex = nItem;
                     break;
@@ -155,7 +153,7 @@ public partial class PageSettings : ContentPage
         pckTheme.ItemsSource = ThemeList;
 
         // Set the current theme in the picker.
-        pckTheme.SelectedIndex = MainPage.cTheme switch
+        pckTheme.SelectedIndex = Globals.cTheme switch
         {
             // Light.
             "Light" => 1,
@@ -177,20 +175,20 @@ public partial class PageSettings : ContentPage
         // If there are no locales then return.
         bool bIsSetSelectedIndex = false;
 
-        if (!MainPage.bLanguageLocalesExist)
+        if (!Globals.bLanguageLocalesExist)
         {
             pckLanguageSpeech.IsEnabled = false;
             return;
         }
 
         // Put the sorted locales from the array in the picker and select the saved language.
-        int nTotalItems = MainPage.cLanguageLocales.Length;
+        int nTotalItems = Globals.cLanguageLocales.Length;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
         {
-            pckLanguageSpeech.Items.Add(MainPage.cLanguageLocales[nItem]);
+            pckLanguageSpeech.Items.Add(Globals.cLanguageLocales[nItem]);
 
-            if (MainPage.cLanguageSpeech == MainPage.cLanguageLocales[nItem])
+            if (Globals.cLanguageSpeech == Globals.cLanguageLocales[nItem])
             {
                 pckLanguageSpeech.SelectedIndex = nItem;
                 bIsSetSelectedIndex = true;
@@ -212,7 +210,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.cLanguageSpeech = picker.Items[selectedIndex];
+            Globals.cLanguageSpeech = picker.Items[selectedIndex];
         }
     }
 
@@ -224,7 +222,7 @@ public partial class PageSettings : ContentPage
 
         if (selectedIndex != -1)
         {
-            MainPage.cTheme = selectedIndex switch
+            Globals.cTheme = selectedIndex switch
             {
                 // Light.
                 1 => "Light",
@@ -241,13 +239,13 @@ public partial class PageSettings : ContentPage
     // Switch explain text toggled.
     private void OnSwtExplainTextToggled(object sender, ToggledEventArgs e)
     {
-        MainPage.bExplainText = swtExplainText.IsToggled;
+        Globals.bExplainText = swtExplainText.IsToggled;
     }
 
     // Switch explain speech toggled.
     private void OnSwtExplainSpeechToggled(object sender, ToggledEventArgs e)
     {
-        MainPage.bExplainSpeech = swtExplainSpeech.IsToggled;
+        Globals.bExplainSpeech = swtExplainSpeech.IsToggled;
     }
 
     // On entry HexColor text changed event.
@@ -276,33 +274,33 @@ public partial class PageSettings : ContentPage
 
         if (rbnCubeColor1.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor1[1..];
-            HexToRgbColor(MainPage.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.cCubeColor1[1..];
+            HexToRgbColor(Globals.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor2.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor2[1..];
-            HexToRgbColor(MainPage.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.cCubeColor2[1..];
+            HexToRgbColor(Globals.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor3.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor3[1..];
-            HexToRgbColor(MainPage.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.cCubeColor3[1..];
+            HexToRgbColor(Globals.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor4.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor4[1..];
-            HexToRgbColor(MainPage.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.cCubeColor4[1..];
+            HexToRgbColor(Globals.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor5.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor5[1..];
-            HexToRgbColor(MainPage.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.cCubeColor5[1..];
+            HexToRgbColor(Globals.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor6.IsChecked)
         {
-            entHexColor.Text = MainPage.cCubeColor6[1..];
-            HexToRgbColor(MainPage.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.cCubeColor6[1..];
+            HexToRgbColor(Globals.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
         }
 
         sldColorRed.Value = nRed;
@@ -344,33 +342,33 @@ public partial class PageSettings : ContentPage
         {
             if (rbnCubeColor1.IsChecked)
             {
-                MainPage.cCubeColor1 = "#" + entHexColor.Text;
-                HexToRgbColor(MainPage.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
+                Globals.cCubeColor1 = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor2.IsChecked)
             {
-                MainPage.cCubeColor2 = "#" + entHexColor.Text;
-                HexToRgbColor(MainPage.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
+                Globals.cCubeColor2 = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor3.IsChecked)
             {
-                MainPage.cCubeColor3 = "#" + entHexColor.Text;
-                HexToRgbColor(MainPage.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
+                Globals.cCubeColor3 = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor4.IsChecked)
             {
-                MainPage.cCubeColor4 = "#" + entHexColor.Text;
-                HexToRgbColor(MainPage.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
+                Globals.cCubeColor4 = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor5.IsChecked)
             {
-                MainPage.cCubeColor5 = "#" + entHexColor.Text;
-                HexToRgbColor(MainPage.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
+                Globals.cCubeColor5 = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor6.IsChecked)
             {
-                MainPage.cCubeColor6 = "#" + entHexColor.Text;
-                HexToRgbColor(MainPage.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
+                Globals.cCubeColor6 = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
             }
 
             sldColorRed.Value = nRed;
@@ -450,32 +448,32 @@ public partial class PageSettings : ContentPage
         if (rbnCubeColor1.IsChecked)
         {
             plgCubeColor1.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor1 = "#" + cColorFgHex;
+            Globals.cCubeColor1 = "#" + cColorFgHex;
         }
         else if(rbnCubeColor2.IsChecked)
         {
             plgCubeColor2.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor2 = "#" + cColorFgHex;
+            Globals.cCubeColor2 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor3.IsChecked)
         {
             plgCubeColor3.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor3 = "#" + cColorFgHex;
+            Globals.cCubeColor3 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor4.IsChecked)
         {
             plgCubeColor4.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor4 = "#" + cColorFgHex;
+            Globals.cCubeColor4 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor5.IsChecked)
         {
             plgCubeColor5.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor5 = "#" + cColorFgHex;
+            Globals.cCubeColor5 = "#" + cColorFgHex;
         }
         else if (rbnCubeColor6.IsChecked)
         {
             plgCubeColor6.Fill = Color.FromArgb(cColorFgHex);
-            MainPage.cCubeColor6 = "#" + cColorFgHex;
+            Globals.cCubeColor6 = "#" + cColorFgHex;
         }
     }
 
@@ -496,17 +494,17 @@ public partial class PageSettings : ContentPage
     // Button save settings clicked event.
     private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
-        Preferences.Default.Set("SettingTheme", MainPage.cTheme);
-        Preferences.Default.Set("SettingLanguage", MainPage.cLanguage);
-        Preferences.Default.Set("SettingLanguageSpeech", MainPage.cLanguageSpeech);
-        Preferences.Default.Set("SettingExplainText", MainPage.bExplainText);
-        Preferences.Default.Set("SettingExplainSpeech", MainPage.bExplainSpeech);
-        Preferences.Default.Set("SettingCubeColor1", MainPage.cCubeColor1);
-        Preferences.Default.Set("SettingCubeColor2", MainPage.cCubeColor2);
-        Preferences.Default.Set("SettingCubeColor3", MainPage.cCubeColor3);
-        Preferences.Default.Set("SettingCubeColor4", MainPage.cCubeColor4);
-        Preferences.Default.Set("SettingCubeColor5", MainPage.cCubeColor5);
-        Preferences.Default.Set("SettingCubeColor6", MainPage.cCubeColor6);
+        Preferences.Default.Set("SettingTheme", Globals.cTheme);
+        Preferences.Default.Set("SettingLanguage", Globals.cLanguage);
+        Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
+        Preferences.Default.Set("SettingExplainText", Globals.bExplainText);
+        Preferences.Default.Set("SettingExplainSpeech", Globals.bExplainSpeech);
+        Preferences.Default.Set("SettingCubeColor1", Globals.cCubeColor1);
+        Preferences.Default.Set("SettingCubeColor2", Globals.cCubeColor2);
+        Preferences.Default.Set("SettingCubeColor3", Globals.cCubeColor3);
+        Preferences.Default.Set("SettingCubeColor4", Globals.cCubeColor4);
+        Preferences.Default.Set("SettingCubeColor5", Globals.cCubeColor5);
+        Preferences.Default.Set("SettingCubeColor6", Globals.cCubeColor6);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
