@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-06-13 (YYYY-MM-DD)
+// Date ........: 2023-06-14 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -48,7 +48,6 @@ public partial class MainPage : ContentPage
         Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
-        bLicense = Preferences.Default.Get("SettingLicense", false);
         Globals.bExplainText = Preferences.Default.Get("SettingExplainText", true);
         Globals.bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
         Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Red
@@ -57,6 +56,7 @@ public partial class MainPage : ContentPage
         Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
         Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // White
         Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FF8000");   // Orange
+        bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme.
         if (Globals.cTheme == "Light")
