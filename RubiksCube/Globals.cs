@@ -7,6 +7,7 @@ namespace RubiksCube;
 // Global variables and methods.
 static class Globals
 {
+    // Global variables.
     public static string cTheme;
     public static string cLanguage;
     public static bool bLanguageChanged = false;
