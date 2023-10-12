@@ -16,6 +16,7 @@ static class Globals
     public static bool bLanguageLocalesExist = false;
     public static bool bExplainText = false;
     public static bool bExplainSpeech = false;
+    public static bool bLicense;
     public static string cCubeColor1;
     public static string cCubeColor2;
     public static string cCubeColor3;

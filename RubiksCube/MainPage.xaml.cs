@@ -2,8 +2,8 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-06-14 (YYYY-MM-DD)
-// Language ....: Microsoft Visual Studio 2022: .NET MAUI C# 11.0
+// Date ........: 2023-10-12 (YYYY-MM-DD)
+// Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
 //                The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
@@ -17,7 +17,6 @@ namespace RubiksCube;
 public partial class MainPage : ContentPage
 {
     // Local variables.
-    private readonly bool bLicense;
     private IEnumerable<Locale> locales;
     private CancellationTokenSource cts;
     private bool bTextToSpeechIsBusy = false;
@@ -56,7 +55,7 @@ public partial class MainPage : ContentPage
         Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
         Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // White
         Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FF8000");   // Orange
-        bLicense = Preferences.Default.Get("SettingLicense", false);
+        Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme.
         if (Globals.cTheme == "Light")
@@ -2220,11 +2219,11 @@ public partial class MainPage : ContentPage
         // Show license.
         string cLicense = CubeLang.License_Text + "\n\n" + CubeLang.LicenseMit2_Text;
 
-        if (bLicense == false)
+        if (Globals.bLicense == false)
         {
-            bool bAnswer = await Application.Current.MainPage.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
+            Globals.bLicense = await Application.Current.MainPage.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
 
-            if (bAnswer)
+            if (Globals.bLicense)
             {
                 Preferences.Default.Set("SettingLicense", true);
             }
