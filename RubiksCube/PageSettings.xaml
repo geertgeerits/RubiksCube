@@ -192,115 +192,118 @@
                         Clicked="OnSettingsHexColorClicked">
                     </Button>
                 </HorizontalStackLayout>
-
-                <HorizontalStackLayout
-                    Grid.Row="7"
+                
+                <Grid
+                    RowDefinitions="Auto, Auto"
+                    ColumnDefinitions="*, 50, 50, 50, 50, 50, 50, *"
+                    Grid.Row="8"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    BackgroundColor="Gray"
-                    Padding="5"
-                    Spacing="20"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center">
+                    Grid.ColumnSpan="2">
 
                     <Polygon
                         x:Name="plgCubeColor1"
                         Style="{StaticResource polygonStyleColor}"
+                        Grid.Row="0"
+                        Grid.Column="1"
                         Fill="Red">
                     </Polygon>
 
                     <Polygon
                         x:Name="plgCubeColor2"
                         Style="{StaticResource polygonStyleColor}"
+                        Grid.Row="0"
+                        Grid.Column="2"
                         Fill="Yellow">
                     </Polygon>
 
                     <Polygon
                         x:Name="plgCubeColor3"
                         Style="{StaticResource polygonStyleColor}"
+                        Grid.Row="0"
+                        Grid.Column="3"
                         Fill="Blue">
                     </Polygon>
 
                     <Polygon
                         x:Name="plgCubeColor4"
                         Style="{StaticResource polygonStyleColor}"
+                        Grid.Row="0"
+                        Grid.Column="4"
                         Fill="Green">
                     </Polygon>
 
                     <Polygon
                         x:Name="plgCubeColor5"
                         Style="{StaticResource polygonStyleColor}"
+                        Grid.Row="0"
+                        Grid.Column="5"
                         Fill="White">
                     </Polygon>
 
                     <Polygon
                         x:Name="plgCubeColor6"
                         Style="{StaticResource polygonStyleColor}"
-                        HorizontalOptions="End"
+                        Grid.Row="0"
+                        Grid.Column="6"
                         Fill="Orange">
                     </Polygon>
-                </HorizontalStackLayout>
-
-                <HorizontalStackLayout
-                    Grid.Row="8"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Padding="5"
-                    Spacing="20"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center">
 
                     <RadioButton
                         x:Name="rbnCubeColor1"
-                        GroupName="rbgCubeColors"
+                        Style="{StaticResource radiobuttonStyleColor}"
+                        Grid.Row="1"
+                        Grid.Column="1"
                         Value="rbnCubeColor1"
-                        WidthRequest="30"
                         IsChecked="True"
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
                         x:Name="rbnCubeColor2"
-                        GroupName="rbgCubeColors"
+                        Style="{StaticResource radiobuttonStyleColor}"
+                        Grid.Row="1"
+                        Grid.Column="2"
                         Value="rbnCubeColor2"
-                        WidthRequest="30"
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
                         x:Name="rbnCubeColor3"
-                        GroupName="rbgCubeColors"
+                        Style="{StaticResource radiobuttonStyleColor}"
+                        Grid.Row="1"
+                        Grid.Column="3"
                         Value="rbnCubeColor3"
-                        WidthRequest="30"
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
                         x:Name="rbnCubeColor4"
-                        GroupName="rbgCubeColors"
+                        Style="{StaticResource radiobuttonStyleColor}"
+                        Grid.Row="1"
+                        Grid.Column="4"
                         Value="rbnCubeColor4"
-                        WidthRequest="30"
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
                         x:Name="rbnCubeColor5"
-                        GroupName="rbgCubeColors"
+                        Style="{StaticResource radiobuttonStyleColor}"
+                        Grid.Row="1"
+                        Grid.Column="5"
                         Value="rbnCubeColor5"
-                        WidthRequest="30"
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
 
                     <RadioButton
                         x:Name="rbnCubeColor6"
-                        GroupName="rbgCubeColors"
+                        Style="{StaticResource radiobuttonStyleColor}"
+                        Grid.Row="1"
+                        Grid.Column="6"
                         Value="rbnCubeColor6"
-                        HorizontalOptions="End"
-                        WidthRequest="30"
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
-                </HorizontalStackLayout>
-
+                </Grid>
+                
                 <Slider
                     x:Name="sldColorRed"
                     Style="{StaticResource sliderStyleColor}"

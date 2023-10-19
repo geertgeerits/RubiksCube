@@ -55,20 +55,19 @@
         HorizontalOptions="Center"
         Margin="5">
 
-        <HorizontalStackLayout
-            x:Name="hslCubeColorSelect"
+        <Grid
+            x:Name="grdCubeColorSelect"
+            RowDefinitions="Auto"
+            ColumnDefinitions="*, 50, 50, 50, 50, 50, 50, 50, *"
             Grid.Row="0"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
-            BackgroundColor="Transparent"
-            Padding="5"
-            Spacing="20"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
+            Grid.ColumnSpan="3">
 
             <Polygon
                 x:Name="plgCubeColorSelect"
                 Style="{StaticResource polygonStyleColor}"
+                Grid.Row="0"
+                Grid.Column="1"
                 Points="0,0 20,0 20,30 0,30"
                 Fill="Black"
                 IsVisible="False">
@@ -77,6 +76,8 @@
             <Polygon
                 x:Name="plgCubeColor1"
                 Style="{StaticResource polygonStyleColor}"
+                Grid.Row="0"
+                Grid.Column="2"                
                 Fill="Red"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
@@ -87,6 +88,8 @@
             <Polygon
                 x:Name="plgCubeColor2"
                 Style="{StaticResource polygonStyleColor}"
+                Grid.Row="0"
+                Grid.Column="3"                
                 Fill="Yellow"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
@@ -97,6 +100,8 @@
             <Polygon
                 x:Name="plgCubeColor3"
                 Style="{StaticResource polygonStyleColor}"
+                Grid.Row="0"
+                Grid.Column="4"                
                 Fill="Blue"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
@@ -107,6 +112,8 @@
             <Polygon
                 x:Name="plgCubeColor4"
                 Style="{StaticResource polygonStyleColor}"
+                Grid.Row="0"
+                Grid.Column="5"                
                 Fill="Green"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
@@ -117,6 +124,8 @@
             <Polygon
                 x:Name="plgCubeColor5"
                 Style="{StaticResource polygonStyleColor}"
+                Grid.Row="0"
+                Grid.Column="6"                
                 Fill="White"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
@@ -127,15 +136,16 @@
             <Polygon
                 x:Name="plgCubeColor6"
                 Style="{StaticResource polygonStyleColor}"
-                HorizontalOptions="End"
+                Grid.Row="0"
+                Grid.Column="7"                
                 Fill="Orange"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                 </Polygon.GestureRecognizers>
             </Polygon>
-        </HorizontalStackLayout>
-        
+        </Grid>
+
         <ScrollView
             Grid.Row="1"
             Grid.Column="0"

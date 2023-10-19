@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-10-15 (YYYY-MM-DD)
+// Date ........: 2023-10-19 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -152,8 +152,8 @@ public partial class MainPage : ContentPage
         if (bColorDrop)
         {
             BtnSolve.IsEnabled= false;
-            
-            hslCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
+
+            grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
             IsVisibleCubeColors(true);
             IsEnabledArrows(false);
 
@@ -202,7 +202,7 @@ public partial class MainPage : ContentPage
 
             IsEnabledArrows(true);
             IsVisibleCubeColors(false);
-            hslCubeColorSelect.BackgroundColor = Color.FromArgb("#00000000");
+            grdCubeColorSelect.BackgroundColor = Color.FromArgb("#00000000");
 
             BtnSolve.IsEnabled = true;
         }
