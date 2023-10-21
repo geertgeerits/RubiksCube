@@ -134,7 +134,6 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
                     Toggled="OnSwtExplainTextToggled">
                 </Switch>
 
@@ -150,7 +149,6 @@
                     Grid.Row="5"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
-                    HorizontalOptions="Start"
                     Toggled="OnSwtExplainSpeechToggled">
                 </Switch>
 

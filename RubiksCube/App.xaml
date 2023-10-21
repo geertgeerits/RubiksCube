@@ -16,8 +16,9 @@
             <Color x:Key="DarkGray">#505050</Color>
             <Color x:Key="LightEntryBG">#fdfdfd</Color>
             <Color x:Key="DarkEntryBG">#646464</Color>
+            <Color x:Key="OnColor">Green</Color>
 
-            <Style TargetType="Page" ApplyToDerivedTypes="True">
+                <Style TargetType="Page" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
             </Style>
 
@@ -156,7 +157,14 @@
                 <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
             </Style>
 
-            <Style x:Key="gridStyleInfo" TargetType="Grid">
+            <Style TargetType="Switch">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="OnColor" Value="LimeGreen" />
+                <!--<Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Thumb}, Dark={StaticResource Thumb}}" />-->
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+            
+                <Style x:Key="gridStyleInfo" TargetType="Grid">
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup>
