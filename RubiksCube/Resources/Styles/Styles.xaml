@@ -122,6 +122,7 @@
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="HorizontalOptions"  Value="Fill"/>
         <Setter Property="MinimumHeightRequest" Value="40"/>
+        <Setter Property="Margin" Value="{OnPlatform 0, Android=0, iOS=0, WinUI=0}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
@@ -287,6 +288,12 @@
         <Setter Property="StrokeThickness" Value="1" />
     </Style>
 
+    <Style x:Key="borderStyleGroup" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 5" />
+        <Setter Property="StrokeThickness" Value="1" />
+    </Style>
+
     <Style x:Key="labelStyleDefault" TargetType="Label">
         <Setter Property="Margin" Value="0" />
         <Setter Property="HorizontalOptions" Value="Start" />
@@ -387,7 +394,7 @@
         <Setter Property="VerticalOptions" Value="Center" />
         <!--<Setter Property="MinimumHeightRequest" Value="30" /> !!!BUG!!!-->
         <Setter Property="HeightRequest" Value="30" />
-        <Setter Property="Margin" Value="0,0,6,0" />
+        <Setter Property="Margin" Value="{OnPlatform '0,0,6,0', Android='0,0,6,0', iOS='0,0,6,0', WinUI='6,0,6,0'}" />
         <Setter Property="Minimum" Value="0" />
         <Setter Property="Maximum" Value="255" />
     </Style>

@@ -197,12 +197,21 @@
                     Grid.Row="8"
                     Grid.Column="0"
                     Grid.ColumnSpan="2">
+                   
+                    <Border
+                        Style="{StaticResource borderStyleGroup}"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="8">
+                    </Border>
 
                     <Polygon
                         x:Name="plgCubeColor1"
                         Style="{StaticResource polygonStyleColor}"
                         Grid.Row="0"
                         Grid.Column="1"
+                        Margin="0,3,0,0"
                         Fill="Red">
                     </Polygon>
 
@@ -211,6 +220,7 @@
                         Style="{StaticResource polygonStyleColor}"
                         Grid.Row="0"
                         Grid.Column="2"
+                        Margin="0,3,0,0"
                         Fill="Yellow">
                     </Polygon>
 
@@ -219,6 +229,7 @@
                         Style="{StaticResource polygonStyleColor}"
                         Grid.Row="0"
                         Grid.Column="3"
+                        Margin="0,3,0,0"
                         Fill="Blue">
                     </Polygon>
 
@@ -227,6 +238,7 @@
                         Style="{StaticResource polygonStyleColor}"
                         Grid.Row="0"
                         Grid.Column="4"
+                        Margin="0,3,0,0"
                         Fill="Green">
                     </Polygon>
 
@@ -235,6 +247,7 @@
                         Style="{StaticResource polygonStyleColor}"
                         Grid.Row="0"
                         Grid.Column="5"
+                        Margin="0,3,0,0"
                         Fill="White">
                     </Polygon>
 
@@ -243,9 +256,10 @@
                         Style="{StaticResource polygonStyleColor}"
                         Grid.Row="0"
                         Grid.Column="6"
+                        Margin="0,3,0,0"
                         Fill="Orange">
                     </Polygon>
-
+                   
                     <RadioButton
                         x:Name="rbnCubeColor1"
                         Style="{StaticResource radiobuttonStyleColor}"
@@ -301,7 +315,15 @@
                         CheckedChanged="OnRbnCubeColorCheckedChanged">
                     </RadioButton>
                 </Grid>
-                
+
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Grid.RowSpan="3"
+                    Grid.ColumnSpan="2">
+                </Border>
+
                 <Slider
                     x:Name="sldColorRed"
                     Style="{StaticResource sliderStyleColor}"
