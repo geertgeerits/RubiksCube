@@ -15,7 +15,7 @@ public partial class PageWebsite : ContentPage
         }
 
         // Set WebView properties.
-        wvWebpage.Source = "https://geertgeerits.wixsite.com/rubikscube";
+        wvWebpage.Source = "https://geertgeerits.wixsite.com/geertgeerits/rubiks-cube";
         wvWebpage.Navigating += OnNavigating;
         wvWebpage.Navigated += OnNavigated;
     }
