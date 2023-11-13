@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-11-09 (YYYY-MM-DD)
+// Date ........: 2023-11-13 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -18,8 +18,6 @@ public partial class MainPage : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
-    private CancellationTokenSource cts;
-    private bool bTextToSpeechIsBusy = false;
     private bool bColorDrop = false;
     private readonly string cColorArrowNotActive = "#E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "#FFD000";       // Light orange
@@ -2356,30 +2354,30 @@ public partial class MainPage : ContentPage
     private async void ConvertTextToSpeech(string cTurnCubeText)
     {
         // Cancel the text to speech.
-        if (bTextToSpeechIsBusy)
+        if (Globals.bTextToSpeechIsBusy)
         {
-            if (cts?.IsCancellationRequested ?? true)
+            if (Globals.cts?.IsCancellationRequested ?? true)
                 return;
 
-            cts.Cancel();
+            Globals.cts.Cancel();
         }
 
         // Start with the text to speech.
         if (cTurnCubeText != null && cTurnCubeText != "")
         {
-            bTextToSpeechIsBusy = true;
+            Globals.bTextToSpeechIsBusy = true;
 
             try
             {
-                cts = new CancellationTokenSource();
+                Globals.cts = new CancellationTokenSource();
 
                 SpeechOptions options = new()
                 {
                     Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
                 };
 
-                await TextToSpeech.Default.SpeakAsync(cTurnCubeText, options, cancelToken: cts.Token);
-                bTextToSpeechIsBusy = false;
+                await TextToSpeech.Default.SpeakAsync(cTurnCubeText, options, cancelToken: Globals.cts.Token);
+                Globals.bTextToSpeechIsBusy = false;
             }
             catch (Exception ex)
             {
