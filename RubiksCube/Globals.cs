@@ -27,6 +27,17 @@ static class Globals
     public static string cCubeColor6;
 
     // Global methods.
+    // Set the theme.
+    public static void SetTheme()
+    {
+        Application.Current.UserAppTheme = cTheme switch
+        {
+            "Light" => AppTheme.Light,
+            "Dark" => AppTheme.Dark,
+            _ => AppTheme.Unspecified,
+        };
+    }
+
     // Set the current UI culture of the selected language.
     public static void SetCultureSelectedLanguage()
     {

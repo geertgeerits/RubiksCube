@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-11-13 (YYYY-MM-DD)
+// Date ........: 2023-11-17 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -56,18 +56,7 @@ public partial class MainPage : ContentPage
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme.
-        if (Globals.cTheme == "Light")
-        {
-            Application.Current.UserAppTheme = AppTheme.Light;
-        }
-        else if (Globals.cTheme == "Dark")
-        {
-            Application.Current.UserAppTheme = AppTheme.Dark;
-        }
-        else
-        {
-            Application.Current.UserAppTheme = AppTheme.Unspecified;
-        }
+        Globals.SetTheme();
 
         // Get and set the system OS user language.
         try

@@ -44,7 +44,7 @@ public partial class PageAbout : ContentPage
         {
             string subject = "Rubik's Cube";
             string body = "";
-            string[] recipients = new[] { "geertgeerits@gmail.com" };
+            string[] recipients = ["geertgeerits@gmail.com"];
 
             var message = new EmailMessage
             {
@@ -67,22 +67,27 @@ public partial class PageAbout : ContentPage
     }
 
     // Open the page 'PageWebsite' to open the website in the WebView control.
-    private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
+    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console.
+    private async void OnbtnWebsiteLinkClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PageWebsite());
-    }
+#if ANDROID
+        try
+        {
+            Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/rubiks-cube");
+            BrowserLaunchOptions options = new()
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show
+            };
 
-    // Open website in default browser.
-    //private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        Uri uri = new("https://geertgeerits.wixsite.com/rubikscube");
-    //        await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-    //    }
-    //}
+            await Browser.Default.OpenAsync(uri, options);
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+        }
+#else
+        await Navigation.PushAsync(new PageWebsite());
+#endif
+    }
 }

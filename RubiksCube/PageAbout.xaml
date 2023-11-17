@@ -67,7 +67,7 @@
                             VerticalOptions="Center"
                             HeightRequest="24"
                             WidthRequest="24"
-                            Clicked="OnBtnWebsiteLinkClicked">
+                            Clicked="OnbtnWebsiteLinkClicked">
                         </ImageButton>
                     </HorizontalStackLayout>
 

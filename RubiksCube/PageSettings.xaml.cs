@@ -233,6 +233,9 @@ public partial class PageSettings : ContentPage
                 // System.
                 _ => "System",
             };
+            
+            // Set the theme.
+            Globals.SetTheme();
         }
     }
 
