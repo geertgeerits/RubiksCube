@@ -357,31 +357,9 @@
                     ValueChanged="OnSliderColorValueChanged">
                 </Slider>
 
-                <!--<Button
-                    Style="{StaticResource buttonStyleDefault}"
-                    IsVisible="{OnPlatform false, iOS=true, Android=false}"
-                    Grid.Row="12"
-                    Grid.Column="0"
-                    Text="{local:Translate SettingsSave_Text}"
-                    ToolTipProperties.Text="{local:Translate SettingsSave_Text}"
-                    Clicked="OnSettingsSaveClicked">
-                </Button>
-
-                <Button
-                    Style="{StaticResource buttonStyleDefault}"
-                    IsVisible="{OnPlatform false, iOS=true, Android=false}"
-                    Grid.Row="12"
-                    Grid.Column="1"
-                    Text="{local:Translate SettingsReset_Text}"
-                    ToolTipProperties.Text="{local:Translate SettingsReset_Text}"
-                    Clicked="OnSettingsResetClicked">
-                </Button>-->
-
             </Grid>
         </ScrollView>
 
-        <!--Solved in .NET 8 - !!!BUG!!! in IOS. The two buttons do not remain fixed at the bottom of the screen if the screen content is longer than the screen
-        (ie if scrolling is required). The two buttons are then no longer visible.-->
         <Button
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
