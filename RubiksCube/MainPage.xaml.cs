@@ -111,8 +111,7 @@ public partial class MainPage : ContentPage
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)
     {
-        //await Navigation.PushAsync(new PageSettings());
-        await Navigation.PushAsync(new PageCube());
+        await Navigation.PushAsync(new PageSettings());
     }
 
     // Select a color for dropping on a cube and put it in a tempory polygon.

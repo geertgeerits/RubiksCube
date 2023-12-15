@@ -739,7 +739,7 @@
                         <Polygon
                             x:Name="plgLeft2"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="44,0"
+                            AbsoluteLayout.LayoutBounds="44,22"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
@@ -750,7 +750,7 @@
                         <Polygon
                             x:Name="plgLeft3"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="0,44"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
@@ -772,7 +772,7 @@
                         <Polygon
                             x:Name="plgLeft5"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="44,54"
+                            AbsoluteLayout.LayoutBounds="44,76"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="LightGreen">
                             <Polygon.GestureRecognizers>
@@ -783,7 +783,7 @@
                         <Polygon
                             x:Name="plgLeft6"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,54"
+                            AbsoluteLayout.LayoutBounds="0,98"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="LightGreen">
                             <Polygon.GestureRecognizers>
@@ -794,7 +794,7 @@
                         <Polygon
                             x:Name="plgLeft7"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="88,108"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
@@ -805,7 +805,7 @@
                         <Polygon
                             x:Name="plgLeft8"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="44,130"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
@@ -816,7 +816,7 @@
                         <Polygon
                             x:Name="plgLeft9"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="0,152"
                             Points="40,0 40,50 0,70 0,20"
                             Fill="Green">
                             <Polygon.GestureRecognizers>
@@ -827,8 +827,8 @@
                         <Polygon
                             x:Name="plgBack1"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="240,0"
-                            Points="0,22 0,72 50,82 50,32"
+                            AbsoluteLayout.LayoutBounds="240,22"
+                            Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -838,8 +838,8 @@
                         <Polygon
                             x:Name="plgBack2"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="186,0"
-                            Points="0,22 0,72 50,82 50,32"
+                            AbsoluteLayout.LayoutBounds="186,11"
+                            Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -850,7 +850,7 @@
                             x:Name="plgBack3"
                             Style="{StaticResource polygonStyleCubeInside}"
                             AbsoluteLayout.LayoutBounds="132,0"
-                            Points="0,22 0,72 50,82 50,32"
+                            Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -860,9 +860,9 @@
                         <Polygon
                             x:Name="plgBack4"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="240,0"
-                            Points="0,22 0,72 50,82 50,32"
-                            Fill="Yellow">
+                            AbsoluteLayout.LayoutBounds="240,76"
+                            Points="0,0 0,50 50,60 50,10"
+                            Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
@@ -871,9 +871,9 @@
                         <Polygon
                             x:Name="plgBack5"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="188,0"
-                            Points="0,22 0,72 50,82 50,32"
-                            Fill="Yellow">
+                            AbsoluteLayout.LayoutBounds="186,65"
+                            Points="0,0 0,50 50,60 50,10"
+                            Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
@@ -882,9 +882,9 @@
                         <Polygon
                             x:Name="plgBack6"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="134,42"
-                            Points="0,22 0,72 50,82 50,32"
-                            Fill="Yellow">
+                            AbsoluteLayout.LayoutBounds="132,54"
+                            Points="0,0 0,50 50,60 50,10"
+                            Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
                             </Polygon.GestureRecognizers>
@@ -893,8 +893,8 @@
                         <Polygon
                             x:Name="plgBack7"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
-                            Points="0,22 0,72 50,82 50,32"
+                            AbsoluteLayout.LayoutBounds="240,129"
+                            Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -904,8 +904,8 @@
                         <Polygon
                             x:Name="plgBack8"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
-                            Points="0,22 0,72 50,82 50,32"
+                            AbsoluteLayout.LayoutBounds="186,118"
+                            Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -915,8 +915,8 @@
                         <Polygon
                             x:Name="plgBack9"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
-                            Points="0,22 0,72 50,82 50,32"
+                            AbsoluteLayout.LayoutBounds="132,107"
+                            Points="0,0 0,50 50,60 50,10"
                             Fill="White">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -926,7 +926,7 @@
                         <Polygon
                             x:Name="plgBottom1"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="2,206"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
@@ -937,9 +937,8 @@
                         <Polygon
                             x:Name="plgBottom2"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="57,218"
                             Points="40,0 0,20 50,30 90,10"
-                            Margin="-40,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -949,9 +948,8 @@
                         <Polygon
                             x:Name="plgBottom3"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="114,229"
                             Points="40,0 0,20 50,30 90,10"
-                            Margin="-80,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -961,7 +959,7 @@
                         <Polygon
                             x:Name="plgBottom4"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="46,184"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
@@ -972,9 +970,8 @@
                         <Polygon
                             x:Name="plgBottom5"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="102,195"
                             Points="40,0 0,20 50,30 90,10"
-                            Margin="-40,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -984,9 +981,8 @@
                         <Polygon
                             x:Name="plgBottom6"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="158,206"
                             Points="40,0 0,20 50,30 90,10"
-                            Margin="-80,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -996,7 +992,7 @@
                         <Polygon
                             x:Name="plgBottom7"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="91,161"
                             Points="40,0 0,20 50,30 90,10"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
@@ -1007,9 +1003,8 @@
                         <Polygon
                             x:Name="plgBottom8"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="146,172"
                             Points="40,0 0,20 50,30 90,10"
-                            Margin="-40,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
@@ -1019,9 +1014,8 @@
                         <Polygon
                             x:Name="plgBottom9"
                             Style="{StaticResource polygonStyleCubeInside}"
-                            AbsoluteLayout.LayoutBounds="0,0"
+                            AbsoluteLayout.LayoutBounds="201,183"
                             Points="40,0 0,20 50,30 90,10"
-                            Margin="-80,0,0,0"
                             Fill="Orange">
                             <Polygon.GestureRecognizers>
                                 <DropGestureRecognizer Drop="OnColorDrop" />
