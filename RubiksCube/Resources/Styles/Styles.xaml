@@ -205,8 +205,8 @@
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
                                         <ColumnDefinition Width="{OnIdiom 25, Phone=25, Tablet=50, Desktop=50}" />
-                                        <ColumnDefinition Width="{OnIdiom 290, Phone=290, Tablet=290, Desktop=290}" />
-                                        <ColumnDefinition Width="{OnIdiom 35, Phone=35, Tablet=50, Desktop=50}" />
+                                        <ColumnDefinition Width="{OnIdiom 295, Phone=295, Tablet=295, Desktop=295}" />
+                                        <ColumnDefinition Width="{OnIdiom 30, Phone=30, Tablet=50, Desktop=50}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
                             </Setter>
@@ -222,7 +222,7 @@
                                 <Setter.Value>
                                     <ColumnDefinitionCollection>
                                         <ColumnDefinition Width="{OnIdiom 100, Phone=100, Tablet=100, Desktop=100}" />
-                                        <ColumnDefinition Width="{OnIdiom 290, Phone=290, Tablet=290, Desktop=290}" />
+                                        <ColumnDefinition Width="{OnIdiom 295, Phone=295, Tablet=295, Desktop=295}" />
                                         <ColumnDefinition Width="{OnIdiom 100, Phone=100, Tablet=100, Desktop=100}" />
                                     </ColumnDefinitionCollection>
                                 </Setter.Value>
@@ -416,15 +416,17 @@
     </Style>
 
     <Style x:Key="polygonStyleCubeOutside" TargetType="Polygon">
+        <Setter Property="AbsoluteLayout.LayoutFlags" Value="None" />
         <Setter Property="Stroke" Value="Black" />
         <Setter Property="StrokeThickness" Value="4" />
     </Style>
 
     <Style x:Key="polygonStyleCubeInside" TargetType="Polygon">
+        <Setter Property="AbsoluteLayout.LayoutFlags" Value="None" />
         <Setter Property="Stroke" Value="Gray" />
         <Setter Property="StrokeThickness" Value="4" />
         <!--<Setter Property="StrokeDashArray" Value="1,1" />
-                <Setter Property="StrokeDashOffset" Value="6" />-->
+        <Setter Property="StrokeDashOffset" Value="6" />-->
     </Style>
 
     <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">
