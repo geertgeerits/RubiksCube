@@ -192,52 +192,6 @@
         <Setter Property="RowSpacing" Value="0" />
     </Style>
 
-    <Style x:Key="gridStyleCube" TargetType="Grid">
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup>
-                    <VisualState x:Name="Portrait">
-                        <VisualState.StateTriggers>
-                            <OrientationStateTrigger Orientation="Portrait" />
-                        </VisualState.StateTriggers>
-                        <VisualState.Setters>
-                            <Setter Property="ColumnDefinitions">
-                                <Setter.Value>
-                                    <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 25, Phone=25, Tablet=50, Desktop=50}" />
-                                        <ColumnDefinition Width="{OnIdiom 295, Phone=295, Tablet=295, Desktop=295}" />
-                                        <ColumnDefinition Width="{OnIdiom 30, Phone=30, Tablet=50, Desktop=50}" />
-                                    </ColumnDefinitionCollection>
-                                </Setter.Value>
-                            </Setter>
-                            <Setter Property="ColumnSpacing" Value="{OnIdiom 2, Phone=2, Tablet=10, Desktop=10}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="Landscape">
-                        <VisualState.StateTriggers>
-                            <OrientationStateTrigger Orientation="Landscape" />
-                        </VisualState.StateTriggers>
-                        <VisualState.Setters>
-                            <Setter Property="ColumnDefinitions">
-                                <Setter.Value>
-                                    <ColumnDefinitionCollection>
-                                        <ColumnDefinition Width="{OnIdiom 100, Phone=100, Tablet=100, Desktop=100}" />
-                                        <ColumnDefinition Width="{OnIdiom 295, Phone=295, Tablet=295, Desktop=295}" />
-                                        <ColumnDefinition Width="{OnIdiom 100, Phone=100, Tablet=100, Desktop=100}" />
-                                    </ColumnDefinitionCollection>
-                                </Setter.Value>
-                            </Setter>
-                            <Setter Property="ColumnSpacing" Value="{OnIdiom 10, Phone=10, Tablet=10, Desktop=10}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-        <Setter Property="HorizontalOptions" Value="Center" />
-        <Setter Property="Margin" Value="{OnIdiom 5, Phone=5, Tablet=10, Desktop=10}" />
-        <Setter Property="RowSpacing" Value="0" />
-    </Style>
-
     <Style x:Key="gridStyleSettings" TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
@@ -415,18 +369,46 @@
         <Setter Property="StrokeThickness" Value="1" />
     </Style>
 
-    <Style x:Key="polygonStyleCubeOutside" TargetType="Polygon">
-        <Setter Property="AbsoluteLayout.LayoutFlags" Value="None" />
+    <Style x:Key="polygonStyleCubeTop" TargetType="Polygon">
         <Setter Property="Stroke" Value="Black" />
         <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="Fill" Value="Red" />
+        <Setter Property="Points" Value="40,0 0,20 50,30 90,10" />
     </Style>
 
-    <Style x:Key="polygonStyleCubeInside" TargetType="Polygon">
-        <Setter Property="AbsoluteLayout.LayoutFlags" Value="None" />
+    <Style x:Key="polygonStyleCubeFront" TargetType="Polygon">
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="Fill" Value="Yellow" />
+        <Setter Property="Points" Value="0,0 0,50 50,60 50,10" />
+    </Style>
+
+    <Style x:Key="polygonStyleCubeRight" TargetType="Polygon">
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="Fill" Value="Blue" />
+        <Setter Property="Points" Value="0,30 0,80 40,60 40,10" />
+    </Style>
+
+    <Style x:Key="polygonStyleCubeLeft" TargetType="Polygon">
         <Setter Property="Stroke" Value="Gray" />
         <Setter Property="StrokeThickness" Value="4" />
-        <!--<Setter Property="StrokeDashArray" Value="1,1" />
-        <Setter Property="StrokeDashOffset" Value="6" />-->
+        <Setter Property="Fill" Value="Green" />
+        <Setter Property="Points" Value="40,0 40,50 0,70 0,20" />
+    </Style>
+
+    <Style x:Key="polygonStyleCubeBack" TargetType="Polygon">
+        <Setter Property="Stroke" Value="Gray" />
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="Fill" Value="White" />
+        <Setter Property="Points" Value="0,0 0,50 50,60 50,10" />
+    </Style>
+
+    <Style x:Key="polygonStyleCubeBottom" TargetType="Polygon">
+        <Setter Property="Stroke" Value="Gray" />
+        <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="Fill" Value="Orange" />
+        <Setter Property="Points" Value="40,0 0,20 50,30 90,10" />
     </Style>
 
     <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">
