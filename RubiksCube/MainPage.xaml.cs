@@ -47,12 +47,12 @@ public partial class MainPage : ContentPage
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         Globals.bExplainText = Preferences.Default.Get("SettingExplainText", true);
         Globals.bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
-        Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Red
-        Globals.cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#FFFF00");   // Yellow
+        Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FFFFFF");   // White
+        Globals.cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#FF0000");   // Red
         Globals.cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#0000FF");   // Blue
         Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
-        Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // White
-        Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FF8000");   // Orange
+        Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FF8000");   // Orange
+        Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Yellow
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme.
@@ -138,7 +138,7 @@ public partial class MainPage : ContentPage
 
         if (bColorDrop)
         {
-            BtnSolve.IsEnabled= false;
+            BtnSolve.IsEnabled = false;
 
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
             IsVisibleCubeColors(true);
