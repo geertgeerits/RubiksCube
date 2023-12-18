@@ -11,7 +11,7 @@
         <Grid
             RowDefinitions="50"
             ColumnDefinitions="60, 140*, 60"
-            Margin="5"
+            Margin="4"
             BackgroundColor="#FFD000">
 
             <ImageButton
