@@ -154,10 +154,14 @@
             Orientation="Vertical">
 
             <Grid
-                ColumnDefinitions="26, 294, 26"
                 RowDefinitions="Auto, Auto, Auto, 260, Auto, Auto, Auto, Auto, 262, Auto"
-                ColumnSpacing="4"
+                ColumnSpacing="{OnIdiom 4, Phone=4, Tablet=8, Desktop=8}"
                 HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{OnIdiom 26, Phone=26, Tablet=40, Desktop=40}" />
+                    <ColumnDefinition Width="294" />
+                    <ColumnDefinition Width="{OnIdiom 26, Phone=26, Tablet=40, Desktop=40}" />
+                </Grid.ColumnDefinitions>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
