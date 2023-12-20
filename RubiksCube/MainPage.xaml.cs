@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-12-18 (YYYY-MM-DD)
+// Date ........: 2023-12-20 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -28,6 +28,7 @@ public partial class MainPage : ContentPage
     private readonly string[] aLeftSide = new string[10];
     private readonly string[] aBackSide = new string[10];
     private readonly string[] aBottomSide = new string[10];
+    private bool bExplainTextTemp = false;
 
     public MainPage()
 	{
@@ -54,6 +55,8 @@ public partial class MainPage : ContentPage
         Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FF8000");   // Orange
         Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Yellow
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
+
+        bExplainTextTemp = false;
 
         // Set the theme.
         Globals.SetTheme();
@@ -208,13 +211,8 @@ public partial class MainPage : ContentPage
         //IsEnabledArrows(false);
         IsVisibleArrows(false);
 
-        bool bExplainTextSaved = Globals.bExplainText;
-        Globals.bExplainText = false;
-        
         await SolveTheCubeAsync();
         
-        Globals.bExplainText = bExplainTextSaved;
-
         //IsEnabledArrows(true);
         IsVisibleArrows(true);
     }
@@ -1749,7 +1747,7 @@ public partial class MainPage : ContentPage
             ConvertTextToSpeech(cTurnCubeSpeech);
         }
 
-        if (Globals.bExplainText)
+        if (bExplainTextTemp)
         {
             await DisplayAlert("", cTurnCubeText, CubeLang.ButtonClose_Text);
         }
@@ -2158,6 +2156,8 @@ public partial class MainPage : ContentPage
     // Set the arrows to visible or invisible.
     private void IsVisibleArrows(bool bVisibleInvisible)
     {
+        bExplainTextTemp = !bVisibleInvisible;
+
         imgbtnTurnFrontSideToRight.IsVisible = bVisibleInvisible;
         imgbtnTurnTopMiddleToRightSide.IsVisible = bVisibleInvisible;
         imgbtnTurnBackSideToLeft.IsVisible = bVisibleInvisible;
