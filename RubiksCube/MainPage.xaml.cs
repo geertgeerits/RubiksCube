@@ -19,8 +19,8 @@ public partial class MainPage : ContentPage
     // Local variables.
     private IEnumerable<Locale> locales;
     private bool bColorDrop = false;
-    private readonly string cColorArrowNotActive = "#E2E2E2";    // Lightgray
-    private readonly string cColorArrowActive = "#FFD000";       // Light orange
+    private readonly string cColorArrowInactive = "#E2E2E2";    // Lightgray
+    private readonly string cColorArrowActive = "#FFD000";      // Light orange
     private readonly string[] aCubeColors = new string[7];
     private readonly string[] aTopSide = new string[10];
     private readonly string[] aFrontSide = new string[10];
@@ -173,12 +173,12 @@ public partial class MainPage : ContentPage
                 return;
             }
 
-            imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
-            imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
-            imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
-            imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
-            imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
-            imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+            imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
 
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
@@ -205,11 +205,13 @@ public partial class MainPage : ContentPage
 
         bColorDrop = false;
 
-        IsVisibleArrows(false);
+        //IsVisibleArrows(false);
+        IsEnabledArrows(false);
 
         await SolveTheCubeAsync();
 
-        IsVisibleArrows(true);
+        IsEnabledArrows(true);
+        //IsVisibleArrows(true);
     }
 
     // Solve the cube.
@@ -224,14 +226,14 @@ public partial class MainPage : ContentPage
         // Solve the edges of the top layer - Chapter 4, page 14-2.
         if (aTopSide[5] == aFrontSide[4])
         {
-            if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnLeftSideToRight_Text) == false)
+            if (await ExplainTurnCubeQuestionAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text) == false)
                 return;
             TurnLeftSideTo("+");
             GetCubeColorsFromArrays();
 
             if (aLeftSide[8] == aFrontSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBottomSideToRight_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -239,7 +241,7 @@ public partial class MainPage : ContentPage
 
             if (aLeftSide[8] == aBackSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBottomSideToLeft_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text) == false)
                     return;
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
@@ -247,7 +249,7 @@ public partial class MainPage : ContentPage
 
             if (aLeftSide[8] == aRightSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBottomSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
@@ -257,14 +259,14 @@ public partial class MainPage : ContentPage
 
         if (aTopSide[5] == aFrontSide[6])
         {
-            if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnRightSideToLeft_Text) == false)
+            if (await ExplainTurnCubeQuestionAsync(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text) == false)
                 return;
             TurnRightSideTo("-");
             GetCubeColorsFromArrays();
 
             if (aRightSide[8] == aFrontSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBottomSideToLeft_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text) == false)
                     return;
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
@@ -272,7 +274,7 @@ public partial class MainPage : ContentPage
 
             if (aRightSide[8] == aBackSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBottomSideToRight_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -280,7 +282,7 @@ public partial class MainPage : ContentPage
 
             if (aRightSide[8] == aLeftSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBottomSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text) == false)
                     return;
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
@@ -340,7 +342,7 @@ public partial class MainPage : ContentPage
         {
             if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnFrontSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text) == false)
                     return false;
                 TurnFrontSideTo("+");
                 TurnFrontSideTo("+");
@@ -349,7 +351,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnLeftSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text) == false)
                     return false;
                 TurnLeftSideTo("+");
                 TurnLeftSideTo("+");
@@ -358,7 +360,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnRightSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text) == false)
                     return false;
                 TurnRightSideTo("+");
                 TurnRightSideTo("+");
@@ -367,7 +369,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(CubeLang.TurnBackSideHalfTurn_Text) == false)
+                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text) == false)
                     return false;
                 TurnBackSideTo("+");
                 TurnBackSideTo("+");
@@ -1750,13 +1752,17 @@ public partial class MainPage : ContentPage
         if (sender != null)
         {
             var imagebutton = (ImageButton)sender;
-            imagebutton.BackgroundColor = Color.FromArgb(cColorArrowNotActive);
+            imagebutton.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         }
     }
 
     // Explain the turn of the cube with the option to continue or to stop.
-    private async Task<bool> ExplainTurnCubeQuestionAsync(string cTurnCubeText)
+    private async Task<bool> ExplainTurnCubeQuestionAsync(ImageButton imgbtnArrow, string cTurnCubeText)
     {
+        // Set the arrow background color to Active.
+        imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowActive);
+
+        // Convert text to speech.
         string cTurnCubeSpeech = cTurnCubeText;
 
         if (Globals.bExplainSpeech)
@@ -1770,14 +1776,20 @@ public partial class MainPage : ContentPage
             ConvertTextToSpeech(cTurnCubeSpeech);
         }
 
+        // Show the text
         if (await DisplayAlert(CubeLang.Solve_Text, cTurnCubeText, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
         {
+            // Set the arrow background color to Inactive.
+            imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+
             return false;
         }
 
+        // Set the arrow background color to Inactive.
+        imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+
         return true;
     }
-
 
     // On clicked event: Save the cube.
     private void OnButtonSaveClicked(object sender, EventArgs e)
@@ -2170,6 +2182,29 @@ public partial class MainPage : ContentPage
         imgbtnTurnRightMiddleToTopSide.IsVisible = bVisibleInvisible;
         imgbtnTurnBackSideToRight.IsVisible = bVisibleInvisible;
     }
+
+    // Set the arrow background color to Inactive.
+    //private void SetArrowColorToInactive()
+    //{
+    //    imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //    imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    //}
 
     // Get the hex color code from a polygon fill property.
     // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
