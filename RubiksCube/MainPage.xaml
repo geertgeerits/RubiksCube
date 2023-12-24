@@ -163,12 +163,31 @@
                     <ColumnDefinition Width="{OnIdiom 26, Phone=26, Tablet=40, Desktop=40}" />
                 </Grid.ColumnDefinitions>
 
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
+                </Border>
+
                 <Label
+                    x:Name="lblCubeOutsideView"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="0"
-                    Grid.Column="1"
-                    TextDecorations="Underline"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
                     Text="{local:Translate CubeOutsideView_Text}">
+                </Label>
+
+                <Label
+                    x:Name="lblExplainTurnCube1"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
+                    IsVisible="False">
                 </Label>
 
                 <Label
@@ -626,12 +645,31 @@
                     Text="{local:Translate CubeRightSide_Text}">
                 </Label>
 
+                <Border
+                    Style="{StaticResource borderStyleGroup}"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
+                </Border>
+                
                 <Label
+                    x:Name="lblCubeInsideView"
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="6"
-                    Grid.Column="1"
-                    TextDecorations="Underline"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
                     Text="{local:Translate CubeInsideView_Text}">
+                </Label>
+                
+                <Label
+                    x:Name="lblExplainTurnCube2"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
+                    IsVisible="False">
                 </Label>
 
                 <Label

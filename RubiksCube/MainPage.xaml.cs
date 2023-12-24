@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-12-21 (YYYY-MM-DD)
+// Date ........: 2023-12-24 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -18,7 +18,9 @@ public partial class MainPage : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
-    private bool bColorDrop = false;
+    private bool bColorDrop;
+    private bool bSolvingCube;
+    private bool bArrowButtonPressed;
     private readonly string cColorArrowInactive = "#E2E2E2";    // Lightgray
     private readonly string cColorArrowActive = "#FFD000";      // Light orange
     private readonly string[] aCubeColors = new string[7];
@@ -204,14 +206,26 @@ public partial class MainPage : ContentPage
         }
 
         bColorDrop = false;
+        bSolvingCube = true;
 
-        //IsVisibleArrows(false);
+        lblCubeOutsideView.IsVisible = false;
+        lblExplainTurnCube1.IsVisible = true;
+        lblCubeInsideView.IsVisible = false;
+        lblExplainTurnCube2.IsVisible = true;
+
         IsEnabledArrows(false);
 
         await SolveTheCubeAsync();
 
+        lblExplainTurnCube1.Text = "";
+        lblExplainTurnCube1.IsVisible = false;
+        lblCubeOutsideView.IsVisible = true;
+        lblExplainTurnCube2.Text = "";
+        lblExplainTurnCube2.IsVisible = false;
+        lblCubeInsideView.IsVisible = true;
+
         IsEnabledArrows(true);
-        //IsVisibleArrows(true);
+        bSolvingCube = false;
     }
 
     // Solve the cube.
@@ -226,31 +240,27 @@ public partial class MainPage : ContentPage
         // Solve the edges of the top layer - Chapter 4, page 14-2.
         if (aTopSide[5] == aFrontSide[4])
         {
-            if (await ExplainTurnCubeQuestionAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text) == false)
-                return;
+            await ExplainTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text);
             TurnLeftSideTo("+");
             GetCubeColorsFromArrays();
 
             if (aLeftSide[8] == aFrontSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text) == false)
-                    return;
+                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
             }
 
             if (aLeftSide[8] == aBackSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text) == false)
-                    return;
+                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
             }
 
             if (aLeftSide[8] == aRightSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text) == false)
-                    return;
+                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text);
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -259,31 +269,27 @@ public partial class MainPage : ContentPage
 
         if (aTopSide[5] == aFrontSide[6])
         {
-            if (await ExplainTurnCubeQuestionAsync(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text) == false)
-                return;
+            await ExplainTurnCubeAsync(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text);
             TurnRightSideTo("-");
             GetCubeColorsFromArrays();
 
             if (aRightSide[8] == aFrontSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text) == false)
-                    return;
+                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
             }
 
             if (aRightSide[8] == aBackSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text) == false)
-                    return;
+                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
             }
 
             if (aRightSide[8] == aLeftSide[5])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text) == false)
-                    return;
+                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text);
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -313,20 +319,16 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToLeftSide_Text) == false)
-        //    return;
+        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToLeftSide_Text);
         //TurnCubeFrontSideToLeftSide(true);
 
-        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToRightSide_Text) == false)
-        //    return;
+        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToRightSide_Text);
         //TurnCubeFrontSideToRightSide(true);
 
-        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToTopSide_Text) == false)
-        //    return;
+        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToTopSide_Text);
         //TurnCubeFrontSideToTopSide(true);
 
-        //if (await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToBottomSide_Text) == false)
-        //    return;
+        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToBottomSide_Text);
         //TurnCubeFrontSideToBottomSide(true);
 
         if (!CheckIfCubeIsSolved(false))
@@ -342,8 +344,7 @@ public partial class MainPage : ContentPage
         {
             if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text) == false)
-                    return false;
+                await ExplainTurnCubeAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text);
                 TurnFrontSideTo("+");
                 TurnFrontSideTo("+");
                 GetCubeColorsFromArrays();
@@ -351,8 +352,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text) == false)
-                    return false;
+                await ExplainTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text);
                 TurnLeftSideTo("+");
                 TurnLeftSideTo("+");
                 GetCubeColorsFromArrays();
@@ -360,8 +360,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text) == false)
-                    return false;
+                await ExplainTurnCubeAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text);
                 TurnRightSideTo("+");
                 TurnRightSideTo("+");
                 GetCubeColorsFromArrays();
@@ -369,8 +368,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
             {
-                if (await ExplainTurnCubeQuestionAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text) == false)
-                    return false;
+                await ExplainTurnCubeAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text);
                 TurnBackSideTo("+");
                 TurnBackSideTo("+");
                 GetCubeColorsFromArrays();
@@ -795,6 +793,12 @@ public partial class MainPage : ContentPage
     // Turn the front side clockwise (to right +).
     private void OnTurnFrontSideToRightClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnFrontSideToRight_Text, false);
         TurnFrontSideTo("+");
         GetCubeColorsFromArrays();
@@ -808,7 +812,13 @@ public partial class MainPage : ContentPage
             TurnCubeTopSideToRightSide(false);
             return;
         }
-        
+
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnTopMiddleToRightSide_Text, false);
         TurnTopMiddleTo("+");
         GetCubeColorsFromArrays();
@@ -817,6 +827,12 @@ public partial class MainPage : ContentPage
     // Turn the back side counter clockwise (to left -).
     private void OnTurnBackSideToLeftClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnBackSideToLeft_Text, false);
         TurnBackSideTo("-");
         GetCubeColorsFromArrays();
@@ -825,6 +841,12 @@ public partial class MainPage : ContentPage
     // Turn the left side clockwise (to right +).
     private void OnTurnLeftSideToRightClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnLeftSideToRight_Text, false);
         TurnLeftSideTo("+");
         GetCubeColorsFromArrays();
@@ -839,6 +861,12 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnTopMiddleToFrontSide_Text, false);
         TurnFrontTopMiddleTo("-");
         GetCubeColorsFromArrays();
@@ -847,6 +875,12 @@ public partial class MainPage : ContentPage
     // Turn the right side counter clockwise (to left -).
     private void OnTurnRightSideToLeftClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnRightSideToLeft_Text, false);
         TurnRightSideTo("-");
         GetCubeColorsFromArrays();
@@ -855,6 +889,12 @@ public partial class MainPage : ContentPage
     // Turn the top side counter clockwise (to left -).
     private void OnTurnTopSideToLeftClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnTopSideToLeft_Text, false);
         TurnTopSideTo("-");
         GetCubeColorsFromArrays();
@@ -869,6 +909,12 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnFrontMiddleToRightSide_Text, false);
         TurnHorizontalMiddleLayerTo("-");
         GetCubeColorsFromArrays();
@@ -877,6 +923,12 @@ public partial class MainPage : ContentPage
     // Turn the bottom side clockwise (to right +).
     private void OnTurnBottomSideToRightClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnBottomSideToRight_Text, false);
         TurnBottomSideTo("+");
         GetCubeColorsFromArrays();
@@ -885,6 +937,12 @@ public partial class MainPage : ContentPage
     // Turn the top side clockwise (to right +).
     private void OnTurnTopSideToRightClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnTopSideToRight_Text, false);
         TurnTopSideTo("+");
         GetCubeColorsFromArrays();
@@ -899,6 +957,12 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnRightMiddleToFrontSide_Text, false);
         TurnHorizontalMiddleLayerTo("+");
         GetCubeColorsFromArrays();
@@ -907,6 +971,12 @@ public partial class MainPage : ContentPage
     // Turn the bottom side counter clockwise (to left -).
     private void OnTurnBottomSideToLeftClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnBottomSideToLeft_Text, false);
         TurnBottomSideTo("-");
         GetCubeColorsFromArrays();
@@ -915,6 +985,12 @@ public partial class MainPage : ContentPage
     // Turn the left side counter clockwise (to left -).
     private void OnTurnLeftSideToLeftClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnLeftSideToLeft_Text, false);
         TurnLeftSideTo("-");
         GetCubeColorsFromArrays();
@@ -929,6 +1005,12 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnFrontMiddleToTopSide_Text, false);
         TurnFrontTopMiddleTo("+");
         GetCubeColorsFromArrays();
@@ -937,6 +1019,12 @@ public partial class MainPage : ContentPage
     // Turn the right side clockwise (to right +).
     private void OnTurnRightSideToRightClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+        
         ExplainTurnCube(sender, CubeLang.TurnRightSideToRight_Text, false);
         TurnRightSideTo("+");
         GetCubeColorsFromArrays();
@@ -945,6 +1033,12 @@ public partial class MainPage : ContentPage
     // Turn the front side counter clockwise (to left -).
     private void OnTurnFrontSideToLeftClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnFrontSideToLeft_Text, false);
         TurnFrontSideTo("-");
         GetCubeColorsFromArrays();
@@ -959,6 +1053,12 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnRightMiddleToTopSide_Text, false);
         TurnTopMiddleTo("-");
         GetCubeColorsFromArrays();
@@ -967,6 +1067,12 @@ public partial class MainPage : ContentPage
     // Turn the back side clockwise (to right +).
     private void OnTurnBackSideToRightClicked(object sender, EventArgs e)
     {
+        if (bSolvingCube)
+        {
+            bArrowButtonPressed = true;
+            return;
+        }
+
         ExplainTurnCube(sender, CubeLang.TurnBackSideToRight_Text, false);
         TurnBackSideTo("+");
         GetCubeColorsFromArrays();
@@ -1756,11 +1862,16 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Explain the turn of the cube with the option to continue or to stop.
-    private async Task<bool> ExplainTurnCubeQuestionAsync(ImageButton imgbtnArrow, string cTurnCubeText)
+    // Explain the turn of the cube with.
+    private async Task ExplainTurnCubeAsync(ImageButton imgbtnArrow, string cTurnCubeText)
     {
-        // Set the arrow background color to Active.
+        // Enable the arrow button and set the background color to Active.
         imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnArrow.IsEnabled = true;
+
+        // Show the text
+        lblExplainTurnCube1.Text = cTurnCubeText;
+        lblExplainTurnCube2.Text = cTurnCubeText;
 
         // Convert text to speech.
         string cTurnCubeSpeech = cTurnCubeText;
@@ -1776,19 +1887,25 @@ public partial class MainPage : ContentPage
             ConvertTextToSpeech(cTurnCubeSpeech);
         }
 
-        // Show the text
-        if (await DisplayAlert(CubeLang.Solve_Text, cTurnCubeText, CubeLang.Continue_Text, CubeLang.Stop_Text) == false)
+        // Start the program loop and wait for the arrow button to be pressed.
+        while (true)
         {
-            // Set the arrow background color to Inactive.
-            imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            // Wait for 100 milliseconds on the button click event handler.
+            await Task.Delay(100);
 
-            return false;
+            // Check if the button has been clicked and stop the loop if clicked.
+            if (bArrowButtonPressed)
+            {
+                break;
+            }
         }
 
-        // Set the arrow background color to Inactive.
+        // Restore settings.
+        bArrowButtonPressed = false;
+        imgbtnArrow.IsEnabled = false;
         imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
 
-        return true;
+        return;
     }
 
     // On clicked event: Save the cube.
