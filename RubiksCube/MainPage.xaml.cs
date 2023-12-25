@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-12-24 (YYYY-MM-DD)
+// Date ........: 2023-12-25 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -232,35 +232,32 @@ public partial class MainPage : ContentPage
     private async Task SolveTheCubeAsync()
     {
         // Solve the edges of the top layer - Chapter 4, page 14-3.
-        if (await SolveEdgesTopLayerAsync() == false)
-        {
-            return;
-        }
+        await SolveEdgesTopLayerAsync();
 
         // Solve the edges of the top layer - Chapter 4, page 14-2.
         if (aTopSide[5] == aFrontSide[4])
         {
-            await ExplainTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text);
+            await ExplainSolveTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text);
             TurnLeftSideTo("+");
             GetCubeColorsFromArrays();
 
             if (aLeftSide[8] == aFrontSide[5])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
             }
 
             if (aLeftSide[8] == aBackSide[5])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
             }
 
             if (aLeftSide[8] == aRightSide[5])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text);
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -269,27 +266,27 @@ public partial class MainPage : ContentPage
 
         if (aTopSide[5] == aFrontSide[6])
         {
-            await ExplainTurnCubeAsync(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text);
+            await ExplainSolveTurnCubeAsync(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text);
             TurnRightSideTo("-");
             GetCubeColorsFromArrays();
 
             if (aRightSide[8] == aFrontSide[5])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
                 TurnBottomSideTo("-");
                 GetCubeColorsFromArrays();
             }
 
             if (aRightSide[8] == aBackSide[5])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
             }
 
             if (aRightSide[8] == aLeftSide[5])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text);
                 TurnBottomSideTo("+");
                 TurnBottomSideTo("+");
                 GetCubeColorsFromArrays();
@@ -299,10 +296,7 @@ public partial class MainPage : ContentPage
 
 
         // Solve the edges of the top layer - Chapter 4, page 14-3.
-        if (await SolveEdgesTopLayerAsync() == false)
-        {
-            return;
-        }
+        await SolveEdgesTopLayerAsync();
 
         // Solve the corners of the top layer - Chapter 6, page 16.
 
@@ -338,13 +332,13 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the edges of the top layer - Chapter 4, page 14-3.
-    private async Task<bool> SolveEdgesTopLayerAsync()
+    private async Task SolveEdgesTopLayerAsync()
     {
         for (int nTimes = 1; nTimes < 5; nTimes++)
         {
             if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text);
                 TurnFrontSideTo("+");
                 TurnFrontSideTo("+");
                 GetCubeColorsFromArrays();
@@ -352,7 +346,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text);
                 TurnLeftSideTo("+");
                 TurnLeftSideTo("+");
                 GetCubeColorsFromArrays();
@@ -360,7 +354,7 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text);
                 TurnRightSideTo("+");
                 TurnRightSideTo("+");
                 GetCubeColorsFromArrays();
@@ -368,14 +362,12 @@ public partial class MainPage : ContentPage
 
             if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
             {
-                await ExplainTurnCubeAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text);
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text);
                 TurnBackSideTo("+");
                 TurnBackSideTo("+");
                 GetCubeColorsFromArrays();
             }
         }
-
-        return true;
     }
 
     // Check the number of colors of the cube.
@@ -1823,7 +1815,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Explain the turn of the cube.
+    // Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods.
     private async void ExplainTurnCube(object sender, string cTurnCubeText, bool bExplainQuestion)
     {
         if (bExplainQuestion)
@@ -1862,8 +1854,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Explain the turn of the cube with.
-    private async Task ExplainTurnCubeAsync(ImageButton imgbtnArrow, string cTurnCubeText)
+    // Explain the turn of the cube called from the main task SolveTheCubeAsync().
+    private async Task ExplainSolveTurnCubeAsync(ImageButton imgbtnArrow, string cTurnCubeText)
     {
         // Enable the arrow button and set the background color to Active.
         imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowActive);
@@ -1887,7 +1879,7 @@ public partial class MainPage : ContentPage
             ConvertTextToSpeech(cTurnCubeSpeech);
         }
 
-        // Start the program loop and wait for the arrow button to be pressed.
+        // Start a program loop and wait for the arrow button to be pressed.
         while (true)
         {
             // Wait for 100 milliseconds on the button click event handler.
@@ -2232,15 +2224,15 @@ public partial class MainPage : ContentPage
     }
 
     // Enable or Disable the cube colors for drag and drop.
-    private void IsEnabledCubeColors(bool bEnableDisable)
-    {
-        plgCubeColor1.IsEnabled = bEnableDisable;
-        plgCubeColor2.IsEnabled = bEnableDisable;
-        plgCubeColor3.IsEnabled = bEnableDisable;
-        plgCubeColor4.IsEnabled = bEnableDisable;
-        plgCubeColor5.IsEnabled = bEnableDisable;
-        plgCubeColor6.IsEnabled = bEnableDisable;
-    }
+    //private void IsEnabledCubeColors(bool bEnableDisable)
+    //{
+    //    plgCubeColor1.IsEnabled = bEnableDisable;
+    //    plgCubeColor2.IsEnabled = bEnableDisable;
+    //    plgCubeColor3.IsEnabled = bEnableDisable;
+    //    plgCubeColor4.IsEnabled = bEnableDisable;
+    //    plgCubeColor5.IsEnabled = bEnableDisable;
+    //    plgCubeColor6.IsEnabled = bEnableDisable;
+    //}
 
     // Set the cube colors for drag and drop to visible or invisible.
     private void IsVisibleCubeColors(bool bEnableDisable)

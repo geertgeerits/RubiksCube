@@ -1,5 +1,4 @@
-﻿
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RubiksCube"
              x:Class="RubiksCube.MainPage"
@@ -164,7 +163,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Border
-                    Style="{StaticResource borderStyleGroup}"
+                    Style="{StaticResource borderStyleExplainTurnCube}"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3">
@@ -172,21 +171,23 @@
 
                 <Label
                     x:Name="lblCubeOutsideView"
-                    Style="{StaticResource labelStyleDefault}"
+                    Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
                     HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
                     Text="{local:Translate CubeOutsideView_Text}">
                 </Label>
 
                 <Label
                     x:Name="lblExplainTurnCube1"
-                    Style="{StaticResource labelStyleDefault}"
+                    Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
                     HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
                     IsVisible="False">
                 </Label>
 
@@ -646,7 +647,7 @@
                 </Label>
 
                 <Border
-                    Style="{StaticResource borderStyleGroup}"
+                    Style="{StaticResource borderStyleExplainTurnCube}"
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3">
@@ -654,21 +655,23 @@
                 
                 <Label
                     x:Name="lblCubeInsideView"
-                    Style="{StaticResource labelStyleDefault}"
+                    Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
                     HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
                     Text="{local:Translate CubeInsideView_Text}">
                 </Label>
                 
                 <Label
                     x:Name="lblExplainTurnCube2"
-                    Style="{StaticResource labelStyleDefault}"
+                    Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
                     HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
                     IsVisible="False">
                 </Label>
 
