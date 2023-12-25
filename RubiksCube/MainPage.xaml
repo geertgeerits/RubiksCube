@@ -186,6 +186,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
+                    MinimumHeightRequest="55"
                     HorizontalOptions="Center"
                     BackgroundColor="Transparent"
                     IsVisible="False">
@@ -670,6 +671,7 @@
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
+                    MinimumHeightRequest="55"
                     HorizontalOptions="Center"
                     BackgroundColor="Transparent"
                     IsVisible="False">

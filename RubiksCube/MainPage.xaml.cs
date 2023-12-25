@@ -197,26 +197,52 @@ public partial class MainPage : ContentPage
         }
     }
 
+    // Set the arrow tooltip for a complete turn of a side.
+    //private void SetArrowToolTip(bool bTurnCompleteSide)
+    //{
+    //    if (bTurnCompleteSide)
+    //    {
+    //        ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnCubeTopSideToLeftSide_Text);
+    //    }
+    //    else
+    //    {
+    //        ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
+    //        ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
+    //    }
+    //}
+
     // Solve the cube.
     private async void OnBtnSolveClicked(object sender, EventArgs e)
     {
+        // Check the number of colors of the cube.
         if (!CheckNumberColorsCube())
         {
             return;
         }
 
+        // Settings.
         bColorDrop = false;
         bSolvingCube = true;
+        IsEnabledArrows(false);
 
         lblCubeOutsideView.IsVisible = false;
         lblExplainTurnCube1.IsVisible = true;
         lblCubeInsideView.IsVisible = false;
         lblExplainTurnCube2.IsVisible = true;
 
-        IsEnabledArrows(false);
-
+        // Solve the cube.
         await SolveTheCubeAsync();
 
+        // Settings.
         lblExplainTurnCube1.Text = "";
         lblExplainTurnCube1.IsVisible = false;
         lblCubeOutsideView.IsVisible = true;
@@ -313,16 +339,16 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToLeftSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
         //TurnCubeFrontSideToLeftSide(true);
 
-        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToRightSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
         //TurnCubeFrontSideToRightSide(true);
 
-        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToTopSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
         //TurnCubeFrontSideToTopSide(true);
 
-        //await ExplainTurnCubeQuestion(CubeLang.TurnCubeFrontSideToBottomSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
         //TurnCubeFrontSideToBottomSide(true);
 
         if (!CheckIfCubeIsSolved(false))
@@ -1074,7 +1100,11 @@ public partial class MainPage : ContentPage
     // Rotate the entire cube so that the front goes to the left side.
     private void TurnCubeFrontSideToLeftSide(bool bExplainQuestion)
     {
-        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToLeftSide_Text, bExplainQuestion);
+        if (!bSolvingCube)
+        {
+            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToLeftSide_Text, bExplainQuestion);
+        }
+            
         TurnTopSideTo("+");
         TurnHorizontalMiddleLayerTo("+");
         TurnBottomSideTo("-");
@@ -1084,7 +1114,11 @@ public partial class MainPage : ContentPage
     // Rotate the entire cube so that the front goes to the right side.
     private void TurnCubeFrontSideToRightSide(bool bExplainQuestion)
     {
-        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToRightSide_Text, bExplainQuestion);
+        if (!bSolvingCube)
+        {
+            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToRightSide_Text, bExplainQuestion);
+        }
+
         TurnTopSideTo("-");
         TurnHorizontalMiddleLayerTo("-");
         TurnBottomSideTo("+");
@@ -1094,7 +1128,11 @@ public partial class MainPage : ContentPage
     // Rotate the entire cube so that the front goes to the top side.
     private void TurnCubeFrontSideToTopSide(bool bExplainQuestion)
     {
-        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToTopSide_Text, bExplainQuestion);
+        if (!bSolvingCube)
+        {
+            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToTopSide_Text, bExplainQuestion);
+        }
+
         TurnRightSideTo("+");
         TurnFrontTopMiddleTo("+");
         TurnLeftSideTo("-");
@@ -1104,7 +1142,11 @@ public partial class MainPage : ContentPage
     // Rotate the entire cube so that the front goes to the bottom side.
     private void TurnCubeFrontSideToBottomSide(bool bExplainQuestion)
     {
-        ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToBottomSide_Text, bExplainQuestion);
+        if (!bSolvingCube)
+        {
+            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToBottomSide_Text, bExplainQuestion);
+        }
+
         TurnRightSideTo("-");
         TurnFrontTopMiddleTo("-");
         TurnLeftSideTo("+");
@@ -1114,7 +1156,11 @@ public partial class MainPage : ContentPage
     // Rotate the entire cube so that the top goes to the right side.
     private void TurnCubeTopSideToRightSide(bool bExplainQuestion)
     {
-        ExplainTurnCube(null, CubeLang.TurnCubeTopSideToRightSide_Text, bExplainQuestion);
+        if (!bSolvingCube)
+        {
+            ExplainTurnCube(null, CubeLang.TurnCubeTopSideToRightSide_Text, bExplainQuestion);
+        }
+
         TurnFrontSideTo("+");
         TurnTopMiddleTo("+");
         TurnBackSideTo("-");
@@ -1124,7 +1170,11 @@ public partial class MainPage : ContentPage
     // Rotate the entire cube so that the top goes to the left side.
     private void TurnCubeTopSideToLeftSide(bool bExplainQuestion)
     {
-        ExplainTurnCube(null, CubeLang.TurnCubeTopSideToLeftSide_Text, bExplainQuestion);
+        if (!bSolvingCube)
+        {
+            ExplainTurnCube(null, CubeLang.TurnCubeTopSideToLeftSide_Text, bExplainQuestion);
+        }
+
         TurnFrontSideTo("-");
         TurnTopMiddleTo("-");
         TurnBackSideTo("+");
