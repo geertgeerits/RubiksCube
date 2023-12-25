@@ -339,17 +339,31 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        //await ExplainSolveTurnCubeAsync(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
-        //TurnCubeFrontSideToLeftSide(true);
+        //ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text);
+        //ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
 
-        //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
-        //TurnCubeFrontSideToRightSide(true);
-
-        //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
-        //TurnCubeFrontSideToTopSide(true);
-
+        //ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
         //await ExplainSolveTurnCubeAsync(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
         //TurnCubeFrontSideToBottomSide(true);
+        //ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
+
+        //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
+        //TurnCubeFrontSideToRightSide(true);
+        //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
+
+        //ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
+        //TurnCubeFrontSideToLeftSide(true);
+        //ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
+
+        //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
+        //TurnCubeFrontSideToTopSide(true);
+        //ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
+
+        //ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnCubeTopSideToLeftSide_Text);
+        //ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
 
         if (!CheckIfCubeIsSolved(false))
         {
@@ -1946,8 +1960,6 @@ public partial class MainPage : ContentPage
         bArrowButtonPressed = false;
         imgbtnArrow.IsEnabled = false;
         imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-
-        return;
     }
 
     // On clicked event: Save the cube.
