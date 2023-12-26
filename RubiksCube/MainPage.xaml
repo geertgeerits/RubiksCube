@@ -209,7 +209,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="0,0"
                         Source="arrow_down_right_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnFrontSideToRight_Text}"
                         Clicked="OnTurnFrontSideToRightClicked">
                     </ImageButton>
 
@@ -218,7 +217,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="40,0"
                         Source="arrow_down_right_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnTopMiddleToRightSide_Text}"
                         Clicked="OnTurnTopMiddleToRightSideClicked">
                     </ImageButton>
 
@@ -227,7 +225,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="80,0"
                         Source="arrow_down_right_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnBackSideToLeft_Text}"
                         Clicked="OnTurnBackSideToLeftClicked">
                     </ImageButton>
 
@@ -236,7 +233,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="146,0"
                         Source="arrow_down_left_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnLeftSideToRight_Text}"
                         Clicked="OnTurnLeftSideToRightClicked">
                     </ImageButton>
 
@@ -245,7 +241,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="200,0"
                         Source="arrow_down_left_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnTopMiddleToFrontSide_Text}"
                         Clicked="OnTurnTopMiddleToFrontSideClicked">
                     </ImageButton>
 
@@ -254,7 +249,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="260,0"
                         Source="arrow_down_left_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnRightSideToLeft_Text}"
                         Clicked="OnTurnRightSideToLeftClicked">
                     </ImageButton>
                 </AbsoluteLayout>
@@ -268,7 +262,6 @@
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,85"
                         Source="arrow_right_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnTopSideToLeft_Text}"
                         Clicked="OnTurnTopSideToLeftClicked">
                     </ImageButton>
 
@@ -277,7 +270,6 @@
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,140"
                         Source="arrow_right_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnFrontMiddleToRightSide_Text}"
                         Clicked="OnTurnFrontMiddleToRightSideClicked">
                     </ImageButton>
 
@@ -286,7 +278,6 @@
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,190"
                         Source="arrow_right_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnBottomSideToRight_Text}"
                         Clicked="OnTurnBottomSideToRightClicked">
                     </ImageButton>
                 </AbsoluteLayout>
@@ -300,7 +291,6 @@
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,50"
                         Source="arrow_left_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnTopSideToRight_Text}"
                         Clicked="OnTurnTopSideToRightClicked">
                     </ImageButton>
 
@@ -309,7 +299,6 @@
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,105"
                         Source="arrow_left_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnRightMiddleToFrontSide_Text}"
                         Clicked="OnTurnRightMiddleToFrontSideClicked">
                     </ImageButton>
 
@@ -318,7 +307,6 @@
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,150"
                         Source="arrow_left_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnBottomSideToLeft_Text}"
                         Clicked="OnTurnBottomSideToLeftClicked">
                     </ImageButton>
                 </AbsoluteLayout>
@@ -580,7 +568,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="15,0"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnLeftSideToLeft_Text}"
                         Clicked="OnTurnLeftSideToLeftClicked">
                     </ImageButton>
 
@@ -589,7 +576,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="65,0"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnFrontMiddleToTopSide_Text}"
                         Clicked="OnTurnFrontMiddleToTopSideClicked">
                     </ImageButton>
 
@@ -598,7 +584,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="115,0"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnRightSideToRight_Text}"
                         Clicked="OnTurnRightSideToRightClicked">
                     </ImageButton>
 
@@ -607,7 +592,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="175,0"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnFrontSideToLeft_Text}"
                         Clicked="OnTurnFrontSideToLeftClicked">
                     </ImageButton>
 
@@ -616,7 +600,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="220,0"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnRightMiddleToTopSide_Text}"
                         Clicked="OnTurnRightMiddleToTopSideClicked">
                     </ImageButton>
 
@@ -625,7 +608,6 @@
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="265,0"
                         Source="arrow_up_32p.png"
-                        ToolTipProperties.Text="{local:Translate TurnBackSideToRight_Text}"
                         Clicked="OnTurnBackSideToRightClicked">
                     </ImageButton>
                 </AbsoluteLayout>

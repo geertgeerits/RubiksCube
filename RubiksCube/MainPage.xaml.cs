@@ -140,8 +140,9 @@ public partial class MainPage : ContentPage
 
         if (bColorDrop)
         {
-            btnSolve.IsEnabled = false;
+            SetArrowColorToInactive();
 
+            btnSolve.IsEnabled = false;
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
             IsVisibleCubeColors(true);
             IsEnabledArrows(false);
@@ -174,13 +175,8 @@ public partial class MainPage : ContentPage
                 bColorDrop = true;
                 return;
             }
-
-            imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-            imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-            imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-            imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-            imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-            imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+            
+            SetArrowColorToActive();
 
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
@@ -197,53 +193,6 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set the arrow buttons tooltip.
-    private void SetArrowTooltips(bool bSetArrowTooltip)
-    {
-        if (bSetArrowTooltip)
-        {
-            ToolTipProperties.SetText(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnBackSideToLeft, CubeLang.TurnBackSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopSideToLeft, CubeLang.TurnTopSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopSideToRight, CubeLang.TurnTopSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnLeftSideToLeft, CubeLang.TurnLeftSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontSideToLeft, CubeLang.TurnFrontSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideToRight_Text);
-        }
-        else
-        {
-            ToolTipProperties.SetText(imgbtnTurnFrontSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, null);
-            ToolTipProperties.SetText(imgbtnTurnBackSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnLeftSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, null);
-            ToolTipProperties.SetText(imgbtnTurnRightSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnTopSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, null);
-            ToolTipProperties.SetText(imgbtnTurnBottomSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnTopSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, null);
-            ToolTipProperties.SetText(imgbtnTurnBottomSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnLeftSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, null);
-            ToolTipProperties.SetText(imgbtnTurnRightSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnFrontSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, null);
-            ToolTipProperties.SetText(imgbtnTurnBackSideToRight, null);
-        }
-    }
-
     // Solve the cube.
     private async void OnBtnSolveClicked(object sender, EventArgs e)
     {
@@ -254,9 +203,14 @@ public partial class MainPage : ContentPage
         }
 
         // Settings.
+        SetArrowColorToInactive();
+
         btnSolve.IsEnabled = false;
+        imgbtnSetColors.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnSetColors.IsEnabled = false;
+        imgbtnOpen.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnOpen.IsEnabled = false;
+        imgbtnSave.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnSave.IsEnabled = false;
 
         bColorDrop = false;
@@ -286,8 +240,13 @@ public partial class MainPage : ContentPage
 
         btnSolve.IsEnabled = true;
         imgbtnSetColors.IsEnabled = true;
+        imgbtnSetColors.BackgroundColor = Color.FromArgb(cColorArrowActive);
         imgbtnOpen.IsEnabled = true;
+        imgbtnOpen.BackgroundColor = Color.FromArgb(cColorArrowActive);
         imgbtnSave.IsEnabled = true;
+        imgbtnSave.BackgroundColor = Color.FromArgb(cColorArrowActive);
+
+        SetArrowColorToActive();
     }
 
     // Solve the cube.
@@ -375,23 +334,23 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        //await ExplainSolveTurnCubeAsync(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text  );
-        //TurnCubeTopSideToRightSide(true);
+        //await ExplainSolveTurnCubeAsync(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text);
+        //TurnCubeTopSideToRightSide();
 
         //await ExplainSolveTurnCubeAsync(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
-        //TurnCubeFrontSideToBottomSide(true);
+        //TurnCubeFrontSideToBottomSide();
 
         //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
-        //TurnCubeFrontSideToRightSide(true);
+        //TurnCubeFrontSideToRightSide();
 
         //await ExplainSolveTurnCubeAsync(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
-        //TurnCubeFrontSideToLeftSide(true);
+        //TurnCubeFrontSideToLeftSide();
 
         //await ExplainSolveTurnCubeAsync(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
-        //TurnCubeFrontSideToTopSide(true);
+        //TurnCubeFrontSideToTopSide();
 
         //await ExplainSolveTurnCubeAsync(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnCubeTopSideToLeftSide_Text);
-        //TurnCubeTopSideToLeftSide(true);
+        //TurnCubeTopSideToLeftSide();
 
         if (!CheckIfCubeIsSolved(false))
         {
@@ -859,7 +818,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnFrontSideToRight_Text, false);
+        ExplainTurnCube(CubeLang.TurnFrontSideToRight_Text);
         TurnFrontSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -869,7 +828,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            TurnCubeTopSideToRightSide(false);
+            TurnCubeTopSideToRightSide();
             return;
         }
 
@@ -879,7 +838,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnTopMiddleToRightSide_Text, false);
+        ExplainTurnCube(CubeLang.TurnTopMiddleToRightSide_Text);
         TurnTopMiddleTo("+");
         GetCubeColorsFromArrays();
     }
@@ -893,7 +852,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnBackSideToLeft_Text, false);
+        ExplainTurnCube(CubeLang.TurnBackSideToLeft_Text);
         TurnBackSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -907,7 +866,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnLeftSideToRight_Text, false);
+        ExplainTurnCube(CubeLang.TurnLeftSideToRight_Text);
         TurnLeftSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -917,7 +876,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            TurnCubeFrontSideToBottomSide(false);
+            TurnCubeFrontSideToBottomSide();
             return;
         }
 
@@ -927,7 +886,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnTopMiddleToFrontSide_Text, false);
+        ExplainTurnCube(CubeLang.TurnTopMiddleToFrontSide_Text);
         TurnFrontTopMiddleTo("-");
         GetCubeColorsFromArrays();
     }
@@ -941,7 +900,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnRightSideToLeft_Text, false);
+        ExplainTurnCube(CubeLang.TurnRightSideToLeft_Text);
         TurnRightSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -955,7 +914,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnTopSideToLeft_Text, false);
+        ExplainTurnCube(CubeLang.TurnTopSideToLeft_Text);
         TurnTopSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -965,7 +924,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            TurnCubeFrontSideToRightSide(false);
+            TurnCubeFrontSideToRightSide();
             return;
         }
 
@@ -975,7 +934,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnFrontMiddleToRightSide_Text, false);
+        ExplainTurnCube(CubeLang.TurnFrontMiddleToRightSide_Text);
         TurnHorizontalMiddleLayerTo("-");
         GetCubeColorsFromArrays();
     }
@@ -989,7 +948,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnBottomSideToRight_Text, false);
+        ExplainTurnCube(CubeLang.TurnBottomSideToRight_Text);
         TurnBottomSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1003,7 +962,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnTopSideToRight_Text, false);
+        ExplainTurnCube(CubeLang.TurnTopSideToRight_Text);
         TurnTopSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1013,7 +972,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            TurnCubeFrontSideToLeftSide(false);
+            TurnCubeFrontSideToLeftSide();
             return;
         }
 
@@ -1023,7 +982,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnRightMiddleToFrontSide_Text, false);
+        ExplainTurnCube(CubeLang.TurnRightMiddleToFrontSide_Text);
         TurnHorizontalMiddleLayerTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1037,7 +996,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnBottomSideToLeft_Text, false);
+        ExplainTurnCube(CubeLang.TurnBottomSideToLeft_Text);
         TurnBottomSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1051,7 +1010,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnLeftSideToLeft_Text, false);
+        ExplainTurnCube(CubeLang.TurnLeftSideToLeft_Text);
         TurnLeftSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1061,7 +1020,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            TurnCubeFrontSideToTopSide(false);
+            TurnCubeFrontSideToTopSide();
             return;
         }
 
@@ -1071,7 +1030,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnFrontMiddleToTopSide_Text, false);
+        ExplainTurnCube(CubeLang.TurnFrontMiddleToTopSide_Text);
         TurnFrontTopMiddleTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1085,7 +1044,7 @@ public partial class MainPage : ContentPage
             return;
         }
         
-        ExplainTurnCube(sender, CubeLang.TurnRightSideToRight_Text, false);
+        ExplainTurnCube(CubeLang.TurnRightSideToRight_Text);
         TurnRightSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1099,7 +1058,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnFrontSideToLeft_Text, false);
+        ExplainTurnCube(CubeLang.TurnFrontSideToLeft_Text);
         TurnFrontSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1109,7 +1068,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            TurnCubeTopSideToLeftSide(false);
+            TurnCubeTopSideToLeftSide();
             return;
         }
 
@@ -1119,7 +1078,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnRightMiddleToTopSide_Text, false);
+        ExplainTurnCube(CubeLang.TurnRightMiddleToTopSide_Text);
         TurnTopMiddleTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1133,18 +1092,18 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        ExplainTurnCube(sender, CubeLang.TurnBackSideToRight_Text, false);
+        ExplainTurnCube(CubeLang.TurnBackSideToRight_Text);
         TurnBackSideTo("+");
         GetCubeColorsFromArrays();
     }
 
     // Turn the entire cube a quarter turn.
     // Rotate the entire cube so that the front goes to the left side.
-    private void TurnCubeFrontSideToLeftSide(bool bExplainQuestion)
+    private void TurnCubeFrontSideToLeftSide()
     {
         if (!bSolvingCube)
         {
-            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToLeftSide_Text, bExplainQuestion);
+            ExplainTurnCube(CubeLang.TurnCubeFrontSideToLeftSide_Text);
         }
             
         TurnTopSideTo("+");
@@ -1154,11 +1113,11 @@ public partial class MainPage : ContentPage
     }
 
     // Rotate the entire cube so that the front goes to the right side.
-    private void TurnCubeFrontSideToRightSide(bool bExplainQuestion)
+    private void TurnCubeFrontSideToRightSide()
     {
         if (!bSolvingCube)
         {
-            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToRightSide_Text, bExplainQuestion);
+            ExplainTurnCube(CubeLang.TurnCubeFrontSideToRightSide_Text);
         }
 
         TurnTopSideTo("-");
@@ -1168,11 +1127,11 @@ public partial class MainPage : ContentPage
     }
 
     // Rotate the entire cube so that the front goes to the top side.
-    private void TurnCubeFrontSideToTopSide(bool bExplainQuestion)
+    private void TurnCubeFrontSideToTopSide()
     {
         if (!bSolvingCube)
         {
-            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToTopSide_Text, bExplainQuestion);
+            ExplainTurnCube(CubeLang.TurnCubeFrontSideToTopSide_Text);
         }
 
         TurnRightSideTo("+");
@@ -1182,11 +1141,11 @@ public partial class MainPage : ContentPage
     }
 
     // Rotate the entire cube so that the front goes to the bottom side.
-    private void TurnCubeFrontSideToBottomSide(bool bExplainQuestion)
+    private void TurnCubeFrontSideToBottomSide()
     {
         if (!bSolvingCube)
         {
-            ExplainTurnCube(null, CubeLang.TurnCubeFrontSideToBottomSide_Text, bExplainQuestion);
+            ExplainTurnCube(CubeLang.TurnCubeFrontSideToBottomSide_Text);
         }
 
         TurnRightSideTo("-");
@@ -1196,11 +1155,11 @@ public partial class MainPage : ContentPage
     }
 
     // Rotate the entire cube so that the top goes to the right side.
-    private void TurnCubeTopSideToRightSide(bool bExplainQuestion)
+    private void TurnCubeTopSideToRightSide()
     {
         if (!bSolvingCube)
         {
-            ExplainTurnCube(null, CubeLang.TurnCubeTopSideToRightSide_Text, bExplainQuestion);
+            ExplainTurnCube(CubeLang.TurnCubeTopSideToRightSide_Text);
         }
 
         TurnFrontSideTo("+");
@@ -1210,11 +1169,11 @@ public partial class MainPage : ContentPage
     }
 
     // Rotate the entire cube so that the top goes to the left side.
-    private void TurnCubeTopSideToLeftSide(bool bExplainQuestion)
+    private void TurnCubeTopSideToLeftSide()
     {
         if (!bSolvingCube)
         {
-            ExplainTurnCube(null, CubeLang.TurnCubeTopSideToLeftSide_Text, bExplainQuestion);
+            ExplainTurnCube(CubeLang.TurnCubeTopSideToLeftSide_Text);
         }
 
         TurnFrontSideTo("-");
@@ -1908,19 +1867,8 @@ public partial class MainPage : ContentPage
     }
 
     // Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods.
-    private async void ExplainTurnCube(object sender, string cTurnCubeText, bool bExplainQuestion)
+    private async void ExplainTurnCube(string cTurnCubeText)
     {
-        if (bExplainQuestion)
-        {
-            return;
-        }
-
-        if (sender != null)
-        {
-            var imagebutton = (ImageButton)sender;
-            imagebutton.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        }
-
         string cTurnCubeSpeech = cTurnCubeText;
 
         if (Globals.bExplainSpeech)
@@ -1937,12 +1885,6 @@ public partial class MainPage : ContentPage
         if (Globals.bExplainText)
         {
             await DisplayAlert("", cTurnCubeText, CubeLang.ButtonClose_Text);
-        }
-
-        if (sender != null)
-        {
-            var imagebutton = (ImageButton)sender;
-            imagebutton.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         }
     }
 
@@ -2318,6 +2260,28 @@ public partial class MainPage : ContentPage
         plgBottom9.Fill = Color.FromArgb(aBottomSide[9]);
     }
 
+    // Get the hex color code from a polygon fill property.
+    // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
+    private static string GetHexColorPolygon(object sender)
+    {
+        var polygon = (Polygon)sender;
+
+        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
+        Color c = brush.Color;
+
+        var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
+                         where p.PropertyType.Equals(typeof(System.Drawing.Color))
+                         let value = (System.Drawing.Color)p.GetValue(null, null)
+                         where value.R == c.Red &&
+                               value.G == c.Green &&
+                               value.B == c.Blue &&
+                               value.A == c.Alpha
+                         select p.Name).DefaultIfEmpty("unknown").First();
+
+        c = Color.FromRgb(c.Red, c.Green, c.Blue);
+        return c.ToHex();
+    }
+
     // Set the cube colors for drag and drop to visible or invisible.
     private void IsVisibleCubeColors(bool bEnableDisable)
     {
@@ -2328,6 +2292,53 @@ public partial class MainPage : ContentPage
         plgCubeColor4.IsVisible = bEnableDisable;
         plgCubeColor5.IsVisible = bEnableDisable;
         plgCubeColor6.IsVisible = bEnableDisable;
+    }
+
+    // Set the arrow buttons tooltip.
+    private void SetArrowTooltips(bool bSetArrowTooltip)
+    {
+        if (bSetArrowTooltip)
+        {
+            ToolTipProperties.SetText(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideToRight_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnBackSideToLeft, CubeLang.TurnBackSideToLeft_Text);
+            ToolTipProperties.SetText(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopSideToLeft, CubeLang.TurnTopSideToLeft_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopSideToRight, CubeLang.TurnTopSideToRight_Text);
+            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
+            ToolTipProperties.SetText(imgbtnTurnLeftSideToLeft, CubeLang.TurnLeftSideToLeft_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideToRight_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontSideToLeft, CubeLang.TurnFrontSideToLeft_Text);
+            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideToRight_Text);
+        }
+        else
+        {
+            ToolTipProperties.SetText(imgbtnTurnFrontSideToRight, null);
+            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, null);
+            ToolTipProperties.SetText(imgbtnTurnBackSideToLeft, null);
+            ToolTipProperties.SetText(imgbtnTurnLeftSideToRight, null);
+            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, null);
+            ToolTipProperties.SetText(imgbtnTurnRightSideToLeft, null);
+            ToolTipProperties.SetText(imgbtnTurnTopSideToLeft, null);
+            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, null);
+            ToolTipProperties.SetText(imgbtnTurnBottomSideToRight, null);
+            ToolTipProperties.SetText(imgbtnTurnTopSideToRight, null);
+            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, null);
+            ToolTipProperties.SetText(imgbtnTurnBottomSideToLeft, null);
+            ToolTipProperties.SetText(imgbtnTurnLeftSideToLeft, null);
+            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, null);
+            ToolTipProperties.SetText(imgbtnTurnRightSideToRight, null);
+            ToolTipProperties.SetText(imgbtnTurnFrontSideToLeft, null);
+            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, null);
+            ToolTipProperties.SetText(imgbtnTurnBackSideToRight, null);
+        }
     }
 
     // Enable or Disable the arrows.
@@ -2354,27 +2365,27 @@ public partial class MainPage : ContentPage
     }
 
     // Set the arrows to visible or invisible.
-    private void IsVisibleArrows(bool bVisibleInvisible)
-    {
-        imgbtnTurnFrontSideToRight.IsVisible = bVisibleInvisible;
-        imgbtnTurnTopMiddleToRightSide.IsVisible = bVisibleInvisible;
-        imgbtnTurnBackSideToLeft.IsVisible = bVisibleInvisible;
-        imgbtnTurnLeftSideToRight.IsVisible = bVisibleInvisible;
-        imgbtnTurnTopMiddleToFrontSide.IsVisible = bVisibleInvisible;
-        imgbtnTurnRightSideToLeft.IsVisible = bVisibleInvisible;
-        imgbtnTurnTopSideToLeft.IsVisible = bVisibleInvisible;
-        imgbtnTurnFrontMiddleToRightSide.IsVisible = bVisibleInvisible;
-        imgbtnTurnBottomSideToRight.IsVisible = bVisibleInvisible;
-        imgbtnTurnTopSideToRight.IsVisible = bVisibleInvisible;
-        imgbtnTurnRightMiddleToFrontSide.IsVisible = bVisibleInvisible;
-        imgbtnTurnBottomSideToLeft.IsVisible = bVisibleInvisible;
-        imgbtnTurnLeftSideToLeft.IsVisible = bVisibleInvisible;
-        imgbtnTurnFrontMiddleToTopSide.IsVisible = bVisibleInvisible;
-        imgbtnTurnRightSideToRight.IsVisible = bVisibleInvisible;
-        imgbtnTurnFrontSideToLeft.IsVisible = bVisibleInvisible;
-        imgbtnTurnRightMiddleToTopSide.IsVisible = bVisibleInvisible;
-        imgbtnTurnBackSideToRight.IsVisible = bVisibleInvisible;
-    }
+    //private void IsVisibleArrows(bool bVisibleInvisible)
+    //{
+    //    imgbtnTurnFrontSideToRight.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnTopMiddleToRightSide.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnBackSideToLeft.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnLeftSideToRight.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnTopMiddleToFrontSide.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnRightSideToLeft.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnTopSideToLeft.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnFrontMiddleToRightSide.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnBottomSideToRight.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnTopSideToRight.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnRightMiddleToFrontSide.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnBottomSideToLeft.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnLeftSideToLeft.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnFrontMiddleToTopSide.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnRightSideToRight.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnFrontSideToLeft.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnRightMiddleToTopSide.IsVisible = bVisibleInvisible;
+    //    imgbtnTurnBackSideToRight.IsVisible = bVisibleInvisible;
+    //}
 
     // Set the arrow background color to Inactive.
     private void SetArrowColorToInactive()
@@ -2399,28 +2410,29 @@ public partial class MainPage : ContentPage
         imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
     }
 
-    // Get the hex color code from a polygon fill property.
-    // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
-    private static string GetHexColorPolygon(object sender)
+    // Set the arrow background color to Active.
+    private void SetArrowColorToActive()
     {
-        var polygon = (Polygon)sender;
-
-        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
-        Color c = brush.Color;
-
-        var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
-                         where p.PropertyType.Equals(typeof(System.Drawing.Color))
-                         let value = (System.Drawing.Color)p.GetValue(null, null)
-                         where value.R == c.Red &&
-                               value.G == c.Green &&
-                               value.B == c.Blue &&
-                               value.A == c.Alpha
-                         select p.Name).DefaultIfEmpty("unknown").First();
-
-        c = Color.FromRgb(c.Red, c.Green, c.Blue);
-        return c.ToHex();
+        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
+        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
     }
-    
+   
     // Show license using the Loaded event of the MainPage.xaml.
     private async void OnPageLoad(object sender, EventArgs e)
     {
@@ -2467,10 +2479,16 @@ public partial class MainPage : ContentPage
     }
 
     // Put text in the chosen language in the controls.
-    private static void SetTextLanguage()
+    private void SetTextLanguage()
     {
         // Set the current UI culture of the selected language.
         Globals.SetCultureSelectedLanguage();
+
+        // Set the text of the controls.
+        if (!bSolvingCube)
+        {
+            SetArrowTooltips(true);
+        }
     }
 
     // Initialize text to speech and fill the the array with the speech languages.
