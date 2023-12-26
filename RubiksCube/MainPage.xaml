@@ -954,7 +954,7 @@
         </ScrollView>
 
         <Button
-            x:Name="BtnSolve"
+            x:Name="btnSolve"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="3"
             Grid.Column="0"
@@ -1007,7 +1007,7 @@
         </HorizontalStackLayout>
 
         <Button
-            x:Name="BtnReset"
+            x:Name="btnReset"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="3"
             Grid.Column="2"
