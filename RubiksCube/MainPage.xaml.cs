@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-12-26 (YYYY-MM-DD)
+// Date ........: 2023-12-27 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -1869,18 +1869,8 @@ public partial class MainPage : ContentPage
     // Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods.
     private async void ExplainTurnCube(string cTurnCubeText)
     {
-        string cTurnCubeSpeech = cTurnCubeText;
-
-        if (Globals.bExplainSpeech)
-        {
-            // If the right of the text = ' (+).' or ' (-).' remove it.
-            if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
-            {
-                cTurnCubeSpeech = cTurnCubeSpeech.Substring(0, cTurnCubeSpeech.Length - 5);
-            }
-            
-            ConvertTextToSpeech(cTurnCubeSpeech);
-        }
+        // Convert text to speech.
+        ExplainTurnCubeSpeech(cTurnCubeText);
 
         if (Globals.bExplainText)
         {
@@ -1900,18 +1890,7 @@ public partial class MainPage : ContentPage
         lblExplainTurnCube2.Text = cTurnCubeText;
 
         // Convert text to speech.
-        string cTurnCubeSpeech = cTurnCubeText;
-
-        if (Globals.bExplainSpeech)
-        {
-            // If the right of the text = ' (+).' or ' (-).' remove it.
-            if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
-            {
-                cTurnCubeSpeech = cTurnCubeSpeech.Substring(0, cTurnCubeSpeech.Length - 5);
-            }
-
-            ConvertTextToSpeech(cTurnCubeSpeech);
-        }
+        ExplainTurnCubeSpeech(cTurnCubeText);
 
         // Start a program loop and wait for the arrow button to be pressed.
         while (true)
@@ -1930,6 +1909,20 @@ public partial class MainPage : ContentPage
         bArrowButtonPressed = false;
         imgbtnArrow.IsEnabled = false;
         imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
+    }
+
+    // Explain the turn of the cube with speech.
+    private void ExplainTurnCubeSpeech(string cTurnCubeText)
+    {
+        if (Globals.bExplainSpeech)
+        {
+            if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
+            {
+                cTurnCubeText = cTurnCubeText.Substring(0, cTurnCubeText.Length - 5);
+            }
+
+            ConvertTextToSpeech(cTurnCubeText);
+        }
     }
 
     // On clicked event: Save the cube.

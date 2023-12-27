@@ -154,13 +154,9 @@
 
             <Grid
                 RowDefinitions="Auto, Auto, Auto, 260, Auto, Auto, Auto, Auto, 262, Auto"
-                ColumnSpacing="{OnIdiom 4, Phone=4, Tablet=8, Desktop=8}"
+                ColumnDefinitions="26, 294, 26"
+                ColumnSpacing="4"
                 HorizontalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{OnIdiom 26, Phone=26, Tablet=40, Desktop=40}" />
-                    <ColumnDefinition Width="294" />
-                    <ColumnDefinition Width="{OnIdiom 26, Phone=26, Tablet=40, Desktop=40}" />
-                </Grid.ColumnDefinitions>
 
                 <Border
                     Style="{StaticResource borderStyleExplainTurnCube}"
@@ -202,12 +198,13 @@
 
                 <AbsoluteLayout
                     Grid.Row="2"
-                    Grid.Column="1">
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
 
                     <ImageButton
                         x:Name="imgbtnTurnFrontSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="0,0"
+                        AbsoluteLayout.LayoutBounds="10,0"
                         Source="arrow_down_right_32p.png"
                         Clicked="OnTurnFrontSideToRightClicked">
                     </ImageButton>
@@ -215,7 +212,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnTopMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="40,0"
+                        AbsoluteLayout.LayoutBounds="60,0"
                         Source="arrow_down_right_32p.png"
                         Clicked="OnTurnTopMiddleToRightSideClicked">
                     </ImageButton>
@@ -223,7 +220,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnBackSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="80,0"
+                        AbsoluteLayout.LayoutBounds="110,0"
                         Source="arrow_down_right_32p.png"
                         Clicked="OnTurnBackSideToLeftClicked">
                     </ImageButton>
@@ -231,7 +228,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnLeftSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="146,0"
+                        AbsoluteLayout.LayoutBounds="175,0"
                         Source="arrow_down_left_32p.png"
                         Clicked="OnTurnLeftSideToRightClicked">
                     </ImageButton>
@@ -239,7 +236,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnTopMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="200,0"
+                        AbsoluteLayout.LayoutBounds="230,0"
                         Source="arrow_down_left_32p.png"
                         Clicked="OnTurnTopMiddleToFrontSideClicked">
                     </ImageButton>
@@ -247,7 +244,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnRightSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="260,0"
+                        AbsoluteLayout.LayoutBounds="290,0"
                         Source="arrow_down_left_32p.png"
                         Clicked="OnTurnRightSideToLeftClicked">
                     </ImageButton>
@@ -260,7 +257,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnTopSideToLeft"
                         Style="{StaticResource imageButtonArrowHorizontal}"
-                        AbsoluteLayout.LayoutBounds="0,85"
+                        AbsoluteLayout.LayoutBounds="0,80"
                         Source="arrow_right_32p.png"
                         Clicked="OnTurnTopSideToLeftClicked">
                     </ImageButton>
@@ -268,7 +265,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnFrontMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
-                        AbsoluteLayout.LayoutBounds="0,140"
+                        AbsoluteLayout.LayoutBounds="0,135"
                         Source="arrow_right_32p.png"
                         Clicked="OnTurnFrontMiddleToRightSideClicked">
                     </ImageButton>
@@ -276,7 +273,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnBottomSideToRight"
                         Style="{StaticResource imageButtonArrowHorizontal}"
-                        AbsoluteLayout.LayoutBounds="0,190"
+                        AbsoluteLayout.LayoutBounds="0,185"
                         Source="arrow_right_32p.png"
                         Clicked="OnTurnBottomSideToRightClicked">
                     </ImageButton>
@@ -289,7 +286,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnTopSideToRight"
                         Style="{StaticResource imageButtonArrowHorizontal}"
-                        AbsoluteLayout.LayoutBounds="0,50"
+                        AbsoluteLayout.LayoutBounds="0,45"
                         Source="arrow_left_32p.png"
                         Clicked="OnTurnTopSideToRightClicked">
                     </ImageButton>
@@ -297,7 +294,7 @@
                     <ImageButton
                         x:Name="imgbtnTurnRightMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
-                        AbsoluteLayout.LayoutBounds="0,105"
+                        AbsoluteLayout.LayoutBounds="0,100"
                         Source="arrow_left_32p.png"
                         Clicked="OnTurnRightMiddleToFrontSideClicked">
                     </ImageButton>
@@ -561,53 +558,54 @@
 
                 <AbsoluteLayout
                     Grid.Row="4"
-                    Grid.Column="1">
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
 
                     <ImageButton
                         x:Name="imgbtnTurnLeftSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="15,0"
-                        Source="arrow_up_32p.png"
+                        AbsoluteLayout.LayoutBounds="30,0"
+                        Source="arrow_up_right_32p.png"
                         Clicked="OnTurnLeftSideToLeftClicked">
                     </ImageButton>
 
                     <ImageButton
                         x:Name="imgbtnTurnFrontMiddleToTopSide"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="65,0"
-                        Source="arrow_up_32p.png"
+                        AbsoluteLayout.LayoutBounds="85,0"
+                        Source="arrow_up_right_32p.png"
                         Clicked="OnTurnFrontMiddleToTopSideClicked">
                     </ImageButton>
 
                     <ImageButton
                         x:Name="imgbtnTurnRightSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="115,0"
-                        Source="arrow_up_32p.png"
+                        AbsoluteLayout.LayoutBounds="142,0"
+                        Source="arrow_up_right_32p.png"
                         Clicked="OnTurnRightSideToRightClicked">
                     </ImageButton>
 
                     <ImageButton
                         x:Name="imgbtnTurnFrontSideToLeft"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="175,0"
-                        Source="arrow_up_32p.png"
+                        AbsoluteLayout.LayoutBounds="210,0"
+                        Source="arrow_up_left_32p.png"
                         Clicked="OnTurnFrontSideToLeftClicked">
                     </ImageButton>
 
                     <ImageButton
                         x:Name="imgbtnTurnRightMiddleToTopSide"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="220,0"
-                        Source="arrow_up_32p.png"
+                        AbsoluteLayout.LayoutBounds="260,0"
+                        Source="arrow_up_left_32p.png"
                         Clicked="OnTurnRightMiddleToTopSideClicked">
                     </ImageButton>
 
                     <ImageButton
                         x:Name="imgbtnTurnBackSideToRight"
                         Style="{StaticResource imageButtonArrowVertical}"
-                        AbsoluteLayout.LayoutBounds="265,0"
-                        Source="arrow_up_32p.png"
+                        AbsoluteLayout.LayoutBounds="310,0"
+                        Source="arrow_up_left_32p.png"
                         Clicked="OnTurnBackSideToRightClicked">
                     </ImageButton>
                 </AbsoluteLayout>
