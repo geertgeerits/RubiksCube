@@ -140,7 +140,7 @@ public partial class MainPage : ContentPage
 
         if (bColorDrop)
         {
-            SetArrowColorToInactive();
+            SetArrowBackgroundColorToInactive();
 
             btnSolve.IsEnabled = false;
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
@@ -175,8 +175,8 @@ public partial class MainPage : ContentPage
                 bColorDrop = true;
                 return;
             }
-            
-            SetArrowColorToActive();
+
+            SetArrowBackgroundColorToActive();
 
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
@@ -203,7 +203,7 @@ public partial class MainPage : ContentPage
         }
 
         // Settings.
-        SetArrowColorToInactive();
+        SetArrowBackgroundColorToInactive();
 
         btnSolve.IsEnabled = false;
         imgbtnSetColors.BackgroundColor = Color.FromArgb(cColorArrowInactive);
@@ -246,7 +246,7 @@ public partial class MainPage : ContentPage
         imgbtnSave.IsEnabled = true;
         imgbtnSave.BackgroundColor = Color.FromArgb(cColorArrowActive);
 
-        SetArrowColorToActive();
+        SetArrowBackgroundColorToActive();
     }
 
     // Solve the cube.
@@ -2381,7 +2381,7 @@ public partial class MainPage : ContentPage
     //}
 
     // Set the arrow background color to Inactive.
-    private void SetArrowColorToInactive()
+    private void SetArrowBackgroundColorToInactive()
     {
         imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
@@ -2404,7 +2404,7 @@ public partial class MainPage : ContentPage
     }
 
     // Set the arrow background color to Active.
-    private void SetArrowColorToActive()
+    private void SetArrowBackgroundColorToActive()
     {
         imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
         imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
@@ -2504,7 +2504,9 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
+            // Text to speech is not supported on this device.
             await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
+            Globals.bExplainSpeech = false;
             return;
         }
 
@@ -2636,6 +2638,35 @@ Numbering of cube surfaces.
  
                             _________________________
                             |       |       |       |
+                            |  Ba9  |  Ba8  |  Ba7  |
+                            |_______|_______|_______|
+                            |       |       |       |
+                            |  Ba6  |  Ba5  |  Ba4  |
+                            |_______|_______|_______|
+                            |       |       |       |
+                            |  Ba3  |  Ba2  |  Ba1  |
+    ________________________|_______|_______|_______|________________________________________________
+    |       |       |       |       |       |       |       |       |       |       |       |       |
+    |  Le7  |  Le4  |  Le1  |  To1  |  To2  |  To3  |  Ri3  |  Ri6  |  Ri9  |  Bo9  |  Bo8  |  Bo7  |
+    |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+    |       |       |       |       |       |       |       |       |       |       |       |       |
+    |  Le8  |  Le5  |  Le2  |  To4  |  To5  |  To6  |  Ri2  |  Ri5  |  Ri8  |  Bo6  |  Bo5  |  Bo4  |
+    |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+    |       |       |       |       |       |       |       |       |       |       |       |       |
+    |  Le9  |  Le6  |  Le3  |  To7  |  To8  |  To9  |  Ri1  |  Ri4  |  Ri7  |  Bo3  |  Bo2  |  Bo1  |
+    |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+                            |       |       |       |
+                            |  Fr1  |  Fr2  |  Fr3  |
+                            |_______|_______|_______|
+                            |       |       |       |
+                            |  Fr4  |  Fr5  |  Fr6  |
+                            |_______|_______|_______|
+                            |       |       |       |
+                            |  Fr7  |  Fr8  |  Fr9  |
+                            |_______|_______|_______|
+ 
+                            _________________________
+                            |       |       |       |
                             | YO=40 | Y1=41 | Y2=42 |
                             |_______|_______|_______|
                             |       |       |       |
@@ -2662,5 +2693,5 @@ Numbering of cube surfaces.
                             |       |       |       |
                             |       |       |       |
                             |_______|_______|_______|
- 
+
  */
