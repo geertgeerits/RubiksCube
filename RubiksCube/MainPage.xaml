@@ -77,7 +77,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Grid.Row="0"
                 Grid.Column="2"                
-                Fill="Red"
+                Fill="White"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
@@ -89,7 +89,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Grid.Row="0"
                 Grid.Column="3"                
-                Fill="Yellow"
+                Fill="Red"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
@@ -125,7 +125,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Grid.Row="0"
                 Grid.Column="6"                
-                Fill="White"
+                Fill="Orange"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
@@ -137,7 +137,7 @@
                 Style="{StaticResource polygonStyleColor}"
                 Grid.Row="0"
                 Grid.Column="7"                
-                Fill="Orange"
+                Fill="Yellow"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
                     <DragGestureRecognizer DragStarting="OnColorDragStarting" />
