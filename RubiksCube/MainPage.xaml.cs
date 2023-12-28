@@ -21,8 +21,6 @@ public partial class MainPage : ContentPage
     private bool bColorDrop;
     private bool bSolvingCube;
     private bool bArrowButtonPressed;
-    private readonly string cColorArrowInactive = "#E2E2E2";    // Lightgray
-    private readonly string cColorArrowActive = "#FFD700";      // Gold = "#FFD700"
     private readonly string[] aCubeColors = new string[7];
     private readonly string[] aTopSide = new string[10];
     private readonly string[] aFrontSide = new string[10];
@@ -140,8 +138,6 @@ public partial class MainPage : ContentPage
 
         if (bColorDrop)
         {
-            SetArrowBackgroundColorToInactive();
-
             btnSolve.IsEnabled = false;
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
             IsVisibleCubeColors(true);
@@ -153,13 +149,6 @@ public partial class MainPage : ContentPage
             imgbtnTurnRightMiddleToFrontSide.IsEnabled = true;
             imgbtnTurnFrontMiddleToTopSide.IsEnabled = true;
             imgbtnTurnRightMiddleToTopSide.IsEnabled = true;
-
-            imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-            imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-            imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-            imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-            imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-            imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
 
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
@@ -175,8 +164,6 @@ public partial class MainPage : ContentPage
                 bColorDrop = true;
                 return;
             }
-
-            SetArrowBackgroundColorToActive();
 
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
@@ -203,14 +190,9 @@ public partial class MainPage : ContentPage
         }
 
         // Settings.
-        SetArrowBackgroundColorToInactive();
-
         btnSolve.IsEnabled = false;
-        imgbtnSetColors.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnSetColors.IsEnabled = false;
-        imgbtnOpen.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnOpen.IsEnabled = false;
-        imgbtnSave.BackgroundColor = Color.FromArgb(cColorArrowInactive);
         imgbtnSave.IsEnabled = false;
 
         bColorDrop = false;
@@ -240,13 +222,8 @@ public partial class MainPage : ContentPage
 
         btnSolve.IsEnabled = true;
         imgbtnSetColors.IsEnabled = true;
-        imgbtnSetColors.BackgroundColor = Color.FromArgb(cColorArrowActive);
         imgbtnOpen.IsEnabled = true;
-        imgbtnOpen.BackgroundColor = Color.FromArgb(cColorArrowActive);
         imgbtnSave.IsEnabled = true;
-        imgbtnSave.BackgroundColor = Color.FromArgb(cColorArrowActive);
-
-        SetArrowBackgroundColorToActive();
     }
 
     // Solve the cube.
@@ -1882,7 +1859,6 @@ public partial class MainPage : ContentPage
     private async Task ExplainSolveTurnCubeAsync(ImageButton imgbtnArrow, string cTurnCubeText)
     {
         // Enable the arrow button and set the background color to Active.
-        imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowActive);
         imgbtnArrow.IsEnabled = true;
 
         // Show the text
@@ -1908,7 +1884,6 @@ public partial class MainPage : ContentPage
         // Restore settings.
         bArrowButtonPressed = false;
         imgbtnArrow.IsEnabled = false;
-        imgbtnArrow.BackgroundColor = Color.FromArgb(cColorArrowInactive);
     }
 
     // Explain the turn of the cube with speech.
@@ -2357,75 +2332,6 @@ public partial class MainPage : ContentPage
         imgbtnTurnBackSideToRight.IsEnabled = bEnableDisable;
     }
 
-    // Set the arrows to visible or invisible.
-    //private void IsVisibleArrows(bool bVisibleInvisible)
-    //{
-    //    imgbtnTurnFrontSideToRight.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnTopMiddleToRightSide.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnBackSideToLeft.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnLeftSideToRight.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnTopMiddleToFrontSide.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnRightSideToLeft.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnTopSideToLeft.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnFrontMiddleToRightSide.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnBottomSideToRight.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnTopSideToRight.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnRightMiddleToFrontSide.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnBottomSideToLeft.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnLeftSideToLeft.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnFrontMiddleToTopSide.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnRightSideToRight.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnFrontSideToLeft.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnRightMiddleToTopSide.IsVisible = bVisibleInvisible;
-    //    imgbtnTurnBackSideToRight.IsVisible = bVisibleInvisible;
-    //}
-
-    // Set the arrow background color to Inactive.
-    private void SetArrowBackgroundColorToInactive()
-    {
-        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowInactive);
-    }
-
-    // Set the arrow background color to Active.
-    private void SetArrowBackgroundColorToActive()
-    {
-        imgbtnTurnFrontSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnTopMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnBackSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnLeftSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnTopMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnRightSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnTopSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnFrontMiddleToRightSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnBottomSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnTopSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnRightMiddleToFrontSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnBottomSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnLeftSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnFrontMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnRightSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnFrontSideToLeft.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnRightMiddleToTopSide.BackgroundColor = Color.FromArgb(cColorArrowActive);
-        imgbtnTurnBackSideToRight.BackgroundColor = Color.FromArgb(cColorArrowActive);
-    }
-   
     // Show license using the Loaded event of the MainPage.xaml.
     private async void OnPageLoad(object sender, EventArgs e)
     {
