@@ -22,7 +22,7 @@ public partial class MainPage : ContentPage
     private bool bSolvingCube;
     private bool bArrowButtonPressed;
     private readonly string cColorArrowInactive = "#E2E2E2";    // Lightgray
-    private readonly string cColorArrowActive = "#FFD000";      // Light orange
+    private readonly string cColorArrowActive = "#FFD700";      // Gold = "#FFD700"
     private readonly string[] aCubeColors = new string[7];
     private readonly string[] aTopSide = new string[10];
     private readonly string[] aFrontSide = new string[10];

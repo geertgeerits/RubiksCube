@@ -418,13 +418,21 @@
     <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">
         <Setter Property="HeightRequest" Value="32" />
         <Setter Property="WidthRequest" Value="22" />
-        <Setter Property="BackgroundColor" Value="#FFD000" />
+        <Setter Property="BackgroundColor" Value="Gold" />
     </Style>
 
     <Style x:Key="imageButtonArrowVertical" TargetType="ImageButton">
         <Setter Property="HeightRequest" Value="22" />
         <Setter Property="WidthRequest" Value="32" />
-        <Setter Property="BackgroundColor" Value="#FFD000" />
+        <Setter Property="BackgroundColor" Value="Gold" />
+    </Style>
+
+    <Style x:Key="imageButtonMenu" TargetType="ImageButton">
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="Gold" />
     </Style>
 
 </ResourceDictionary>

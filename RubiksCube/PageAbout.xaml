@@ -90,6 +90,62 @@
                             FontSize="13">
                         </Label>
 
+                        <Grid
+                            RowDefinitions="Auto, Auto, Auto"
+                            ColumnDefinitions="Auto, Auto"
+                            RowSpacing="5"
+                            ColumnSpacing="10"
+                            Padding="0,15,0,0">
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Source="cube_mixedcolors_48p.png"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSetColors_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="13"
+                                Text="{x:Static resx:CubeLang.ToolTipSetColors_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Source="arrow_up_32p.png"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipOpen_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="13"
+                                Text="{x:Static resx:CubeLang.ToolTipOpen_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Source="arrow_down_32p.png"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSave_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                FontSize="13"
+                                Text="{x:Static resx:CubeLang.ToolTipSave_Text}">
+                            </Label>
+                        </Grid>
+                    
                         <Label
                             x:Name="lblHelp"
                             Style="{StaticResource labelStyleInfo}"

@@ -11,7 +11,7 @@
             RowDefinitions="50"
             ColumnDefinitions="60, 140*, 60"
             Margin="4"
-            BackgroundColor="#FFD000">
+            BackgroundColor="Gold">
 
             <ImageButton
                 x:Name="imgbtnAbout"
@@ -951,36 +951,24 @@
             
             <ImageButton
                 x:Name="imgbtnSetColors"
+                Style="{StaticResource imageButtonMenu}"
                 Source="cube_mixedcolors_48p.png"
-                HeightRequest="38"
-                WidthRequest="38"
-                BorderWidth="2"
-                BorderColor="Black"
-                BackgroundColor="#FFD000"
                 ToolTipProperties.Text="{local:Translate ToolTipSetColors_Text}"
                 Clicked="OnButtonSetColorsClicked">
             </ImageButton>
 
             <ImageButton
                 x:Name="imgbtnOpen"
+                Style="{StaticResource imageButtonMenu}"
                 Source="arrow_up_32p.png"
-                HeightRequest="38"
-                WidthRequest="38"
-                BorderWidth="2"
-                BorderColor="Black"
-                BackgroundColor="#FFD000"
                 ToolTipProperties.Text="{local:Translate ToolTipOpen_Text}"
                 Clicked="OnButtonOpenClicked">
             </ImageButton>
 
             <ImageButton
                 x:Name="imgbtnSave"
+                Style="{StaticResource imageButtonMenu}"
                 Source="arrow_down_32p.png"
-                HeightRequest="38"
-                WidthRequest="38"
-                BorderWidth="2"
-                BorderColor="Black"
-                BackgroundColor="#FFD000"
                 ToolTipProperties.Text="{local:Translate ToolTipSave_Text}"
                 Clicked="OnButtonSaveClicked">
             </ImageButton>

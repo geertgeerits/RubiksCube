@@ -5,7 +5,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Color x:Key="Primary">#FFD000</Color>
+    <Color x:Key="Primary">Gold</Color>
     <Color x:Key="Light">#e2e2e2</Color>
     <Color x:Key="Dark">#303030</Color>
     <Color x:Key="White">White</Color>
