@@ -934,13 +934,13 @@
         </ScrollView>
 
         <Button
-            x:Name="btnSolve"
+            x:Name="btnSolveCube"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="3"
             Grid.Column="0"
             Text="{local:Translate ButtonSolve_Text}"
             ToolTipProperties.Text="{local:Translate ButtonSolve_Text}"
-            Clicked="OnBtnSolveClicked">
+            Clicked="OnBtnSolveCubeClicked">
         </Button>
 
         <HorizontalStackLayout
@@ -950,27 +950,27 @@
             Spacing="10">
             
             <ImageButton
-                x:Name="imgbtnSetColors"
+                x:Name="imgbtnSetColorsCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="cube_mixedcolors_48p.png"
-                ToolTipProperties.Text="{local:Translate ToolTipSetColors_Text}"
-                Clicked="OnButtonSetColorsClicked">
+                ToolTipProperties.Text="{local:Translate ToolTipSetColorsCube_Text}"
+                Clicked="OnButtonSetColorsCubeClicked">
             </ImageButton>
 
             <ImageButton
-                x:Name="imgbtnOpen"
+                x:Name="imgbtnOpenCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="arrow_up_32p.png"
-                ToolTipProperties.Text="{local:Translate ToolTipOpen_Text}"
-                Clicked="OnButtonOpenClicked">
+                ToolTipProperties.Text="{local:Translate ToolTipOpenCube_Text}"
+                Clicked="OnButtonOpenCubeClicked">
             </ImageButton>
 
             <ImageButton
-                x:Name="imgbtnSave"
+                x:Name="imgbtnSaveCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="arrow_down_32p.png"
-                ToolTipProperties.Text="{local:Translate ToolTipSave_Text}"
-                Clicked="OnButtonSaveClicked">
+                ToolTipProperties.Text="{local:Translate ToolTipSaveCube_Text}"
+                Clicked="OnButtonSaveCubeClicked">
             </ImageButton>
         </HorizontalStackLayout>
 

@@ -187,17 +187,6 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rotate the cube sides &apos;clockwise&apos; and &apos;counter clockwise&apos;:
-        ///If the command is given to turn the front &apos;clockwise&apos; then this is in the direction the hands are turning. &apos;Counter clockwise&apos; is turning in the other direction.
-        ///For the other sides you always have to &apos;imagine&apos; that you are directly in front of the side to be turned. So if it says turn the back &apos;clockwise&apos; imagine you are on the other side of the cube and then turn the back &apos;clockwise&apos;. Do not rotate the cube itself..
-        /// </summary>
-        internal static string CubeHelp_Text {
-            get {
-                return ResourceManager.GetString("CubeHelp_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Inside view.
         /// </summary>
         internal static string CubeInsideView_Text {
@@ -302,6 +291,44 @@ namespace RubiksCube.Resources.Languages {
         internal static string ExplainedByText_Text {
             get {
                 return ResourceManager.GetString("ExplainedByText_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate the cube sides &apos;clockwise&apos; and &apos;counter clockwise&apos;:
+        ///If the command is given to turn the front &apos;clockwise&apos; then this is in the direction the hands are turning. &apos;Counter clockwise&apos; is turning in the other direction.
+        ///For the other sides you always have to &apos;imagine&apos; that you are directly in front of the side to be turned. So if it says turn the back &apos;clockwise&apos; imagine you are on the other side of the cube and then turn the back &apos;clockwise&apos;. Do not rotate the cube itself..
+        /// </summary>
+        internal static string HelpCube_Text {
+            get {
+                return ResourceManager.GetString("HelpCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open the saved cube..
+        /// </summary>
+        internal static string HelpOpenCube_Text {
+            get {
+                return ResourceManager.GetString("HelpOpenCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save the current cube..
+        /// </summary>
+        internal static string HelpSaveCube_Text {
+            get {
+                return ResourceManager.GetString("HelpSaveCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer the colors from the jumbled cube to this cube using drag and drop. Press this button again to exit this section..
+        /// </summary>
+        internal static string HelpSetColorsCube_Text {
+            get {
+                return ResourceManager.GetString("HelpSetColorsCube_Text", resourceCulture);
             }
         }
         
@@ -636,27 +663,27 @@ namespace RubiksCube.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Open the cube.
         /// </summary>
-        internal static string ToolTipOpen_Text {
+        internal static string ToolTipOpenCube_Text {
             get {
-                return ResourceManager.GetString("ToolTipOpen_Text", resourceCulture);
+                return ResourceManager.GetString("ToolTipOpenCube_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save the cube.
         /// </summary>
-        internal static string ToolTipSave_Text {
+        internal static string ToolTipSaveCube_Text {
             get {
-                return ResourceManager.GetString("ToolTipSave_Text", resourceCulture);
+                return ResourceManager.GetString("ToolTipSaveCube_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Toggle button: Drag the colors onto the cube.
         /// </summary>
-        internal static string ToolTipSetColors_Text {
+        internal static string ToolTipSetColorsCube_Text {
             get {
-                return ResourceManager.GetString("ToolTipSetColors_Text", resourceCulture);
+                return ResourceManager.GetString("ToolTipSetColorsCube_Text", resourceCulture);
             }
         }
         

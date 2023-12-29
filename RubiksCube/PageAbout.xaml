@@ -74,25 +74,22 @@
                     <VerticalStackLayout>
                         <Label
                             x:Name="lblPrivacyPolicy"
-                            Style="{StaticResource labelStyleInfo}"
-                            FontSize="13">
+                            Style="{StaticResource labelStyleInfo}">
                         </Label>
 
                         <Label
                             x:Name="lblLicense"
-                            Style="{StaticResource labelStyleInfo}"
-                            FontSize="13">
+                            Style="{StaticResource labelStyleInfo}">
                         </Label>
 
                         <Label
                             Style="{StaticResource labelStyleInfo}"
-                            Text="{x:Static resx:CubeLang.LicenseMit2_Text}"
-                            FontSize="13">
+                            Text="{x:Static resx:CubeLang.LicenseMit2_Text}">
                         </Label>
 
                         <Grid
                             RowDefinitions="Auto, Auto, Auto"
-                            ColumnDefinitions="Auto, Auto"
+                            ColumnDefinitions="50, 250*"
                             RowSpacing="5"
                             ColumnSpacing="10"
                             Padding="0,15,0,0">
@@ -102,15 +99,14 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 Source="cube_mixedcolors_48p.png"
-                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSetColors_Text}">
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSetColorsCube_Text}">
                             </ImageButton>
 
                             <Label
                                 Style="{StaticResource labelStyleInfo}"
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                FontSize="13"
-                                Text="{x:Static resx:CubeLang.ToolTipSetColors_Text}">
+                                Text="{x:Static resx:CubeLang.HelpSetColorsCube_Text}">
                             </Label>
 
                             <ImageButton
@@ -118,15 +114,14 @@
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 Source="arrow_up_32p.png"
-                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipOpen_Text}">
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipOpenCube_Text}">
                             </ImageButton>
 
                             <Label
                                 Style="{StaticResource labelStyleInfo}"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                FontSize="13"
-                                Text="{x:Static resx:CubeLang.ToolTipOpen_Text}">
+                                Text="{x:Static resx:CubeLang.HelpOpenCube_Text}">
                             </Label>
 
                             <ImageButton
@@ -134,28 +129,25 @@
                                 Grid.Row="2"
                                 Grid.Column="0"
                                 Source="arrow_down_32p.png"
-                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSave_Text}">
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSaveCube_Text}">
                             </ImageButton>
 
                             <Label
                                 Style="{StaticResource labelStyleInfo}"
                                 Grid.Row="2"
                                 Grid.Column="1"
-                                FontSize="13"
-                                Text="{x:Static resx:CubeLang.ToolTipSave_Text}">
+                                Text="{x:Static resx:CubeLang.HelpSaveCube_Text}">
                             </Label>
                         </Grid>
                     
                         <Label
                             x:Name="lblHelp"
-                            Style="{StaticResource labelStyleInfo}"
-                            FontSize="13">
+                            Style="{StaticResource labelStyleInfo}">
                         </Label>
 
                         <Label
                             x:Name="lblExplanation"
-                            Style="{StaticResource labelStyleInfo}"
-                            FontSize="13">
+                            Style="{StaticResource labelStyleInfo}">
                         </Label>
                     </VerticalStackLayout>
                 </VerticalStackLayout>

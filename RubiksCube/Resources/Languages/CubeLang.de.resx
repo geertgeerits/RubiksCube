@@ -159,11 +159,6 @@
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Vorderseite</value>
   </data>
-  <data name="CubeHelp_Text" xml:space="preserve">
-    <value>Drehen Sie die Würfelseiten im Uhrzeigersinn und im Gegenuhrzeigersinn:
-Wenn der Befehl gegeben wird, die Vorderseite 'im Uhrzeigersinn' zu drehen, dann in die Richtung, in die sich die Zeiger drehen. 'Gegen den Uhrzeigersinn' dreht sich in die andere Richtung.
-Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor der zu wendenden Seite steht. Wenn es also heißt, drehen Sie die Rückseite im Uhrzeigersinn, stellen Sie sich vor, Sie befinden sich auf der anderen Seite des Würfels und drehen Sie dann die Rückseite im Uhrzeigersinn. Drehen Sie nicht den Würfel selbst.</value>
-  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Innenansicht</value>
   </data>
@@ -199,6 +194,20 @@ Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor de
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
     <value>Textlich erklärt:</value>
+  </data>
+  <data name="HelpCube_Text" xml:space="preserve">
+    <value>Drehen Sie die Würfelseiten im Uhrzeigersinn und im Gegenuhrzeigersinn:
+Wenn der Befehl gegeben wird, die Vorderseite 'im Uhrzeigersinn' zu drehen, dann in die Richtung, in die sich die Zeiger drehen. 'Gegen den Uhrzeigersinn' dreht sich in die andere Richtung.
+Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor der zu wendenden Seite steht. Wenn es also heißt, drehen Sie die Rückseite im Uhrzeigersinn, stellen Sie sich vor, Sie befinden sich auf der anderen Seite des Würfels und drehen Sie dann die Rückseite im Uhrzeigersinn. Drehen Sie nicht den Würfel selbst.</value>
+  </data>
+  <data name="HelpOpenCube_Text" xml:space="preserve">
+    <value>Öffnen Sie den gespeicherten Cube.</value>
+  </data>
+  <data name="HelpSaveCube_Text" xml:space="preserve">
+    <value>Speichern Sie den aktuellen Cube.</value>
+  </data>
+  <data name="HelpSetColorsCube_Text" xml:space="preserve">
+    <value>Übertragen Sie die Farben vom durcheinandergewürfelten Würfel per Drag &amp; Drop auf diesen Würfel. Drücken Sie diese Taste erneut, um diesen Abschnitt zu verlassen.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadezimale Farbcodes:
@@ -319,13 +328,13 @@ Nicht erlaubt:</value>
   <data name="ToolTipHelp_Text" xml:space="preserve">
     <value>Hilfe</value>
   </data>
-  <data name="ToolTipOpen_Text" xml:space="preserve">
+  <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Öffne den Würfel</value>
   </data>
-  <data name="ToolTipSave_Text" xml:space="preserve">
+  <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Speichern Sie den Würfel</value>
   </data>
-  <data name="ToolTipSetColors_Text" xml:space="preserve">
+  <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Umschaltknopf: Ziehen Sie die Farben auf den Würfel</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">

@@ -159,11 +159,6 @@
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Fronte</value>
   </data>
-  <data name="CubeHelp_Text" xml:space="preserve">
-    <value>Ruota i lati del cubo in senso orario e antiorario:
-Se viene dato il comando di girare la parte anteriore 'in senso orario', allora questo è nella direzione in cui le lancette stanno girando. 'In senso antiorario' sta girando nella direzione opposta.
-Per gli altri lati devi sempre 'immaginare' di essere direttamente davanti al lato da girare. Quindi, se dice gira la parte posteriore 'in senso orario', immagina di essere dall'altra parte del cubo e poi gira la parte posteriore 'in senso orario'. Non ruotare il cubo stesso.</value>
-  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vista interna</value>
   </data>
@@ -199,6 +194,20 @@ Per gli altri lati devi sempre 'immaginare' di essere direttamente davanti al la
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
     <value>Spiegato dal testo:</value>
+  </data>
+  <data name="HelpCube_Text" xml:space="preserve">
+    <value>Ruota i lati del cubo in senso orario e antiorario:
+Se viene dato il comando di girare la parte anteriore 'in senso orario', allora questo è nella direzione in cui le lancette stanno girando. 'In senso antiorario' sta girando nella direzione opposta.
+Per gli altri lati devi sempre 'immaginare' di essere direttamente davanti al lato da girare. Quindi, se dice gira la parte posteriore 'in senso orario', immagina di essere dall'altra parte del cubo e poi gira la parte posteriore 'in senso orario'. Non ruotare il cubo stesso.</value>
+  </data>
+  <data name="HelpOpenCube_Text" xml:space="preserve">
+    <value>Apri il cubo salvato.</value>
+  </data>
+  <data name="HelpSaveCube_Text" xml:space="preserve">
+    <value>Salva il cubo corrente.</value>
+  </data>
+  <data name="HelpSetColorsCube_Text" xml:space="preserve">
+    <value>Trasferisci i colori dal cubo disordinato a questo cubo trascinandoli. Premere nuovamente questo pulsante per uscire da questa sezione.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Codici colore esadecimali:
@@ -319,13 +328,13 @@ Non autorizzato:</value>
   <data name="ToolTipHelp_Text" xml:space="preserve">
     <value>Aiuto</value>
   </data>
-  <data name="ToolTipOpen_Text" xml:space="preserve">
+  <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Apri il cubo</value>
   </data>
-  <data name="ToolTipSave_Text" xml:space="preserve">
+  <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Salva il cubo</value>
   </data>
-  <data name="ToolTipSetColors_Text" xml:space="preserve">
+  <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Pulsante di commutazione: trascina i colori sul cubo</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">

@@ -159,11 +159,6 @@
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Voor</value>
   </data>
-  <data name="CubeHelp_Text" xml:space="preserve">
-    <value>De kubuszijden 'met de klok mee' en 'tegen de klok in' draaien:
-Als de opdracht wordt gegeven om de voorzijde 'met de klok mee' te draaien dan is dit in de richting waarin de wijzers draaien.  'Tegen de klok in' is draaien in de andere richting.
-Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draaien zijde staat. Dus als er staat draai de achterkant 'met de klok mee' stel u zich dan voor dat u aan de andere kant van de kubus staat en draai dan de achterkant 'met de klok mee'. Draai de kubus zelf niet.</value>
-  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Binnenkant</value>
   </data>
@@ -199,6 +194,20 @@ Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draa
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
     <value>Uitleg met tekst:</value>
+  </data>
+  <data name="HelpCube_Text" xml:space="preserve">
+    <value>De kubuszijden 'met de klok mee' en 'tegen de klok in' draaien:
+Als de opdracht wordt gegeven om de voorzijde 'met de klok mee' te draaien dan is dit in de richting waarin de wijzers draaien.  'Tegen de klok in' is draaien in de andere richting.
+Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draaien zijde staat. Dus als er staat draai de achterkant 'met de klok mee' stel u zich dan voor dat u aan de andere kant van de kubus staat en draai dan de achterkant 'met de klok mee'. Draai de kubus zelf niet.</value>
+  </data>
+  <data name="HelpOpenCube_Text" xml:space="preserve">
+    <value>Open de opgeslagen kubus.</value>
+  </data>
+  <data name="HelpSaveCube_Text" xml:space="preserve">
+    <value>Sla de huidige kubus op.</value>
+  </data>
+  <data name="HelpSetColorsCube_Text" xml:space="preserve">
+    <value>Breng de kleuren van de door elkaar gegooide kubus over naar deze kubus door middel van slepen en neerzetten. Druk nogmaals op deze knop om dit gedeelte te verlaten.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimale kleurcodes:
@@ -319,13 +328,13 @@ Niet toegestaan:</value>
   <data name="ToolTipHelp_Text" xml:space="preserve">
     <value>Hulp</value>
   </data>
-  <data name="ToolTipOpen_Text" xml:space="preserve">
+  <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Open de kubus</value>
   </data>
-  <data name="ToolTipSave_Text" xml:space="preserve">
+  <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Bewaar de kubus</value>
   </data>
-  <data name="ToolTipSetColors_Text" xml:space="preserve">
+  <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Wisselknop: sleep de kleuren naar de kubus</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">

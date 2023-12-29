@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2023
 // Version .....: 2.0.11
-// Date ........: 2023-12-28 (YYYY-MM-DD)
+// Date ........: 2023-12-29 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -132,13 +132,13 @@ public partial class MainPage : ContentPage
     }
     
     // Drag and drop colors on the cube.
-    private void OnButtonSetColorsClicked(object sender, EventArgs e)
+    private void OnButtonSetColorsCubeClicked(object sender, EventArgs e)
     {
         bColorDrop = !bColorDrop;
 
         if (bColorDrop)
         {
-            btnSolve.IsEnabled = false;
+            btnSolveCube.IsEnabled = false;
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
             IsVisibleCubeColors(true);
             IsEnabledArrows(false);
@@ -176,12 +176,12 @@ public partial class MainPage : ContentPage
             IsVisibleCubeColors(false);
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#00000000");
 
-            btnSolve.IsEnabled = true;
+            btnSolveCube.IsEnabled = true;
         }
     }
 
     // Solve the cube.
-    private async void OnBtnSolveClicked(object sender, EventArgs e)
+    private async void OnBtnSolveCubeClicked(object sender, EventArgs e)
     {
         // Check the number of colors of the cube.
         if (!CheckNumberColorsCube())
@@ -190,10 +190,10 @@ public partial class MainPage : ContentPage
         }
 
         // Settings.
-        btnSolve.IsEnabled = false;
-        imgbtnSetColors.IsEnabled = false;
-        imgbtnOpen.IsEnabled = false;
-        imgbtnSave.IsEnabled = false;
+        btnSolveCube.IsEnabled = false;
+        imgbtnSetColorsCube.IsEnabled = false;
+        imgbtnOpenCube.IsEnabled = false;
+        imgbtnSaveCube.IsEnabled = false;
 
         bColorDrop = false;
         bSolvingCube = true;
@@ -220,10 +220,10 @@ public partial class MainPage : ContentPage
         SetArrowTooltips(true);
         bSolvingCube = false;
 
-        btnSolve.IsEnabled = true;
-        imgbtnSetColors.IsEnabled = true;
-        imgbtnOpen.IsEnabled = true;
-        imgbtnSave.IsEnabled = true;
+        btnSolveCube.IsEnabled = true;
+        imgbtnSetColorsCube.IsEnabled = true;
+        imgbtnOpenCube.IsEnabled = true;
+        imgbtnSaveCube.IsEnabled = true;
     }
 
     // Solve the cube.
@@ -1901,7 +1901,7 @@ public partial class MainPage : ContentPage
     }
 
     // On clicked event: Save the cube.
-    private void OnButtonSaveClicked(object sender, EventArgs e)
+    private void OnButtonSaveCubeClicked(object sender, EventArgs e)
     {
         SetCubeColorsInArrays();
 
@@ -1964,7 +1964,7 @@ public partial class MainPage : ContentPage
     }
 
     // On clicked event: Open, restore the cube.
-    private void OnButtonOpenClicked(object sender, EventArgs e)
+    private void OnButtonOpenCubeClicked(object sender, EventArgs e)
     {
         string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
 
@@ -2352,10 +2352,10 @@ public partial class MainPage : ContentPage
                 //Thread.CurrentThread.Abort();  // Not allowed in iOS.
                 imgbtnAbout.IsEnabled = false;
                 imgbtnSettings.IsEnabled = false;
-                btnSolve.IsEnabled = false;
-                imgbtnSetColors.IsEnabled = false;
-                imgbtnOpen.IsEnabled = false;
-                imgbtnSave.IsEnabled = false;
+                btnSolveCube.IsEnabled = false;
+                imgbtnSetColorsCube.IsEnabled = false;
+                imgbtnOpenCube.IsEnabled = false;
+                imgbtnSaveCube.IsEnabled = false;
                 btnReset.IsEnabled = false;
                 IsEnabledArrows(false);
 

@@ -159,11 +159,6 @@
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Face avant</value>
   </data>
-  <data name="CubeHelp_Text" xml:space="preserve">
-    <value>Faites pivoter les côtés du cube dans le sens des aiguilles d'une montre et dans le sens inverse des aiguilles d'une montre:
-Si la commande est donnée de tourner le devant dans le sens des aiguilles d'une montre, c'est dans le sens dans lequel les aiguilles tournent. 'Dans le sens contraire des aiguilles d'une montre' tourne dans l'autre sens.
-Pour les autres côtés, vous devez toujours « imaginer » que vous êtes directement devant le côté à tourner. Donc, s'il est indiqué de tourner le dos dans le sens des aiguilles d'une montre, imaginez que vous êtes de l'autre côté du cube, puis tournez le dos dans le sens des aiguilles d'une montre. Ne faites pas pivoter le cube lui-même.</value>
-  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vue de l'intérieur</value>
   </data>
@@ -199,6 +194,20 @@ Pour les autres côtés, vous devez toujours « imaginer » que vous êtes dir
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
     <value>Expliqué par texte:</value>
+  </data>
+  <data name="HelpCube_Text" xml:space="preserve">
+    <value>Faites pivoter les côtés du cube dans le sens des aiguilles d'une montre et dans le sens inverse des aiguilles d'une montre:
+Si la commande est donnée de tourner le devant dans le sens des aiguilles d'une montre, c'est dans le sens dans lequel les aiguilles tournent. 'Dans le sens contraire des aiguilles d'une montre' tourne dans l'autre sens.
+Pour les autres côtés, vous devez toujours « imaginer » que vous êtes directement devant le côté à tourner. Donc, s'il est indiqué de tourner le dos dans le sens des aiguilles d'une montre, imaginez que vous êtes de l'autre côté du cube, puis tournez le dos dans le sens des aiguilles d'une montre. Ne faites pas pivoter le cube lui-même.</value>
+  </data>
+  <data name="HelpOpenCube_Text" xml:space="preserve">
+    <value>Ouvrez le cube enregistré.</value>
+  </data>
+  <data name="HelpSaveCube_Text" xml:space="preserve">
+    <value>Enregistrez le cube actuel.</value>
+  </data>
+  <data name="HelpSetColorsCube_Text" xml:space="preserve">
+    <value>Transférez les couleurs du cube pêle-mêle vers ce cube par glisser-déposer. Appuyez à nouveau sur ce bouton pour quitter cette section.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Codes couleurs hexadécimaux:
@@ -319,13 +328,13 @@ Interdit:</value>
   <data name="ToolTipHelp_Text" xml:space="preserve">
     <value>Aider</value>
   </data>
-  <data name="ToolTipOpen_Text" xml:space="preserve">
+  <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Ouvrez le cube</value>
   </data>
-  <data name="ToolTipSave_Text" xml:space="preserve">
+  <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Enregistrez le cube</value>
   </data>
-  <data name="ToolTipSetColors_Text" xml:space="preserve">
+  <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Bouton bascule: faites glisser les couleurs sur le cube</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">

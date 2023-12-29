@@ -159,11 +159,6 @@
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Front</value>
   </data>
-  <data name="CubeHelp_Text" xml:space="preserve">
-    <value>Rotate the cube sides 'clockwise' and 'counter clockwise':
-If the command is given to turn the front 'clockwise' then this is in the direction the hands are turning. 'Counter clockwise' is turning in the other direction.
-For the other sides you always have to 'imagine' that you are directly in front of the side to be turned. So if it says turn the back 'clockwise' imagine you are on the other side of the cube and then turn the back 'clockwise'. Do not rotate the cube itself.</value>
-  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Inside view</value>
   </data>
@@ -199,6 +194,20 @@ For the other sides you always have to 'imagine' that you are directly in front 
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
     <value>Explained by text:</value>
+  </data>
+  <data name="HelpCube_Text" xml:space="preserve">
+    <value>Rotate the cube sides 'clockwise' and 'counter clockwise':
+If the command is given to turn the front 'clockwise' then this is in the direction the hands are turning. 'Counter clockwise' is turning in the other direction.
+For the other sides you always have to 'imagine' that you are directly in front of the side to be turned. So if it says turn the back 'clockwise' imagine you are on the other side of the cube and then turn the back 'clockwise'. Do not rotate the cube itself.</value>
+  </data>
+  <data name="HelpOpenCube_Text" xml:space="preserve">
+    <value>Open the saved cube.</value>
+  </data>
+  <data name="HelpSaveCube_Text" xml:space="preserve">
+    <value>Save the current cube.</value>
+  </data>
+  <data name="HelpSetColorsCube_Text" xml:space="preserve">
+    <value>Transfer the colors from the jumbled cube to this cube using drag and drop. Press this button again to exit this section.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimal color codes:
@@ -319,13 +328,13 @@ Not allowed:</value>
   <data name="ToolTipHelp_Text" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="ToolTipOpen_Text" xml:space="preserve">
+  <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Open the cube</value>
   </data>
-  <data name="ToolTipSave_Text" xml:space="preserve">
+  <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Save the cube</value>
   </data>
-  <data name="ToolTipSetColors_Text" xml:space="preserve">
+  <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Toggle button: Drag the colors onto the cube</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">

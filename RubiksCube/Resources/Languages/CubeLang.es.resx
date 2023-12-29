@@ -159,11 +159,6 @@
   <data name="CubeFrontSide_Text" xml:space="preserve">
     <value>Lado delantero</value>
   </data>
-  <data name="CubeHelp_Text" xml:space="preserve">
-    <value>Gira los lados del cubo en sentido horario y antihorario:
-Si se da la orden de girar el frente en el sentido de las agujas del reloj, entonces esto es en la dirección en que giran las manecillas. 'En sentido contrario a las agujas del reloj' está girando en la otra dirección.
-Para los otros lados, siempre tiene que 'imaginar' que está directamente frente al lado que se va a girar. Entonces, si dice girar la parte trasera en el sentido de las agujas del reloj, imagina que estás en el otro lado del cubo y luego gira la parte trasera en el sentido de las agujas del reloj. No gire el cubo en sí.</value>
-  </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vista interior</value>
   </data>
@@ -199,6 +194,20 @@ Para los otros lados, siempre tiene que 'imaginar' que está directamente frente
   </data>
   <data name="ExplainedByText_Text" xml:space="preserve">
     <value>Explicado por texto:</value>
+  </data>
+  <data name="HelpCube_Text" xml:space="preserve">
+    <value>Gira los lados del cubo en sentido horario y antihorario:
+Si se da la orden de girar el frente en el sentido de las agujas del reloj, entonces esto es en la dirección en que giran las manecillas. 'En sentido contrario a las agujas del reloj' está girando en la otra dirección.
+Para los otros lados, siempre tiene que 'imaginar' que está directamente frente al lado que se va a girar. Entonces, si dice girar la parte trasera en el sentido de las agujas del reloj, imagina que estás en el otro lado del cubo y luego gira la parte trasera en el sentido de las agujas del reloj. No gire el cubo en sí.</value>
+  </data>
+  <data name="HelpOpenCube_Text" xml:space="preserve">
+    <value>Abra el cubo guardado.</value>
+  </data>
+  <data name="HelpSaveCube_Text" xml:space="preserve">
+    <value>Guarde el cubo actual.</value>
+  </data>
+  <data name="HelpSetColorsCube_Text" xml:space="preserve">
+    <value>Transfiera los colores del cubo desordenado a este cubo arrastrando y soltando. Presione este botón nuevamente para salir de esta sección.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Códigos de color hexadecimales:
@@ -319,13 +328,13 @@ No permitido:</value>
   <data name="ToolTipHelp_Text" xml:space="preserve">
     <value>Ayuda</value>
   </data>
-  <data name="ToolTipOpen_Text" xml:space="preserve">
+  <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Abre el cubo</value>
   </data>
-  <data name="ToolTipSave_Text" xml:space="preserve">
+  <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Guarda el cubo</value>
   </data>
-  <data name="ToolTipSetColors_Text" xml:space="preserve">
+  <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Botón de alternar: arrastre los colores al cubo</value>
   </data>
   <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
