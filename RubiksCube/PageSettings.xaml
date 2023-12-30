@@ -26,11 +26,18 @@
                 Style="{StaticResource gridStyleSettings}"
                 RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
-                <BoxView
+                <!--<BoxView
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2">
-                </BoxView>
+                </BoxView>-->
+
+                <Border
+                    Style="{StaticResource borderStyleDefault}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2">
+                </Border>
 
                 <Label
                     x:Name="lblExplanation"

@@ -28,6 +28,8 @@
     </Style>
 
     <Style TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 5" />
+        <Setter Property="StrokeThickness" Value="1" />
         <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
     </Style>
 
@@ -96,8 +98,6 @@
         <Setter Property="BorderColor" Value="Transparent"/>
         <Setter Property="BorderWidth" Value="0"/>
         <Setter Property="CornerRadius" Value="0"/>
-        <Setter Property="MinimumHeightRequest" Value="32"/>
-        <Setter Property="MinimumWidthRequest" Value="32"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -236,20 +236,14 @@
         <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 5" />
-        <Setter Property="StrokeThickness" Value="1" />
     </Style>
 
     <Style x:Key="borderStyleGroup" TargetType="Border">
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 5" />
-        <Setter Property="StrokeThickness" Value="1" />
     </Style>
 
     <Style x:Key="borderStyleExplainTurnCube" TargetType="Border">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 5" />
-        <Setter Property="StrokeThickness" Value="1" />
     </Style>
     
     <Style x:Key="labelStyleDefault" TargetType="Label">
