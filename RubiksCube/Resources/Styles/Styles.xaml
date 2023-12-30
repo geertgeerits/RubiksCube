@@ -28,9 +28,13 @@
     </Style>
 
     <Style TargetType="Border">
-        <Setter Property="StrokeShape" Value="RoundRectangle 5" />
         <Setter Property="StrokeThickness" Value="1" />
         <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="5" />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="Label">
