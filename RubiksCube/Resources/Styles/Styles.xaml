@@ -415,13 +415,16 @@
     </Style>
 
     <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">
-        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="HeightRequest" Value="36" />
         <Setter Property="WidthRequest" Value="22" />
+        <Setter Property="BorderWidth" Value="2"/>
         <Style.Triggers>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="True">
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="BackgroundColor" Value="Gold" />
             </Trigger>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="False">
+                <Setter Property="BorderColor" Value="LightGray"/>
                 <Setter Property="BackgroundColor" Value="LightGray" />
             </Trigger>
         </Style.Triggers>
@@ -429,12 +432,15 @@
 
     <Style x:Key="imageButtonArrowVertical" TargetType="ImageButton">
         <Setter Property="HeightRequest" Value="22" />
-        <Setter Property="WidthRequest" Value="32" />
+        <Setter Property="WidthRequest" Value="36" />
+        <Setter Property="BorderWidth" Value="2"/>
         <Style.Triggers>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="True">
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 <Setter Property="BackgroundColor" Value="Gold" />
             </Trigger>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="False">
+                <Setter Property="BorderColor" Value="LightGray"/>
                 <Setter Property="BackgroundColor" Value="LightGray" />
             </Trigger>
         </Style.Triggers>
@@ -444,7 +450,7 @@
         <Setter Property="HeightRequest" Value="38" />
         <Setter Property="WidthRequest" Value="38" />
         <Setter Property="BorderWidth" Value="2" />
-        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />
         <Style.Triggers>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="True">
                 <Setter Property="BackgroundColor" Value="Gold" />
