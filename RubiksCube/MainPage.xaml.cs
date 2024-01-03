@@ -235,7 +235,6 @@ public partial class MainPage : ContentPage
         string cB = string.Empty;
         string cX = string.Empty;
 
-
         // Top layer.
         // Solve the edges of the top layer - Chapter 4, page 14-3.
     Line510:
@@ -246,30 +245,35 @@ public partial class MainPage : ContentPage
         Z = 0;
         if (cB == aTopSide[8] && aFrontSide[1] == aFrontSide[2])
             V = 1;
+        // 520
         if (cB == aTopSide[6] && aRightSide[1] == aRightSide[2])
             X = 1;
+        // 530
         if (cB == aTopSide[2] && aBackSide[1] == aBackSide[2])
             Y = 1;
+        // 540
         if (cB == aTopSide[4] && aLeftSide[1] == aLeftSide[2])
             Z = 1;
-
+        // 550
         if (V == 1 && X == 1 && Y == 1 && Z == 1)
             goto Line710;
-
+        // 560
         O = 0;
         P = 0;
         Q = 0;
 
         if (cB == aFrontSide[6] || cB == aRightSide[2] || cB == aRightSide[4] || cB == aRightSide[6])
             O = 1;
+        // 570
         if (cB == aBackSide[4] || cB == aRightSide[8] || cB == aBottomSide[6])
             P = 1;
+        // 580
         if (cB == aTopSide[6])                               // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             Q = 1;
-
+        // 590
         if (O == 1 || P == 1 || Q == 1)
             goto Line610;
-
+        // 600
         await ExplainSolveTurnCubeAsync(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text, "");
         TurnCubeFrontSideToLeftSide();
         goto Line510;
@@ -277,26 +281,20 @@ public partial class MainPage : ContentPage
     Line610:
         if (V == 1 && Y == 1 && Z == 1)
             goto Line650;
-
         // 620
         if (Y == 1 && Z == 1)
         {
             await ExplainSolveTurnCubeAsync(imgbtnTurnTopSideToLeft, CubeLang.TurnCubeTopSideToLeftSide_Text, "TurnTop-");
             goto Line650;
         }
-
-        // 620
+        // 630
         if (Y == 1)
         {
-            await ExplainSolveTurnCubeAsync(imgbtnTurnTopSideToRight, CubeLang.TurnTopSideHalfTurn_Text, "");
-            TurnTopSideTo("+");
-            TurnTopSideTo("+");
-            GetCubeColorsFromArrays();
+            await ExplainSolveTurnCubeAsync(imgbtnTurnTopSideToRight, CubeLang.TurnTopSideHalfTurn_Text, "TurnTop++");
             goto Line650;
         }
-
-        TurnTopSideTo("+");
-        GetCubeColorsFromArrays();
+        // 640
+        await ExplainSolveTurnCubeAsync(imgbtnTurnTopSideToRight, CubeLang.TurnCubeTopSideToRightSide_Text, "TurnTop+");
 
     Line650:
         cX = aRightSide[1];
@@ -312,7 +310,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text, "TurnBottom+");
             await ExplainSolveTurnCubeAsync(imgbtnTurnFrontSideToLeft, CubeLang.TurnFrontSideToLeft_Text, "TurnFront-");
         }
-
+        // 655
         if (cB == aFrontSide[6] && cX == aRightSide[4])
         {
             await ExplainSolveTurnCubeAsync(imgbtnTurnTopSideToLeft, CubeLang.TurnTopSideToLeft_Text, "TurnTop-");
@@ -321,7 +319,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text, "TurnBottom-");
             await ExplainSolveTurnCubeAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideToRight_Text, "TurnRight+");
         }
-
+        // 660
         if (cB == aRightSide[4] && cX == aFrontSide[6])
         {
             await ExplainSolveTurnCubeAsync(imgbtnTurnTopSideToLeft, CubeLang.TurnTopSideToLeft_Text, "TurnTop-");
@@ -331,12 +329,22 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text, "TurnBottom+");
             await ExplainSolveTurnCubeAsync(imgbtnTurnFrontSideToLeft, CubeLang.TurnFrontSideToLeft_Text, "TurnFront-");
         }
+        // 665
 
+        // 670
 
+        // 675
+ 
+        // 680
+        
+        // 685
+        
+        // 690
+        
+        // 695
+        goto Line510;
 
-
-
-    // Solve the corners of the top layer - Chapter 6, page 16.
+        // Solve the corners of the top layer - Chapter 6, page 16.
     Line710:;
 
 
@@ -372,10 +380,7 @@ public partial class MainPage : ContentPage
 
             if (aLeftSide[8] == aRightSide[5])
             {
-                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text, "");
-                TurnBottomSideTo("+");
-                TurnBottomSideTo("+");
-                GetCubeColorsFromArrays();
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text, "TurnBottom++");
             }
         }
 
@@ -395,10 +400,7 @@ public partial class MainPage : ContentPage
 
             if (aRightSide[8] == aLeftSide[5])
             {
-                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text, "");
-                TurnBottomSideTo("+");
-                TurnBottomSideTo("+");
-                GetCubeColorsFromArrays();
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideHalfTurn_Text, "TurnBottom++");
             }
         }
 
@@ -453,33 +455,22 @@ public partial class MainPage : ContentPage
         {
             if (aTopSide[5] == aBottomSide[2] && aFrontSide[5] == aFrontSide[8])
             {
-                await ExplainSolveTurnCubeAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text, "");
-                TurnFrontSideTo("+");
-                TurnFrontSideTo("+");
-                GetCubeColorsFromArrays();
+                await ExplainSolveTurnCubeAsync(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideHalfTurn_Text, "TurnFront++");
             }
 
             if (aTopSide[5] == aBottomSide[4] && aLeftSide[5] == aLeftSide[8])
             {
-                await ExplainSolveTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text, "");
-                TurnLeftSideTo("+");
-                TurnLeftSideTo("+");
-                GetCubeColorsFromArrays();
+                await ExplainSolveTurnCubeAsync(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideHalfTurn_Text, "TurnLeft++");
             }
 
             if (aTopSide[5] == aBottomSide[6] && aRightSide[5] == aRightSide[8])
             {
-                await ExplainSolveTurnCubeAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text, "");
-                TurnRightSideTo("+");
-                TurnRightSideTo("+");
-                GetCubeColorsFromArrays();
+                await ExplainSolveTurnCubeAsync(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideHalfTurn_Text, "TurnRight++");
             }
 
             if (aTopSide[5] == aBottomSide[8] && aBackSide[5] == aBackSide[8])
             {
-                await ExplainSolveTurnCubeAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text, "");
-                TurnBackSideTo("+");
-                TurnBackSideTo("+");
+                await ExplainSolveTurnCubeAsync(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideHalfTurn_Text, "TurnBack++");
                 GetCubeColorsFromArrays();
             }
         }
@@ -2000,6 +1991,46 @@ public partial class MainPage : ContentPage
         await TurnSideCube(cTurnSideAndDirection);
     }
 
+    // Settings of the sides of the cube
+    //private async Task SettingTurnSideCube(string cTurnSideAndDirection)
+    //{
+    //    switch (cTurnSideAndDirection)
+    //    {
+    //        case "TurnFront+":
+    //            imgbtnTurnFrontSideToRight.IsEnabled = true;
+    //            break;
+    //        case "TurnFront-":
+    //            break;
+    //        case "TurnTop+":
+    //            break;
+    //        case "TurnTop-":
+    //            break;
+    //        case "TurnBottom+":
+    //            break;
+    //        case "TurnBottom-":
+    //            break;
+    //        case "TurnLeft+":
+    //            break;
+    //        case "TurnLeft-":
+    //            break;
+    //        case "TurnRight+":
+    //            break;
+    //        case "TurnRight-":
+    //            break;
+    //        case "TurnBack+":
+    //            break;
+    //        case "TurnBack-":
+    //            break;
+
+    //        case "":
+    //            break;
+
+    //        default:
+    //            await DisplayAlert("Error", "Turn not found", "OK");
+    //            break;
+    //    }
+    //}
+
     // Turn the sides of the cube
     private async Task TurnSideCube(string cTurnSideAndDirection)
     {
@@ -2053,7 +2084,68 @@ public partial class MainPage : ContentPage
                 TurnBackSideTo("-");
                 GetCubeColorsFromArrays();
                 break;
-            
+
+            case "TurnFront++":
+                TurnFrontSideTo("+");
+                TurnFrontSideTo("+");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnFront--":
+                TurnFrontSideTo("-");
+                TurnFrontSideTo("-");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnTop++":
+                TurnTopSideTo("+");
+                TurnTopSideTo("+");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnTop--":
+                TurnTopSideTo("-");
+                TurnTopSideTo("-");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnBottom++":
+                TurnBottomSideTo("+");
+                TurnBottomSideTo("+");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnBottom--":
+                TurnBottomSideTo("-");
+                TurnBottomSideTo("-");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnLeft++":
+                TurnLeftSideTo("+");
+                TurnLeftSideTo("+");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnLeft--":
+                TurnLeftSideTo("-");
+                TurnLeftSideTo("-");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnRight++":
+                TurnRightSideTo("+");
+                TurnRightSideTo("+");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnRight--":
+                TurnRightSideTo("-");
+                TurnRightSideTo("-");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnBack++":
+                TurnBackSideTo("+");
+                TurnBackSideTo("+");
+                GetCubeColorsFromArrays();
+                break;
+            case "TurnBack--":
+                TurnBackSideTo("-");
+                TurnBackSideTo("-");
+                GetCubeColorsFromArrays();
+                break;
+
             case "":
                 break;
 
