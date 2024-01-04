@@ -230,7 +230,7 @@ public partial class MainPage : ContentPage
     private async Task SolveTheCubeAsync()
     {
         // Declare variables.
-        int O, P, Q, V, X, Y, Z;
+        int O, P, Q, R, V, X, Y, Z;
         string cB;
     
         // Top layer.
@@ -243,54 +243,54 @@ public partial class MainPage : ContentPage
         Z = 0;
         if (cB == aTopSide[8] && aFrontSide[1] == aFrontSide[2])
             V = 1;
-        // 520
+    // 520
         if (cB == aTopSide[6] && aRightSide[1] == aRightSide[2])
             X = 1;
-        // 530
+    // 530
         if (cB == aTopSide[2] && aBackSide[1] == aBackSide[2])
             Y = 1;
-        // 540
+    // 540
         if (cB == aTopSide[4] && aLeftSide[1] == aLeftSide[2])
             Z = 1;
-        // 550
+    // 550
         if (V == 1 && X == 1 && Y == 1 && Z == 1)
             goto Line710;
-        // 560
+    // 560
         O = 0;
         P = 0;
         Q = 0;
 
         if (cB == aFrontSide[6] || cB == aRightSide[2] || cB == aRightSide[4] || cB == aRightSide[6])
             O = 1;
-        // 570
+    // 570
         if (cB == aBackSide[4] || cB == aRightSide[8] || cB == aBottomSide[6])
             P = 1;
-        // 580
+    // 580
         if (cB == aTopSide[6] && cB != aRightSide[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             Q = 1;
-        // 590
+    // 590
         if (O == 1 || P == 1 || Q == 1)
             goto Line610;
-        // 600
+    // 600
         await ExplainSolveTurnCubeAsync("TurnCubeFrontToLeft");
         goto Line510;
 
     Line610:
         if (V == 1 && Y == 1 && Z == 1)
             goto Line650;
-        // 620
+    // 620
         if (Y == 1 && Z == 1)
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
             goto Line650;
         }
-        // 630
+    // 630
         if (Y == 1)
         {
             await ExplainSolveTurnCubeAsync("TurnTop++");
             goto Line650;
         }
-        // 640
+    // 640
         await ExplainSolveTurnCubeAsync("TurnTop+");
 
         string cX;
@@ -307,8 +307,9 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnTop-");
             await ExplainSolveTurnCubeAsync("TurnBottom+");
             await ExplainSolveTurnCubeAsync("TurnFront-");
+            goto Line510;
         }
-        // 655
+    // 655
         if (cB == aFrontSide[6] && cX == aRightSide[4])
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
@@ -316,8 +317,9 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnTop+");
             await ExplainSolveTurnCubeAsync("TurnBottom-");
             await ExplainSolveTurnCubeAsync("TurnRight+");
+            goto Line510;
         }
-        // 660
+    // 660
         if (cB == aRightSide[4] && cX == aFrontSide[6])
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
@@ -326,8 +328,9 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnTop-");
             await ExplainSolveTurnCubeAsync("TurnBottom+");
             await ExplainSolveTurnCubeAsync("TurnFront-");
+            goto Line510;
         }
-        // 665
+    // 665
         if (cB == aBottomSide[6] && cX == aRightSide[8])
         {
             await ExplainSolveTurnCubeAsync("TurnRight-");
@@ -341,23 +344,180 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnTop-");
             await ExplainSolveTurnCubeAsync("TurnBottom+");
             await ExplainSolveTurnCubeAsync("TurnRight-");
+            goto Line510;
         }
-
-        // 670
-
-        // 675
- 
-        // 680
-        
-        // 685
-        
-        // 690
-        
-        // 695
+    // 670
+        if (cB == aRightSide[8] && cX == aBottomSide[6])
+        {
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnBack+");
+            goto Line510;
+        }
+    // 675
+        if (cB == aBackSide[4] && cX == aRightSide[6])
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop+");
+            await ExplainSolveTurnCubeAsync("TurnFront+");
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            await ExplainSolveTurnCubeAsync("TurnBottom-");
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            goto Line510;
+        }
+    // 680
+        if (cB == aRightSide[6] && cX == aBackSide[4])
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            await ExplainSolveTurnCubeAsync("TurnLeft-");
+            await ExplainSolveTurnCubeAsync("TurnTop+");
+            await ExplainSolveTurnCubeAsync("TurnBottom-");
+            await ExplainSolveTurnCubeAsync("TurnBack+");
+            goto Line510;
+        }
+    // 685
+        if (cB == aTopSide[6] && cX != aRightSide[2])
+        {
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnBack+");
+            goto Line510;
+        }
+    // 690
+        if (cB == aRightSide[2] && cX != aTopSide[6])
+        {
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnBack+");
+        }
+    // 695
         goto Line510;
 
         // Solve the corners of the top layer - Chapter 6, page 16.
-    Line710:;
+    Line710:
+        cB = aTopSide[5];
+        O = 0;
+        P = 0;
+        Q = 0;
+        R = 0;
+    // 715
+        if (cB == aTopSide[1] && cB == aTopSide[3] && cB == aTopSide[7] && cB == aTopSide[9])
+            O = 1;
+    // 720
+        if (aFrontSide[1] == aFrontSide[3])
+            P = 1;
+    // 725
+        if (aRightSide[1] == aRightSide[3])
+            Q = 1;
+    // 730
+        if (aBackSide[1] == aBackSide[3])
+            R = 1;
+    // 735
+        if (O == 1 && P == 1 && Q == 1 && R == 1)
+            goto Line1010;
+    // 740
+        O = 0;
+        if (cB == aTopSide[3] && cB == aTopSide[7] && cB == aTopSide[9])
+            O = 1;
+    // 745
+        if (O == 1 && P == 1 && Q == 1)
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop++");
+            goto Line800;
+        }
+    // 750
+        O = 0;
+        if (cB == aTopSide[3] && cB == aTopSide[9])
+            O = 1;
+    // 755
+        if (O == 1 && Q == 1)
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop++");
+            goto Line800;
+        }
+    // 760
+        O = 0;
+        if (cB == aTopSide[7] && cB == aTopSide[9])
+            O = 1;
+    // 765
+        if (O == 1 && P == 1)
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop+");
+            goto Line800;
+        }
+    // 770
+        O = 0;
+        if (cB == aTopSide[1] && cB == aTopSide[3])
+            O = 1;
+    // 775
+        if (O == 1 && R == 1)
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            goto Line800;
+        }
+    // 780
+        if (cB != aTopSide[9])
+            goto Line800;
+    // 785
+        if (cB != aTopSide[3])
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop+");
+            goto Line800;
+        }
+    // 790
+        if (cB != aTopSide[7])
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop-");
+            goto Line800;
+        }
+    // 795
+        if (cB != aTopSide[1])
+        {
+            await ExplainSolveTurnCubeAsync("TurnTop++");
+        }
+    // 800
+    Line800:
+        if (cB == aFrontSide[9] || cB == aRightSide[7] || cB == aBottomSide[3])
+            goto Line880;
+        // 805
+        if (cB == aRightSide[9] || cB == aBackSide[7] || cB == aBottomSide[9])
+        {
+            await ExplainSolveTurnCubeAsync("TurnBottom-");
+            goto Line880;
+        }
+        // 810
+        if (cB == aFrontSide[7] || cB == aLeftSide[9] || cB == aBottomSide[1])
+        {
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            goto Line880;
+        }
+        // 815
+        if (cB == aBackSide[9] || cB == aLeftSide[7] || cB == aBottomSide[7])
+        {
+            await ExplainSolveTurnCubeAsync("TurnBottom++");
+            goto Line880;
+        }
+        // 870
+        await ExplainSolveTurnCubeAsync("TurnRight++");
+        goto Line710;
+    // 880
+    Line880:;
+
+    // 885
+
+    // 890
+
+    // 895
+
+
+    // 1000
+        // Solve the middle layer - Chapter 10, page 21.
+        Line1010:;
+
+
 
 
 
@@ -3027,6 +3187,70 @@ imgbtnTurnLeftSideToLeft  imgbtnTurnFrontMiddleToTopSide  imgbtnTurnRightSideToR
 |   7  Fr8     |   16  Ri8     |   25  Ba8     |   34  Le8     |   43  To8     |   52  Bo8     |
 |   8  Fr9     |   17  Ri9     |   26  Ba9     |   35  Le9     |   44  To9     |   53  Bo9     |
 ------------------------------------------------------------------------------------------------
+
+
+
+REM ** SOLCUBE ** ARRAY 'A$(217)' - INSTRUCTIONS
+
+B -> Top        A -> Back
+R -> Right      L -> Left
+V -> Front      O -> Bottom
+
+  0	V   Front+	|  54	L	Left+	| 108	R	Right+	| 163	-B  Top-
+  1	V	Front+	|  55	-B  Top-	| 109	V	Front+	| 164	O   Bottom+
+  2	A	Back+	|  56	-V  Front-	| 110	B   Bottom+	| 165	A   Back+
+  3	A	Back+	|  57	A   Back+	| 111	-O	Bottom-	| 166	-B  Top-
+  4	M2		    |  58	L   Left+	| 112	L   Left+	| 167	L   Left+
+  5	M2		    |  59	L   Left+	| 113	L	Left+	| 168	-B  Top-
+  6	B	Top+	|  60	V   Front+	| 114	B	Top+	| 169	O   Bottom+
+  7	M		    |  61	-A	Back-	| 115	B	Top-	| 170	-V  Front-
+  8	-O	Bottom-	|  62	-B	Top-	| 116	O	Bottom+	| 171	-B  Top-
+  9	-L	Left-	|  63	L	Left+	| 117	O	Bottom+	| 172	-A  Back-
+ 10	B	Top+	|  64	L	Left+	| 118	R	Right+	| 173	B   Top+
+ 11	R   Right+	|  65	R	Right+	| 119	-R	Right-	| 174	-O  Bottom-
+ 12	-B  Top-	|  66	R	Right+	| 120	O	Bottom+	| 175	R   Right+
+ 13	L   Left+	|  67	L   Left+	| 121	O   Bottom+	| 176	-B  Top-
+ 14	B   Top+	|  68	L	Left+	| 122	B	Top+	| 177	-B  Top-
+ 15	-R  Right-	|  69	O	Bottom+	| 123	B	Top+	| 178	L   Left+
+ 16	-B	Top-	|  70	R	Right+	| 124	L	Left+	| 179	-B  Top-
+ 17	B   Top+	|  71	R	Right+	| 125	L   Left+	| 180	O   Bottom+
+ 18	R   Right+	|  72	L   Left+	| 126	O   Bottom+	| 181	-V  Front-
+ 19	-B  Top-	|  73	L	Left+	| 127	-B	Top-	| 182	-R  Right-
+ 20	-L	Left-   |  74	B   Top+	| 128	-V	Front-	| 183	-B  Top-
+ 21	B   Top+	|  75	B	Top+	| 129	-O  Bottom-	| 184	-B  Top-
+ 22	-R	Right-	|  76	R   Right+	| 130	-R	Right-	| 185	O   Bottom+
+ 23	-B  Top-	|  77	R   Right+	| 131	O   Bottom+	| 186	O   Bottom+
+ 24	L   Left+	|  78	L	Left+	| 132	R	Right+	| 187	L   Left+
+ 25	V   Front+	|  79	L	Left+	| 133	O	Bottom+	| 188	-B  Top-
+ 26	-B  Top-	|  80	O	Bottom+	| 134	V   Front+	| 189	V   Front+
+ 27	-A  Back-	|  81	R	Right+	| 135	-O	Bottom-	| 190	-B  Top-
+ 28	B   Top+	|  82	R   Right+	| 136	-V  Front-	| 191	O   Bottom+
+ 29	-V  Front-	|  83	L	Left+	| 137	O	Bottom	| 192	-R  Right-
+ 30	-B  Top-	|  84	L	Left+	| 138	L   Left+	| 193	-R  Right-
+ 31	A   Back+	|  85	R	Right+	| 139	-O	Bottom-	| 194	-B  Top-
+ 32	B   Top+	|  86	A   Back+	| 140	-L  Left-	| 195	O   Bottom+
+ 33	B   Top+	|  87	B   Top+	| 141	-O	Bottom-	| 196	A   Back+
+ 34	B   Top+	|  88   -A  Back-	| 142	-V  Front-	| 197	B   Top+
+ 35	V   Front+	|  89	-B  Top-	| 143	O	Bottom+	| 198	V   Front+
+ 36	B   Top+	|  90	R   Right+	| 144	V   Front+	| 199	-B  Top-
+ 37	R   Right+	|  91	R   Right+	| 145	V	Front+	| 200	-O  Bottom-
+ 38	-B  Top-	|  92	-V  Front-	| 146	O	Bottom+	| 201	-R  Right-
+ 39	-R  Right-	|  93	-B  Top-	| 147	-V  Front-	| 202	-B  Top-
+ 40	-V  Front-	|  94	V   Front+	| 148	-R  Right-	| 203	-B  Top-
+ 41	L   Left+	|  95	B   Top+	| 149	-O	Bottom-	| 204	-L  Left-
+ 42	L   Left+	|  96	R	Right+	| 150	R	Right+	| 205	B   Top-
+ 43	B   Top+	|  97	-R	Right-	| 151	-R  Right-	| 206	-O  Bottom-
+ 44	-V  Front-	|  98	O	Bottom+	| 152	O	Bottom+	| 207	A   Back+
+ 45	A   Back+	|  99	R	Right+	| 153	R   Right+	| 208	-R  Right-
+ 46	L	Left+	| 100	V	Front+	| 154	O	Bottom+	| 209	-B  Top-
+ 47	L	Left+	| 101	O	Bottom+	| 155	O	Bottom+	| 210	O   Bottom+
+ 48	V   Front+	| 102	-V  Front-	| 156	-R  Right-	| 211	A   Back+
+ 49	-A  Back-	| 103	V	Front+	| 157	-O	Bottom-	| 212	B   Top+
+ 50	B   Top+	| 104	-O	Bottom-	| 158	R   Right+	| 213	B   Top+
+ 51	L	Left+	| 105	-V  Front-	| 159	-B  Top-	| 214	M
+ 52	L	Left+	| 106	-R  Right+	| 160	-M		    | 215	M
+ 53	L	Left+	| 107	-O	Bottom-	| 161	O	Bottom+	| 216	-O  Bottom-
+		    	|		    	    | 162	-R  Right-	| 217	-O  Bottom-
 
 
                             _________________________
