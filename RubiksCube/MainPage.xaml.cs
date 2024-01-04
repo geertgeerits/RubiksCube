@@ -232,9 +232,10 @@ public partial class MainPage : ContentPage
         // Declare variables.
         int O, P, Q, R, V, X, Y, Z;
         string cB;
-    
-        // Top layer.
-        // Solve the edges of the top layer - Chapter 4, page 14-3.
+        string cX;
+
+    // Top layer.
+    // Solve the edges of the top layer - Chapter 4, page 14-3.
     Line510:
         cB = aTopSide[5];
         V = 0;
@@ -292,8 +293,7 @@ public partial class MainPage : ContentPage
         }
     // 640
         await ExplainSolveTurnCubeAsync("TurnTop+");
-
-        string cX;
+    // 650
     Line650:
         cX = aRightSide[1];
         if (cB == aRightSide[2] && cX == aTopSide[6])
@@ -309,7 +309,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnFront-");
             goto Line510;
         }
-    // 655
+        // 655
         if (cB == aFrontSide[6] && cX == aRightSide[4])
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
@@ -319,7 +319,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnRight+");
             goto Line510;
         }
-    // 660
+        // 660
         if (cB == aRightSide[4] && cX == aFrontSide[6])
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
@@ -330,7 +330,8 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnFront-");
             goto Line510;
         }
-    // 665
+        //--------------------------------------------------------------------------------------
+        // 665
         if (cB == aBottomSide[6] && cX == aRightSide[8])
         {
             await ExplainSolveTurnCubeAsync("TurnRight-");
@@ -346,7 +347,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnRight-");
             goto Line510;
         }
-    // 670
+        // 670
         if (cB == aRightSide[8] && cX == aBottomSide[6])
         {
             await ExplainSolveTurnCubeAsync("TurnRight-");
@@ -355,7 +356,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnBack+");
             goto Line510;
         }
-    // 675
+        // 675
         if (cB == aBackSide[4] && cX == aRightSide[6])
         {
             await ExplainSolveTurnCubeAsync("TurnTop+");
@@ -365,7 +366,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnRight-");
             goto Line510;
         }
-    // 680
+        // 680
         if (cB == aRightSide[6] && cX == aBackSide[4])
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
@@ -376,7 +377,7 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnBack+");
             goto Line510;
         }
-    // 685
+        // 685
         if (cB == aTopSide[6] && cX != aRightSide[2])
         {
             await ExplainSolveTurnCubeAsync("TurnRight-");
@@ -385,95 +386,95 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnBack+");
             goto Line510;
         }
-    // 690
+        // 690
         if (cB == aRightSide[2] && cX != aTopSide[6])
         {
+            await DisplayAlert("Error", "Error 690", "OK");
             await ExplainSolveTurnCubeAsync("TurnRight-");
             await ExplainSolveTurnCubeAsync("TurnTop-");
             await ExplainSolveTurnCubeAsync("TurnBottom+");
             await ExplainSolveTurnCubeAsync("TurnBack+");
         }
-    // 695
+        // 695
         goto Line510;
-
-        // Solve the corners of the top layer - Chapter 6, page 16.
+    // Solve the corners of the top layer - Chapter 6, page 16.
     Line710:
         cB = aTopSide[5];
         O = 0;
         P = 0;
         Q = 0;
         R = 0;
-    // 715
+        // 715
         if (cB == aTopSide[1] && cB == aTopSide[3] && cB == aTopSide[7] && cB == aTopSide[9])
             O = 1;
-    // 720
+        // 720
         if (aFrontSide[1] == aFrontSide[3])
             P = 1;
-    // 725
+        // 725
         if (aRightSide[1] == aRightSide[3])
             Q = 1;
-    // 730
+        // 730
         if (aBackSide[1] == aBackSide[3])
             R = 1;
-    // 735
+        // 735
         if (O == 1 && P == 1 && Q == 1 && R == 1)
             goto Line1010;
-    // 740
+        // 740
         O = 0;
         if (cB == aTopSide[3] && cB == aTopSide[7] && cB == aTopSide[9])
             O = 1;
-    // 745
+        // 745
         if (O == 1 && P == 1 && Q == 1)
         {
             await ExplainSolveTurnCubeAsync("TurnTop++");
             goto Line800;
         }
-    // 750
+        // 750
         O = 0;
         if (cB == aTopSide[3] && cB == aTopSide[9])
             O = 1;
-    // 755
+        // 755
         if (O == 1 && Q == 1)
         {
             await ExplainSolveTurnCubeAsync("TurnTop++");
             goto Line800;
         }
-    // 760
+        // 760
         O = 0;
         if (cB == aTopSide[7] && cB == aTopSide[9])
             O = 1;
-    // 765
+        // 765
         if (O == 1 && P == 1)
         {
             await ExplainSolveTurnCubeAsync("TurnTop+");
             goto Line800;
         }
-    // 770
+        // 770
         O = 0;
         if (cB == aTopSide[1] && cB == aTopSide[3])
             O = 1;
-    // 775
+        // 775
         if (O == 1 && R == 1)
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
             goto Line800;
         }
-    // 780
+        // 780
         if (cB != aTopSide[9])
             goto Line800;
-    // 785
+        // 785
         if (cB != aTopSide[3])
         {
             await ExplainSolveTurnCubeAsync("TurnTop+");
             goto Line800;
         }
-    // 790
+        // 790
         if (cB != aTopSide[7])
         {
             await ExplainSolveTurnCubeAsync("TurnTop-");
             goto Line800;
         }
-    // 795
+        // 795
         if (cB != aTopSide[1])
         {
             await ExplainSolveTurnCubeAsync("TurnTop++");
@@ -515,7 +516,8 @@ public partial class MainPage : ContentPage
 
     // 1000
         // Solve the middle layer - Chapter 10, page 21.
-        Line1010:;
+        Line1010:
+        DisplayAlert("", "1010", "OK");
 
 
 
@@ -596,11 +598,35 @@ public partial class MainPage : ContentPage
 
 
         // For testing.
-        //await ExplainSolveTurnCubeAsync("TurnCubeTopToRight");
-        //await ExplainSolveTurnCubeAsync("TurnCubeFrontToBottom");
+        //await ExplainSolveTurnCubeAsync("TurnFront+");
+        //await ExplainSolveTurnCubeAsync("TurnFront++");
+        //await ExplainSolveTurnCubeAsync("TurnFront-");
+        //await ExplainSolveTurnCubeAsync("TurnFront--");
+        //await ExplainSolveTurnCubeAsync("TurnTop+");
+        //await ExplainSolveTurnCubeAsync("TurnTop++");
+        //await ExplainSolveTurnCubeAsync("TurnTop-");
+        //await ExplainSolveTurnCubeAsync("TurnTop--");
+        //await ExplainSolveTurnCubeAsync("TurnBottom+");
+        //await ExplainSolveTurnCubeAsync("TurnBottom++");
+        //await ExplainSolveTurnCubeAsync("TurnBottom-");
+        //await ExplainSolveTurnCubeAsync("TurnBottom--");
+        //await ExplainSolveTurnCubeAsync("TurnLeft+");
+        //await ExplainSolveTurnCubeAsync("TurnLeft++");
+        //await ExplainSolveTurnCubeAsync("TurnLeft-");
+        //await ExplainSolveTurnCubeAsync("TurnLeft--");
+        //await ExplainSolveTurnCubeAsync("TurnRight+");
+        //await ExplainSolveTurnCubeAsync("TurnRight++");
+        //await ExplainSolveTurnCubeAsync("TurnRight-");
+        //await ExplainSolveTurnCubeAsync("TurnRight--");
+        //await ExplainSolveTurnCubeAsync("TurnBack+");
+        //await ExplainSolveTurnCubeAsync("TurnBack++");
+        //await ExplainSolveTurnCubeAsync("TurnBack-");
+        //await ExplainSolveTurnCubeAsync("TurnBack--");
         //await ExplainSolveTurnCubeAsync("TurnCubeFrontToRight");
         //await ExplainSolveTurnCubeAsync("TurnCubeFrontToLeft");
         //await ExplainSolveTurnCubeAsync("TurnCubeFrontToTop");
+        //await ExplainSolveTurnCubeAsync("TurnCubeFrontToBottom");
+        //await ExplainSolveTurnCubeAsync("TurnCubeTopToRight");
         //await ExplainSolveTurnCubeAsync("TurnCubeTopToLeft");
 
         if (!CheckIfCubeIsSolved(false))
