@@ -515,19 +515,41 @@ public partial class MainPage : ContentPage
         await ExplainSolveTurnCubeAsync("TurnRight++");
         goto Line710;
     // 880
-    Line880:;
-
+    Line880:
+        if (cB == aFrontSide[9])
+        {
+            await ExplainSolveTurnCubeAsync("TurnFront+");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnFront-");
+            goto Line710;
+        }
     // 885
-
+        if (cB == aRightSide[7])
+        {
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            await ExplainSolveTurnCubeAsync("TurnBottom-");
+            await ExplainSolveTurnCubeAsync("TurnRight+");
+            goto Line710;
+        }
     // 890
-
+        if (cB == aBottomSide[3])
+        {
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnRight+");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnBottom+");
+            await ExplainSolveTurnCubeAsync("TurnRight-");
+            await ExplainSolveTurnCubeAsync("TurnBottom-");
+            await ExplainSolveTurnCubeAsync("TurnRight+");
+        }
     // 895
-
+        goto Line710;
 
     // 1000
         // Solve the middle layer - Chapter 10, page 21.
         Line1010:
-        DisplayAlert("", "1010", "OK");
+        await DisplayAlert("Line", "1010", "OK");
 
 
 
