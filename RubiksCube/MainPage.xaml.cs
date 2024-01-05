@@ -2265,6 +2265,31 @@ public partial class MainPage : ContentPage
                 imgbtnTurnBackSideToLeft.IsEnabled = bIsEnabled;
                 break;
 
+            case "TurnTopMiddleRight+":
+            case "TurnTopMiddleRight++":
+                imgbtnTurnTopMiddleToRightSide.IsEnabled = bIsEnabled;
+                break;
+            case "TurnRightMiddleTop-":
+            case "TurnRightMiddleTop--":
+                imgbtnTurnRightMiddleToTopSide.IsEnabled = bIsEnabled;
+                break;
+            case "TurnFrontMiddleTop+":
+            case "TurnFrontMiddleTop++":
+                imgbtnTurnFrontMiddleToTopSide.IsEnabled = bIsEnabled;
+                break;
+            case "TurnTopMiddleFront-":
+            case "TurnTopMiddleFront--":
+                imgbtnTurnTopMiddleToFrontSide.IsEnabled = bIsEnabled;
+                break;
+            case "TurnRightMiddleFront+":
+            case "TurnRightMiddleFront++":
+                imgbtnTurnRightMiddleToFrontSide.IsEnabled = bIsEnabled;
+                break;
+            case "TurnFrontMiddleRight-":
+            case "TurnFrontMiddleRight--":
+                imgbtnTurnFrontMiddleToRightSide.IsEnabled = bIsEnabled;
+                break;
+
             case "TurnCubeFrontToRight":
                 imgbtnTurnFrontMiddleToRightSide.IsEnabled = bIsEnabled;
                 break;
@@ -2357,6 +2382,31 @@ public partial class MainPage : ContentPage
             case "TurnBack++":
             case "TurnBack--":
                 cTurnCubeText = CubeLang.TurnBackSideHalfTurn_Text;
+                break;
+
+            case "TurnTopMiddleRight+":
+            case "TurnTopMiddleRight++":
+                cTurnCubeText = CubeLang.TurnTopMiddleToRightSide_Text ;
+                break;
+            case "TurnRightMiddleTop-":
+            case "TurnRightMiddleTop--":
+                cTurnCubeText = CubeLang.TurnRightMiddleToTopSide_Text;
+                break;
+            case "TurnFrontMiddleTop+":
+            case "TurnFrontMiddleTop++":
+                cTurnCubeText = CubeLang.TurnFrontMiddleToTopSide_Text;
+                break;
+            case "TurnTopMiddleFront-":
+            case "TurnTopMiddleFront--":
+                cTurnCubeText = CubeLang.TurnTopMiddleToFrontSide_Text;
+                break;
+            case "TurnRightMiddleFront+":
+            case "TurnRightMiddleFront++":
+                cTurnCubeText = CubeLang.TurnRightMiddleToFrontSide_Text;
+                break;
+            case "TurnFrontMiddleRight-":
+            case "TurnFrontMiddleRight--":
+                cTurnCubeText = CubeLang.TurnFrontMiddleToRightSide_Text;
                 break;
 
             case "TurnCubeFrontToRight":
@@ -2475,6 +2525,50 @@ public partial class MainPage : ContentPage
             case "TurnBack--":
                 TurnBackSideTo("-");
                 TurnBackSideTo("-");
+                break;
+
+            case "TurnTopMiddleRight+":
+                TurnTopMiddleTo("+");
+                break;
+            case "TurnRightMiddleTop-":
+                TurnTopMiddleTo("-");
+                break;
+            case "TurnFrontMiddleTop+":
+                TurnFrontTopMiddleTo("+");
+                break;
+            case "TurnTopMiddleFront-":
+                TurnFrontTopMiddleTo("-");
+                break;
+            case "TurnRightMiddleFront+":
+                TurnHorizontalMiddleLayerTo("+");
+                break;
+            case "TurnFrontMiddleRight-":
+                TurnHorizontalMiddleLayerTo("-");
+                break;
+
+            case "TurnTopMiddleRight++":
+                TurnTopMiddleTo("+");
+                TurnTopMiddleTo("+");
+                break;
+            case "TurnRightMiddleTop--":
+                TurnTopMiddleTo("-");
+                TurnTopMiddleTo("-");
+                break;
+            case "TurnFrontMiddleTop++":
+                TurnFrontTopMiddleTo("+");
+                TurnFrontTopMiddleTo("+");
+                break;
+            case "TurnTopMiddleFront--":
+                TurnFrontTopMiddleTo("-");
+                TurnFrontTopMiddleTo("-");
+                break;
+            case "TurnRightMiddleFront++":
+                TurnHorizontalMiddleLayerTo("+");
+                TurnHorizontalMiddleLayerTo("+");
+                break;
+            case "TurnFrontMiddleRight--":
+                TurnHorizontalMiddleLayerTo("-");
+                TurnHorizontalMiddleLayerTo("-");
                 break;
 
             case "TurnCubeFrontToRight":
