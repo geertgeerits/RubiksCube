@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-04 (YYYY-MM-DD)
+// Date ........: 2024-01-05 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -232,10 +232,13 @@ public partial class MainPage : ContentPage
         // Declare variables.
         int O, P, Q, R, V, X, Y, Z;
         string cB;
-        string cX;
-
+        string cX = "";
+    // 500
     // Top layer.
     // Solve the edges of the top layer - Chapter 4, page 14-3.
+
+    // !!!!!!!!!!!!! Loop between line 510 and 695 !!!!!!!!!!!!!
+
     Line510:
         cB = aTopSide[5];
         V = 0;
@@ -267,7 +270,15 @@ public partial class MainPage : ContentPage
         if (cB == aBackSide[4] || cB == aRightSide[8] || cB == aBottomSide[6])
             P = 1;
     // 580
-        if (cB == aTopSide[6] && cB != aRightSide[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+        if (X == 0)
+        {
+            cX = aFrontSide[1];
+        }
+        else if (X == 1)
+        {
+            cX = aFrontSide[2];
+        }
+        if (cB == aTopSide[6] && cX != aRightSide[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             Q = 1;
     // 590
         if (O == 1 || P == 1 || Q == 1)
@@ -330,7 +341,6 @@ public partial class MainPage : ContentPage
             await ExplainSolveTurnCubeAsync("TurnFront-");
             goto Line510;
         }
-        //--------------------------------------------------------------------------------------
         // 665
         if (cB == aBottomSide[6] && cX == aRightSide[8])
         {
@@ -389,7 +399,6 @@ public partial class MainPage : ContentPage
         // 690
         if (cB == aRightSide[2] && cX != aTopSide[6])
         {
-            await DisplayAlert("Error", "Error 690", "OK");
             await ExplainSolveTurnCubeAsync("TurnRight-");
             await ExplainSolveTurnCubeAsync("TurnTop-");
             await ExplainSolveTurnCubeAsync("TurnBottom+");
@@ -397,7 +406,8 @@ public partial class MainPage : ContentPage
         }
         // 695
         goto Line510;
-    // Solve the corners of the top layer - Chapter 6, page 16.
+    
+        // Solve the corners of the top layer - Chapter 6, page 16.
     Line710:
         cB = aTopSide[5];
         O = 0;
@@ -3158,8 +3168,8 @@ Numbering of cube surfaces.
                             |_______|_______|_______|
 
 
-SolCube 1981
-------------
+REM ** SOLCUBE ** 1981
+----------------------
     Outside view             Top              Inside view              Back
                      ______ ______ ______                      ______ ______ ______
                    /      /      /      /|                   /|      !      !      |
@@ -3198,8 +3208,8 @@ imgbtnTurnLeftSideToLeft  imgbtnTurnFrontMiddleToTopSide  imgbtnTurnRightSideToR
                                                 imgbtnTurnFrontSideToLeft  imgbtnTurnRightMiddleToTopSide  imgbtnTurnBackSideToRight
 
 
-
- 
+REM ** SOLCUBE ** ARRAY 'D(53)' - CUBE COLORS
+From BASIC-80 to C#. 
 ------------------------------------------------------------------------------------------------
 |      Front   |       Right   |       Back    |       Left    |       Top     |       Bottom  |
 ------------------------------------------------------------------------------------------------
@@ -3217,66 +3227,70 @@ imgbtnTurnLeftSideToLeft  imgbtnTurnFrontMiddleToTopSide  imgbtnTurnRightSideToR
 
 
 REM ** SOLCUBE ** ARRAY 'A$(217)' - INSTRUCTIONS
+From BASIC-80 to C#.
 
-B -> Top        A -> Back
-R -> Right      L -> Left
-V -> Front      O -> Bottom
-
-  0	V   Front+	|  54	L	Left+	| 108	R	Right+	| 163	-B  Top-
-  1	V	Front+	|  55	-B  Top-	| 109	V	Front+	| 164	O   Bottom+
-  2	A	Back+	|  56	-V  Front-	| 110	B   Bottom+	| 165	A   Back+
-  3	A	Back+	|  57	A   Back+	| 111	-O	Bottom-	| 166	-B  Top-
-  4	M2		    |  58	L   Left+	| 112	L   Left+	| 167	L   Left+
-  5	M2		    |  59	L   Left+	| 113	L	Left+	| 168	-B  Top-
-  6	B	Top+	|  60	V   Front+	| 114	B	Top+	| 169	O   Bottom+
-  7	M		    |  61	-A	Back-	| 115	B	Top-	| 170	-V  Front-
-  8	-O	Bottom-	|  62	-B	Top-	| 116	O	Bottom+	| 171	-B  Top-
-  9	-L	Left-	|  63	L	Left+	| 117	O	Bottom+	| 172	-A  Back-
- 10	B	Top+	|  64	L	Left+	| 118	R	Right+	| 173	B   Top+
- 11	R   Right+	|  65	R	Right+	| 119	-R	Right-	| 174	-O  Bottom-
- 12	-B  Top-	|  66	R	Right+	| 120	O	Bottom+	| 175	R   Right+
- 13	L   Left+	|  67	L   Left+	| 121	O   Bottom+	| 176	-B  Top-
- 14	B   Top+	|  68	L	Left+	| 122	B	Top+	| 177	-B  Top-
- 15	-R  Right-	|  69	O	Bottom+	| 123	B	Top+	| 178	L   Left+
- 16	-B	Top-	|  70	R	Right+	| 124	L	Left+	| 179	-B  Top-
- 17	B   Top+	|  71	R	Right+	| 125	L   Left+	| 180	O   Bottom+
- 18	R   Right+	|  72	L   Left+	| 126	O   Bottom+	| 181	-V  Front-
- 19	-B  Top-	|  73	L	Left+	| 127	-B	Top-	| 182	-R  Right-
- 20	-L	Left-   |  74	B   Top+	| 128	-V	Front-	| 183	-B  Top-
- 21	B   Top+	|  75	B	Top+	| 129	-O  Bottom-	| 184	-B  Top-
- 22	-R	Right-	|  76	R   Right+	| 130	-R	Right-	| 185	O   Bottom+
- 23	-B  Top-	|  77	R   Right+	| 131	O   Bottom+	| 186	O   Bottom+
- 24	L   Left+	|  78	L	Left+	| 132	R	Right+	| 187	L   Left+
- 25	V   Front+	|  79	L	Left+	| 133	O	Bottom+	| 188	-B  Top-
- 26	-B  Top-	|  80	O	Bottom+	| 134	V   Front+	| 189	V   Front+
- 27	-A  Back-	|  81	R	Right+	| 135	-O	Bottom-	| 190	-B  Top-
- 28	B   Top+	|  82	R   Right+	| 136	-V  Front-	| 191	O   Bottom+
- 29	-V  Front-	|  83	L	Left+	| 137	O	Bottom	| 192	-R  Right-
- 30	-B  Top-	|  84	L	Left+	| 138	L   Left+	| 193	-R  Right-
- 31	A   Back+	|  85	R	Right+	| 139	-O	Bottom-	| 194	-B  Top-
- 32	B   Top+	|  86	A   Back+	| 140	-L  Left-	| 195	O   Bottom+
- 33	B   Top+	|  87	B   Top+	| 141	-O	Bottom-	| 196	A   Back+
- 34	B   Top+	|  88   -A  Back-	| 142	-V  Front-	| 197	B   Top+
- 35	V   Front+	|  89	-B  Top-	| 143	O	Bottom+	| 198	V   Front+
- 36	B   Top+	|  90	R   Right+	| 144	V   Front+	| 199	-B  Top-
- 37	R   Right+	|  91	R   Right+	| 145	V	Front+	| 200	-O  Bottom-
- 38	-B  Top-	|  92	-V  Front-	| 146	O	Bottom+	| 201	-R  Right-
- 39	-R  Right-	|  93	-B  Top-	| 147	-V  Front-	| 202	-B  Top-
- 40	-V  Front-	|  94	V   Front+	| 148	-R  Right-	| 203	-B  Top-
- 41	L   Left+	|  95	B   Top+	| 149	-O	Bottom-	| 204	-L  Left-
- 42	L   Left+	|  96	R	Right+	| 150	R	Right+	| 205	B   Top-
- 43	B   Top+	|  97	-R	Right-	| 151	-R  Right-	| 206	-O  Bottom-
- 44	-V  Front-	|  98	O	Bottom+	| 152	O	Bottom+	| 207	A   Back+
- 45	A   Back+	|  99	R	Right+	| 153	R   Right+	| 208	-R  Right-
- 46	L	Left+	| 100	V	Front+	| 154	O	Bottom+	| 209	-B  Top-
- 47	L	Left+	| 101	O	Bottom+	| 155	O	Bottom+	| 210	O   Bottom+
- 48	V   Front+	| 102	-V  Front-	| 156	-R  Right-	| 211	A   Back+
- 49	-A  Back-	| 103	V	Front+	| 157	-O	Bottom-	| 212	B   Top+
- 50	B   Top+	| 104	-O	Bottom-	| 158	R   Right+	| 213	B   Top+
- 51	L	Left+	| 105	-V  Front-	| 159	-B  Top-	| 214	M
- 52	L	Left+	| 106	-R  Right+	| 160	-M		    | 215	M
- 53	L	Left+	| 107	-O	Bottom-	| 161	O	Bottom+	| 216	-O  Bottom-
-		    	|		    	    | 162	-R  Right-	| 217	-O  Bottom-
+Boven -> Top        Achter -> Back      M1  Bottom to Front      M2  Top to Right
+Rechts -> Right     Links -> Left      -M1  Top to Front        -M2  Bottom to Right
+Voor -> Front       Onder -> Bottom
+---------------------------------------------------------------------------------
+|   0	V   Front+	|  54	L	Left+	| 108	R	Right+	| 163	-B  Top-    |
+|   1	V	Front+	|  55	-B  Top-	| 109	V	Front+	| 164	O   Bottom+ |
+|   2	A	Back+	|  56	-V  Front-	| 110	B   Top+	| 165	A   Back+   |
+|   3	A	Back+	|  57	A   Back+	| 111	-O	Bottom-	| 166	-B  Top-    |
+|   4	M2		    |  58	L   Left+	| 112	L   Left+	| 167	L   Left+   |
+|   5	M2		    |  59	L   Left+	| 113	L	Left+	| 168	-B  Top-    |
+|   6	B	Top+	|  60	V   Front+	| 114	B	Top+	| 169	O   Bottom+ |
+|   7	M	Middle+ |  61	-A	Back-	| 115	B	Top+	| 170	-V  Front-  |
+|   8	-O	Bottom-	|  62	-B	Top-	| 116	O	Bottom+	| 171	-B  Top-    |
+|   9	-L	Left-	|  63	L	Left+	| 117	O	Bottom+	| 172	-A  Back-   |
+|  10	B	Top+	|  64	L	Left+	| 118	R	Right+	| 173	B   Top+    |
+|  11	R   Right+	|  65	R	Right+	| 119	-R	Right-	| 174	-O  Bottom- |
+|  12	-B  Top-	|  66	R	Right+	| 120	O	Bottom+	| 175	R   Right+  |
+|  13	L   Left+	|  67	L   Left+	| 121	O   Bottom+	| 176	-B  Top-    |
+|  14	B   Top+	|  68	L	Left+	| 122	B	Top+	| 177	-B  Top-    |
+|  15	-R  Right-	|  69	O	Bottom+	| 123	B	Top+	| 178	L   Left+   |
+|  16	-B	Top-	|  70	R	Right+	| 124	L	Left+	| 179	-B  Top-    |
+|  17	B   Top+	|  71	R	Right+	| 125	L   Left+	| 180	O   Bottom+ |
+|  18	R   Right+	|  72	L   Left+	| 126	O   Bottom+	| 181	-V  Front-  |
+|  19	-B  Top-	|  73	L	Left+	| 127	-B	Top-	| 182	-R  Right-  |
+|  20	-L	Left-   |  74	B   Top+	| 128	-V	Front-	| 183	-B  Top-    |
+|  21	B   Top+	|  75	B	Top+	| 129	-O  Bottom-	| 184	-B  Top-    |
+|  22	-R	Right-	|  76	R   Right+	| 130	-R	Right-	| 185	O   Bottom+ |
+|  23	-B  Top-	|  77	R   Right+	| 131	O   Bottom+	| 186	O   Bottom+ |
+|  24	L   Left+	|  78	L	Left+	| 132	R	Right+	| 187	L   Left+   |
+|  25	V   Front+	|  79	L	Left+	| 133	O	Bottom+	| 188	-B  Top-    |
+|  26	-B  Top-	|  80	O	Bottom+	| 134	V   Front+	| 189	V   Front+  |
+|  27	-A  Back-	|  81	R	Right+	| 135	-O	Bottom-	| 190	-B  Top-    |
+|  28	B   Top+	|  82	R   Right+	| 136	-V  Front-	| 191	O   Bottom+ |
+|  29	-V  Front-	|  83	L	Left+	| 137	O	Bottom	| 192	-R  Right-  |
+|  30	-B  Top-	|  84	L	Left+	| 138	L   Left+	| 193	-R  Right-  |
+|  31	A   Back+	|  85	R	Right+	| 139	-O	Bottom-	| 194	-B  Top-    |
+|  32	B   Top+	|  86	A   Back+	| 140	-L  Left-	| 195	O   Bottom+ |
+|  33	B   Top+	|  87	B   Top+	| 141	-O	Bottom-	| 196	A   Back+   |
+|  34	B   Top+	|  88   -A  Back-	| 142	-V  Front-	| 197	B   Top+    |
+|  35	V   Front+	|  89	-B  Top-	| 143	O	Bottom+	| 198	V   Front+  |
+|  36	B   Top+	|  90	R   Right+	| 144	V   Front+	| 199	-B  Top-    |
+|  37	R   Right+	|  91	R   Right+	| 145	V	Front+	| 200	-O  Bottom- |
+|  38	-B  Top-	|  92	-V  Front-	| 146	O	Bottom+	| 201	-R  Right-  |
+|  39	-R  Right-	|  93	-B  Top-	| 147	-V  Front-	| 202	-B  Top-    |
+|  40	-V  Front-	|  94	V   Front+	| 148	-R  Right-	| 203	-B  Top-    |
+|  41	L   Left+	|  95	B   Top+	| 149	-O	Bottom-	| 204	-L  Left-   |
+|  42	L   Left+	|  96	R	Right+	| 150	R	Right+	| 205	B   Top+    |
+|  43	B   Top+	|  97	-R	Right-	| 151	-R  Right-	| 206	-O  Bottom- |
+|  44	-V  Front-	|  98	O	Bottom+	| 152	O	Bottom+	| 207	A   Back+   |
+|  45	A   Back+	|  99	R	Right+	| 153	R   Right+	| 208	-R  Right-  |
+|  45	A   Back+	|  99	R	Right+	| 153	R   Right+	| 208	-R  Right-  |
+|  45	A   Back+	|  99	R	Right+	| 153	R   Right+	| 208	-R  Right-  |
+|  46	L	Left+	| 100	V	Front+	| 154	O	Bottom+	| 209	-B  Top-    |
+|  47	L	Left+	| 101	O	Bottom+	| 155	O	Bottom+	| 210	O   Bottom+ |
+|  48	V   Front+	| 102	-V  Front-	| 156	-R  Right-	| 211	A   Back+   |
+|  49	-A  Back-	| 103	V	Front+	| 157	-O	Bottom-	| 212	B   Top+    |
+|  50	B   Top+	| 104	-O	Bottom-	| 158	R   Right+	| 213	B   Top+    |
+|  51	L	Left+	| 105	-V  Front-	| 159	-B  Top-	| 214	M   Middle+ |
+|  52	L	Left+	| 106	-R  Right-	| 160	-M	Middle- | 215	M   Middle+ |
+|  53	L	Left+	| 107	-O	Bottom-	| 161	O	Bottom+	| 216	-O  Bottom- |
+|   		    	|		    	    | 162	-R  Right-	| 217	-O  Bottom- |
+---------------------------------------------------------------------------------
 
 
                             _________________________
