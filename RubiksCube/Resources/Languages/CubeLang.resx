@@ -397,6 +397,9 @@ Not allowed:</value>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
     <value>Turn the left side a quarter turn 'clockwise' (+).</value>
   </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Turn the middle layer half a turn.</value>
+  </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
     <value>Turn the right-middle layer a quarter turn to the front side (+).</value>
   </data>

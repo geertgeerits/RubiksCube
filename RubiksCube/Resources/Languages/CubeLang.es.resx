@@ -397,6 +397,9 @@ No permitido:</value>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
     <value>Gire el lado izquierdo un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Gira la capa intermedia media vuelta.</value>
+  </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
     <value>Gire la capa media un cuarto de vuelta derecha hacia el lado frontal (+).</value>
   </data>

@@ -397,6 +397,9 @@ Niet toegestaan:</value>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
     <value>Draai de linkerkant een kwartslag 'met de klok mee' (+).</value>
   </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Draai de middelste laag een halve slag.</value>
+  </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
     <value>Draai de rechts-midden laag een kwartslag naar de voorkant (+).</value>
   </data>

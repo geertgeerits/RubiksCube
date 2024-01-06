@@ -868,6 +868,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Turn the middle layer half a turn..
+        /// </summary>
+        internal static string TurnMiddleLayerHalfTurn_Text {
+            get {
+                return ResourceManager.GetString("TurnMiddleLayerHalfTurn_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the front side (+)..
         /// </summary>
         internal static string TurnRightMiddleToFrontSide_Text {

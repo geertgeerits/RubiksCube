@@ -397,6 +397,9 @@ Non autorizzato:</value>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
     <value>Girare il lato sinistro di un quarto di giro 'in senso orario' (+).</value>
   </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Girare lo strato intermedio di mezzo giro.</value>
+  </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
     <value>Gira lo strato centrale di un quarto di giro destro sul lato anteriore (+).</value>
   </data>

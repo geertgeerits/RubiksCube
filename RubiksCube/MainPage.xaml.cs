@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-05 (YYYY-MM-DD)
+// Date ........: 2024-01-06 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -143,19 +143,19 @@ public partial class MainPage : ContentPage
             IsVisibleCubeColors(true);
             IsEnabledArrows(false);
 
-            imgbtnTurnTopMiddleToRightSide.IsEnabled = true;
-            imgbtnTurnTopMiddleToFrontSide.IsEnabled = true;
-            imgbtnTurnFrontMiddleToRightSide.IsEnabled = true;
-            imgbtnTurnRightMiddleToFrontSide.IsEnabled = true;
-            imgbtnTurnFrontMiddleToTopSide.IsEnabled = true;
-            imgbtnTurnRightMiddleToTopSide.IsEnabled = true;
+            imgbtnTurnTopHorMiddleToRightSide.IsEnabled = true;
+            imgbtnTurnTopVerMiddleToFrontSide.IsEnabled = true;
+            imgbtnTurnFrontHorMiddleToRightSide.IsEnabled = true;
+            imgbtnTurnFrontHorMiddleToLeftSide.IsEnabled = true;
+            imgbtnTurnTopVerMiddleToBackSide.IsEnabled = true;
+            imgbtnTurnTopHorMiddleToLeftSide.IsEnabled = true;
 
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnCubeTopSideToLeftSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToRightSide, CubeLang.TurnCubeTopSideToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToFrontSide, CubeLang.TurnCubeFrontSideToBottomSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToRightSide, CubeLang.TurnCubeFrontSideToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToLeftSide, CubeLang.TurnCubeFrontSideToLeftSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToBackSide, CubeLang.TurnCubeFrontSideToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToLeftSide, CubeLang.TurnCubeTopSideToLeftSide_Text);
         }
         else
         {
@@ -165,12 +165,12 @@ public partial class MainPage : ContentPage
                 return;
             }
 
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToLeftSide, CubeLang.TurnRightMiddleToFrontSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToBackSide, CubeLang.TurnFrontMiddleToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToLeftSide, CubeLang.TurnRightMiddleToTopSide_Text);
 
             IsEnabledArrows(true);
             IsVisibleCubeColors(false);
@@ -227,7 +227,7 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the cube.
-    private async Task SolveTheCubeAsync()
+    private async Task SolveTheCubeAsyncNEW()
     {
         // Declare variables.
         int O, P, Q, R, V, X, Y, Z;
@@ -564,8 +564,12 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the cube.
-    private async Task SolveTheCubeAsyncOLD()
+    private async Task SolveTheCubeAsync()
     {
+        // Test the cube turns.
+        //await TestCubeTurns();
+        //return;
+
         // Solve the edges of the top layer - Chapter 4, page 14-3.
         await SolveEdgesTopLayerAsync();
 
@@ -629,37 +633,6 @@ public partial class MainPage : ContentPage
 
 
 
-        // For testing.
-        //await ExplainSolveTurnCubeAsync("TurnFront+");
-        //await ExplainSolveTurnCubeAsync("TurnFront++");
-        //await ExplainSolveTurnCubeAsync("TurnFront-");
-        //await ExplainSolveTurnCubeAsync("TurnFront--");
-        //await ExplainSolveTurnCubeAsync("TurnTop+");
-        //await ExplainSolveTurnCubeAsync("TurnTop++");
-        //await ExplainSolveTurnCubeAsync("TurnTop-");
-        //await ExplainSolveTurnCubeAsync("TurnTop--");
-        //await ExplainSolveTurnCubeAsync("TurnBottom+");
-        //await ExplainSolveTurnCubeAsync("TurnBottom++");
-        //await ExplainSolveTurnCubeAsync("TurnBottom-");
-        //await ExplainSolveTurnCubeAsync("TurnBottom--");
-        //await ExplainSolveTurnCubeAsync("TurnLeft+");
-        //await ExplainSolveTurnCubeAsync("TurnLeft++");
-        //await ExplainSolveTurnCubeAsync("TurnLeft-");
-        //await ExplainSolveTurnCubeAsync("TurnLeft--");
-        //await ExplainSolveTurnCubeAsync("TurnRight+");
-        //await ExplainSolveTurnCubeAsync("TurnRight++");
-        //await ExplainSolveTurnCubeAsync("TurnRight-");
-        //await ExplainSolveTurnCubeAsync("TurnRight--");
-        //await ExplainSolveTurnCubeAsync("TurnBack+");
-        //await ExplainSolveTurnCubeAsync("TurnBack++");
-        //await ExplainSolveTurnCubeAsync("TurnBack-");
-        //await ExplainSolveTurnCubeAsync("TurnBack--");
-        //await ExplainSolveTurnCubeAsync("TurnCubeFrontToRight");
-        //await ExplainSolveTurnCubeAsync("TurnCubeFrontToLeft");
-        //await ExplainSolveTurnCubeAsync("TurnCubeFrontToTop");
-        //await ExplainSolveTurnCubeAsync("TurnCubeFrontToBottom");
-        //await ExplainSolveTurnCubeAsync("TurnCubeTopToRight");
-        //await ExplainSolveTurnCubeAsync("TurnCubeTopToLeft");
 
         if (!CheckIfCubeIsSolved(false))
         {
@@ -1121,8 +1094,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the top middle to the right side (+).
-    private void OnTurnTopMiddleToRightSideClicked(object sender, EventArgs e)
+    // Turn the top horizontal middle to the right side (+).
+    private void OnTurnTopHorMiddleToRightSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -1169,8 +1142,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the top middle to the front side (-).
-    private void OnTurnTopMiddleToFrontSideClicked(object sender, EventArgs e)
+    // Turn the top vertical middle to the front side (-).
+    private void OnTurnTopVerMiddleToFrontSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -1217,8 +1190,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the front middle to the right side (-).
-    private void OnTurnFrontMiddleToRightSideClicked(object sender, EventArgs e)
+    // Turn the front horizontal middle to the right side (-).
+    private void OnTurnFrontHorMiddleToRightSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -1265,8 +1238,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the right middle to the front side (+).
-    private void OnTurnRightMiddleToFrontSideClicked(object sender, EventArgs e)
+    // Turn the front horizontal middle to the left side (+).
+    private void OnTurnFrontHorMiddleToLeftSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -1313,8 +1286,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the front middle to the top side (+).
-    private void OnTurnFrontMiddleToTopSideClicked(object sender, EventArgs e)
+    // Turn the top vertical middle to the back side (+).
+    private void OnTurnTopVerMiddleToBackSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -1361,8 +1334,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the right middle to the top side (-).
-    private void OnTurnRightMiddleToTopSideClicked(object sender, EventArgs e)
+    // Turn the top horizontal middle to the left side (-).
+    private void OnTurnTopHorMiddleToLeftSideClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
         {
@@ -2265,48 +2238,48 @@ public partial class MainPage : ContentPage
                 imgbtnTurnBackSideToLeft.IsEnabled = bIsEnabled;
                 break;
 
-            case "TurnTopMiddleRight+":
-            case "TurnTopMiddleRight++":
-                imgbtnTurnTopMiddleToRightSide.IsEnabled = bIsEnabled;
+            case "TurnTopHorMiddleRight+":
+            case "TurnTopHorMiddleRight++":
+                imgbtnTurnTopHorMiddleToRightSide.IsEnabled = bIsEnabled;
                 break;
-            case "TurnRightMiddleTop-":
-            case "TurnRightMiddleTop--":
-                imgbtnTurnRightMiddleToTopSide.IsEnabled = bIsEnabled;
+            case "TurnTopHorMiddleLeft-":
+            case "TurnTopHorMiddleLeft--":
+                imgbtnTurnTopHorMiddleToLeftSide.IsEnabled = bIsEnabled;
                 break;
-            case "TurnFrontMiddleTop+":
-            case "TurnFrontMiddleTop++":
-                imgbtnTurnFrontMiddleToTopSide.IsEnabled = bIsEnabled;
+            case "TurnTopVerMiddleBack+":
+            case "TurnTopVerMiddleBack++":
+                imgbtnTurnTopVerMiddleToBackSide.IsEnabled = bIsEnabled;
                 break;
-            case "TurnTopMiddleFront-":
-            case "TurnTopMiddleFront--":
-                imgbtnTurnTopMiddleToFrontSide.IsEnabled = bIsEnabled;
+            case "TurnTopVerMiddleFront-":
+            case "TurnTopVerMiddleFront--":
+                imgbtnTurnTopVerMiddleToFrontSide.IsEnabled = bIsEnabled;
                 break;
-            case "TurnRightMiddleFront+":
-            case "TurnRightMiddleFront++":
-                imgbtnTurnRightMiddleToFrontSide.IsEnabled = bIsEnabled;
+            case "TurnFrontHorMiddleLeft+":
+            case "TurnFrontHorMiddleLeft++":
+                imgbtnTurnFrontHorMiddleToLeftSide.IsEnabled = bIsEnabled;
                 break;
-            case "TurnFrontMiddleRight-":
-            case "TurnFrontMiddleRight--":
-                imgbtnTurnFrontMiddleToRightSide.IsEnabled = bIsEnabled;
+            case "TurnFrontHorMiddleRight-":
+            case "TurnFrontHorMiddleRight--":
+                imgbtnTurnFrontHorMiddleToRightSide.IsEnabled = bIsEnabled;
                 break;
 
             case "TurnCubeFrontToRight":
-                imgbtnTurnFrontMiddleToRightSide.IsEnabled = bIsEnabled;
+                imgbtnTurnFrontHorMiddleToRightSide.IsEnabled = bIsEnabled;
                 break;
             case "TurnCubeFrontToLeft":
-                imgbtnTurnRightMiddleToFrontSide.IsEnabled = bIsEnabled;
+                imgbtnTurnFrontHorMiddleToLeftSide.IsEnabled = bIsEnabled;
                 break;
             case "TurnCubeFrontToTop":
-                imgbtnTurnFrontMiddleToTopSide.IsEnabled = bIsEnabled;
+                imgbtnTurnTopVerMiddleToBackSide.IsEnabled = bIsEnabled;
                 break;
             case "TurnCubeFrontToBottom":
-                imgbtnTurnTopMiddleToFrontSide.IsEnabled = bIsEnabled;
+                imgbtnTurnTopVerMiddleToFrontSide.IsEnabled = bIsEnabled;
                 break;
             case "TurnCubeTopToRight":
-                imgbtnTurnTopMiddleToRightSide.IsEnabled = bIsEnabled;
+                imgbtnTurnTopHorMiddleToRightSide.IsEnabled = bIsEnabled;
                 break;
             case "TurnCubeTopToLeft":
-                imgbtnTurnRightMiddleToTopSide.IsEnabled = bIsEnabled;
+                imgbtnTurnTopHorMiddleToLeftSide.IsEnabled = bIsEnabled;
                 break;
 
             default:
@@ -2384,29 +2357,32 @@ public partial class MainPage : ContentPage
                 cTurnCubeText = CubeLang.TurnBackSideHalfTurn_Text;
                 break;
 
-            case "TurnTopMiddleRight+":
-            case "TurnTopMiddleRight++":
+            case "TurnTopHorMiddleRight+":
                 cTurnCubeText = CubeLang.TurnTopMiddleToRightSide_Text ;
                 break;
-            case "TurnRightMiddleTop-":
-            case "TurnRightMiddleTop--":
+            case "TurnTopHorMiddleLeft-":
                 cTurnCubeText = CubeLang.TurnRightMiddleToTopSide_Text;
                 break;
-            case "TurnFrontMiddleTop+":
-            case "TurnFrontMiddleTop++":
+            case "TurnTopVerMiddleBack+":
                 cTurnCubeText = CubeLang.TurnFrontMiddleToTopSide_Text;
                 break;
-            case "TurnTopMiddleFront-":
-            case "TurnTopMiddleFront--":
+            case "TurnTopVerMiddleFront-":
                 cTurnCubeText = CubeLang.TurnTopMiddleToFrontSide_Text;
                 break;
-            case "TurnRightMiddleFront+":
-            case "TurnRightMiddleFront++":
+            case "TurnFrontHorMiddleLeft+":
                 cTurnCubeText = CubeLang.TurnRightMiddleToFrontSide_Text;
                 break;
-            case "TurnFrontMiddleRight-":
-            case "TurnFrontMiddleRight--":
+            case "TurnFrontHorMiddleRight-":
                 cTurnCubeText = CubeLang.TurnFrontMiddleToRightSide_Text;
+                break;
+
+            case "TurnTopHorMiddleRight++":
+            case "TurnTopHorMiddleLeft--":
+            case "TurnTopVerMiddleBack++":
+            case "TurnTopVerMiddleFront--":
+            case "TurnFrontHorMiddleLeft++":
+            case "TurnFrontHorMiddleRight--":
+                cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
                 break;
 
             case "TurnCubeFrontToRight":
@@ -2527,46 +2503,46 @@ public partial class MainPage : ContentPage
                 TurnBackSideTo("-");
                 break;
 
-            case "TurnTopMiddleRight+":
+            case "TurnTopHorMiddleRight+":
                 TurnTopMiddleTo("+");
                 break;
-            case "TurnRightMiddleTop-":
+            case "TurnTopHorMiddleLeft-":
                 TurnTopMiddleTo("-");
                 break;
-            case "TurnFrontMiddleTop+":
+            case "TurnTopVerMiddleBack+":
                 TurnFrontTopMiddleTo("+");
                 break;
-            case "TurnTopMiddleFront-":
+            case "TurnTopVerMiddleFront-":
                 TurnFrontTopMiddleTo("-");
                 break;
-            case "TurnRightMiddleFront+":
+            case "TurnFrontHorMiddleLeft+":
                 TurnHorizontalMiddleLayerTo("+");
                 break;
-            case "TurnFrontMiddleRight-":
+            case "TurnFrontHorMiddleRight-":
                 TurnHorizontalMiddleLayerTo("-");
                 break;
 
-            case "TurnTopMiddleRight++":
+            case "TurnTopHorMiddleRight++":
                 TurnTopMiddleTo("+");
                 TurnTopMiddleTo("+");
                 break;
-            case "TurnRightMiddleTop--":
+            case "TurnTopHorMiddleLeft--":
                 TurnTopMiddleTo("-");
                 TurnTopMiddleTo("-");
                 break;
-            case "TurnFrontMiddleTop++":
+            case "TurnTopVerMiddleBack++":
                 TurnFrontTopMiddleTo("+");
                 TurnFrontTopMiddleTo("+");
                 break;
-            case "TurnTopMiddleFront--":
+            case "TurnTopVerMiddleFront--":
                 TurnFrontTopMiddleTo("-");
                 TurnFrontTopMiddleTo("-");
                 break;
-            case "TurnRightMiddleFront++":
+            case "TurnFrontHorMiddleLeft++":
                 TurnHorizontalMiddleLayerTo("+");
                 TurnHorizontalMiddleLayerTo("+");
                 break;
-            case "TurnFrontMiddleRight--":
+            case "TurnFrontHorMiddleRight--":
                 TurnHorizontalMiddleLayerTo("-");
                 TurnHorizontalMiddleLayerTo("-");
                 break;
@@ -2980,43 +2956,43 @@ public partial class MainPage : ContentPage
         if (bSetArrowTooltip)
         {
             ToolTipProperties.SetText(imgbtnTurnFrontSideToRight, CubeLang.TurnFrontSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToRightSide, CubeLang.TurnTopMiddleToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnBackSideToLeft, CubeLang.TurnBackSideToLeft_Text);
             ToolTipProperties.SetText(imgbtnTurnLeftSideToRight, CubeLang.TurnLeftSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToFrontSide, CubeLang.TurnTopMiddleToFrontSide_Text);
             ToolTipProperties.SetText(imgbtnTurnRightSideToLeft, CubeLang.TurnRightSideToLeft_Text);
             ToolTipProperties.SetText(imgbtnTurnTopSideToLeft, CubeLang.TurnTopSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToRightSide, CubeLang.TurnFrontMiddleToRightSide_Text);
             ToolTipProperties.SetText(imgbtnTurnBottomSideToRight, CubeLang.TurnBottomSideToRight_Text);
             ToolTipProperties.SetText(imgbtnTurnTopSideToRight, CubeLang.TurnTopSideToRight_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, CubeLang.TurnRightMiddleToFrontSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToLeftSide, CubeLang.TurnRightMiddleToFrontSide_Text);
             ToolTipProperties.SetText(imgbtnTurnBottomSideToLeft, CubeLang.TurnBottomSideToLeft_Text);
             ToolTipProperties.SetText(imgbtnTurnLeftSideToLeft, CubeLang.TurnLeftSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, CubeLang.TurnFrontMiddleToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToBackSide, CubeLang.TurnFrontMiddleToTopSide_Text);
             ToolTipProperties.SetText(imgbtnTurnRightSideToRight, CubeLang.TurnRightSideToRight_Text);
             ToolTipProperties.SetText(imgbtnTurnFrontSideToLeft, CubeLang.TurnFrontSideToLeft_Text);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, CubeLang.TurnRightMiddleToTopSide_Text);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToLeftSide, CubeLang.TurnRightMiddleToTopSide_Text);
             ToolTipProperties.SetText(imgbtnTurnBackSideToRight, CubeLang.TurnBackSideToRight_Text);
         }
         else
         {
             ToolTipProperties.SetText(imgbtnTurnFrontSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToRightSide, null);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToRightSide, null);
             ToolTipProperties.SetText(imgbtnTurnBackSideToLeft, null);
             ToolTipProperties.SetText(imgbtnTurnLeftSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnTopMiddleToFrontSide, null);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToFrontSide, null);
             ToolTipProperties.SetText(imgbtnTurnRightSideToLeft, null);
             ToolTipProperties.SetText(imgbtnTurnTopSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToRightSide, null);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToRightSide, null);
             ToolTipProperties.SetText(imgbtnTurnBottomSideToRight, null);
             ToolTipProperties.SetText(imgbtnTurnTopSideToRight, null);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToFrontSide, null);
+            ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToLeftSide, null);
             ToolTipProperties.SetText(imgbtnTurnBottomSideToLeft, null);
             ToolTipProperties.SetText(imgbtnTurnLeftSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnFrontMiddleToTopSide, null);
+            ToolTipProperties.SetText(imgbtnTurnTopVerMiddleToBackSide, null);
             ToolTipProperties.SetText(imgbtnTurnRightSideToRight, null);
             ToolTipProperties.SetText(imgbtnTurnFrontSideToLeft, null);
-            ToolTipProperties.SetText(imgbtnTurnRightMiddleToTopSide, null);
+            ToolTipProperties.SetText(imgbtnTurnTopHorMiddleToLeftSide, null);
             ToolTipProperties.SetText(imgbtnTurnBackSideToRight, null);
         }
     }
@@ -3025,22 +3001,22 @@ public partial class MainPage : ContentPage
     private void IsEnabledArrows(bool bEnableDisable)
     {
         imgbtnTurnFrontSideToRight.IsEnabled = bEnableDisable;
-        imgbtnTurnTopMiddleToRightSide.IsEnabled = bEnableDisable;
+        imgbtnTurnTopHorMiddleToRightSide.IsEnabled = bEnableDisable;
         imgbtnTurnBackSideToLeft.IsEnabled = bEnableDisable;
         imgbtnTurnLeftSideToRight.IsEnabled = bEnableDisable;
-        imgbtnTurnTopMiddleToFrontSide.IsEnabled = bEnableDisable;
+        imgbtnTurnTopVerMiddleToFrontSide.IsEnabled = bEnableDisable;
         imgbtnTurnRightSideToLeft.IsEnabled = bEnableDisable;
         imgbtnTurnTopSideToLeft.IsEnabled = bEnableDisable;
-        imgbtnTurnFrontMiddleToRightSide.IsEnabled = bEnableDisable;
+        imgbtnTurnFrontHorMiddleToRightSide.IsEnabled = bEnableDisable;
         imgbtnTurnBottomSideToRight.IsEnabled = bEnableDisable;
         imgbtnTurnTopSideToRight.IsEnabled = bEnableDisable;
-        imgbtnTurnRightMiddleToFrontSide.IsEnabled = bEnableDisable;
+        imgbtnTurnFrontHorMiddleToLeftSide.IsEnabled = bEnableDisable;
         imgbtnTurnBottomSideToLeft.IsEnabled = bEnableDisable;
         imgbtnTurnLeftSideToLeft.IsEnabled = bEnableDisable;
-        imgbtnTurnFrontMiddleToTopSide.IsEnabled = bEnableDisable;
+        imgbtnTurnTopVerMiddleToBackSide.IsEnabled = bEnableDisable;
         imgbtnTurnRightSideToRight.IsEnabled = bEnableDisable;
         imgbtnTurnFrontSideToLeft.IsEnabled = bEnableDisable;
-        imgbtnTurnRightMiddleToTopSide.IsEnabled = bEnableDisable;
+        imgbtnTurnTopHorMiddleToLeftSide.IsEnabled = bEnableDisable;
         imgbtnTurnBackSideToRight.IsEnabled = bEnableDisable;
     }
 
@@ -3226,6 +3202,61 @@ public partial class MainPage : ContentPage
             }
         }
     }
+    
+    // Test the turns of the cube.
+    private async Task TestCubeTurns()
+    {
+        // Disable the arrows buttons.
+        IsEnabledArrows(false);
+
+        // Test the side layer turns.
+        await ExplainSolveTurnCubeAsync("TurnFront+");
+        await ExplainSolveTurnCubeAsync("TurnFront++");
+        await ExplainSolveTurnCubeAsync("TurnFront-");
+        await ExplainSolveTurnCubeAsync("TurnFront--");
+        await ExplainSolveTurnCubeAsync("TurnTop+");
+        await ExplainSolveTurnCubeAsync("TurnTop++");
+        await ExplainSolveTurnCubeAsync("TurnTop-");
+        await ExplainSolveTurnCubeAsync("TurnTop--");
+        await ExplainSolveTurnCubeAsync("TurnBottom+");
+        await ExplainSolveTurnCubeAsync("TurnBottom++");
+        await ExplainSolveTurnCubeAsync("TurnBottom-");
+        await ExplainSolveTurnCubeAsync("TurnBottom--");
+        await ExplainSolveTurnCubeAsync("TurnLeft+");
+        await ExplainSolveTurnCubeAsync("TurnLeft++");
+        await ExplainSolveTurnCubeAsync("TurnLeft-");
+        await ExplainSolveTurnCubeAsync("TurnLeft--");
+        await ExplainSolveTurnCubeAsync("TurnRight+");
+        await ExplainSolveTurnCubeAsync("TurnRight++");
+        await ExplainSolveTurnCubeAsync("TurnRight-");
+        await ExplainSolveTurnCubeAsync("TurnRight--");
+        await ExplainSolveTurnCubeAsync("TurnBack+");
+        await ExplainSolveTurnCubeAsync("TurnBack++");
+        await ExplainSolveTurnCubeAsync("TurnBack-");
+        await ExplainSolveTurnCubeAsync("TurnBack--");
+
+        // Test the middle layer turns.
+        await ExplainSolveTurnCubeAsync("TurnTopHorMiddleRight+");
+        await ExplainSolveTurnCubeAsync("TurnTopHorMiddleRight++");
+        await ExplainSolveTurnCubeAsync("TurnTopHorMiddleLeft-");
+        await ExplainSolveTurnCubeAsync("TurnTopHorMiddleLeft--");
+        await ExplainSolveTurnCubeAsync("TurnTopVerMiddleBack+");
+        await ExplainSolveTurnCubeAsync("TurnTopVerMiddleBack++");
+        await ExplainSolveTurnCubeAsync("TurnTopVerMiddleFront-");
+        await ExplainSolveTurnCubeAsync("TurnTopVerMiddleFront--");
+        await ExplainSolveTurnCubeAsync("TurnFrontHorMiddleLeft+");
+        await ExplainSolveTurnCubeAsync("TurnFrontHorMiddleLeft++");
+        await ExplainSolveTurnCubeAsync("TurnFrontHorMiddleRight-");
+        await ExplainSolveTurnCubeAsync("TurnFrontHorMiddleRight--");
+
+        // Test the cube turns.
+        await ExplainSolveTurnCubeAsync("TurnCubeFrontToRight");
+        await ExplainSolveTurnCubeAsync("TurnCubeFrontToLeft");
+        await ExplainSolveTurnCubeAsync("TurnCubeFrontToTop");
+        await ExplainSolveTurnCubeAsync("TurnCubeFrontToBottom");
+        await ExplainSolveTurnCubeAsync("TurnCubeTopToRight");
+        await ExplainSolveTurnCubeAsync("TurnCubeTopToLeft");
+    }
 }
 
 /*
@@ -3310,18 +3341,18 @@ REM ** SOLCUBE ** 1981
 
 
 
-imgbtnTurnFrontSideToRight  imgbtnTurnTopMiddleToRightSide  imgbtnTurnBackSideToLeft
+imgbtnTurnFrontSideToRight  imgbtnTurnTopHorMiddleToRightSide  imgbtnTurnBackSideToLeft
 
-                                                imgbtnTurnLeftSideToRight  imgbtnTurnTopMiddleToFrontSide  imgbtnTurnRightSideToLeft
+                                                imgbtnTurnLeftSideToRight  imgbtnTurnTopVerMiddleToFrontSide  imgbtnTurnRightSideToLeft
 
 imgbtnTurnTopSideToLeft                                                             imgbtnTurnTopSideToRight
-imgbtnTurnFrontMiddleToRightSide                                                    imgbtnTurnRightMiddleToFrontSide
+imgbtnTurnFrontHorMiddleToRightSide                                                    imgbtnTurnFrontHorMiddleToLeftSide
 imgbtnTurnBottomSideToRight                                                         imgbtnTurnBottomSideToLeft
 
 
-imgbtnTurnLeftSideToLeft  imgbtnTurnFrontMiddleToTopSide  imgbtnTurnRightSideToRight
+imgbtnTurnLeftSideToLeft  imgbtnTurnTopVerMiddleToBackSide  imgbtnTurnRightSideToRight
 
-                                                imgbtnTurnFrontSideToLeft  imgbtnTurnRightMiddleToTopSide  imgbtnTurnBackSideToRight
+                                                imgbtnTurnFrontSideToLeft  imgbtnTurnTopHorMiddleToLeftSide  imgbtnTurnBackSideToRight
 
 
 REM ** SOLCUBE ** ARRAY 'D(53)' - CUBE COLORS

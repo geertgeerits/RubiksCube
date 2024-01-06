@@ -397,6 +397,9 @@ Nicht erlaubt:</value>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
     <value>Drehen Sie die linke Seite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Drehen Sie die mittlere Schicht eine halbe Umdrehung.</value>
+  </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
     <value>Drehen Sie die rechte mittlere Schicht um eine Vierteldrehung auf die Vorderseite (+).</value>
   </data>

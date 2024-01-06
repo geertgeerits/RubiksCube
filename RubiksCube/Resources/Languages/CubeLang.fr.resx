@@ -397,6 +397,9 @@ Interdit:</value>
   <data name="TurnLeftSideToRight_Text" xml:space="preserve">
     <value>Tourner le côté gauche d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Tournez la couche intermédiaire d'un demi-tour.</value>
+  </data>
   <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
     <value>Tournez la couche médiane droite d'un quart de tour vers l'avant (+).</value>
   </data>

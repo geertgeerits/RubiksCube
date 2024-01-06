@@ -210,11 +210,11 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopMiddleToRightSide"
+                        x:Name="imgbtnTurnTopHorMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="60,0"
                         Source="arrow_down_right_32p.png"
-                        Clicked="OnTurnTopMiddleToRightSideClicked">
+                        Clicked="OnTurnTopHorMiddleToRightSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -234,11 +234,11 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnTopMiddleToFrontSide"
+                        x:Name="imgbtnTurnTopVerMiddleToFrontSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="230,0"
                         Source="arrow_down_left_32p.png"
-                        Clicked="OnTurnTopMiddleToFrontSideClicked">
+                        Clicked="OnTurnTopVerMiddleToFrontSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -263,11 +263,11 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToRightSide"
+                        x:Name="imgbtnTurnFrontHorMiddleToRightSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,132"
                         Source="arrow_right_32p.png"
-                        Clicked="OnTurnFrontMiddleToRightSideClicked">
+                        Clicked="OnTurnFrontHorMiddleToRightSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -292,11 +292,11 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToFrontSide"
+                        x:Name="imgbtnTurnFrontHorMiddleToLeftSide"
                         Style="{StaticResource imageButtonArrowHorizontal}"
                         AbsoluteLayout.LayoutBounds="0,97"
                         Source="arrow_left_32p.png"
-                        Clicked="OnTurnRightMiddleToFrontSideClicked">
+                        Clicked="OnTurnFrontHorMiddleToLeftSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -570,11 +570,11 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnFrontMiddleToTopSide"
+                        x:Name="imgbtnTurnTopVerMiddleToBackSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="84,0"
                         Source="arrow_up_right_32p.png"
-                        Clicked="OnTurnFrontMiddleToTopSideClicked">
+                        Clicked="OnTurnTopVerMiddleToBackSideClicked">
                     </ImageButton>
 
                     <ImageButton
@@ -594,11 +594,11 @@
                     </ImageButton>
 
                     <ImageButton
-                        x:Name="imgbtnTurnRightMiddleToTopSide"
+                        x:Name="imgbtnTurnTopHorMiddleToLeftSide"
                         Style="{StaticResource imageButtonArrowVertical}"
                         AbsoluteLayout.LayoutBounds="261,0"
                         Source="arrow_up_left_32p.png"
-                        Clicked="OnTurnRightMiddleToTopSideClicked">
+                        Clicked="OnTurnTopHorMiddleToLeftSideClicked">
                     </ImageButton>
 
                     <ImageButton
