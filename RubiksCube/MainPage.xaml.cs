@@ -1110,7 +1110,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnTopMiddleToRightSide_Text);
-        TurnTopMiddleTo("+");
+        TurnTopHorMiddleTo("+");
         GetCubeColorsFromArrays();
     }
 
@@ -1158,7 +1158,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnTopMiddleToFrontSide_Text);
-        TurnFrontTopMiddleTo("-");
+        TurnTopVerMiddleTo("-");
         GetCubeColorsFromArrays();
     }
 
@@ -1206,7 +1206,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightSide_Text);
-        TurnHorizontalMiddleLayerTo("-");
+        TurnFrontHorMiddleTo("-");
         GetCubeColorsFromArrays();
     }
 
@@ -1254,7 +1254,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontSide_Text);
-        TurnHorizontalMiddleLayerTo("+");
+        TurnFrontHorMiddleTo("+");
         GetCubeColorsFromArrays();
     }
 
@@ -1302,7 +1302,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToTopSide_Text);
-        TurnFrontTopMiddleTo("+");
+        TurnTopVerMiddleTo("+");
         GetCubeColorsFromArrays();
     }
 
@@ -1350,7 +1350,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToTopSide_Text);
-        TurnTopMiddleTo("-");
+        TurnTopHorMiddleTo("-");
         GetCubeColorsFromArrays();
     }
 
@@ -1378,7 +1378,7 @@ public partial class MainPage : ContentPage
         }
             
         TurnTopSideTo("+");
-        TurnHorizontalMiddleLayerTo("+");
+        TurnFrontHorMiddleTo("+");
         TurnBottomSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1392,7 +1392,7 @@ public partial class MainPage : ContentPage
         }
 
         TurnTopSideTo("-");
-        TurnHorizontalMiddleLayerTo("-");
+        TurnFrontHorMiddleTo("-");
         TurnBottomSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1406,7 +1406,7 @@ public partial class MainPage : ContentPage
         }
 
         TurnRightSideTo("+");
-        TurnFrontTopMiddleTo("+");
+        TurnTopVerMiddleTo("+");
         TurnLeftSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1420,7 +1420,7 @@ public partial class MainPage : ContentPage
         }
 
         TurnRightSideTo("-");
-        TurnFrontTopMiddleTo("-");
+        TurnTopVerMiddleTo("-");
         TurnLeftSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1434,7 +1434,7 @@ public partial class MainPage : ContentPage
         }
 
         TurnFrontSideTo("+");
-        TurnTopMiddleTo("+");
+        TurnTopHorMiddleTo("+");
         TurnBackSideTo("-");
         GetCubeColorsFromArrays();
     }
@@ -1448,7 +1448,7 @@ public partial class MainPage : ContentPage
         }
 
         TurnFrontSideTo("-");
-        TurnTopMiddleTo("-");
+        TurnTopHorMiddleTo("-");
         TurnBackSideTo("+");
         GetCubeColorsFromArrays();
     }
@@ -1538,8 +1538,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the top middle to the right or left.
-    private void TurnTopMiddleTo(string cDirection)
+    // Turn the top horizontal middle layer to the right or left.
+    private void TurnTopHorMiddleTo(string cDirection)
     {
         string cColorTop4 = aTopSide[4];
         string cColorTop5 = aTopSide[5];
@@ -1766,8 +1766,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the top middle layer to right or left.
-    private void TurnFrontTopMiddleTo(string cDirection)
+    // Turn the top vertical middle layer to back or front.
+    private void TurnTopVerMiddleTo(string cDirection)
     {
         string cColorTop2 = aTopSide[2];
         string cColorTop5 = aTopSide[5];
@@ -1994,8 +1994,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the horizontal middle layer to right or left.
-    private void TurnHorizontalMiddleLayerTo(string cDirection)
+    // Turn the front horizontal middle layer to right or left.
+    private void TurnFrontHorMiddleTo(string cDirection)
     {
         string cColorFront4 = aFrontSide[4];
         string cColorFront5 = aFrontSide[5];
@@ -2184,7 +2184,7 @@ public partial class MainPage : ContentPage
         await TurnSideCubeAsync(cTurnSideAndDirection);
     }
 
-    // Set the explain text depending on the direction of rotation of the cube side.
+    // Enalbe or disable the arrow imagebuttons.
     private async Task SetImageButtonArrowIsEnabledAsync(string cTurnSideAndDirection, bool bIsEnabled)
     {
         switch (cTurnSideAndDirection)
@@ -2504,47 +2504,47 @@ public partial class MainPage : ContentPage
                 break;
 
             case "TurnTopHorMiddleRight+":
-                TurnTopMiddleTo("+");
+                TurnTopHorMiddleTo("+");
                 break;
             case "TurnTopHorMiddleLeft-":
-                TurnTopMiddleTo("-");
+                TurnTopHorMiddleTo("-");
                 break;
             case "TurnTopVerMiddleBack+":
-                TurnFrontTopMiddleTo("+");
+                TurnTopVerMiddleTo("+");
                 break;
             case "TurnTopVerMiddleFront-":
-                TurnFrontTopMiddleTo("-");
+                TurnTopVerMiddleTo("-");
                 break;
             case "TurnFrontHorMiddleLeft+":
-                TurnHorizontalMiddleLayerTo("+");
+                TurnFrontHorMiddleTo("+");
                 break;
             case "TurnFrontHorMiddleRight-":
-                TurnHorizontalMiddleLayerTo("-");
+                TurnFrontHorMiddleTo("-");
                 break;
 
             case "TurnTopHorMiddleRight++":
-                TurnTopMiddleTo("+");
-                TurnTopMiddleTo("+");
+                TurnTopHorMiddleTo("+");
+                TurnTopHorMiddleTo("+");
                 break;
             case "TurnTopHorMiddleLeft--":
-                TurnTopMiddleTo("-");
-                TurnTopMiddleTo("-");
+                TurnTopHorMiddleTo("-");
+                TurnTopHorMiddleTo("-");
                 break;
             case "TurnTopVerMiddleBack++":
-                TurnFrontTopMiddleTo("+");
-                TurnFrontTopMiddleTo("+");
+                TurnTopVerMiddleTo("+");
+                TurnTopVerMiddleTo("+");
                 break;
             case "TurnTopVerMiddleFront--":
-                TurnFrontTopMiddleTo("-");
-                TurnFrontTopMiddleTo("-");
+                TurnTopVerMiddleTo("-");
+                TurnTopVerMiddleTo("-");
                 break;
             case "TurnFrontHorMiddleLeft++":
-                TurnHorizontalMiddleLayerTo("+");
-                TurnHorizontalMiddleLayerTo("+");
+                TurnFrontHorMiddleTo("+");
+                TurnFrontHorMiddleTo("+");
                 break;
             case "TurnFrontHorMiddleRight--":
-                TurnHorizontalMiddleLayerTo("-");
-                TurnHorizontalMiddleLayerTo("-");
+                TurnFrontHorMiddleTo("-");
+                TurnFrontHorMiddleTo("-");
                 break;
 
             case "TurnCubeFrontToRight":
