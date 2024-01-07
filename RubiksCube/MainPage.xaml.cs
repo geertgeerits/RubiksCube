@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-06 (YYYY-MM-DD)
+// Date ........: 2024-01-07 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -567,7 +567,7 @@ public partial class MainPage : ContentPage
     private async Task SolveTheCubeAsync()
     {
         // Test the cube turns.
-        //await TestCubeTurns();
+        //await TestCubeTurnsAsync();
         //return;
 
         // Solve the edges of the top layer - Chapter 4, page 14-3.
@@ -3204,11 +3204,8 @@ public partial class MainPage : ContentPage
     }
     
     // Test the turns of the cube.
-    private async Task TestCubeTurns()
+    private async Task TestCubeTurnsAsync()
     {
-        // Disable the arrows buttons.
-        IsEnabledArrows(false);
-
         // Test the side layer turns.
         await ExplainSolveTurnCubeAsync("TurnFront+");
         await ExplainSolveTurnCubeAsync("TurnFront++");
