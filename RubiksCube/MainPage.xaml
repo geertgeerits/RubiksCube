@@ -193,7 +193,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     HorizontalOptions="End"
-                    Text="{local:Translate CubeTopSide_Text}">
+                    Text="{local:Translate CubeUpFace_Text}">
                 </Label>
 
                 <AbsoluteLayout
@@ -314,7 +314,7 @@
 
                     <Polygon
                         x:Name="plgUp1"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="88,0">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -323,7 +323,7 @@
 
                     <Polygon
                         x:Name="plgUp2"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="142,11">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -332,7 +332,7 @@
 
                     <Polygon
                         x:Name="plgUp3"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="197,22">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -341,7 +341,7 @@
 
                     <Polygon
                         x:Name="plgUp4"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="45,22">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -350,7 +350,7 @@
 
                     <Polygon
                         x:Name="plgUp5"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="99,33">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -359,7 +359,7 @@
 
                     <Polygon
                         x:Name="plgUp6"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="153,44">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -368,7 +368,7 @@
 
                     <Polygon
                         x:Name="plgUp7"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="2,45">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -377,7 +377,7 @@
 
                     <Polygon
                         x:Name="plgUp8"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="56,56">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -386,7 +386,7 @@
 
                     <Polygon
                         x:Name="plgUp9"
-                        Style="{StaticResource polygonStyleCubeTop}"
+                        Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="110,66">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -615,7 +615,7 @@
                     Grid.Row="5"
                     Grid.Column="1"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate CubeFrontSide_Text}">
+                    Text="{local:Translate CubeFrontFace_Text}">
                 </Label>
 
                 <Label
@@ -624,7 +624,7 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate CubeRightSide_Text}">
+                    Text="{local:Translate CubeRightFace_Text}">
                 </Label>
 
                 <Border
@@ -662,7 +662,7 @@
                     Grid.Row="7"
                     Grid.Column="1"
                     VerticalTextAlignment="End"
-                    Text="{local:Translate CubeLeftSide_Text}">
+                    Text="{local:Translate CubeLeftFace_Text}">
                 </Label>
 
                 <Label
@@ -671,7 +671,7 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     VerticalTextAlignment="End"
-                    Text="{local:Translate CubeBackSide_Text}">
+                    Text="{local:Translate CubeBackFace_Text}">
                 </Label>
 
                 <AbsoluteLayout
@@ -842,7 +842,7 @@
 
                     <Polygon
                         x:Name="plgDown1"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="2,206">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -851,7 +851,7 @@
 
                     <Polygon
                         x:Name="plgDown2"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="57,218">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -860,7 +860,7 @@
 
                     <Polygon
                         x:Name="plgDown3"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="114,229">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -869,7 +869,7 @@
 
                     <Polygon
                         x:Name="plgDown4"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="46,184">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -878,7 +878,7 @@
 
                     <Polygon
                         x:Name="plgDown5"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="102,195">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -887,7 +887,7 @@
 
                     <Polygon
                         x:Name="plgDown6"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="158,206">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -896,7 +896,7 @@
 
                     <Polygon
                         x:Name="plgDown7"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="91,161">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -905,7 +905,7 @@
 
                     <Polygon
                         x:Name="plgDown8"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="146,172">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -914,7 +914,7 @@
 
                     <Polygon
                         x:Name="plgDown9"
-                        Style="{StaticResource polygonStyleCubeBottom}"
+                        Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="201,183">
                         <Polygon.GestureRecognizers>
                             <DropGestureRecognizer Drop="OnColorDrop" />
@@ -928,7 +928,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalTextAlignment="Start"
-                    Text="{local:Translate CubeBottomSide_Text}">
+                    Text="{local:Translate CubeDownFace_Text}">
                 </Label>
             </Grid>
         </ScrollView>

@@ -147,31 +147,31 @@
   <data name="Copyright_Text" xml:space="preserve">
     <value>Droits d'auteur</value>
   </data>
-  <data name="CubeBackSide_Text" xml:space="preserve">
+  <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Arrière</value>
   </data>
-  <data name="CubeBottomSide_Text" xml:space="preserve">
+  <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Bas</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
     <value>Couleurs des cubes :</value>
   </data>
-  <data name="CubeFrontSide_Text" xml:space="preserve">
+  <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Face avant</value>
   </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vue de l'intérieur</value>
   </data>
-  <data name="CubeLeftSide_Text" xml:space="preserve">
+  <data name="CubeLeftFace_Text" xml:space="preserve">
     <value>Côté gauche</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
     <value>Vue extérieure</value>
   </data>
-  <data name="CubeRightSide_Text" xml:space="preserve">
+  <data name="CubeRightFace_Text" xml:space="preserve">
     <value>Côté droit</value>
   </data>
-  <data name="CubeTopSide_Text" xml:space="preserve">
+  <data name="CubeUpFace_Text" xml:space="preserve">
     <value>Haut</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
@@ -337,97 +337,97 @@ Interdit:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Bouton bascule: faites glisser les couleurs sur le cube</value>
   </data>
-  <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez la face arrière d'un demi-tour.</value>
   </data>
-  <data name="TurnBackSideToLeft_Text" xml:space="preserve">
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
     <value>Tourner la face arrière d'un quart de tour 'dans le sens inverse des aiguilles d'une montre' (-).</value>
   </data>
-  <data name="TurnBackSideToRight_Text" xml:space="preserve">
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
     <value>Tournez la face arrière d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
-  <data name="TurnBottomSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez le côté inférieur d'un demi-tour.</value>
   </data>
-  <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
     <value>Tourner le côté inférieur d'un quart de tour 'dans le sens inverse des aiguilles d'une montre' (-).</value>
   </data>
-  <data name="TurnBottomSideToRight_Text" xml:space="preserve">
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
     <value>Tournez le côté inférieur d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
-  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que l'avant aille vers le bas.</value>
   </data>
-  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que l'avant aille vers le côté gauche.</value>
   </data>
-  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que l'avant aille vers la droite.</value>
   </data>
-  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que l'avant aille vers le haut.</value>
   </data>
-  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que le haut aille vers le côté gauche.</value>
   </data>
-  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
     <value>Tournez le cube entier de sorte que le haut aille vers la droite.</value>
   </data>
-  <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
     <value>Tournez la couche centrale avant d'un quart de tour vers la droite (-).</value>
   </data>
-  <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
     <value>Tournez la couche intermédiaire avant d'un quart de tour vers le haut (+).</value>
   </data>
-  <data name="TurnFrontSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez la face avant d'un demi-tour.</value>
   </data>
-  <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
     <value>Tourner la face avant d'un quart de tour 'dans le sens inverse des aiguilles d'une montre' (-).</value>
   </data>
-  <data name="TurnFrontSideToRight_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
     <value>Tournez la face avant d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
-  <data name="TurnLeftSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez le côté gauche d'un demi-tour.</value>
   </data>
-  <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
     <value>Tourner le côté gauche d'un quart de tour 'dans le sens inverse des aiguilles d'une montre' (-).</value>
   </data>
-  <data name="TurnLeftSideToRight_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
     <value>Tourner le côté gauche d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
   <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
     <value>Tournez la couche intermédiaire d'un demi-tour.</value>
   </data>
-  <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
     <value>Tournez la couche médiane droite d'un quart de tour vers l'avant (+).</value>
   </data>
-  <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
     <value>Tournez la couche médiane droite d'un quart de tour vers le haut (-).</value>
   </data>
-  <data name="TurnRightSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez le côté droit d'un demi-tour.</value>
   </data>
-  <data name="TurnRightSideToLeft_Text" xml:space="preserve">
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
     <value>Tourner le côté droit d'un quart de tour 'dans le sens inverse des aiguilles d'une montre' (-).</value>
   </data>
-  <data name="TurnRightSideToRight_Text" xml:space="preserve">
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
     <value>Tournez le côté droit d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
-  <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
     <value>Tournez la couche intermédiaire supérieure d'un quart de tour vers l'avant (-).</value>
   </data>
-  <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
     <value>Tournez la couche centrale supérieure d'un quart de tour vers la droite (+).</value>
   </data>
-  <data name="TurnTopSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez le côté supérieur d'un demi-tour.</value>
   </data>
-  <data name="TurnTopSideToLeft_Text" xml:space="preserve">
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
     <value>Tourner le côté supérieur d'un quart de tour 'dans le sens inverse des aiguilles d'une montre' (-).</value>
   </data>
-  <data name="TurnTopSideToRight_Text" xml:space="preserve">
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
     <value>Tournez le côté supérieur d'un quart de tour 'dans le sens des aiguilles d'une montre' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">

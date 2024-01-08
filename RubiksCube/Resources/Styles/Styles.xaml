@@ -372,7 +372,7 @@
         <Setter Property="StrokeThickness" Value="1" />
     </Style>
 
-    <Style x:Key="polygonStyleCubeTop" TargetType="Polygon">
+    <Style x:Key="polygonStyleCubeUp" TargetType="Polygon">
         <Setter Property="Stroke" Value="Black" />
         <Setter Property="StrokeThickness" Value="4" />
         <Setter Property="Fill" Value="Red" />
@@ -407,7 +407,7 @@
         <Setter Property="Points" Value="0,0 0,50 50,60 50,10" />
     </Style>
 
-    <Style x:Key="polygonStyleCubeBottom" TargetType="Polygon">
+    <Style x:Key="polygonStyleCubeDown" TargetType="Polygon">
         <Setter Property="Stroke" Value="Gray" />
         <Setter Property="StrokeThickness" Value="4" />
         <Setter Property="Fill" Value="Orange" />

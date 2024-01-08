@@ -153,18 +153,9 @@ namespace RubiksCube.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        internal static string CubeBackSide_Text {
+        internal static string CubeBackFace_Text {
             get {
-                return ResourceManager.GetString("CubeBackSide_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bottom.
-        /// </summary>
-        internal static string CubeBottomSide_Text {
-            get {
-                return ResourceManager.GetString("CubeBottomSide_Text", resourceCulture);
+                return ResourceManager.GetString("CubeBackFace_Text", resourceCulture);
             }
         }
         
@@ -178,11 +169,20 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string CubeDownFace_Text {
+            get {
+                return ResourceManager.GetString("CubeDownFace_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Front.
         /// </summary>
-        internal static string CubeFrontSide_Text {
+        internal static string CubeFrontFace_Text {
             get {
-                return ResourceManager.GetString("CubeFrontSide_Text", resourceCulture);
+                return ResourceManager.GetString("CubeFrontFace_Text", resourceCulture);
             }
         }
         
@@ -198,9 +198,9 @@ namespace RubiksCube.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
-        internal static string CubeLeftSide_Text {
+        internal static string CubeLeftFace_Text {
             get {
-                return ResourceManager.GetString("CubeLeftSide_Text", resourceCulture);
+                return ResourceManager.GetString("CubeLeftFace_Text", resourceCulture);
             }
         }
         
@@ -216,18 +216,18 @@ namespace RubiksCube.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
-        internal static string CubeRightSide_Text {
+        internal static string CubeRightFace_Text {
             get {
-                return ResourceManager.GetString("CubeRightSide_Text", resourceCulture);
+                return ResourceManager.GetString("CubeRightFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Top.
         /// </summary>
-        internal static string CubeTopSide_Text {
+        internal static string CubeUpFace_Text {
             get {
-                return ResourceManager.GetString("CubeTopSide_Text", resourceCulture);
+                return ResourceManager.GetString("CubeUpFace_Text", resourceCulture);
             }
         }
         
@@ -690,180 +690,180 @@ namespace RubiksCube.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Turn the back side half a turn..
         /// </summary>
-        internal static string TurnBackSideHalfTurn_Text {
+        internal static string TurnBackFaceHalfTurn_Text {
             get {
-                return ResourceManager.GetString("TurnBackSideHalfTurn_Text", resourceCulture);
+                return ResourceManager.GetString("TurnBackFaceHalfTurn_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the back side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
-        internal static string TurnBackSideToLeft_Text {
+        internal static string TurnBackFaceToLeft_Text {
             get {
-                return ResourceManager.GetString("TurnBackSideToLeft_Text", resourceCulture);
+                return ResourceManager.GetString("TurnBackFaceToLeft_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the back side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
-        internal static string TurnBackSideToRight_Text {
+        internal static string TurnBackFaceToRight_Text {
             get {
-                return ResourceManager.GetString("TurnBackSideToRight_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom side half a turn..
-        /// </summary>
-        internal static string TurnBottomSideHalfTurn_Text {
-            get {
-                return ResourceManager.GetString("TurnBottomSideHalfTurn_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom side a quarter turn &apos;counter clockwise&apos; (-)..
-        /// </summary>
-        internal static string TurnBottomSideToLeft_Text {
-            get {
-                return ResourceManager.GetString("TurnBottomSideToLeft_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom side a quarter turn &apos;clockwise&apos; (+)..
-        /// </summary>
-        internal static string TurnBottomSideToRight_Text {
-            get {
-                return ResourceManager.GetString("TurnBottomSideToRight_Text", resourceCulture);
+                return ResourceManager.GetString("TurnBackFaceToRight_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the bottom side..
         /// </summary>
-        internal static string TurnCubeFrontSideToBottomSide_Text {
+        internal static string TurnCubeFrontFaceToDownFace_Text {
             get {
-                return ResourceManager.GetString("TurnCubeFrontSideToBottomSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnCubeFrontFaceToDownFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the left side..
         /// </summary>
-        internal static string TurnCubeFrontSideToLeftSide_Text {
+        internal static string TurnCubeFrontFaceToLeftFace_Text {
             get {
-                return ResourceManager.GetString("TurnCubeFrontSideToLeftSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnCubeFrontFaceToLeftFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the right side..
         /// </summary>
-        internal static string TurnCubeFrontSideToRightSide_Text {
+        internal static string TurnCubeFrontFaceToRightFace_Text {
             get {
-                return ResourceManager.GetString("TurnCubeFrontSideToRightSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnCubeFrontFaceToRightFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the top side..
         /// </summary>
-        internal static string TurnCubeFrontSideToTopSide_Text {
+        internal static string TurnCubeFrontFaceToUpFace_Text {
             get {
-                return ResourceManager.GetString("TurnCubeFrontSideToTopSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnCubeFrontFaceToUpFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the left side..
         /// </summary>
-        internal static string TurnCubeTopSideToLeftSide_Text {
+        internal static string TurnCubeUpFaceToLeftFace_Text {
             get {
-                return ResourceManager.GetString("TurnCubeTopSideToLeftSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnCubeUpFaceToLeftFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the right side..
         /// </summary>
-        internal static string TurnCubeTopSideToRightSide_Text {
+        internal static string TurnCubeUpFaceToRightFace_Text {
             get {
-                return ResourceManager.GetString("TurnCubeTopSideToRightSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnCubeUpFaceToRightFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the right side (-)..
+        ///   Looks up a localized string similar to Turn the bottom side half a turn..
         /// </summary>
-        internal static string TurnFrontMiddleToRightSide_Text {
+        internal static string TurnDownFaceHalfTurn_Text {
             get {
-                return ResourceManager.GetString("TurnFrontMiddleToRightSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnDownFaceHalfTurn_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the top side (+)..
+        ///   Looks up a localized string similar to Turn the bottom side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
-        internal static string TurnFrontMiddleToTopSide_Text {
+        internal static string TurnDownFaceToLeft_Text {
             get {
-                return ResourceManager.GetString("TurnFrontMiddleToTopSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnDownFaceToLeft_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the bottom side a quarter turn &apos;clockwise&apos; (+)..
+        /// </summary>
+        internal static string TurnDownFaceToRight_Text {
+            get {
+                return ResourceManager.GetString("TurnDownFaceToRight_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the front side half a turn..
         /// </summary>
-        internal static string TurnFrontSideHalfTurn_Text {
+        internal static string TurnFrontFaceHalfTurn_Text {
             get {
-                return ResourceManager.GetString("TurnFrontSideHalfTurn_Text", resourceCulture);
+                return ResourceManager.GetString("TurnFrontFaceHalfTurn_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the front side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
-        internal static string TurnFrontSideToLeft_Text {
+        internal static string TurnFrontFaceToLeft_Text {
             get {
-                return ResourceManager.GetString("TurnFrontSideToLeft_Text", resourceCulture);
+                return ResourceManager.GetString("TurnFrontFaceToLeft_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the front side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
-        internal static string TurnFrontSideToRight_Text {
+        internal static string TurnFrontFaceToRight_Text {
             get {
-                return ResourceManager.GetString("TurnFrontSideToRight_Text", resourceCulture);
+                return ResourceManager.GetString("TurnFrontFaceToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the right side (-)..
+        /// </summary>
+        internal static string TurnFrontMiddleToRightFace_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontMiddleToRightFace_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the front-middle layer a quarter turn to the top side (+)..
+        /// </summary>
+        internal static string TurnFrontMiddleToUpFace_Text {
+            get {
+                return ResourceManager.GetString("TurnFrontMiddleToUpFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the left side half a turn..
         /// </summary>
-        internal static string TurnLeftSideHalfTurn_Text {
+        internal static string TurnLeftFaceHalfTurn_Text {
             get {
-                return ResourceManager.GetString("TurnLeftSideHalfTurn_Text", resourceCulture);
+                return ResourceManager.GetString("TurnLeftFaceHalfTurn_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the left side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
-        internal static string TurnLeftSideToLeft_Text {
+        internal static string TurnLeftFaceToLeft_Text {
             get {
-                return ResourceManager.GetString("TurnLeftSideToLeft_Text", resourceCulture);
+                return ResourceManager.GetString("TurnLeftFaceToLeft_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the left side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
-        internal static string TurnLeftSideToRight_Text {
+        internal static string TurnLeftFaceToRight_Text {
             get {
-                return ResourceManager.GetString("TurnLeftSideToRight_Text", resourceCulture);
+                return ResourceManager.GetString("TurnLeftFaceToRight_Text", resourceCulture);
             }
         }
         
@@ -877,92 +877,92 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the front side (+)..
-        /// </summary>
-        internal static string TurnRightMiddleToFrontSide_Text {
-            get {
-                return ResourceManager.GetString("TurnRightMiddleToFrontSide_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the top side (-)..
-        /// </summary>
-        internal static string TurnRightMiddleToTopSide_Text {
-            get {
-                return ResourceManager.GetString("TurnRightMiddleToTopSide_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Turn the right side half a turn..
         /// </summary>
-        internal static string TurnRightSideHalfTurn_Text {
+        internal static string TurnRightFaceHalfTurn_Text {
             get {
-                return ResourceManager.GetString("TurnRightSideHalfTurn_Text", resourceCulture);
+                return ResourceManager.GetString("TurnRightFaceHalfTurn_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the right side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
-        internal static string TurnRightSideToLeft_Text {
+        internal static string TurnRightFaceToLeft_Text {
             get {
-                return ResourceManager.GetString("TurnRightSideToLeft_Text", resourceCulture);
+                return ResourceManager.GetString("TurnRightFaceToLeft_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the right side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
-        internal static string TurnRightSideToRight_Text {
+        internal static string TurnRightFaceToRight_Text {
             get {
-                return ResourceManager.GetString("TurnRightSideToRight_Text", resourceCulture);
+                return ResourceManager.GetString("TurnRightFaceToRight_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top-middle layer a quarter turn to the front side (-)..
+        ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the front side (+)..
         /// </summary>
-        internal static string TurnTopMiddleToFrontSide_Text {
+        internal static string TurnRightMiddleToFrontFace_Text {
             get {
-                return ResourceManager.GetString("TurnTopMiddleToFrontSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnRightMiddleToFrontFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top-middle layer a quarter turn to the right side (+)..
+        ///   Looks up a localized string similar to Turn the right-middle layer a quarter turn to the top side (-)..
         /// </summary>
-        internal static string TurnTopMiddleToRightSide_Text {
+        internal static string TurnRightMiddleToUpFace_Text {
             get {
-                return ResourceManager.GetString("TurnTopMiddleToRightSide_Text", resourceCulture);
+                return ResourceManager.GetString("TurnRightMiddleToUpFace_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the top side half a turn..
         /// </summary>
-        internal static string TurnTopSideHalfTurn_Text {
+        internal static string TurnUpFaceHalfTurn_Text {
             get {
-                return ResourceManager.GetString("TurnTopSideHalfTurn_Text", resourceCulture);
+                return ResourceManager.GetString("TurnUpFaceHalfTurn_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the top side a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
-        internal static string TurnTopSideToLeft_Text {
+        internal static string TurnUpFaceToLeft_Text {
             get {
-                return ResourceManager.GetString("TurnTopSideToLeft_Text", resourceCulture);
+                return ResourceManager.GetString("TurnUpFaceToLeft_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Turn the top side a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
-        internal static string TurnTopSideToRight_Text {
+        internal static string TurnUpFaceToRight_Text {
             get {
-                return ResourceManager.GetString("TurnTopSideToRight_Text", resourceCulture);
+                return ResourceManager.GetString("TurnUpFaceToRight_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top-middle layer a quarter turn to the front side (-)..
+        /// </summary>
+        internal static string TurnUpMiddleToFrontFace_Text {
+            get {
+                return ResourceManager.GetString("TurnUpMiddleToFrontFace_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the top-middle layer a quarter turn to the right side (+)..
+        /// </summary>
+        internal static string TurnUpMiddleToRightFace_Text {
+            get {
+                return ResourceManager.GetString("TurnUpMiddleToRightFace_Text", resourceCulture);
             }
         }
         

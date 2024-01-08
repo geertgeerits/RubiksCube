@@ -147,31 +147,31 @@
   <data name="Copyright_Text" xml:space="preserve">
     <value>Copyright</value>
   </data>
-  <data name="CubeBackSide_Text" xml:space="preserve">
+  <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="CubeBottomSide_Text" xml:space="preserve">
+  <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
     <value>Cube colors:</value>
   </data>
-  <data name="CubeFrontSide_Text" xml:space="preserve">
+  <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Front</value>
   </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Inside view</value>
   </data>
-  <data name="CubeLeftSide_Text" xml:space="preserve">
+  <data name="CubeLeftFace_Text" xml:space="preserve">
     <value>Left</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
     <value>Outside view</value>
   </data>
-  <data name="CubeRightSide_Text" xml:space="preserve">
+  <data name="CubeRightFace_Text" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="CubeTopSide_Text" xml:space="preserve">
+  <data name="CubeUpFace_Text" xml:space="preserve">
     <value>Top</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
@@ -337,97 +337,97 @@ Not allowed:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Toggle button: Drag the colors onto the cube</value>
   </data>
-  <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the back side half a turn.</value>
   </data>
-  <data name="TurnBackSideToLeft_Text" xml:space="preserve">
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
     <value>Turn the back side a quarter turn 'counter clockwise' (-).</value>
   </data>
-  <data name="TurnBackSideToRight_Text" xml:space="preserve">
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
     <value>Turn the back side a quarter turn 'clockwise' (+).</value>
   </data>
-  <data name="TurnBottomSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the bottom side half a turn.</value>
   </data>
-  <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
     <value>Turn the bottom side a quarter turn 'counter clockwise' (-).</value>
   </data>
-  <data name="TurnBottomSideToRight_Text" xml:space="preserve">
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
     <value>Turn the bottom side a quarter turn 'clockwise' (+).</value>
   </data>
-  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
     <value>Turn the entire cube so that the front goes to the bottom side.</value>
   </data>
-  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
     <value>Turn the entire cube so that the front goes to the left side.</value>
   </data>
-  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
     <value>Turn the entire cube so that the front goes to the right side.</value>
   </data>
-  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
     <value>Turn the entire cube so that the front goes to the top side.</value>
   </data>
-  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
     <value>Turn the entire cube so that the top goes to the left side.</value>
   </data>
-  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
     <value>Turn the entire cube so that the top goes to the right side.</value>
   </data>
-  <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
     <value>Turn the front-middle layer a quarter turn to the right side (-).</value>
   </data>
-  <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
     <value>Turn the front-middle layer a quarter turn to the top side (+).</value>
   </data>
-  <data name="TurnFrontSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the front side half a turn.</value>
   </data>
-  <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
     <value>Turn the front side a quarter turn 'counter clockwise' (-).</value>
   </data>
-  <data name="TurnFrontSideToRight_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
     <value>Turn the front side a quarter turn 'clockwise' (+).</value>
   </data>
-  <data name="TurnLeftSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the left side half a turn.</value>
   </data>
-  <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
     <value>Turn the left side a quarter turn 'counter clockwise' (-).</value>
   </data>
-  <data name="TurnLeftSideToRight_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
     <value>Turn the left side a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
     <value>Turn the middle layer half a turn.</value>
   </data>
-  <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
     <value>Turn the right-middle layer a quarter turn to the front side (+).</value>
   </data>
-  <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
     <value>Turn the right-middle layer a quarter turn to the top side (-).</value>
   </data>
-  <data name="TurnRightSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the right side half a turn.</value>
   </data>
-  <data name="TurnRightSideToLeft_Text" xml:space="preserve">
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
     <value>Turn the right side a quarter turn 'counter clockwise' (-).</value>
   </data>
-  <data name="TurnRightSideToRight_Text" xml:space="preserve">
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
     <value>Turn the right side a quarter turn 'clockwise' (+).</value>
   </data>
-  <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
     <value>Turn the top-middle layer a quarter turn to the front side (-).</value>
   </data>
-  <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
     <value>Turn the top-middle layer a quarter turn to the right side (+).</value>
   </data>
-  <data name="TurnTopSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the top side half a turn.</value>
   </data>
-  <data name="TurnTopSideToLeft_Text" xml:space="preserve">
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
     <value>Turn the top side a quarter turn 'counter clockwise' (-).</value>
   </data>
-  <data name="TurnTopSideToRight_Text" xml:space="preserve">
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
     <value>Turn the top side a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">

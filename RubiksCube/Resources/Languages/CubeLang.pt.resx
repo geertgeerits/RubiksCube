@@ -147,31 +147,31 @@
   <data name="Copyright_Text" xml:space="preserve">
     <value>Direito autoral</value>
   </data>
-  <data name="CubeBackSide_Text" xml:space="preserve">
+  <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Parte traseira</value>
   </data>
-  <data name="CubeBottomSide_Text" xml:space="preserve">
+  <data name="CubeDownFace_Text" xml:space="preserve">
     <value>parte inferior</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
     <value>Cores do cubo:</value>
   </data>
-  <data name="CubeFrontSide_Text" xml:space="preserve">
+  <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Frente</value>
   </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Vista interior</value>
   </data>
-  <data name="CubeLeftSide_Text" xml:space="preserve">
+  <data name="CubeLeftFace_Text" xml:space="preserve">
     <value>Lado esquerdo</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
     <value>Vista externa</value>
   </data>
-  <data name="CubeRightSide_Text" xml:space="preserve">
+  <data name="CubeRightFace_Text" xml:space="preserve">
     <value>Lado direito</value>
   </data>
-  <data name="CubeTopSide_Text" xml:space="preserve">
+  <data name="CubeUpFace_Text" xml:space="preserve">
     <value>Lado superior</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
@@ -337,97 +337,97 @@ Não permitido:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Botão de alternância: Arraste as cores para o cubo</value>
   </data>
-  <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire a parte de trás meia volta.</value>
   </data>
-  <data name="TurnBackSideToLeft_Text" xml:space="preserve">
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
     <value>Gire a parte de trás um quarto de volta 'no sentido anti-horário' (-).</value>
   </data>
-  <data name="TurnBackSideToRight_Text" xml:space="preserve">
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
     <value>Vire a parte de trás um quarto de volta 'no sentido horário' (+).</value>
   </data>
-  <data name="TurnBottomSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire o lado inferior meia volta.</value>
   </data>
-  <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
     <value>Gire o lado inferior um quarto de volta 'no sentido anti-horário' (-).</value>
   </data>
-  <data name="TurnBottomSideToRight_Text" xml:space="preserve">
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
     <value>Gire o lado inferior um quarto de volta 'no sentido horário' (+).</value>
   </data>
-  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
     <value>Vire o cubo inteiro para que a frente vá para o lado de baixo.</value>
   </data>
-  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
     <value>Vire o cubo inteiro para que a frente vá para o lado esquerdo.</value>
   </data>
-  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
     <value>Vire o cubo inteiro para que a frente vá para o lado direito.</value>
   </data>
-  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
     <value>Vire o cubo inteiro para que a frente vá para o lado superior.</value>
   </data>
-  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
     <value>Vire o cubo inteiro para que o topo vá para o lado esquerdo.</value>
   </data>
-  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
     <value>Vire o cubo inteiro para que o topo vá para o lado direito.</value>
   </data>
-  <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
     <value>Vire a camada frontal do meio um quarto de volta para o lado direito (-).</value>
   </data>
-  <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
     <value>Vire a camada frontal do meio um quarto de volta para o lado superior (+).</value>
   </data>
-  <data name="TurnFrontSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire a parte da frente meia volta.</value>
   </data>
-  <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
     <value>Gire a parte da frente um quarto de volta 'no sentido anti-horário' (-).</value>
   </data>
-  <data name="TurnFrontSideToRight_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
     <value>Gire a parte da frente um quarto de volta 'no sentido horário' (+).</value>
   </data>
-  <data name="TurnLeftSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire o lado esquerdo meia volta.</value>
   </data>
-  <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
     <value>Gire o lado esquerdo um quarto de volta 'no sentido anti-horário' (-).</value>
   </data>
-  <data name="TurnLeftSideToRight_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
     <value>Gire o lado esquerdo um quarto de volta 'no sentido horário' (+).</value>
   </data>
   <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
     <value>Gire a camada intermediária meia volta.</value>
   </data>
-  <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
     <value>Vire a camada do meio um quarto de volta à direita para a frente (+).</value>
   </data>
-  <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
     <value>Vire a camada do meio um quarto de volta à direita para o lado superior (-).</value>
   </data>
-  <data name="TurnRightSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire o lado direito meia volta.</value>
   </data>
-  <data name="TurnRightSideToLeft_Text" xml:space="preserve">
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
     <value>Gire o lado direito um quarto de volta 'no sentido anti-horário' (-).</value>
   </data>
-  <data name="TurnRightSideToRight_Text" xml:space="preserve">
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
     <value>Gire o lado direito um quarto de volta 'no sentido horário' (+).</value>
   </data>
-  <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
     <value>Vire a camada superior do meio um quarto de volta para a frente (-).</value>
   </data>
-  <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
     <value>Vire a camada superior central um quarto de volta para o lado direito (+).</value>
   </data>
-  <data name="TurnTopSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire o lado superior meia volta.</value>
   </data>
-  <data name="TurnTopSideToLeft_Text" xml:space="preserve">
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
     <value>Gire o lado superior um quarto de volta 'no sentido anti-horário' (-).</value>
   </data>
-  <data name="TurnTopSideToRight_Text" xml:space="preserve">
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
     <value>Gire o lado superior um quarto de volta 'no sentido horário' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">

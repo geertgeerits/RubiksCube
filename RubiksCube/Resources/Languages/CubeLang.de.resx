@@ -147,31 +147,31 @@
   <data name="Copyright_Text" xml:space="preserve">
     <value>Urheberrechte</value>
   </data>
-  <data name="CubeBackSide_Text" xml:space="preserve">
+  <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Rückseite</value>
   </data>
-  <data name="CubeBottomSide_Text" xml:space="preserve">
+  <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Unterseite</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
     <value>Würfelfarben:</value>
   </data>
-  <data name="CubeFrontSide_Text" xml:space="preserve">
+  <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Vorderseite</value>
   </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Innenansicht</value>
   </data>
-  <data name="CubeLeftSide_Text" xml:space="preserve">
+  <data name="CubeLeftFace_Text" xml:space="preserve">
     <value>Linke Seite</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
     <value>Aussenansicht</value>
   </data>
-  <data name="CubeRightSide_Text" xml:space="preserve">
+  <data name="CubeRightFace_Text" xml:space="preserve">
     <value>Rechte Seite</value>
   </data>
-  <data name="CubeTopSide_Text" xml:space="preserve">
+  <data name="CubeUpFace_Text" xml:space="preserve">
     <value>Oberseite</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
@@ -337,97 +337,97 @@ Nicht erlaubt:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Umschaltknopf: Ziehen Sie die Farben auf den Würfel</value>
   </data>
-  <data name="TurnBackSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die Rückseite um eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnBackSideToLeft_Text" xml:space="preserve">
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
     <value>Drehen Sie die Rückseite um eine Vierteldrehung 'gegen den Uhrzeigersinn' (-).</value>
   </data>
-  <data name="TurnBackSideToRight_Text" xml:space="preserve">
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
     <value>Drehen Sie die Rückseite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
-  <data name="TurnBottomSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die Unterseite um eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnBottomSideToLeft_Text" xml:space="preserve">
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
     <value>Drehen Sie die Unterseite um eine Vierteldrehung 'gegen den Uhrzeigersinn' (-).</value>
   </data>
-  <data name="TurnBottomSideToRight_Text" xml:space="preserve">
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
     <value>Drehen Sie die Unterseite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
-  <data name="TurnCubeFrontSideToBottomSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Unterseite geht.</value>
   </data>
-  <data name="TurnCubeFrontSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur linken Seite geht.</value>
   </data>
-  <data name="TurnCubeFrontSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite auf die rechte Seite geht.</value>
   </data>
-  <data name="TurnCubeFrontSideToTopSide_Text" xml:space="preserve">
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Oberseite geht.</value>
   </data>
-  <data name="TurnCubeTopSideToLeftSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Oberseite zur linken Seite geht.</value>
   </data>
-  <data name="TurnCubeTopSideToRightSide_Text" xml:space="preserve">
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Oberseite auf die rechte Seite geht.</value>
   </data>
-  <data name="TurnFrontMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
     <value>Drehen Sie die vordere mittlere Schicht um eine Vierteldrehung auf die rechte Seite (-).</value>
   </data>
-  <data name="TurnFrontMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
     <value>Drehen Sie die vordere mittlere Schicht um eine Vierteldrehung nach oben (+).</value>
   </data>
-  <data name="TurnFrontSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die Vorderseite um eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnFrontSideToLeft_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
     <value>Drehen Sie die Vorderseite um eine Vierteldrehung 'gegen den Uhrzeigersinn' (-).</value>
   </data>
-  <data name="TurnFrontSideToRight_Text" xml:space="preserve">
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
     <value>Drehen Sie die Vorderseite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
-  <data name="TurnLeftSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die linke Seite eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnLeftSideToLeft_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
     <value>Drehen Sie die linke Seite um eine Vierteldrehung 'gegen den Uhrzeigersinn' (-).</value>
   </data>
-  <data name="TurnLeftSideToRight_Text" xml:space="preserve">
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
     <value>Drehen Sie die linke Seite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
   <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die mittlere Schicht eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnRightMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
     <value>Drehen Sie die rechte mittlere Schicht um eine Vierteldrehung auf die Vorderseite (+).</value>
   </data>
-  <data name="TurnRightMiddleToTopSide_Text" xml:space="preserve">
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
     <value>Drehen Sie die rechte mittlere Schicht um eine Vierteldrehung nach oben (-).</value>
   </data>
-  <data name="TurnRightSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die rechte Seite eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnRightSideToLeft_Text" xml:space="preserve">
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
     <value>Drehen Sie die rechte Seite um eine Vierteldrehung 'gegen den Uhrzeigersinn' (-).</value>
   </data>
-  <data name="TurnRightSideToRight_Text" xml:space="preserve">
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
     <value>Drehen Sie die rechte Seite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
-  <data name="TurnTopMiddleToFrontSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
     <value>Drehen Sie die obere mittlere Schicht um eine Vierteldrehung auf die Vorderseite (-).</value>
   </data>
-  <data name="TurnTopMiddleToRightSide_Text" xml:space="preserve">
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
     <value>Drehen Sie die obere mittlere Schicht um eine Vierteldrehung auf die rechte Seite (+).</value>
   </data>
-  <data name="TurnTopSideHalfTurn_Text" xml:space="preserve">
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die Oberseite um eine halbe Umdrehung.</value>
   </data>
-  <data name="TurnTopSideToLeft_Text" xml:space="preserve">
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
     <value>Drehen Sie die Oberseite um eine Vierteldrehung 'gegen den Uhrzeigersinn' (-).</value>
   </data>
-  <data name="TurnTopSideToRight_Text" xml:space="preserve">
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
     <value>Drehen Sie die Oberseite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
