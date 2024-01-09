@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-08 (YYYY-MM-DD)
+// Date ........: 2024-01-09 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -234,8 +234,8 @@ public partial class MainPage : ContentPage
         string cB;
         string cX = "";
     // 500
-    // Upper layer.
-    // Solve the edges of the upper layer - Chapter 4, page 14-3.
+    // Top layer.
+    // Solve the edges of the top layer - Chapter 4, page 14-3.
 
     // !!!!!!!!!!!!! Does not get out of the loop between line 510 and 695 !!!!!!!!!!!!!
 
@@ -407,7 +407,7 @@ public partial class MainPage : ContentPage
         // 695
         goto Line510;
     
-        // Solve the corners of the upper layer - Chapter 6, page 16.
+        // Solve the corners of the top layer - Chapter 6, page 16.
     Line710:
         cB = aUpFace[5];
         O = 0;
@@ -570,10 +570,10 @@ public partial class MainPage : ContentPage
         //await TestCubeTurnsAsync();
         //return;
 
-        // Solve the edges of the upper layer - Chapter 4, page 14-3.
-        await SolveEdgesUpLayerAsync();
+        // Solve the edges of the top layer - Chapter 4, page 14-3.
+        await SolveEdgesTopLayerAsync();
 
-        // Solve the edges of the upper layer - Chapter 4, page 14-2.
+        // Solve the edges of the top layer - Chapter 4, page 14-2.
         if (aUpFace[5] == aFrontFace[4])
         {
             await MakeTurnAsync("TurnLeft+");
@@ -616,10 +616,10 @@ public partial class MainPage : ContentPage
 
 
 
-        // Solve the edges of the upper layer - Chapter 4, page 14-3.
-        await SolveEdgesUpLayerAsync();
+        // Solve the edges of the top layer - Chapter 4, page 14-3.
+        await SolveEdgesTopLayerAsync();
 
-        // Solve the corners of the upper layer - Chapter 6, page 16.
+        // Solve the corners of the top layer - Chapter 6, page 16.
 
         // Solve the middle layer - Chapter 10, page 21.
 
@@ -640,8 +640,8 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Solve the edges of the upper layer - Chapter 4, page 14-3.
-    private async Task SolveEdgesUpLayerAsync()
+    // Solve the edges of the top layer - Chapter 4, page 14-3.
+    private async Task SolveEdgesTopLayerAsync()
     {
         for (int nTimes = 1; nTimes < 5; nTimes++)
         {
@@ -683,7 +683,7 @@ public partial class MainPage : ContentPage
         int nRow;
 
         // Check the number of colors of the cube.
-        // Upper layer.
+        // Top layer.
         for (nRow = 1; nRow < 10; nRow++)
         {
             if (aUpFace[nRow] == aCubeColors[1])
@@ -1079,7 +1079,7 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    // Turn the layers of the cube.
+    // Turn the faces of the cube.
     // Turn the front face clockwise (to right +).
     private void OnTurnFrontFaceToRightClicked(object sender, EventArgs e)
     {
@@ -1538,7 +1538,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the upper horizontal middle layer to the right or left.
+    // Turn the top horizontal middle layer to the right or left.
     private void TurnUpHorMiddleTo(string cDirection)
     {
         string cColorUp4 = aUpFace[4];
@@ -1766,7 +1766,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Turn the upper vertical middle layer to back or front.
+    // Turn the top vertical middle layer to back or front.
     private void TurnUpVerMiddleTo(string cDirection)
     {
         string cColorUp2 = aUpFace[2];
@@ -3206,7 +3206,7 @@ public partial class MainPage : ContentPage
     // Test the turns of the cube.
     private async Task TestCubeTurnsAsync()
     {
-        // Test the face layer turns.
+        // Test the face turns.
         await MakeTurnAsync("TurnFront+");
         await MakeTurnAsync("TurnFront++");
         await MakeTurnAsync("TurnFront-");
