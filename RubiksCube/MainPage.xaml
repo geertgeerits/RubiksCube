@@ -920,6 +920,18 @@
                             <DropGestureRecognizer Drop="OnColorDrop" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
+
+                    <Line X1="130" Y1="0" X2="130" Y2="162"
+                        Style="{StaticResource lineStyleCubeInsideView}">
+                    </Line>
+
+                    <Line X1="130" Y1="159" X2="0" Y2="224"
+                        Style="{StaticResource lineStyleCubeInsideView}">
+                    </Line>
+
+                    <Line X1="130" Y1="160" X2="294" Y2="194"
+                        Style="{StaticResource lineStyleCubeInsideView}">
+                    </Line>
                 </AbsoluteLayout>
 
                 <Label
