@@ -148,10 +148,10 @@
     <value>Droits d'auteur</value>
   </data>
   <data name="CubeBackFace_Text" xml:space="preserve">
-    <value>Arrière</value>
+    <value>Face arrière</value>
   </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
-    <value>Bas</value>
+    <value>Face inférieure</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
     <value>Couleurs des cubes :</value>
@@ -163,16 +163,16 @@
     <value>Vue de l'intérieur</value>
   </data>
   <data name="CubeLeftFace_Text" xml:space="preserve">
-    <value>Côté gauche</value>
+    <value>Face gauche</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
     <value>Vue extérieure</value>
   </data>
   <data name="CubeRightFace_Text" xml:space="preserve">
-    <value>Côté droit</value>
+    <value>Face droite</value>
   </data>
   <data name="CubeUpFace_Text" xml:space="preserve">
-    <value>Haut</value>
+    <value>Face supérieure</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Standard</value>

@@ -148,31 +148,31 @@
     <value>Auteursrechten</value>
   </data>
   <data name="CubeBackFace_Text" xml:space="preserve">
-    <value>Achter</value>
+    <value>Achterzijde</value>
   </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
-    <value>Onder</value>
+    <value>Onderzijde</value>
   </data>
   <data name="CubeColors_Text" xml:space="preserve">
     <value>Kubus kleuren:</value>
   </data>
   <data name="CubeFrontFace_Text" xml:space="preserve">
-    <value>Voor</value>
+    <value>Voorzijde</value>
   </data>
   <data name="CubeInsideView_Text" xml:space="preserve">
     <value>Binnenkant</value>
   </data>
   <data name="CubeLeftFace_Text" xml:space="preserve">
-    <value>Links</value>
+    <value>Linkerzijde</value>
   </data>
   <data name="CubeOutsideView_Text" xml:space="preserve">
     <value>Buitenkant</value>
   </data>
   <data name="CubeRightFace_Text" xml:space="preserve">
-    <value>Rechts</value>
+    <value>Rechterzijde</value>
   </data>
   <data name="CubeUpFace_Text" xml:space="preserve">
-    <value>Boven</value>
+    <value>Bovenzijde</value>
   </data>
   <data name="Default_Text" xml:space="preserve">
     <value>Standaard</value>

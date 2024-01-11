@@ -151,7 +151,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back.
+        ///   Looks up a localized string similar to Back face.
         /// </summary>
         internal static string CubeBackFace_Text {
             get {
@@ -169,7 +169,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bottom.
+        ///   Looks up a localized string similar to Down face.
         /// </summary>
         internal static string CubeDownFace_Text {
             get {
@@ -178,7 +178,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Front.
+        ///   Looks up a localized string similar to Front face.
         /// </summary>
         internal static string CubeFrontFace_Text {
             get {
@@ -196,7 +196,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Left.
+        ///   Looks up a localized string similar to Left face.
         /// </summary>
         internal static string CubeLeftFace_Text {
             get {
@@ -214,7 +214,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Right.
+        ///   Looks up a localized string similar to Right face.
         /// </summary>
         internal static string CubeRightFace_Text {
             get {
@@ -223,7 +223,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top.
+        ///   Looks up a localized string similar to Upper face.
         /// </summary>
         internal static string CubeUpFace_Text {
             get {

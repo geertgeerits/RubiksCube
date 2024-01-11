@@ -922,15 +922,39 @@
                     </Polygon>
 
                     <Line X1="130" Y1="0" X2="130" Y2="162"
-                        Style="{StaticResource lineStyleCubeInsideView}">
+                        Style="{StaticResource lineStyleCubeInsideViewDashLine}">
                     </Line>
 
                     <Line X1="130" Y1="159" X2="0" Y2="224"
-                        Style="{StaticResource lineStyleCubeInsideView}">
+                        Style="{StaticResource lineStyleCubeInsideViewDashLine}">
                     </Line>
 
-                    <Line X1="130" Y1="160" X2="294" Y2="194"
-                        Style="{StaticResource lineStyleCubeInsideView}">
+                    <Line X1="130" Y1="160" X2="293" Y2="194"
+                        Style="{StaticResource lineStyleCubeInsideViewDashLine}">
+                    </Line>
+
+                    <Line X1="0" Y1="61" X2="0" Y2="227"
+                        Style="{StaticResource lineStyleCubeInsideViewSolidLine}">
+                    </Line>
+
+                    <Line X1="0" Y1="62" X2="130" Y2="0"
+                        Style="{StaticResource lineStyleCubeInsideViewSolidLine}">
+                    </Line>
+
+                    <Line X1="130" Y1="0" X2="292" Y2="30"
+                        Style="{StaticResource lineStyleCubeInsideViewSolidLine}">
+                    </Line>
+
+                    <Line X1="292" Y1="30" X2="292" Y2="194"
+                        Style="{StaticResource lineStyleCubeInsideViewSolidLine}">
+                    </Line>
+
+                    <Line X1="0" Y1="228" X2="166" Y2="262"
+                        Style="{StaticResource lineStyleCubeInsideViewSolidLine}">
+                    </Line>
+
+                    <Line X1="168" Y1="264" X2="293" Y2="195"
+                        Style="{StaticResource lineStyleCubeInsideViewSolidLine}">
                     </Line>
                 </AbsoluteLayout>
 
