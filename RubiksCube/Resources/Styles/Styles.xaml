@@ -417,12 +417,14 @@
     <Style x:Key="lineStyleCubeInsideViewSolidLine" TargetType="Line">
         <Setter Property="Stroke" Value="Black" />
         <Setter Property="StrokeThickness" Value="4" />
+        <Setter Property="InputTransparent" Value="True" />
     </Style>
 
     <Style x:Key="lineStyleCubeInsideViewDashLine" TargetType="Line">
         <Setter Property="Stroke" Value="DarkGray" />
         <Setter Property="StrokeThickness" Value="4" />
         <Setter Property="StrokeDashArray" Value="1,1" />
+        <Setter Property="InputTransparent" Value="True" />
     </Style>
 
     <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">

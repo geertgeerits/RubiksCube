@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-13 (YYYY-MM-DD)
+// Date ........: 2024-01-15 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -663,7 +663,7 @@ public partial class MainPage : ContentPage
             if (aUpFace[5] == aDownFace[8] && aBackFace[5] == aBackFace[8])
             {
                 await MakeTurnAsync("TurnBack++");
-                GetCubeColorsFromArrays();
+                SetCubeColorsFromArrays();
             }
         }
     }
@@ -1091,7 +1091,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToRight_Text);
         TurnFrontFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the upper horizontal middle to the right face (+).
@@ -1111,7 +1111,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToRightFace_Text);
         TurnUpHorMiddleTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the back face counter clockwise (to left -).
@@ -1125,7 +1125,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnBackFaceToLeft_Text);
         TurnBackFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the left face clockwise (to right +).
@@ -1139,7 +1139,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToRight_Text);
         TurnLeftFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the upper vertical middle to the front face (-).
@@ -1159,7 +1159,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToFrontFace_Text);
         TurnUpVerMiddleTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the right face counter clockwise (to left -).
@@ -1173,7 +1173,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightFaceToLeft_Text);
         TurnRightFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the upper face counter clockwise (to left -).
@@ -1187,7 +1187,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpFaceToLeft_Text);
         TurnUpFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the front horizontal middle to the right face (-).
@@ -1207,7 +1207,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightFace_Text);
         TurnFrontHorMiddleTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the down face clockwise (to right +).
@@ -1221,7 +1221,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnDownFaceToRight_Text);
         TurnDownFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the upper face clockwise (to right +).
@@ -1235,7 +1235,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpFaceToRight_Text);
         TurnUpFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the front horizontal middle to the left face (+).
@@ -1255,7 +1255,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontFace_Text);
         TurnFrontHorMiddleTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the down face counter clockwise (to left -).
@@ -1269,7 +1269,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnDownFaceToLeft_Text);
         TurnDownFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the left face counter clockwise (to left -).
@@ -1283,7 +1283,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToLeft_Text);
         TurnLeftFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the upper vertical middle to the back face (+).
@@ -1303,7 +1303,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToUpFace_Text);
         TurnUpVerMiddleTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the right face clockwise (to right +).
@@ -1317,7 +1317,7 @@ public partial class MainPage : ContentPage
         
         ExplainTurnCube(CubeLang.TurnRightFaceToRight_Text);
         TurnRightFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the front face counter clockwise (to left -).
@@ -1331,7 +1331,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToLeft_Text);
         TurnFrontFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the upper horizontal middle to the left face (-).
@@ -1351,7 +1351,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToUpFace_Text);
         TurnUpHorMiddleTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the back face clockwise (to right +).
@@ -1365,7 +1365,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnBackFaceToRight_Text);
         TurnBackFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the entire cube a quarter turn.
@@ -1380,7 +1380,7 @@ public partial class MainPage : ContentPage
         TurnUpFaceTo("+");
         TurnFrontHorMiddleTo("+");
         TurnDownFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the front goes to the right face.
@@ -1394,7 +1394,7 @@ public partial class MainPage : ContentPage
         TurnUpFaceTo("-");
         TurnFrontHorMiddleTo("-");
         TurnDownFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the front goes to the upper face.
@@ -1408,7 +1408,7 @@ public partial class MainPage : ContentPage
         TurnRightFaceTo("+");
         TurnUpVerMiddleTo("+");
         TurnLeftFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the front goes to the down face.
@@ -1422,7 +1422,7 @@ public partial class MainPage : ContentPage
         TurnRightFaceTo("-");
         TurnUpVerMiddleTo("-");
         TurnLeftFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the upper face goes to the right face.
@@ -1436,7 +1436,7 @@ public partial class MainPage : ContentPage
         TurnFrontFaceTo("+");
         TurnUpHorMiddleTo("+");
         TurnBackFaceTo("-");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the upper face goes to the left face.
@@ -1450,7 +1450,7 @@ public partial class MainPage : ContentPage
         TurnFrontFaceTo("-");
         TurnUpHorMiddleTo("-");
         TurnBackFaceTo("+");
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Turn the entire front face clockwise or counter clockwise.
@@ -2571,7 +2571,7 @@ public partial class MainPage : ContentPage
                 return;
         }
         
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // Explain the turn of the cube with speech.
@@ -2712,7 +2712,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
     // On clicked event: Reset the colors of the cube or restart the app.
@@ -2764,10 +2764,10 @@ public partial class MainPage : ContentPage
             aDownFace[nRow] = aCubeColors[6];
         }
 
-        GetCubeColorsFromArrays();
+        SetCubeColorsFromArrays();
     }
 
-    // Store the cube colors in arrays.
+    // Store the cube colors from the polygons in the arrays.
     private void SetCubeColorsInArrays()
     {
         aCubeColors[1] = GetHexColorPolygon(plgCubeColor1);
@@ -2838,8 +2838,8 @@ public partial class MainPage : ContentPage
         aDownFace[9] = GetHexColorPolygon(plgDown9);
     }
 
-    // Restore the cube colors from the arrays.
-    private void GetCubeColorsFromArrays()
+    // Set the cube colors from the arrays in the polygons.
+    private void SetCubeColorsFromArrays()
     {
         Globals.cCubeColor1 = aCubeColors[1];
         Globals.cCubeColor2 = aCubeColors[2];
@@ -2917,26 +2917,36 @@ public partial class MainPage : ContentPage
     }
 
     // Get the hex color code from a polygon fill property.
-    // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
-    private static string GetHexColorPolygon(object sender)
+    private static string GetHexColorPolygon(Polygon polygon)
     {
-        var polygon = (Polygon)sender;
-
         SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
-        Color c = brush.Color;
+        Color color = brush.Color;
 
-        var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
-                         where p.PropertyType.Equals(typeof(System.Drawing.Color))
-                         let value = (System.Drawing.Color)p.GetValue(null, null)
-                         where value.R == c.Red &&
-                               value.G == c.Green &&
-                               value.B == c.Blue &&
-                               value.A == c.Alpha
-                         select p.Name).DefaultIfEmpty("unknown").First();
-
-        c = Color.FromRgb(c.Red, c.Green, c.Blue);
-        return c.ToHex();
+        color = Color.FromRgb(color.Red, color.Green, color.Blue);
+        return color.ToHex();
     }
+
+    // Get the hex color code from a polygon fill property.
+    // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
+    //private static string GetHexColorPolygonOLD(object sender)
+    //{
+    //    var polygon = (Polygon)sender;
+
+    //    SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
+    //    Color c = brush.Color;
+
+    //    var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
+    //                     where p.PropertyType.Equals(typeof(System.Drawing.Color))
+    //                     let value = (System.Drawing.Color)p.GetValue(null, null)
+    //                     where value.R == c.Red &&
+    //                           value.G == c.Green &&
+    //                           value.B == c.Blue &&
+    //                           value.A == c.Alpha
+    //                     select p.Name).DefaultIfEmpty("unknown").First();
+
+    //    c = Color.FromRgb(c.Red, c.Green, c.Blue);
+    //    return c.ToHex();
+    //}
 
     // Set the cube colors for drag and drop to visible or invisible.
     private void IsVisibleCubeColors(bool bEnableDisable)
