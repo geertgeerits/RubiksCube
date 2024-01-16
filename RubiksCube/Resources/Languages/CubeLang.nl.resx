@@ -439,4 +439,7 @@ Niet toegestaan:</value>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="CubeCannotBeSolved_Text" xml:space="preserve">
+    <value>De kubus kan niet opgelost worden.</value>
+  </data>
 </root>

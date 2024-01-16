@@ -160,6 +160,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The cube cannot be solved..
+        /// </summary>
+        internal static string CubeCannotBeSolved_Text {
+            get {
+                return ResourceManager.GetString("CubeCannotBeSolved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cube colors:.
         /// </summary>
         internal static string CubeColors_Text {

@@ -439,4 +439,7 @@ Nicht erlaubt:</value>
   <data name="Yes_Text" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="CubeCannotBeSolved_Text" xml:space="preserve">
+    <value>Der Würfel kann nicht gelöst werden.</value>
+  </data>
 </root>

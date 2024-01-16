@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-15 (YYYY-MM-DD)
+// Date ........: 2024-01-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -227,12 +227,13 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the cube.  From Basic-80 to C#.
-    private async Task SolveTheCubeAsyncNEW()
+    private async Task SolveTheCubeAsyncBASIC()
     {
         // Declare variables.
         int O, P, Q, R, V, X, Y, Z;
         string cB;
-        string cX = "";
+        string cX;
+        int nLoopTimes = 0;
     // 500
     // Top layer.
     // Solve the edges of the top layer - Chapter 4, page 14-3.
@@ -245,6 +246,12 @@ public partial class MainPage : ContentPage
         X = 0;
         Y = 0;
         Z = 0;
+        nLoopTimes++;
+        if (nLoopTimes > 100)
+        {
+            await DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.CubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
+            return;
+        }
         if (cB == aUpFace[8] && aFrontFace[1] == aFrontFace[2])
             V = 1;
     // 520
@@ -270,14 +277,7 @@ public partial class MainPage : ContentPage
         if (cB == aBackFace[4] || cB == aRightFace[8] || cB == aDownFace[6])
             P = 1;
     // 580
-        if (X == 0)
-        {
-            cX = aFrontFace[1];
-        }
-        else if (X == 1)
-        {
-            cX = aFrontFace[2];
-        }
+        cX = X.ToString();
         if (cB == aUpFace[6] && cX != aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             Q = 1;
     // 590
@@ -643,7 +643,7 @@ public partial class MainPage : ContentPage
     // Solve the edges of the top layer - Chapter 4, page 14-3.
     private async Task SolveEdgesTopLayerAsync()
     {
-        for (int nTimes = 1; nTimes < 5; nTimes++)
+        for (int nTimes = 1; nTimes < 11; nTimes++)
         {
             if (aUpFace[5] == aDownFace[2] && aFrontFace[5] == aFrontFace[8])
             {
@@ -907,7 +907,7 @@ public partial class MainPage : ContentPage
 
         if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
         {
-            DisplayAlert("Error", CubeLang.MessageNineSameColor_Text, CubeLang.ButtonClose_Text);
+            DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageNineSameColor_Text, CubeLang.ButtonClose_Text);
             return false;
         }
 
@@ -946,7 +946,7 @@ public partial class MainPage : ContentPage
 
         if (!bColorCenterCube)
         {
-            DisplayAlert("Error", CubeLang.MessageColorCentralCube_Text, CubeLang.ButtonClose_Text);
+            DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCentralCube_Text, CubeLang.ButtonClose_Text);
             return false;
         }
 
@@ -995,7 +995,7 @@ public partial class MainPage : ContentPage
 
         if (!bColorCornerCube)
         {
-            DisplayAlert("Error", CubeLang.MessageColorCornerCube_Text, CubeLang.ButtonClose_Text);
+            DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCornerCube_Text, CubeLang.ButtonClose_Text);
             return false;
         }
 
@@ -1014,7 +1014,7 @@ public partial class MainPage : ContentPage
 
         if (!bColorEdgeCube)
         {
-            DisplayAlert("Error", CubeLang.MessageColorEdgeCube_Text, CubeLang.ButtonClose_Text);
+            DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorEdgeCube_Text, CubeLang.ButtonClose_Text);
             return false;
         }
 
@@ -2283,7 +2283,7 @@ public partial class MainPage : ContentPage
                 break;
 
             default:
-                await DisplayAlert("Error", "Turn not found", "OK");
+                await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
                 break;
         }
     }
@@ -2405,7 +2405,7 @@ public partial class MainPage : ContentPage
                 break;
             
             default:
-                await DisplayAlert("Error", "Turn not found", "OK");
+                await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
                 break;
         }
 
@@ -2567,7 +2567,7 @@ public partial class MainPage : ContentPage
                 break;
 
             default:
-                await DisplayAlert("Error", "Turn not found", "OK");
+                await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
                 return;
         }
         
@@ -2925,28 +2925,6 @@ public partial class MainPage : ContentPage
         color = Color.FromRgb(color.Red, color.Green, color.Blue);
         return color.ToHex();
     }
-
-    // Get the hex color code from a polygon fill property.
-    // Based on: https://stackoverflow.com/questions/12842003/c-sharp-brush-to-string
-    //private static string GetHexColorPolygonOLD(object sender)
-    //{
-    //    var polygon = (Polygon)sender;
-
-    //    SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
-    //    Color c = brush.Color;
-
-    //    var colorname = (from p in typeof(System.Drawing.Color).GetProperties()
-    //                     where p.PropertyType.Equals(typeof(System.Drawing.Color))
-    //                     let value = (System.Drawing.Color)p.GetValue(null, null)
-    //                     where value.R == c.Red &&
-    //                           value.G == c.Green &&
-    //                           value.B == c.Blue &&
-    //                           value.A == c.Alpha
-    //                     select p.Name).DefaultIfEmpty("unknown").First();
-
-    //    c = Color.FromRgb(c.Red, c.Green, c.Blue);
-    //    return c.ToHex();
-    //}
 
     // Set the cube colors for drag and drop to visible or invisible.
     private void IsVisibleCubeColors(bool bEnableDisable)
