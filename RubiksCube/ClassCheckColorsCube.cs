@@ -348,5 +348,53 @@
 
             return "";
         }
+
+        // Check if the cube is solved.
+        public static bool CheckIfSolved()
+        {
+            bool bColorsUp = false;
+            bool bColorsFront = false;
+            bool bColorsRight = false;
+            bool bColorsLeft = false;
+            bool bColorsBack = false;
+            bool bColorsDown = false;
+
+            if (MainPage.aUpFace[1] == MainPage.aUpFace[2] && MainPage.aUpFace[1] == MainPage.aUpFace[3] && MainPage.aUpFace[1] == MainPage.aUpFace[4] && MainPage.aUpFace[1] == MainPage.aUpFace[5] && MainPage.aUpFace[1] == MainPage.aUpFace[6] && MainPage.aUpFace[1] == MainPage.aUpFace[7] && MainPage.aUpFace[1] == MainPage.aUpFace[8] && MainPage.aUpFace[1] == MainPage.aUpFace[9])
+            {
+                bColorsUp = true;
+            }
+
+            if (MainPage.aFrontFace[1] == MainPage.aFrontFace[2] && MainPage.aFrontFace[1] == MainPage.aFrontFace[3] && MainPage.aFrontFace[1] == MainPage.aFrontFace[4] && MainPage.aFrontFace[1] == MainPage.aFrontFace[5] && MainPage.aFrontFace[1] == MainPage.aFrontFace[6] && MainPage.aFrontFace[1] == MainPage.aFrontFace[7] && MainPage.aFrontFace[1] == MainPage.aFrontFace[8] && MainPage.aFrontFace[1] == MainPage.aFrontFace[9])
+            {
+                bColorsFront = true;
+            }
+
+            if (MainPage.aRightFace[1] == MainPage.aRightFace[2] && MainPage.aRightFace[1] == MainPage.aRightFace[3] && MainPage.aRightFace[1] == MainPage.aRightFace[4] && MainPage.aRightFace[1] == MainPage.aRightFace[5] && MainPage.aRightFace[1] == MainPage.aRightFace[6] && MainPage.aRightFace[1] == MainPage.aRightFace[7] && MainPage.aRightFace[1] == MainPage.aRightFace[8] && MainPage.aRightFace[1] == MainPage.aRightFace[9])
+            {
+                bColorsRight = true;
+            }
+
+            if (MainPage.aLeftFace[1] == MainPage.aLeftFace[2] && MainPage.aLeftFace[1] == MainPage.aLeftFace[3] && MainPage.aLeftFace[1] == MainPage.aLeftFace[4] && MainPage.aLeftFace[1] == MainPage.aLeftFace[5] && MainPage.aLeftFace[1] == MainPage.aLeftFace[6] && MainPage.aLeftFace[1] == MainPage.aLeftFace[7] && MainPage.aLeftFace[1] == MainPage.aLeftFace[8] && MainPage.aLeftFace[1] == MainPage.aLeftFace[9])
+            {
+                bColorsLeft = true;
+            }
+
+            if (MainPage.aBackFace[1] == MainPage.aBackFace[2] && MainPage.aBackFace[1] == MainPage.aBackFace[3] && MainPage.aBackFace[1] == MainPage.aBackFace[4] && MainPage.aBackFace[1] == MainPage.aBackFace[5] && MainPage.aBackFace[1] == MainPage.aBackFace[6] && MainPage.aBackFace[1] == MainPage.aBackFace[7] && MainPage.aBackFace[1] == MainPage.aBackFace[8] && MainPage.aBackFace[1] == MainPage.aBackFace[9])
+            {
+                bColorsBack = true;
+            }
+
+            if (MainPage.aDownFace[1] == MainPage.aDownFace[2] && MainPage.aDownFace[1] == MainPage.aDownFace[3] && MainPage.aDownFace[1] == MainPage.aDownFace[4] && MainPage.aDownFace[1] == MainPage.aDownFace[5] && MainPage.aDownFace[1] == MainPage.aDownFace[6] && MainPage.aDownFace[1] == MainPage.aDownFace[7] && MainPage.aDownFace[1] == MainPage.aDownFace[8] && MainPage.aDownFace[1] == MainPage.aDownFace[9])
+            {
+                bColorsDown = true;
+            }
+
+            if (!bColorsUp || !bColorsFront || !bColorsRight || !bColorsLeft || !bColorsBack || !bColorsDown)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

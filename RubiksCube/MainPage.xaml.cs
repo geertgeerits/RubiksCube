@@ -698,59 +698,28 @@ public partial class MainPage : ContentPage
     // Check if the cube is solved.
     private bool CheckIfCubeIsSolved(bool bShowMessage)
     {
-        bool bColorsUp = false;
-        bool bColorsFront = false;
-        bool bColorsRight = false;
-        bool bColorsLeft = false;
-        bool bColorsBack = false;
-        bool bColorsDown = false;
-        
-        if (aUpFace[1] == aUpFace[2] && aUpFace[1] == aUpFace[3] && aUpFace[1] == aUpFace[4] && aUpFace[1] == aUpFace[5] && aUpFace[1] == aUpFace[6] && aUpFace[1] == aUpFace[7] && aUpFace[1] == aUpFace[8] && aUpFace[1] == aUpFace[9])
+        bool bResult = ClassCheckColorsCube.CheckIfSolved();
+
+        if (bResult)
         {
-            bColorsUp = true;
+            if (Globals.bExplainSpeech)
+            {
+                ConvertTextToSpeech(CubeLang.MessageCubeIsSolved_Text);
+            }
+
+            DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
+            return true;
         }
 
-        if (aFrontFace[1] == aFrontFace[2] && aFrontFace[1] == aFrontFace[3] && aFrontFace[1] == aFrontFace[4] && aFrontFace[1] == aFrontFace[5] && aFrontFace[1] == aFrontFace[6] && aFrontFace[1] == aFrontFace[7] && aFrontFace[1] == aFrontFace[8] && aFrontFace[1] == aFrontFace[9])
-        {
-            bColorsFront = true;
-        }
-
-        if (aRightFace[1] == aRightFace[2] && aRightFace[1] == aRightFace[3] && aRightFace[1] == aRightFace[4] && aRightFace[1] == aRightFace[5] && aRightFace[1] == aRightFace[6] && aRightFace[1] == aRightFace[7] && aRightFace[1] == aRightFace[8] && aRightFace[1] == aRightFace[9])
-        {
-            bColorsRight = true;
-        }
-
-        if (aLeftFace[1] == aLeftFace[2] && aLeftFace[1] == aLeftFace[3] && aLeftFace[1] == aLeftFace[4] && aLeftFace[1] == aLeftFace[5] && aLeftFace[1] == aLeftFace[6] && aLeftFace[1] == aLeftFace[7] && aLeftFace[1] == aLeftFace[8] && aLeftFace[1] == aLeftFace[9])
-        {
-            bColorsLeft = true;
-        }
-
-        if (aBackFace[1] == aBackFace[2] && aBackFace[1] == aBackFace[3] && aBackFace[1] == aBackFace[4] && aBackFace[1] == aBackFace[5] && aBackFace[1] == aBackFace[6] && aBackFace[1] == aBackFace[7] && aBackFace[1] == aBackFace[8] && aBackFace[1] == aBackFace[9])
-        {
-            bColorsBack = true;
-        }
-
-        if (aDownFace[1] == aDownFace[2] && aDownFace[1] == aDownFace[3] && aDownFace[1] == aDownFace[4] && aDownFace[1] == aDownFace[5] && aDownFace[1] == aDownFace[6] && aDownFace[1] == aDownFace[7] && aDownFace[1] == aDownFace[8] && aDownFace[1] == aDownFace[9])
-        {
-            bColorsDown = true;
-        }
-
-        if (!bColorsUp || !bColorsFront || !bColorsRight || !bColorsLeft || !bColorsBack || !bColorsDown)
+        if (!bResult)
         {
             if (bShowMessage)
             {
                 DisplayAlert("Rubik's Cube", CubeLang.MessageCubeNotSolved_Text, CubeLang.ButtonClose_Text);
             }
-            return false;
         }
 
-        if (Globals.bExplainSpeech)
-        {
-            ConvertTextToSpeech(CubeLang.MessageCubeIsSolved_Text);
-        }
-
-        DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
-        return true;
+        return false;
     }
 
     // Turn the faces of the cube.
