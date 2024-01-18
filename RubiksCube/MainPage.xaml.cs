@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-16 (YYYY-MM-DD)
+// Date ........: 2024-01-18 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -21,13 +21,15 @@ public partial class MainPage : ContentPage
     private bool bColorDrop;
     private bool bSolvingCube;
     private bool bArrowButtonPressed;
-    private readonly string[] aCubeColors = new string[7];
-    private readonly string[] aUpFace = new string[10];
-    private readonly string[] aFrontFace = new string[10];
-    private readonly string[] aRightFace = new string[10];
-    private readonly string[] aLeftFace = new string[10];
-    private readonly string[] aBackFace = new string[10];
-    private readonly string[] aDownFace = new string[10];
+    private readonly string[] aFaceColors = new string[7];
+    public static string[] aUpFace = new string[10];
+    public static string[] aFrontFace = new string[10];
+    public static string[] aRightFace = new string[10];
+    public static string[] aLeftFace = new string[10];
+    public static string[] aBackFace = new string[10];
+    public static string[] aDownFace = new string[10];
+    public static string[] aPieces = new string[54];
+    public static string[] aPiecesTemp = new string[54];
 
     public MainPage()
 	{
@@ -92,12 +94,12 @@ public partial class MainPage : ContentPage
         InitializeTextToSpeech(cCultureName);
 
         // Initialize the cube colors.
-        aCubeColors[1] = Globals.cCubeColor1;
-        aCubeColors[2] = Globals.cCubeColor2;
-        aCubeColors[3] = Globals.cCubeColor3;
-        aCubeColors[4] = Globals.cCubeColor4;
-        aCubeColors[5] = Globals.cCubeColor5;
-        aCubeColors[6] = Globals.cCubeColor6;
+        aFaceColors[1] = Globals.cCubeColor1;
+        aFaceColors[2] = Globals.cCubeColor2;
+        aFaceColors[3] = Globals.cCubeColor3;
+        aFaceColors[4] = Globals.cCubeColor4;
+        aFaceColors[5] = Globals.cCubeColor5;
+        aFaceColors[6] = Globals.cCubeColor6;
 
         // Reset the colors of the cube.
         ResetCube();
@@ -107,6 +109,12 @@ public partial class MainPage : ContentPage
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageAbout());
+
+        //aPieces[0] = "Blue";
+        //aPiecesTemp[0] = "White";
+        ////CubeTurn myClass1 = new CubeTurn();
+        //string cubeTurns = ClassCubeTurns.CubeTurns("Test", aPieces, aPiecesTemp);
+        //DisplayAlert("cubeTurns", cubeTurns, "OK"); 
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)
@@ -278,9 +286,11 @@ public partial class MainPage : ContentPage
             P = 1;
     // 580
         cX = X.ToString();
-        if (cB == aUpFace[6] && cX != aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+        //if (cB == aUpFace[6] && cX != aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+        //    Q = 1;
+        if (cB == aUpFace[6])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             Q = 1;
-    // 590
+        // 590
         if (O == 1 || P == 1 || Q == 1)
             goto Line610;
     // 600
@@ -686,222 +696,222 @@ public partial class MainPage : ContentPage
         // Top layer.
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aUpFace[nRow] == aCubeColors[1])
+            if (aUpFace[nRow] == aFaceColors[1])
                 nNumberOfColors1++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aUpFace[nRow] == aCubeColors[2])
+            if (aUpFace[nRow] == aFaceColors[2])
                 nNumberOfColors2++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aUpFace[nRow] == aCubeColors[3])
+            if (aUpFace[nRow] == aFaceColors[3])
                 nNumberOfColors3++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aUpFace[nRow] == aCubeColors[4])
+            if (aUpFace[nRow] == aFaceColors[4])
                 nNumberOfColors4++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aUpFace[nRow] == aCubeColors[5])
+            if (aUpFace[nRow] == aFaceColors[5])
                 nNumberOfColors5++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aUpFace[nRow] == aCubeColors[6])
+            if (aUpFace[nRow] == aFaceColors[6])
                 nNumberOfColors6++;
         }
 
         // Front face.
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aFrontFace[nRow] == aCubeColors[1])
+            if (aFrontFace[nRow] == aFaceColors[1])
                 nNumberOfColors1++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aFrontFace[nRow] == aCubeColors[2])
+            if (aFrontFace[nRow] == aFaceColors[2])
                 nNumberOfColors2++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aFrontFace[nRow] == aCubeColors[3])
+            if (aFrontFace[nRow] == aFaceColors[3])
                 nNumberOfColors3++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aFrontFace[nRow] == aCubeColors[4])
+            if (aFrontFace[nRow] == aFaceColors[4])
                 nNumberOfColors4++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aFrontFace[nRow] == aCubeColors[5])
+            if (aFrontFace[nRow] == aFaceColors[5])
                 nNumberOfColors5++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aFrontFace[nRow] == aCubeColors[6])
+            if (aFrontFace[nRow] == aFaceColors[6])
                 nNumberOfColors6++;
         }
 
         // Right face.
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aRightFace[nRow] == aCubeColors[1])
+            if (aRightFace[nRow] == aFaceColors[1])
                 nNumberOfColors1++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aRightFace[nRow] == aCubeColors[2])
+            if (aRightFace[nRow] == aFaceColors[2])
                 nNumberOfColors2++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aRightFace[nRow] == aCubeColors[3])
+            if (aRightFace[nRow] == aFaceColors[3])
                 nNumberOfColors3++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aRightFace[nRow] == aCubeColors[4])
+            if (aRightFace[nRow] == aFaceColors[4])
                 nNumberOfColors4++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aRightFace[nRow] == aCubeColors[5])
+            if (aRightFace[nRow] == aFaceColors[5])
                 nNumberOfColors5++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aRightFace[nRow] == aCubeColors[6])
+            if (aRightFace[nRow] == aFaceColors[6])
                 nNumberOfColors6++;
         }
 
         // Left face.
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aLeftFace[nRow] == aCubeColors[1])
+            if (aLeftFace[nRow] == aFaceColors[1])
                 nNumberOfColors1++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aLeftFace[nRow] == aCubeColors[2])
+            if (aLeftFace[nRow] == aFaceColors[2])
                 nNumberOfColors2++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aLeftFace[nRow] == aCubeColors[3])
+            if (aLeftFace[nRow] == aFaceColors[3])
                 nNumberOfColors3++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aLeftFace[nRow] == aCubeColors[4])
+            if (aLeftFace[nRow] == aFaceColors[4])
                 nNumberOfColors4++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aLeftFace[nRow] == aCubeColors[5])
+            if (aLeftFace[nRow] == aFaceColors[5])
                 nNumberOfColors5++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aLeftFace[nRow] == aCubeColors[6])
+            if (aLeftFace[nRow] == aFaceColors[6])
                 nNumberOfColors6++;
         }
 
         // Back face.
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aBackFace[nRow] == aCubeColors[1])
+            if (aBackFace[nRow] == aFaceColors[1])
                 nNumberOfColors1++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aBackFace[nRow] == aCubeColors[2])
+            if (aBackFace[nRow] == aFaceColors[2])
                 nNumberOfColors2++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aBackFace[nRow] == aCubeColors[3])
+            if (aBackFace[nRow] == aFaceColors[3])
                 nNumberOfColors3++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aBackFace[nRow] == aCubeColors[4])
+            if (aBackFace[nRow] == aFaceColors[4])
                 nNumberOfColors4++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aBackFace[nRow] == aCubeColors[5])
+            if (aBackFace[nRow] == aFaceColors[5])
                 nNumberOfColors5++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aBackFace[nRow] == aCubeColors[6])
+            if (aBackFace[nRow] == aFaceColors[6])
                 nNumberOfColors6++;
         }
 
         // Bottom layer.
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aDownFace[nRow] == aCubeColors[1])
+            if (aDownFace[nRow] == aFaceColors[1])
                 nNumberOfColors1++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aDownFace[nRow] == aCubeColors[2])
+            if (aDownFace[nRow] == aFaceColors[2])
                 nNumberOfColors2++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aDownFace[nRow] == aCubeColors[3])
+            if (aDownFace[nRow] == aFaceColors[3])
                 nNumberOfColors3++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aDownFace[nRow] == aCubeColors[4])
+            if (aDownFace[nRow] == aFaceColors[4])
                 nNumberOfColors4++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aDownFace[nRow] == aCubeColors[5])
+            if (aDownFace[nRow] == aFaceColors[5])
                 nNumberOfColors5++;
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            if (aDownFace[nRow] == aCubeColors[6])
+            if (aDownFace[nRow] == aFaceColors[6])
                 nNumberOfColors6++;
         }
 
@@ -1090,7 +1100,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToRight_Text);
-        TurnFrontFaceTo("+");
+        ClassCubeTurns.TurnFrontFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1110,7 +1120,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToRightFace_Text);
-        TurnUpHorMiddleTo("+");
+        ClassCubeTurns.TurnUpHorMiddleTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1124,7 +1134,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToLeft_Text);
-        TurnBackFaceTo("-");
+        ClassCubeTurns.TurnBackFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1138,7 +1148,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToRight_Text);
-        TurnLeftFaceTo("+");
+        ClassCubeTurns.TurnLeftFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1158,7 +1168,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToFrontFace_Text);
-        TurnUpVerMiddleTo("-");
+        ClassCubeTurns.TurnUpVerMiddleTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1172,7 +1182,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightFaceToLeft_Text);
-        TurnRightFaceTo("-");
+        ClassCubeTurns.TurnRightFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1186,7 +1196,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToLeft_Text);
-        TurnUpFaceTo("-");
+        ClassCubeTurns.TurnUpFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1206,7 +1216,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightFace_Text);
-        TurnFrontHorMiddleTo("-");
+        ClassCubeTurns.TurnFrontHorMiddleTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1220,7 +1230,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnDownFaceToRight_Text);
-        TurnDownFaceTo("+");
+        ClassCubeTurns.TurnDownFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1234,7 +1244,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToRight_Text);
-        TurnUpFaceTo("+");
+        ClassCubeTurns.TurnUpFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1254,7 +1264,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontFace_Text);
-        TurnFrontHorMiddleTo("+");
+        ClassCubeTurns.TurnFrontHorMiddleTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1268,7 +1278,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnDownFaceToLeft_Text);
-        TurnDownFaceTo("-");
+        ClassCubeTurns.TurnDownFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1282,7 +1292,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToLeft_Text);
-        TurnLeftFaceTo("-");
+        ClassCubeTurns.TurnLeftFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1302,7 +1312,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToUpFace_Text);
-        TurnUpVerMiddleTo("+");
+        ClassCubeTurns.TurnUpVerMiddleTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1316,7 +1326,7 @@ public partial class MainPage : ContentPage
         }
         
         ExplainTurnCube(CubeLang.TurnRightFaceToRight_Text);
-        TurnRightFaceTo("+");
+        ClassCubeTurns.TurnRightFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1330,7 +1340,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToLeft_Text);
-        TurnFrontFaceTo("-");
+        ClassCubeTurns.TurnFrontFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1350,7 +1360,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToUpFace_Text);
-        TurnUpHorMiddleTo("-");
+        ClassCubeTurns.TurnUpHorMiddleTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1364,7 +1374,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToRight_Text);
-        TurnBackFaceTo("+");
+        ClassCubeTurns.TurnBackFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1377,9 +1387,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToLeftFace_Text);
         }
             
-        TurnUpFaceTo("+");
-        TurnFrontHorMiddleTo("+");
-        TurnDownFaceTo("-");
+        ClassCubeTurns.TurnUpFaceTo("+");
+        ClassCubeTurns.TurnFrontHorMiddleTo("+");
+        ClassCubeTurns.TurnDownFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1391,9 +1401,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToRightFace_Text);
         }
 
-        TurnUpFaceTo("-");
-        TurnFrontHorMiddleTo("-");
-        TurnDownFaceTo("+");
+        ClassCubeTurns.TurnUpFaceTo("-");
+        ClassCubeTurns.TurnFrontHorMiddleTo("-");
+        ClassCubeTurns.TurnDownFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1405,9 +1415,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToUpFace_Text);
         }
 
-        TurnRightFaceTo("+");
-        TurnUpVerMiddleTo("+");
-        TurnLeftFaceTo("-");
+        ClassCubeTurns.TurnRightFaceTo("+");
+        ClassCubeTurns.TurnUpVerMiddleTo("+");
+        ClassCubeTurns.TurnLeftFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1419,9 +1429,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToDownFace_Text);
         }
 
-        TurnRightFaceTo("-");
-        TurnUpVerMiddleTo("-");
-        TurnLeftFaceTo("+");
+        ClassCubeTurns.TurnRightFaceTo("-");
+        ClassCubeTurns.TurnUpVerMiddleTo("-");
+        ClassCubeTurns.TurnLeftFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
@@ -1433,9 +1443,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeUpFaceToRightFace_Text);
         }
 
-        TurnFrontFaceTo("+");
-        TurnUpHorMiddleTo("+");
-        TurnBackFaceTo("-");
+        ClassCubeTurns.TurnFrontFaceTo("+");
+        ClassCubeTurns.TurnUpHorMiddleTo("+");
+        ClassCubeTurns.TurnBackFaceTo("-");
         SetCubeColorsFromArrays();
     }
 
@@ -1447,695 +1457,20 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeUpFaceToLeftFace_Text);
         }
 
-        TurnFrontFaceTo("-");
-        TurnUpHorMiddleTo("-");
-        TurnBackFaceTo("+");
+        ClassCubeTurns.TurnFrontFaceTo("-");
+        ClassCubeTurns.TurnUpHorMiddleTo("-");
+        ClassCubeTurns.TurnBackFaceTo("+");
         SetCubeColorsFromArrays();
     }
 
-    // Turn the entire front face clockwise or counter clockwise.
-    private void TurnFrontFaceTo(string cDirection)
-    {
-        string cColorFront1 = aFrontFace[1];
-        string cColorFront2 = aFrontFace[2];
-        string cColorFront3 = aFrontFace[3];
-        string cColorFront4 = aFrontFace[4];
-        string cColorFront6 = aFrontFace[6];
-        string cColorFront7 = aFrontFace[7];
-        string cColorFront8 = aFrontFace[8];
-        string cColorFront9 = aFrontFace[9];
-
-        string cColorUp7 = aUpFace[7];
-        string cColorUp8 = aUpFace[8];
-        string cColorUp9 = aUpFace[9];
-
-        string cColorRight1 = aRightFace[1];
-        string cColorRight4 = aRightFace[4];
-        string cColorRight7 = aRightFace[7];
-
-        string cColorDown1 = aDownFace[1];
-        string cColorDown2 = aDownFace[2];
-        string cColorDown3 = aDownFace[3];
-
-        string cColorLeft3 = aLeftFace[3];
-        string cColorLeft6 = aLeftFace[6];
-        string cColorLeft9 = aLeftFace[9];
-
-        if (cDirection == "+")
-        {
-            aFrontFace[1] = cColorFront7;
-            aFrontFace[2] = cColorFront4;
-            aFrontFace[3] = cColorFront1;
-            aFrontFace[4] = cColorFront8;
-            aFrontFace[6] = cColorFront2;
-            aFrontFace[7] = cColorFront9;
-            aFrontFace[8] = cColorFront6;
-            aFrontFace[9] = cColorFront3;
-
-            aUpFace[7] = cColorLeft9;
-            aUpFace[8] = cColorLeft6;
-            aUpFace[9] = cColorLeft3;
-
-            aRightFace[1] = cColorUp7;
-            aRightFace[4] = cColorUp8;
-            aRightFace[7] = cColorUp9;
-
-            aDownFace[1] = cColorRight7;
-            aDownFace[2] = cColorRight4;
-            aDownFace[3] = cColorRight1;
-
-            aLeftFace[3] = cColorDown1;
-            aLeftFace[6] = cColorDown2;
-            aLeftFace[9] = cColorDown3;
-        }
-
-        if (cDirection == "-")
-        {
-            aFrontFace[1] = cColorFront3;
-            aFrontFace[2] = cColorFront6;
-            aFrontFace[3] = cColorFront9;
-            aFrontFace[4] = cColorFront2;
-            aFrontFace[6] = cColorFront8;
-            aFrontFace[7] = cColorFront1;
-            aFrontFace[8] = cColorFront4;
-            aFrontFace[9] = cColorFront7;
-
-            aUpFace[7] = cColorRight1;
-            aUpFace[8] = cColorRight4;
-            aUpFace[9] = cColorRight7;
-
-            aRightFace[1] = cColorDown3;
-            aRightFace[4] = cColorDown2;
-            aRightFace[7] = cColorDown1;
-
-            aDownFace[1] = cColorLeft3;
-            aDownFace[2] = cColorLeft6;
-            aDownFace[3] = cColorLeft9;
-
-            aLeftFace[3] = cColorUp9;
-            aLeftFace[6] = cColorUp8;
-            aLeftFace[9] = cColorUp7;
-        }
-    }
-
-    // Turn the top horizontal middle layer to the right or left.
-    private void TurnUpHorMiddleTo(string cDirection)
-    {
-        string cColorUp4 = aUpFace[4];
-        string cColorUp5 = aUpFace[5];
-        string cColorUp6 = aUpFace[6];
-
-        string cColorRight2 = aRightFace[2];
-        string cColorRight5 = aRightFace[5];
-        string cColorRight8 = aRightFace[8];
-
-        string cColorDown4 = aDownFace[4];
-        string cColorDown5 = aDownFace[5];
-        string cColorDown6 = aDownFace[6];
-
-        string cColorLeft2 = aLeftFace[2];
-        string cColorLeft5 = aLeftFace[5];
-        string cColorLeft8 = aLeftFace[8];
-
-        if (cDirection == "+")
-        {
-            aUpFace[4] = cColorLeft8;
-            aUpFace[5] = cColorLeft5;
-            aUpFace[6] = cColorLeft2;
-
-            aRightFace[2] = cColorUp4;
-            aRightFace[5] = cColorUp5;
-            aRightFace[8] = cColorUp6;
-
-            aDownFace[4] = cColorRight8;
-            aDownFace[5] = cColorRight5;
-            aDownFace[6] = cColorRight2;
-
-            aLeftFace[2] = cColorDown4;
-            aLeftFace[5] = cColorDown5;
-            aLeftFace[8] = cColorDown6;
-        }
-
-        if (cDirection == "-")
-        {
-            aUpFace[4] = cColorRight2;
-            aUpFace[5] = cColorRight5;
-            aUpFace[6] = cColorRight8;
-
-            aRightFace[2] = cColorDown6;
-            aRightFace[5] = cColorDown5;
-            aRightFace[8] = cColorDown4;
-
-            aDownFace[4] = cColorLeft2;
-            aDownFace[5] = cColorLeft5;
-            aDownFace[6] = cColorLeft8;
-
-            aLeftFace[2] = cColorUp6;
-            aLeftFace[5] = cColorUp5;
-            aLeftFace[8] = cColorUp4;
-        }
-    }
-
-    // Turn the entire back face clockwise or counter clockwise.
-    private void TurnBackFaceTo(string cDirection)
-    {
-        string cColorBack1 = aBackFace[1];
-        string cColorBack2 = aBackFace[2];
-        string cColorBack3 = aBackFace[3];
-        string cColorBack4 = aBackFace[4];
-        string cColorBack6 = aBackFace[6];
-        string cColorBack7 = aBackFace[7];
-        string cColorBack8 = aBackFace[8];
-        string cColorBack9 = aBackFace[9];
-
-        string cColorUp1 = aUpFace[1];
-        string cColorUp2 = aUpFace[2];
-        string cColorUp3 = aUpFace[3];
-
-        string cColorRight3 = aRightFace[3];
-        string cColorRight6 = aRightFace[6];
-        string cColorRight9 = aRightFace[9];
-
-        string cColorDown7 = aDownFace[7];
-        string cColorDown8 = aDownFace[8];
-        string cColorDown9 = aDownFace[9];
-
-        string cColorLeft1 = aLeftFace[1];
-        string cColorLeft4 = aLeftFace[4];
-        string cColorLeft7 = aLeftFace[7];
-
-        if (cDirection == "+")
-        {
-            aBackFace[1] = cColorBack7;
-            aBackFace[2] = cColorBack4;
-            aBackFace[3] = cColorBack1;
-            aBackFace[4] = cColorBack8;
-            aBackFace[6] = cColorBack2;
-            aBackFace[7] = cColorBack9;
-            aBackFace[8] = cColorBack6;
-            aBackFace[9] = cColorBack3;
-
-            aUpFace[1] = cColorRight3;
-            aUpFace[2] = cColorRight6;
-            aUpFace[3] = cColorRight9;
-
-            aRightFace[3] = cColorDown9;
-            aRightFace[6] = cColorDown8;
-            aRightFace[9] = cColorDown7;
-
-            aDownFace[7] = cColorLeft1;
-            aDownFace[8] = cColorLeft4;
-            aDownFace[9] = cColorLeft7;
-
-            aLeftFace[1] = cColorUp3;
-            aLeftFace[4] = cColorUp2;
-            aLeftFace[7] = cColorUp1;
-        }
-
-        if (cDirection == "-")
-        {
-            aBackFace[1] = cColorBack3;
-            aBackFace[2] = cColorBack6;
-            aBackFace[3] = cColorBack9;
-            aBackFace[4] = cColorBack2;
-            aBackFace[6] = cColorBack8;
-            aBackFace[7] = cColorBack1;
-            aBackFace[8] = cColorBack4;
-            aBackFace[9] = cColorBack7;
-
-            aUpFace[1] = cColorLeft7;
-            aUpFace[2] = cColorLeft4;
-            aUpFace[3] = cColorLeft1;
-
-            aRightFace[3] = cColorUp1;
-            aRightFace[6] = cColorUp2;
-            aRightFace[9] = cColorUp3;
-
-            aDownFace[7] = cColorRight9;
-            aDownFace[8] = cColorRight6;
-            aDownFace[9] = cColorRight3;
-
-            aLeftFace[1] = cColorDown7;
-            aLeftFace[4] = cColorDown8;
-            aLeftFace[7] = cColorDown9;
-        }
-    }
-
-    // Turn the entire left face clockwise or counter clockwise.
-    private void TurnLeftFaceTo(string cDirection)
-    {
-        string cColorLeft1 = aLeftFace[1];
-        string cColorLeft2 = aLeftFace[2];
-        string cColorLeft3 = aLeftFace[3];
-        string cColorLeft4 = aLeftFace[4];
-        string cColorLeft6 = aLeftFace[6];
-        string cColorLeft7 = aLeftFace[7];
-        string cColorLeft8 = aLeftFace[8];
-        string cColorLeft9 = aLeftFace[9];
-
-        string cColorUp1 = aUpFace[1];
-        string cColorUp4 = aUpFace[4];
-        string cColorUp7 = aUpFace[7];
-
-        string cColorFront1 = aFrontFace[1];
-        string cColorFront4 = aFrontFace[4];
-        string cColorFront7 = aFrontFace[7];
-
-        string cColorDown1 = aDownFace[1];
-        string cColorDown4 = aDownFace[4];
-        string cColorDown7 = aDownFace[7];
-
-        string cColorBack3 = aBackFace[3];
-        string cColorBack6 = aBackFace[6];
-        string cColorBack9 = aBackFace[9];
-
-        if (cDirection == "+")
-        {
-            aLeftFace[1] = cColorLeft7;
-            aLeftFace[2] = cColorLeft4;
-            aLeftFace[3] = cColorLeft1;
-            aLeftFace[4] = cColorLeft8;
-            aLeftFace[6] = cColorLeft2;
-            aLeftFace[7] = cColorLeft9;
-            aLeftFace[8] = cColorLeft6;
-            aLeftFace[9] = cColorLeft3;
-
-            aUpFace[1] = cColorBack9;
-            aUpFace[4] = cColorBack6;
-            aUpFace[7] = cColorBack3;
-
-            aFrontFace[1] = cColorUp1;
-            aFrontFace[4] = cColorUp4;
-            aFrontFace[7] = cColorUp7;
-
-            aDownFace[1] = cColorFront1;
-            aDownFace[4] = cColorFront4;
-            aDownFace[7] = cColorFront7;
-
-            aBackFace[3] = cColorDown7;
-            aBackFace[6] = cColorDown4;
-            aBackFace[9] = cColorDown1;
-        }
-
-        if (cDirection == "-")
-        {
-            aLeftFace[1] = cColorLeft3;
-            aLeftFace[2] = cColorLeft6;
-            aLeftFace[3] = cColorLeft9;
-            aLeftFace[4] = cColorLeft2;
-            aLeftFace[6] = cColorLeft8;
-            aLeftFace[7] = cColorLeft1;
-            aLeftFace[8] = cColorLeft4;
-            aLeftFace[9] = cColorLeft7;
-
-            aUpFace[1] = cColorFront1;
-            aUpFace[4] = cColorFront4;
-            aUpFace[7] = cColorFront7;
-
-            aFrontFace[1] = cColorDown1;
-            aFrontFace[4] = cColorDown4;
-            aFrontFace[7] = cColorDown7;
-
-            aDownFace[1] = cColorBack9;
-            aDownFace[4] = cColorBack6;
-            aDownFace[7] = cColorBack3;
-
-            aBackFace[3] = cColorUp7;
-            aBackFace[6] = cColorUp4;
-            aBackFace[9] = cColorUp1;
-        }
-    }
-
-    // Turn the top vertical middle layer to back or front.
-    private void TurnUpVerMiddleTo(string cDirection)
-    {
-        string cColorUp2 = aUpFace[2];
-        string cColorUp5 = aUpFace[5];
-        string cColorUp8 = aUpFace[8];
-
-        string cColorFront2 = aFrontFace[2];
-        string cColorFront5 = aFrontFace[5];
-        string cColorFront8 = aFrontFace[8];
-
-        string cColorDown2 = aDownFace[2];
-        string cColorDown5 = aDownFace[5];
-        string cColorDown8 = aDownFace[8];
-
-        string cColorBack2 = aBackFace[2];
-        string cColorBack5 = aBackFace[5];
-        string cColorBack8 = aBackFace[8];
-
-        if (cDirection == "+")
-        {
-            aUpFace[2] = cColorFront2;
-            aUpFace[5] = cColorFront5;
-            aUpFace[8] = cColorFront8;
-
-            aFrontFace[2] = cColorDown2;
-            aFrontFace[5] = cColorDown5;
-            aFrontFace[8] = cColorDown8;
-
-            aDownFace[2] = cColorBack8;
-            aDownFace[5] = cColorBack5;
-            aDownFace[8] = cColorBack2;
-
-            aBackFace[2] = cColorUp8;
-            aBackFace[5] = cColorUp5;
-            aBackFace[8] = cColorUp2;
-        }
-
-        if (cDirection == "-")
-        {
-            aUpFace[2] = cColorBack8;
-            aUpFace[5] = cColorBack5;
-            aUpFace[8] = cColorBack2;
-
-            aFrontFace[2] = cColorUp2;
-            aFrontFace[5] = cColorUp5;
-            aFrontFace[8] = cColorUp8;
-
-            aDownFace[2] = cColorFront2;
-            aDownFace[5] = cColorFront5;
-            aDownFace[8] = cColorFront8;
-
-            aBackFace[2] = cColorDown8;
-            aBackFace[5] = cColorDown5;
-            aBackFace[8] = cColorDown2;
-        }
-    }
-
-    // Turn the entire right face clockwise or counter clockwise.
-    private void TurnRightFaceTo(string cDirection)
-    {
-        string cColorRight1 = aRightFace[1];
-        string cColorRight2 = aRightFace[2];
-        string cColorRight3 = aRightFace[3];
-        string cColorRight4 = aRightFace[4];
-        string cColorRight6 = aRightFace[6];
-        string cColorRight7 = aRightFace[7];
-        string cColorRight8 = aRightFace[8];
-        string cColorRight9 = aRightFace[9];
-
-        string cColorUp3 = aUpFace[3];
-        string cColorUp6 = aUpFace[6];
-        string cColorUp9 = aUpFace[9];
-
-        string cColorFront3 = aFrontFace[3];
-        string cColorFront6 = aFrontFace[6];
-        string cColorFront9 = aFrontFace[9];
-
-        string cColorDown3 = aDownFace[3];
-        string cColorDown6 = aDownFace[6];
-        string cColorDown9 = aDownFace[9];
-
-        string cColorBack1 = aBackFace[1];
-        string cColorBack4 = aBackFace[4];
-        string cColorBack7 = aBackFace[7];
-
-        if (cDirection == "+")
-        {
-            aRightFace[1] = cColorRight7;
-            aRightFace[2] = cColorRight4;
-            aRightFace[3] = cColorRight1;
-            aRightFace[4] = cColorRight8;
-            aRightFace[6] = cColorRight2;
-            aRightFace[7] = cColorRight9;
-            aRightFace[8] = cColorRight6;
-            aRightFace[9] = cColorRight3;
-
-            aUpFace[3] = cColorFront3;
-            aUpFace[6] = cColorFront6;
-            aUpFace[9] = cColorFront9;
-
-            aFrontFace[3] = cColorDown3;
-            aFrontFace[6] = cColorDown6;
-            aFrontFace[9] = cColorDown9;
-
-            aDownFace[3] = cColorBack7;
-            aDownFace[6] = cColorBack4;
-            aDownFace[9] = cColorBack1;
-
-            aBackFace[1] = cColorUp9;
-            aBackFace[4] = cColorUp6;
-            aBackFace[7] = cColorUp3;
-        }
-
-        if (cDirection == "-")
-        {
-            aRightFace[1] = cColorRight3;
-            aRightFace[2] = cColorRight6;
-            aRightFace[3] = cColorRight9;
-            aRightFace[4] = cColorRight2;
-            aRightFace[6] = cColorRight8;
-            aRightFace[7] = cColorRight1;
-            aRightFace[8] = cColorRight4;
-            aRightFace[9] = cColorRight7;
-
-            aUpFace[3] = cColorBack7;
-            aUpFace[6] = cColorBack4;
-            aUpFace[9] = cColorBack1;
-
-            aFrontFace[3] = cColorUp3;
-            aFrontFace[6] = cColorUp6;
-            aFrontFace[9] = cColorUp9;
-
-            aDownFace[3] = cColorFront3;
-            aDownFace[6] = cColorFront6;
-            aDownFace[9] = cColorFront9;
-
-            aBackFace[1] = cColorDown9;
-            aBackFace[4] = cColorDown6;
-            aBackFace[7] = cColorDown3;
-        }
-    }
-
-    // Turn the entire upper face clockwise or counter clockwise.
-    private void TurnUpFaceTo(string cDirection)
-    {
-        string cColorUp1 = aUpFace[1];
-        string cColorUp2 = aUpFace[2];
-        string cColorUp3 = aUpFace[3];
-        string cColorUp4 = aUpFace[4];
-        string cColorUp6 = aUpFace[6];
-        string cColorUp7 = aUpFace[7];
-        string cColorUp8 = aUpFace[8];
-        string cColorUp9 = aUpFace[9];
-
-        string cColorLeft1 = aLeftFace[1];
-        string cColorLeft2 = aLeftFace[2];
-        string cColorLeft3 = aLeftFace[3];
-
-        string cColorFront1 = aFrontFace[1];
-        string cColorFront2 = aFrontFace[2];
-        string cColorFront3 = aFrontFace[3];
-
-        string cColorRight1 = aRightFace[1];
-        string cColorRight2 = aRightFace[2];
-        string cColorRight3 = aRightFace[3];
-
-        string cColorBack1 = aBackFace[1];
-        string cColorBack2 = aBackFace[2];
-        string cColorBack3 = aBackFace[3];
-
-        if (cDirection == "+")
-        {
-            aUpFace[1] = cColorUp7;
-            aUpFace[2] = cColorUp4;
-            aUpFace[3] = cColorUp1;
-            aUpFace[4] = cColorUp8;
-            aUpFace[6] = cColorUp2;
-            aUpFace[7] = cColorUp9;
-            aUpFace[8] = cColorUp6;
-            aUpFace[9] = cColorUp3;
-
-            aLeftFace[1] = cColorFront1;
-            aLeftFace[2] = cColorFront2;
-            aLeftFace[3] = cColorFront3;
-
-            aFrontFace[1] = cColorRight1;
-            aFrontFace[2] = cColorRight2;
-            aFrontFace[3] = cColorRight3;
-
-            aRightFace[1] = cColorBack1;
-            aRightFace[2] = cColorBack2;
-            aRightFace[3] = cColorBack3;
-
-            aBackFace[1] = cColorLeft1;
-            aBackFace[2] = cColorLeft2;
-            aBackFace[3] = cColorLeft3;
-        }
-
-        if (cDirection == "-")
-        {
-            aUpFace[1] = cColorUp3;
-            aUpFace[2] = cColorUp6;
-            aUpFace[3] = cColorUp9;
-            aUpFace[4] = cColorUp2;
-            aUpFace[6] = cColorUp8;
-            aUpFace[7] = cColorUp1;
-            aUpFace[8] = cColorUp4;
-            aUpFace[9] = cColorUp7;
-
-            aLeftFace[1] = cColorBack1;
-            aLeftFace[2] = cColorBack2;
-            aLeftFace[3] = cColorBack3;
-
-            aFrontFace[1] = cColorLeft1;
-            aFrontFace[2] = cColorLeft2;
-            aFrontFace[3] = cColorLeft3;
-
-            aRightFace[1] = cColorFront1;
-            aRightFace[2] = cColorFront2;
-            aRightFace[3] = cColorFront3;
-
-            aBackFace[1] = cColorRight1;
-            aBackFace[2] = cColorRight2;
-            aBackFace[3] = cColorRight3;
-        }
-    }
-
-    // Turn the front horizontal middle layer to right or left.
-    private void TurnFrontHorMiddleTo(string cDirection)
-    {
-        string cColorFront4 = aFrontFace[4];
-        string cColorFront5 = aFrontFace[5];
-        string cColorFront6 = aFrontFace[6];
-
-        string cColorRight4 = aRightFace[4];
-        string cColorRight5 = aRightFace[5];
-        string cColorRight6 = aRightFace[6];
-
-        string cColorBack4 = aBackFace[4];
-        string cColorBack5 = aBackFace[5];
-        string cColorBack6 = aBackFace[6];
-
-        string cColorLeft4 = aLeftFace[4];
-        string cColorLeft5 = aLeftFace[5];
-        string cColorLeft6 = aLeftFace[6];
-
-        if (cDirection == "+")
-        {
-            aFrontFace[4] = cColorRight4;
-            aFrontFace[5] = cColorRight5;
-            aFrontFace[6] = cColorRight6;
-
-            aRightFace[4] = cColorBack4;
-            aRightFace[5] = cColorBack5;
-            aRightFace[6] = cColorBack6;
-
-            aBackFace[4] = cColorLeft4;
-            aBackFace[5] = cColorLeft5;
-            aBackFace[6] = cColorLeft6;
-
-            aLeftFace[4] = cColorFront4;
-            aLeftFace[5] = cColorFront5;
-            aLeftFace[6] = cColorFront6;
-        }
-
-        if (cDirection == "-")
-        {
-            aFrontFace[4] = cColorLeft4;
-            aFrontFace[5] = cColorLeft5;
-            aFrontFace[6] = cColorLeft6;
-
-            aRightFace[4] = cColorFront4;
-            aRightFace[5] = cColorFront5;
-            aRightFace[6] = cColorFront6;
-
-            aBackFace[4] = cColorRight4;
-            aBackFace[5] = cColorRight5;
-            aBackFace[6] = cColorRight6;
-
-            aLeftFace[4] = cColorBack4;
-            aLeftFace[5] = cColorBack5;
-            aLeftFace[6] = cColorBack6;
-        }
-    }
-
-    // Turn the entire down face clockwise or counter clockwise.
-    private void TurnDownFaceTo(string cDirection)
-    {
-        string cColorDown1 = aDownFace[1];
-        string cColorDown2 = aDownFace[2];
-        string cColorDown3 = aDownFace[3];
-        string cColorDown4 = aDownFace[4];
-        string cColorDown6 = aDownFace[6];
-        string cColorDown7 = aDownFace[7];
-        string cColorDown8 = aDownFace[8];
-        string cColorDown9 = aDownFace[9];
-
-        string cColorLeft7 = aLeftFace[7];
-        string cColorLeft8 = aLeftFace[8];
-        string cColorLeft9 = aLeftFace[9];
-
-        string cColorFront7 = aFrontFace[7];
-        string cColorFront8 = aFrontFace[8];
-        string cColorFront9 = aFrontFace[9];
-
-        string cColorRight7 = aRightFace[7];
-        string cColorRight8 = aRightFace[8];
-        string cColorRight9 = aRightFace[9];
-
-        string cColorBack7 = aBackFace[7];
-        string cColorBack8 = aBackFace[8];
-        string cColorBack9 = aBackFace[9];
-
-        if (cDirection == "+")
-        {
-            aDownFace[1] = cColorDown7;
-            aDownFace[2] = cColorDown4;
-            aDownFace[3] = cColorDown1;
-            aDownFace[4] = cColorDown8;
-            aDownFace[6] = cColorDown2;
-            aDownFace[7] = cColorDown9;
-            aDownFace[8] = cColorDown6;
-            aDownFace[9] = cColorDown3;
-
-            aLeftFace[7] = cColorBack7;
-            aLeftFace[8] = cColorBack8;
-            aLeftFace[9] = cColorBack9;
-
-            aFrontFace[7] = cColorLeft7;
-            aFrontFace[8] = cColorLeft8;
-            aFrontFace[9] = cColorLeft9;
-
-            aRightFace[7] = cColorFront7;
-            aRightFace[8] = cColorFront8;
-            aRightFace[9] = cColorFront9;
-
-            aBackFace[7] = cColorRight7;
-            aBackFace[8] = cColorRight8;
-            aBackFace[9] = cColorRight9;
-        }
-
-        if (cDirection == "-")
-        {
-            aDownFace[1] = cColorDown3;
-            aDownFace[2] = cColorDown6;
-            aDownFace[3] = cColorDown9;
-            aDownFace[4] = cColorDown2;
-            aDownFace[6] = cColorDown8;
-            aDownFace[7] = cColorDown1;
-            aDownFace[8] = cColorDown4;
-            aDownFace[9] = cColorDown7;
-
-            aLeftFace[7] = cColorFront7;
-            aLeftFace[8] = cColorFront8;
-            aLeftFace[9] = cColorFront9;
-
-            aFrontFace[7] = cColorRight7;
-            aFrontFace[8] = cColorRight8;
-            aFrontFace[9] = cColorRight9;
-
-            aRightFace[7] = cColorBack7;
-            aRightFace[8] = cColorBack8;
-            aRightFace[9] = cColorBack9;
-
-            aBackFace[7] = cColorLeft7;
-            aBackFace[8] = cColorLeft8;
-            aBackFace[9] = cColorLeft9;
-        }
-    }
+    // Copy the cube piece colors to the temporary cube piece colors array.
+    //private void CopyCubePieceColorsToTemporaryArray()
+    //{
+    //    for (int i = 0; i < 54; i++)
+    //    {
+    //        aPiecesTemp[i] = aPieces[i];
+    //    }
+    //}
 
     // Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods.
     private async void ExplainTurnCube(string cTurnCubeText)
@@ -2418,133 +1753,133 @@ public partial class MainPage : ContentPage
         switch (cTurnFaceAndDirection)
         {
             case "TurnFront+":
-                TurnFrontFaceTo("+");
+                ClassCubeTurns.TurnFrontFaceTo("+");
                 break;
             case "TurnFront-":
-                TurnFrontFaceTo("-");
+                ClassCubeTurns.TurnFrontFaceTo("-");
                 break;
             case "TurnUp+":
-                TurnUpFaceTo("+");
+                ClassCubeTurns.TurnUpFaceTo("+");
                 break;
             case "TurnUp-":
-                TurnUpFaceTo("-");
+                ClassCubeTurns.TurnUpFaceTo("-");
                 break;
             case "TurnDown+":
-                TurnDownFaceTo("+");
+                ClassCubeTurns.TurnDownFaceTo("+");
                 break;
             case "TurnDown-":
-                TurnDownFaceTo("-");
+                ClassCubeTurns.TurnDownFaceTo("-");
                 break;
             case "TurnLeft+":
-                TurnLeftFaceTo("+");
+                ClassCubeTurns.TurnLeftFaceTo("+");
                 break;
             case "TurnLeft-":
-                TurnLeftFaceTo("-");
+                ClassCubeTurns.TurnLeftFaceTo("-");
                 break;
             case "TurnRight+":
-                TurnRightFaceTo("+");
+                ClassCubeTurns.TurnRightFaceTo("+");
                 break;
             case "TurnRight-":
-                TurnRightFaceTo("-");
+                ClassCubeTurns.TurnRightFaceTo("-");
                 break;
             case "TurnBack+":
-                TurnBackFaceTo("+");
+                ClassCubeTurns.TurnBackFaceTo("+");
                 break;
             case "TurnBack-":
-                TurnBackFaceTo("-");
+                ClassCubeTurns.TurnBackFaceTo("-");
                 break;
 
             case "TurnFront++":
-                TurnFrontFaceTo("+");
-                TurnFrontFaceTo("+");
+                ClassCubeTurns.TurnFrontFaceTo("+");
+                ClassCubeTurns.TurnFrontFaceTo("+");
                 break;
             case "TurnFront--":
-                TurnFrontFaceTo("-");
-                TurnFrontFaceTo("-");
+                ClassCubeTurns.TurnFrontFaceTo("-");
+                ClassCubeTurns.TurnFrontFaceTo("-");
                 break;
             case "TurnUp++":
-                TurnUpFaceTo("+");
-                TurnUpFaceTo("+");
+                ClassCubeTurns.TurnUpFaceTo("+");
+                ClassCubeTurns.TurnUpFaceTo("+");
                 break;
             case "TurnUp--":
-                TurnUpFaceTo("-");
-                TurnUpFaceTo("-");
+                ClassCubeTurns.TurnUpFaceTo("-");
+                ClassCubeTurns.TurnUpFaceTo("-");
                 break;
             case "TurnDown++":
-                TurnDownFaceTo("+");
-                TurnDownFaceTo("+");
+                ClassCubeTurns.TurnDownFaceTo("+");
+                ClassCubeTurns.TurnDownFaceTo("+");
                 break;
             case "TurnDown--":
-                TurnDownFaceTo("-");
-                TurnDownFaceTo("-");
+                ClassCubeTurns.TurnDownFaceTo("-");
+                ClassCubeTurns.TurnDownFaceTo("-");
                 break;
             case "TurnLeft++":
-                TurnLeftFaceTo("+");
-                TurnLeftFaceTo("+");
+                ClassCubeTurns.TurnLeftFaceTo("+");
+                ClassCubeTurns.TurnLeftFaceTo("+");
                 break;
             case "TurnLeft--":
-                TurnLeftFaceTo("-");
-                TurnLeftFaceTo("-");
+                ClassCubeTurns.TurnLeftFaceTo("-");
+                ClassCubeTurns.TurnLeftFaceTo("-");
                 break;
             case "TurnRight++":
-                TurnRightFaceTo("+");
-                TurnRightFaceTo("+");
+                ClassCubeTurns.TurnRightFaceTo("+");
+                ClassCubeTurns.TurnRightFaceTo("+");
                 break;
             case "TurnRight--":
-                TurnRightFaceTo("-");
-                TurnRightFaceTo("-");
+                ClassCubeTurns.TurnRightFaceTo("-");
+                ClassCubeTurns.TurnRightFaceTo("-");
                 break;
             case "TurnBack++":
-                TurnBackFaceTo("+");
-                TurnBackFaceTo("+");
+                ClassCubeTurns.TurnBackFaceTo("+");
+                ClassCubeTurns.TurnBackFaceTo("+");
                 break;
             case "TurnBack--":
-                TurnBackFaceTo("-");
-                TurnBackFaceTo("-");
+                ClassCubeTurns.TurnBackFaceTo("-");
+                ClassCubeTurns.TurnBackFaceTo("-");
                 break;
 
             case "TurnUpHorMiddleRight+":
-                TurnUpHorMiddleTo("+");
+                ClassCubeTurns.TurnUpHorMiddleTo("+");
                 break;
             case "TurnUpHorMiddleLeft-":
-                TurnUpHorMiddleTo("-");
+                ClassCubeTurns.TurnUpHorMiddleTo("-");
                 break;
             case "TurnUpVerMiddleBack+":
-                TurnUpVerMiddleTo("+");
+                ClassCubeTurns.TurnUpVerMiddleTo("+");
                 break;
             case "TurnUpVerMiddleFront-":
-                TurnUpVerMiddleTo("-");
+                ClassCubeTurns.TurnUpVerMiddleTo("-");
                 break;
             case "TurnFrontHorMiddleLeft+":
-                TurnFrontHorMiddleTo("+");
+                ClassCubeTurns.TurnFrontHorMiddleTo("+");
                 break;
             case "TurnFrontHorMiddleRight-":
-                TurnFrontHorMiddleTo("-");
+                ClassCubeTurns.TurnFrontHorMiddleTo("-");
                 break;
 
             case "TurnUpHorMiddleRight++":
-                TurnUpHorMiddleTo("+");
-                TurnUpHorMiddleTo("+");
+                ClassCubeTurns.TurnUpHorMiddleTo("+");
+                ClassCubeTurns.TurnUpHorMiddleTo("+");
                 break;
             case "TurnUpHorMiddleLeft--":
-                TurnUpHorMiddleTo("-");
-                TurnUpHorMiddleTo("-");
+                ClassCubeTurns.TurnUpHorMiddleTo("-");
+                ClassCubeTurns.TurnUpHorMiddleTo("-");
                 break;
             case "TurnUpVerMiddleBack++":
-                TurnUpVerMiddleTo("+");
-                TurnUpVerMiddleTo("+");
+                ClassCubeTurns.TurnUpVerMiddleTo("+");
+                ClassCubeTurns.TurnUpVerMiddleTo("+");
                 break;
             case "TurnUpVerMiddleFront--":
-                TurnUpVerMiddleTo("-");
-                TurnUpVerMiddleTo("-");
+                ClassCubeTurns.TurnUpVerMiddleTo("-");
+                ClassCubeTurns.TurnUpVerMiddleTo("-");
                 break;
             case "TurnFrontHorMiddleLeft++":
-                TurnFrontHorMiddleTo("+");
-                TurnFrontHorMiddleTo("+");
+                ClassCubeTurns.TurnFrontHorMiddleTo("+");
+                ClassCubeTurns.TurnFrontHorMiddleTo("+");
                 break;
             case "TurnFrontHorMiddleRight--":
-                TurnFrontHorMiddleTo("-");
-                TurnFrontHorMiddleTo("-");
+                ClassCubeTurns.TurnFrontHorMiddleTo("-");
+                ClassCubeTurns.TurnFrontHorMiddleTo("-");
                 break;
 
             case "TurnCubeFrontToRight":
@@ -2608,7 +1943,7 @@ public partial class MainPage : ContentPage
 
             for (nRow = 1; nRow < 7; nRow++)
             {
-                sw.WriteLine(aCubeColors[nRow]);
+                sw.WriteLine(aFaceColors[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
@@ -2670,7 +2005,7 @@ public partial class MainPage : ContentPage
 
             for (nRow = 1; nRow < 7; nRow++)
             {
-                aCubeColors[nRow] = sr.ReadLine();
+                aFaceColors[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
@@ -2736,32 +2071,32 @@ public partial class MainPage : ContentPage
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aUpFace[nRow] = aCubeColors[1];
+            aUpFace[nRow] = aFaceColors[1];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aFrontFace[nRow] = aCubeColors[2];
+            aFrontFace[nRow] = aFaceColors[2];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aRightFace[nRow] = aCubeColors[3];
+            aRightFace[nRow] = aFaceColors[3];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aLeftFace[nRow] = aCubeColors[4];
+            aLeftFace[nRow] = aFaceColors[4];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aBackFace[nRow] = aCubeColors[5];
+            aBackFace[nRow] = aFaceColors[5];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aDownFace[nRow] = aCubeColors[6];
+            aDownFace[nRow] = aFaceColors[6];
         }
 
         SetCubeColorsFromArrays();
@@ -2770,12 +2105,12 @@ public partial class MainPage : ContentPage
     // Store the cube colors from the polygons in the arrays.
     private void SetCubeColorsInArrays()
     {
-        aCubeColors[1] = GetHexColorPolygon(plgCubeColor1);
-        aCubeColors[2] = GetHexColorPolygon(plgCubeColor2);
-        aCubeColors[3] = GetHexColorPolygon(plgCubeColor3);
-        aCubeColors[4] = GetHexColorPolygon(plgCubeColor4);
-        aCubeColors[5] = GetHexColorPolygon(plgCubeColor5);
-        aCubeColors[6] = GetHexColorPolygon(plgCubeColor6);
+        aFaceColors[1] = GetHexColorPolygon(plgCubeColor1);
+        aFaceColors[2] = GetHexColorPolygon(plgCubeColor2);
+        aFaceColors[3] = GetHexColorPolygon(plgCubeColor3);
+        aFaceColors[4] = GetHexColorPolygon(plgCubeColor4);
+        aFaceColors[5] = GetHexColorPolygon(plgCubeColor5);
+        aFaceColors[6] = GetHexColorPolygon(plgCubeColor6);
 
         aUpFace[1] = GetHexColorPolygon(plgUp1);
         aUpFace[2] = GetHexColorPolygon(plgUp2);
@@ -2836,24 +2171,85 @@ public partial class MainPage : ContentPage
         aDownFace[7] = GetHexColorPolygon(plgDown7);
         aDownFace[8] = GetHexColorPolygon(plgDown8);
         aDownFace[9] = GetHexColorPolygon(plgDown9);
+
+        //---------------------------------------
+        //aPieces[36] = GetHexColorPolygon(plgUp1);
+        //aPieces[37] = GetHexColorPolygon(plgUp2);
+        //aPieces[38] = GetHexColorPolygon(plgUp3);
+        //aPieces[39] = GetHexColorPolygon(plgUp4);
+        //aPieces[40] = GetHexColorPolygon(plgUp5);
+        //aPieces[41] = GetHexColorPolygon(plgUp6);
+        //aPieces[42] = GetHexColorPolygon(plgUp7);
+        //aPieces[43] = GetHexColorPolygon(plgUp8);
+        //aPieces[44] = GetHexColorPolygon(plgUp9);
+
+        //aPieces[0] = GetHexColorPolygon(plgFront1);
+        //aPieces[1] = GetHexColorPolygon(plgFront2);
+        //aPieces[2] = GetHexColorPolygon(plgFront3);
+        //aPieces[3] = GetHexColorPolygon(plgFront4);
+        //aPieces[4] = GetHexColorPolygon(plgFront5);
+        //aPieces[5] = GetHexColorPolygon(plgFront6);
+        //aPieces[6] = GetHexColorPolygon(plgFront7);
+        //aPieces[7] = GetHexColorPolygon(plgFront8);
+        //aPieces[8] = GetHexColorPolygon(plgFront9);
+
+        //aPieces[9] = GetHexColorPolygon(plgRight1);
+        //aPieces[10] = GetHexColorPolygon(plgRight2);
+        //aPieces[11] = GetHexColorPolygon(plgRight3);
+        //aPieces[12] = GetHexColorPolygon(plgRight4);
+        //aPieces[13] = GetHexColorPolygon(plgRight5);
+        //aPieces[14] = GetHexColorPolygon(plgRight6);
+        //aPieces[15] = GetHexColorPolygon(plgRight7);
+        //aPieces[16] = GetHexColorPolygon(plgRight8);
+        //aPieces[17] = GetHexColorPolygon(plgRight9);
+
+        //aPieces[27] = GetHexColorPolygon(plgLeft1);
+        //aPieces[28] = GetHexColorPolygon(plgLeft2);
+        //aPieces[29] = GetHexColorPolygon(plgLeft3);
+        //aPieces[30] = GetHexColorPolygon(plgLeft4);
+        //aPieces[31] = GetHexColorPolygon(plgLeft5);
+        //aPieces[32] = GetHexColorPolygon(plgLeft6);
+        //aPieces[33] = GetHexColorPolygon(plgLeft7);
+        //aPieces[34] = GetHexColorPolygon(plgLeft8);
+        //aPieces[35] = GetHexColorPolygon(plgLeft9);
+
+        //aPieces[18] = GetHexColorPolygon(plgBack1);
+        //aPieces[19] = GetHexColorPolygon(plgBack2);
+        //aPieces[20] = GetHexColorPolygon(plgBack3);
+        //aPieces[21] = GetHexColorPolygon(plgBack4);
+        //aPieces[22] = GetHexColorPolygon(plgBack5);
+        //aPieces[23] = GetHexColorPolygon(plgBack6);
+        //aPieces[24] = GetHexColorPolygon(plgBack7);
+        //aPieces[25] = GetHexColorPolygon(plgBack8);
+        //aPieces[26] = GetHexColorPolygon(plgBack9);
+
+        //aPieces[45] = GetHexColorPolygon(plgDown1);
+        //aPieces[46] = GetHexColorPolygon(plgDown2);
+        //aPieces[47] = GetHexColorPolygon(plgDown3);
+        //aPieces[48] = GetHexColorPolygon(plgDown4);
+        //aPieces[49] = GetHexColorPolygon(plgDown5);
+        //aPieces[50] = GetHexColorPolygon(plgDown6);
+        //aPieces[51] = GetHexColorPolygon(plgDown7);
+        //aPieces[52] = GetHexColorPolygon(plgDown8);
+        //aPieces[53] = GetHexColorPolygon(plgDown9);
     }
 
     // Set the cube colors from the arrays in the polygons.
     private void SetCubeColorsFromArrays()
     {
-        Globals.cCubeColor1 = aCubeColors[1];
-        Globals.cCubeColor2 = aCubeColors[2];
-        Globals.cCubeColor3 = aCubeColors[3];
-        Globals.cCubeColor4 = aCubeColors[4];
-        Globals.cCubeColor5 = aCubeColors[5];
-        Globals.cCubeColor6 = aCubeColors[6];
+        Globals.cCubeColor1 = aFaceColors[1];
+        Globals.cCubeColor2 = aFaceColors[2];
+        Globals.cCubeColor3 = aFaceColors[3];
+        Globals.cCubeColor4 = aFaceColors[4];
+        Globals.cCubeColor5 = aFaceColors[5];
+        Globals.cCubeColor6 = aFaceColors[6];
 
-        plgCubeColor1.Fill = Color.FromArgb(aCubeColors[1]);
-        plgCubeColor2.Fill = Color.FromArgb(aCubeColors[2]);
-        plgCubeColor3.Fill = Color.FromArgb(aCubeColors[3]);
-        plgCubeColor4.Fill = Color.FromArgb(aCubeColors[4]);
-        plgCubeColor5.Fill = Color.FromArgb(aCubeColors[5]);
-        plgCubeColor6.Fill = Color.FromArgb(aCubeColors[6]);
+        plgCubeColor1.Fill = Color.FromArgb(aFaceColors[1]);
+        plgCubeColor2.Fill = Color.FromArgb(aFaceColors[2]);
+        plgCubeColor3.Fill = Color.FromArgb(aFaceColors[3]);
+        plgCubeColor4.Fill = Color.FromArgb(aFaceColors[4]);
+        plgCubeColor5.Fill = Color.FromArgb(aFaceColors[5]);
+        plgCubeColor6.Fill = Color.FromArgb(aFaceColors[6]);
 
         plgUp1.Fill = Color.FromArgb(aUpFace[1]);
         plgUp2.Fill = Color.FromArgb(aUpFace[2]);
@@ -2914,6 +2310,67 @@ public partial class MainPage : ContentPage
         plgDown7.Fill = Color.FromArgb(aDownFace[7]);
         plgDown8.Fill = Color.FromArgb(aDownFace[8]);
         plgDown9.Fill = Color.FromArgb(aDownFace[9]);
+
+        //----------------------------------------------------
+        //plgUp1.Fill = Color.FromArgb(aPieces[36]);
+        //plgUp2.Fill = Color.FromArgb(aPieces[37]);
+        //plgUp3.Fill = Color.FromArgb(aPieces[38]);
+        //plgUp4.Fill = Color.FromArgb(aPieces[39]);
+        //plgUp5.Fill = Color.FromArgb(aPieces[40]);
+        //plgUp6.Fill = Color.FromArgb(aPieces[41]);
+        //plgUp7.Fill = Color.FromArgb(aPieces[42]);
+        //plgUp8.Fill = Color.FromArgb(aPieces[43]);
+        //plgUp9.Fill = Color.FromArgb(aPieces[44]);
+
+        //plgFront1.Fill = Color.FromArgb(aPieces[0]);
+        //plgFront2.Fill = Color.FromArgb(aPieces[1]);
+        //plgFront3.Fill = Color.FromArgb(aPieces[2]);
+        //plgFront4.Fill = Color.FromArgb(aPieces[3]);
+        //plgFront5.Fill = Color.FromArgb(aPieces[4]);
+        //plgFront6.Fill = Color.FromArgb(aPieces[5]);
+        //plgFront7.Fill = Color.FromArgb(aPieces[6]);
+        //plgFront8.Fill = Color.FromArgb(aPieces[7]);
+        //plgFront9.Fill = Color.FromArgb(aPieces[8]);
+
+        //plgRight1.Fill = Color.FromArgb(aPieces[9]);
+        //plgRight2.Fill = Color.FromArgb(aPieces[10]);
+        //plgRight3.Fill = Color.FromArgb(aPieces[11]);
+        //plgRight4.Fill = Color.FromArgb(aPieces[12]);
+        //plgRight5.Fill = Color.FromArgb(aPieces[13]);
+        //plgRight6.Fill = Color.FromArgb(aPieces[14]);
+        //plgRight7.Fill = Color.FromArgb(aPieces[15]);
+        //plgRight8.Fill = Color.FromArgb(aPieces[16]);
+        //plgRight9.Fill = Color.FromArgb(aPieces[17]);
+
+        //plgLeft1.Fill = Color.FromArgb(aPieces[27]);
+        //plgLeft2.Fill = Color.FromArgb(aPieces[28]);
+        //plgLeft3.Fill = Color.FromArgb(aPieces[29]);
+        //plgLeft4.Fill = Color.FromArgb(aPieces[30]);
+        //plgLeft5.Fill = Color.FromArgb(aPieces[31]);
+        //plgLeft6.Fill = Color.FromArgb(aPieces[32]);
+        //plgLeft7.Fill = Color.FromArgb(aPieces[33]);
+        //plgLeft8.Fill = Color.FromArgb(aPieces[34]);
+        //plgLeft9.Fill = Color.FromArgb(aPieces[35]);
+
+        //plgBack1.Fill = Color.FromArgb(aPieces[18]);
+        //plgBack2.Fill = Color.FromArgb(aPieces[19]);
+        //plgBack3.Fill = Color.FromArgb(aPieces[20]);
+        //plgBack4.Fill = Color.FromArgb(aPieces[21]);
+        //plgBack5.Fill = Color.FromArgb(aPieces[22]);
+        //plgBack6.Fill = Color.FromArgb(aPieces[23]);
+        //plgBack7.Fill = Color.FromArgb(aPieces[24]);
+        //plgBack8.Fill = Color.FromArgb(aPieces[25]);
+        //plgBack9.Fill = Color.FromArgb(aPieces[26]);
+
+        //plgDown1.Fill = Color.FromArgb(aPieces[45]);
+        //plgDown2.Fill = Color.FromArgb(aPieces[46]);
+        //plgDown3.Fill = Color.FromArgb(aPieces[47]);
+        //plgDown4.Fill = Color.FromArgb(aPieces[48]);
+        //plgDown5.Fill = Color.FromArgb(aPieces[49]);
+        //plgDown6.Fill = Color.FromArgb(aPieces[50]);
+        //plgDown7.Fill = Color.FromArgb(aPieces[51]);
+        //plgDown8.Fill = Color.FromArgb(aPieces[52]);
+        //plgDown9.Fill = Color.FromArgb(aPieces[53]);
     }
 
     // Get the hex color code from a polygon fill property.
@@ -3243,207 +2700,3 @@ public partial class MainPage : ContentPage
         await MakeTurnAsync("TurnCubeUpToLeft");
     }
 }
-
-/*
-Numbering of cube surfaces.
-
-    Outside view              Up               Inside view             Back
-                     ______ ______ ______                      ______ ______ ______
-                   /      /      /      /|                   /|      !      !      |
-                 /  To1 /  To2 /  To3 /  |                 /  |  Ba3 !  Ba2 !  Ba1 |
-               /______/______/______/ Ri3|               / Le1|______!______!______|
-             /      /      /      / !    /       Left  / !    |      !      !      |
-           /  To4 /  To5 /  To6 /   !  / |           /   !  / |  Ba6 !  Ba5 !  Ba4 |
-         /______/______/______/ Ri2 !/Ri6|         /  Le2!/   |______!______!______|
-       /      /      /      / !    /!    /       /  !   /! Le4|      !      !      |
-     /  To7 /  To8 /  To9 /   !  /  !  / |     /    ! /  !  / |  Ba9 !  Ba8 !  Ba7 |
-   /______/______/______/ Ri1 !/Ri5 !/Ri9|    | Le3 ! Le5!/   |______!______!______|
-   |      !      !      |    /!    /!    /    |   / !   /! Le7/      /      /      /
-   |  Fr1 !  Fr2 !  Fr3 |  /  !  /  !  /      | /   ! /  !  /  Bo7 /  Bo8 /  Bo9 /
-   |______!______!______|/Ri4 !/Ri8 !/        | Le6 ! Le8!/______/______/______/
-   |      !      !      |    /!    /          |   / !   /      /      /      /
-   |  Fr4 !  Fr5 !  Fr6 |  /  !  /            | /   ! / Bo4  / Bo5  /  Bo6 /
-   |______!______!______|/Ri7 !/ Right        | Le9 !______/______/______/
-   |      !      !      |    /                |   /      /      /      /
-   |  Fr7 !  Fr8 !  Fr9 |  /                  | / Bo1  /  Bo2 / Bo3  /
-   |______!______!______|/                    |______/______/______/
-           Front                                       Down
-
- 
-                        _________________________
-                        |       |       |       |
-                        |  Ba9  |  Ba8  |  Ba7  |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        |  Ba6  |  Ba5  |  Ba4  |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        |  Ba3  |  Ba2  |  Ba1  |
-________________________|_______|_______|_______|________________________________________________
-|       |       |       |       |       |       |       |       |       |       |       |       |
-|  Le7  |  Le4  |  Le1  |  Up1  |  Up2  |  Up3  |  Ri3  |  Ri6  |  Ri9  |  Do9  |  Do8  |  Do7  |
-|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-|       |       |       |       |       |       |       |       |       |       |       |       |
-|  Le8  |  Le5  |  Le2  |  Up4  |  Up5  |  Up6  |  Ri2  |  Ri5  |  Ri8  |  Do6  |  Do5  |  Do4  |
-|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-|       |       |       |       |       |       |       |       |       |       |       |       |
-|  Le9  |  Le6  |  Le3  |  Up7  |  Up8  |  Up9  |  Ri1  |  Ri4  |  Ri7  |  Do3  |  Do2  |  Do1  |
-|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-                        |       |       |       |
-                        |  Fr1  |  Fr2  |  Fr3  |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        |  Fr4  |  Fr5  |  Fr6  |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        |  Fr7  |  Fr8  |  Fr9  |
-                        |_______|_______|_______|
-
-
-REM ** SOLCUBE ** 1981
-----------------------
-    Outside view              Up              Inside view              Back
-                     ______ ______ ______                      ______ ______ ______
-                   /      /      /      /|                   /|      !      !      |
-                 /  36  /  37  /  38  /  |                 /  |  20  !  19  !  18  |
-               /______/______/______/ 11 |               / 27 |______!______!______|
-             /      /      /      / !    /       Left  / !    |      !      !      |
-           /  39  /  40  /  41  /   !  / |           /   !  / |  23  !  22  !  21  |
-         /______/______/______/  10 !/ 14|         /  28 !/   |______!______!______|
-       /      /      /      / !    /!    /       /  !   /! 30 |      !      !      |
-     /  42  /  43  /  44  /   !  /  !  / |     /    ! /  !  / |  26  !  25  !  24  |
-   /______/______/______/  9  !/ 13 !/17 |    | 29  ! 31 !/   |______!______!______|
-   |      !      !      |    /!    /!    /    |   / !   /!33 /      /      /      /
-   |  0   !  1   !  2   |  /  !  /  !  /      | /   ! /  !  /  51  /  52 /  53  /
-   |______!______!______|/ 12 !/ 16 !/        | 32  ! 34 !/______/______/______/
-   |      !      !      |    /!    /          |   / !   /      /      /      /
-   |  3   !  4   !  5   |  /  !  /            | /   ! / 48   / 49   /  50  /
-   |______!______!______|/ 15 !/ Right        | 35  !______/______/______/
-   |      !      !      |    /                |   /      /      /      /
-   |  6   !  7   !  8   |  /                  | /  45  /  46  / 47   /
-   |______!______!______|/                    |______/______/______/
-           Front                                       Down
-
-
-
-imgbtnTurnFrontFaceToRight  imgbtnTurnUpHorMiddleToRightFace  imgbtnTurnBackFaceToLeft
-    imgbtnTurnLeftFaceToRight  imgbtnTurnUpVerMiddleToFrontFace  imgbtnTurnRightFaceToLeft
-
-imgbtnTurnUpFaceToLeft                                  imgbtnTurnUpFaceToRight
-imgbtnTurnFrontHorMiddleToRightFace                     imgbtnTurnFrontHorMiddleToLeftFace
-imgbtnTurnDownFaceToRight                               imgbtnTurnDownFaceToLeft
-
-imgbtnTurnLeftFaceToLeft  imgbtnTurnUpVerMiddleToBackFace  imgbtnTurnRightFaceToRight
-    imgbtnTurnFrontFaceToLeft  imgbtnTurnUpHorMiddleToLeftFace  imgbtnTurnBackFaceToRight
-
-
-REM ** SOLCUBE ** ARRAY 'D(53)' - CUBE COLORS - From BASIC-80 to C#. 
--------------------------------------------------------------------------------------
-|     Front   |     Right   |     Back    |     Left    |     Up      |     Down    |
--------------------------------------------------------------------------------------
-|  0  Front 1 |  9  Right 1 | 18  Back 1  | 27  Left 1  | 36  Up 1    | 45  Down 1  |
-|  1  Front 2 | 10  Right 2 | 19  Back 2  | 28  Left 2  | 37  Up 2    | 46  Down 2  |
-|  2  Front 3 | 11  Right 3 | 20  Back 3  | 29  Left 3  | 38  Up 3    | 47  Down 3  |
-|  3  Front 4 | 12  Right 4 | 21  Back 4  | 30  Left 4  | 39  Up 4    | 48  Down 4  |
-|  4  Front 5 | 13  Right 5 | 22  Back 5  | 31  Left 5  | 40  Up 5    | 49  Down 5  |
-|  5  Front 6 | 14  Right 6 | 23  Back 6  | 32  Left 6  | 41  Up 6    | 50  Down 6  |
-|  6  Front 7 | 15  Right 7 | 24  Back 7  | 33  Left 7  | 42  Up 7    | 51  Down 7  |
-|  7  Front 8 | 16  Right 8 | 25  Back 8  | 34  Left 8  | 43  Up 8    | 52  Down 8  |
-|  8  Front 9 | 17  Right 9 | 26  Back 9  | 35  Left 9  | 44  Up 9    | 53  Down 9  |
--------------------------------------------------------------------------------------
-
-
-REM ** SOLCUBE ** ARRAY 'A$(217)' - INSTRUCTIONS - From Basic-80 to C#.
-
-Boven -> Up         Achter -> Back      M1  Down to Front      M2  Up to Right
-Rechts -> Right     Links -> Left      -M1  Up to Front       -M2  Down to Right
-Voor -> Front       Onder -> Down
----------------------------------------------------------------------------------
-|   0   V   Front+  |  54   L   Left+   | 108   R   Right+  | 163   -B  Up-     |
-|   1   V   Front+  |  55   -B  Up-     | 109   V   Front+  | 164   O   Down+   |
-|   2   A   Back+   |  56   -V  Front-  | 110   B   Up+     | 165   A   Back+   |
-|   3   A   Back+   |  57   A   Back+   | 111   -O  Down-   | 166   -B  Up-     |
-|   4   M2          |  58   L   Left+   | 112   L   Left+   | 167   L   Left+   |
-|   5   M2          |  59   L   Left+	| 113   L   Left+   | 168   -B  Up-     |
-|   6   B   Up+     |  60   V   Front+  | 114   B   Up+     | 169   O   Down+   |
-|   7   M   Middle+ |  61   -A  Back-   | 115   B   Up+     | 170   -V  Front-  |
-|   8   -O  Down-   |  62   -B  Up-     | 116   O   Down+   | 171   -B  Up-     |
-|   9   -L  Left-   |  63   L   Left+   | 117   O   Down+   | 172   -A  Back-   |
-|  10   B   Up+     |  64   L   Left+   | 118   R   Right+  | 173   B   Up+     |
-|  11   R   Right+  |  65   R   Right+  | 119   -R  Right-  | 174   -O  Down-   |
-|  12   -B  Up-     |  66   R   Right+  | 120   O   Down+   | 175   R   Right+  |
-|  13   L   Left+   |  67   L   Left+   | 121   O   Down+   | 176   -B  Up-     |
-|  14   B   Up+     |  68   L   Left+   | 122   B   Up+     | 177   -B  Up-     |
-|  15   -R  Right-  |  69   O   Down+   | 123   B   Up+     | 178   L   Left+   |
-|  16   -B  Up-     |  70   R   Right+  | 124   L   Left+   | 179   -B  Up-     |
-|  17   B   Up+     |  71   R   Right+  | 125   L   Left+   | 180   O   Down+   |
-|  18   R   Right+  |  72   L   Left+   | 126   O   Down+   | 181   -V  Front-  |
-|  19   -B  Up-     |  73   L   Left+   | 127   -B  Up-     | 182   -R  Right-  |
-|  20   -L  Left-   |  74   B   Up+     | 128   -V  Front-  | 183   -B  Up-     |
-|  21   B   Up+     |  75   B   Up+     | 129   -O  Down-   | 184   -B  Up-     |
-|  22   -R  Right-  |  76   R   Right+  | 130   -R  Right-  | 185   O   Down+   |
-|  23   -B  Up-     |  77   R   Right+  | 131   O   Down+   | 186   O   Down+   |
-|  24   L   Left+   |  78   L   Left+   | 132   R   Right+  | 187   L   Left+   |
-|  25   V   Front+  |  79   L   Left+   | 133   O   Down+   | 188   -B  Up-     |
-|  26   -B  Up-     |  80   O   Down+   | 134   V   Front+  | 189   V   Front+  |
-|  27   -A  Back-   |  81   R   Right+  | 135   -O  Down-   | 190   -B  Up-     |
-|  28   B   Up+     |  82   R   Right+  | 136   -V  Front-  | 191   O   Down+   |
-|  29   -V  Front-  |  83   L   Left+   | 137   O   Down    | 192   -R  Right-  |
-|  30   -B  Up-     |  84   L   Left+   | 138   L   Left+   | 193   -R  Right-  |
-|  31   A   Back+   |  85   R   Right+  | 139   -O  Down-   | 194   -B  Up-     |
-|  32   B   Up+     |  86   A   Back+   | 140   -L  Left-   | 195   O   Down+   |
-|  33   B   Up+     |  87   B   Up+     | 141   -O  Down-   | 196   A   Back+   |
-|  34   B   Up+     |  88   -A  Back-   | 142   -V  Front-  | 197   B   Up+     |
-|  35   V   Front+  |  89   -B  Up-     | 143   O   Down+   | 198   V   Front+  |
-|  36   B   Up+     |  90   R   Right+  | 144   V   Front+  | 199   -B  Up-     |
-|  37   R   Right+  |  91   R   Right+  | 145   V   Front+  | 200   -O  Down-   |
-|  38   -B  Up-     |  92   -V  Front-  | 146   O   Down+   | 201   -R  Right-  |
-|  39   -R  Right-  |  93   -B  Up-     | 147   -V  Front-  | 202   -B  Up-     |
-|  40   -V  Front-  |  94   V   Front+  | 148   -R  Right-  | 203   -B  Up-     |
-|  41   L   Left+   |  95   B   Up+     | 149   -O  Down-   | 204   -L  Left-   |
-|  42   L   Left+   |  96   R   Right+  | 150   R   Right+  | 205   B   Up+     |
-|  43   B   Up+     |  97   -R  Right-  | 151   -R  Right-  | 206   -O  Down-   |
-|  44   -V  Front-  |  98   O   Down+   | 152   O   Down+   | 207   A   Back+   |
-|  45   A   Back+   |  99   R   Right+  | 153   R   Right+  | 208   -R  Right-  |
-|  46   L   Left+   | 100   V   Front+  | 154   O   Down+   | 209   -B  Up-     |
-|  47   L   Left+   | 101   O   Down+   | 155   O   Down+   | 210   O   Down+   |
-|  48   V   Front+  | 102   -V  Front-  | 156   -R  Right-  | 211   A   Back+   |
-|  49   -A  Back-   | 103   V   Front+  | 157   -O  Down-   | 212   B   Up+     |
-|  50   B   Up+     | 104   -O  Down-   | 158   R   Right+  | 213   B   Up+     |
-|  51   L   Left+   | 105   -V  Front-  | 159   -B  Up-     | 214   M   Middle+ |
-|  52   L   Left+   | 106   -R  Right-  | 160   -M  Middle- | 215   M   Middle+ |
-|  53   L   Left+   | 107   -O  Down-   | 161   O   Down+   | 216   -O  Down-   |
-|                   |                   | 162   -R  Right-  | 217   -O  Down-   |
----------------------------------------------------------------------------------
-
-
-                        _________________________
-                        |       |       |       |
-                        | Y0=40 | Y1=41 | Y2=42 |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        | Y7=47 | Yellow| Y3=43 |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        | Y6=46 | Y5=45 | Y4=44 |
-________________________|_______|_______|_______|________________________________________________
-|       |       |       |       |       |       |       |       |       |       |       |       |
-| B0=8  | B1=9  | B2=10 | R0=16 | R1=17 | R2=18 | G0=24 | G1=25 | G2=26 | O0=32 | O1=33 | O2=34 |
-|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-|       |       |       |       |       |       |       |       |       |       |       |       |
-| B7=15 | Blue  | B3=11 | R7=23 | Red   | R3=19 | G7=31 | Green | G3=27 | O7=39 | Orange| O3=35 |
-|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-|       |       |       |       |       |       |       |       |       |       |       |       |
-| B6=14 | B5=13 | B4=12 | R6=22 | R5=21 | R4=20 | G6=30 | G5=29 | G4=28 | O6=38 | O5=37 | O4=36 |
-|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-                        |       |       |       |
-                        | W0=0  | W1=1  | W2=2  |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        | W7=7  | White | W3=3  |
-                        |_______|_______|_______|
-                        |       |       |       |
-                        | W6=6  | W5=5  | W4=4  |
-                        |_______|_______|_______|
-
- */

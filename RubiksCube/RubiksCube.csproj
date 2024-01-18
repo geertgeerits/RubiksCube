@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="CubeNumbering.txt" />
 	  <None Remove="Resources\AppIcon\cube_appicon_128p.png" />
 	  <None Remove="Resources\Images\arrow_left.png" />
 	  <None Remove="Resources\Images\arrow_right.png" />
