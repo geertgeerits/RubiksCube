@@ -22,16 +22,16 @@ public partial class MainPage : ContentPage
     public static bool bColorDrop;
     public static bool bSolvingCube;
     public static bool bArrowButtonPressed;
-    public static string[] aFaceColors = new string[7];
-    public static string[] aUpFace = new string[10];
-    public static string[] aFrontFace = new string[10];
-    public static string[] aRightFace = new string[10];
-    public static string[] aLeftFace = new string[10];
-    public static string[] aBackFace = new string[10];
-    public static string[] aDownFace = new string[10];
-    public static string[] aPieces = new string[54];
-    public static string[] aPiecesTemp = new string[54];
-    //public static string cCubeTurn;
+    //public static string[] aFaceColors = new string[7];
+    //public static string[] aUpFace = new string[10];
+    //public static string[] aFrontFace = new string[10];
+    //public static string[] aRightFace = new string[10];
+    //public static string[] aLeftFace = new string[10];
+    //public static string[] aBackFace = new string[10];
+    //public static string[] aDownFace = new string[10];
+    //public static string[] aPieces = new string[54];
+    //public static string[] aPiecesTemp = new string[54];
+    //public static string[] aCubeTurns = new string[1000];
 
     public MainPage()
 	{
@@ -96,12 +96,12 @@ public partial class MainPage : ContentPage
         InitializeTextToSpeech(cCultureName);
 
         // Initialize the cube colors.
-        aFaceColors[1] = Globals.cCubeColor1;
-        aFaceColors[2] = Globals.cCubeColor2;
-        aFaceColors[3] = Globals.cCubeColor3;
-        aFaceColors[4] = Globals.cCubeColor4;
-        aFaceColors[5] = Globals.cCubeColor5;
-        aFaceColors[6] = Globals.cCubeColor6;
+        Globals.aFaceColors[1] = Globals.cCubeColor1;
+        Globals.aFaceColors[2] = Globals.cCubeColor2;
+        Globals.aFaceColors[3] = Globals.cCubeColor3;
+        Globals.aFaceColors[4] = Globals.cCubeColor4;
+        Globals.aFaceColors[5] = Globals.cCubeColor5;
+        Globals.aFaceColors[6] = Globals.cCubeColor6;
 
         // Reset the colors of the cube.
         ResetCube();
@@ -212,8 +212,24 @@ public partial class MainPage : ContentPage
         // Solve the cube.
         //await SolveTheCubeAsyncBASIC();
         await SolveTheCubeAsyncNEW();
+
+        //Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
+
         //ClassSolveCube classSolveCube = new();
-        //await classSolveCube.SolveTheCubeAsync();
+        //classSolveCube.SolveTheCube();
+        ////await DisplayAlert("aCubeTurns[0]", Globals.aCubeTurns[0], "OK");
+        ////await DisplayAlert("aCubeTurns.Length", Convert.ToString(Globals.aCubeTurns.Length), "OK");
+
+        //// Make the turns of the cube.
+        //for (int nItem = 0; nItem < 1000; nItem++)
+        //{
+        //    if (Globals.aCubeTurns[nItem] == null)
+        //    {
+        //        break;
+        //    }
+        //    //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[nItem], "OK");
+        //    await MakeTurnAsync(Globals.aCubeTurns[nItem]);
+        //}
 
         // Settings.
         lblExplainTurnCube1.Text = "";
@@ -248,7 +264,7 @@ public partial class MainPage : ContentPage
     // !!!!!!!!!!!!! Does not get out of the loop between line 510 and 695 !!!!!!!!!!!!!
 
     Line510:
-        cB = aUpFace[5];
+        cB = Globals.aUpFace[5];
         V = 0;
         X = 0;
         Y = 0;
@@ -259,16 +275,16 @@ public partial class MainPage : ContentPage
             await DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.CubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
             return;
         }
-        if (cB == aUpFace[8] && aFrontFace[1] == aFrontFace[2])
+        if (cB == Globals.aUpFace[8] && Globals.aFrontFace[1] == Globals.aFrontFace[2])
             V = 1;
     // 520
-        if (cB == aUpFace[6] && aRightFace[1] == aRightFace[2])
+        if (cB == Globals.aUpFace[6] && Globals.aRightFace[1] == Globals.aRightFace[2])
             X = 1;
     // 530
-        if (cB == aUpFace[2] && aBackFace[1] == aBackFace[2])
+        if (cB == Globals.aUpFace[2] && Globals.aBackFace[1] == Globals.aBackFace[2])
             Y = 1;
     // 540
-        if (cB == aUpFace[4] && aLeftFace[1] == aLeftFace[2])
+        if (cB == Globals.aUpFace[4] && Globals.aLeftFace[1] == Globals.aLeftFace[2])
             Z = 1;
     // 550
         if (V == 1 && X == 1 && Y == 1 && Z == 1)
@@ -278,16 +294,16 @@ public partial class MainPage : ContentPage
         P = 0;
         Q = 0;
 
-        if (cB == aFrontFace[6] || cB == aRightFace[2] || cB == aRightFace[4] || cB == aRightFace[6])
+        if (cB == Globals.aFrontFace[6] || cB == Globals.aRightFace[2] || cB == Globals.aRightFace[4] || cB == Globals.aRightFace[6])
             O = 1;
     // 570
-        if (cB == aBackFace[4] || cB == aRightFace[8] || cB == aDownFace[6])
+        if (cB == Globals.aBackFace[4] || cB == Globals.aRightFace[8] || cB == Globals.aDownFace[6])
             P = 1;
     // 580
         cX = X.ToString();
-        //if (cB == aUpFace[6] && cX != aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+        //if (cB == Globals.aUpFace[6] && cX != Globals.aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
         //    Q = 1;
-        if (cB == aUpFace[6])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+        if (cB == Globals.aUpFace[6])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             Q = 1;
         // 590
         if (O == 1 || P == 1 || Q == 1)
@@ -315,8 +331,8 @@ public partial class MainPage : ContentPage
         await MakeTurnAsync("TurnUp+");
     // 650
     Line650:
-        cX = aRightFace[1];
-        if (cB == aRightFace[2] && cX == aUpFace[6])
+        cX = Globals.aRightFace[1];
+        if (cB == Globals.aRightFace[2] && cX == Globals.aUpFace[6])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnUp-");
@@ -330,7 +346,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 655
-        if (cB == aFrontFace[6] && cX == aRightFace[4])
+        if (cB == Globals.aFrontFace[6] && cX == Globals.aRightFace[4])
         {
             await MakeTurnAsync("TurnUp-");
             await MakeTurnAsync("TurnBack-");
@@ -340,7 +356,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 660
-        if (cB == aRightFace[4] && cX == aFrontFace[6])
+        if (cB == Globals.aRightFace[4] && cX == Globals.aFrontFace[6])
         {
             await MakeTurnAsync("TurnUp-");
             await MakeTurnAsync("TurnUp-");
@@ -351,7 +367,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 665
-        if (cB == aDownFace[6] && cX == aRightFace[8])
+        if (cB == Globals.aDownFace[6] && cX == Globals.aRightFace[8])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnUp-");
@@ -367,7 +383,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 670
-        if (cB == aRightFace[8] && cX == aDownFace[6])
+        if (cB == Globals.aRightFace[8] && cX == Globals.aDownFace[6])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnUp-");
@@ -376,7 +392,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 675
-        if (cB == aBackFace[4] && cX == aRightFace[6])
+        if (cB == Globals.aBackFace[4] && cX == Globals.aRightFace[6])
         {
             await MakeTurnAsync("TurnUp+");
             await MakeTurnAsync("TurnFront+");
@@ -386,7 +402,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 680
-        if (cB == aRightFace[6] && cX == aBackFace[4])
+        if (cB == Globals.aRightFace[6] && cX == Globals.aBackFace[4])
         {
             await MakeTurnAsync("TurnUp-");
             await MakeTurnAsync("TurnUp-");
@@ -397,7 +413,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 685
-        if (cB == aUpFace[6] && cX != aRightFace[2])
+        if (cB == Globals.aUpFace[6] && cX != Globals.aRightFace[2])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnUp-");
@@ -406,7 +422,7 @@ public partial class MainPage : ContentPage
             goto Line510;
         }
         // 690
-        if (cB == aRightFace[2] && cX != aUpFace[6])
+        if (cB == Globals.aRightFace[2] && cX != Globals.aUpFace[6])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnUp-");
@@ -418,29 +434,29 @@ public partial class MainPage : ContentPage
     
         // Solve the corners of the top layer - Chapter 6, page 16.
     Line710:
-        cB = aUpFace[5];
+        cB = Globals.aUpFace[5];
         O = 0;
         P = 0;
         Q = 0;
         R = 0;
         // 715
-        if (cB == aUpFace[1] && cB == aUpFace[3] && cB == aUpFace[7] && cB == aUpFace[9])
+        if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
             O = 1;
         // 720
-        if (aFrontFace[1] == aFrontFace[3])
+        if (Globals.aFrontFace[1] == Globals.aFrontFace[3])
             P = 1;
         // 725
-        if (aRightFace[1] == aRightFace[3])
+        if (Globals.aRightFace[1] == Globals.aRightFace[3])
             Q = 1;
         // 730
-        if (aBackFace[1] == aBackFace[3])
+        if (Globals.aBackFace[1] == Globals.aBackFace[3])
             R = 1;
         // 735
         if (O == 1 && P == 1 && Q == 1 && R == 1)
             goto Line1010;
         // 740
         O = 0;
-        if (cB == aUpFace[3] && cB == aUpFace[7] && cB == aUpFace[9])
+        if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
             O = 1;
         // 745
         if (O == 1 && P == 1 && Q == 1)
@@ -450,7 +466,7 @@ public partial class MainPage : ContentPage
         }
         // 750
         O = 0;
-        if (cB == aUpFace[3] && cB == aUpFace[9])
+        if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[9])
             O = 1;
         // 755
         if (O == 1 && Q == 1)
@@ -460,7 +476,7 @@ public partial class MainPage : ContentPage
         }
         // 760
         O = 0;
-        if (cB == aUpFace[7] && cB == aUpFace[9])
+        if (cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
             O = 1;
         // 765
         if (O == 1 && P == 1)
@@ -470,7 +486,7 @@ public partial class MainPage : ContentPage
         }
         // 770
         O = 0;
-        if (cB == aUpFace[1] && cB == aUpFace[3])
+        if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3])
             O = 1;
         // 775
         if (O == 1 && R == 1)
@@ -479,43 +495,43 @@ public partial class MainPage : ContentPage
             goto Line800;
         }
         // 780
-        if (cB != aUpFace[9])
+        if (cB != Globals.aUpFace[9])
             goto Line800;
         // 785
-        if (cB != aUpFace[3])
+        if (cB != Globals.aUpFace[3])
         {
             await MakeTurnAsync("TurnUp+");
             goto Line800;
         }
         // 790
-        if (cB != aUpFace[7])
+        if (cB != Globals.aUpFace[7])
         {
             await MakeTurnAsync("TurnUp-");
             goto Line800;
         }
         // 795
-        if (cB != aUpFace[1])
+        if (cB != Globals.aUpFace[1])
         {
             await MakeTurnAsync("TurnUp++");
         }
     // 800
     Line800:
-        if (cB == aFrontFace[9] || cB == aRightFace[7] || cB == aDownFace[3])
+        if (cB == Globals.aFrontFace[9] || cB == Globals.aRightFace[7] || cB == Globals.aDownFace[3])
             goto Line880;
         // 805
-        if (cB == aRightFace[9] || cB == aBackFace[7] || cB == aDownFace[9])
+        if (cB == Globals.aRightFace[9] || cB == Globals.aBackFace[7] || cB == Globals.aDownFace[9])
         {
             await MakeTurnAsync("TurnDown-");
             goto Line880;
         }
         // 810
-        if (cB == aFrontFace[7] || cB == aLeftFace[9] || cB == aDownFace[1])
+        if (cB == Globals.aFrontFace[7] || cB == Globals.aLeftFace[9] || cB == Globals.aDownFace[1])
         {
             await MakeTurnAsync("TurnDown+");
             goto Line880;
         }
         // 815
-        if (cB == aBackFace[9] || cB == aLeftFace[7] || cB == aDownFace[7])
+        if (cB == Globals.aBackFace[9] || cB == Globals.aLeftFace[7] || cB == Globals.aDownFace[7])
         {
             await MakeTurnAsync("TurnDown++");
             goto Line880;
@@ -525,7 +541,7 @@ public partial class MainPage : ContentPage
         goto Line710;
     // 880
     Line880:
-        if (cB == aFrontFace[9])
+        if (cB == Globals.aFrontFace[9])
         {
             await MakeTurnAsync("TurnFront+");
             await MakeTurnAsync("TurnDown+");
@@ -533,7 +549,7 @@ public partial class MainPage : ContentPage
             goto Line710;
         }
     // 885
-        if (cB == aRightFace[7])
+        if (cB == Globals.aRightFace[7])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnDown-");
@@ -541,7 +557,7 @@ public partial class MainPage : ContentPage
             goto Line710;
         }
     // 890
-        if (cB == aDownFace[3])
+        if (cB == Globals.aDownFace[3])
         {
             await MakeTurnAsync("TurnRight-");
             await MakeTurnAsync("TurnDown+");
@@ -583,41 +599,41 @@ public partial class MainPage : ContentPage
         await SolveEdgesTopLayerAsync();
 
         // Solve the edges of the top layer - Chapter 4, page 14-2.
-        if (aUpFace[5] == aFrontFace[4])
+        if (Globals.aUpFace[5] == Globals.aFrontFace[4])
         {
             await MakeTurnAsync("TurnLeft+");
 
-            if (aLeftFace[8] == aFrontFace[5])
+            if (Globals.aLeftFace[8] == Globals.aFrontFace[5])
             {
                 await MakeTurnAsync("TurnDown+");
             }
 
-            if (aLeftFace[8] == aBackFace[5])
+            if (Globals.aLeftFace[8] == Globals.aBackFace[5])
             {
                 await MakeTurnAsync("TurnDown-");
             }
 
-            if (aLeftFace[8] == aRightFace[5])
+            if (Globals.aLeftFace[8] == Globals.aRightFace[5])
             {
                 await MakeTurnAsync("TurnDown++");
             }
         }
 
-        if (aUpFace[5] == aFrontFace[6])
+        if (Globals.aUpFace[5] == Globals.aFrontFace[6])
         {
             await MakeTurnAsync("TurnRight-");
 
-            if (aRightFace[8] == aFrontFace[5])
+            if (Globals.aRightFace[8] == Globals.aFrontFace[5])
             {
                 await MakeTurnAsync("TurnDown-");
             }
 
-            if (aRightFace[8] == aBackFace[5])
+            if (Globals.aRightFace[8] == Globals.aBackFace[5])
             {
                 await MakeTurnAsync("TurnDown+");
             }
 
-            if (aRightFace[8] == aLeftFace[5])
+            if (Globals.aRightFace[8] == Globals.aLeftFace[5])
             {
                 await MakeTurnAsync("TurnDown++");
             }
@@ -654,22 +670,22 @@ public partial class MainPage : ContentPage
     {
         for (int nTimes = 1; nTimes < 11; nTimes++)
         {
-            if (aUpFace[5] == aDownFace[2] && aFrontFace[5] == aFrontFace[8])
+            if (Globals.aUpFace[5] == Globals.aDownFace[2] && Globals.aFrontFace[5] == Globals.aFrontFace[8])
             {
                 await MakeTurnAsync("TurnFront++");
             }
 
-            if (aUpFace[5] == aDownFace[4] && aLeftFace[5] == aLeftFace[8])
+            if (Globals.aUpFace[5] == Globals.aDownFace[4] && Globals.aLeftFace[5] == Globals.aLeftFace[8])
             {
                 await MakeTurnAsync("TurnLeft++");
             }
 
-            if (aUpFace[5] == aDownFace[6] && aRightFace[5] == aRightFace[8])
+            if (Globals.aUpFace[5] == Globals.aDownFace[6] && Globals.aRightFace[5] == Globals.aRightFace[8])
             {
                 await MakeTurnAsync("TurnRight++");
             }
 
-            if (aUpFace[5] == aDownFace[8] && aBackFace[5] == aBackFace[8])
+            if (Globals.aUpFace[5] == Globals.aDownFace[8] && Globals.aBackFace[5] == Globals.aBackFace[8])
             {
                 await MakeTurnAsync("TurnBack++");
                 SetCubeColorsFromArrays();
@@ -1169,6 +1185,47 @@ public partial class MainPage : ContentPage
         await TurnFaceCubeAsync(cTurnFaceAndDirection);
     }
 
+    // Make and explain the turn of the cube called from the main task SolveTheCubeAsync().
+    public async Task MakeTurnAsync2(string cTurnFaceAndDirection)
+    {
+        //Debug.WriteLine(cTurnFaceAndDirection);
+        //Console.WriteLine(cTurnFaceAndDirection);
+        //MainPage mainPage = new();
+        //mainPage.lblExplainTurnCube2.Text = cTurnFaceAndDirection;
+        //return;
+
+        // Enable the arrow button and set the background color to Active.
+        await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
+
+        // Show the text.
+        string cTurnCubeText = await SetExplainTextAsync(cTurnFaceAndDirection);
+        lblExplainTurnCube1.Text = cTurnCubeText;
+        lblExplainTurnCube2.Text = cTurnCubeText;
+
+        // Convert text to speech.
+        ExplainTurnCubeSpeech(cTurnCubeText);
+
+        // Start a program loop and wait for the arrow button to be pressed.
+        while (true)
+        {
+            // Wait for 100 milliseconds on the button click event handler.
+            await Task.Delay(100);
+
+            // Check if the button has been clicked and stop the loop if clicked.
+            if (bArrowButtonPressed)
+            {
+                break;
+            }
+        }
+
+        // Restore settings.
+        bArrowButtonPressed = false;
+        await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, false);
+
+        // Turn the faces of the cube.
+        await TurnFaceCubeAsync(cTurnFaceAndDirection);
+    }
+
     // Enalbe or disable the arrow imagebuttons.
     private async Task SetImageButtonArrowIsEnabledAsync(string cTurnFaceAndDirection, bool bIsEnabled)
     {
@@ -1593,37 +1650,37 @@ public partial class MainPage : ContentPage
 
             for (nRow = 1; nRow < 7; nRow++)
             {
-                sw.WriteLine(aFaceColors[nRow]);
+                sw.WriteLine(Globals.aFaceColors[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                sw.WriteLine(aUpFace[nRow]);
+                sw.WriteLine(Globals.aUpFace[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                sw.WriteLine(aFrontFace[nRow]);
+                sw.WriteLine(Globals.aFrontFace[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                sw.WriteLine(aRightFace[nRow]);
+                sw.WriteLine(Globals.aRightFace[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                sw.WriteLine(aLeftFace[nRow]);
+                sw.WriteLine(Globals.aLeftFace[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                sw.WriteLine(aBackFace[nRow]);
+                sw.WriteLine(Globals.aBackFace[nRow]);
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                sw.WriteLine(aDownFace[nRow]);
+                sw.WriteLine(Globals.aDownFace[nRow]);
             }
 
             // Close the StreamWriter object.
@@ -1655,37 +1712,37 @@ public partial class MainPage : ContentPage
 
             for (nRow = 1; nRow < 7; nRow++)
             {
-                aFaceColors[nRow] = sr.ReadLine();
+                Globals.aFaceColors[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                aUpFace[nRow] = sr.ReadLine();
+                Globals.aUpFace[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                aFrontFace[nRow] = sr.ReadLine();
+                Globals.aFrontFace[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                aRightFace[nRow] = sr.ReadLine();
+                Globals.aRightFace[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                aLeftFace[nRow] = sr.ReadLine();
+                Globals.aLeftFace[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                aBackFace[nRow] = sr.ReadLine();
+                Globals.aBackFace[nRow] = sr.ReadLine();
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                aDownFace[nRow] = sr.ReadLine();
+                Globals.aDownFace[nRow] = sr.ReadLine();
             }
 
             // Close the StreamReader object.
@@ -1721,32 +1778,32 @@ public partial class MainPage : ContentPage
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aUpFace[nRow] = aFaceColors[1];
+            Globals.aUpFace[nRow] = Globals.aFaceColors[1];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aFrontFace[nRow] = aFaceColors[2];
+            Globals.aFrontFace[nRow] = Globals.aFaceColors[2];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aRightFace[nRow] = aFaceColors[3];
+            Globals.aRightFace[nRow] = Globals.aFaceColors[3];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aLeftFace[nRow] = aFaceColors[4];
+            Globals.aLeftFace[nRow] = Globals.aFaceColors[4];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aBackFace[nRow] = aFaceColors[5];
+            Globals.aBackFace[nRow] = Globals.aFaceColors[5];
         }
 
         for (nRow = 1; nRow < 10; nRow++)
         {
-            aDownFace[nRow] = aFaceColors[6];
+            Globals.aDownFace[nRow] = Globals.aFaceColors[6];
         }
 
         SetCubeColorsFromArrays();
@@ -1755,72 +1812,72 @@ public partial class MainPage : ContentPage
     // Store the cube colors from the polygons in the arrays.
     private void SetCubeColorsInArrays()
     {
-        aFaceColors[1] = GetHexColorPolygon(plgCubeColor1);
-        aFaceColors[2] = GetHexColorPolygon(plgCubeColor2);
-        aFaceColors[3] = GetHexColorPolygon(plgCubeColor3);
-        aFaceColors[4] = GetHexColorPolygon(plgCubeColor4);
-        aFaceColors[5] = GetHexColorPolygon(plgCubeColor5);
-        aFaceColors[6] = GetHexColorPolygon(plgCubeColor6);
+        Globals.aFaceColors[1] = GetHexColorPolygon(plgCubeColor1);
+        Globals.aFaceColors[2] = GetHexColorPolygon(plgCubeColor2);
+        Globals.aFaceColors[3] = GetHexColorPolygon(plgCubeColor3);
+        Globals.aFaceColors[4] = GetHexColorPolygon(plgCubeColor4);
+        Globals.aFaceColors[5] = GetHexColorPolygon(plgCubeColor5);
+        Globals.aFaceColors[6] = GetHexColorPolygon(plgCubeColor6);
 
-        aUpFace[1] = GetHexColorPolygon(plgUp1);
-        aUpFace[2] = GetHexColorPolygon(plgUp2);
-        aUpFace[3] = GetHexColorPolygon(plgUp3);
-        aUpFace[4] = GetHexColorPolygon(plgUp4);
-        aUpFace[5] = GetHexColorPolygon(plgUp5);
-        aUpFace[6] = GetHexColorPolygon(plgUp6);
-        aUpFace[7] = GetHexColorPolygon(plgUp7);
-        aUpFace[8] = GetHexColorPolygon(plgUp8);
-        aUpFace[9] = GetHexColorPolygon(plgUp9);
+        Globals.aUpFace[1] = GetHexColorPolygon(plgUp1);
+        Globals.aUpFace[2] = GetHexColorPolygon(plgUp2);
+        Globals.aUpFace[3] = GetHexColorPolygon(plgUp3);
+        Globals.aUpFace[4] = GetHexColorPolygon(plgUp4);
+        Globals.aUpFace[5] = GetHexColorPolygon(plgUp5);
+        Globals.aUpFace[6] = GetHexColorPolygon(plgUp6);
+        Globals.aUpFace[7] = GetHexColorPolygon(plgUp7);
+        Globals.aUpFace[8] = GetHexColorPolygon(plgUp8);
+        Globals.aUpFace[9] = GetHexColorPolygon(plgUp9);
 
-        aFrontFace[1] = GetHexColorPolygon(plgFront1);
-        aFrontFace[2] = GetHexColorPolygon(plgFront2);
-        aFrontFace[3] = GetHexColorPolygon(plgFront3);
-        aFrontFace[4] = GetHexColorPolygon(plgFront4);
-        aFrontFace[5] = GetHexColorPolygon(plgFront5);
-        aFrontFace[6] = GetHexColorPolygon(plgFront6);
-        aFrontFace[7] = GetHexColorPolygon(plgFront7);
-        aFrontFace[8] = GetHexColorPolygon(plgFront8);
-        aFrontFace[9] = GetHexColorPolygon(plgFront9);
+        Globals.aFrontFace[1] = GetHexColorPolygon(plgFront1);
+        Globals.aFrontFace[2] = GetHexColorPolygon(plgFront2);
+        Globals.aFrontFace[3] = GetHexColorPolygon(plgFront3);
+        Globals.aFrontFace[4] = GetHexColorPolygon(plgFront4);
+        Globals.aFrontFace[5] = GetHexColorPolygon(plgFront5);
+        Globals.aFrontFace[6] = GetHexColorPolygon(plgFront6);
+        Globals.aFrontFace[7] = GetHexColorPolygon(plgFront7);
+        Globals.aFrontFace[8] = GetHexColorPolygon(plgFront8);
+        Globals.aFrontFace[9] = GetHexColorPolygon(plgFront9);
 
-        aRightFace[1] = GetHexColorPolygon(plgRight1);
-        aRightFace[2] = GetHexColorPolygon(plgRight2);
-        aRightFace[3] = GetHexColorPolygon(plgRight3);
-        aRightFace[4] = GetHexColorPolygon(plgRight4);
-        aRightFace[5] = GetHexColorPolygon(plgRight5);
-        aRightFace[6] = GetHexColorPolygon(plgRight6);
-        aRightFace[7] = GetHexColorPolygon(plgRight7);
-        aRightFace[8] = GetHexColorPolygon(plgRight8);
-        aRightFace[9] = GetHexColorPolygon(plgRight9);
+        Globals.aRightFace[1] = GetHexColorPolygon(plgRight1);
+        Globals.aRightFace[2] = GetHexColorPolygon(plgRight2);
+        Globals.aRightFace[3] = GetHexColorPolygon(plgRight3);
+        Globals.aRightFace[4] = GetHexColorPolygon(plgRight4);
+        Globals.aRightFace[5] = GetHexColorPolygon(plgRight5);
+        Globals.aRightFace[6] = GetHexColorPolygon(plgRight6);
+        Globals.aRightFace[7] = GetHexColorPolygon(plgRight7);
+        Globals.aRightFace[8] = GetHexColorPolygon(plgRight8);
+        Globals.aRightFace[9] = GetHexColorPolygon(plgRight9);
 
-        aLeftFace[1] = GetHexColorPolygon(plgLeft1);
-        aLeftFace[2] = GetHexColorPolygon(plgLeft2);
-        aLeftFace[3] = GetHexColorPolygon(plgLeft3);
-        aLeftFace[4] = GetHexColorPolygon(plgLeft4);
-        aLeftFace[5] = GetHexColorPolygon(plgLeft5);
-        aLeftFace[6] = GetHexColorPolygon(plgLeft6);
-        aLeftFace[7] = GetHexColorPolygon(plgLeft7);
-        aLeftFace[8] = GetHexColorPolygon(plgLeft8);
-        aLeftFace[9] = GetHexColorPolygon(plgLeft9);
+        Globals.aLeftFace[1] = GetHexColorPolygon(plgLeft1);
+        Globals.aLeftFace[2] = GetHexColorPolygon(plgLeft2);
+        Globals.aLeftFace[3] = GetHexColorPolygon(plgLeft3);
+        Globals.aLeftFace[4] = GetHexColorPolygon(plgLeft4);
+        Globals.aLeftFace[5] = GetHexColorPolygon(plgLeft5);
+        Globals.aLeftFace[6] = GetHexColorPolygon(plgLeft6);
+        Globals.aLeftFace[7] = GetHexColorPolygon(plgLeft7);
+        Globals.aLeftFace[8] = GetHexColorPolygon(plgLeft8);
+        Globals.aLeftFace[9] = GetHexColorPolygon(plgLeft9);
 
-        aBackFace[1] = GetHexColorPolygon(plgBack1);
-        aBackFace[2] = GetHexColorPolygon(plgBack2);
-        aBackFace[3] = GetHexColorPolygon(plgBack3);
-        aBackFace[4] = GetHexColorPolygon(plgBack4);
-        aBackFace[5] = GetHexColorPolygon(plgBack5);
-        aBackFace[6] = GetHexColorPolygon(plgBack6);
-        aBackFace[7] = GetHexColorPolygon(plgBack7);
-        aBackFace[8] = GetHexColorPolygon(plgBack8);
-        aBackFace[9] = GetHexColorPolygon(plgBack9);
+        Globals.aBackFace[1] = GetHexColorPolygon(plgBack1);
+        Globals.aBackFace[2] = GetHexColorPolygon(plgBack2);
+        Globals.aBackFace[3] = GetHexColorPolygon(plgBack3);
+        Globals.aBackFace[4] = GetHexColorPolygon(plgBack4);
+        Globals.aBackFace[5] = GetHexColorPolygon(plgBack5);
+        Globals.aBackFace[6] = GetHexColorPolygon(plgBack6);
+        Globals.aBackFace[7] = GetHexColorPolygon(plgBack7);
+        Globals.aBackFace[8] = GetHexColorPolygon(plgBack8);
+        Globals.aBackFace[9] = GetHexColorPolygon(plgBack9);
 
-        aDownFace[1] = GetHexColorPolygon(plgDown1);
-        aDownFace[2] = GetHexColorPolygon(plgDown2);
-        aDownFace[3] = GetHexColorPolygon(plgDown3);
-        aDownFace[4] = GetHexColorPolygon(plgDown4);
-        aDownFace[5] = GetHexColorPolygon(plgDown5);
-        aDownFace[6] = GetHexColorPolygon(plgDown6);
-        aDownFace[7] = GetHexColorPolygon(plgDown7);
-        aDownFace[8] = GetHexColorPolygon(plgDown8);
-        aDownFace[9] = GetHexColorPolygon(plgDown9);
+        Globals.aDownFace[1] = GetHexColorPolygon(plgDown1);
+        Globals.aDownFace[2] = GetHexColorPolygon(plgDown2);
+        Globals.aDownFace[3] = GetHexColorPolygon(plgDown3);
+        Globals.aDownFace[4] = GetHexColorPolygon(plgDown4);
+        Globals.aDownFace[5] = GetHexColorPolygon(plgDown5);
+        Globals.aDownFace[6] = GetHexColorPolygon(plgDown6);
+        Globals.aDownFace[7] = GetHexColorPolygon(plgDown7);
+        Globals.aDownFace[8] = GetHexColorPolygon(plgDown8);
+        Globals.aDownFace[9] = GetHexColorPolygon(plgDown9);
 
         //---------------------------------------
         //aPieces[36] = GetHexColorPolygon(plgUp1);
@@ -1887,79 +1944,79 @@ public partial class MainPage : ContentPage
     // Set the cube colors from the arrays in the polygons.
     public void SetCubeColorsFromArrays()
     {
-        Globals.cCubeColor1 = aFaceColors[1];
-        Globals.cCubeColor2 = aFaceColors[2];
-        Globals.cCubeColor3 = aFaceColors[3];
-        Globals.cCubeColor4 = aFaceColors[4];
-        Globals.cCubeColor5 = aFaceColors[5];
-        Globals.cCubeColor6 = aFaceColors[6];
+        Globals.cCubeColor1 = Globals.aFaceColors[1];
+        Globals.cCubeColor2 = Globals.aFaceColors[2];
+        Globals.cCubeColor3 = Globals.aFaceColors[3];
+        Globals.cCubeColor4 = Globals.aFaceColors[4];
+        Globals.cCubeColor5 = Globals.aFaceColors[5];
+        Globals.cCubeColor6 = Globals.aFaceColors[6];
 
-        plgCubeColor1.Fill = Color.FromArgb(aFaceColors[1]);
-        plgCubeColor2.Fill = Color.FromArgb(aFaceColors[2]);
-        plgCubeColor3.Fill = Color.FromArgb(aFaceColors[3]);
-        plgCubeColor4.Fill = Color.FromArgb(aFaceColors[4]);
-        plgCubeColor5.Fill = Color.FromArgb(aFaceColors[5]);
-        plgCubeColor6.Fill = Color.FromArgb(aFaceColors[6]);
+        plgCubeColor1.Fill = Color.FromArgb(Globals.aFaceColors[1]);
+        plgCubeColor2.Fill = Color.FromArgb(Globals.aFaceColors[2]);
+        plgCubeColor3.Fill = Color.FromArgb(Globals.aFaceColors[3]);
+        plgCubeColor4.Fill = Color.FromArgb(Globals.aFaceColors[4]);
+        plgCubeColor5.Fill = Color.FromArgb(Globals.aFaceColors[5]);
+        plgCubeColor6.Fill = Color.FromArgb(Globals.aFaceColors[6]);
 
-        plgUp1.Fill = Color.FromArgb(aUpFace[1]);
-        plgUp2.Fill = Color.FromArgb(aUpFace[2]);
-        plgUp3.Fill = Color.FromArgb(aUpFace[3]);
-        plgUp4.Fill = Color.FromArgb(aUpFace[4]);
-        plgUp5.Fill = Color.FromArgb(aUpFace[5]);
-        plgUp6.Fill = Color.FromArgb(aUpFace[6]);
-        plgUp7.Fill = Color.FromArgb(aUpFace[7]);
-        plgUp8.Fill = Color.FromArgb(aUpFace[8]);
-        plgUp9.Fill = Color.FromArgb(aUpFace[9]);
+        plgUp1.Fill = Color.FromArgb(Globals.aUpFace[1]);
+        plgUp2.Fill = Color.FromArgb(Globals.aUpFace[2]);
+        plgUp3.Fill = Color.FromArgb(Globals.aUpFace[3]);
+        plgUp4.Fill = Color.FromArgb(Globals.aUpFace[4]);
+        plgUp5.Fill = Color.FromArgb(Globals.aUpFace[5]);
+        plgUp6.Fill = Color.FromArgb(Globals.aUpFace[6]);
+        plgUp7.Fill = Color.FromArgb(Globals.aUpFace[7]);
+        plgUp8.Fill = Color.FromArgb(Globals.aUpFace[8]);
+        plgUp9.Fill = Color.FromArgb(Globals.aUpFace[9]);
 
-        plgFront1.Fill = Color.FromArgb(aFrontFace[1]);
-        plgFront2.Fill = Color.FromArgb(aFrontFace[2]);
-        plgFront3.Fill = Color.FromArgb(aFrontFace[3]);
-        plgFront4.Fill = Color.FromArgb(aFrontFace[4]);
-        plgFront5.Fill = Color.FromArgb(aFrontFace[5]);
-        plgFront6.Fill = Color.FromArgb(aFrontFace[6]);
-        plgFront7.Fill = Color.FromArgb(aFrontFace[7]);
-        plgFront8.Fill = Color.FromArgb(aFrontFace[8]);
-        plgFront9.Fill = Color.FromArgb(aFrontFace[9]);
+        plgFront1.Fill = Color.FromArgb(Globals.aFrontFace[1]);
+        plgFront2.Fill = Color.FromArgb(Globals.aFrontFace[2]);
+        plgFront3.Fill = Color.FromArgb(Globals.aFrontFace[3]);
+        plgFront4.Fill = Color.FromArgb(Globals.aFrontFace[4]);
+        plgFront5.Fill = Color.FromArgb(Globals.aFrontFace[5]);
+        plgFront6.Fill = Color.FromArgb(Globals.aFrontFace[6]);
+        plgFront7.Fill = Color.FromArgb(Globals.aFrontFace[7]);
+        plgFront8.Fill = Color.FromArgb(Globals.aFrontFace[8]);
+        plgFront9.Fill = Color.FromArgb(Globals.aFrontFace[9]);
 
-        plgRight1.Fill = Color.FromArgb(aRightFace[1]);
-        plgRight2.Fill = Color.FromArgb(aRightFace[2]);
-        plgRight3.Fill = Color.FromArgb(aRightFace[3]);
-        plgRight4.Fill = Color.FromArgb(aRightFace[4]);
-        plgRight5.Fill = Color.FromArgb(aRightFace[5]);
-        plgRight6.Fill = Color.FromArgb(aRightFace[6]);
-        plgRight7.Fill = Color.FromArgb(aRightFace[7]);
-        plgRight8.Fill = Color.FromArgb(aRightFace[8]);
-        plgRight9.Fill = Color.FromArgb(aRightFace[9]);
+        plgRight1.Fill = Color.FromArgb(Globals.aRightFace[1]);
+        plgRight2.Fill = Color.FromArgb(Globals.aRightFace[2]);
+        plgRight3.Fill = Color.FromArgb(Globals.aRightFace[3]);
+        plgRight4.Fill = Color.FromArgb(Globals.aRightFace[4]);
+        plgRight5.Fill = Color.FromArgb(Globals.aRightFace[5]);
+        plgRight6.Fill = Color.FromArgb(Globals.aRightFace[6]);
+        plgRight7.Fill = Color.FromArgb(Globals.aRightFace[7]);
+        plgRight8.Fill = Color.FromArgb(Globals.aRightFace[8]);
+        plgRight9.Fill = Color.FromArgb(Globals.aRightFace[9]);
 
-        plgLeft1.Fill = Color.FromArgb(aLeftFace[1]);
-        plgLeft2.Fill = Color.FromArgb(aLeftFace[2]);
-        plgLeft3.Fill = Color.FromArgb(aLeftFace[3]);
-        plgLeft4.Fill = Color.FromArgb(aLeftFace[4]);
-        plgLeft5.Fill = Color.FromArgb(aLeftFace[5]);
-        plgLeft6.Fill = Color.FromArgb(aLeftFace[6]);
-        plgLeft7.Fill = Color.FromArgb(aLeftFace[7]);
-        plgLeft8.Fill = Color.FromArgb(aLeftFace[8]);
-        plgLeft9.Fill = Color.FromArgb(aLeftFace[9]);
+        plgLeft1.Fill = Color.FromArgb(Globals.aLeftFace[1]);
+        plgLeft2.Fill = Color.FromArgb(Globals.aLeftFace[2]);
+        plgLeft3.Fill = Color.FromArgb(Globals.aLeftFace[3]);
+        plgLeft4.Fill = Color.FromArgb(Globals.aLeftFace[4]);
+        plgLeft5.Fill = Color.FromArgb(Globals.aLeftFace[5]);
+        plgLeft6.Fill = Color.FromArgb(Globals.aLeftFace[6]);
+        plgLeft7.Fill = Color.FromArgb(Globals.aLeftFace[7]);
+        plgLeft8.Fill = Color.FromArgb(Globals.aLeftFace[8]);
+        plgLeft9.Fill = Color.FromArgb(Globals.aLeftFace[9]);
 
-        plgBack1.Fill = Color.FromArgb(aBackFace[1]);
-        plgBack2.Fill = Color.FromArgb(aBackFace[2]);
-        plgBack3.Fill = Color.FromArgb(aBackFace[3]);
-        plgBack4.Fill = Color.FromArgb(aBackFace[4]);
-        plgBack5.Fill = Color.FromArgb(aBackFace[5]);
-        plgBack6.Fill = Color.FromArgb(aBackFace[6]);
-        plgBack7.Fill = Color.FromArgb(aBackFace[7]);
-        plgBack8.Fill = Color.FromArgb(aBackFace[8]);
-        plgBack9.Fill = Color.FromArgb(aBackFace[9]);
+        plgBack1.Fill = Color.FromArgb(Globals.aBackFace[1]);
+        plgBack2.Fill = Color.FromArgb(Globals.aBackFace[2]);
+        plgBack3.Fill = Color.FromArgb(Globals.aBackFace[3]);
+        plgBack4.Fill = Color.FromArgb(Globals.aBackFace[4]);
+        plgBack5.Fill = Color.FromArgb(Globals.aBackFace[5]);
+        plgBack6.Fill = Color.FromArgb(Globals.aBackFace[6]);
+        plgBack7.Fill = Color.FromArgb(Globals.aBackFace[7]);
+        plgBack8.Fill = Color.FromArgb(Globals.aBackFace[8]);
+        plgBack9.Fill = Color.FromArgb(Globals.aBackFace[9]);
 
-        plgDown1.Fill = Color.FromArgb(aDownFace[1]);
-        plgDown2.Fill = Color.FromArgb(aDownFace[2]);
-        plgDown3.Fill = Color.FromArgb(aDownFace[3]);
-        plgDown4.Fill = Color.FromArgb(aDownFace[4]);
-        plgDown5.Fill = Color.FromArgb(aDownFace[5]);
-        plgDown6.Fill = Color.FromArgb(aDownFace[6]);
-        plgDown7.Fill = Color.FromArgb(aDownFace[7]);
-        plgDown8.Fill = Color.FromArgb(aDownFace[8]);
-        plgDown9.Fill = Color.FromArgb(aDownFace[9]);
+        plgDown1.Fill = Color.FromArgb(Globals.aDownFace[1]);
+        plgDown2.Fill = Color.FromArgb(Globals.aDownFace[2]);
+        plgDown3.Fill = Color.FromArgb(Globals.aDownFace[3]);
+        plgDown4.Fill = Color.FromArgb(Globals.aDownFace[4]);
+        plgDown5.Fill = Color.FromArgb(Globals.aDownFace[5]);
+        plgDown6.Fill = Color.FromArgb(Globals.aDownFace[6]);
+        plgDown7.Fill = Color.FromArgb(Globals.aDownFace[7]);
+        plgDown8.Fill = Color.FromArgb(Globals.aDownFace[8]);
+        plgDown9.Fill = Color.FromArgb(Globals.aDownFace[9]);
 
         //----------------------------------------------------
         //plgUp1.Fill = Color.FromArgb(aPieces[36]);
