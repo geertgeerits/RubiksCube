@@ -2,12 +2,12 @@
 {
     class ClassCubeTurns
     {
-        public static string CubeTurns(string cDirection, string[] aPieces, string[] aPiecesTemp)
-        {
-            //DisplayAlert("cDirection", cDirection + aPieces[0] + aPiecesTemp[0], "OK");
-            Console.WriteLine(cDirection + aPieces[0] + aPiecesTemp[0]);
-            return "Geert";
-        }
+        //public static string CubeTurns(string cDirection, string[] aPieces, string[] aPiecesTemp)
+        //{
+        //    //DisplayAlert("cDirection", cDirection + aPieces[0] + aPiecesTemp[0], "OK");
+        //    Console.WriteLine(cDirection + aPieces[0] + aPiecesTemp[0]);
+        //    return "Geert";
+        //}
 
         // Turn the entire front face clockwise or counter clockwise.
         public static void TurnFrontFaceTo(string cDirection)

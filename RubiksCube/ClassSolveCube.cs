@@ -17,8 +17,11 @@
         {
             // Link to the class MainPage.
             MainPage mainPage = new();
-
-            await mainPage.MakeTurnAsync("TurnFront+");  // For testing.
+            
+            //MainPage.cCubeTurn = "TurnFront+";  // For testing.
+            mainPage.MakeTurnAsync3("TurnFront+");  // For testing.
+            mainPage.MakeTurnAsync3("TurnFront++");  // For testing.
+            //mainPage.lblExplainTurnCube2.Text = "Test";
             return;
 
             // Solve the edges of the top layer - Chapter 4, page 14-3.

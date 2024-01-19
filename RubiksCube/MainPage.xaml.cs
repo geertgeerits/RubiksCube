@@ -11,6 +11,7 @@
 // Thanks to ...: Gerald Versluis
 
 using Microsoft.Maui.Controls.Shapes;
+using System.Diagnostics;
 
 namespace RubiksCube;
 
@@ -30,6 +31,7 @@ public partial class MainPage : ContentPage
     public static string[] aDownFace = new string[10];
     public static string[] aPieces = new string[54];
     public static string[] aPiecesTemp = new string[54];
+    //public static string cCubeTurn;
 
     public MainPage()
 	{
@@ -208,12 +210,10 @@ public partial class MainPage : ContentPage
         lblExplainTurnCube2.IsVisible = true;
 
         // Solve the cube.
-        //await DisplayAlert("1", "1", "OK");
         //await SolveTheCubeAsyncBASIC();
         await SolveTheCubeAsyncNEW();
         //ClassSolveCube classSolveCube = new();
         //await classSolveCube.SolveTheCubeAsync();
-        //await DisplayAlert("2", "2", "OK");
 
         // Settings.
         lblExplainTurnCube1.Text = "";
@@ -1116,15 +1116,32 @@ public partial class MainPage : ContentPage
         }
     }
 
+    public void MakeTurnAsync3(string cTurnFaceAndDirection)
+    {
+        //string cTurnFaceAndDirection = cCubeTurn;
+        //DisplayAlert("", cTurnFaceAndDirection, "OK");
+        Debug.WriteLine(cTurnFaceAndDirection);
+        Console.WriteLine(cTurnFaceAndDirection);
+        MainPage mainPage = new();
+        mainPage.lblExplainTurnCube2.Text = cTurnFaceAndDirection;
+        Task.Delay(3000).Wait();
+        return;
+    }
+
     // Make and explain the turn of the cube called from the main task SolveTheCubeAsync().
     public async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
+        //Debug.WriteLine(cTurnFaceAndDirection);
+        //Console.WriteLine(cTurnFaceAndDirection);
+        //MainPage mainPage = new();
+        //mainPage.lblExplainTurnCube2.Text = cTurnFaceAndDirection;
+        //return;
+
         // Enable the arrow button and set the background color to Active.
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
-        //await DisplayAlert("", cTurnFaceAndDirection, "OK");
+
         // Show the text.
         string cTurnCubeText = await SetExplainTextAsync(cTurnFaceAndDirection);
-        //await DisplayAlert("", cTurnCubeText, "OK");
         lblExplainTurnCube1.Text = cTurnCubeText;
         lblExplainTurnCube2.Text = cTurnCubeText;
 
