@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-18 (YYYY-MM-DD)
+// Date ........: 2024-01-19 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -18,9 +18,9 @@ public partial class MainPage : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
-    private bool bColorDrop;
-    private bool bSolvingCube;
-    private bool bArrowButtonPressed;
+    public static bool bColorDrop;
+    public static bool bSolvingCube;
+    public static bool bArrowButtonPressed;
     public static string[] aFaceColors = new string[7];
     public static string[] aUpFace = new string[10];
     public static string[] aFrontFace = new string[10];
@@ -109,12 +109,6 @@ public partial class MainPage : ContentPage
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageAbout());
-
-        //aPieces[0] = "Blue";
-        //aPiecesTemp[0] = "White";
-        ////CubeTurn myClass1 = new CubeTurn();
-        //string cubeTurns = ClassCubeTurns.CubeTurns("Test", aPieces, aPiecesTemp);
-        //DisplayAlert("cubeTurns", cubeTurns, "OK"); 
     }
 
     private async void OnPageSettingsClicked(object sender, EventArgs e)
@@ -214,7 +208,12 @@ public partial class MainPage : ContentPage
         lblExplainTurnCube2.IsVisible = true;
 
         // Solve the cube.
-        await SolveTheCubeAsync();
+        //await DisplayAlert("1", "1", "OK");
+        //await SolveTheCubeAsyncBASIC();
+        await SolveTheCubeAsyncNEW();
+        //ClassSolveCube classSolveCube = new();
+        //await classSolveCube.SolveTheCubeAsync();
+        //await DisplayAlert("2", "2", "OK");
 
         // Settings.
         lblExplainTurnCube1.Text = "";
@@ -574,7 +573,7 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the cube.
-    private async Task SolveTheCubeAsync()
+    private async Task SolveTheCubeAsyncNEW()
     {
         // Test the cube turns.
         //await TestCubeTurnsAsync();
@@ -696,7 +695,7 @@ public partial class MainPage : ContentPage
     }
 
     // Check if the cube is solved.
-    private bool CheckIfCubeIsSolved(bool bShowMessage)
+    public bool CheckIfCubeIsSolved(bool bShowMessage)
     {
         bool bResult = ClassCheckColorsCube.CheckIfSolved();
 
@@ -1118,13 +1117,14 @@ public partial class MainPage : ContentPage
     }
 
     // Make and explain the turn of the cube called from the main task SolveTheCubeAsync().
-    private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+    public async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
         // Enable the arrow button and set the background color to Active.
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
-
+        //await DisplayAlert("", cTurnFaceAndDirection, "OK");
         // Show the text.
         string cTurnCubeText = await SetExplainTextAsync(cTurnFaceAndDirection);
+        //await DisplayAlert("", cTurnCubeText, "OK");
         lblExplainTurnCube1.Text = cTurnCubeText;
         lblExplainTurnCube2.Text = cTurnCubeText;
 
@@ -1868,7 +1868,7 @@ public partial class MainPage : ContentPage
     }
 
     // Set the cube colors from the arrays in the polygons.
-    private void SetCubeColorsFromArrays()
+    public void SetCubeColorsFromArrays()
     {
         Globals.cCubeColor1 = aFaceColors[1];
         Globals.cCubeColor2 = aFaceColors[2];
