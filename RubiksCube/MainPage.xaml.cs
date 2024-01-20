@@ -217,6 +217,9 @@ public partial class MainPage : ContentPage
         // Reset the array with the cube turns.
         Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
 
+        activityIndicator.IsRunning = true;
+        await Task.Delay(200);
+
         // Test the turns of the cube.
         //ClassTestCubeTurns classTestCubeTurns = new();
         //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
@@ -228,6 +231,8 @@ public partial class MainPage : ContentPage
         // Solve the cube in C#.
         //ClassSolveCube classSolveCube = new();
         //bool bSolved = await classSolveCube.SolveTheCubeAsync();
+        
+        activityIndicator.IsRunning = false;
 
         //if (bSolved)
         //{
@@ -243,7 +248,7 @@ public partial class MainPage : ContentPage
         //        }
         //        //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[nItem], "OK");
         //        Debug.WriteLine(Globals.aCubeTurns[nItem]);
-        //        //Task.Delay(250).Wait();
+        //        //await Task.Delay(200);
         //        await MakeTurnAsync(Globals.aCubeTurns[nItem]);
         //    }
         //    //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[0], "OK");
