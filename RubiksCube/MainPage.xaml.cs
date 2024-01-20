@@ -235,19 +235,21 @@ public partial class MainPage : ContentPage
         //    //SetCubeColorsFromArrays();
 
         //    // Make the turns of the cube.
-        //    for (int nItem = 0; nItem < 1000; nItem++)
+        //    for (int nItem = 0; nItem < Globals.aCubeTurns.Length; nItem++)
         //    {
         //        if (Globals.aCubeTurns[nItem] == null)
         //        {
         //            break;
         //        }
         //        //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[nItem], "OK");
+        //        Debug.WriteLine(Globals.aCubeTurns[nItem]);
+        //        //Task.Delay(250).Wait();
         //        await MakeTurnAsync(Globals.aCubeTurns[nItem]);
         //    }
-
+        //    //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[0], "OK");
         //    await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
         //}
-        
+
         //if (!bSolved)
         //{
         //    await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
@@ -1132,6 +1134,8 @@ public partial class MainPage : ContentPage
     // Copy the cube piece colors to the temporary cube piece colors array.
     //private void CopyCubePieceColorsToTemporaryArray()
     //{
+    //    Array.Copy(Globals.aPiecesTemp, Globals.aPieces, 54);
+    //
     //    for (int i = 0; i < 54; i++)
     //    {
     //        aPiecesTemp[i] = aPieces[i];
@@ -1150,68 +1154,9 @@ public partial class MainPage : ContentPage
         }
     }
 
-    public void MakeTurnAsync3(string cTurnFaceAndDirection)
-    {
-        //string cTurnFaceAndDirection = cCubeTurn;
-        //DisplayAlert("", cTurnFaceAndDirection, "OK");
-        Debug.WriteLine(cTurnFaceAndDirection);
-        Console.WriteLine(cTurnFaceAndDirection);
-        MainPage mainPage = new();
-        mainPage.lblExplainTurnCube2.Text = cTurnFaceAndDirection;
-        Task.Delay(3000).Wait();
-        return;
-    }
-
     // Make and explain the turn of the cube called from the main task SolveTheCubeAsync().
     public async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
-        //Debug.WriteLine(cTurnFaceAndDirection);
-        //Console.WriteLine(cTurnFaceAndDirection);
-        //MainPage mainPage = new();
-        //mainPage.lblExplainTurnCube2.Text = cTurnFaceAndDirection;
-        //return;
-
-        // Enable the arrow button and set the background color to Active.
-        await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
-
-        // Show the text.
-        string cTurnCubeText = await SetExplainTextAsync(cTurnFaceAndDirection);
-        lblExplainTurnCube1.Text = cTurnCubeText;
-        lblExplainTurnCube2.Text = cTurnCubeText;
-
-        // Convert text to speech.
-        ExplainTurnCubeSpeech(cTurnCubeText);
-
-        // Start a program loop and wait for the arrow button to be pressed.
-        while (true)
-        {
-            // Wait for 100 milliseconds on the button click event handler.
-            await Task.Delay(100);
-
-            // Check if the button has been clicked and stop the loop if clicked.
-            if (bArrowButtonPressed)
-            {
-                break;
-            }
-        }
-
-        // Restore settings.
-        bArrowButtonPressed = false;
-        await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, false);
-
-        // Turn the faces of the cube.
-        await TurnFaceCubeAsync(cTurnFaceAndDirection);
-    }
-
-    // Make and explain the turn of the cube called from the main task SolveTheCubeAsync().
-    public async Task MakeTurnAsync2(string cTurnFaceAndDirection)
-    {
-        //Debug.WriteLine(cTurnFaceAndDirection);
-        //Console.WriteLine(cTurnFaceAndDirection);
-        //MainPage mainPage = new();
-        //mainPage.lblExplainTurnCube2.Text = cTurnFaceAndDirection;
-        //return;
-
         // Enable the arrow button and set the background color to Active.
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
 
@@ -1473,7 +1418,7 @@ public partial class MainPage : ContentPage
     }
 
     // Turn the faces of the cube
-    private async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
+    public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
     {
         switch (cTurnFaceAndDirection)
         {

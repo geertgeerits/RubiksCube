@@ -65,8 +65,7 @@
             if (O == 1 || P == 1 || Q == 1)
                 goto Line610;
             // 600
-            Globals.aCubeTurns[nItem] = "TurnCubeFrontToLeft";
-            nItem++;
+            await MakeTurnAsync("TurnCubeFrontToLeft");
             goto Line510;
 
         Line610:
@@ -75,177 +74,119 @@
             // 620
             if (Y == 1 && Z == 1)
             {
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
+                await MakeTurnAsync("TurnUp-");
                 goto Line650;
             }
             // 630
             if (Y == 1)
             {
-                Globals.aCubeTurns[nItem] = "TurnUp++";
-                nItem++;
+                await MakeTurnAsync("TurnUp++");
                 goto Line650;
             }
             // 640
-            Globals.aCubeTurns[nItem] = "TurnUp+";
-            nItem++;
+            await MakeTurnAsync("TurnUp+");
         // 650
         Line650:
             cX = Globals.aRightFace[1];
             if (cB == Globals.aRightFace[2] && cX == Globals.aUpFace[6])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnBack+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnLeft+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnFront-";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnLeft+");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnFront-");
                 goto Line510;
             }
             // 655
             if (cB == Globals.aFrontFace[6] && cX == Globals.aRightFace[4])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnBack-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight+";
-                nItem++;
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnBack-");
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync("TurnRight+");
                 goto Line510;
             }
             // 660
             if (cB == Globals.aRightFace[4] && cX == Globals.aFrontFace[6])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnLeft+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnFront-";
-                nItem++;
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnLeft+");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnFront-");
                 goto Line510;
             }
             // 665
             if (cB == Globals.aDownFace[6] && cX == Globals.aRightFace[8])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnLeft+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnFront+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnLeft+");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnFront+");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnRight-");
                 goto Line510;
             }
             // 670
             if (cB == Globals.aRightFace[8] && cX == Globals.aDownFace[6])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnBack+";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnBack+");
                 goto Line510;
             }
             // 675
             if (cB == Globals.aBackFace[4] && cX == Globals.aRightFace[6])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnFront+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnFront+");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync("TurnRight-");
                 goto Line510;
             }
             // 680
             if (cB == Globals.aRightFace[6] && cX == Globals.aBackFace[4])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnLeft-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnBack+";
-                nItem++;
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnLeft-");
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync("TurnBack+");
                 goto Line510;
             }
             // 685
             if (cB == Globals.aUpFace[6] && cX != Globals.aRightFace[2])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnBack+";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnBack+");
                 goto Line510;
             }
             // 690
             if (cB == Globals.aRightFace[2] && cX != Globals.aUpFace[6])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnBack+";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnBack+");
             }
             // 695
-            //goto Line510;
-            return true;
+            goto Line510;
 
         // Solve the corners of the top layer - Chapter 6, page 16.
         Line710:
@@ -276,8 +217,7 @@
             // 745
             if (O == 1 && P == 1 && Q == 1)
             {
-                Globals.aCubeTurns[nItem] = "TurnUp++";
-                nItem++;
+                await MakeTurnAsync("TurnUp++");
                 goto Line800;
             }
             // 750
@@ -287,8 +227,7 @@
             // 755
             if (O == 1 && Q == 1)
             {
-                Globals.aCubeTurns[nItem] = "TurnUp++";
-                nItem++;
+                await MakeTurnAsync("TurnUp++");
                 goto Line800;
             }
             // 760
@@ -298,8 +237,7 @@
             // 765
             if (O == 1 && P == 1)
             {
-                Globals.aCubeTurns[nItem] = "TurnUp+";
-                nItem++;
+                await MakeTurnAsync("TurnUp+");
                 goto Line800;
             }
             // 770
@@ -309,8 +247,7 @@
             // 775
             if (O == 1 && R == 1)
             {
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
+                await MakeTurnAsync("TurnUp-");
                 goto Line800;
             }
             // 780
@@ -319,22 +256,19 @@
             // 785
             if (cB != Globals.aUpFace[3])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp+";
-                nItem++;
+                await MakeTurnAsync("TurnUp+");
                 goto Line800;
             }
             // 790
             if (cB != Globals.aUpFace[7])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp-";
-                nItem++;
+                await MakeTurnAsync("TurnUp-");
                 goto Line800;
             }
             // 795
             if (cB != Globals.aUpFace[1])
             {
-                Globals.aCubeTurns[nItem] = "TurnUp++";
-                nItem++;
+                await MakeTurnAsync("TurnUp++");
             }
         // 800
         Line800:
@@ -343,70 +277,52 @@
             // 805
             if (cB == Globals.aRightFace[9] || cB == Globals.aBackFace[7] || cB == Globals.aDownFace[9])
             {
-                Globals.aCubeTurns[nItem] = "TurnDown-";
-                nItem++;
+                await MakeTurnAsync("TurnDown-");
                 goto Line880;
             }
             // 810
             if (cB == Globals.aFrontFace[7] || cB == Globals.aLeftFace[9] || cB == Globals.aDownFace[1])
             {
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
+                await MakeTurnAsync("TurnDown+");
                 goto Line880;
             }
             // 815
             if (cB == Globals.aBackFace[9] || cB == Globals.aLeftFace[7] || cB == Globals.aDownFace[7])
             {
-                Globals.aCubeTurns[nItem] = "TurnDown++";
-                nItem++;
+                await MakeTurnAsync("TurnDown++");
                 goto Line880;
             }
             // 870
-            Globals.aCubeTurns[nItem] = "TurnRight++";
-            nItem++;
+            await MakeTurnAsync("TurnRight++");
             goto Line710;
         // 880
         Line880:
             if (cB == Globals.aFrontFace[9])
             {
-                Globals.aCubeTurns[nItem] = "TurnFront+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnFront-";
-                nItem++;
+                await MakeTurnAsync("TurnFront+");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnFront-");
                 goto Line710;
             }
             // 885
             if (cB == Globals.aRightFace[7])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight+";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync("TurnRight+");
                 goto Line710;
             }
             // 890
             if (cB == Globals.aDownFace[3])
             {
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown+";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnDown-";
-                nItem++;
-                Globals.aCubeTurns[nItem] = "TurnRight+";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnRight+");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync("TurnRight+");
             }
             // 895
             goto Line710;
@@ -425,5 +341,21 @@
             
             return false;
         }
+
+        // Make a turn of the cube/face/side.
+        private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        {
+            Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
+            nItem++;
+
+            // Turn the faces of the cube.
+            MainPage mainPage = new();
+            await mainPage.TurnFaceCubeAsync(cTurnFaceAndDirection);
+
+            // Copy array to array
+            //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+
+        }
+
     }
 }

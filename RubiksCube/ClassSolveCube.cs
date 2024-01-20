@@ -11,14 +11,11 @@
             // Link to the class MainPage.
             MainPage mainPage = new();
 
-            //Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
             nItem = 0;
 
-            //Globals.aCubeTurns[nItem] = "TurnLeft+";
-            //nItem++;
-            //Globals.aCubeTurns[nItem] = "TurnLeft-";
-            //nItem++;
-            //return;
+            //await MakeTurnAsync("TurnLeft+");
+            //await MakeTurnAsync("TurnLeft-");
+            //return true;
 
             // Solve the edges of the top layer - Chapter 4, page 14-3.
 
@@ -27,57 +24,41 @@
             // Solve the edges of the top layer - Chapter 4, page 14-2.
             if (Globals.aUpFace[5] == Globals.aFrontFace[4])
             {
-                //await mainPage.MakeTurnAsync("TurnLeft+");
-                Globals.aCubeTurns[nItem] = "TurnLeft+";
-                nItem++;
+                await MakeTurnAsync("TurnLeft+");
 
                 if (Globals.aLeftFace[8] == Globals.aFrontFace[5])
                 {
-                    //await mainPage.MakeTurnAsync("TurnDown+");
-                    Globals.aCubeTurns[nItem] = "TurnDown+";
-                    nItem++;
+                    await MakeTurnAsync("TurnDown+");
                 }
 
                 if (Globals.aLeftFace[8] == Globals.aBackFace[5])
                 {
-                    //await mainPage.MakeTurnAsync("TurnDown-");
-                    Globals.aCubeTurns[nItem] = "TurnDown-";
-                    nItem++;
+                    await MakeTurnAsync("TurnDown-");
                 }
 
                 if (Globals.aLeftFace[8] == Globals.aRightFace[5])
                 {
-                    //await mainPage.MakeTurnAsync("TurnDown++");
-                    Globals.aCubeTurns[nItem] = "TurnDown++";
-                    nItem++;
+                    await MakeTurnAsync("TurnDown++");
                 }
             }
 
             if (Globals.aUpFace[5] == Globals.aFrontFace[6])
             {
-                //await mainPage.MakeTurnAsync("TurnRight-");
-                Globals.aCubeTurns[nItem] = "TurnRight-";
-                nItem++;
+                await MakeTurnAsync("TurnRight-");
 
                 if (Globals.aRightFace[8] == Globals.aFrontFace[5])
                 {
-                    //await mainPage.MakeTurnAsync("TurnDown-");
-                    Globals.aCubeTurns[nItem] = "TurnDown-";
-                    nItem++;
+                    await MakeTurnAsync("TurnDown-");
                 }
 
                 if (Globals.aRightFace[8] == Globals.aBackFace[5])
                 {
-                    //await mainPage.MakeTurnAsync("TurnDown+");
-                    Globals.aCubeTurns[nItem] = "TurnDown+";
-                    nItem++;
+                    await MakeTurnAsync("TurnDown+");
                 }
 
                 if (Globals.aRightFace[8] == Globals.aLeftFace[5])
                 {
-                    //await mainPage.MakeTurnAsync("TurnDown++");
-                    Globals.aCubeTurns[nItem] = "TurnDown++";
-                    nItem++;
+                    await MakeTurnAsync("TurnDown++");
                 }
             }
 
@@ -100,8 +81,7 @@
             // Turning the edges.
 
 
-
-
+            // Check if the cube is solved.
             if (ClassCheckColorsCube.CheckIfSolved())
             {
                 return true;
@@ -120,33 +100,44 @@
             {
                 if (Globals.aUpFace[5] == Globals.aDownFace[2] && Globals.aFrontFace[5] == Globals.aFrontFace[8])
                 {
-                    //await mainPage.MakeTurnAsync("TurnFront++");
-                    Globals.aCubeTurns[nItem] = "TurnFront++";
-                    nItem++;
+                    await MakeTurnAsync("TurnFront++");
                 }
 
                 if (Globals.aUpFace[5] == Globals.aDownFace[4] && Globals.aLeftFace[5] == Globals.aLeftFace[8])
                 {
-                    //await mainPage.MakeTurnAsync("TurnLeft++");
-                    Globals.aCubeTurns[nItem] = "TurnLeft++";
-                    nItem++;
+                    await MakeTurnAsync("TurnLeft++");
                 }
 
                 if (Globals.aUpFace[5] == Globals.aDownFace[6] && Globals.aRightFace[5] == Globals.aRightFace[8])
                 {
-                    //await mainPage.MakeTurnAsync("TurnRight++");
-                    Globals.aCubeTurns[nItem] = "TurnRight++";
-                    nItem++;
+                    await MakeTurnAsync("TurnRight++");
                 }
 
                 if (Globals.aUpFace[5] == Globals.aDownFace[8] && Globals.aBackFace[5] == Globals.aBackFace[8])
                 {
-                    //await mainPage.MakeTurnAsync("TurnBack++");
-                    Globals.aCubeTurns[nItem] = "TurnBack++";
-                    nItem++;
+                    await MakeTurnAsync("TurnBack++");
+
                     //mainPage.SetCubeColorsFromArrays();
                 }
             }
         }
+
+        // Make a turn of the cube/face/side.
+        private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        {
+            Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
+            nItem++;
+
+            // Turn the faces of the cube.
+            MainPage mainPage = new();
+            await mainPage.TurnFaceCubeAsync(cTurnFaceAndDirection);
+
+            // Copy array to array
+            //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+
+
+        }
+
+
     }
 }
