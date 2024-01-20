@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-19 (YYYY-MM-DD)
+// Date ........: 2024-01-20 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -209,26 +209,48 @@ public partial class MainPage : ContentPage
         lblCubeInsideView.IsVisible = false;
         lblExplainTurnCube2.IsVisible = true;
 
-        // Solve the cube.
-        //await SolveTheCubeAsyncBASIC();
-        await SolveTheCubeAsyncNEW();
+        // Solve the cube in this file.
+        //await TestCubeTurnsAsync();
+        //await SolveTheCubeAsyncBas();
+        await SolveTheCubeAsync();
 
-        //Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
+        // Reset the array with the cube turns.
+        Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
 
+        // Test the turns of the cube.
+        //ClassTestCubeTurns classTestCubeTurns = new();
+        //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
+
+        // Solve the cube from Basic-80 to C#.
+        //ClassSolveCubeBas classSolveCubeBas = new();
+        //bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
+
+        // Solve the cube in C#.
         //ClassSolveCube classSolveCube = new();
-        //classSolveCube.SolveTheCube();
-        ////await DisplayAlert("aCubeTurns[0]", Globals.aCubeTurns[0], "OK");
-        ////await DisplayAlert("aCubeTurns.Length", Convert.ToString(Globals.aCubeTurns.Length), "OK");
+        //bool bSolved = await classSolveCube.SolveTheCubeAsync();
 
-        //// Make the turns of the cube.
-        //for (int nItem = 0; nItem < 1000; nItem++)
+        //if (bSolved)
         //{
-        //    if (Globals.aCubeTurns[nItem] == null)
+        //    //SetCubeColorsInArrays();
+        //    //SetCubeColorsFromArrays();
+
+        //    // Make the turns of the cube.
+        //    for (int nItem = 0; nItem < 1000; nItem++)
         //    {
-        //        break;
+        //        if (Globals.aCubeTurns[nItem] == null)
+        //        {
+        //            break;
+        //        }
+        //        //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[nItem], "OK");
+        //        await MakeTurnAsync(Globals.aCubeTurns[nItem]);
         //    }
-        //    //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[nItem], "OK");
-        //    await MakeTurnAsync(Globals.aCubeTurns[nItem]);
+
+        //    await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
+        //}
+        
+        //if (!bSolved)
+        //{
+        //    await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
         //}
 
         // Settings.
@@ -250,7 +272,7 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the cube.  From Basic-80 to C#.
-    private async Task SolveTheCubeAsyncBASIC()
+    private async Task SolveTheCubeAsyncBas()
     {
         // Declare variables.
         int O, P, Q, R, V, X, Y, Z;
@@ -272,7 +294,7 @@ public partial class MainPage : ContentPage
         nLoopTimes++;
         if (nLoopTimes > 100)
         {
-            await DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.CubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
+            await DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageCubeNotSolved_Text, CubeLang.ButtonClose_Text);
             return;
         }
         if (cB == Globals.aUpFace[8] && Globals.aFrontFace[1] == Globals.aFrontFace[2])
@@ -589,12 +611,8 @@ public partial class MainPage : ContentPage
     }
 
     // Solve the cube.
-    private async Task SolveTheCubeAsyncNEW()
+    private async Task SolveTheCubeAsync()
     {
-        // Test the cube turns.
-        //await TestCubeTurnsAsync();
-        //return;
-
         // Solve the edges of the top layer - Chapter 4, page 14-3.
         await SolveEdgesTopLayerAsync();
 

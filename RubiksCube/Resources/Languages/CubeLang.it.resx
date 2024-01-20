@@ -439,7 +439,7 @@ Non autorizzato:</value>
   <data name="Yes_Text" xml:space="preserve">
     <value>Sì</value>
   </data>
-  <data name="CubeCannotBeSolved_Text" xml:space="preserve">
+  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
     <value>Il cubo non può essere risolto.</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿namespace RubiksCube
 {
-    class ClassCubeTurns
+    internal class ClassCubeTurns
     {
         //public static string CubeTurns(string cDirection, string[] aPieces, string[] aPiecesTemp)
         //{

@@ -1,22 +1,12 @@
 ﻿namespace RubiksCube
 {
-    class ClassSolveCube
+    internal class ClassSolveCube
     {
         private int nItem;
 
-        //public async Task<string> SolveCubeAsyncTest(string cube)
-        //{
-        //    //await MainPage.MakeTurnAsync("TurnUp-");
-
-        //    var mainPage = new MainPage();
-        //    await mainPage.MakeTurnAsync("TurnUp-");
-
-        //    return "Solved";
-        //}
-
         // Solve the cube.
 
-        public void SolveTheCube()
+        public async Task<bool> SolveTheCubeAsync()
         {
             // Link to the class MainPage.
             MainPage mainPage = new();
@@ -24,15 +14,15 @@
             //Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
             nItem = 0;
 
-            Globals.aCubeTurns[nItem] = "TurnLeft+";
-            nItem++;
-            Globals.aCubeTurns[nItem] = "TurnLeft-";
-            nItem++;
-            return;
+            //Globals.aCubeTurns[nItem] = "TurnLeft+";
+            //nItem++;
+            //Globals.aCubeTurns[nItem] = "TurnLeft-";
+            //nItem++;
+            //return;
 
             // Solve the edges of the top layer - Chapter 4, page 14-3.
 
-            SolveEdgesTopLayer();
+            await SolveEdgesTopLayerAsync();
 
             // Solve the edges of the top layer - Chapter 4, page 14-2.
             if (Globals.aUpFace[5] == Globals.aFrontFace[4])
@@ -95,7 +85,7 @@
 
             // Solve the edges of the top layer - Chapter 4, page 14-3.
 
-            SolveEdgesTopLayer();
+            await SolveEdgesTopLayerAsync();
 
             // Solve the corners of the top layer - Chapter 6, page 16.
 
@@ -112,14 +102,16 @@
 
 
 
-            //if (!ClassCheckColorsCube.CheckIfSolved())
-            //{
-            //    return;
-            //}
+            if (ClassCheckColorsCube.CheckIfSolved())
+            {
+                return true;
+            }
+
+            return false;
         }
 
         // Solve the edges of the top layer - Chapter 4, page 14-3.
-        private void SolveEdgesTopLayer()
+        private async Task SolveEdgesTopLayerAsync()
         {
             // Link to the class MainPage.
             MainPage mainPage = new();

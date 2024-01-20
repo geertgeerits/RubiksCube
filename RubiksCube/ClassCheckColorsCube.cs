@@ -1,6 +1,6 @@
 ﻿namespace RubiksCube
 {
-    class ClassCheckColorsCube
+    internal class ClassCheckColorsCube
     {
         // Check the number of colors of the cube.
         public static string CheckNumberColors()
