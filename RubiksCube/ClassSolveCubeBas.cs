@@ -348,14 +348,18 @@
             Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
             nItem++;
 
+            // Save the cube.
+            ClassSaveRestoreCube classSaveRestoreCube = new();
+            classSaveRestoreCube.SaveCube();
+
             // Turn the faces of the cube.
-            MainPage mainPage = new();
-            await mainPage.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            ClassCubeTurns classCubeTurns = new();
+
+            classSaveRestoreCube.RestoreCube();
+            await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
 
             // Copy array to array
             //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
-
         }
-
     }
 }

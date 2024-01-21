@@ -9,6 +9,223 @@
         //    return "Geert";
         //}
 
+        // Turn the faces of the cube
+        public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
+        {
+            switch (cTurnFaceAndDirection)
+            {
+                case "TurnFront+":
+                    TurnFrontFaceTo("+");
+                    break;
+                case "TurnFront-":
+                    TurnFrontFaceTo("-");
+                    break;
+                case "TurnUp+":
+                    TurnUpFaceTo("+");
+                    break;
+                case "TurnUp-":
+                    TurnUpFaceTo("-");
+                    break;
+                case "TurnDown+":
+                    TurnDownFaceTo("+");
+                    break;
+                case "TurnDown-":
+                    TurnDownFaceTo("-");
+                    break;
+                case "TurnLeft+":
+                    TurnLeftFaceTo("+");
+                    break;
+                case "TurnLeft-":
+                    TurnLeftFaceTo("-");
+                    break;
+                case "TurnRight+":
+                    TurnRightFaceTo("+");
+                    break;
+                case "TurnRight-":
+                    TurnRightFaceTo("-");
+                    break;
+                case "TurnBack+":
+                    TurnBackFaceTo("+");
+                    break;
+                case "TurnBack-":
+                    TurnBackFaceTo("-");
+                    break;
+
+                case "TurnFront++":
+                    TurnFrontFaceTo("+");
+                    TurnFrontFaceTo("+");
+                    break;
+                case "TurnFront--":
+                    TurnFrontFaceTo("-");
+                    TurnFrontFaceTo("-");
+                    break;
+                case "TurnUp++":
+                    TurnUpFaceTo("+");
+                    TurnUpFaceTo("+");
+                    break;
+                case "TurnUp--":
+                    TurnUpFaceTo("-");
+                    TurnUpFaceTo("-");
+                    break;
+                case "TurnDown++":
+                    TurnDownFaceTo("+");
+                    TurnDownFaceTo("+");
+                    break;
+                case "TurnDown--":
+                    TurnDownFaceTo("-");
+                    TurnDownFaceTo("-");
+                    break;
+                case "TurnLeft++":
+                    TurnLeftFaceTo("+");
+                    TurnLeftFaceTo("+");
+                    break;
+                case "TurnLeft--":
+                    TurnLeftFaceTo("-");
+                    TurnLeftFaceTo("-");
+                    break;
+                case "TurnRight++":
+                    TurnRightFaceTo("+");
+                    TurnRightFaceTo("+");
+                    break;
+                case "TurnRight--":
+                    TurnRightFaceTo("-");
+                    TurnRightFaceTo("-");
+                    break;
+                case "TurnBack++":
+                    TurnBackFaceTo("+");
+                    TurnBackFaceTo("+");
+                    break;
+                case "TurnBack--":
+                    TurnBackFaceTo("-");
+                    TurnBackFaceTo("-");
+                    break;
+
+                case "TurnUpHorMiddleRight+":
+                    TurnUpHorMiddleTo("+");
+                    break;
+                case "TurnUpHorMiddleLeft-":
+                    TurnUpHorMiddleTo("-");
+                    break;
+                case "TurnUpVerMiddleBack+":
+                    TurnUpVerMiddleTo("+");
+                    break;
+                case "TurnUpVerMiddleFront-":
+                    TurnUpVerMiddleTo("-");
+                    break;
+                case "TurnFrontHorMiddleLeft+":
+                    TurnFrontHorMiddleTo("+");
+                    break;
+                case "TurnFrontHorMiddleRight-":
+                    TurnFrontHorMiddleTo("-");
+                    break;
+
+                case "TurnUpHorMiddleRight++":
+                    TurnUpHorMiddleTo("+");
+                    TurnUpHorMiddleTo("+");
+                    break;
+                case "TurnUpHorMiddleLeft--":
+                    TurnUpHorMiddleTo("-");
+                    TurnUpHorMiddleTo("-");
+                    break;
+                case "TurnUpVerMiddleBack++":
+                    TurnUpVerMiddleTo("+");
+                    TurnUpVerMiddleTo("+");
+                    break;
+                case "TurnUpVerMiddleFront--":
+                    TurnUpVerMiddleTo("-");
+                    TurnUpVerMiddleTo("-");
+                    break;
+                case "TurnFrontHorMiddleLeft++":
+                    TurnFrontHorMiddleTo("+");
+                    TurnFrontHorMiddleTo("+");
+                    break;
+                case "TurnFrontHorMiddleRight--":
+                    TurnFrontHorMiddleTo("-");
+                    TurnFrontHorMiddleTo("-");
+                    break;
+
+                case "TurnCubeFrontToRight":
+                    TurnCubeFrontFaceToRightFace();
+                    break;
+                case "TurnCubeFrontToLeft":
+                    TurnCubeFrontFaceToLeftFace();
+                    break;
+                case "TurnCubeFrontToUp":
+                    TurnCubeFrontFaceToUpFace();
+                    break;
+                case "TurnCubeFrontToDown":
+                    TurnCubeFrontFaceToDownFace();
+                    break;
+                case "TurnCubeUpToRight":
+                    TurnCubeUpFaceToRightFace();
+                    break;
+                case "TurnCubeUpToLeft":
+                    TurnCubeUpFaceToLeftFace();
+                    break;
+
+                default:
+                    //await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
+                    return;
+            }
+
+            //SetCubeColorsFromArrays();
+        }
+
+        // Turn the entire cube a quarter turn.
+        // Rotate the entire cube so that the front goes to the left face.
+        private void TurnCubeFrontFaceToLeftFace()
+        {
+            TurnUpFaceTo("+");
+            TurnFrontHorMiddleTo("+");
+            TurnDownFaceTo("-");
+            //SetCubeColorsFromArrays();
+        }
+
+        // Rotate the entire cube so that the front goes to the right face.
+        private void TurnCubeFrontFaceToRightFace()
+        {
+            TurnUpFaceTo("-");
+            TurnFrontHorMiddleTo("-");
+            TurnDownFaceTo("+");
+            //SetCubeColorsFromArrays();
+        }
+
+        // Rotate the entire cube so that the front goes to the upper face.
+        private void TurnCubeFrontFaceToUpFace()
+        {
+            TurnRightFaceTo("+");
+            TurnUpVerMiddleTo("+");
+            TurnLeftFaceTo("-");
+            //SetCubeColorsFromArrays();
+        }
+
+        // Rotate the entire cube so that the front goes to the down face.
+        private void TurnCubeFrontFaceToDownFace()
+        {
+            TurnRightFaceTo("-");
+            TurnUpVerMiddleTo("-");
+            TurnLeftFaceTo("+");
+            //SetCubeColorsFromArrays();
+        }
+
+        // Rotate the entire cube so that the upper face goes to the right face.
+        private void TurnCubeUpFaceToRightFace()
+        {
+            TurnFrontFaceTo("+");
+            TurnUpHorMiddleTo("+");
+            TurnBackFaceTo("-");
+            //SetCubeColorsFromArrays();
+        }
+
+        // Rotate the entire cube so that the upper face goes to the left face.
+        private void TurnCubeUpFaceToLeftFace()
+        {
+            TurnFrontFaceTo("-");
+            TurnUpHorMiddleTo("-");
+            TurnBackFaceTo("+");
+            //SetCubeColorsFromArrays();
+        }
+
         // Turn the entire front face clockwise or counter clockwise.
         public static void TurnFrontFaceTo(string cDirection)
         {

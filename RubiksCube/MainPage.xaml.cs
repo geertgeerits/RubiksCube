@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-20 (YYYY-MM-DD)
+// Date ........: 2024-01-21 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001.
@@ -11,7 +11,6 @@
 // Thanks to ...: Gerald Versluis
 
 using Microsoft.Maui.Controls.Shapes;
-using System.Diagnostics;
 
 namespace RubiksCube;
 
@@ -22,16 +21,6 @@ public partial class MainPage : ContentPage
     public static bool bColorDrop;
     public static bool bSolvingCube;
     public static bool bArrowButtonPressed;
-    //public static string[] aFaceColors = new string[7];
-    //public static string[] aUpFace = new string[10];
-    //public static string[] aFrontFace = new string[10];
-    //public static string[] aRightFace = new string[10];
-    //public static string[] aLeftFace = new string[10];
-    //public static string[] aBackFace = new string[10];
-    //public static string[] aDownFace = new string[10];
-    //public static string[] aPieces = new string[54];
-    //public static string[] aPiecesTemp = new string[54];
-    //public static string[] aCubeTurns = new string[1000];
 
     public MainPage()
 	{
@@ -212,13 +201,17 @@ public partial class MainPage : ContentPage
         // Solve the cube in this file.
         //await TestCubeTurnsAsync();
         //await SolveTheCubeAsyncBas();
-        await SolveTheCubeAsync();
+        //await SolveTheCubeAsync();
 
         // Reset the array with the cube turns.
         Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
 
         activityIndicator.IsRunning = true;
         await Task.Delay(200);
+        
+        // Save the start colors of the cube.
+        SetCubeColorsInArrays();
+        ClassSaveRestoreCube.SaveStartColorsCube();
 
         // Test the turns of the cube.
         //ClassTestCubeTurns classTestCubeTurns = new();
@@ -229,36 +222,32 @@ public partial class MainPage : ContentPage
         //bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
 
         // Solve the cube in C#.
-        //ClassSolveCube classSolveCube = new();
-        //bool bSolved = await classSolveCube.SolveTheCubeAsync();
-        
+        ClassSolveCube classSolveCube = new();
+        bool bSolved = await classSolveCube.SolveTheCubeAsync();
+
+        // Restore the start colors of the cube.
+        ClassSaveRestoreCube.RestoreStartColorsCube();
+
         activityIndicator.IsRunning = false;
 
-        //if (bSolved)
-        //{
-        //    //SetCubeColorsInArrays();
-        //    //SetCubeColorsFromArrays();
+        if (bSolved)
+        {
+            // Make the turns of the cube.
+            for (int nItem = 0; nItem < Globals.aCubeTurns.Length; nItem++)
+            {
+                if (Globals.aCubeTurns[nItem] == null)
+                {
+                    break;
+                }
+                await MakeTurnAsync(Globals.aCubeTurns[nItem]);
+            }
+            await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
+        }
 
-        //    // Make the turns of the cube.
-        //    for (int nItem = 0; nItem < Globals.aCubeTurns.Length; nItem++)
-        //    {
-        //        if (Globals.aCubeTurns[nItem] == null)
-        //        {
-        //            break;
-        //        }
-        //        //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[nItem], "OK");
-        //        Debug.WriteLine(Globals.aCubeTurns[nItem]);
-        //        //await Task.Delay(200);
-        //        await MakeTurnAsync(Globals.aCubeTurns[nItem]);
-        //    }
-        //    //await DisplayAlert("Globals.aCubeTurns[]", Globals.aCubeTurns[0], "OK");
-        //    await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
-        //}
-
-        //if (!bSolved)
-        //{
-        //    await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
-        //}
+        if (!bSolved)
+        {
+            await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
+        }
 
         // Settings.
         lblExplainTurnCube1.Text = "";
@@ -607,10 +596,6 @@ public partial class MainPage : ContentPage
 
 
 
-
-
-
-
         if (!CheckIfCubeIsSolved(false))
         {
             return;
@@ -713,7 +698,7 @@ public partial class MainPage : ContentPage
             if (Globals.aUpFace[5] == Globals.aDownFace[8] && Globals.aBackFace[5] == Globals.aBackFace[8])
             {
                 await MakeTurnAsync("TurnBack++");
-                SetCubeColorsFromArrays();
+                //SetCubeColorsFromArrays();
             }
         }
     }

@@ -1,16 +1,14 @@
-﻿namespace RubiksCube
+﻿using System.Diagnostics;
+
+namespace RubiksCube
 {
     internal class ClassSolveCube
     {
         private int nItem;
 
         // Solve the cube.
-
         public async Task<bool> SolveTheCubeAsync()
         {
-            // Link to the class MainPage.
-            MainPage mainPage = new();
-
             nItem = 0;
 
             //await MakeTurnAsync("TurnLeft+");
@@ -18,7 +16,6 @@
             //return true;
 
             // Solve the edges of the top layer - Chapter 4, page 14-3.
-
             await SolveEdgesTopLayerAsync();
 
             // Solve the edges of the top layer - Chapter 4, page 14-2.
@@ -93,9 +90,6 @@
         // Solve the edges of the top layer - Chapter 4, page 14-3.
         private async Task SolveEdgesTopLayerAsync()
         {
-            // Link to the class MainPage.
-            MainPage mainPage = new();
-
             for (int nTimes = 1; nTimes < 11; nTimes++)
             {
                 if (Globals.aUpFace[5] == Globals.aDownFace[2] && Globals.aFrontFace[5] == Globals.aFrontFace[8])
@@ -116,8 +110,6 @@
                 if (Globals.aUpFace[5] == Globals.aDownFace[8] && Globals.aBackFace[5] == Globals.aBackFace[8])
                 {
                     await MakeTurnAsync("TurnBack++");
-
-                    //mainPage.SetCubeColorsFromArrays();
                 }
             }
         }
@@ -128,16 +120,18 @@
             Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
             nItem++;
 
+            // Save the cube.
+            ClassSaveRestoreCube classSaveRestoreCube = new();
+            classSaveRestoreCube.SaveCube();
+
             // Turn the faces of the cube.
-            MainPage mainPage = new();
-            await mainPage.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            ClassCubeTurns classCubeTurns = new();
+
+            classSaveRestoreCube.RestoreCube();
+            await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
 
             // Copy array to array
             //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
-
-
         }
-
-
     }
 }
