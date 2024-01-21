@@ -2,88 +2,91 @@
 {
     internal class ClassSaveRestoreCube
     {
-        // Save the colors of the cube pieces to a temporary array.
-        public static void SaveStartColorsCube()
+        // Save the colors of the cube pieces to an array.
+        public static string[] SaveColorsCube()
         {
             int nRow;
             int nElement = 0;
+            string[] aColor = new string[54];
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aPiecesTemp[nElement] = Globals.aFrontFace[nRow];
+                aColor[nElement] = Globals.aFrontFace[nRow];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aPiecesTemp[nElement] = Globals.aRightFace[nRow];
+                aColor[nElement] = Globals.aRightFace[nRow];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aPiecesTemp[nElement] = Globals.aBackFace[nRow];
+                aColor[nElement] = Globals.aBackFace[nRow];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aPiecesTemp[nElement] = Globals.aLeftFace[nRow];
+                aColor[nElement] = Globals.aLeftFace[nRow];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aPiecesTemp[nElement] = Globals.aUpFace[nRow];
+                aColor[nElement] = Globals.aUpFace[nRow];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aPiecesTemp[nElement] = Globals.aDownFace[nRow];
+                aColor[nElement] = Globals.aDownFace[nRow];
                 nElement++;
             }
+
+            return aColor;
         }
 
-        // Restore the colors of the cube pieces from a temporary array.
-        public static void RestoreStartColorsCube()
+        // Restore the colors of the cube pieces from an array.
+        public static void RestoreColorsCube(string[] aColor)
         {
             int nRow;
             int nElement = 0;
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aFrontFace[nRow] = Globals.aPiecesTemp[nElement];
+                Globals.aFrontFace[nRow] = aColor[nElement];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aRightFace[nRow] = Globals.aPiecesTemp[nElement];
+                Globals.aRightFace[nRow] = aColor[nElement];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aBackFace[nRow] = Globals.aPiecesTemp[nElement];
+                Globals.aBackFace[nRow] = aColor[nElement];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aLeftFace[nRow] = Globals.aPiecesTemp[nElement];
+                Globals.aLeftFace[nRow] = aColor[nElement];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aUpFace[nRow] = Globals.aPiecesTemp[nElement];
+                Globals.aUpFace[nRow] = aColor[nElement];
                 nElement++;
             }
 
             for (nRow = 1; nRow < 10; nRow++)
             {
-                Globals.aDownFace[nRow] = Globals.aPiecesTemp[nElement];
+                Globals.aDownFace[nRow] = aColor[nElement];
                 nElement++;
             }
         }

@@ -120,18 +120,15 @@ namespace RubiksCube
             Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
             nItem++;
 
-            // Save the cube.
-            ClassSaveRestoreCube classSaveRestoreCube = new();
-            classSaveRestoreCube.SaveCube();
+            // Save the cube colors.
+            Globals.aPiecesTemp = ClassSaveRestoreCube.SaveColorsCube();
+
+            // Restore the cube colors.
+            ClassSaveRestoreCube.RestoreColorsCube(Globals.aPiecesTemp);
 
             // Turn the faces of the cube.
             ClassCubeTurns classCubeTurns = new();
-
-            classSaveRestoreCube.RestoreCube();
             await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
-
-            // Copy array to array
-            //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
         }
     }
 }

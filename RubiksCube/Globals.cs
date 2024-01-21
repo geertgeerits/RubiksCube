@@ -35,6 +35,8 @@ static class Globals
     public static string[] aDownFace = new string[10];
     public static string[] aPieces = new string[54];
     public static string[] aPiecesTemp = new string[54];
+    public static string[] aStartPieces = new string[54];
+    public static string[] aTemp = new string[54];
     public static string[] aCubeTurns = new string[1000];
 
     // Global methods.

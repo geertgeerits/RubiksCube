@@ -208,11 +208,11 @@ public partial class MainPage : ContentPage
 
         activityIndicator.IsRunning = true;
         await Task.Delay(200);
-        
-        // Save the start colors of the cube.
-        SetCubeColorsInArrays();
-        ClassSaveRestoreCube.SaveStartColorsCube();
 
+        // Save the start colors of the cube to array aStartPieces[].
+        SetCubeColorsInArrays();
+        Globals.aStartPieces = ClassSaveRestoreCube.SaveColorsCube();
+        
         // Test the turns of the cube.
         //ClassTestCubeTurns classTestCubeTurns = new();
         //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
@@ -225,8 +225,8 @@ public partial class MainPage : ContentPage
         ClassSolveCube classSolveCube = new();
         bool bSolved = await classSolveCube.SolveTheCubeAsync();
 
-        // Restore the start colors of the cube.
-        ClassSaveRestoreCube.RestoreStartColorsCube();
+        // Restore the start colors of the cube from array aStartPieces[].
+        ClassSaveRestoreCube.RestoreColorsCube(Globals.aStartPieces);
 
         activityIndicator.IsRunning = false;
 
