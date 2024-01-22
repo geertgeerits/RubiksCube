@@ -94,8 +94,6 @@
         // Save the cube.
         public void SaveCube()
         {
-            //SetCubeColorsInArrays();
-
             string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "CubePieces.txt");
 
             if (File.Exists(cFileName))
@@ -204,8 +202,6 @@
                 //DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return;
             }
-
-            //SetCubeColorsFromArrays();
         }
     }
 }

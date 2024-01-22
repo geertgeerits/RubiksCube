@@ -18,9 +18,9 @@ public partial class MainPage : ContentPage
 {
     // Local variables.
     private IEnumerable<Locale> locales;
-    public static bool bColorDrop;
-    public static bool bSolvingCube;
-    public static bool bArrowButtonPressed;
+    private bool bColorDrop;
+    private bool bSolvingCube;
+    private bool bArrowButtonPressed;
 
     public MainPage()
 	{
@@ -80,7 +80,6 @@ public partial class MainPage : ContentPage
         {
             cCultureName = "en-US";
         }
-        //DisplayAlert("cCultureName", "*" + cCultureName + "*", "OK");  // For testing.
 
         InitializeTextToSpeech(cCultureName);
 
@@ -280,7 +279,7 @@ public partial class MainPage : ContentPage
     }
 
     // Check if the cube is solved.
-    public bool CheckIfCubeIsSolved(bool bShowMessage)
+    private bool CheckIfCubeIsSolved(bool bShowMessage)
     {
         bool bResult = ClassCheckColorsCube.CheckIfSolved();
 
@@ -693,7 +692,7 @@ public partial class MainPage : ContentPage
     }
 
     // Make and explain the turn of the cube called from the main task SolveTheCubeAsync().
-    public async Task MakeTurnAsync(string cTurnFaceAndDirection)
+    private async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
         // Enable the arrow button and set the background color to Active.
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
@@ -724,7 +723,10 @@ public partial class MainPage : ContentPage
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, false);
 
         // Turn the faces of the cube.
-        await TurnFaceCubeAsync(cTurnFaceAndDirection);
+        ClassCubeTurns classCubeTurns = new();
+        await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+        
+        SetCubeColorsFromArrays();
     }
 
     // Enalbe or disable the arrow imagebuttons.
@@ -953,168 +955,6 @@ public partial class MainPage : ContentPage
         }
 
         return cTurnCubeText;
-    }
-
-    // Turn the faces of the cube
-    public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
-    {
-        switch (cTurnFaceAndDirection)
-        {
-            case "TurnFront+":
-                ClassCubeTurns.TurnFrontFaceTo("+");
-                break;
-            case "TurnFront-":
-                ClassCubeTurns.TurnFrontFaceTo("-");
-                break;
-            case "TurnUp+":
-                ClassCubeTurns.TurnUpFaceTo("+");
-                break;
-            case "TurnUp-":
-                ClassCubeTurns.TurnUpFaceTo("-");
-                break;
-            case "TurnDown+":
-                ClassCubeTurns.TurnDownFaceTo("+");
-                break;
-            case "TurnDown-":
-                ClassCubeTurns.TurnDownFaceTo("-");
-                break;
-            case "TurnLeft+":
-                ClassCubeTurns.TurnLeftFaceTo("+");
-                break;
-            case "TurnLeft-":
-                ClassCubeTurns.TurnLeftFaceTo("-");
-                break;
-            case "TurnRight+":
-                ClassCubeTurns.TurnRightFaceTo("+");
-                break;
-            case "TurnRight-":
-                ClassCubeTurns.TurnRightFaceTo("-");
-                break;
-            case "TurnBack+":
-                ClassCubeTurns.TurnBackFaceTo("+");
-                break;
-            case "TurnBack-":
-                ClassCubeTurns.TurnBackFaceTo("-");
-                break;
-
-            case "TurnFront++":
-                ClassCubeTurns.TurnFrontFaceTo("+");
-                ClassCubeTurns.TurnFrontFaceTo("+");
-                break;
-            case "TurnFront--":
-                ClassCubeTurns.TurnFrontFaceTo("-");
-                ClassCubeTurns.TurnFrontFaceTo("-");
-                break;
-            case "TurnUp++":
-                ClassCubeTurns.TurnUpFaceTo("+");
-                ClassCubeTurns.TurnUpFaceTo("+");
-                break;
-            case "TurnUp--":
-                ClassCubeTurns.TurnUpFaceTo("-");
-                ClassCubeTurns.TurnUpFaceTo("-");
-                break;
-            case "TurnDown++":
-                ClassCubeTurns.TurnDownFaceTo("+");
-                ClassCubeTurns.TurnDownFaceTo("+");
-                break;
-            case "TurnDown--":
-                ClassCubeTurns.TurnDownFaceTo("-");
-                ClassCubeTurns.TurnDownFaceTo("-");
-                break;
-            case "TurnLeft++":
-                ClassCubeTurns.TurnLeftFaceTo("+");
-                ClassCubeTurns.TurnLeftFaceTo("+");
-                break;
-            case "TurnLeft--":
-                ClassCubeTurns.TurnLeftFaceTo("-");
-                ClassCubeTurns.TurnLeftFaceTo("-");
-                break;
-            case "TurnRight++":
-                ClassCubeTurns.TurnRightFaceTo("+");
-                ClassCubeTurns.TurnRightFaceTo("+");
-                break;
-            case "TurnRight--":
-                ClassCubeTurns.TurnRightFaceTo("-");
-                ClassCubeTurns.TurnRightFaceTo("-");
-                break;
-            case "TurnBack++":
-                ClassCubeTurns.TurnBackFaceTo("+");
-                ClassCubeTurns.TurnBackFaceTo("+");
-                break;
-            case "TurnBack--":
-                ClassCubeTurns.TurnBackFaceTo("-");
-                ClassCubeTurns.TurnBackFaceTo("-");
-                break;
-
-            case "TurnUpHorMiddleRight+":
-                ClassCubeTurns.TurnUpHorMiddleTo("+");
-                break;
-            case "TurnUpHorMiddleLeft-":
-                ClassCubeTurns.TurnUpHorMiddleTo("-");
-                break;
-            case "TurnUpVerMiddleBack+":
-                ClassCubeTurns.TurnUpVerMiddleTo("+");
-                break;
-            case "TurnUpVerMiddleFront-":
-                ClassCubeTurns.TurnUpVerMiddleTo("-");
-                break;
-            case "TurnFrontHorMiddleLeft+":
-                ClassCubeTurns.TurnFrontHorMiddleTo("+");
-                break;
-            case "TurnFrontHorMiddleRight-":
-                ClassCubeTurns.TurnFrontHorMiddleTo("-");
-                break;
-
-            case "TurnUpHorMiddleRight++":
-                ClassCubeTurns.TurnUpHorMiddleTo("+");
-                ClassCubeTurns.TurnUpHorMiddleTo("+");
-                break;
-            case "TurnUpHorMiddleLeft--":
-                ClassCubeTurns.TurnUpHorMiddleTo("-");
-                ClassCubeTurns.TurnUpHorMiddleTo("-");
-                break;
-            case "TurnUpVerMiddleBack++":
-                ClassCubeTurns.TurnUpVerMiddleTo("+");
-                ClassCubeTurns.TurnUpVerMiddleTo("+");
-                break;
-            case "TurnUpVerMiddleFront--":
-                ClassCubeTurns.TurnUpVerMiddleTo("-");
-                ClassCubeTurns.TurnUpVerMiddleTo("-");
-                break;
-            case "TurnFrontHorMiddleLeft++":
-                ClassCubeTurns.TurnFrontHorMiddleTo("+");
-                ClassCubeTurns.TurnFrontHorMiddleTo("+");
-                break;
-            case "TurnFrontHorMiddleRight--":
-                ClassCubeTurns.TurnFrontHorMiddleTo("-");
-                ClassCubeTurns.TurnFrontHorMiddleTo("-");
-                break;
-
-            case "TurnCubeFrontToRight":
-                TurnCubeFrontFaceToRightFace();
-                break;
-            case "TurnCubeFrontToLeft":
-                TurnCubeFrontFaceToLeftFace();
-                break;
-            case "TurnCubeFrontToUp":
-                TurnCubeFrontFaceToUpFace();
-                break;
-            case "TurnCubeFrontToDown":
-                TurnCubeFrontFaceToDownFace();
-                break;
-            case "TurnCubeUpToRight":
-                TurnCubeUpFaceToRightFace();
-                break;
-            case "TurnCubeUpToLeft":
-                TurnCubeUpFaceToLeftFace();
-                break;
-
-            default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
-                return;
-        }
-        
-        SetCubeColorsFromArrays();
     }
 
     // Explain the turn of the cube with speech.
@@ -1443,7 +1283,7 @@ public partial class MainPage : ContentPage
     }
 
     // Set the cube colors from the arrays in the polygons.
-    public void SetCubeColorsFromArrays()
+    private void SetCubeColorsFromArrays()
     {
         Globals.cCubeColor1 = Globals.aFaceColors[1];
         Globals.cCubeColor2 = Globals.aFaceColors[2];

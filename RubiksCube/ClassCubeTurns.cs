@@ -894,7 +894,7 @@
                 Globals.aBackFace[9] = cColorLeft9;
             }
             //--------------------------------------------------------
-            //CopyCubePieceColorsToTemporaryArray();
+            //Globals.aPiecesTemp = ClassSaveRestoreCube.SaveColorsCube();
 
             //if (cDirection == "+")
             //{
