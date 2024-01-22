@@ -2,13 +2,6 @@
 {
     internal class ClassCubeTurns
     {
-        //public static string CubeTurns(string cDirection, string[] aPieces, string[] aPiecesTemp)
-        //{
-        //    //DisplayAlert("cDirection", cDirection + aPieces[0] + aPiecesTemp[0], "OK");
-        //    Console.WriteLine(cDirection + aPieces[0] + aPiecesTemp[0]);
-        //    return "Geert";
-        //}
-
         // Turn the faces of the cube
         public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
         {
@@ -167,8 +160,6 @@
                     //await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
                     return;
             }
-
-            //SetCubeColorsFromArrays();
         }
 
         // Turn the entire cube a quarter turn.
@@ -178,7 +169,6 @@
             TurnUpFaceTo("+");
             TurnFrontHorMiddleTo("+");
             TurnDownFaceTo("-");
-            //SetCubeColorsFromArrays();
         }
 
         // Rotate the entire cube so that the front goes to the right face.
@@ -187,7 +177,6 @@
             TurnUpFaceTo("-");
             TurnFrontHorMiddleTo("-");
             TurnDownFaceTo("+");
-            //SetCubeColorsFromArrays();
         }
 
         // Rotate the entire cube so that the front goes to the upper face.
@@ -196,7 +185,6 @@
             TurnRightFaceTo("+");
             TurnUpVerMiddleTo("+");
             TurnLeftFaceTo("-");
-            //SetCubeColorsFromArrays();
         }
 
         // Rotate the entire cube so that the front goes to the down face.
@@ -205,7 +193,6 @@
             TurnRightFaceTo("-");
             TurnUpVerMiddleTo("-");
             TurnLeftFaceTo("+");
-            //SetCubeColorsFromArrays();
         }
 
         // Rotate the entire cube so that the upper face goes to the right face.
@@ -214,7 +201,6 @@
             TurnFrontFaceTo("+");
             TurnUpHorMiddleTo("+");
             TurnBackFaceTo("-");
-            //SetCubeColorsFromArrays();
         }
 
         // Rotate the entire cube so that the upper face goes to the left face.
@@ -223,7 +209,6 @@
             TurnFrontFaceTo("-");
             TurnUpHorMiddleTo("-");
             TurnBackFaceTo("+");
-            //SetCubeColorsFromArrays();
         }
 
         // Turn the entire front face clockwise or counter clockwise.

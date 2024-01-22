@@ -63,21 +63,13 @@
         // Make a turn of the cube/face/side.
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
+            // Add the turn to the array.
             Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
             nItem++;
 
-            // Save the cube.
-            ClassSaveRestoreCube classSaveRestoreCube = new();
-            classSaveRestoreCube.SaveCube();
-
-            // Turn the faces of the cube.
+            // Turn the cube/face/side.
             ClassCubeTurns classCubeTurns = new();
-
-            classSaveRestoreCube.RestoreCube();
             await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
-
-            // Copy array to array
-            //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
         }
     }
 }

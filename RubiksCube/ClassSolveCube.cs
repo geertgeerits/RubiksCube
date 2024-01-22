@@ -117,16 +117,11 @@ namespace RubiksCube
         // Make a turn of the cube/face/side.
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
+            // Add the turn to the array.
             Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
             nItem++;
 
-            // Save the cube colors.
-            Globals.aPiecesTemp = ClassSaveRestoreCube.SaveColorsCube();
-
-            // Restore the cube colors.
-            ClassSaveRestoreCube.RestoreColorsCube(Globals.aPiecesTemp);
-
-            // Turn the faces of the cube.
+            // Turn the cube/face/side.
             ClassCubeTurns classCubeTurns = new();
             await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         }

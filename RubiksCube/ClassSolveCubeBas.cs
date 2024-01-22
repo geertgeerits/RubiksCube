@@ -4,6 +4,9 @@
     {
         private int nItem;
 
+        // Note: delete the lines after 710 to before 1010 to get the cross on the top layer,
+        //       and change 'return false' to 'return true'.
+        
         // Solve the cube.  From Basic-80 to C#.
         public async Task<bool> SolveTheCubeBasAsync()
         {
@@ -29,7 +32,7 @@
             nLoopTimes++;
             if (nLoopTimes > 200)
             {
-                return false;
+                return true;
             }
             if (cB == Globals.aUpFace[8] && Globals.aFrontFace[1] == Globals.aFrontFace[2])
                 V = 1;
@@ -190,145 +193,145 @@
 
         // Solve the corners of the top layer - Chapter 6, page 16.
         Line710:
-            cB = Globals.aUpFace[5];
-            O = 0;
-            P = 0;
-            Q = 0;
-            R = 0;
-            // 715
-            if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
-                O = 1;
-            // 720
-            if (Globals.aFrontFace[1] == Globals.aFrontFace[3])
-                P = 1;
-            // 725
-            if (Globals.aRightFace[1] == Globals.aRightFace[3])
-                Q = 1;
-            // 730
-            if (Globals.aBackFace[1] == Globals.aBackFace[3])
-                R = 1;
-            // 735
-            if (O == 1 && P == 1 && Q == 1 && R == 1)
-                goto Line1010;
-            // 740
-            O = 0;
-            if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
-                O = 1;
-            // 745
-            if (O == 1 && P == 1 && Q == 1)
-            {
-                await MakeTurnAsync("TurnUp++");
-                goto Line800;
-            }
-            // 750
-            O = 0;
-            if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[9])
-                O = 1;
-            // 755
-            if (O == 1 && Q == 1)
-            {
-                await MakeTurnAsync("TurnUp++");
-                goto Line800;
-            }
-            // 760
-            O = 0;
-            if (cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
-                O = 1;
-            // 765
-            if (O == 1 && P == 1)
-            {
-                await MakeTurnAsync("TurnUp+");
-                goto Line800;
-            }
-            // 770
-            O = 0;
-            if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3])
-                O = 1;
-            // 775
-            if (O == 1 && R == 1)
-            {
-                await MakeTurnAsync("TurnUp-");
-                goto Line800;
-            }
-            // 780
-            if (cB != Globals.aUpFace[9])
-                goto Line800;
-            // 785
-            if (cB != Globals.aUpFace[3])
-            {
-                await MakeTurnAsync("TurnUp+");
-                goto Line800;
-            }
-            // 790
-            if (cB != Globals.aUpFace[7])
-            {
-                await MakeTurnAsync("TurnUp-");
-                goto Line800;
-            }
-            // 795
-            if (cB != Globals.aUpFace[1])
-            {
-                await MakeTurnAsync("TurnUp++");
-            }
-        // 800
-        Line800:
-            if (cB == Globals.aFrontFace[9] || cB == Globals.aRightFace[7] || cB == Globals.aDownFace[3])
-                goto Line880;
-            // 805
-            if (cB == Globals.aRightFace[9] || cB == Globals.aBackFace[7] || cB == Globals.aDownFace[9])
-            {
-                await MakeTurnAsync("TurnDown-");
-                goto Line880;
-            }
-            // 810
-            if (cB == Globals.aFrontFace[7] || cB == Globals.aLeftFace[9] || cB == Globals.aDownFace[1])
-            {
-                await MakeTurnAsync("TurnDown+");
-                goto Line880;
-            }
-            // 815
-            if (cB == Globals.aBackFace[9] || cB == Globals.aLeftFace[7] || cB == Globals.aDownFace[7])
-            {
-                await MakeTurnAsync("TurnDown++");
-                goto Line880;
-            }
-            // 870
-            await MakeTurnAsync("TurnRight++");
-            goto Line710;
-        // 880
-        Line880:
-            if (cB == Globals.aFrontFace[9])
-            {
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnFront-");
-                goto Line710;
-            }
-            // 885
-            if (cB == Globals.aRightFace[7])
-            {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnRight+");
-                goto Line710;
-            }
-            // 890
-            if (cB == Globals.aDownFace[3])
-            {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnRight+");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnRight+");
-            }
-            // 895
-            goto Line710;
+        //    cB = Globals.aUpFace[5];
+        //    O = 0;
+        //    P = 0;
+        //    Q = 0;
+        //    R = 0;
+        //    // 715
+        //    if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
+        //        O = 1;
+        //    // 720
+        //    if (Globals.aFrontFace[1] == Globals.aFrontFace[3])
+        //        P = 1;
+        //    // 725
+        //    if (Globals.aRightFace[1] == Globals.aRightFace[3])
+        //        Q = 1;
+        //    // 730
+        //    if (Globals.aBackFace[1] == Globals.aBackFace[3])
+        //        R = 1;
+        //    // 735
+        //    if (O == 1 && P == 1 && Q == 1 && R == 1)
+        //        goto Line1010;
+        //    // 740
+        //    O = 0;
+        //    if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
+        //        O = 1;
+        //    // 745
+        //    if (O == 1 && P == 1 && Q == 1)
+        //    {
+        //        await MakeTurnAsync("TurnUp++");
+        //        goto Line800;
+        //    }
+        //    // 750
+        //    O = 0;
+        //    if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[9])
+        //        O = 1;
+        //    // 755
+        //    if (O == 1 && Q == 1)
+        //    {
+        //        await MakeTurnAsync("TurnUp++");
+        //        goto Line800;
+        //    }
+        //    // 760
+        //    O = 0;
+        //    if (cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
+        //        O = 1;
+        //    // 765
+        //    if (O == 1 && P == 1)
+        //    {
+        //        await MakeTurnAsync("TurnUp+");
+        //        goto Line800;
+        //    }
+        //    // 770
+        //    O = 0;
+        //    if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3])
+        //        O = 1;
+        //    // 775
+        //    if (O == 1 && R == 1)
+        //    {
+        //        await MakeTurnAsync("TurnUp-");
+        //        goto Line800;
+        //    }
+        //    // 780
+        //    if (cB != Globals.aUpFace[9])
+        //        goto Line800;
+        //    // 785
+        //    if (cB != Globals.aUpFace[3])
+        //    {
+        //        await MakeTurnAsync("TurnUp+");
+        //        goto Line800;
+        //    }
+        //    // 790
+        //    if (cB != Globals.aUpFace[7])
+        //    {
+        //        await MakeTurnAsync("TurnUp-");
+        //        goto Line800;
+        //    }
+        //    // 795
+        //    if (cB != Globals.aUpFace[1])
+        //    {
+        //        await MakeTurnAsync("TurnUp++");
+        //    }
+        //// 800
+        //Line800:
+        //    if (cB == Globals.aFrontFace[9] || cB == Globals.aRightFace[7] || cB == Globals.aDownFace[3])
+        //        goto Line880;
+        //    // 805
+        //    if (cB == Globals.aRightFace[9] || cB == Globals.aBackFace[7] || cB == Globals.aDownFace[9])
+        //    {
+        //        await MakeTurnAsync("TurnDown-");
+        //        goto Line880;
+        //    }
+        //    // 810
+        //    if (cB == Globals.aFrontFace[7] || cB == Globals.aLeftFace[9] || cB == Globals.aDownFace[1])
+        //    {
+        //        await MakeTurnAsync("TurnDown+");
+        //        goto Line880;
+        //    }
+        //    // 815
+        //    if (cB == Globals.aBackFace[9] || cB == Globals.aLeftFace[7] || cB == Globals.aDownFace[7])
+        //    {
+        //        await MakeTurnAsync("TurnDown++");
+        //        goto Line880;
+        //    }
+        //    // 870
+        //    await MakeTurnAsync("TurnRight++");
+        //    goto Line710;
+        //// 880
+        //Line880:
+        //    if (cB == Globals.aFrontFace[9])
+        //    {
+        //        await MakeTurnAsync("TurnFront+");
+        //        await MakeTurnAsync("TurnDown+");
+        //        await MakeTurnAsync("TurnFront-");
+        //        goto Line710;
+        //    }
+        //    // 885
+        //    if (cB == Globals.aRightFace[7])
+        //    {
+        //        await MakeTurnAsync("TurnRight-");
+        //        await MakeTurnAsync("TurnDown-");
+        //        await MakeTurnAsync("TurnRight+");
+        //        goto Line710;
+        //    }
+        //    // 890
+        //    if (cB == Globals.aDownFace[3])
+        //    {
+        //        await MakeTurnAsync("TurnRight-");
+        //        await MakeTurnAsync("TurnDown+");
+        //        await MakeTurnAsync("TurnRight+");
+        //        await MakeTurnAsync("TurnDown+");
+        //        await MakeTurnAsync("TurnDown+");
+        //        await MakeTurnAsync("TurnRight-");
+        //        await MakeTurnAsync("TurnDown-");
+        //        await MakeTurnAsync("TurnRight+");
+        //    }
+        //    // 895
+        //    goto Line710;
 
-        // 1000
-        // Solve the middle layer - Chapter 10, page 21.
+        //// 1000
+        //// Solve the middle layer - Chapter 10, page 21.
         Line1010:;
 
 
@@ -339,27 +342,19 @@
                 return true;
             }
             
-            return false;
+            return true;
         }
 
         // Make a turn of the cube/face/side.
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
+            // Add the turn to the array.
             Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
             nItem++;
 
-            // Save the cube.
-            ClassSaveRestoreCube classSaveRestoreCube = new();
-            classSaveRestoreCube.SaveCube();
-
-            // Turn the faces of the cube.
+            // Turn the cube/face/side.
             ClassCubeTurns classCubeTurns = new();
-
-            classSaveRestoreCube.RestoreCube();
             await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
-
-            // Copy array to array
-            //Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
         }
     }
 }
