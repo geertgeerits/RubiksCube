@@ -11,6 +11,7 @@
 // Thanks to ...: Gerald Versluis
 
 using Microsoft.Maui.Controls.Shapes;
+using System.Diagnostics;
 
 namespace RubiksCube;
 
@@ -197,11 +198,14 @@ public partial class MainPage : ContentPage
         lblCubeInsideView.IsVisible = false;
         lblExplainTurnCube2.IsVisible = true;
 
-        // Reset the array with the cube turns.
-        Array.Clear(Globals.aCubeTurns, 0, Globals.aCubeTurns.Length);
+        // Reset the list with the cube turns.
+        Globals.lCubeTurns.Clear();
 
         activityIndicator.IsRunning = true;
         await Task.Delay(200);
+
+        // Create and start a stopwatch instance.
+        Stopwatch stopwatch = Stopwatch.StartNew();
 
         // Save the start colors of the cube to array aStartPieces[].
         SetCubeColorsInArrays();
@@ -224,17 +228,21 @@ public partial class MainPage : ContentPage
 
         activityIndicator.IsRunning = false;
 
+        // Stop the stopwatch and get the elapsed time.
+        stopwatch.Stop();
+        var elapsedMs = stopwatch.ElapsedMilliseconds;
+
+        // Display the number of turns and the elapsed time in milliseconds.
+        await DisplayAlert("lCubeTurns", $"Turns: {Globals.lCubeTurns.Count}\nTime in milliseconds: {elapsedMs}", CubeLang.ButtonClose_Text);
+
         if (bSolved)
         {
             // Make the turns of the cube.
-            for (int nItem = 0; nItem < Globals.aCubeTurns.Length; nItem++)
+            foreach (string cItem in Globals.lCubeTurns)
             {
-                if (Globals.aCubeTurns[nItem] == null)
-                {
-                    break;
-                }
-                await MakeTurnAsync(Globals.aCubeTurns[nItem]);
+                await MakeTurnAsync(cItem);
             }
+
             await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
         }
 
@@ -276,33 +284,6 @@ public partial class MainPage : ContentPage
             DisplayAlert(CubeLang.ErrorTitle_Text, cMessage, CubeLang.ButtonClose_Text);
             return false;
         }
-    }
-
-    // Check if the cube is solved.
-    private bool CheckIfCubeIsSolved(bool bShowMessage)
-    {
-        bool bResult = ClassCheckColorsCube.CheckIfSolved();
-
-        if (bResult)
-        {
-            if (Globals.bExplainSpeech)
-            {
-                ConvertTextToSpeech(CubeLang.MessageCubeIsSolved_Text);
-            }
-
-            DisplayAlert("Rubik's Cube", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
-            return true;
-        }
-
-        if (!bResult)
-        {
-            if (bShowMessage)
-            {
-                DisplayAlert("Rubik's Cube", CubeLang.MessageCubeNotSolved_Text, CubeLang.ButtonClose_Text);
-            }
-        }
-
-        return false;
     }
 
     // Turn the faces of the cube.

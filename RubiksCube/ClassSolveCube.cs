@@ -4,17 +4,9 @@ namespace RubiksCube
 {
     internal class ClassSolveCube
     {
-        private int nItem;
-
         // Solve the cube.
         public async Task<bool> SolveTheCubeAsync()
         {
-            nItem = 0;
-
-            //await MakeTurnAsync("TurnLeft+");
-            //await MakeTurnAsync("TurnLeft-");
-            //return true;
-
             // Solve the edges of the top layer - Chapter 4, page 14-3.
             await SolveEdgesTopLayerAsync();
 
@@ -117,9 +109,8 @@ namespace RubiksCube
         // Make a turn of the cube/face/side.
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
-            // Add the turn to the array.
-            Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
-            nItem++;
+            // Add the turn to the list.
+            Globals.lCubeTurns.Add(cTurnFaceAndDirection);
 
             // Turn the cube/face/side.
             ClassCubeTurns classCubeTurns = new();

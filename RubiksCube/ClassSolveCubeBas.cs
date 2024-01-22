@@ -2,8 +2,6 @@
 {
     internal class ClassSolveCubeBas
     {
-        private int nItem;
-
         // Note: delete the lines after 710 to before 1010 to get the cross on the top layer,
         //       and change 'return false' to 'return true'.
         
@@ -16,7 +14,6 @@
             string cX;
             int nLoopTimes = 0;
             
-            nItem = 0;
         // 500
         // Top layer.
         // Solve the edges of the top layer - Chapter 4, page 14-3.
@@ -32,7 +29,7 @@
             nLoopTimes++;
             if (nLoopTimes > 200)
             {
-                return true;
+                return true;        // false
             }
             if (cB == Globals.aUpFace[8] && Globals.aFrontFace[1] == Globals.aFrontFace[2])
                 V = 1;
@@ -342,15 +339,14 @@
                 return true;
             }
             
-            return true;
+            return true;        // false
         }
 
         // Make a turn of the cube/face/side.
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
-            // Add the turn to the array.
-            Globals.aCubeTurns[nItem] = cTurnFaceAndDirection;
-            nItem++;
+            // Add the turn to the list.
+            Globals.lCubeTurns.Add(cTurnFaceAndDirection);
 
             // Turn the cube/face/side.
             ClassCubeTurns classCubeTurns = new();

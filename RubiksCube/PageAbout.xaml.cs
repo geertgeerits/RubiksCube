@@ -15,14 +15,14 @@ public partial class PageAbout : ContentPage
         }
 
         // Put text in the chosen language in the controls and variables.
-        lblVersion.Text = CubeLang.Version_Text + " 2.0.11";
-        lblCopyright.Text = CubeLang.Copyright_Text + " © 1981-2024 Geert Geerits";
-        lblEmail.Text = CubeLang.Email_Text + " geertgeerits@gmail.com";
-        lblWebsite.Text = CubeLang.Website_Text + ": ../rubikscube";
-        lblPrivacyPolicy.Text = "\n" + CubeLang.PrivacyPolicyTitle_Text + " " + CubeLang.PrivacyPolicy_Text;
-        lblLicense.Text = "\n" + CubeLang.LicenseTitle_Text + ": " + CubeLang.License_Text;
-        lblHelp.Text = "\n" + CubeLang.HelpCube_Text;
-        lblExplanation.Text = "\n" + CubeLang.InfoExplanation_Text;
+        lblVersion.Text = $"{CubeLang.Version_Text} 2.0.11";
+        lblCopyright.Text = $"{CubeLang.Copyright_Text} © 1981-2024 Geert Geerits";
+        lblEmail.Text = $"{CubeLang.Email_Text} geertgeerits@gmail.com";
+        lblWebsite.Text = $"{CubeLang.Website_Text}: ../rubikscube";
+        lblPrivacyPolicy.Text = $"\n{CubeLang.PrivacyPolicyTitle_Text} {CubeLang.PrivacyPolicy_Text}";
+        lblLicense.Text = $"\n{CubeLang.LicenseTitle_Text}: {CubeLang.License_Text}";
+        lblHelp.Text = $"\n{CubeLang.HelpCube_Text}";
+        lblExplanation.Text = $"\n{CubeLang.InfoExplanation_Text}";
     }
 
     // Open e-mail program.
