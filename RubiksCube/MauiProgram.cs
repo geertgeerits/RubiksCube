@@ -37,7 +37,7 @@ public static class MauiProgram
                 {
                     //System.Diagnostics.Debug.WriteLine($"Lifecycle event: {eventName}{(type == null ? string.Empty : $" ({type})")}");
 
-                    // Cancel speech if a cancellation token exists & hasn't been already requested.
+                    // Cancel speech if a cancellation token exists & hasn't been already requested
                     if (Globals.bTextToSpeechIsBusy)
                     {
                         if (Globals.cts?.IsCancellationRequested ?? true)

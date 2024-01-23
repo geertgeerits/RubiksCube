@@ -14,7 +14,7 @@ public partial class PageAbout : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls and variables.
+        // Put text in the chosen language in the controls and variables
         lblVersion.Text = $"{CubeLang.Version_Text} 2.0.11";
         lblCopyright.Text = $"{CubeLang.Copyright_Text} © 1981-2024 Geert Geerits";
         lblEmail.Text = $"{CubeLang.Email_Text} geertgeerits@gmail.com";
@@ -25,7 +25,7 @@ public partial class PageAbout : ContentPage
         lblExplanation.Text = $"\n{CubeLang.InfoExplanation_Text}";
     }
 
-    // Open e-mail program.
+    // Open e-mail program
     private async void OnBtnEmailLinkClicked(object sender, EventArgs e)
     {
         if (Email.Default.IsComposeSupported)
@@ -53,8 +53,8 @@ public partial class PageAbout : ContentPage
         }
     }
 
-    // Open the page 'PageWebsite' to open the website in the WebView control.
-    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console.
+    // Open the page 'PageWebsite' to open the website in the WebView control
+    // !!!BUG!!! in Android: the WebView control gives an error when opening a link to the Google Play Console
     private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
     {
 #if ANDROID

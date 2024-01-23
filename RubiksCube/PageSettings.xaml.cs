@@ -4,7 +4,7 @@ namespace RubiksCube;
 
 public partial class PageSettings : ContentPage
 {
-    // Local variables.
+    // Local variables
     private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -20,42 +20,42 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls and variables.
+        // Put text in the chosen language in the controls and variables
         SetLanguage();
 
-        // Set the current language in the picker.
+        // Set the current language in the picker
         pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
-            // German (Deutsch).
+            // German (Deutsch)
             "de" => 0,
 
-            // Spanish (Español).
+            // Spanish (Español)
             "es" => 2,
 
-            // French (Français).
+            // French (Français)
             "fr" => 3,
 
-            // Italian (Italiano).
+            // Italian (Italiano)
             "it" => 4,
 
-            // Dutch (Nederlands).
+            // Dutch (Nederlands)
             "nl" => 5,
 
-            // Portuguese (Português).
+            // Portuguese (Português)
             "pt" => 6,
 
-            // English.
+            // English
             _ => 1,
         };
 
-        // Fill the picker with the speech languages and set the saved language in the picker.
+        // Fill the picker with the speech languages and set the saved language in the picker
         FillPickerWithSpeechLanguages();
 
-        // Set the explaination of text and speech to false or true.
+        // Set the explaination of text and speech to false or true
         swtExplainText.IsToggled = Globals.bExplainText;
         swtExplainSpeech.IsToggled = Globals.bExplainSpeech;
 
-        // Initialize the cube colors.
+        // Initialize the cube colors
         plgCubeColor1.Fill = Color.FromArgb(Globals.cCubeColor1);
         plgCubeColor2.Fill = Color.FromArgb(Globals.cCubeColor2);
         plgCubeColor3.Fill = Color.FromArgb(Globals.cCubeColor3);
@@ -63,7 +63,7 @@ public partial class PageSettings : ContentPage
         plgCubeColor5.Fill = Color.FromArgb(Globals.cCubeColor5);
         plgCubeColor6.Fill = Color.FromArgb(Globals.cCubeColor6);
 
-        // Workaround for !!!BUG!!! in iOS with the Slider right margin.
+        // Workaround for !!!BUG!!! in iOS with the Slider right margin
 #if IOS
         Slider slider = new Slider
         {
@@ -75,14 +75,14 @@ public partial class PageSettings : ContentPage
         sldColorBlue.Margin = slider.Margin;
 #endif
 
-        // // Set the first hex colorcode in the entry field and set the slider positions.
+        // Set the first hex colorcode in the entry field and set the slider positions
         SetCubeHexColor();
 
-        // Start the stopWatch for resetting all the settings.
+        // Start the stopWatch for resetting all the settings
         stopWatch.Start();
     }
 
-    // Picker language clicked event.
+    // Picker language clicked event
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
         string cLanguageOld = Globals.cLanguage;
@@ -94,25 +94,25 @@ public partial class PageSettings : ContentPage
         {
             Globals.cLanguage = selectedIndex switch
             {
-                // German (Deutsch).
+                // German (Deutsch)
                 0 => "de",
 
-                // Spanish (Español).
+                // Spanish (Español)
                 2 => "es",
 
-                // French (Français).
+                // French (Français)
                 3 => "fr",
 
-                // Italian (Italiano).
+                // Italian (Italiano)
                 4 => "it",
 
-                // Dutch (Nederlands).
+                // Dutch (Nederlands)
                 5 => "nl",
 
-                // Portuguese (Português).
+                // Portuguese (Português)
                 6 => "pt",
 
-                // English.
+                // English
                 _ => "en",
             };
         }
@@ -121,13 +121,13 @@ public partial class PageSettings : ContentPage
         {
             Globals.bLanguageChanged = true;
 
-            // Set the current UI culture of the selected language.
+            // Set the current UI culture of the selected language
             Globals.SetCultureSelectedLanguage();
 
-            // Put text in the chosen language in the controls and variables.
+            // Put text in the chosen language in the controls and variables
             SetLanguage();
 
-            // Search the new language in the cLanguageLocales array and select the new speech language.
+            // Search the new language in the cLanguageLocales array and select the new speech language
             int nTotalItems = Globals.cLanguageLocales.Length;
 
             for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -141,7 +141,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Put text in the chosen language in the controls and variables.
+    // Put text in the chosen language in the controls and variables
     private void SetLanguage()
     {
         var ThemeList = new List<string>
@@ -152,25 +152,25 @@ public partial class PageSettings : ContentPage
         };
         pckTheme.ItemsSource = ThemeList;
 
-        // Set the current theme in the picker.
+        // Set the current theme in the picker
         pckTheme.SelectedIndex = Globals.cTheme switch
         {
-            // Light.
+            // Light
             "Light" => 1,
 
-            // Dark.
+            // Dark
             "Dark" => 2,
 
-            // System.
+            // System
             _ => 0,
         };
     }
 
-    // Fill the picker with the speech languages from the array.
+    // Fill the picker with the speech languages from the array
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private void FillPickerWithSpeechLanguages()
     {
-        // If there are no locales then return.
+        // If there are no locales then return
         bool bIsSetSelectedIndex = false;
 
         if (!Globals.bLanguageLocalesExist)
@@ -179,7 +179,7 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put the sorted locales from the array in the picker and select the saved language.
+        // Put the sorted locales from the array in the picker and select the saved language
         int nTotalItems = Globals.cLanguageLocales.Length;
 
         for (int nItem = 0; nItem < nTotalItems; nItem++)
@@ -193,14 +193,14 @@ public partial class PageSettings : ContentPage
             }
         }
 
-        // If the language is not found set the picker to the first item.
+        // If the language is not found set the picker to the first item
         if (!bIsSetSelectedIndex)
         {
             pckLanguageSpeech.SelectedIndex = 0;
         }
     }
 
-    // Picker speech language clicked event.
+    // Picker speech language clicked event
     private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
@@ -212,7 +212,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker theme clicked event.
+    // Picker theme clicked event
     private void OnPickerThemeChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
@@ -222,34 +222,34 @@ public partial class PageSettings : ContentPage
         {
             Globals.cTheme = selectedIndex switch
             {
-                // Light.
+                // Light
                 1 => "Light",
 
-                // Dark.
+                // Dark
                 2 => "Dark",
 
-                // System.
+                // System
                 _ => "System",
             };
             
-            // Set the theme.
+            // Set the theme
             Globals.SetTheme();
         }
     }
 
-    // Switch explain text toggled.
+    // Switch explain text toggled
     private void OnSwtExplainTextToggled(object sender, ToggledEventArgs e)
     {
         Globals.bExplainText = swtExplainText.IsToggled;
     }
 
-    // Switch explain speech toggled.
+    // Switch explain speech toggled
     private void OnSwtExplainSpeechToggled(object sender, ToggledEventArgs e)
     {
         Globals.bExplainSpeech = swtExplainSpeech.IsToggled;
     }
 
-    // On entry HexColor text changed event.
+    // On entry HexColor text changed event
     private void EntryHexColorTextChanged(object sender, EventArgs e)
     {
         var entry = (Entry)sender;
@@ -260,13 +260,13 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Radiobutton checked changed event.
+    // Radiobutton checked changed event
     private void OnRbnCubeColorCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         SetCubeHexColor();
     }
 
-    // Set the hex colorcode in the entry field and set the slider positions.
+    // Set the hex colorcode in the entry field and set the slider positions
     private void SetCubeHexColor()
     {
         int nRed = 0;
@@ -309,32 +309,32 @@ public partial class PageSettings : ContentPage
         sldColorBlue.Value = nBlue;
     }
 
-    // Display help for Hex color.
+    // Display help for Hex color
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
         await DisplayAlert("?", CubeLang.HexColorCodes_Text, CubeLang.ButtonClose_Text);
     }
 
-    // Entry HexColor Unfocused event.
+    // Entry HexColor Unfocused event
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
         var entry = (Entry)sender;
 
-        //Test for allowed characters.
+        // Test for allowed characters
         if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
         {
             entry.Focus();
             return;
         }
 
-        // Length must be 6 characters.
+        // Length must be 6 characters
         if (entry.Text.Length != 6)
         {
             entry.Focus();
             return;
         }
 
-        // Set the sliders position.
+        // Set the sliders position
         int nRed = 0;
         int nGreen = 0;
         int nBlue = 0;
@@ -377,14 +377,14 @@ public partial class PageSettings : ContentPage
             sldColorBlue.Value = nBlue;
         }
 
-        // Set focus to the next or save button.
+        // Set focus to the next or save button
         if (sender.Equals(entHexColor))
         {
             //entHexColorBg.Focus();
         }
         else
         {
-            // Hide the keyboard.
+            // Hide the keyboard
             entry.IsEnabled = false;
             entry.IsEnabled = true;
 
@@ -392,10 +392,10 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Test for allowed characters in hex value.
+    // Test for allowed characters in hex value
     private bool TestAllowedCharacters(string cAllowedCharacters, string cHexColor)
     {
-        // Remove leading # if present.
+        // Remove leading # if present
         if (cHexColor[..1] == "#")
         {
             cHexColor = cHexColor[1..];
@@ -415,7 +415,7 @@ public partial class PageSettings : ContentPage
         return true;
     }
 
-    // Slider color cube value change.
+    // Slider color cube value change
     private void OnSliderColorValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nColorRed = 0;
@@ -478,10 +478,10 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Convert RRGGBB Hex color to RGB color.
+    // Convert RRGGBB Hex color to RGB color
     private static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
     {
-        // Remove leading # if present.
+        // Remove leading # if present
         if (cHexColor[..1] == "#")
         {
             cHexColor = cHexColor[1..];
@@ -492,7 +492,7 @@ public partial class PageSettings : ContentPage
         nBlue = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
     }
 
-    // Button save settings clicked event.
+    // Button save settings clicked event
     private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -507,28 +507,28 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingCubeColor5", Globals.cCubeColor5);
         Preferences.Default.Set("SettingCubeColor6", Globals.cCubeColor6);
 
-        // Wait 500 milliseconds otherwise the settings are not saved in Android.
+        // Wait 500 milliseconds otherwise the settings are not saved in Android
         Task.Delay(500).Wait();
 
-        // Restart the application.
+        // Restart the application
         //Application.Current.MainPage = new AppShell();
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Button reset settings clicked event.
+    // Button reset settings clicked event
     private void OnSettingsResetClicked(object sender, EventArgs e)
     {
-        // Get the elapsed time in milli seconds.
+        // Get the elapsed time in milli seconds
         stopWatch.Stop();
 
         if (stopWatch.ElapsedMilliseconds < 2001)
         {
-            // Clear all settings after the first clicked event within the first 2 seconds after opening the setting page.
+            // Clear all settings after the first clicked event within the first 2 seconds after opening the setting page
             Preferences.Default.Clear();
         }
         else
         {
-            // Reset some settings.
+            // Reset some settings
             Preferences.Default.Remove("SettingTheme");
             Preferences.Default.Remove("SettingLanguage");
             Preferences.Default.Remove("SettingLanguageSpeech");
@@ -545,7 +545,7 @@ public partial class PageSettings : ContentPage
         // Wait 500 milliseconds otherwise the settings are not saved in Android.
         Task.Delay(500).Wait();
 
-        // Restart the application.
+        // Restart the application
         //Application.Current.MainPage = new AppShell();
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }

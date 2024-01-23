@@ -2,10 +2,10 @@
 {
     internal class ClassTestCubeTurns
     {
-        // Test the turns of the cube.
+        // Test the turns of the cube
         public async Task<bool> TestCubeTurnsAsync()
         {
-            // Test the face turns.
+            // Test the face turns
             await MakeTurnAsync("TurnFront+");
             await MakeTurnAsync("TurnFront++");
             await MakeTurnAsync("TurnFront-");
@@ -31,7 +31,7 @@
             await MakeTurnAsync("TurnBack-");
             await MakeTurnAsync("TurnBack--");
 
-            // Test the middle layer turns.
+            // Test the middle layer turns
             await MakeTurnAsync("TurnUpHorMiddleRight+");
             await MakeTurnAsync("TurnUpHorMiddleRight++");
             await MakeTurnAsync("TurnUpHorMiddleLeft-");
@@ -45,7 +45,7 @@
             await MakeTurnAsync("TurnFrontHorMiddleRight-");
             await MakeTurnAsync("TurnFrontHorMiddleRight--");
 
-            // Test the cube turns.
+            // Test the cube turns
             await MakeTurnAsync("TurnCubeFrontToRight");
             await MakeTurnAsync("TurnCubeFrontToLeft");
             await MakeTurnAsync("TurnCubeFrontToUp");
@@ -56,13 +56,13 @@
             return true;
         }
 
-        // Make a turn of the cube/face/side.
+        // Make a turn of the cube/face/side
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
-            // Add the turn to the list.
+            // Add the turn to the list
             Globals.lCubeTurns.Add(cTurnFaceAndDirection);
 
-            // Turn the cube/face/side.
+            // Turn the cube/face/side
             ClassCubeTurns classCubeTurns = new();
             await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         }

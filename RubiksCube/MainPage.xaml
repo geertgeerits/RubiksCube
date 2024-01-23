@@ -199,6 +199,15 @@
                 </Label>
 
                 <Label
+                    x:Name="lblNumberTurns"
+                    Style="{StaticResource labelStyleDefault}"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Start">
+                </Label>
+
+                <Label
                     Style="{StaticResource labelStyleDefault}"
                     Grid.Row="1"
                     Grid.Column="1"

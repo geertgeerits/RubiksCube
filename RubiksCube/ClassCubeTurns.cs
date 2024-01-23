@@ -162,8 +162,8 @@
             }
         }
 
-        // Turn the entire cube a quarter turn.
-        // Rotate the entire cube so that the front goes to the left face.
+        // Turn the entire cube a quarter turn
+        // Rotate the entire cube so that the front goes to the left face
         private void TurnCubeFrontFaceToLeftFace()
         {
             TurnUpFaceTo("+");
@@ -171,7 +171,7 @@
             TurnDownFaceTo("-");
         }
 
-        // Rotate the entire cube so that the front goes to the right face.
+        // Rotate the entire cube so that the front goes to the right face
         private void TurnCubeFrontFaceToRightFace()
         {
             TurnUpFaceTo("-");
@@ -179,7 +179,7 @@
             TurnDownFaceTo("+");
         }
 
-        // Rotate the entire cube so that the front goes to the upper face.
+        // Rotate the entire cube so that the front goes to the upper face
         private void TurnCubeFrontFaceToUpFace()
         {
             TurnRightFaceTo("+");
@@ -187,7 +187,7 @@
             TurnLeftFaceTo("-");
         }
 
-        // Rotate the entire cube so that the front goes to the down face.
+        // Rotate the entire cube so that the front goes to the down face
         private void TurnCubeFrontFaceToDownFace()
         {
             TurnRightFaceTo("-");
@@ -195,7 +195,7 @@
             TurnLeftFaceTo("+");
         }
 
-        // Rotate the entire cube so that the upper face goes to the right face.
+        // Rotate the entire cube so that the upper face goes to the right face
         private void TurnCubeUpFaceToRightFace()
         {
             TurnFrontFaceTo("+");
@@ -203,7 +203,7 @@
             TurnBackFaceTo("-");
         }
 
-        // Rotate the entire cube so that the upper face goes to the left face.
+        // Rotate the entire cube so that the upper face goes to the left face
         private void TurnCubeUpFaceToLeftFace()
         {
             TurnFrontFaceTo("-");
@@ -211,7 +211,7 @@
             TurnBackFaceTo("+");
         }
 
-        // Turn the entire front face clockwise or counter clockwise.
+        // Turn the entire front face clockwise or counter clockwise
         public static void TurnFrontFaceTo(string cDirection)
         {
             string cColorFront1 = Globals.aFrontFace[1];
@@ -296,7 +296,7 @@
             }
         }
 
-        // Turn the top horizontal middle layer to the right or left.
+        // Turn the top horizontal middle layer to the right or left
         public static void TurnUpHorMiddleTo(string cDirection)
         {
             string cColorUp4 = Globals.aUpFace[4];
@@ -354,7 +354,7 @@
             }
         }
 
-        // Turn the entire back face clockwise or counter clockwise.
+        // Turn the entire back face clockwise or counter clockwise
         public static void TurnBackFaceTo(string cDirection)
         {
             string cColorBack1 = Globals.aBackFace[1];
@@ -439,7 +439,7 @@
             }
         }
 
-        // Turn the entire left face clockwise or counter clockwise.
+        // Turn the entire left face clockwise or counter clockwise
         public static void TurnLeftFaceTo(string cDirection)
         {
             string cColorLeft1 = Globals.aLeftFace[1];
@@ -524,7 +524,7 @@
             }
         }
 
-        // Turn the top vertical middle layer to back or front.
+        // Turn the top vertical middle layer to back or front
         public static void TurnUpVerMiddleTo(string cDirection)
         {
             string cColorUp2 = Globals.aUpFace[2];
@@ -582,7 +582,7 @@
             }
         }
 
-        // Turn the entire right face clockwise or counter clockwise.
+        // Turn the entire right face clockwise or counter clockwise
         public static void TurnRightFaceTo(string cDirection)
         {
             string cColorRight1 = Globals.aRightFace[1];
@@ -667,7 +667,7 @@
             }
         }
 
-        // Turn the entire upper face clockwise or counter clockwise.
+        // Turn the entire upper face clockwise or counter clockwise
         public static void TurnUpFaceTo(string cDirection)
         {
             string cColorUp1 = Globals.aUpFace[1];
@@ -752,7 +752,7 @@
             }
         }
 
-        // Turn the front horizontal middle layer to right or left.
+        // Turn the front horizontal middle layer to right or left
         public static void TurnFrontHorMiddleTo(string cDirection)
         {
             string cColorFront4 = Globals.aFrontFace[4];
@@ -810,7 +810,7 @@
             }
         }
 
-        // Turn the entire down face clockwise or counter clockwise.
+        // Turn the entire down face clockwise or counter clockwise
         public static void TurnDownFaceTo(string cDirection)
         {
             string cColorDown1 = Globals.aDownFace[1];

@@ -2,7 +2,7 @@
 {
     internal class ClassCheckColorsCube
     {
-        // Check the number of colors of the cube.
+        // Check the number of colors of the cube
         public static string CheckNumberColors()
         {
             int nNumberOfColors1 = 0;
@@ -14,8 +14,8 @@
 
             int nRow;
 
-            // Check the number of colors of the cube.
-            // Top layer.
+            // Check the number of colors of the cube
+            // Top layer
             for (nRow = 1; nRow < 10; nRow++)
             {
                 if (Globals.aUpFace[nRow] == Globals.aFaceColors[1])
@@ -52,7 +52,7 @@
                     nNumberOfColors6++;
             }
 
-            // Front face.
+            // Front face
             for (nRow = 1; nRow < 10; nRow++)
             {
                 if (Globals.aFrontFace[nRow] == Globals.aFaceColors[1])
@@ -89,7 +89,7 @@
                     nNumberOfColors6++;
             }
 
-            // Right face.
+            // Right face
             for (nRow = 1; nRow < 10; nRow++)
             {
                 if (Globals.aRightFace[nRow] == Globals.aFaceColors[1])
@@ -126,7 +126,7 @@
                     nNumberOfColors6++;
             }
 
-            // Left face.
+            // Left face
             for (nRow = 1; nRow < 10; nRow++)
             {
                 if (Globals.aLeftFace[nRow] == Globals.aFaceColors[1])
@@ -163,7 +163,7 @@
                     nNumberOfColors6++;
             }
 
-            // Back face.
+            // Back face
             for (nRow = 1; nRow < 10; nRow++)
             {
                 if (Globals.aBackFace[nRow] == Globals.aFaceColors[1])
@@ -200,7 +200,7 @@
                     nNumberOfColors6++;
             }
 
-            // Bottom layer.
+            // Bottom layer
             for (nRow = 1; nRow < 10; nRow++)
             {
                 if (Globals.aDownFace[nRow] == Globals.aFaceColors[1])
@@ -242,7 +242,7 @@
                 return CubeLang.MessageNineSameColor_Text;
             }
 
-            // Check the number of colors of the central square of the cube.
+            // Check the number of colors of the central square of the cube
             bool bColorCenterCube = true;
 
             if (Globals.aUpFace[5] == Globals.aFrontFace[5] || Globals.aUpFace[5] == Globals.aRightFace[5] || Globals.aUpFace[5] == Globals.aLeftFace[5] || Globals.aUpFace[5] == Globals.aBackFace[5] || Globals.aUpFace[5] == Globals.aDownFace[5])
@@ -280,7 +280,7 @@
                 return CubeLang.MessageColorCentralCube_Text;
             }
 
-            // Check the number of colors of the corner cubes of the cube.
+            // Check the number of colors of the corner cubes of the cube
             bool bColorCornerCube = true;
 
             if (Globals.aUpFace[7] == Globals.aLeftFace[3] || Globals.aUpFace[7] == Globals.aFrontFace[1] || Globals.aFrontFace[1] == Globals.aLeftFace[3])
@@ -328,7 +328,7 @@
                 return CubeLang.MessageColorCornerCube_Text;
             }
 
-            // Check the number of colors of the edge cubes of the cube.
+            // Check the number of colors of the edge cubes of the cube
             bool bColorEdgeCube = true;
 
             if (Globals.aUpFace[2] == Globals.aBackFace[2] || Globals.aUpFace[4] == Globals.aLeftFace[2] || Globals.aUpFace[6] == Globals.aRightFace[2] || Globals.aUpFace[8] == Globals.aFrontFace[2])
@@ -349,7 +349,7 @@
             return "";
         }
 
-        // Check if the cube is solved.
+        // Check if the cube is solved
         public static bool CheckIfSolved()
         {
             bool bColorsUp = false;

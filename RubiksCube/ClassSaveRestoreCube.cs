@@ -2,7 +2,7 @@
 {
     internal class ClassSaveRestoreCube
     {
-        // Save the colors of the cube pieces to an array.
+        // Save the colors of the cube pieces to an array
         public static string[] SaveColorsCube()
         {
             int nRow;
@@ -48,7 +48,7 @@
             return aColor;
         }
 
-        // Restore the colors of the cube pieces from an array.
+        // Restore the colors of the cube pieces from an array
         public static void RestoreColorsCube(string[] aColor)
         {
             int nRow;
@@ -91,7 +91,7 @@
             }
         }
 
-        // Save the cube.
+        // Save the cube
         public void SaveCube()
         {
             string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "CubePieces.txt");
@@ -137,7 +137,7 @@
                     sw.WriteLine(Globals.aDownFace[nRow]);
                 }
 
-                // Close the StreamWriter object.
+                // Close the StreamWriter object
                 sw.Close();
             }
             catch (Exception ex)
@@ -147,7 +147,7 @@
             }
         }
 
-        // Restore the cube.
+        // Restore the cube
         public void RestoreCube()
         {
             string cFileName = FileSystem.CacheDirectory + "/CubePieces.txt";
@@ -161,7 +161,7 @@
 
             try
             {
-                // Open the text file using a stream reader.
+                // Open the text file using a stream reader
                 using StreamReader sr = new(cFileName, false);
 
                 for (nRow = 1; nRow < 10; nRow++)
@@ -194,7 +194,7 @@
                     Globals.aDownFace[nRow] = sr.ReadLine();
                 }
 
-                // Close the StreamReader object.
+                // Close the StreamReader object
                 sr.Close();
             }
             catch (Exception ex)
