@@ -239,16 +239,15 @@ public partial class MainPage : ContentPage
         if (bSolved)
         {
             // Make the turns of the cube
-            int nTurns = nTotalTurns;
+            int nTurns = 0;
 
             foreach (string cItem in Globals.lCubeTurns)
             {
+                nTurns++;
                 lblNumberTurns.Text = $"{nTurns}/{nTotalTurns}";
                 await MakeTurnAsync(cItem);
-                nTurns--;
             }
             
-            lblNumberTurns.Text = $"{nTurns}/{nTotalTurns}";
             await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
             lblNumberTurns.Text = "";
         }
