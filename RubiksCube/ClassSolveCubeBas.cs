@@ -3,20 +3,20 @@
     internal class ClassSolveCubeBas
     {
         // Note: delete the lines after 710 to before 1010 to get the cross on the top layer,
-        //       and change 'return false' to 'return true'.
+        //       and change 'return false' to 'return true'
         
-        // Solve the cube.  From Basic-80 to C#.
+        // Solve the cube.  From Basic-80 to C#
         public async Task<bool> SolveTheCubeBasAsync()
         {
-            // Declare variables.
+            // Declare variables
             int O, P, Q, R, V, X, Y, Z;
             string cB;
             string cX;
             int nLoopTimes = 0;
             
         // 500
-        // Top layer.
-        // Solve the edges of the top layer - Chapter 4, page 14-3.
+        // Top layer
+        // Solve the edges of the top layer - Chapter 4, page 14-3
 
         // !!!!!!!!!!!!! Does not get out of the loop between line 510 and 695 !!!!!!!!!!!!!
 
@@ -56,7 +56,7 @@
             if (cB == Globals.aBackFace[4] || cB == Globals.aRightFace[8] || cB == Globals.aDownFace[6])
                 P = 1;
             // 580
-            cX = X.ToString();
+            //cX = X.ToString();
             //if (cB == Globals.aUpFace[6] && cX != Globals.aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             //    Q = 1;
             if (cB == Globals.aUpFace[6])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
@@ -188,7 +188,7 @@
             // 695
             goto Line510;
 
-        // Solve the corners of the top layer - Chapter 6, page 16.
+        // Solve the corners of the top layer - Chapter 6, page 16
         Line710:
         //    cB = Globals.aUpFace[5];
         //    O = 0;
@@ -328,7 +328,7 @@
         //    goto Line710;
 
         //// 1000
-        //// Solve the middle layer - Chapter 10, page 21.
+        //// Solve the middle layer - Chapter 10, page 21
         Line1010:;
 
 
@@ -342,13 +342,13 @@
             return true;        // false
         }
 
-        // Make a turn of the cube/face/side.
+        // Make a turn of the cube/face/side
         private async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
-            // Add the turn to the list.
+            // Add the turn to the list
             Globals.lCubeTurns.Add(cTurnFaceAndDirection);
 
-            // Turn the cube/face/side.
+            // Turn the cube/face/side
             ClassCubeTurns classCubeTurns = new();
             await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         }

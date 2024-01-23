@@ -1141,133 +1141,53 @@ public partial class MainPage : ContentPage
     // Store the cube colors from the polygons in the arrays
     private void SetCubeColorsInArrays()
     {
-        Globals.aFaceColors[1] = GetHexColorPolygon(plgCubeColor1);
-        Globals.aFaceColors[2] = GetHexColorPolygon(plgCubeColor2);
-        Globals.aFaceColors[3] = GetHexColorPolygon(plgCubeColor3);
-        Globals.aFaceColors[4] = GetHexColorPolygon(plgCubeColor4);
-        Globals.aFaceColors[5] = GetHexColorPolygon(plgCubeColor5);
-        Globals.aFaceColors[6] = GetHexColorPolygon(plgCubeColor6);
+        for (int i = 1; i < 7; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgCubeColor{i}");
+            Globals.aFaceColors[i] = GetHexColorPolygon(polygon);
+        }
 
-        Globals.aUpFace[1] = GetHexColorPolygon(plgUp1);
-        Globals.aUpFace[2] = GetHexColorPolygon(plgUp2);
-        Globals.aUpFace[3] = GetHexColorPolygon(plgUp3);
-        Globals.aUpFace[4] = GetHexColorPolygon(plgUp4);
-        Globals.aUpFace[5] = GetHexColorPolygon(plgUp5);
-        Globals.aUpFace[6] = GetHexColorPolygon(plgUp6);
-        Globals.aUpFace[7] = GetHexColorPolygon(plgUp7);
-        Globals.aUpFace[8] = GetHexColorPolygon(plgUp8);
-        Globals.aUpFace[9] = GetHexColorPolygon(plgUp9);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgUp{i}");
+            Globals.aUpFace[i] = GetHexColorPolygon(polygon);
+        }
 
-        Globals.aFrontFace[1] = GetHexColorPolygon(plgFront1);
-        Globals.aFrontFace[2] = GetHexColorPolygon(plgFront2);
-        Globals.aFrontFace[3] = GetHexColorPolygon(plgFront3);
-        Globals.aFrontFace[4] = GetHexColorPolygon(plgFront4);
-        Globals.aFrontFace[5] = GetHexColorPolygon(plgFront5);
-        Globals.aFrontFace[6] = GetHexColorPolygon(plgFront6);
-        Globals.aFrontFace[7] = GetHexColorPolygon(plgFront7);
-        Globals.aFrontFace[8] = GetHexColorPolygon(plgFront8);
-        Globals.aFrontFace[9] = GetHexColorPolygon(plgFront9);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgFront{i}");
+            Globals.aFrontFace[i] = GetHexColorPolygon(polygon);
+        }
 
-        Globals.aRightFace[1] = GetHexColorPolygon(plgRight1);
-        Globals.aRightFace[2] = GetHexColorPolygon(plgRight2);
-        Globals.aRightFace[3] = GetHexColorPolygon(plgRight3);
-        Globals.aRightFace[4] = GetHexColorPolygon(plgRight4);
-        Globals.aRightFace[5] = GetHexColorPolygon(plgRight5);
-        Globals.aRightFace[6] = GetHexColorPolygon(plgRight6);
-        Globals.aRightFace[7] = GetHexColorPolygon(plgRight7);
-        Globals.aRightFace[8] = GetHexColorPolygon(plgRight8);
-        Globals.aRightFace[9] = GetHexColorPolygon(plgRight9);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgRight{i}");
+            Globals.aRightFace[i] = GetHexColorPolygon(polygon);
+        }
 
-        Globals.aLeftFace[1] = GetHexColorPolygon(plgLeft1);
-        Globals.aLeftFace[2] = GetHexColorPolygon(plgLeft2);
-        Globals.aLeftFace[3] = GetHexColorPolygon(plgLeft3);
-        Globals.aLeftFace[4] = GetHexColorPolygon(plgLeft4);
-        Globals.aLeftFace[5] = GetHexColorPolygon(plgLeft5);
-        Globals.aLeftFace[6] = GetHexColorPolygon(plgLeft6);
-        Globals.aLeftFace[7] = GetHexColorPolygon(plgLeft7);
-        Globals.aLeftFace[8] = GetHexColorPolygon(plgLeft8);
-        Globals.aLeftFace[9] = GetHexColorPolygon(plgLeft9);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgLeft{i}");
+            Globals.aLeftFace[i] = GetHexColorPolygon(polygon);
+        }
 
-        Globals.aBackFace[1] = GetHexColorPolygon(plgBack1);
-        Globals.aBackFace[2] = GetHexColorPolygon(plgBack2);
-        Globals.aBackFace[3] = GetHexColorPolygon(plgBack3);
-        Globals.aBackFace[4] = GetHexColorPolygon(plgBack4);
-        Globals.aBackFace[5] = GetHexColorPolygon(plgBack5);
-        Globals.aBackFace[6] = GetHexColorPolygon(plgBack6);
-        Globals.aBackFace[7] = GetHexColorPolygon(plgBack7);
-        Globals.aBackFace[8] = GetHexColorPolygon(plgBack8);
-        Globals.aBackFace[9] = GetHexColorPolygon(plgBack9);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgBack{i}");
+            Globals.aBackFace[i] = GetHexColorPolygon(polygon);
+        }
 
-        Globals.aDownFace[1] = GetHexColorPolygon(plgDown1);
-        Globals.aDownFace[2] = GetHexColorPolygon(plgDown2);
-        Globals.aDownFace[3] = GetHexColorPolygon(plgDown3);
-        Globals.aDownFace[4] = GetHexColorPolygon(plgDown4);
-        Globals.aDownFace[5] = GetHexColorPolygon(plgDown5);
-        Globals.aDownFace[6] = GetHexColorPolygon(plgDown6);
-        Globals.aDownFace[7] = GetHexColorPolygon(plgDown7);
-        Globals.aDownFace[8] = GetHexColorPolygon(plgDown8);
-        Globals.aDownFace[9] = GetHexColorPolygon(plgDown9);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgDown{i}");
+            Globals.aDownFace[i] = GetHexColorPolygon(polygon);
+        }
 
-        //---------------------------------------
-        //aPieces[36] = GetHexColorPolygon(plgUp1);
-        //aPieces[37] = GetHexColorPolygon(plgUp2);
-        //aPieces[38] = GetHexColorPolygon(plgUp3);
-        //aPieces[39] = GetHexColorPolygon(plgUp4);
-        //aPieces[40] = GetHexColorPolygon(plgUp5);
-        //aPieces[41] = GetHexColorPolygon(plgUp6);
-        //aPieces[42] = GetHexColorPolygon(plgUp7);
-        //aPieces[43] = GetHexColorPolygon(plgUp8);
-        //aPieces[44] = GetHexColorPolygon(plgUp9);
-
-        //aPieces[0] = GetHexColorPolygon(plgFront1);
-        //aPieces[1] = GetHexColorPolygon(plgFront2);
-        //aPieces[2] = GetHexColorPolygon(plgFront3);
-        //aPieces[3] = GetHexColorPolygon(plgFront4);
-        //aPieces[4] = GetHexColorPolygon(plgFront5);
-        //aPieces[5] = GetHexColorPolygon(plgFront6);
-        //aPieces[6] = GetHexColorPolygon(plgFront7);
-        //aPieces[7] = GetHexColorPolygon(plgFront8);
-        //aPieces[8] = GetHexColorPolygon(plgFront9);
-
-        //aPieces[9] = GetHexColorPolygon(plgRight1);
-        //aPieces[10] = GetHexColorPolygon(plgRight2);
-        //aPieces[11] = GetHexColorPolygon(plgRight3);
-        //aPieces[12] = GetHexColorPolygon(plgRight4);
-        //aPieces[13] = GetHexColorPolygon(plgRight5);
-        //aPieces[14] = GetHexColorPolygon(plgRight6);
-        //aPieces[15] = GetHexColorPolygon(plgRight7);
-        //aPieces[16] = GetHexColorPolygon(plgRight8);
-        //aPieces[17] = GetHexColorPolygon(plgRight9);
-
-        //aPieces[27] = GetHexColorPolygon(plgLeft1);
-        //aPieces[28] = GetHexColorPolygon(plgLeft2);
-        //aPieces[29] = GetHexColorPolygon(plgLeft3);
-        //aPieces[30] = GetHexColorPolygon(plgLeft4);
-        //aPieces[31] = GetHexColorPolygon(plgLeft5);
-        //aPieces[32] = GetHexColorPolygon(plgLeft6);
-        //aPieces[33] = GetHexColorPolygon(plgLeft7);
-        //aPieces[34] = GetHexColorPolygon(plgLeft8);
-        //aPieces[35] = GetHexColorPolygon(plgLeft9);
-
-        //aPieces[18] = GetHexColorPolygon(plgBack1);
-        //aPieces[19] = GetHexColorPolygon(plgBack2);
-        //aPieces[20] = GetHexColorPolygon(plgBack3);
-        //aPieces[21] = GetHexColorPolygon(plgBack4);
-        //aPieces[22] = GetHexColorPolygon(plgBack5);
-        //aPieces[23] = GetHexColorPolygon(plgBack6);
-        //aPieces[24] = GetHexColorPolygon(plgBack7);
-        //aPieces[25] = GetHexColorPolygon(plgBack8);
-        //aPieces[26] = GetHexColorPolygon(plgBack9);
-
-        //aPieces[45] = GetHexColorPolygon(plgDown1);
-        //aPieces[46] = GetHexColorPolygon(plgDown2);
-        //aPieces[47] = GetHexColorPolygon(plgDown3);
-        //aPieces[48] = GetHexColorPolygon(plgDown4);
-        //aPieces[49] = GetHexColorPolygon(plgDown5);
-        //aPieces[50] = GetHexColorPolygon(plgDown6);
-        //aPieces[51] = GetHexColorPolygon(plgDown7);
-        //aPieces[52] = GetHexColorPolygon(plgDown8);
-        //aPieces[53] = GetHexColorPolygon(plgDown9);
+        //for (int i = 1; i < 54; i++)
+        //{
+        //    Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
+        //    Globals.aPieces[i] = GetHexColorPolygon(polygon);
+        //}
     }
 
     // Set the cube colors from the arrays in the polygons
@@ -1280,133 +1200,53 @@ public partial class MainPage : ContentPage
         Globals.cCubeColor5 = Globals.aFaceColors[5];
         Globals.cCubeColor6 = Globals.aFaceColors[6];
 
-        plgCubeColor1.Fill = Color.FromArgb(Globals.aFaceColors[1]);
-        plgCubeColor2.Fill = Color.FromArgb(Globals.aFaceColors[2]);
-        plgCubeColor3.Fill = Color.FromArgb(Globals.aFaceColors[3]);
-        plgCubeColor4.Fill = Color.FromArgb(Globals.aFaceColors[4]);
-        plgCubeColor5.Fill = Color.FromArgb(Globals.aFaceColors[5]);
-        plgCubeColor6.Fill = Color.FromArgb(Globals.aFaceColors[6]);
+        for (int i = 1; i < 7; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgCubeColor{i}");
+            polygon.Fill = Color.FromArgb(Globals.aFaceColors[i]);
+        }
 
-        plgUp1.Fill = Color.FromArgb(Globals.aUpFace[1]);
-        plgUp2.Fill = Color.FromArgb(Globals.aUpFace[2]);
-        plgUp3.Fill = Color.FromArgb(Globals.aUpFace[3]);
-        plgUp4.Fill = Color.FromArgb(Globals.aUpFace[4]);
-        plgUp5.Fill = Color.FromArgb(Globals.aUpFace[5]);
-        plgUp6.Fill = Color.FromArgb(Globals.aUpFace[6]);
-        plgUp7.Fill = Color.FromArgb(Globals.aUpFace[7]);
-        plgUp8.Fill = Color.FromArgb(Globals.aUpFace[8]);
-        plgUp9.Fill = Color.FromArgb(Globals.aUpFace[9]);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgUp{i}");
+            polygon.Fill = Color.FromArgb(Globals.aUpFace[i]);
+        }
 
-        plgFront1.Fill = Color.FromArgb(Globals.aFrontFace[1]);
-        plgFront2.Fill = Color.FromArgb(Globals.aFrontFace[2]);
-        plgFront3.Fill = Color.FromArgb(Globals.aFrontFace[3]);
-        plgFront4.Fill = Color.FromArgb(Globals.aFrontFace[4]);
-        plgFront5.Fill = Color.FromArgb(Globals.aFrontFace[5]);
-        plgFront6.Fill = Color.FromArgb(Globals.aFrontFace[6]);
-        plgFront7.Fill = Color.FromArgb(Globals.aFrontFace[7]);
-        plgFront8.Fill = Color.FromArgb(Globals.aFrontFace[8]);
-        plgFront9.Fill = Color.FromArgb(Globals.aFrontFace[9]);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgFront{i}");
+            polygon.Fill = Color.FromArgb(Globals.aFrontFace[i]);
+        }
 
-        plgRight1.Fill = Color.FromArgb(Globals.aRightFace[1]);
-        plgRight2.Fill = Color.FromArgb(Globals.aRightFace[2]);
-        plgRight3.Fill = Color.FromArgb(Globals.aRightFace[3]);
-        plgRight4.Fill = Color.FromArgb(Globals.aRightFace[4]);
-        plgRight5.Fill = Color.FromArgb(Globals.aRightFace[5]);
-        plgRight6.Fill = Color.FromArgb(Globals.aRightFace[6]);
-        plgRight7.Fill = Color.FromArgb(Globals.aRightFace[7]);
-        plgRight8.Fill = Color.FromArgb(Globals.aRightFace[8]);
-        plgRight9.Fill = Color.FromArgb(Globals.aRightFace[9]);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgRight{i}");
+            polygon.Fill = Color.FromArgb(Globals.aRightFace[i]);
+        }
 
-        plgLeft1.Fill = Color.FromArgb(Globals.aLeftFace[1]);
-        plgLeft2.Fill = Color.FromArgb(Globals.aLeftFace[2]);
-        plgLeft3.Fill = Color.FromArgb(Globals.aLeftFace[3]);
-        plgLeft4.Fill = Color.FromArgb(Globals.aLeftFace[4]);
-        plgLeft5.Fill = Color.FromArgb(Globals.aLeftFace[5]);
-        plgLeft6.Fill = Color.FromArgb(Globals.aLeftFace[6]);
-        plgLeft7.Fill = Color.FromArgb(Globals.aLeftFace[7]);
-        plgLeft8.Fill = Color.FromArgb(Globals.aLeftFace[8]);
-        plgLeft9.Fill = Color.FromArgb(Globals.aLeftFace[9]);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgLeft{i}");
+            polygon.Fill = Color.FromArgb(Globals.aLeftFace[i]);
+        }
 
-        plgBack1.Fill = Color.FromArgb(Globals.aBackFace[1]);
-        plgBack2.Fill = Color.FromArgb(Globals.aBackFace[2]);
-        plgBack3.Fill = Color.FromArgb(Globals.aBackFace[3]);
-        plgBack4.Fill = Color.FromArgb(Globals.aBackFace[4]);
-        plgBack5.Fill = Color.FromArgb(Globals.aBackFace[5]);
-        plgBack6.Fill = Color.FromArgb(Globals.aBackFace[6]);
-        plgBack7.Fill = Color.FromArgb(Globals.aBackFace[7]);
-        plgBack8.Fill = Color.FromArgb(Globals.aBackFace[8]);
-        plgBack9.Fill = Color.FromArgb(Globals.aBackFace[9]);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgBack{i}");
+            polygon.Fill = Color.FromArgb(Globals.aBackFace[i]);
+        }
 
-        plgDown1.Fill = Color.FromArgb(Globals.aDownFace[1]);
-        plgDown2.Fill = Color.FromArgb(Globals.aDownFace[2]);
-        plgDown3.Fill = Color.FromArgb(Globals.aDownFace[3]);
-        plgDown4.Fill = Color.FromArgb(Globals.aDownFace[4]);
-        plgDown5.Fill = Color.FromArgb(Globals.aDownFace[5]);
-        plgDown6.Fill = Color.FromArgb(Globals.aDownFace[6]);
-        plgDown7.Fill = Color.FromArgb(Globals.aDownFace[7]);
-        plgDown8.Fill = Color.FromArgb(Globals.aDownFace[8]);
-        plgDown9.Fill = Color.FromArgb(Globals.aDownFace[9]);
+        for (int i = 1; i < 10; i++)
+        {
+            Polygon polygon = this.FindByName<Polygon>($"plgDown{i}");
+            polygon.Fill = Color.FromArgb(Globals.aDownFace[i]);
+        }
 
-        //----------------------------------------------------
-        //plgUp1.Fill = Color.FromArgb(aPieces[36]);
-        //plgUp2.Fill = Color.FromArgb(aPieces[37]);
-        //plgUp3.Fill = Color.FromArgb(aPieces[38]);
-        //plgUp4.Fill = Color.FromArgb(aPieces[39]);
-        //plgUp5.Fill = Color.FromArgb(aPieces[40]);
-        //plgUp6.Fill = Color.FromArgb(aPieces[41]);
-        //plgUp7.Fill = Color.FromArgb(aPieces[42]);
-        //plgUp8.Fill = Color.FromArgb(aPieces[43]);
-        //plgUp9.Fill = Color.FromArgb(aPieces[44]);
-
-        //plgFront1.Fill = Color.FromArgb(aPieces[0]);
-        //plgFront2.Fill = Color.FromArgb(aPieces[1]);
-        //plgFront3.Fill = Color.FromArgb(aPieces[2]);
-        //plgFront4.Fill = Color.FromArgb(aPieces[3]);
-        //plgFront5.Fill = Color.FromArgb(aPieces[4]);
-        //plgFront6.Fill = Color.FromArgb(aPieces[5]);
-        //plgFront7.Fill = Color.FromArgb(aPieces[6]);
-        //plgFront8.Fill = Color.FromArgb(aPieces[7]);
-        //plgFront9.Fill = Color.FromArgb(aPieces[8]);
-
-        //plgRight1.Fill = Color.FromArgb(aPieces[9]);
-        //plgRight2.Fill = Color.FromArgb(aPieces[10]);
-        //plgRight3.Fill = Color.FromArgb(aPieces[11]);
-        //plgRight4.Fill = Color.FromArgb(aPieces[12]);
-        //plgRight5.Fill = Color.FromArgb(aPieces[13]);
-        //plgRight6.Fill = Color.FromArgb(aPieces[14]);
-        //plgRight7.Fill = Color.FromArgb(aPieces[15]);
-        //plgRight8.Fill = Color.FromArgb(aPieces[16]);
-        //plgRight9.Fill = Color.FromArgb(aPieces[17]);
-
-        //plgLeft1.Fill = Color.FromArgb(aPieces[27]);
-        //plgLeft2.Fill = Color.FromArgb(aPieces[28]);
-        //plgLeft3.Fill = Color.FromArgb(aPieces[29]);
-        //plgLeft4.Fill = Color.FromArgb(aPieces[30]);
-        //plgLeft5.Fill = Color.FromArgb(aPieces[31]);
-        //plgLeft6.Fill = Color.FromArgb(aPieces[32]);
-        //plgLeft7.Fill = Color.FromArgb(aPieces[33]);
-        //plgLeft8.Fill = Color.FromArgb(aPieces[34]);
-        //plgLeft9.Fill = Color.FromArgb(aPieces[35]);
-
-        //plgBack1.Fill = Color.FromArgb(aPieces[18]);
-        //plgBack2.Fill = Color.FromArgb(aPieces[19]);
-        //plgBack3.Fill = Color.FromArgb(aPieces[20]);
-        //plgBack4.Fill = Color.FromArgb(aPieces[21]);
-        //plgBack5.Fill = Color.FromArgb(aPieces[22]);
-        //plgBack6.Fill = Color.FromArgb(aPieces[23]);
-        //plgBack7.Fill = Color.FromArgb(aPieces[24]);
-        //plgBack8.Fill = Color.FromArgb(aPieces[25]);
-        //plgBack9.Fill = Color.FromArgb(aPieces[26]);
-
-        //plgDown1.Fill = Color.FromArgb(aPieces[45]);
-        //plgDown2.Fill = Color.FromArgb(aPieces[46]);
-        //plgDown3.Fill = Color.FromArgb(aPieces[47]);
-        //plgDown4.Fill = Color.FromArgb(aPieces[48]);
-        //plgDown5.Fill = Color.FromArgb(aPieces[49]);
-        //plgDown6.Fill = Color.FromArgb(aPieces[50]);
-        //plgDown7.Fill = Color.FromArgb(aPieces[51]);
-        //plgDown8.Fill = Color.FromArgb(aPieces[52]);
-        //plgDown9.Fill = Color.FromArgb(aPieces[53]);
+        //for (int i = 1; i < 54; i++)
+        //{
+        //    Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
+        //    polygon.Fill = Color.FromArgb(Globals.aPieces[i]);
+        //}
     }
 
     // Get the hex color code from a polygon fill property
