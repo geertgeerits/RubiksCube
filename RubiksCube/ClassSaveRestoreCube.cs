@@ -2,39 +2,12 @@
 {
     internal class ClassSaveRestoreCube
     {
-        // Save the colors of the cube pieces to an array
-        public static string[] SaveColorsCube()
-        {
-            int nRow;
-            int nElement = 0;
-            string[] aColor = new string[54];
-
-            for (nRow = 0; nRow < 54; nRow++)
-            {
-                aColor[nElement] = Globals.aPieces[nRow];
-                nElement++;
-            }
-
-            return aColor;
-        }
-
-        // Restore the colors of the cube pieces from an array
-        public static void RestoreColorsCube(string[] aColor)
-        {
-            int nRow;
-            int nElement = 0;
-
-            for (nRow = 0; nRow < 54; nRow++)
-            {
-                Globals.aPieces[nRow] = aColor[nElement];
-                nElement++;
-            }
-        }
-
         // Save the cube
-        public void SaveCube()
+        public bool CubeDataSave()
         {
-            string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "CubePieces.txt");
+            //SetCubeColorsInArrays();
+
+            string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
 
             if (File.Exists(cFileName))
             {
@@ -47,6 +20,11 @@
             {
                 using StreamWriter sw = new(cFileName, false);
 
+                for (nRow = 1; nRow < 7; nRow++)
+                {
+                    sw.WriteLine(Globals.aFaceColors[nRow]);
+                }
+
                 for (nRow = 0; nRow < 54; nRow++)
                 {
                     sw.WriteLine(Globals.aPieces[nRow]);
@@ -58,18 +36,20 @@
             catch (Exception ex)
             {
                 //DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-                return;
+                return false;
             }
+
+            return true;
         }
 
-        // Restore the cube
-        public void RestoreCube()
+        // Open, restore the cube
+        public bool CubeDataOpen()
         {
-            string cFileName = FileSystem.CacheDirectory + "/CubePieces.txt";
+            string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
 
             if (File.Exists(cFileName) == false)
             {
-                return;
+                return false;
             }
 
             int nRow;
@@ -78,6 +58,11 @@
             {
                 // Open the text file using a stream reader
                 using StreamReader sr = new(cFileName, false);
+
+                for (nRow = 1; nRow < 7; nRow++)
+                {
+                    Globals.aFaceColors[nRow] = sr.ReadLine();
+                }
 
                 for (nRow = 0; nRow < 54; nRow++)
                 {
@@ -90,8 +75,11 @@
             catch (Exception ex)
             {
                 //DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-                return;
+                return false;
             }
+
+            //SetCubeColorsFromArrays();
+            return true;
         }
     }
 }

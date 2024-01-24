@@ -5,6 +5,8 @@
         // Turn the faces of the cube
         public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
         {
+            await Task.Delay(0);
+
             switch (cTurnFaceAndDirection)
             {
                 case "TurnFront+":
@@ -218,58 +220,58 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[0] = Globals.aPiecesTemp[6]; // cColorFront7;
-                Globals.aPieces[1] = Globals.aPiecesTemp[3]; // cColorFront4;
-                Globals.aPieces[2] = Globals.aPiecesTemp[0]; // cColorFront1;
-                Globals.aPieces[3] = Globals.aPiecesTemp[7]; // cColorFront8;
-                Globals.aPieces[5] = Globals.aPiecesTemp[1]; // cColorFront2;
-                Globals.aPieces[6] = Globals.aPiecesTemp[8]; // cColorFront9;
-                Globals.aPieces[7] = Globals.aPiecesTemp[5]; // cColorFront6;
-                Globals.aPieces[8] = Globals.aPiecesTemp[2]; // cColorFront3;
+                Globals.aPieces[0] = Globals.aPiecesTemp[6];
+                Globals.aPieces[1] = Globals.aPiecesTemp[3];
+                Globals.aPieces[2] = Globals.aPiecesTemp[0];
+                Globals.aPieces[3] = Globals.aPiecesTemp[7];
+                Globals.aPieces[5] = Globals.aPiecesTemp[1];
+                Globals.aPieces[6] = Globals.aPiecesTemp[8];
+                Globals.aPieces[7] = Globals.aPiecesTemp[5];
+                Globals.aPieces[8] = Globals.aPiecesTemp[2];
 
-                Globals.aPieces[42] = Globals.aPiecesTemp[35]; // cColorLeft9;
-                Globals.aPieces[43] = Globals.aPiecesTemp[32]; // cColorLeft6;
-                Globals.aPieces[44] = Globals.aPiecesTemp[29]; // cColorLeft3;
+                Globals.aPieces[42] = Globals.aPiecesTemp[35];
+                Globals.aPieces[43] = Globals.aPiecesTemp[32];
+                Globals.aPieces[44] = Globals.aPiecesTemp[29];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[42]; // cColorUp7;
-                Globals.aPieces[12] = Globals.aPiecesTemp[43]; // cColorUp8;
-                Globals.aPieces[15] = Globals.aPiecesTemp[44]; // cColorUp9;
+                Globals.aPieces[9] = Globals.aPiecesTemp[42];
+                Globals.aPieces[12] = Globals.aPiecesTemp[43];
+                Globals.aPieces[15] = Globals.aPiecesTemp[44];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[15]; // cColorRight7;
-                Globals.aPieces[46] = Globals.aPiecesTemp[12]; // cColorRight4;
-                Globals.aPieces[47] = Globals.aPiecesTemp[9]; // cColorRight1;
+                Globals.aPieces[45] = Globals.aPiecesTemp[15];
+                Globals.aPieces[46] = Globals.aPiecesTemp[12];
+                Globals.aPieces[47] = Globals.aPiecesTemp[9];
 
-                Globals.aPieces[29] = Globals.aPiecesTemp[45]; // cColorDown1;
-                Globals.aPieces[32] = Globals.aPiecesTemp[46]; // cColorDown2;
-                Globals.aPieces[35] = Globals.aPiecesTemp[47]; // cColorDown3;
+                Globals.aPieces[29] = Globals.aPiecesTemp[45];
+                Globals.aPieces[32] = Globals.aPiecesTemp[46];
+                Globals.aPieces[35] = Globals.aPiecesTemp[47];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[0] = Globals.aPiecesTemp[2]; // cColorFront3;
-                Globals.aPieces[1] = Globals.aPiecesTemp[5]; // cColorFront6;
-                Globals.aPieces[2] = Globals.aPiecesTemp[8]; // cColorFront9;
-                Globals.aPieces[3] = Globals.aPiecesTemp[1]; // cColorFront2;
-                Globals.aPieces[5] = Globals.aPiecesTemp[7]; // cColorFront8;
-                Globals.aPieces[6] = Globals.aPiecesTemp[0]; // cColorFront1;
-                Globals.aPieces[7] = Globals.aPiecesTemp[3]; // cColorFront4;
-                Globals.aPieces[8] = Globals.aPiecesTemp[6]; // cColorFront7;
+                Globals.aPieces[0] = Globals.aPiecesTemp[2];
+                Globals.aPieces[1] = Globals.aPiecesTemp[5];
+                Globals.aPieces[2] = Globals.aPiecesTemp[8];
+                Globals.aPieces[3] = Globals.aPiecesTemp[1];
+                Globals.aPieces[5] = Globals.aPiecesTemp[7];
+                Globals.aPieces[6] = Globals.aPiecesTemp[0];
+                Globals.aPieces[7] = Globals.aPiecesTemp[3];
+                Globals.aPieces[8] = Globals.aPiecesTemp[6];
 
-                Globals.aPieces[42] = Globals.aPiecesTemp[9]; // cColorRight1;
-                Globals.aPieces[43] = Globals.aPiecesTemp[12]; // cColorRight4;
-                Globals.aPieces[44] = Globals.aPiecesTemp[15]; // cColorRight7;
+                Globals.aPieces[42] = Globals.aPiecesTemp[9];
+                Globals.aPieces[43] = Globals.aPiecesTemp[12];
+                Globals.aPieces[44] = Globals.aPiecesTemp[15];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[47]; // cColorDown3;
-                Globals.aPieces[12] = Globals.aPiecesTemp[46]; // cColorDown2;
-                Globals.aPieces[15] = Globals.aPiecesTemp[45]; // cColorDown1;
+                Globals.aPieces[9] = Globals.aPiecesTemp[47];
+                Globals.aPieces[12] = Globals.aPiecesTemp[46];
+                Globals.aPieces[15] = Globals.aPiecesTemp[45];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[29]; // cColorLeft3;
-                Globals.aPieces[46] = Globals.aPiecesTemp[32]; // cColorLeft6;
-                Globals.aPieces[47] = Globals.aPiecesTemp[35]; // cColorLeft9;
+                Globals.aPieces[45] = Globals.aPiecesTemp[29];
+                Globals.aPieces[46] = Globals.aPiecesTemp[32];
+                Globals.aPieces[47] = Globals.aPiecesTemp[35];
 
-                Globals.aPieces[29] = Globals.aPiecesTemp[44]; // cColorUp9;
-                Globals.aPieces[32] = Globals.aPiecesTemp[43]; // cColorUp8;
-                Globals.aPieces[35] = Globals.aPiecesTemp[42]; // cColorUp7;
+                Globals.aPieces[29] = Globals.aPiecesTemp[44];
+                Globals.aPieces[32] = Globals.aPiecesTemp[43];
+                Globals.aPieces[35] = Globals.aPiecesTemp[42];
             }
         }
 
@@ -280,40 +282,40 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[39] = Globals.aPiecesTemp[34]; // cColorLeft8;
-                Globals.aPieces[40] = Globals.aPiecesTemp[31]; // cColorLeft5;
-                Globals.aPieces[41] = Globals.aPiecesTemp[28]; // cColorLeft2;
+                Globals.aPieces[39] = Globals.aPiecesTemp[34];
+                Globals.aPieces[40] = Globals.aPiecesTemp[31];
+                Globals.aPieces[41] = Globals.aPiecesTemp[28];
 
-                Globals.aPieces[10] = Globals.aPiecesTemp[39]; // cColorUp4;
-                Globals.aPieces[13] = Globals.aPiecesTemp[40]; // cColorUp5;
-                Globals.aPieces[16] = Globals.aPiecesTemp[41]; // cColorUp6;
+                Globals.aPieces[10] = Globals.aPiecesTemp[39];
+                Globals.aPieces[13] = Globals.aPiecesTemp[40];
+                Globals.aPieces[16] = Globals.aPiecesTemp[41];
 
-                Globals.aPieces[48] = Globals.aPiecesTemp[16]; // cColorRight8;
-                Globals.aPieces[49] = Globals.aPiecesTemp[13]; // cColorRight5;
-                Globals.aPieces[50] = Globals.aPiecesTemp[10]; // cColorRight2;
+                Globals.aPieces[48] = Globals.aPiecesTemp[16];
+                Globals.aPieces[49] = Globals.aPiecesTemp[13];
+                Globals.aPieces[50] = Globals.aPiecesTemp[10];
 
-                Globals.aPieces[28] = Globals.aPiecesTemp[48]; // cColorDown4;
-                Globals.aPieces[31] = Globals.aPiecesTemp[49]; // cColorDown5;
-                Globals.aPieces[34] = Globals.aPiecesTemp[50]; // cColorDown6;
+                Globals.aPieces[28] = Globals.aPiecesTemp[48];
+                Globals.aPieces[31] = Globals.aPiecesTemp[49];
+                Globals.aPieces[34] = Globals.aPiecesTemp[50];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[39] = Globals.aPiecesTemp[10]; // cColorRight2;
-                Globals.aPieces[40] = Globals.aPiecesTemp[13]; // cColorRight5;
-                Globals.aPieces[41] = Globals.aPiecesTemp[16]; // cColorRight8;
+                Globals.aPieces[39] = Globals.aPiecesTemp[10];
+                Globals.aPieces[40] = Globals.aPiecesTemp[13];
+                Globals.aPieces[41] = Globals.aPiecesTemp[16];
 
-                Globals.aPieces[10] = Globals.aPiecesTemp[50]; // cColorDown6;
-                Globals.aPieces[13] = Globals.aPiecesTemp[49]; // cColorDown5;
-                Globals.aPieces[16] = Globals.aPiecesTemp[48]; // cColorDown4;
+                Globals.aPieces[10] = Globals.aPiecesTemp[50];
+                Globals.aPieces[13] = Globals.aPiecesTemp[49];
+                Globals.aPieces[16] = Globals.aPiecesTemp[48];
 
-                Globals.aPieces[48] = Globals.aPiecesTemp[28]; // cColorLeft2;
-                Globals.aPieces[49] = Globals.aPiecesTemp[31]; // cColorLeft5;
-                Globals.aPieces[50] = Globals.aPiecesTemp[34]; // cColorLeft8;
+                Globals.aPieces[48] = Globals.aPiecesTemp[28];
+                Globals.aPieces[49] = Globals.aPiecesTemp[31];
+                Globals.aPieces[50] = Globals.aPiecesTemp[34];
 
-                Globals.aPieces[28] = Globals.aPiecesTemp[41]; // cColorUp6;
-                Globals.aPieces[31] = Globals.aPiecesTemp[40]; // cColorUp5;
-                Globals.aPieces[34] = Globals.aPiecesTemp[39]; // cColorUp4;
+                Globals.aPieces[28] = Globals.aPiecesTemp[41];
+                Globals.aPieces[31] = Globals.aPiecesTemp[40];
+                Globals.aPieces[34] = Globals.aPiecesTemp[39];
             }
         }
 
@@ -324,58 +326,58 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[18] = Globals.aPiecesTemp[24]; // cColorBack7;
-                Globals.aPieces[19] = Globals.aPiecesTemp[21]; // cColorBack4;
-                Globals.aPieces[20] = Globals.aPiecesTemp[18]; // cColorBack1;
-                Globals.aPieces[21] = Globals.aPiecesTemp[25]; // cColorBack8;
-                Globals.aPieces[23] = Globals.aPiecesTemp[19]; // cColorBack2;
-                Globals.aPieces[24] = Globals.aPiecesTemp[26]; // cColorBack9;
-                Globals.aPieces[25] = Globals.aPiecesTemp[23]; // cColorBack6;
-                Globals.aPieces[26] = Globals.aPiecesTemp[20]; // cColorBack3;
+                Globals.aPieces[18] = Globals.aPiecesTemp[24];
+                Globals.aPieces[19] = Globals.aPiecesTemp[21];
+                Globals.aPieces[20] = Globals.aPiecesTemp[18];
+                Globals.aPieces[21] = Globals.aPiecesTemp[25];
+                Globals.aPieces[23] = Globals.aPiecesTemp[19];
+                Globals.aPieces[24] = Globals.aPiecesTemp[26];
+                Globals.aPieces[25] = Globals.aPiecesTemp[23];
+                Globals.aPieces[26] = Globals.aPiecesTemp[20];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[11]; // cColorRight3;
-                Globals.aPieces[37] = Globals.aPiecesTemp[14]; // cColorRight6;
-                Globals.aPieces[38] = Globals.aPiecesTemp[17]; // cColorRight9;
+                Globals.aPieces[36] = Globals.aPiecesTemp[11];
+                Globals.aPieces[37] = Globals.aPiecesTemp[14];
+                Globals.aPieces[38] = Globals.aPiecesTemp[17];
 
-                Globals.aPieces[11] = Globals.aPiecesTemp[53]; // cColorDown9;
-                Globals.aPieces[14] = Globals.aPiecesTemp[52]; // cColorDown8;
-                Globals.aPieces[17] = Globals.aPiecesTemp[51]; // cColorDown7;
+                Globals.aPieces[11] = Globals.aPiecesTemp[53];
+                Globals.aPieces[14] = Globals.aPiecesTemp[52];
+                Globals.aPieces[17] = Globals.aPiecesTemp[51];
 
-                Globals.aPieces[51] = Globals.aPiecesTemp[27]; // cColorLeft1;
-                Globals.aPieces[52] = Globals.aPiecesTemp[30]; // cColorLeft4;
-                Globals.aPieces[53] = Globals.aPiecesTemp[33]; // cColorLeft7;
+                Globals.aPieces[51] = Globals.aPiecesTemp[27];
+                Globals.aPieces[52] = Globals.aPiecesTemp[30];
+                Globals.aPieces[53] = Globals.aPiecesTemp[33];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[38]; // cColorUp3;
-                Globals.aPieces[30] = Globals.aPiecesTemp[37]; // cColorUp2;
-                Globals.aPieces[33] = Globals.aPiecesTemp[36]; // cColorUp1;
+                Globals.aPieces[27] = Globals.aPiecesTemp[38];
+                Globals.aPieces[30] = Globals.aPiecesTemp[37];
+                Globals.aPieces[33] = Globals.aPiecesTemp[36];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[18] = Globals.aPiecesTemp[20]; // cColorBack3;
-                Globals.aPieces[19] = Globals.aPiecesTemp[23]; // cColorBack6;
-                Globals.aPieces[20] = Globals.aPiecesTemp[26]; // cColorBack9;
-                Globals.aPieces[21] = Globals.aPiecesTemp[19]; // cColorBack2;
-                Globals.aPieces[23] = Globals.aPiecesTemp[25]; // cColorBack8;
-                Globals.aPieces[24] = Globals.aPiecesTemp[18]; // cColorBack1;
-                Globals.aPieces[25] = Globals.aPiecesTemp[21]; // cColorBack4;
-                Globals.aPieces[26] = Globals.aPiecesTemp[24]; // cColorBack7;
+                Globals.aPieces[18] = Globals.aPiecesTemp[20];
+                Globals.aPieces[19] = Globals.aPiecesTemp[23];
+                Globals.aPieces[20] = Globals.aPiecesTemp[26];
+                Globals.aPieces[21] = Globals.aPiecesTemp[19];
+                Globals.aPieces[23] = Globals.aPiecesTemp[25];
+                Globals.aPieces[24] = Globals.aPiecesTemp[18];
+                Globals.aPieces[25] = Globals.aPiecesTemp[21];
+                Globals.aPieces[26] = Globals.aPiecesTemp[24];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[33]; // cColorLeft7;
-                Globals.aPieces[37] = Globals.aPiecesTemp[30]; // cColorLeft4;
-                Globals.aPieces[38] = Globals.aPiecesTemp[27]; // cColorLeft1;
+                Globals.aPieces[36] = Globals.aPiecesTemp[33];
+                Globals.aPieces[37] = Globals.aPiecesTemp[30];
+                Globals.aPieces[38] = Globals.aPiecesTemp[27];
 
-                Globals.aPieces[11] = Globals.aPiecesTemp[36]; // cColorUp1;
-                Globals.aPieces[14] = Globals.aPiecesTemp[37]; // cColorUp2;
-                Globals.aPieces[17] = Globals.aPiecesTemp[38]; // cColorUp3;
+                Globals.aPieces[11] = Globals.aPiecesTemp[36];
+                Globals.aPieces[14] = Globals.aPiecesTemp[37];
+                Globals.aPieces[17] = Globals.aPiecesTemp[38];
 
-                Globals.aPieces[51] = Globals.aPiecesTemp[17]; // cColorRight9;
-                Globals.aPieces[52] = Globals.aPiecesTemp[14]; // cColorRight6;
-                Globals.aPieces[53] = Globals.aPiecesTemp[11]; // cColorRight3;
+                Globals.aPieces[51] = Globals.aPiecesTemp[17];
+                Globals.aPieces[52] = Globals.aPiecesTemp[14];
+                Globals.aPieces[53] = Globals.aPiecesTemp[11];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[51]; // cColorDown7;
-                Globals.aPieces[30] = Globals.aPiecesTemp[52]; // cColorDown8;
-                Globals.aPieces[33] = Globals.aPiecesTemp[53]; // cColorDown9;
+                Globals.aPieces[27] = Globals.aPiecesTemp[51];
+                Globals.aPieces[30] = Globals.aPiecesTemp[52];
+                Globals.aPieces[33] = Globals.aPiecesTemp[53];
             }
         }
 
@@ -386,58 +388,58 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[27] = Globals.aPiecesTemp[33]; // cColorLeft7;
-                Globals.aPieces[28] = Globals.aPiecesTemp[30]; // cColorLeft4;
-                Globals.aPieces[29] = Globals.aPiecesTemp[27]; // cColorLeft1;
-                Globals.aPieces[30] = Globals.aPiecesTemp[34]; // cColorLeft8;
-                Globals.aPieces[32] = Globals.aPiecesTemp[28]; // cColorLeft2;
-                Globals.aPieces[33] = Globals.aPiecesTemp[35]; // cColorLeft9;
-                Globals.aPieces[34] = Globals.aPiecesTemp[32]; // cColorLeft6;
-                Globals.aPieces[35] = Globals.aPiecesTemp[29]; // cColorLeft3;
+                Globals.aPieces[27] = Globals.aPiecesTemp[33];
+                Globals.aPieces[28] = Globals.aPiecesTemp[30];
+                Globals.aPieces[29] = Globals.aPiecesTemp[27];
+                Globals.aPieces[30] = Globals.aPiecesTemp[34];
+                Globals.aPieces[32] = Globals.aPiecesTemp[28];
+                Globals.aPieces[33] = Globals.aPiecesTemp[35];
+                Globals.aPieces[34] = Globals.aPiecesTemp[32];
+                Globals.aPieces[35] = Globals.aPiecesTemp[29];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[26]; // cColorBack9;
-                Globals.aPieces[39] = Globals.aPiecesTemp[23]; // cColorBack6;
-                Globals.aPieces[42] = Globals.aPiecesTemp[20]; // cColorBack3;
+                Globals.aPieces[36] = Globals.aPiecesTemp[26];
+                Globals.aPieces[39] = Globals.aPiecesTemp[23];
+                Globals.aPieces[42] = Globals.aPiecesTemp[20];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[36]; // cColorUp1;
-                Globals.aPieces[3] = Globals.aPiecesTemp[39]; // cColorUp4;
-                Globals.aPieces[6] = Globals.aPiecesTemp[42]; // cColorUp7;
+                Globals.aPieces[0] = Globals.aPiecesTemp[36];
+                Globals.aPieces[3] = Globals.aPiecesTemp[39];
+                Globals.aPieces[6] = Globals.aPiecesTemp[42];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[0]; // cColorFront1;
-                Globals.aPieces[48] = Globals.aPiecesTemp[3]; // cColorFront4;
-                Globals.aPieces[51] = Globals.aPiecesTemp[6]; // cColorFront7;
+                Globals.aPieces[45] = Globals.aPiecesTemp[0];
+                Globals.aPieces[48] = Globals.aPiecesTemp[3];
+                Globals.aPieces[51] = Globals.aPiecesTemp[6];
 
-                Globals.aPieces[20] = Globals.aPiecesTemp[51]; // cColorDown7;
-                Globals.aPieces[23] = Globals.aPiecesTemp[48]; // cColorDown4;
-                Globals.aPieces[26] = Globals.aPiecesTemp[45]; // cColorDown1;
+                Globals.aPieces[20] = Globals.aPiecesTemp[51];
+                Globals.aPieces[23] = Globals.aPiecesTemp[48];
+                Globals.aPieces[26] = Globals.aPiecesTemp[45];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[27] = Globals.aPiecesTemp[29]; // cColorLeft3;
-                Globals.aPieces[28] = Globals.aPiecesTemp[32]; // cColorLeft6;
-                Globals.aPieces[29] = Globals.aPiecesTemp[35]; // cColorLeft9;
-                Globals.aPieces[30] = Globals.aPiecesTemp[28]; // cColorLeft2;
-                Globals.aPieces[32] = Globals.aPiecesTemp[34]; // cColorLeft8;
-                Globals.aPieces[33] = Globals.aPiecesTemp[27]; // cColorLeft1;
-                Globals.aPieces[34] = Globals.aPiecesTemp[30]; // cColorLeft4;
-                Globals.aPieces[35] = Globals.aPiecesTemp[33]; // cColorLeft7;
+                Globals.aPieces[27] = Globals.aPiecesTemp[29];
+                Globals.aPieces[28] = Globals.aPiecesTemp[32];
+                Globals.aPieces[29] = Globals.aPiecesTemp[35];
+                Globals.aPieces[30] = Globals.aPiecesTemp[28];
+                Globals.aPieces[32] = Globals.aPiecesTemp[34];
+                Globals.aPieces[33] = Globals.aPiecesTemp[27];
+                Globals.aPieces[34] = Globals.aPiecesTemp[30];
+                Globals.aPieces[35] = Globals.aPiecesTemp[33];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[0]; // cColorFront1;
-                Globals.aPieces[39] = Globals.aPiecesTemp[3]; // cColorFront4;
-                Globals.aPieces[42] = Globals.aPiecesTemp[6]; // cColorFront7;
+                Globals.aPieces[36] = Globals.aPiecesTemp[0];
+                Globals.aPieces[39] = Globals.aPiecesTemp[3];
+                Globals.aPieces[42] = Globals.aPiecesTemp[6];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[45]; // cColorDown1;
-                Globals.aPieces[3] = Globals.aPiecesTemp[48]; // cColorDown4;
-                Globals.aPieces[6] = Globals.aPiecesTemp[51]; // cColorDown7;
+                Globals.aPieces[0] = Globals.aPiecesTemp[45];
+                Globals.aPieces[3] = Globals.aPiecesTemp[48];
+                Globals.aPieces[6] = Globals.aPiecesTemp[51];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[26]; // cColorBack9;
-                Globals.aPieces[48] = Globals.aPiecesTemp[23]; // cColorBack6;
-                Globals.aPieces[51] = Globals.aPiecesTemp[20]; // cColorBack3;
+                Globals.aPieces[45] = Globals.aPiecesTemp[26];
+                Globals.aPieces[48] = Globals.aPiecesTemp[23];
+                Globals.aPieces[51] = Globals.aPiecesTemp[20];
 
-                Globals.aPieces[20] = Globals.aPiecesTemp[42]; // cColorUp7;
-                Globals.aPieces[23] = Globals.aPiecesTemp[39]; // cColorUp4;
-                Globals.aPieces[26] = Globals.aPiecesTemp[36]; // cColorUp1;
+                Globals.aPieces[20] = Globals.aPiecesTemp[42];
+                Globals.aPieces[23] = Globals.aPiecesTemp[39];
+                Globals.aPieces[26] = Globals.aPiecesTemp[36];
             }
         }
 
@@ -448,40 +450,40 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[37] = Globals.aPiecesTemp[1]; // cColorFront2;
-                Globals.aPieces[40] = Globals.aPiecesTemp[4]; // cColorFront5;
-                Globals.aPieces[43] = Globals.aPiecesTemp[7]; // cColorFront8;
+                Globals.aPieces[37] = Globals.aPiecesTemp[1];
+                Globals.aPieces[40] = Globals.aPiecesTemp[4];
+                Globals.aPieces[43] = Globals.aPiecesTemp[7];
 
-                Globals.aPieces[1] = Globals.aPiecesTemp[46]; // cColorDown2;
-                Globals.aPieces[4] = Globals.aPiecesTemp[49]; // cColorDown5;
-                Globals.aPieces[7] = Globals.aPiecesTemp[52]; // cColorDown8;
+                Globals.aPieces[1] = Globals.aPiecesTemp[46];
+                Globals.aPieces[4] = Globals.aPiecesTemp[49];
+                Globals.aPieces[7] = Globals.aPiecesTemp[52];
 
-                Globals.aPieces[46] = Globals.aPiecesTemp[25]; // cColorBack8;
-                Globals.aPieces[49] = Globals.aPiecesTemp[22]; // cColorBack5;
-                Globals.aPieces[52] = Globals.aPiecesTemp[19]; // cColorBack2;
+                Globals.aPieces[46] = Globals.aPiecesTemp[25];
+                Globals.aPieces[49] = Globals.aPiecesTemp[22];
+                Globals.aPieces[52] = Globals.aPiecesTemp[19];
 
-                Globals.aPieces[19] = Globals.aPiecesTemp[43]; // cColorUp8;
-                Globals.aPieces[22] = Globals.aPiecesTemp[40]; // cColorUp5;
-                Globals.aPieces[25] = Globals.aPiecesTemp[37]; // cColorUp2;
+                Globals.aPieces[19] = Globals.aPiecesTemp[43];
+                Globals.aPieces[22] = Globals.aPiecesTemp[40];
+                Globals.aPieces[25] = Globals.aPiecesTemp[37];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[37] = Globals.aPiecesTemp[25]; // cColorBack8;
-                Globals.aPieces[40] = Globals.aPiecesTemp[22]; // cColorBack5;
-                Globals.aPieces[43] = Globals.aPiecesTemp[19]; // cColorBack2;
+                Globals.aPieces[37] = Globals.aPiecesTemp[25];
+                Globals.aPieces[40] = Globals.aPiecesTemp[22];
+                Globals.aPieces[43] = Globals.aPiecesTemp[19];
 
-                Globals.aPieces[1] = Globals.aPiecesTemp[37]; // cColorUp2;
-                Globals.aPieces[4] = Globals.aPiecesTemp[40]; // cColorUp5;
-                Globals.aPieces[7] = Globals.aPiecesTemp[43]; // cColorUp8;
+                Globals.aPieces[1] = Globals.aPiecesTemp[37];
+                Globals.aPieces[4] = Globals.aPiecesTemp[40];
+                Globals.aPieces[7] = Globals.aPiecesTemp[43];
 
-                Globals.aPieces[46] = Globals.aPiecesTemp[1]; // cColorFront2;
-                Globals.aPieces[49] = Globals.aPiecesTemp[4]; // cColorFront5;
-                Globals.aPieces[52] = Globals.aPiecesTemp[7]; // cColorFront8;
+                Globals.aPieces[46] = Globals.aPiecesTemp[1];
+                Globals.aPieces[49] = Globals.aPiecesTemp[4];
+                Globals.aPieces[52] = Globals.aPiecesTemp[7];
 
-                Globals.aPieces[19] = Globals.aPiecesTemp[52]; // cColorDown8;
-                Globals.aPieces[22] = Globals.aPiecesTemp[49]; // cColorDown5;
-                Globals.aPieces[25] = Globals.aPiecesTemp[46]; // cColorDown2;
+                Globals.aPieces[19] = Globals.aPiecesTemp[52];
+                Globals.aPieces[22] = Globals.aPiecesTemp[49];
+                Globals.aPieces[25] = Globals.aPiecesTemp[46];
             }
         }
 
@@ -492,58 +494,58 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[9] = Globals.aPiecesTemp[15]; // cColorRight7;
-                Globals.aPieces[10] = Globals.aPiecesTemp[12]; // cColorRight4;
-                Globals.aPieces[11] = Globals.aPiecesTemp[9]; // cColorRight1;
-                Globals.aPieces[12] = Globals.aPiecesTemp[16]; // cColorRight8;
-                Globals.aPieces[14] = Globals.aPiecesTemp[10]; // cColorRight2;
-                Globals.aPieces[15] = Globals.aPiecesTemp[17]; // cColorRight9;
-                Globals.aPieces[16] = Globals.aPiecesTemp[14]; // cColorRight6;
-                Globals.aPieces[17] = Globals.aPiecesTemp[11]; // cColorRight3;
+                Globals.aPieces[9] = Globals.aPiecesTemp[15];
+                Globals.aPieces[10] = Globals.aPiecesTemp[12];
+                Globals.aPieces[11] = Globals.aPiecesTemp[9];
+                Globals.aPieces[12] = Globals.aPiecesTemp[16];
+                Globals.aPieces[14] = Globals.aPiecesTemp[10];
+                Globals.aPieces[15] = Globals.aPiecesTemp[17];
+                Globals.aPieces[16] = Globals.aPiecesTemp[14];
+                Globals.aPieces[17] = Globals.aPiecesTemp[11];
 
-                Globals.aPieces[38] = Globals.aPiecesTemp[2]; // cColorFront3;
-                Globals.aPieces[41] = Globals.aPiecesTemp[5]; // cColorFront6;
-                Globals.aPieces[44] = Globals.aPiecesTemp[8]; // cColorFront9;
+                Globals.aPieces[38] = Globals.aPiecesTemp[2];
+                Globals.aPieces[41] = Globals.aPiecesTemp[5];
+                Globals.aPieces[44] = Globals.aPiecesTemp[8];
 
-                Globals.aPieces[2] = Globals.aPiecesTemp[47]; // cColorDown3;
-                Globals.aPieces[5] = Globals.aPiecesTemp[50]; // cColorDown6;
-                Globals.aPieces[8] = Globals.aPiecesTemp[53]; // cColorDown9;
+                Globals.aPieces[2] = Globals.aPiecesTemp[47];
+                Globals.aPieces[5] = Globals.aPiecesTemp[50];
+                Globals.aPieces[8] = Globals.aPiecesTemp[53];
 
-                Globals.aPieces[47] = Globals.aPiecesTemp[24]; // cColorBack7;
-                Globals.aPieces[50] = Globals.aPiecesTemp[21]; // cColorBack4;
-                Globals.aPieces[53] = Globals.aPiecesTemp[18]; // cColorBack1;
+                Globals.aPieces[47] = Globals.aPiecesTemp[24];
+                Globals.aPieces[50] = Globals.aPiecesTemp[21];
+                Globals.aPieces[53] = Globals.aPiecesTemp[18];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[44]; // cColorUp9;
-                Globals.aPieces[21] = Globals.aPiecesTemp[41]; // cColorUp6;
-                Globals.aPieces[24] = Globals.aPiecesTemp[38]; // cColorUp3;
+                Globals.aPieces[18] = Globals.aPiecesTemp[44];
+                Globals.aPieces[21] = Globals.aPiecesTemp[41];
+                Globals.aPieces[24] = Globals.aPiecesTemp[38];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[9] = Globals.aPiecesTemp[11]; // cColorRight3;
-                Globals.aPieces[10] = Globals.aPiecesTemp[14]; // cColorRight6;
-                Globals.aPieces[11] = Globals.aPiecesTemp[17]; // cColorRight9;
-                Globals.aPieces[12] = Globals.aPiecesTemp[10]; // cColorRight2;
-                Globals.aPieces[14] = Globals.aPiecesTemp[16]; // cColorRight8;
-                Globals.aPieces[15] = Globals.aPiecesTemp[9]; // cColorRight1;
-                Globals.aPieces[16] = Globals.aPiecesTemp[12]; // cColorRight4;
-                Globals.aPieces[17] = Globals.aPiecesTemp[15]; // cColorRight7;
+                Globals.aPieces[9] = Globals.aPiecesTemp[11];
+                Globals.aPieces[10] = Globals.aPiecesTemp[14];
+                Globals.aPieces[11] = Globals.aPiecesTemp[17];
+                Globals.aPieces[12] = Globals.aPiecesTemp[10];
+                Globals.aPieces[14] = Globals.aPiecesTemp[16];
+                Globals.aPieces[15] = Globals.aPiecesTemp[9];
+                Globals.aPieces[16] = Globals.aPiecesTemp[12];
+                Globals.aPieces[17] = Globals.aPiecesTemp[15];
 
-                Globals.aPieces[38] = Globals.aPiecesTemp[24]; // cColorBack7;
-                Globals.aPieces[41] = Globals.aPiecesTemp[21]; // cColorBack4;
-                Globals.aPieces[44] = Globals.aPiecesTemp[18]; // cColorBack1;
+                Globals.aPieces[38] = Globals.aPiecesTemp[24];
+                Globals.aPieces[41] = Globals.aPiecesTemp[21];
+                Globals.aPieces[44] = Globals.aPiecesTemp[18];
 
-                Globals.aPieces[2] = Globals.aPiecesTemp[38]; // cColorUp3;
-                Globals.aPieces[5] = Globals.aPiecesTemp[41]; // cColorUp6;
-                Globals.aPieces[8] = Globals.aPiecesTemp[44]; // cColorUp9;
+                Globals.aPieces[2] = Globals.aPiecesTemp[38];
+                Globals.aPieces[5] = Globals.aPiecesTemp[41];
+                Globals.aPieces[8] = Globals.aPiecesTemp[44];
 
-                Globals.aPieces[47] = Globals.aPiecesTemp[2]; // cColorFront3;
-                Globals.aPieces[50] = Globals.aPiecesTemp[5]; // cColorFront6;
-                Globals.aPieces[53] = Globals.aPiecesTemp[8]; // cColorFront9;
+                Globals.aPieces[47] = Globals.aPiecesTemp[2];
+                Globals.aPieces[50] = Globals.aPiecesTemp[5];
+                Globals.aPieces[53] = Globals.aPiecesTemp[8];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[53]; // cColorDown9;
-                Globals.aPieces[21] = Globals.aPiecesTemp[50]; // cColorDown6;
-                Globals.aPieces[24] = Globals.aPiecesTemp[47]; // cColorDown3;
+                Globals.aPieces[18] = Globals.aPiecesTemp[53];
+                Globals.aPieces[21] = Globals.aPiecesTemp[50];
+                Globals.aPieces[24] = Globals.aPiecesTemp[47];
             }
         }
 
@@ -554,58 +556,58 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[36] = Globals.aPiecesTemp[42]; // cColorUp7;
-                Globals.aPieces[37] = Globals.aPiecesTemp[39]; // cColorUp4;
-                Globals.aPieces[38] = Globals.aPiecesTemp[36]; // cColorUp1;
-                Globals.aPieces[39] = Globals.aPiecesTemp[43]; // cColorUp8;
-                Globals.aPieces[41] = Globals.aPiecesTemp[37]; // cColorUp2;
-                Globals.aPieces[42] = Globals.aPiecesTemp[44]; // cColorUp9;
-                Globals.aPieces[43] = Globals.aPiecesTemp[41]; // cColorUp6;
-                Globals.aPieces[44] = Globals.aPiecesTemp[38]; // cColorUp3;
+                Globals.aPieces[36] = Globals.aPiecesTemp[42];
+                Globals.aPieces[37] = Globals.aPiecesTemp[39];
+                Globals.aPieces[38] = Globals.aPiecesTemp[36];
+                Globals.aPieces[39] = Globals.aPiecesTemp[43];
+                Globals.aPieces[41] = Globals.aPiecesTemp[37];
+                Globals.aPieces[42] = Globals.aPiecesTemp[44];
+                Globals.aPieces[43] = Globals.aPiecesTemp[41];
+                Globals.aPieces[44] = Globals.aPiecesTemp[38];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[0]; // cColorFront1;
-                Globals.aPieces[28] = Globals.aPiecesTemp[1]; // cColorFront2;
-                Globals.aPieces[29] = Globals.aPiecesTemp[2]; // cColorFront3;
+                Globals.aPieces[27] = Globals.aPiecesTemp[0];
+                Globals.aPieces[28] = Globals.aPiecesTemp[1];
+                Globals.aPieces[29] = Globals.aPiecesTemp[2];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[9]; // cColorRight1;
-                Globals.aPieces[1] = Globals.aPiecesTemp[10]; // cColorRight2;
-                Globals.aPieces[2] = Globals.aPiecesTemp[11]; // cColorRight3;
+                Globals.aPieces[0] = Globals.aPiecesTemp[9];
+                Globals.aPieces[1] = Globals.aPiecesTemp[10];
+                Globals.aPieces[2] = Globals.aPiecesTemp[11];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[18]; // cColorBack1;
-                Globals.aPieces[10] = Globals.aPiecesTemp[19]; // cColorBack2;
-                Globals.aPieces[11] = Globals.aPiecesTemp[20]; // cColorBack3;
+                Globals.aPieces[9] = Globals.aPiecesTemp[18];
+                Globals.aPieces[10] = Globals.aPiecesTemp[19];
+                Globals.aPieces[11] = Globals.aPiecesTemp[20];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[27]; // cColorLeft1;
-                Globals.aPieces[19] = Globals.aPiecesTemp[28]; // cColorLeft2;
-                Globals.aPieces[20] = Globals.aPiecesTemp[29]; // cColorLeft3;
+                Globals.aPieces[18] = Globals.aPiecesTemp[27];
+                Globals.aPieces[19] = Globals.aPiecesTemp[28];
+                Globals.aPieces[20] = Globals.aPiecesTemp[29];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[36] = Globals.aPiecesTemp[38]; // cColorUp3;
-                Globals.aPieces[37] = Globals.aPiecesTemp[41]; // cColorUp6;
-                Globals.aPieces[38] = Globals.aPiecesTemp[44]; // cColorUp9;
-                Globals.aPieces[39] = Globals.aPiecesTemp[37]; // cColorUp2;
-                Globals.aPieces[41] = Globals.aPiecesTemp[43]; // cColorUp8;
-                Globals.aPieces[42] = Globals.aPiecesTemp[36]; // cColorUp1;
-                Globals.aPieces[43] = Globals.aPiecesTemp[39]; // cColorUp4;
-                Globals.aPieces[44] = Globals.aPiecesTemp[42]; // cColorUp7;
+                Globals.aPieces[36] = Globals.aPiecesTemp[38];
+                Globals.aPieces[37] = Globals.aPiecesTemp[41];
+                Globals.aPieces[38] = Globals.aPiecesTemp[44];
+                Globals.aPieces[39] = Globals.aPiecesTemp[37];
+                Globals.aPieces[41] = Globals.aPiecesTemp[43];
+                Globals.aPieces[42] = Globals.aPiecesTemp[36];
+                Globals.aPieces[43] = Globals.aPiecesTemp[39];
+                Globals.aPieces[44] = Globals.aPiecesTemp[42];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[18]; // cColorBack1;
-                Globals.aPieces[28] = Globals.aPiecesTemp[19]; // cColorBack2;
-                Globals.aPieces[29] = Globals.aPiecesTemp[20]; // cColorBack3;
+                Globals.aPieces[27] = Globals.aPiecesTemp[18];
+                Globals.aPieces[28] = Globals.aPiecesTemp[19];
+                Globals.aPieces[29] = Globals.aPiecesTemp[20];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[27]; // cColorLeft1;
-                Globals.aPieces[1] = Globals.aPiecesTemp[28]; // cColorLeft2;
-                Globals.aPieces[2] = Globals.aPiecesTemp[29]; // cColorLeft3;
+                Globals.aPieces[0] = Globals.aPiecesTemp[27];
+                Globals.aPieces[1] = Globals.aPiecesTemp[28];
+                Globals.aPieces[2] = Globals.aPiecesTemp[29];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[0]; // cColorFront1;
-                Globals.aPieces[10] = Globals.aPiecesTemp[1]; // cColorFront2;
-                Globals.aPieces[11] = Globals.aPiecesTemp[2]; // cColorFront3;
+                Globals.aPieces[9] = Globals.aPiecesTemp[0];
+                Globals.aPieces[10] = Globals.aPiecesTemp[1];
+                Globals.aPieces[11] = Globals.aPiecesTemp[2];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[9]; // cColorRight1;
-                Globals.aPieces[19] = Globals.aPiecesTemp[10]; // cColorRight2;
-                Globals.aPieces[20] = Globals.aPiecesTemp[11]; // cColorRight3;
+                Globals.aPieces[18] = Globals.aPiecesTemp[9];
+                Globals.aPieces[19] = Globals.aPiecesTemp[10];
+                Globals.aPieces[20] = Globals.aPiecesTemp[11];
             }
         }
 
@@ -616,40 +618,40 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[3] = Globals.aPiecesTemp[12]; // cColorRight4;
-                Globals.aPieces[4] = Globals.aPiecesTemp[13]; // cColorRight5;
-                Globals.aPieces[5] = Globals.aPiecesTemp[14]; // cColorRight6;
+                Globals.aPieces[3] = Globals.aPiecesTemp[12];
+                Globals.aPieces[4] = Globals.aPiecesTemp[13];
+                Globals.aPieces[5] = Globals.aPiecesTemp[14];
 
-                Globals.aPieces[12] = Globals.aPiecesTemp[21]; // cColorBack4;
-                Globals.aPieces[13] = Globals.aPiecesTemp[22]; // cColorBack5;
-                Globals.aPieces[14] = Globals.aPiecesTemp[23]; // cColorBack6;
+                Globals.aPieces[12] = Globals.aPiecesTemp[21];
+                Globals.aPieces[13] = Globals.aPiecesTemp[22];
+                Globals.aPieces[14] = Globals.aPiecesTemp[23];
 
-                Globals.aPieces[21] = Globals.aPiecesTemp[30]; // cColorLeft4;
-                Globals.aPieces[22] = Globals.aPiecesTemp[31]; // cColorLeft5;
-                Globals.aPieces[23] = Globals.aPiecesTemp[32]; // cColorLeft6;
+                Globals.aPieces[21] = Globals.aPiecesTemp[30];
+                Globals.aPieces[22] = Globals.aPiecesTemp[31];
+                Globals.aPieces[23] = Globals.aPiecesTemp[32];
 
-                Globals.aPieces[30] = Globals.aPiecesTemp[3]; // cColorFront4;
-                Globals.aPieces[31] = Globals.aPiecesTemp[4]; // cColorFront5;
-                Globals.aPieces[32] = Globals.aPiecesTemp[5]; // cColorFront6;
+                Globals.aPieces[30] = Globals.aPiecesTemp[3];
+                Globals.aPieces[31] = Globals.aPiecesTemp[4];
+                Globals.aPieces[32] = Globals.aPiecesTemp[5];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[3] = Globals.aPiecesTemp[30]; // cColorLeft4;
-                Globals.aPieces[4] = Globals.aPiecesTemp[31]; // cColorLeft5;
-                Globals.aPieces[5] = Globals.aPiecesTemp[32]; // cColorLeft6;
+                Globals.aPieces[3] = Globals.aPiecesTemp[30];
+                Globals.aPieces[4] = Globals.aPiecesTemp[31];
+                Globals.aPieces[5] = Globals.aPiecesTemp[32];
 
-                Globals.aPieces[12] = Globals.aPiecesTemp[3]; // cColorFront4;
-                Globals.aPieces[13] = Globals.aPiecesTemp[4]; // cColorFront5;
-                Globals.aPieces[14] = Globals.aPiecesTemp[5]; // cColorFront6;
+                Globals.aPieces[12] = Globals.aPiecesTemp[3];
+                Globals.aPieces[13] = Globals.aPiecesTemp[4];
+                Globals.aPieces[14] = Globals.aPiecesTemp[5];
 
-                Globals.aPieces[21] = Globals.aPiecesTemp[12]; // cColorRight4;
-                Globals.aPieces[22] = Globals.aPiecesTemp[13]; // cColorRight5;
-                Globals.aPieces[23] = Globals.aPiecesTemp[14]; // cColorRight6;
+                Globals.aPieces[21] = Globals.aPiecesTemp[12];
+                Globals.aPieces[22] = Globals.aPiecesTemp[13];
+                Globals.aPieces[23] = Globals.aPiecesTemp[14];
 
-                Globals.aPieces[30] = Globals.aPiecesTemp[21]; // cColorBack4;
-                Globals.aPieces[31] = Globals.aPiecesTemp[22]; // cColorBack5;
-                Globals.aPieces[32] = Globals.aPiecesTemp[23]; // cColorBack6;
+                Globals.aPieces[30] = Globals.aPiecesTemp[21];
+                Globals.aPieces[31] = Globals.aPiecesTemp[22];
+                Globals.aPieces[32] = Globals.aPiecesTemp[23];
             }
         }
 
@@ -660,58 +662,58 @@
 
             if (cDirection == "+")
             {
-                Globals.aPieces[45] = Globals.aPiecesTemp[51]; // cColorDown7;
-                Globals.aPieces[46] = Globals.aPiecesTemp[48]; // cColorDown4;
-                Globals.aPieces[47] = Globals.aPiecesTemp[45]; // cColorDown1;
-                Globals.aPieces[48] = Globals.aPiecesTemp[52]; // cColorDown8;
-                Globals.aPieces[50] = Globals.aPiecesTemp[46]; // cColorDown2;
-                Globals.aPieces[51] = Globals.aPiecesTemp[53]; // cColorDown9;
-                Globals.aPieces[52] = Globals.aPiecesTemp[50]; // cColorDown6;
-                Globals.aPieces[53] = Globals.aPiecesTemp[47]; // cColorDown3;
+                Globals.aPieces[45] = Globals.aPiecesTemp[51];
+                Globals.aPieces[46] = Globals.aPiecesTemp[48];
+                Globals.aPieces[47] = Globals.aPiecesTemp[45];
+                Globals.aPieces[48] = Globals.aPiecesTemp[52];
+                Globals.aPieces[50] = Globals.aPiecesTemp[46];
+                Globals.aPieces[51] = Globals.aPiecesTemp[53];
+                Globals.aPieces[52] = Globals.aPiecesTemp[50];
+                Globals.aPieces[53] = Globals.aPiecesTemp[47];
 
-                Globals.aPieces[33] = Globals.aPiecesTemp[24]; // cColorBack7;
-                Globals.aPieces[34] = Globals.aPiecesTemp[25]; // cColorBack8;
-                Globals.aPieces[35] = Globals.aPiecesTemp[26]; // cColorBack9;
+                Globals.aPieces[33] = Globals.aPiecesTemp[24];
+                Globals.aPieces[34] = Globals.aPiecesTemp[25];
+                Globals.aPieces[35] = Globals.aPiecesTemp[26];
 
-                Globals.aPieces[6] = Globals.aPiecesTemp[33]; // cColorLeft7;
-                Globals.aPieces[7] = Globals.aPiecesTemp[34]; // cColorLeft8;
-                Globals.aPieces[8] = Globals.aPiecesTemp[35]; // cColorLeft9;
+                Globals.aPieces[6] = Globals.aPiecesTemp[33];
+                Globals.aPieces[7] = Globals.aPiecesTemp[34];
+                Globals.aPieces[8] = Globals.aPiecesTemp[35];
 
-                Globals.aPieces[15] = Globals.aPiecesTemp[6]; // cColorFront7;
-                Globals.aPieces[16] = Globals.aPiecesTemp[7]; // cColorFront8;
-                Globals.aPieces[17] = Globals.aPiecesTemp[8]; // cColorFront9;
+                Globals.aPieces[15] = Globals.aPiecesTemp[6];
+                Globals.aPieces[16] = Globals.aPiecesTemp[7];
+                Globals.aPieces[17] = Globals.aPiecesTemp[8];
 
-                Globals.aPieces[24] = Globals.aPiecesTemp[15]; // cColorRight7;
-                Globals.aPieces[25] = Globals.aPiecesTemp[16]; // cColorRight8;
-                Globals.aPieces[26] = Globals.aPiecesTemp[17]; // cColorRight9;
+                Globals.aPieces[24] = Globals.aPiecesTemp[15];
+                Globals.aPieces[25] = Globals.aPiecesTemp[16];
+                Globals.aPieces[26] = Globals.aPiecesTemp[17];
             }
 
             if (cDirection == "-")
             {
-                Globals.aPieces[45] = Globals.aPiecesTemp[47]; // cColorDown3;
-                Globals.aPieces[46] = Globals.aPiecesTemp[50]; // cColorDown6;
-                Globals.aPieces[47] = Globals.aPiecesTemp[53]; // cColorDown9;
-                Globals.aPieces[48] = Globals.aPiecesTemp[46]; // cColorDown2;
-                Globals.aPieces[50] = Globals.aPiecesTemp[52]; // cColorDown8;
-                Globals.aPieces[51] = Globals.aPiecesTemp[45]; // cColorDown1;
-                Globals.aPieces[52] = Globals.aPiecesTemp[48]; // cColorDown4;
-                Globals.aPieces[53] = Globals.aPiecesTemp[51]; // cColorDown7;
+                Globals.aPieces[45] = Globals.aPiecesTemp[47];
+                Globals.aPieces[46] = Globals.aPiecesTemp[50];
+                Globals.aPieces[47] = Globals.aPiecesTemp[53];
+                Globals.aPieces[48] = Globals.aPiecesTemp[46];
+                Globals.aPieces[50] = Globals.aPiecesTemp[52];
+                Globals.aPieces[51] = Globals.aPiecesTemp[45];
+                Globals.aPieces[52] = Globals.aPiecesTemp[48];
+                Globals.aPieces[53] = Globals.aPiecesTemp[51];
 
-                Globals.aPieces[33] = Globals.aPiecesTemp[6]; // cColorFront7;
-                Globals.aPieces[34] = Globals.aPiecesTemp[7]; // cColorFront8;
-                Globals.aPieces[35] = Globals.aPiecesTemp[8]; // cColorFront9;
+                Globals.aPieces[33] = Globals.aPiecesTemp[6];
+                Globals.aPieces[34] = Globals.aPiecesTemp[7];
+                Globals.aPieces[35] = Globals.aPiecesTemp[8];
 
-                Globals.aPieces[6] = Globals.aPiecesTemp[15]; // cColorRight7;
-                Globals.aPieces[7] = Globals.aPiecesTemp[16]; // cColorRight8;
-                Globals.aPieces[8] = Globals.aPiecesTemp[17]; // cColorRight9;
+                Globals.aPieces[6] = Globals.aPiecesTemp[15];
+                Globals.aPieces[7] = Globals.aPiecesTemp[16];
+                Globals.aPieces[8] = Globals.aPiecesTemp[17];
 
-                Globals.aPieces[15] = Globals.aPiecesTemp[24]; // cColorBack7;
-                Globals.aPieces[16] = Globals.aPiecesTemp[25]; // cColorBack8;
-                Globals.aPieces[17] = Globals.aPiecesTemp[26]; // cColorBack9;
+                Globals.aPieces[15] = Globals.aPiecesTemp[24];
+                Globals.aPieces[16] = Globals.aPiecesTemp[25];
+                Globals.aPieces[17] = Globals.aPiecesTemp[26];
 
-                Globals.aPieces[24] = Globals.aPiecesTemp[33]; // cColorLeft7;
-                Globals.aPieces[25] = Globals.aPiecesTemp[34]; // cColorLeft8;
-                Globals.aPieces[26] = Globals.aPiecesTemp[35]; // cColorLeft9;
+                Globals.aPieces[24] = Globals.aPiecesTemp[33];
+                Globals.aPieces[25] = Globals.aPiecesTemp[34];
+                Globals.aPieces[26] = Globals.aPiecesTemp[35];
             }
         }
     }

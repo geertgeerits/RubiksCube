@@ -7,7 +7,7 @@
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
 //                The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981
-// Dependencies : 
+// Dependencies : None
 // Thanks to ...: Gerald Versluis
 
 using Microsoft.Maui.Controls.Shapes;
@@ -209,7 +209,6 @@ public partial class MainPage : ContentPage
 
         // Save the start colors of the cube to array aStartPieces[]
         SetCubeColorsInArrays();
-        //Globals.aStartPieces = ClassSaveRestoreCube.SaveColorsCube();
         Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
 
 
@@ -226,7 +225,7 @@ public partial class MainPage : ContentPage
         //bool bSolved = await classSolveCube.SolveTheCubeAsync();
 
         // Restore the start colors of the cube from array aStartPieces[]
-        ClassSaveRestoreCube.RestoreColorsCube(Globals.aStartPieces);
+        Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
 
         activityIndicator.IsRunning = false;
 
@@ -966,76 +965,20 @@ public partial class MainPage : ContentPage
     {
         SetCubeColorsInArrays();
 
-        string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
+        ClassSaveRestoreCube classSaveRestoreCube = new();
+        _ = classSaveRestoreCube.CubeDataSave();
 
-        if (File.Exists(cFileName))
-        {
-            File.Delete(cFileName);
-        }
-
-        int nRow;
-
-        try
-        {
-            using StreamWriter sw = new(cFileName, false);
-
-            for (nRow = 1; nRow < 7; nRow++)
-            {
-                sw.WriteLine(Globals.aFaceColors[nRow]);
-            }
-
-            for (nRow = 0; nRow < 54; nRow++)
-            {
-                sw.WriteLine(Globals.aPieces[nRow]);
-            }
-
-            // Close the StreamWriter object
-            sw.Close();
-        }
-        catch (Exception ex)
-        {
-            DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-            return;
-        }
+        return;
     }
 
     // On clicked event: Open, restore the cube
     private void OnButtonOpenCubeClicked(object sender, EventArgs e)
     {
-        string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
-
-        if (File.Exists(cFileName) == false)
-        {
-            return;
-        }
-
-        int nRow;
-       
-        try
-        {
-            // Open the text file using a stream reader
-            using StreamReader sr = new(cFileName, false);
-
-            for (nRow = 1; nRow < 7; nRow++)
-            {
-                Globals.aFaceColors[nRow] = sr.ReadLine();
-            }
-
-            for (nRow = 0; nRow < 54; nRow++)
-            {
-                Globals.aPieces[nRow] = sr.ReadLine();
-            }
-
-            // Close the StreamReader object
-            sr.Close();
-        }
-        catch (Exception ex)
-        {
-            DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-            return;
-        }
+        ClassSaveRestoreCube classSaveRestoreCube = new();
+        _ = classSaveRestoreCube.CubeDataOpen();
 
         SetCubeColorsFromArrays();
+        return;
     }
 
     // On clicked event: Reset the colors of the cube or restart the app
