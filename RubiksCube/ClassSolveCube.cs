@@ -9,41 +9,41 @@
             await SolveEdgesTopLayerAsync();
 
             // Solve the edges of the top layer - Chapter 4, page 14-2
-            if (Globals.aUpFace[5] == Globals.aFrontFace[4])
+            if (Globals.aPieces[40] == Globals.aPieces[3])
             {
                 await MakeTurnAsync("TurnLeft+");
 
-                if (Globals.aLeftFace[8] == Globals.aFrontFace[5])
+                if (Globals.aPieces[34] == Globals.aPieces[4])
                 {
                     await MakeTurnAsync("TurnDown+");
                 }
 
-                if (Globals.aLeftFace[8] == Globals.aBackFace[5])
+                if (Globals.aPieces[34] == Globals.aPieces[22])
                 {
                     await MakeTurnAsync("TurnDown-");
                 }
 
-                if (Globals.aLeftFace[8] == Globals.aRightFace[5])
+                if (Globals.aPieces[34] == Globals.aPieces[13])
                 {
                     await MakeTurnAsync("TurnDown++");
                 }
             }
 
-            if (Globals.aUpFace[5] == Globals.aFrontFace[6])
+            if (Globals.aPieces[40] == Globals.aPieces[5])
             {
                 await MakeTurnAsync("TurnRight-");
 
-                if (Globals.aRightFace[8] == Globals.aFrontFace[5])
+                if (Globals.aPieces[16] == Globals.aPieces[4])
                 {
                     await MakeTurnAsync("TurnDown-");
                 }
 
-                if (Globals.aRightFace[8] == Globals.aBackFace[5])
+                if (Globals.aPieces[16] == Globals.aPieces[22])
                 {
                     await MakeTurnAsync("TurnDown+");
                 }
 
-                if (Globals.aRightFace[8] == Globals.aLeftFace[5])
+                if (Globals.aPieces[16] == Globals.aPieces[31])
                 {
                     await MakeTurnAsync("TurnDown++");
                 }
@@ -82,22 +82,22 @@
         {
             for (int nTimes = 1; nTimes < 11; nTimes++)
             {
-                if (Globals.aUpFace[5] == Globals.aDownFace[2] && Globals.aFrontFace[5] == Globals.aFrontFace[8])
+                if (Globals.aPieces[40] == Globals.aPieces[46] && Globals.aPieces[4] == Globals.aPieces[7])
                 {
                     await MakeTurnAsync("TurnFront++");
                 }
 
-                if (Globals.aUpFace[5] == Globals.aDownFace[4] && Globals.aLeftFace[5] == Globals.aLeftFace[8])
+                if (Globals.aPieces[40] == Globals.aPieces[48] && Globals.aPieces[31] == Globals.aPieces[34])
                 {
                     await MakeTurnAsync("TurnLeft++");
                 }
 
-                if (Globals.aUpFace[5] == Globals.aDownFace[6] && Globals.aRightFace[5] == Globals.aRightFace[8])
+                if (Globals.aPieces[40] == Globals.aPieces[50] && Globals.aPieces[13] == Globals.aPieces[16])
                 {
                     await MakeTurnAsync("TurnRight++");
                 }
 
-                if (Globals.aUpFace[5] == Globals.aDownFace[8] && Globals.aBackFace[5] == Globals.aBackFace[8])
+                if (Globals.aPieces[40] == Globals.aPieces[52] && Globals.aPieces[22] == Globals.aPieces[25])
                 {
                     await MakeTurnAsync("TurnBack++");
                 }

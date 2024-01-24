@@ -15,225 +15,225 @@
             int nRow;
 
             // Check the number of colors of the cube
-            // Top layer
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aUpFace[nRow] == Globals.aFaceColors[1])
-                    nNumberOfColors1++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aUpFace[nRow] == Globals.aFaceColors[2])
-                    nNumberOfColors2++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aUpFace[nRow] == Globals.aFaceColors[3])
-                    nNumberOfColors3++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aUpFace[nRow] == Globals.aFaceColors[4])
-                    nNumberOfColors4++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aUpFace[nRow] == Globals.aFaceColors[5])
-                    nNumberOfColors5++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aUpFace[nRow] == Globals.aFaceColors[6])
-                    nNumberOfColors6++;
-            }
-
             // Front face
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 9; nRow++)
             {
-                if (Globals.aFrontFace[nRow] == Globals.aFaceColors[1])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[1])
                     nNumberOfColors1++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 9; nRow++)
             {
-                if (Globals.aFrontFace[nRow] == Globals.aFaceColors[2])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[2])
                     nNumberOfColors2++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 9; nRow++)
             {
-                if (Globals.aFrontFace[nRow] == Globals.aFaceColors[3])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[3])
                     nNumberOfColors3++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 9; nRow++)
             {
-                if (Globals.aFrontFace[nRow] == Globals.aFaceColors[4])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[4])
                     nNumberOfColors4++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 9; nRow++)
             {
-                if (Globals.aFrontFace[nRow] == Globals.aFaceColors[5])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[5])
                     nNumberOfColors5++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 9; nRow++)
             {
-                if (Globals.aFrontFace[nRow] == Globals.aFaceColors[6])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Right face
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 9; nRow < 18; nRow++)
             {
-                if (Globals.aRightFace[nRow] == Globals.aFaceColors[1])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[1])
                     nNumberOfColors1++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 9; nRow < 18; nRow++)
             {
-                if (Globals.aRightFace[nRow] == Globals.aFaceColors[2])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[2])
                     nNumberOfColors2++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 9; nRow < 18; nRow++)
             {
-                if (Globals.aRightFace[nRow] == Globals.aFaceColors[3])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[3])
                     nNumberOfColors3++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 9; nRow < 18; nRow++)
             {
-                if (Globals.aRightFace[nRow] == Globals.aFaceColors[4])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[4])
                     nNumberOfColors4++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 9; nRow < 18; nRow++)
             {
-                if (Globals.aRightFace[nRow] == Globals.aFaceColors[5])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[5])
                     nNumberOfColors5++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 9; nRow < 18; nRow++)
             {
-                if (Globals.aRightFace[nRow] == Globals.aFaceColors[6])
-                    nNumberOfColors6++;
-            }
-
-            // Left face
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aLeftFace[nRow] == Globals.aFaceColors[1])
-                    nNumberOfColors1++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aLeftFace[nRow] == Globals.aFaceColors[2])
-                    nNumberOfColors2++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aLeftFace[nRow] == Globals.aFaceColors[3])
-                    nNumberOfColors3++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aLeftFace[nRow] == Globals.aFaceColors[4])
-                    nNumberOfColors4++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aLeftFace[nRow] == Globals.aFaceColors[5])
-                    nNumberOfColors5++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                if (Globals.aLeftFace[nRow] == Globals.aFaceColors[6])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Back face
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 18; nRow < 27; nRow++)
             {
-                if (Globals.aBackFace[nRow] == Globals.aFaceColors[1])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[1])
                     nNumberOfColors1++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 18; nRow < 27; nRow++)
             {
-                if (Globals.aBackFace[nRow] == Globals.aFaceColors[2])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[2])
                     nNumberOfColors2++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 18; nRow < 27; nRow++)
             {
-                if (Globals.aBackFace[nRow] == Globals.aFaceColors[3])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[3])
                     nNumberOfColors3++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 18; nRow < 27; nRow++)
             {
-                if (Globals.aBackFace[nRow] == Globals.aFaceColors[4])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[4])
                     nNumberOfColors4++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 18; nRow < 27; nRow++)
             {
-                if (Globals.aBackFace[nRow] == Globals.aFaceColors[5])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[5])
                     nNumberOfColors5++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 18; nRow < 27; nRow++)
             {
-                if (Globals.aBackFace[nRow] == Globals.aFaceColors[6])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[6])
+                    nNumberOfColors6++;
+            }
+
+            // Left face
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[1])
+                    nNumberOfColors1++;
+            }
+
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[2])
+                    nNumberOfColors2++;
+            }
+
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[3])
+                    nNumberOfColors3++;
+            }
+
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[4])
+                    nNumberOfColors4++;
+            }
+
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[5])
+                    nNumberOfColors5++;
+            }
+
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[6])
+                    nNumberOfColors6++;
+            }
+
+            // Top layer
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[1])
+                    nNumberOfColors1++;
+            }
+
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[2])
+                    nNumberOfColors2++;
+            }
+
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[3])
+                    nNumberOfColors3++;
+            }
+
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[4])
+                    nNumberOfColors4++;
+            }
+
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[5])
+                    nNumberOfColors5++;
+            }
+
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Bottom layer
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 45; nRow < 54; nRow++)
             {
-                if (Globals.aDownFace[nRow] == Globals.aFaceColors[1])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[1])
                     nNumberOfColors1++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 45; nRow < 54; nRow++)
             {
-                if (Globals.aDownFace[nRow] == Globals.aFaceColors[2])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[2])
                     nNumberOfColors2++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 45; nRow < 54; nRow++)
             {
-                if (Globals.aDownFace[nRow] == Globals.aFaceColors[3])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[3])
                     nNumberOfColors3++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 45; nRow < 54; nRow++)
             {
-                if (Globals.aDownFace[nRow] == Globals.aFaceColors[4])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[4])
                     nNumberOfColors4++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 45; nRow < 54; nRow++)
             {
-                if (Globals.aDownFace[nRow] == Globals.aFaceColors[5])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[5])
                     nNumberOfColors5++;
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 45; nRow < 54; nRow++)
             {
-                if (Globals.aDownFace[nRow] == Globals.aFaceColors[6])
+                if (Globals.aPieces[nRow] == Globals.aFaceColors[6])
                     nNumberOfColors6++;
             }
 
@@ -245,32 +245,32 @@
             // Check the number of colors of the central square of the cube
             bool bColorCenterCube = true;
 
-            if (Globals.aUpFace[5] == Globals.aFrontFace[5] || Globals.aUpFace[5] == Globals.aRightFace[5] || Globals.aUpFace[5] == Globals.aLeftFace[5] || Globals.aUpFace[5] == Globals.aBackFace[5] || Globals.aUpFace[5] == Globals.aDownFace[5])
+            if (Globals.aPieces[40] == Globals.aPieces[4] || Globals.aPieces[40] == Globals.aPieces[13] || Globals.aPieces[40] == Globals.aPieces[31] || Globals.aPieces[40] == Globals.aPieces[22] || Globals.aPieces[40] == Globals.aPieces[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (Globals.aFrontFace[5] == Globals.aUpFace[5] || Globals.aFrontFace[5] == Globals.aRightFace[5] || Globals.aFrontFace[5] == Globals.aLeftFace[5] || Globals.aFrontFace[5] == Globals.aBackFace[5] || Globals.aFrontFace[5] == Globals.aDownFace[5])
+            if (Globals.aPieces[4] == Globals.aPieces[40] || Globals.aPieces[4] == Globals.aPieces[13] || Globals.aPieces[4] == Globals.aPieces[31] || Globals.aPieces[4] == Globals.aPieces[22] || Globals.aPieces[4] == Globals.aPieces[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (Globals.aRightFace[5] == Globals.aFrontFace[5] || Globals.aRightFace[5] == Globals.aUpFace[5] || Globals.aRightFace[5] == Globals.aLeftFace[5] || Globals.aRightFace[5] == Globals.aBackFace[5] || Globals.aRightFace[5] == Globals.aDownFace[5])
+            if (Globals.aPieces[13] == Globals.aPieces[4] || Globals.aPieces[13] == Globals.aPieces[40] || Globals.aPieces[13] == Globals.aPieces[31] || Globals.aPieces[13] == Globals.aPieces[22] || Globals.aPieces[13] == Globals.aPieces[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (Globals.aLeftFace[5] == Globals.aFrontFace[5] || Globals.aLeftFace[5] == Globals.aRightFace[5] || Globals.aLeftFace[5] == Globals.aUpFace[5] || Globals.aLeftFace[5] == Globals.aBackFace[5] || Globals.aLeftFace[5] == Globals.aDownFace[5])
+            if (Globals.aPieces[31] == Globals.aPieces[4] || Globals.aPieces[31] == Globals.aPieces[13] || Globals.aPieces[31] == Globals.aPieces[40] || Globals.aPieces[31] == Globals.aPieces[22] || Globals.aPieces[31] == Globals.aPieces[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (Globals.aBackFace[5] == Globals.aFrontFace[5] || Globals.aBackFace[5] == Globals.aRightFace[5] || Globals.aBackFace[5] == Globals.aLeftFace[5] || Globals.aBackFace[5] == Globals.aUpFace[5] || Globals.aBackFace[5] == Globals.aDownFace[5])
+            if (Globals.aPieces[22] == Globals.aPieces[4] || Globals.aPieces[22] == Globals.aPieces[13] || Globals.aPieces[22] == Globals.aPieces[31] || Globals.aPieces[22] == Globals.aPieces[40] || Globals.aPieces[22] == Globals.aPieces[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (Globals.aDownFace[5] == Globals.aFrontFace[5] || Globals.aDownFace[5] == Globals.aRightFace[5] || Globals.aDownFace[5] == Globals.aLeftFace[5] || Globals.aDownFace[5] == Globals.aBackFace[5] || Globals.aDownFace[5] == Globals.aUpFace[5])
+            if (Globals.aPieces[49] == Globals.aPieces[4] || Globals.aPieces[49] == Globals.aPieces[13] || Globals.aPieces[49] == Globals.aPieces[31] || Globals.aPieces[49] == Globals.aPieces[22] || Globals.aPieces[49] == Globals.aPieces[40])
             {
                 bColorCenterCube = false;
             }
@@ -283,42 +283,42 @@
             // Check the number of colors of the corner cubes of the cube
             bool bColorCornerCube = true;
 
-            if (Globals.aUpFace[7] == Globals.aLeftFace[3] || Globals.aUpFace[7] == Globals.aFrontFace[1] || Globals.aFrontFace[1] == Globals.aLeftFace[3])
+            if (Globals.aPieces[42] == Globals.aPieces[29] || Globals.aPieces[42] == Globals.aPieces[0] || Globals.aPieces[0] == Globals.aPieces[29])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aUpFace[1] == Globals.aLeftFace[1] || Globals.aUpFace[1] == Globals.aBackFace[3] || Globals.aLeftFace[1] == Globals.aBackFace[3])
+            if (Globals.aPieces[36] == Globals.aPieces[27] || Globals.aPieces[36] == Globals.aPieces[20] || Globals.aPieces[27] == Globals.aPieces[20])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aUpFace[3] == Globals.aRightFace[3] || Globals.aUpFace[3] == Globals.aBackFace[1] || Globals.aRightFace[3] == Globals.aBackFace[1])
+            if (Globals.aPieces[38] == Globals.aPieces[11] || Globals.aPieces[38] == Globals.aPieces[18] || Globals.aPieces[11] == Globals.aPieces[18])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aUpFace[9] == Globals.aFrontFace[3] || Globals.aUpFace[9] == Globals.aRightFace[1] || Globals.aFrontFace[3] == Globals.aRightFace[1])
+            if (Globals.aPieces[44] == Globals.aPieces[2] || Globals.aPieces[44] == Globals.aPieces[9] || Globals.aPieces[2] == Globals.aPieces[9])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aDownFace[1] == Globals.aLeftFace[9] || Globals.aDownFace[1] == Globals.aFrontFace[7] || Globals.aFrontFace[7] == Globals.aLeftFace[9])
+            if (Globals.aPieces[45] == Globals.aPieces[35] || Globals.aPieces[45] == Globals.aPieces[6] || Globals.aPieces[6] == Globals.aPieces[35])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aDownFace[7] == Globals.aLeftFace[7] || Globals.aDownFace[7] == Globals.aBackFace[9] || Globals.aBackFace[9] == Globals.aLeftFace[7])
+            if (Globals.aPieces[51] == Globals.aPieces[33] || Globals.aPieces[51] == Globals.aPieces[26] || Globals.aPieces[26] == Globals.aPieces[33])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aDownFace[9] == Globals.aRightFace[9] || Globals.aDownFace[9] == Globals.aBackFace[7] || Globals.aBackFace[7] == Globals.aRightFace[9])
+            if (Globals.aPieces[53] == Globals.aPieces[17] || Globals.aPieces[53] == Globals.aPieces[24] || Globals.aPieces[24] == Globals.aPieces[17])
             {
                 bColorCornerCube = false;
             }
 
-            if (Globals.aDownFace[3] == Globals.aRightFace[7] || Globals.aDownFace[3] == Globals.aFrontFace[9] || Globals.aFrontFace[9] == Globals.aRightFace[7])
+            if (Globals.aPieces[47] == Globals.aPieces[15] || Globals.aPieces[47] == Globals.aPieces[8] || Globals.aPieces[8] == Globals.aPieces[15])
             {
                 bColorCornerCube = false;
             }
@@ -331,12 +331,12 @@
             // Check the number of colors of the edge cubes of the cube
             bool bColorEdgeCube = true;
 
-            if (Globals.aUpFace[2] == Globals.aBackFace[2] || Globals.aUpFace[4] == Globals.aLeftFace[2] || Globals.aUpFace[6] == Globals.aRightFace[2] || Globals.aUpFace[8] == Globals.aFrontFace[2])
+            if (Globals.aPieces[37] == Globals.aPieces[19] || Globals.aPieces[39] == Globals.aPieces[28] || Globals.aPieces[41] == Globals.aPieces[10] || Globals.aPieces[43] == Globals.aPieces[1])
             {
                 bColorEdgeCube = false;
             }
 
-            if (Globals.aDownFace[2] == Globals.aFrontFace[8] || Globals.aDownFace[4] == Globals.aLeftFace[8] || Globals.aDownFace[6] == Globals.aRightFace[8] || Globals.aDownFace[8] == Globals.aBackFace[8])
+            if (Globals.aPieces[46] == Globals.aPieces[7] || Globals.aPieces[48] == Globals.aPieces[34] || Globals.aPieces[50] == Globals.aPieces[16] || Globals.aPieces[52] == Globals.aPieces[25])
             {
                 bColorEdgeCube = false;
             }
@@ -359,32 +359,32 @@
             bool bColorsBack = false;
             bool bColorsDown = false;
 
-            if (Globals.aUpFace[1] == Globals.aUpFace[2] && Globals.aUpFace[1] == Globals.aUpFace[3] && Globals.aUpFace[1] == Globals.aUpFace[4] && Globals.aUpFace[1] == Globals.aUpFace[5] && Globals.aUpFace[1] == Globals.aUpFace[6] && Globals.aUpFace[1] == Globals.aUpFace[7] && Globals.aUpFace[1] == Globals.aUpFace[8] && Globals.aUpFace[1] == Globals.aUpFace[9])
+            if (Globals.aPieces[36] == Globals.aPieces[37] && Globals.aPieces[36] == Globals.aPieces[38] && Globals.aPieces[36] == Globals.aPieces[39] && Globals.aPieces[36] == Globals.aPieces[40] && Globals.aPieces[36] == Globals.aPieces[41] && Globals.aPieces[36] == Globals.aPieces[42] && Globals.aPieces[36] == Globals.aPieces[43] && Globals.aPieces[36] == Globals.aPieces[44])
             {
                 bColorsUp = true;
             }
 
-            if (Globals.aFrontFace[1] == Globals.aFrontFace[2] && Globals.aFrontFace[1] == Globals.aFrontFace[3] && Globals.aFrontFace[1] == Globals.aFrontFace[4] && Globals.aFrontFace[1] == Globals.aFrontFace[5] && Globals.aFrontFace[1] == Globals.aFrontFace[6] && Globals.aFrontFace[1] == Globals.aFrontFace[7] && Globals.aFrontFace[1] == Globals.aFrontFace[8] && Globals.aFrontFace[1] == Globals.aFrontFace[9])
+            if (Globals.aPieces[0] == Globals.aPieces[1] && Globals.aPieces[0] == Globals.aPieces[2] && Globals.aPieces[0] == Globals.aPieces[3] && Globals.aPieces[0] == Globals.aPieces[4] && Globals.aPieces[0] == Globals.aPieces[5] && Globals.aPieces[0] == Globals.aPieces[6] && Globals.aPieces[0] == Globals.aPieces[7] && Globals.aPieces[0] == Globals.aPieces[8])
             {
                 bColorsFront = true;
             }
 
-            if (Globals.aRightFace[1] == Globals.aRightFace[2] && Globals.aRightFace[1] == Globals.aRightFace[3] && Globals.aRightFace[1] == Globals.aRightFace[4] && Globals.aRightFace[1] == Globals.aRightFace[5] && Globals.aRightFace[1] == Globals.aRightFace[6] && Globals.aRightFace[1] == Globals.aRightFace[7] && Globals.aRightFace[1] == Globals.aRightFace[8] && Globals.aRightFace[1] == Globals.aRightFace[9])
+            if (Globals.aPieces[9] == Globals.aPieces[10] && Globals.aPieces[9] == Globals.aPieces[11] && Globals.aPieces[9] == Globals.aPieces[12] && Globals.aPieces[9] == Globals.aPieces[13] && Globals.aPieces[9] == Globals.aPieces[14] && Globals.aPieces[9] == Globals.aPieces[15] && Globals.aPieces[9] == Globals.aPieces[16] && Globals.aPieces[9] == Globals.aPieces[17])
             {
                 bColorsRight = true;
             }
 
-            if (Globals.aLeftFace[1] == Globals.aLeftFace[2] && Globals.aLeftFace[1] == Globals.aLeftFace[3] && Globals.aLeftFace[1] == Globals.aLeftFace[4] && Globals.aLeftFace[1] == Globals.aLeftFace[5] && Globals.aLeftFace[1] == Globals.aLeftFace[6] && Globals.aLeftFace[1] == Globals.aLeftFace[7] && Globals.aLeftFace[1] == Globals.aLeftFace[8] && Globals.aLeftFace[1] == Globals.aLeftFace[9])
+            if (Globals.aPieces[27] == Globals.aPieces[28] && Globals.aPieces[27] == Globals.aPieces[29] && Globals.aPieces[27] == Globals.aPieces[30] && Globals.aPieces[27] == Globals.aPieces[31] && Globals.aPieces[27] == Globals.aPieces[32] && Globals.aPieces[27] == Globals.aPieces[33] && Globals.aPieces[27] == Globals.aPieces[34] && Globals.aPieces[27] == Globals.aPieces[35])
             {
                 bColorsLeft = true;
             }
 
-            if (Globals.aBackFace[1] == Globals.aBackFace[2] && Globals.aBackFace[1] == Globals.aBackFace[3] && Globals.aBackFace[1] == Globals.aBackFace[4] && Globals.aBackFace[1] == Globals.aBackFace[5] && Globals.aBackFace[1] == Globals.aBackFace[6] && Globals.aBackFace[1] == Globals.aBackFace[7] && Globals.aBackFace[1] == Globals.aBackFace[8] && Globals.aBackFace[1] == Globals.aBackFace[9])
+            if (Globals.aPieces[18] == Globals.aPieces[19] && Globals.aPieces[18] == Globals.aPieces[20] && Globals.aPieces[18] == Globals.aPieces[21] && Globals.aPieces[18] == Globals.aPieces[22] && Globals.aPieces[18] == Globals.aPieces[23] && Globals.aPieces[18] == Globals.aPieces[24] && Globals.aPieces[18] == Globals.aPieces[25] && Globals.aPieces[18] == Globals.aPieces[26])
             {
                 bColorsBack = true;
             }
 
-            if (Globals.aDownFace[1] == Globals.aDownFace[2] && Globals.aDownFace[1] == Globals.aDownFace[3] && Globals.aDownFace[1] == Globals.aDownFace[4] && Globals.aDownFace[1] == Globals.aDownFace[5] && Globals.aDownFace[1] == Globals.aDownFace[6] && Globals.aDownFace[1] == Globals.aDownFace[7] && Globals.aDownFace[1] == Globals.aDownFace[8] && Globals.aDownFace[1] == Globals.aDownFace[9])
+            if (Globals.aPieces[45] == Globals.aPieces[46] && Globals.aPieces[45] == Globals.aPieces[47] && Globals.aPieces[45] == Globals.aPieces[48] && Globals.aPieces[45] == Globals.aPieces[49] && Globals.aPieces[45] == Globals.aPieces[50] && Globals.aPieces[45] == Globals.aPieces[51] && Globals.aPieces[45] == Globals.aPieces[52] && Globals.aPieces[45] == Globals.aPieces[53])
             {
                 bColorsDown = true;
             }

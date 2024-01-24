@@ -21,7 +21,7 @@
         // !!!!!!!!!!!!! Does not get out of the loop between line 510 and 695 !!!!!!!!!!!!!
 
         Line510:
-            cB = Globals.aUpFace[5];
+            cB = Globals.aPieces[40];
             V = 0;
             X = 0;
             Y = 0;
@@ -31,16 +31,16 @@
             {
                 return true;        // false
             }
-            if (cB == Globals.aUpFace[8] && Globals.aFrontFace[1] == Globals.aFrontFace[2])
+            if (cB == Globals.aPieces[43] && Globals.aPieces[0] == Globals.aPieces[1])
                 V = 1;
             // 520
-            if (cB == Globals.aUpFace[6] && Globals.aRightFace[1] == Globals.aRightFace[2])
+            if (cB == Globals.aPieces[41] && Globals.aPieces[9] == Globals.aPieces[10])
                 X = 1;
             // 530
-            if (cB == Globals.aUpFace[2] && Globals.aBackFace[1] == Globals.aBackFace[2])
+            if (cB == Globals.aPieces[37] && Globals.aPieces[18] == Globals.aPieces[19])
                 Y = 1;
             // 540
-            if (cB == Globals.aUpFace[4] && Globals.aLeftFace[1] == Globals.aLeftFace[2])
+            if (cB == Globals.aPieces[39] && Globals.aPieces[27] == Globals.aPieces[28])
                 Z = 1;
             // 550
             if (V == 1 && X == 1 && Y == 1 && Z == 1)
@@ -50,16 +50,16 @@
             P = 0;
             Q = 0;
 
-            if (cB == Globals.aFrontFace[6] || cB == Globals.aRightFace[2] || cB == Globals.aRightFace[4] || cB == Globals.aRightFace[6])
+            if (cB == Globals.aPieces[5] || cB == Globals.aPieces[10] || cB == Globals.aPieces[12] || cB == Globals.aPieces[14])
                 O = 1;
             // 570
-            if (cB == Globals.aBackFace[4] || cB == Globals.aRightFace[8] || cB == Globals.aDownFace[6])
+            if (cB == Globals.aPieces[21] || cB == Globals.aPieces[16] || cB == Globals.aPieces[50])
                 P = 1;
             // 580
             //cX = X.ToString();
-            //if (cB == Globals.aUpFace[6] && cX != Globals.aRightFace[2])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+            //if (cB == Globals.aPieces[41] && cX != Globals.aPieces[10])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
             //    Q = 1;
-            if (cB == Globals.aUpFace[6])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+            if (cB == Globals.aPieces[41])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
                 Q = 1;
             // 590
             if (O == 1 || P == 1 || Q == 1)
@@ -87,8 +87,8 @@
             await MakeTurnAsync("TurnUp+");
         // 650
         Line650:
-            cX = Globals.aRightFace[1];
-            if (cB == Globals.aRightFace[2] && cX == Globals.aUpFace[6])
+            cX = Globals.aPieces[9];
+            if (cB == Globals.aPieces[10] && cX == Globals.aPieces[41])
             {
                 await MakeTurnAsync("TurnRight-");
                 await MakeTurnAsync("TurnUp-");
@@ -102,7 +102,7 @@
                 goto Line510;
             }
             // 655
-            if (cB == Globals.aFrontFace[6] && cX == Globals.aRightFace[4])
+            if (cB == Globals.aPieces[5] && cX == Globals.aPieces[12])
             {
                 await MakeTurnAsync("TurnUp-");
                 await MakeTurnAsync("TurnBack-");
@@ -112,7 +112,7 @@
                 goto Line510;
             }
             // 660
-            if (cB == Globals.aRightFace[4] && cX == Globals.aFrontFace[6])
+            if (cB == Globals.aPieces[12] && cX == Globals.aPieces[5])
             {
                 await MakeTurnAsync("TurnUp-");
                 await MakeTurnAsync("TurnUp-");
@@ -123,7 +123,7 @@
                 goto Line510;
             }
             // 665
-            if (cB == Globals.aDownFace[6] && cX == Globals.aRightFace[8])
+            if (cB == Globals.aPieces[50] && cX == Globals.aPieces[16])
             {
                 await MakeTurnAsync("TurnRight-");
                 await MakeTurnAsync("TurnUp-");
@@ -139,7 +139,7 @@
                 goto Line510;
             }
             // 670
-            if (cB == Globals.aRightFace[8] && cX == Globals.aDownFace[6])
+            if (cB == Globals.aPieces[16] && cX == Globals.aPieces[50])
             {
                 await MakeTurnAsync("TurnRight-");
                 await MakeTurnAsync("TurnUp-");
@@ -148,7 +148,7 @@
                 goto Line510;
             }
             // 675
-            if (cB == Globals.aBackFace[4] && cX == Globals.aRightFace[6])
+            if (cB == Globals.aPieces[21] && cX == Globals.aPieces[14])
             {
                 await MakeTurnAsync("TurnUp+");
                 await MakeTurnAsync("TurnFront+");
@@ -158,7 +158,7 @@
                 goto Line510;
             }
             // 680
-            if (cB == Globals.aRightFace[6] && cX == Globals.aBackFace[4])
+            if (cB == Globals.aPieces[14] && cX == Globals.aPieces[21])
             {
                 await MakeTurnAsync("TurnUp-");
                 await MakeTurnAsync("TurnUp-");
@@ -169,7 +169,7 @@
                 goto Line510;
             }
             // 685
-            if (cB == Globals.aUpFace[6] && cX != Globals.aRightFace[2])
+            if (cB == Globals.aPieces[41] && cX != Globals.aPieces[10])
             {
                 await MakeTurnAsync("TurnRight-");
                 await MakeTurnAsync("TurnUp-");
@@ -178,7 +178,7 @@
                 goto Line510;
             }
             // 690
-            if (cB == Globals.aRightFace[2] && cX != Globals.aUpFace[6])
+            if (cB == Globals.aPieces[10] && cX != Globals.aPieces[41])
             {
                 await MakeTurnAsync("TurnRight-");
                 await MakeTurnAsync("TurnUp-");
@@ -190,29 +190,29 @@
 
         // Solve the corners of the top layer - Chapter 6, page 16
         Line710:
-        //    cB = Globals.aUpFace[5];
+        //    cB = Globals.aPieces[40];
         //    O = 0;
         //    P = 0;
         //    Q = 0;
         //    R = 0;
         //    // 715
-        //    if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
+        //    if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
         //        O = 1;
         //    // 720
-        //    if (Globals.aFrontFace[1] == Globals.aFrontFace[3])
+        //    if (Globals.aPieces[0] == Globals.aPieces[2])
         //        P = 1;
         //    // 725
-        //    if (Globals.aRightFace[1] == Globals.aRightFace[3])
+        //    if (Globals.aPieces[9] == Globals.aPieces[11])
         //        Q = 1;
         //    // 730
-        //    if (Globals.aBackFace[1] == Globals.aBackFace[3])
+        //    if (Globals.aPieces[18] == Globals.aPieces[20])
         //        R = 1;
         //    // 735
         //    if (O == 1 && P == 1 && Q == 1 && R == 1)
         //        goto Line1010;
         //    // 740
         //    O = 0;
-        //    if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
+        //    if (cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
         //        O = 1;
         //    // 745
         //    if (O == 1 && P == 1 && Q == 1)
@@ -222,7 +222,7 @@
         //    }
         //    // 750
         //    O = 0;
-        //    if (cB == Globals.aUpFace[3] && cB == Globals.aUpFace[9])
+        //    if (cB == Globals.aPieces[38] && cB == Globals.aPieces[44])
         //        O = 1;
         //    // 755
         //    if (O == 1 && Q == 1)
@@ -232,7 +232,7 @@
         //    }
         //    // 760
         //    O = 0;
-        //    if (cB == Globals.aUpFace[7] && cB == Globals.aUpFace[9])
+        //    if (cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
         //        O = 1;
         //    // 765
         //    if (O == 1 && P == 1)
@@ -242,7 +242,7 @@
         //    }
         //    // 770
         //    O = 0;
-        //    if (cB == Globals.aUpFace[1] && cB == Globals.aUpFace[3])
+        //    if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38])
         //        O = 1;
         //    // 775
         //    if (O == 1 && R == 1)
@@ -251,43 +251,43 @@
         //        goto Line800;
         //    }
         //    // 780
-        //    if (cB != Globals.aUpFace[9])
+        //    if (cB != Globals.aPieces[44])
         //        goto Line800;
         //    // 785
-        //    if (cB != Globals.aUpFace[3])
+        //    if (cB != Globals.aPieces[38])
         //    {
         //        await MakeTurnAsync("TurnUp+");
         //        goto Line800;
         //    }
         //    // 790
-        //    if (cB != Globals.aUpFace[7])
+        //    if (cB != Globals.aPieces[42])
         //    {
         //        await MakeTurnAsync("TurnUp-");
         //        goto Line800;
         //    }
         //    // 795
-        //    if (cB != Globals.aUpFace[1])
+        //    if (cB != Globals.aPieces[36])
         //    {
         //        await MakeTurnAsync("TurnUp++");
         //    }
         //// 800
         //Line800:
-        //    if (cB == Globals.aFrontFace[9] || cB == Globals.aRightFace[7] || cB == Globals.aDownFace[3])
+        //    if (cB == Globals.aPieces[8] || cB == Globals.aPieces[15] || cB == Globals.aPieces[47])
         //        goto Line880;
         //    // 805
-        //    if (cB == Globals.aRightFace[9] || cB == Globals.aBackFace[7] || cB == Globals.aDownFace[9])
+        //    if (cB == Globals.aPieces[17] || cB == Globals.aPieces[24] || cB == Globals.aPieces[53])
         //    {
         //        await MakeTurnAsync("TurnDown-");
         //        goto Line880;
         //    }
         //    // 810
-        //    if (cB == Globals.aFrontFace[7] || cB == Globals.aLeftFace[9] || cB == Globals.aDownFace[1])
+        //    if (cB == Globals.aPieces[6] || cB == Globals.aPieces[35] || cB == Globals.aPieces[45])
         //    {
         //        await MakeTurnAsync("TurnDown+");
         //        goto Line880;
         //    }
         //    // 815
-        //    if (cB == Globals.aBackFace[9] || cB == Globals.aLeftFace[7] || cB == Globals.aDownFace[7])
+        //    if (cB == Globals.aPieces[26] || cB == Globals.aPieces[33] || cB == Globals.aPieces[51])
         //    {
         //        await MakeTurnAsync("TurnDown++");
         //        goto Line880;
@@ -297,7 +297,7 @@
         //    goto Line710;
         //// 880
         //Line880:
-        //    if (cB == Globals.aFrontFace[9])
+        //    if (cB == Globals.aPieces[8])
         //    {
         //        await MakeTurnAsync("TurnFront+");
         //        await MakeTurnAsync("TurnDown+");
@@ -305,7 +305,7 @@
         //        goto Line710;
         //    }
         //    // 885
-        //    if (cB == Globals.aRightFace[7])
+        //    if (cB == Globals.aPieces[15])
         //    {
         //        await MakeTurnAsync("TurnRight-");
         //        await MakeTurnAsync("TurnDown-");
@@ -313,7 +313,7 @@
         //        goto Line710;
         //    }
         //    // 890
-        //    if (cB == Globals.aDownFace[3])
+        //    if (cB == Globals.aPieces[47])
         //    {
         //        await MakeTurnAsync("TurnRight-");
         //        await MakeTurnAsync("TurnDown+");

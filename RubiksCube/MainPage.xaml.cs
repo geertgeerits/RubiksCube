@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-23 (YYYY-MM-DD)
+// Date ........: 2024-01-24 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -41,12 +41,12 @@ public partial class MainPage : ContentPage
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         Globals.bExplainText = Preferences.Default.Get("SettingExplainText", false);
         Globals.bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
-        Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FFFFFF");   // White
-        Globals.cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#FF0000");   // Red
-        Globals.cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#0000FF");   // Blue
-        Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Green
-        Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FF8000");   // Orange
-        Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Yellow
+        Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Front face: Red
+        Globals.cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#0000FF");   // Right face: Blue
+        Globals.cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#FF8000");   // Back face: Orange
+        Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Left face: Green
+        Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // Up face: White
+        Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Down face: Yellow
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme
@@ -209,7 +209,9 @@ public partial class MainPage : ContentPage
 
         // Save the start colors of the cube to array aStartPieces[]
         SetCubeColorsInArrays();
-        Globals.aStartPieces = ClassSaveRestoreCube.SaveColorsCube();
+        //Globals.aStartPieces = ClassSaveRestoreCube.SaveColorsCube();
+        Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
+
 
         // Test the turns of the cube
         //ClassTestCubeTurns classTestCubeTurns = new();
@@ -239,7 +241,7 @@ public partial class MainPage : ContentPage
         if (bSolved)
         {
             // Make the turns of the cube
-            int nTurns = 0;
+            int nTurns = -1;
 
             foreach (string cItem in Globals.lCubeTurns)
             {
@@ -247,7 +249,8 @@ public partial class MainPage : ContentPage
                 lblNumberTurns.Text = $"{nTurns}/{nTotalTurns}";
                 await MakeTurnAsync(cItem);
             }
-            
+
+            lblNumberTurns.Text = $"{nTurns + 1}/{nTotalTurns}";
             await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
             lblNumberTurns.Text = "";
         }
@@ -981,34 +984,9 @@ public partial class MainPage : ContentPage
                 sw.WriteLine(Globals.aFaceColors[nRow]);
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 54; nRow++)
             {
-                sw.WriteLine(Globals.aUpFace[nRow]);
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                sw.WriteLine(Globals.aFrontFace[nRow]);
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                sw.WriteLine(Globals.aRightFace[nRow]);
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                sw.WriteLine(Globals.aLeftFace[nRow]);
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                sw.WriteLine(Globals.aBackFace[nRow]);
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                sw.WriteLine(Globals.aDownFace[nRow]);
+                sw.WriteLine(Globals.aPieces[nRow]);
             }
 
             // Close the StreamWriter object
@@ -1043,34 +1021,9 @@ public partial class MainPage : ContentPage
                 Globals.aFaceColors[nRow] = sr.ReadLine();
             }
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 54; nRow++)
             {
-                Globals.aUpFace[nRow] = sr.ReadLine();
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aFrontFace[nRow] = sr.ReadLine();
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aRightFace[nRow] = sr.ReadLine();
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aLeftFace[nRow] = sr.ReadLine();
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aBackFace[nRow] = sr.ReadLine();
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aDownFace[nRow] = sr.ReadLine();
+                Globals.aPieces[nRow] = sr.ReadLine();
             }
 
             // Close the StreamReader object
@@ -1104,34 +1057,34 @@ public partial class MainPage : ContentPage
     {
         int nRow;
 
-        for (nRow = 1; nRow < 10; nRow++)
+        for (nRow = 0; nRow < 9; nRow++)
         {
-            Globals.aUpFace[nRow] = Globals.aFaceColors[1];
+            Globals.aPieces[nRow] = Globals.aFaceColors[1];
         }
 
-        for (nRow = 1; nRow < 10; nRow++)
+        for (nRow = 9; nRow < 18; nRow++)
         {
-            Globals.aFrontFace[nRow] = Globals.aFaceColors[2];
+            Globals.aPieces[nRow] = Globals.aFaceColors[2];
         }
 
-        for (nRow = 1; nRow < 10; nRow++)
+        for (nRow = 18; nRow < 27; nRow++)
         {
-            Globals.aRightFace[nRow] = Globals.aFaceColors[3];
+            Globals.aPieces[nRow] = Globals.aFaceColors[3];
         }
 
-        for (nRow = 1; nRow < 10; nRow++)
+        for (nRow = 27; nRow < 36; nRow++)
         {
-            Globals.aLeftFace[nRow] = Globals.aFaceColors[4];
+            Globals.aPieces[nRow] = Globals.aFaceColors[4];
         }
 
-        for (nRow = 1; nRow < 10; nRow++)
+        for (nRow = 36; nRow < 45; nRow++)
         {
-            Globals.aBackFace[nRow] = Globals.aFaceColors[5];
+            Globals.aPieces[nRow] = Globals.aFaceColors[5];
         }
 
-        for (nRow = 1; nRow < 10; nRow++)
+        for (nRow = 45; nRow < 54; nRow++)
         {
-            Globals.aDownFace[nRow] = Globals.aFaceColors[6];
+            Globals.aPieces[nRow] = Globals.aFaceColors[6];
         }
 
         SetCubeColorsFromArrays();
@@ -1146,47 +1099,11 @@ public partial class MainPage : ContentPage
             Globals.aFaceColors[i] = GetHexColorPolygon(polygon);
         }
 
-        for (int i = 1; i < 10; i++)
+        for (int i = 0; i < 54; i++)
         {
-            Polygon polygon = this.FindByName<Polygon>($"plgUp{i}");
-            Globals.aUpFace[i] = GetHexColorPolygon(polygon);
+            Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
+            Globals.aPieces[i] = GetHexColorPolygon(polygon);
         }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgFront{i}");
-            Globals.aFrontFace[i] = GetHexColorPolygon(polygon);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgRight{i}");
-            Globals.aRightFace[i] = GetHexColorPolygon(polygon);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgLeft{i}");
-            Globals.aLeftFace[i] = GetHexColorPolygon(polygon);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgBack{i}");
-            Globals.aBackFace[i] = GetHexColorPolygon(polygon);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgDown{i}");
-            Globals.aDownFace[i] = GetHexColorPolygon(polygon);
-        }
-
-        //for (int i = 1; i < 54; i++)
-        //{
-        //    Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
-        //    Globals.aPieces[i] = GetHexColorPolygon(polygon);
-        //}
     }
 
     // Set the cube colors from the arrays in the polygons
@@ -1205,47 +1122,11 @@ public partial class MainPage : ContentPage
             polygon.Fill = Color.FromArgb(Globals.aFaceColors[i]);
         }
 
-        for (int i = 1; i < 10; i++)
+        for (int i = 0; i < 54; i++)
         {
-            Polygon polygon = this.FindByName<Polygon>($"plgUp{i}");
-            polygon.Fill = Color.FromArgb(Globals.aUpFace[i]);
+            Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
+            polygon.Fill = Color.FromArgb(Globals.aPieces[i]);
         }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgFront{i}");
-            polygon.Fill = Color.FromArgb(Globals.aFrontFace[i]);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgRight{i}");
-            polygon.Fill = Color.FromArgb(Globals.aRightFace[i]);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgLeft{i}");
-            polygon.Fill = Color.FromArgb(Globals.aLeftFace[i]);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgBack{i}");
-            polygon.Fill = Color.FromArgb(Globals.aBackFace[i]);
-        }
-
-        for (int i = 1; i < 10; i++)
-        {
-            Polygon polygon = this.FindByName<Polygon>($"plgDown{i}");
-            polygon.Fill = Color.FromArgb(Globals.aDownFace[i]);
-        }
-
-        //for (int i = 1; i < 54; i++)
-        //{
-        //    Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
-        //    polygon.Fill = Color.FromArgb(Globals.aPieces[i]);
-        //}
     }
 
     // Get the hex color code from a polygon fill property

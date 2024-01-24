@@ -9,39 +9,9 @@
             int nElement = 0;
             string[] aColor = new string[54];
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 54; nRow++)
             {
-                aColor[nElement] = Globals.aFrontFace[nRow];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                aColor[nElement] = Globals.aRightFace[nRow];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                aColor[nElement] = Globals.aBackFace[nRow];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                aColor[nElement] = Globals.aLeftFace[nRow];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                aColor[nElement] = Globals.aUpFace[nRow];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                aColor[nElement] = Globals.aDownFace[nRow];
+                aColor[nElement] = Globals.aPieces[nRow];
                 nElement++;
             }
 
@@ -54,39 +24,9 @@
             int nRow;
             int nElement = 0;
 
-            for (nRow = 1; nRow < 10; nRow++)
+            for (nRow = 0; nRow < 54; nRow++)
             {
-                Globals.aFrontFace[nRow] = aColor[nElement];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aRightFace[nRow] = aColor[nElement];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aBackFace[nRow] = aColor[nElement];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aLeftFace[nRow] = aColor[nElement];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aUpFace[nRow] = aColor[nElement];
-                nElement++;
-            }
-
-            for (nRow = 1; nRow < 10; nRow++)
-            {
-                Globals.aDownFace[nRow] = aColor[nElement];
+                Globals.aPieces[nRow] = aColor[nElement];
                 nElement++;
             }
         }
@@ -107,34 +47,9 @@
             {
                 using StreamWriter sw = new(cFileName, false);
 
-                for (nRow = 1; nRow < 10; nRow++)
+                for (nRow = 0; nRow < 54; nRow++)
                 {
-                    sw.WriteLine(Globals.aFrontFace[nRow]);
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    sw.WriteLine(Globals.aRightFace[nRow]);
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    sw.WriteLine(Globals.aBackFace[nRow]);
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    sw.WriteLine(Globals.aLeftFace[nRow]);
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    sw.WriteLine(Globals.aUpFace[nRow]);
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    sw.WriteLine(Globals.aDownFace[nRow]);
+                    sw.WriteLine(Globals.aPieces[nRow]);
                 }
 
                 // Close the StreamWriter object
@@ -164,34 +79,9 @@
                 // Open the text file using a stream reader
                 using StreamReader sr = new(cFileName, false);
 
-                for (nRow = 1; nRow < 10; nRow++)
+                for (nRow = 0; nRow < 54; nRow++)
                 {
-                    Globals.aFrontFace[nRow] = sr.ReadLine();
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    Globals.aRightFace[nRow] = sr.ReadLine();
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    Globals.aBackFace[nRow] = sr.ReadLine();
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    Globals.aLeftFace[nRow] = sr.ReadLine();
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    Globals.aUpFace[nRow] = sr.ReadLine();
-                }
-
-                for (nRow = 1; nRow < 10; nRow++)
-                {
-                    Globals.aDownFace[nRow] = sr.ReadLine();
+                    Globals.aPieces[nRow] = sr.ReadLine();
                 }
 
                 // Close the StreamReader object

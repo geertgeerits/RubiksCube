@@ -219,7 +219,7 @@
                         Grid.Row="0"
                         Grid.Column="2"
                         Margin="0,3,0,0"
-                        Fill="Yellow">
+                        Fill="Blue">
                     </Polygon>
 
                     <Polygon
@@ -228,7 +228,7 @@
                         Grid.Row="0"
                         Grid.Column="3"
                         Margin="0,3,0,0"
-                        Fill="Blue">
+                        Fill="Orange">
                     </Polygon>
 
                     <Polygon
@@ -255,7 +255,7 @@
                         Grid.Row="0"
                         Grid.Column="6"
                         Margin="0,3,0,0"
-                        Fill="Orange">
+                        Fill="Yellow">
                     </Polygon>
                    
                     <RadioButton

@@ -332,7 +332,7 @@
                     Grid.Column="1">
 
                     <Polygon
-                        x:Name="plgUp1"
+                        x:Name="plgPiece36"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="88,0">
                         <Polygon.GestureRecognizers>
@@ -341,7 +341,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp2"
+                        x:Name="plgPiece37"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="142,11">
                         <Polygon.GestureRecognizers>
@@ -350,7 +350,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp3"
+                        x:Name="plgPiece38"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="197,22">
                         <Polygon.GestureRecognizers>
@@ -359,7 +359,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp4"
+                        x:Name="plgPiece39"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="45,22">
                         <Polygon.GestureRecognizers>
@@ -368,7 +368,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp5"
+                        x:Name="plgPiece40"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="99,33">
                         <Polygon.GestureRecognizers>
@@ -377,7 +377,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp6"
+                        x:Name="plgPiece41"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="153,44">
                         <Polygon.GestureRecognizers>
@@ -386,7 +386,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp7"
+                        x:Name="plgPiece42"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="2,45">
                         <Polygon.GestureRecognizers>
@@ -395,7 +395,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp8"
+                        x:Name="plgPiece43"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="56,56">
                         <Polygon.GestureRecognizers>
@@ -404,7 +404,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgUp9"
+                        x:Name="plgPiece44"
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="110,66">
                         <Polygon.GestureRecognizers>
@@ -413,7 +413,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront1"
+                        x:Name="plgPiece0"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="0,69">
                         <Polygon.GestureRecognizers>
@@ -422,7 +422,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront2"
+                        x:Name="plgPiece1"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="53,79">
                         <Polygon.GestureRecognizers>
@@ -431,7 +431,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront3"
+                        x:Name="plgPiece2"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="106,89">
                         <Polygon.GestureRecognizers>
@@ -440,7 +440,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront4"
+                        x:Name="plgPiece3"
                         Style="{StaticResource polygonStyleCubeFront}"
                          AbsoluteLayout.LayoutBounds="0,122">
                         <Polygon.GestureRecognizers>
@@ -449,7 +449,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront5"
+                        x:Name="plgPiece4"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="53,132">
                         <Polygon.GestureRecognizers>
@@ -458,7 +458,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront6"
+                        x:Name="plgPiece5"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="106,142">
                         <Polygon.GestureRecognizers>
@@ -467,7 +467,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront7"
+                        x:Name="plgPiece6"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="0,175">
                         <Polygon.GestureRecognizers>
@@ -476,7 +476,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront8"
+                        x:Name="plgPiece7"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="53,185">
                         <Polygon.GestureRecognizers>
@@ -485,7 +485,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgFront9"
+                        x:Name="plgPiece8"
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="106,195">
                         <Polygon.GestureRecognizers>
@@ -494,7 +494,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight1"
+                        x:Name="plgPiece9"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="160,69">
                         <Polygon.GestureRecognizers>
@@ -503,7 +503,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight2"
+                        x:Name="plgPiece10"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="204,47">
                         <Polygon.GestureRecognizers>
@@ -512,7 +512,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight3"
+                        x:Name="plgPiece11"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="248,25">
                         <Polygon.GestureRecognizers>
@@ -521,7 +521,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight4"
+                        x:Name="plgPiece12"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="160,122">
                         <Polygon.GestureRecognizers>
@@ -530,7 +530,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight5"
+                        x:Name="plgPiece13"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="204,100">
                         <Polygon.GestureRecognizers>
@@ -539,7 +539,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight6"
+                        x:Name="plgPiece14"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="248,78">
                         <Polygon.GestureRecognizers>
@@ -548,7 +548,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight7"
+                        x:Name="plgPiece15"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="160,175">
                         <Polygon.GestureRecognizers>
@@ -557,7 +557,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight8"
+                        x:Name="plgPiece16"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="204,153">
                         <Polygon.GestureRecognizers>
@@ -566,7 +566,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgRight9"
+                        x:Name="plgPiece17"
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="248,131">
                         <Polygon.GestureRecognizers>
@@ -698,7 +698,7 @@
                     Grid.Column="1">
 
                     <Polygon
-                        x:Name="plgLeft1"
+                        x:Name="plgPiece27"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="88,0">
                         <Polygon.GestureRecognizers>
@@ -707,7 +707,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft2"
+                        x:Name="plgPiece28"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="44,22">
                         <Polygon.GestureRecognizers>
@@ -716,7 +716,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft3"
+                        x:Name="plgPiece29"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="0,44">
                         <Polygon.GestureRecognizers>
@@ -725,7 +725,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft4"
+                        x:Name="plgPiece30"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="88,54">
                         <Polygon.GestureRecognizers>
@@ -734,7 +734,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft5"
+                        x:Name="plgPiece31"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="44,76">
                         <Polygon.GestureRecognizers>
@@ -743,7 +743,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft6"
+                        x:Name="plgPiece32"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="0,98">
                         <Polygon.GestureRecognizers>
@@ -752,7 +752,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft7"
+                        x:Name="plgPiece33"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="88,108">
                         <Polygon.GestureRecognizers>
@@ -761,7 +761,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft8"
+                        x:Name="plgPiece34"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="44,130">
                         <Polygon.GestureRecognizers>
@@ -770,7 +770,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgLeft9"
+                        x:Name="plgPiece35"
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="0,152">
                         <Polygon.GestureRecognizers>
@@ -779,7 +779,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack1"
+                        x:Name="plgPiece18"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="240,22">
                         <Polygon.GestureRecognizers>
@@ -788,7 +788,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack2"
+                        x:Name="plgPiece19"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="186,11">
                         <Polygon.GestureRecognizers>
@@ -797,7 +797,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack3"
+                        x:Name="plgPiece20"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="132,0">
                         <Polygon.GestureRecognizers>
@@ -806,7 +806,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack4"
+                        x:Name="plgPiece21"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="240,76">
                         <Polygon.GestureRecognizers>
@@ -815,7 +815,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack5"
+                        x:Name="plgPiece22"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="186,65">
                         <Polygon.GestureRecognizers>
@@ -824,7 +824,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack6"
+                        x:Name="plgPiece23"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="132,54">
                         <Polygon.GestureRecognizers>
@@ -833,7 +833,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack7"
+                        x:Name="plgPiece24"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="240,129">
                         <Polygon.GestureRecognizers>
@@ -842,7 +842,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack8"
+                        x:Name="plgPiece25"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="186,118">
                         <Polygon.GestureRecognizers>
@@ -851,7 +851,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgBack9"
+                        x:Name="plgPiece26"
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="132,107">
                         <Polygon.GestureRecognizers>
@@ -860,7 +860,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown1"
+                        x:Name="plgPiece45"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="2,206">
                         <Polygon.GestureRecognizers>
@@ -869,7 +869,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown2"
+                        x:Name="plgPiece46"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="57,218">
                         <Polygon.GestureRecognizers>
@@ -878,7 +878,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown3"
+                        x:Name="plgPiece47"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="114,229">
                         <Polygon.GestureRecognizers>
@@ -887,7 +887,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown4"
+                        x:Name="plgPiece48"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="46,184">
                         <Polygon.GestureRecognizers>
@@ -896,7 +896,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown5"
+                        x:Name="plgPiece49"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="102,195">
                         <Polygon.GestureRecognizers>
@@ -905,7 +905,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown6"
+                        x:Name="plgPiece50"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="158,206">
                         <Polygon.GestureRecognizers>
@@ -914,7 +914,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown7"
+                        x:Name="plgPiece51"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="91,161">
                         <Polygon.GestureRecognizers>
@@ -923,7 +923,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown8"
+                        x:Name="plgPiece52"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="146,172">
                         <Polygon.GestureRecognizers>
@@ -932,7 +932,7 @@
                     </Polygon>
 
                     <Polygon
-                        x:Name="plgDown9"
+                        x:Name="plgPiece53"
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="201,183">
                         <Polygon.GestureRecognizers>

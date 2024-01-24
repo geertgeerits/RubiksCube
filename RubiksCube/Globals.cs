@@ -27,12 +27,6 @@ internal static class Globals
     public static string cCubeColor6;
 
     public static string[] aFaceColors = new string[7];
-    public static string[] aUpFace = new string[10];
-    public static string[] aFrontFace = new string[10];
-    public static string[] aRightFace = new string[10];
-    public static string[] aLeftFace = new string[10];
-    public static string[] aBackFace = new string[10];
-    public static string[] aDownFace = new string[10];
     public static string[] aPieces = new string[54];
     public static string[] aPiecesTemp = new string[54];
     public static string[] aStartPieces = new string[54];
