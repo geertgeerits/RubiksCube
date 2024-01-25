@@ -447,7 +447,7 @@ REM ==< SOLCUBE.BAS >== *** PROGRAM LIST *** DATE 1984-06-01					PAGE 4
 1584 O = 0:
      P = 0:
      IF X = D(20) OR X = D(27) OR X = D(36) THEN O = 1
-1586 I5 Z = D(11) OR Z = D(18) OR Z = D(38) THEN P = 1
+1586 IF Z = D(11) OR Z = D(18) OR Z = D(38) THEN P = 1
 1588 IF O = 1 AND P = 1 THEN M = 25:
      N = 33:
      GOSUB 3510:					'Draaien kubus V -B -A B -V -B A B B

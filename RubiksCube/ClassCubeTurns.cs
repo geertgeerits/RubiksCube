@@ -5,8 +5,6 @@
         // Turn the faces of the cube
         public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
         {
-            await Task.Delay(0);
-
             switch (cTurnFaceAndDirection)
             {
                 case "TurnFront+":
@@ -159,7 +157,7 @@
                     break;
 
                 default:
-                    //await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
+                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
                     return;
             }
         }

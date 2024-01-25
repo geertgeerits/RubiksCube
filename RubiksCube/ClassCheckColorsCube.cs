@@ -3,7 +3,7 @@
     internal class ClassCheckColorsCube
     {
         // Check the number of colors of the cube
-        public static string CheckNumberColors()
+        public static bool CheckNumberColors()
         {
             int nNumberOfColors1 = 0;
             int nNumberOfColors2 = 0;
@@ -239,7 +239,8 @@
 
             if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
             {
-                return CubeLang.MessageNineSameColor_Text;
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageNineSameColor_Text, CubeLang.ButtonClose_Text);
+                return false;
             }
 
             // Check the number of colors of the central square of the cube
@@ -277,7 +278,8 @@
 
             if (!bColorCenterCube)
             {
-                return CubeLang.MessageColorCentralCube_Text;
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCentralCube_Text, CubeLang.ButtonClose_Text);
+                return false;
             }
 
             // Check the number of colors of the corner cubes of the cube
@@ -325,7 +327,8 @@
 
             if (!bColorCornerCube)
             {
-                return CubeLang.MessageColorCornerCube_Text;
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCornerCube_Text, CubeLang.ButtonClose_Text);
+                return false;
             }
 
             // Check the number of colors of the edge cubes of the cube
@@ -343,10 +346,11 @@
 
             if (!bColorEdgeCube)
             {
-                return CubeLang.MessageColorEdgeCube_Text;
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorEdgeCube_Text, CubeLang.ButtonClose_Text);
+                return false;
             }
 
-            return "";
+            return true;
         }
 
         // Check if the cube is solved

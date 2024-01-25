@@ -283,17 +283,7 @@ public partial class MainPage : ContentPage
     private bool CheckNumberColorsCube()
     {
         SetCubeColorsInArrays();
-
-        string cMessage = ClassCheckColorsCube.CheckNumberColors();
-        if (cMessage == "")
-        {
-            return true;
-        }
-        else
-        {
-            DisplayAlert(CubeLang.ErrorTitle_Text, cMessage, CubeLang.ButtonClose_Text);
-            return false;
-        }
+        return ClassCheckColorsCube.CheckNumberColors();
     }
 
     // Turn the faces of the cube
