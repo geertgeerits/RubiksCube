@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-24 (YYYY-MM-DD)
+// Date ........: 2024-01-25 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -201,6 +201,7 @@ public partial class MainPage : ContentPage
         // Reset the list with the cube turns
         Globals.lCubeTurns.Clear();
 
+        // Start the activity indicator
         activityIndicator.IsRunning = true;
         await Task.Delay(200);
 
@@ -227,6 +228,7 @@ public partial class MainPage : ContentPage
         // Restore the start colors of the cube from array aStartPieces[]
         Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
 
+        // Stop the activity indicator
         activityIndicator.IsRunning = false;
 
         // Stop the stopwatch and get the elapsed time
@@ -1072,7 +1074,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Get the hex color code from a polygon fill property
+    // Get the hex color code from the polygon fill property
     private static string GetHexColorPolygon(Polygon polygon)
     {
         SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
