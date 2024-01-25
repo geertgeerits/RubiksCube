@@ -712,6 +712,119 @@
             R = 0;
             if (cV == Globals.aPieces[1] || cV == Globals.aPieces[43])
                 O = 1;
+            //1620
+            if (cX == Globals.aPieces[10] || cX == Globals.aPieces[41])
+                P = 1;
+            //1625
+            if (cY == Globals.aPieces[19] || cY == Globals.aPieces[37])
+                Q = 1;
+            //1630
+            if (cZ == Globals.aPieces[28] || cZ == Globals.aPieces[39])
+                R = 1;
+            //1635
+            if (O == 1 && P == 1 && Q == 1 && R == 1)
+                goto Line1710;
+            //1640
+            O = 0;
+            P = 0;
+            if (cV == Globals.aPieces[19] || cV == Globals.aPieces[37])
+                O = 1;
+            //1645
+            if (cY == Globals.aPieces[28] || cY == Globals.aPieces[39])
+                P = 1;
+            //1650
+            if (O == 1 && P == 1)
+            {
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnFront+");
+                await MakeTurnAsync("TurnBack-");
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnLeft++");
+                goto Line1610;
+            }
+            //1655
+            O = 0;
+            P = 0;
+            if (cV == Globals.aPieces[28] || cV == Globals.aPieces[39])
+                O = 1;
+            //1660
+            if (cY == Globals.aPieces[1] || cY == Globals.aPieces[43])
+                P = 1;
+            //1665
+            if (O == 1 && P == 1)
+            {
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnFront+");
+                await MakeTurnAsync("TurnBack-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnLeft++");
+                goto Line1610;
+            }
+            //1670
+            O = 0;
+            P = 0;
+            if (cV == Globals.aPieces[19] || cV == Globals.aPieces[37])
+                O = 1;
+            //1675
+            if (cY == Globals.aPieces[1] || cY == Globals.aPieces[43])
+                P = 1;
+
+            //1680
+            if (O == 1 && P == 1)
+            {
+                await MakeTurnAsync("TurnRight++");
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnRight++");
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync("TurnRight++");
+                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync("TurnRight++");
+                await MakeTurnAsync("TurnLeft++");
+                goto Line1610;
+            }
+            //1685
+            O = 0;
+            P = 0;
+            if (cV == Globals.aPieces[28] || cV == Globals.aPieces[39])
+                O = 1;
+            //1690
+            if (cX == Globals.aPieces[19] || cX == Globals.aPieces[37])
+                P = 1;
+            //1692
+            if (O == 1 && P == 1)
+            {
+                await MakeTurnAsync("TurnRight+");
+                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnBack-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnRight++");
+                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync("TurnFront+");
+                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync("TurnRight+");
+
+            }
+            //1694
+            await MakeTurnAsync("TurnCubeFrontToLeft");
+            goto Line1610;
+
+        //1700
+        // Tumbling corners
+        //1710
+        Line1710:
 
 
 
