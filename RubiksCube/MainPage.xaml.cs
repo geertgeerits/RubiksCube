@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-25 (YYYY-MM-DD)
+// Date ........: 2024-01-26 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -214,12 +214,12 @@ public partial class MainPage : ContentPage
 
 
         // Test the turns of the cube
-        //ClassTestCubeTurns classTestCubeTurns = new();
-        //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
+        ClassTestCubeTurns classTestCubeTurns = new();
+        bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
 
         // Solve the cube from Basic-80 to C#
-        ClassSolveCubeBas classSolveCubeBas = new();
-        bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
+        //ClassSolveCubeBas classSolveCubeBas = new();
+        //bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
 
         // Solve the cube in C#
         //ClassSolveCube classSolveCube = new();
@@ -715,96 +715,87 @@ public partial class MainPage : ContentPage
     {
         switch (cTurnFaceAndDirection)
         {
-            case "TurnFront+":
-            case "TurnFront++":
+            case Globals.TurnFrontCW:
+            case Globals.TurnFront2:
                 imgbtnTurnFrontFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case "TurnFront-":
-            case "TurnFront--":
+            case Globals.TurnFrontCCW:
                 imgbtnTurnFrontFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case "TurnUp+":
-            case "TurnUp++":
-                imgbtnTurnUpFaceToRight.IsEnabled = bIsEnabled;
-                break;
-            case "TurnUp-":
-            case "TurnUp--":
-                imgbtnTurnUpFaceToLeft.IsEnabled = bIsEnabled;
-                break;
-            case "TurnDown+":
-            case "TurnDown++":
-                imgbtnTurnDownFaceToRight.IsEnabled = bIsEnabled;
-                break;
-            case "TurnDown-":
-            case "TurnDown--":
-                imgbtnTurnDownFaceToLeft.IsEnabled = bIsEnabled;
-                break;
-            case "TurnLeft+":
-            case "TurnLeft++":
-                imgbtnTurnLeftFaceToRight.IsEnabled = bIsEnabled;
-                break;
-            case "TurnLeft-":
-            case "TurnLeft--":
-                imgbtnTurnLeftFaceToLeft.IsEnabled = bIsEnabled;
-                break;
-            case "TurnRight+":
-            case "TurnRight++":
+            case Globals.TurnRightCW:
+            case Globals.TurnRight2:
                 imgbtnTurnRightFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case "TurnRight-":
-            case "TurnRight--":
+            case Globals.TurnRightCCW:
                 imgbtnTurnRightFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case "TurnBack+":
-            case "TurnBack++":
+            case Globals.TurnBackCW:
+            case Globals.TurnBack2:
                 imgbtnTurnBackFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case "TurnBack-":
-            case "TurnBack--":
+            case Globals.TurnBackCCW:
                 imgbtnTurnBackFaceToLeft.IsEnabled = bIsEnabled;
                 break;
+            case Globals.TurnLeftCW:
+            case Globals.TurnLeft2:
+                imgbtnTurnLeftFaceToRight.IsEnabled = bIsEnabled;
+                break;
+            case Globals.TurnLeftCCW:
+                imgbtnTurnLeftFaceToLeft.IsEnabled = bIsEnabled;
+                break;
+            case Globals.TurnUpCW:
+            case Globals.TurnUp2:
+                imgbtnTurnUpFaceToRight.IsEnabled = bIsEnabled;
+                break;
+            case Globals.TurnUpCCW:
+                imgbtnTurnUpFaceToLeft.IsEnabled = bIsEnabled;
+                break;
+            case Globals.TurnDownCW:
+            case Globals.TurnDown2:
+                imgbtnTurnDownFaceToRight.IsEnabled = bIsEnabled;
+                break;
+            case Globals.TurnDownCCW:
+                imgbtnTurnDownFaceToLeft.IsEnabled = bIsEnabled;
+                break;
 
-            case "TurnUpHorMiddleRight+":
-            case "TurnUpHorMiddleRight++":
+            case Globals.TurnUpHorMiddleRight:
+            case Globals.TurnUpHorMiddle2:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnUpHorMiddleLeft-":
-            case "TurnUpHorMiddleLeft--":
+            case Globals.TurnUpHorMiddleLeft:
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnUpVerMiddleBack+":
-            case "TurnUpVerMiddleBack++":
+            case Globals.TurnUpVerMiddleBack:
+            case Globals.TurnUpVerMiddle2:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnUpVerMiddleFront-":
-            case "TurnUpVerMiddleFront--":
+            case Globals.TurnUpVerMiddleFront:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnFrontHorMiddleLeft+":
-            case "TurnFrontHorMiddleLeft++":
+            case Globals.TurnFrontHorMiddleLeft:
+            case Globals.TurnFrontHorMiddle2:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnFrontHorMiddleRight-":
-            case "TurnFrontHorMiddleRight--":
+            case Globals.TurnFrontHorMiddleRight:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
 
-            case "TurnCubeFrontToRight":
+            case Globals.TurnCubeFrontToRight:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnCubeFrontToLeft":
+            case Globals.TurnCubeFrontToLeft:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnCubeFrontToUp":
+            case Globals.TurnCubeFrontToUp:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnCubeFrontToDown":
+            case Globals.TurnCubeFrontToDown:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnCubeUpToRight":
+            case Globals.TurnCubeUpToRight:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
-            case "TurnCubeUpToLeft":
+            case Globals.TurnCubeUpToLeft:
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
 
@@ -821,112 +812,107 @@ public partial class MainPage : ContentPage
 
         switch (cTurnFaceAndDirection)
         {
-            case "TurnFront+":
+            case Globals.TurnFrontCW:
                 cTurnCubeText = CubeLang.TurnFrontFaceToRight_Text;
                 break;
-            case "TurnFront-":
+            case Globals.TurnFrontCCW:
                 cTurnCubeText = CubeLang.TurnFrontFaceToLeft_Text;
                 break;
-            case "TurnUp+":
-                cTurnCubeText = CubeLang.TurnUpFaceToRight_Text;
-                break;
-            case "TurnUp-":
-                cTurnCubeText = CubeLang.TurnUpFaceToLeft_Text;
-                break;
-            case "TurnDown+":
-                cTurnCubeText = CubeLang.TurnDownFaceToRight_Text;
-                break;
-            case "TurnDown-":
-                cTurnCubeText = CubeLang.TurnDownFaceToLeft_Text;
-                break;
-            case "TurnLeft+":
-                cTurnCubeText = CubeLang.TurnLeftFaceToRight_Text;
-                break;
-            case "TurnLeft-":
-                cTurnCubeText = CubeLang.TurnLeftFaceToLeft_Text;
-                break;
-            case "TurnRight+":
-                cTurnCubeText = CubeLang.TurnRightFaceToRight_Text;
-                break;
-            case "TurnRight-":
-                cTurnCubeText = CubeLang.TurnRightFaceToLeft_Text;
-                break;
-            case "TurnBack+":
-                cTurnCubeText = CubeLang.TurnBackFaceToRight_Text;
-                break;
-            case "TurnBack-":
-                cTurnCubeText = CubeLang.TurnBackFaceToLeft_Text;
-                break;
-
-            case "TurnFront++":
-            case "TurnFront--":
+            case Globals.TurnFront2:
                 cTurnCubeText = CubeLang.TurnFrontFaceHalfTurn_Text;
                 break;
-            case "TurnUp++":
-            case "TurnUp--":
-                cTurnCubeText = CubeLang.TurnUpFaceHalfTurn_Text;
+            case Globals.TurnRightCW:
+                cTurnCubeText = CubeLang.TurnRightFaceToRight_Text;
                 break;
-            case "TurnDown++":
-            case "TurnDown--":
-                cTurnCubeText = CubeLang.TurnDownFaceHalfTurn_Text;
+            case Globals.TurnRightCCW:
+                cTurnCubeText = CubeLang.TurnRightFaceToLeft_Text;
                 break;
-            case "TurnLeft++":
-            case "TurnLeft--":
-                cTurnCubeText = CubeLang.TurnLeftFaceHalfTurn_Text;
-                break;
-            case "TurnRight++":
-            case "TurnRight--":
+            case Globals.TurnRight2:
                 cTurnCubeText = CubeLang.TurnRightFaceHalfTurn_Text;
                 break;
-            case "TurnBack++":
-            case "TurnBack--":
+            case Globals.TurnBackCW:
+                cTurnCubeText = CubeLang.TurnBackFaceToRight_Text;
+                break;
+            case Globals.TurnBackCCW:
+                cTurnCubeText = CubeLang.TurnBackFaceToLeft_Text;
+                break;
+            case Globals.TurnBack2:
                 cTurnCubeText = CubeLang.TurnBackFaceHalfTurn_Text;
                 break;
+            case Globals.TurnLeftCW:
+                cTurnCubeText = CubeLang.TurnLeftFaceToRight_Text;
+                break;
+            case Globals.TurnLeftCCW:
+                cTurnCubeText = CubeLang.TurnLeftFaceToLeft_Text;
+                break;
+            case Globals.TurnLeft2:
+                cTurnCubeText = CubeLang.TurnLeftFaceHalfTurn_Text;
+                break;
+            case Globals.TurnUpCW:
+                cTurnCubeText = CubeLang.TurnUpFaceToRight_Text;
+                break;
+            case Globals.TurnUpCCW:
+                cTurnCubeText = CubeLang.TurnUpFaceToLeft_Text;
+                break;
+            case Globals.TurnUp2:
+                cTurnCubeText = CubeLang.TurnUpFaceHalfTurn_Text;
+                break;
+            case Globals.TurnDownCW:
+                cTurnCubeText = CubeLang.TurnDownFaceToRight_Text;
+                break;
+            case Globals.TurnDownCCW:
+                cTurnCubeText = CubeLang.TurnDownFaceToLeft_Text;
+                break;
+            case Globals.TurnDown2:
+                cTurnCubeText = CubeLang.TurnDownFaceHalfTurn_Text;
+                break;
 
-            case "TurnUpHorMiddleRight+":
+            case Globals.TurnUpHorMiddleRight:
                 cTurnCubeText = CubeLang.TurnUpMiddleToRightFace_Text ;
                 break;
-            case "TurnUpHorMiddleLeft-":
+            case Globals.TurnUpHorMiddleLeft:
                 cTurnCubeText = CubeLang.TurnRightMiddleToUpFace_Text;
                 break;
-            case "TurnUpVerMiddleBack+":
-                cTurnCubeText = CubeLang.TurnFrontMiddleToUpFace_Text;
-                break;
-            case "TurnUpVerMiddleFront-":
-                cTurnCubeText = CubeLang.TurnUpMiddleToFrontFace_Text;
-                break;
-            case "TurnFrontHorMiddleLeft+":
-                cTurnCubeText = CubeLang.TurnRightMiddleToFrontFace_Text;
-                break;
-            case "TurnFrontHorMiddleRight-":
-                cTurnCubeText = CubeLang.TurnFrontMiddleToRightFace_Text;
-                break;
-
-            case "TurnUpHorMiddleRight++":
-            case "TurnUpHorMiddleLeft--":
-            case "TurnUpVerMiddleBack++":
-            case "TurnUpVerMiddleFront--":
-            case "TurnFrontHorMiddleLeft++":
-            case "TurnFrontHorMiddleRight--":
+            case Globals.TurnUpHorMiddle2:
                 cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
                 break;
 
-            case "TurnCubeFrontToRight":
+            case Globals.TurnUpVerMiddleBack:
+                cTurnCubeText = CubeLang.TurnFrontMiddleToUpFace_Text;
+                break;
+            case Globals.TurnUpVerMiddleFront:
+                cTurnCubeText = CubeLang.TurnUpMiddleToFrontFace_Text;
+                break;
+            case Globals.TurnUpVerMiddle2:
+                cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
+                break;
+
+            case Globals.TurnFrontHorMiddleLeft:
+                cTurnCubeText = CubeLang.TurnRightMiddleToFrontFace_Text;
+                break;
+            case Globals.TurnFrontHorMiddleRight:
+                cTurnCubeText = CubeLang.TurnFrontMiddleToRightFace_Text;
+                break;
+            case Globals.TurnFrontHorMiddle2:
+                cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
+                break;
+
+            case Globals.TurnCubeFrontToRight:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToRightFace_Text;
                 break;
-            case "TurnCubeFrontToLeft":
+            case Globals.TurnCubeFrontToLeft:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToLeftFace_Text;
                 break;
-            case "TurnCubeFrontToUp":
+            case Globals.TurnCubeFrontToUp:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToUpFace_Text;
                 break;
-            case "TurnCubeFrontToDown":
+            case Globals.TurnCubeFrontToDown:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToDownFace_Text;
                 break;
-            case "TurnCubeUpToRight":
+            case Globals.TurnCubeUpToRight:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToRightFace_Text;
                 break;
-            case "TurnCubeUpToLeft":
+            case Globals.TurnCubeUpToLeft:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToLeftFace_Text;
                 break;
             

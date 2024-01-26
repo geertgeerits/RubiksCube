@@ -92,60 +92,61 @@ REM ** SOLCUBE ** ARRAY 'A$(217)' - INSTRUCTIONS
 Boven -> Up         Achter -> Back      M1  Down to Front      M2  Up to Right
 Rechts -> Right     Links -> Left      -M1  Up to Front       -M2  Down to Right
 Voor -> Front       Onder -> Down
----------------------------------------------------------------------------------
-|   0   V   Front+  |  54   L   Left+   | 108   R   Right+  | 163   -B  Up-     |
-|   1   V   Front+  |  55   -B  Up-     | 109   V   Front+  | 164   O   Down+   |
-|   2   A   Back+   |  56   -V  Front-  | 110   B   Up+     | 165   A   Back+   |
-|   3   A   Back+   |  57   A   Back+   | 111   -O  Down-   | 166   -B  Up-     |
-|   4   M2          |  58   L   Left+   | 112   L   Left+   | 167   L   Left+   |
-|   5   M2          |  59   L   Left+	| 113   L   Left+   | 168   -B  Up-     |
-|   6   B   Up+     |  60   V   Front+  | 114   B   Up+     | 169   O   Down+   |
-|   7   M   Middle+ |  61   -A  Back-   | 115   B   Up+     | 170   -V  Front-  |
-|   8   -O  Down-   |  62   -B  Up-     | 116   O   Down+   | 171   -B  Up-     |
-|   9   -L  Left-   |  63   L   Left+   | 117   O   Down+   | 172   -A  Back-   |
-|  10   B   Up+     |  64   L   Left+   | 118   R   Right+  | 173   B   Up+     |
-|  11   R   Right+  |  65   R   Right+  | 119   -R  Right-  | 174   -O  Down-   |
-|  12   -B  Up-     |  66   R   Right+  | 120   O   Down+   | 175   R   Right+  |
-|  13   L   Left+   |  67   L   Left+   | 121   O   Down+   | 176   -B  Up-     |
-|  14   B   Up+     |  68   L   Left+   | 122   B   Up+     | 177   -B  Up-     |
-|  15   -R  Right-  |  69   O   Down+   | 123   B   Up+     | 178   L   Left+   |
-|  16   -B  Up-     |  70   R   Right+  | 124   L   Left+   | 179   -B  Up-     |
-|  17   B   Up+     |  71   R   Right+  | 125   L   Left+   | 180   O   Down+   |
-|  18   R   Right+  |  72   L   Left+   | 126   O   Down+   | 181   -V  Front-  |
-|  19   -B  Up-     |  73   L   Left+   | 127   -B  Up-     | 182   -R  Right-  |
-|  20   -L  Left-   |  74   B   Up+     | 128   -V  Front-  | 183   -B  Up-     |
-|  21   B   Up+     |  75   B   Up+     | 129   -O  Down-   | 184   -B  Up-     |
-|  22   -R  Right-  |  76   R   Right+  | 130   -R  Right-  | 185   O   Down+   |
-|  23   -B  Up-     |  77   R   Right+  | 131   O   Down+   | 186   O   Down+   |
-|  24   L   Left+   |  78   L   Left+   | 132   R   Right+  | 187   L   Left+   |
-|  25   V   Front+  |  79   L   Left+   | 133   O   Down+   | 188   -B  Up-     |
-|  26   -B  Up-     |  80   O   Down+   | 134   V   Front+  | 189   V   Front+  |
-|  27   -A  Back-   |  81   R   Right+  | 135   -O  Down-   | 190   -B  Up-     |
-|  28   B   Up+     |  82   R   Right+  | 136   -V  Front-  | 191   O   Down+   |
-|  29   -V  Front-  |  83   L   Left+   | 137   O   Down    | 192   -R  Right-  |
-|  30   -B  Up-     |  84   L   Left+   | 138   L   Left+   | 193   -R  Right-  |
-|  31   A   Back+   |  85   R   Right+  | 139   -O  Down-   | 194   -B  Up-     |
-|  32   B   Up+     |  86   A   Back+   | 140   -L  Left-   | 195   O   Down+   |
-|  33   B   Up+     |  87   B   Up+     | 141   -O  Down-   | 196   A   Back+   |
-|  34   B   Up+     |  88   -A  Back-   | 142   -V  Front-  | 197   B   Up+     |
-|  35   V   Front+  |  89   -B  Up-     | 143   O   Down+   | 198   V   Front+  |
-|  36   B   Up+     |  90   R   Right+  | 144   V   Front+  | 199   -B  Up-     |
-|  37   R   Right+  |  91   R   Right+  | 145   V   Front+  | 200   -O  Down-   |
-|  38   -B  Up-     |  92   -V  Front-  | 146   O   Down+   | 201   -R  Right-  |
-|  39   -R  Right-  |  93   -B  Up-     | 147   -V  Front-  | 202   -B  Up-     |
-|  40   -V  Front-  |  94   V   Front+  | 148   -R  Right-  | 203   -B  Up-     |
-|  41   L   Left+   |  95   B   Up+     | 149   -O  Down-   | 204   -L  Left-   |
-|  42   L   Left+   |  96   R   Right+  | 150   R   Right+  | 205   B   Up+     |
-|  43   B   Up+     |  97   -R  Right-  | 151   -R  Right-  | 206   -O  Down-   |
-|  44   -V  Front-  |  98   O   Down+   | 152   O   Down+   | 207   A   Back+   |
-|  45   A   Back+   |  99   R   Right+  | 153   R   Right+  | 208   -R  Right-  |
-|  46   L   Left+   | 100   V   Front+  | 154   O   Down+   | 209   -B  Up-     |
-|  47   L   Left+   | 101   O   Down+   | 155   O   Down+   | 210   O   Down+   |
-|  48   V   Front+  | 102   -V  Front-  | 156   -R  Right-  | 211   A   Back+   |
-|  49   -A  Back-   | 103   V   Front+  | 157   -O  Down-   | 212   B   Up+     |
-|  50   B   Up+     | 104   -O  Down-   | 158   R   Right+  | 213   B   Up+     |
-|  51   L   Left+   | 105   -V  Front-  | 159   -B  Up-     | 214   M   Middle+ |
-|  52   L   Left+   | 106   -R  Right-  | 160   -M  Middle- | 215   M   Middle+ |
-|  53   L   Left+   | 107   -O  Down-   | 161   O   Down+   | 216   -O  Down-   |
-|                   |                   | 162   -R  Right-  | 217   -O  Down-   |
----------------------------------------------------------------------------------
+turn CW -> clockwise ; turn CCW -> counterclockwise ; turn 2 -> 2x turn CW (half turn)
+-------------------------------------------------------------------------------------
+|   0   V   FrontCW  |  54   L   LeftCW   | 108   R   RightCW  | 163   -B  UpCCW    |
+|   1   V   FrontCW  |  55   -B  UpCCW    | 109   V   FrontCW  | 164   O   DownCW   |
+|   2   A   BackCW   |  56   -V  FrontCCW | 110   B   UpCW     | 165   A   BackCW   |
+|   3   A   BackCW   |  57   A   BackCW   | 111   -O  DownCCW  | 166   -B  UpCCW    |
+|   4   M2           |  58   L   LeftCW   | 112   L   LeftCW   | 167   L   LeftCW   |
+|   5   M2           |  59   L   LeftCW	  | 113   L   LeftCW   | 168   -B  UpCCW    |
+|   6   B   UpCW     |  60   V   FrontCW  | 114   B   UpCW     | 169   O   DownCW   |
+|   7   M   MiddleCW |  61   -A  BackCCW  | 115   B   UpCW     | 170   -V  FrontCCW |
+|   8   -O  DownCCW  |  62   -B  UpCCW    | 116   O   DownCW   | 171   -B  UpCCW    |
+|   9   -L  LeftCCW  |  63   L   LeftCW   | 117   O   DownCW   | 172   -A  BackCCW  |
+|  10   B   UpCW     |  64   L   LeftCW   | 118   R   RightCW  | 173   B   UpCW     |
+|  11   R   RightCW  |  65   R   RightCW  | 119   -R  RightCCW | 174   -O  DownCCW  |
+|  12   -B  UpCCW    |  66   R   RightCW  | 120   O   DownCW   | 175   R   RightCW  |
+|  13   L   LeftCW   |  67   L   LeftCW   | 121   O   DownCW   | 176   -B  UpCCW    |
+|  14   B   UpCW     |  68   L   LeftCW   | 122   B   UpCW     | 177   -B  UpCCW    |
+|  15   -R  RightCCW |  69   O   DownCW   | 123   B   UpCW     | 178   L   LeftCW   |
+|  16   -B  UpCCW    |  70   R   RightCW  | 124   L   LeftCW   | 179   -B  UpCCW    |
+|  17   B   UpCW     |  71   R   RightCW  | 125   L   LeftCW   | 180   O   DownCW   |
+|  18   R   RightCW  |  72   L   LeftCW   | 126   O   DownCW   | 181   -V  FrontCCW |
+|  19   -B  UpCCW    |  73   L   LeftCW   | 127   -B  UpCCW    | 182   -R  RightCCW |
+|  20   -L  LeftCCW  |  74   B   UpCW     | 128   -V  FrontCCW | 183   -B  UpCCW    |
+|  21   B   UpCW     |  75   B   UpCW     | 129   -O  DownCCW  | 184   -B  UpCCW    |
+|  22   -R  RightCCW |  76   R   RightCW  | 130   -R  RightCCW | 185   O   DownCW   |
+|  23   -B  UpCCW    |  77   R   RightCW  | 131   O   DownCW   | 186   O   DownCW   |
+|  24   L   LeftCW   |  78   L   LeftCW   | 132   R   RightCW  | 187   L   LeftCW   |
+|  25   V   FrontCW  |  79   L   LeftCW   | 133   O   DownCW   | 188   -B  UpCCW    |
+|  26   -B  UpCCW    |  80   O   DownCW   | 134   V   FrontCW  | 189   V   FrontCW  |
+|  27   -A  BackCCW  |  81   R   RightCW  | 135   -O  DownCCW  | 190   -B  UpCCW    |
+|  28   B   UpCW     |  82   R   RightCW  | 136   -V  FrontCCW | 191   O   DownCW   |
+|  29   -V  FrontCCW |  83   L   LeftCW   | 137   O   Down     | 192   -R  RightCCW |
+|  30   -B  UpCCW    |  84   L   LeftCW   | 138   L   LeftCW   | 193   -R  RightCCW |
+|  31   A   BackCW   |  85   R   RightCW  | 139   -O  DownCCW  | 194   -B  UpCCW    |
+|  32   B   UpCW     |  86   A   BackCW   | 140   -L  LeftCCW  | 195   O   DownCW   |
+|  33   B   UpCW     |  87   B   UpCW     | 141   -O  DownCCW  | 196   A   BackCW   |
+|  34   B   UpCW     |  88   -A  BackCCW  | 142   -V  FrontCCW | 197   B   UpCW     |
+|  35   V   FrontCW  |  89   -B  UpCCW    | 143   O   DownCW   | 198   V   FrontCW  |
+|  36   B   UpCW     |  90   R   RightCW  | 144   V   FrontCW  | 199   -B  UpCCW    |
+|  37   R   RightCW  |  91   R   RightCW  | 145   V   FrontCW  | 200   -O  DownCCW  |
+|  38   -B  UpCCW    |  92   -V  FrontCCW | 146   O   DownCW   | 201   -R  RightCCW |
+|  39   -R  RightCCW |  93   -B  UpCCW    | 147   -V  FrontCCW | 202   -B  UpCCW    |
+|  40   -V  FrontCCW |  94   V   FrontCW  | 148   -R  RightCCW | 203   -B  UpCCW    |
+|  41   L   LeftCW   |  95   B   UpCW     | 149   -O  DownCCW  | 204   -L  LeftCCW  |
+|  42   L   LeftCW   |  96   R   RightCW  | 150   R   RightCW  | 205   B   UpCW     |
+|  43   B   UpCW     |  97   -R  RightCCW | 151   -R  RightCCW | 206   -O  DownCCW  |
+|  44   -V  FrontCCW |  98   O   DownCW   | 152   O   DownCW   | 207   A   BackCW   |
+|  45   A   BackCW   |  99   R   RightCW  | 153   R   RightCW  | 208   -R  RightCCW |
+|  46   L   LeftCW   | 100   V   FrontCW  | 154   O   DownCW   | 209   -B  UpCCW    |
+|  47   L   LeftCW   | 101   O   DownCW   | 155   O   DownCW   | 210   O   DownCW   |
+|  48   V   FrontCW  | 102   -V  FrontCCW | 156   -R  RightCCW | 211   A   BackCW   |
+|  49   -A  BackCCW  | 103   V   FrontCW  | 157   -O  DownCCW  | 212   B   UpCW     |
+|  50   B   UpCW     | 104   -O  DownCCW  | 158   R   RightCW  | 213   B   UpCW     |
+|  51   L   LeftCW   | 105   -V  FrontCCW | 159   -B  UpCCW    | 214   M   MiddleCW |
+|  52   L   LeftCW   | 106   -R  RightCCW | 160   -M  Middle-  | 215   M   MiddleCW |
+|  53   L   LeftCW   | 107   -O  DownCCW  | 161   O   DownCW   | 216   -O  DownCCW  |
+|                    |                    | 162   -R  RightCCW | 217   -O  DownCCW  |
+-------------------------------------------------------------------------------------

@@ -7,152 +7,116 @@
         {
             switch (cTurnFaceAndDirection)
             {
-                case "TurnFront+":
+                case Globals.TurnFrontCW:
                     TurnFrontFaceTo("+");
                     break;
-                case "TurnFront-":
+                case Globals.TurnFrontCCW:
                     TurnFrontFaceTo("-");
                     break;
-                case "TurnUp+":
-                    TurnUpFaceTo("+");
-                    break;
-                case "TurnUp-":
-                    TurnUpFaceTo("-");
-                    break;
-                case "TurnDown+":
-                    TurnDownFaceTo("+");
-                    break;
-                case "TurnDown-":
-                    TurnDownFaceTo("-");
-                    break;
-                case "TurnLeft+":
-                    TurnLeftFaceTo("+");
-                    break;
-                case "TurnLeft-":
-                    TurnLeftFaceTo("-");
-                    break;
-                case "TurnRight+":
-                    TurnRightFaceTo("+");
-                    break;
-                case "TurnRight-":
-                    TurnRightFaceTo("-");
-                    break;
-                case "TurnBack+":
-                    TurnBackFaceTo("+");
-                    break;
-                case "TurnBack-":
-                    TurnBackFaceTo("-");
-                    break;
-
-                case "TurnFront++":
+                case Globals.TurnFront2:
                     TurnFrontFaceTo("+");
                     TurnFrontFaceTo("+");
                     break;
-                case "TurnFront--":
-                    TurnFrontFaceTo("-");
-                    TurnFrontFaceTo("-");
+                case Globals.TurnRightCW:
+                    TurnRightFaceTo("+");
                     break;
-                case "TurnUp++":
-                    TurnUpFaceTo("+");
-                    TurnUpFaceTo("+");
+                case Globals.TurnRightCCW:
+                    TurnRightFaceTo("-");
                     break;
-                case "TurnUp--":
-                    TurnUpFaceTo("-");
-                    TurnUpFaceTo("-");
-                    break;
-                case "TurnDown++":
-                    TurnDownFaceTo("+");
-                    TurnDownFaceTo("+");
-                    break;
-                case "TurnDown--":
-                    TurnDownFaceTo("-");
-                    TurnDownFaceTo("-");
-                    break;
-                case "TurnLeft++":
-                    TurnLeftFaceTo("+");
-                    TurnLeftFaceTo("+");
-                    break;
-                case "TurnLeft--":
-                    TurnLeftFaceTo("-");
-                    TurnLeftFaceTo("-");
-                    break;
-                case "TurnRight++":
+                case Globals.TurnRight2:
                     TurnRightFaceTo("+");
                     TurnRightFaceTo("+");
                     break;
-                case "TurnRight--":
-                    TurnRightFaceTo("-");
-                    TurnRightFaceTo("-");
+                case Globals.TurnBackCW:
+                    TurnBackFaceTo("+");
                     break;
-                case "TurnBack++":
+                case Globals.TurnBackCCW:
+                    TurnBackFaceTo("-");
+                    break;
+                case Globals.TurnBack2:
                     TurnBackFaceTo("+");
                     TurnBackFaceTo("+");
                     break;
-                case "TurnBack--":
-                    TurnBackFaceTo("-");
-                    TurnBackFaceTo("-");
+                case Globals.TurnLeftCW:
+                    TurnLeftFaceTo("+");
+                    break;
+                case Globals.TurnLeftCCW:
+                    TurnLeftFaceTo("-");
+                    break;
+                case Globals.TurnLeft2:
+                    TurnLeftFaceTo("+");
+                    TurnLeftFaceTo("+");
+                    break;
+                case Globals.TurnUpCW:
+                    TurnUpFaceTo("+");
+                    break;
+                case Globals.TurnUpCCW:
+                    TurnUpFaceTo("-");
+                    break;
+                case Globals.TurnUp2:
+                    TurnUpFaceTo("+");
+                    TurnUpFaceTo("+");
+                    break;
+                case Globals.TurnDownCW:
+                    TurnDownFaceTo("+");
+                    break;
+                case Globals.TurnDownCCW:
+                    TurnDownFaceTo("-");
+                    break;
+                case Globals.TurnDown2:
+                    TurnDownFaceTo("+");
+                    TurnDownFaceTo("+");
                     break;
 
-                case "TurnUpHorMiddleRight+":
+                case Globals.TurnUpHorMiddleRight:
                     TurnUpHorMiddleTo("+");
                     break;
-                case "TurnUpHorMiddleLeft-":
+                case Globals.TurnUpHorMiddleLeft:
                     TurnUpHorMiddleTo("-");
                     break;
-                case "TurnUpVerMiddleBack+":
-                    TurnUpVerMiddleTo("+");
-                    break;
-                case "TurnUpVerMiddleFront-":
-                    TurnUpVerMiddleTo("-");
-                    break;
-                case "TurnFrontHorMiddleLeft+":
-                    TurnFrontHorMiddleTo("+");
-                    break;
-                case "TurnFrontHorMiddleRight-":
-                    TurnFrontHorMiddleTo("-");
+                case Globals.TurnUpHorMiddle2:
+                    TurnUpHorMiddleTo("+");
+                    TurnUpHorMiddleTo("+");
                     break;
 
-                case "TurnUpHorMiddleRight++":
-                    TurnUpHorMiddleTo("+");
-                    TurnUpHorMiddleTo("+");
-                    break;
-                case "TurnUpHorMiddleLeft--":
-                    TurnUpHorMiddleTo("-");
-                    TurnUpHorMiddleTo("-");
-                    break;
-                case "TurnUpVerMiddleBack++":
-                    TurnUpVerMiddleTo("+");
+                case Globals.TurnUpVerMiddleBack:
                     TurnUpVerMiddleTo("+");
                     break;
-                case "TurnUpVerMiddleFront--":
-                    TurnUpVerMiddleTo("-");
+                case Globals.TurnUpVerMiddleFront:
                     TurnUpVerMiddleTo("-");
                     break;
-                case "TurnFrontHorMiddleLeft++":
-                    TurnFrontHorMiddleTo("+");
-                    TurnFrontHorMiddleTo("+");
-                    break;
-                case "TurnFrontHorMiddleRight--":
-                    TurnFrontHorMiddleTo("-");
-                    TurnFrontHorMiddleTo("-");
+                case Globals.TurnUpVerMiddle2:
+                    TurnUpVerMiddleTo("+");
+                    TurnUpVerMiddleTo("+");
                     break;
 
-                case "TurnCubeFrontToRight":
+                case Globals.TurnFrontHorMiddleLeft:
+                    TurnFrontHorMiddleTo("+");
+                    break;
+                case Globals.TurnFrontHorMiddleRight:
+                    TurnFrontHorMiddleTo("-");
+                    break;
+                case Globals.TurnFrontHorMiddle2:
+                    TurnFrontHorMiddleTo("+");
+                    TurnFrontHorMiddleTo("+");
+                    break;
+
+                case Globals.TurnCubeFrontToRight:
                     TurnCubeFrontFaceToRightFace();
                     break;
-                case "TurnCubeFrontToLeft":
+                case Globals.TurnCubeFrontToLeft:
                     TurnCubeFrontFaceToLeftFace();
                     break;
-                case "TurnCubeFrontToUp":
+                case Globals.TurnCubeFrontToUp:
                     TurnCubeFrontFaceToUpFace();
                     break;
-                case "TurnCubeFrontToDown":
+                case Globals.TurnCubeFrontToDown:
                     TurnCubeFrontFaceToDownFace();
                     break;
-                case "TurnCubeUpToRight":
+                case Globals.TurnCubeUpToRight:
                     TurnCubeUpFaceToRightFace();
                     break;
-                case "TurnCubeUpToLeft":
+                case Globals.TurnCubeUpToLeft:
                     TurnCubeUpFaceToLeftFace();
                     break;
 

@@ -65,7 +65,7 @@
             if (O == 1 || P == 1 || Q == 1)
                 goto Line610;
             // 600
-            await MakeTurnAsync("TurnCubeFrontToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             goto Line510;
 
         // 610
@@ -75,113 +75,113 @@
             // 620
             if (Y == 1 && Z == 1)
             {
-                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync(Globals.TurnUpCCW);
                 goto Line650;
             }
             // 630
             if (Y == 1)
             {
-                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync(Globals.TurnUp2);
                 goto Line650;
             }
             // 640
-            await MakeTurnAsync("TurnUp+");
+            await MakeTurnAsync(Globals.TurnUpCW);
         
         // 650
         Line650:
             cX = Globals.aPieces[9];
             if (cB == Globals.aPieces[10] && cX == Globals.aPieces[41])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnBack+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnLeft+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnLeftCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
                 goto Line510;
             }
             // 655
             if (cB == Globals.aPieces[5] && cX == Globals.aPieces[12])
             {
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnBack-");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnRight+");
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnBackCCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnDownCCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
                 goto Line510;
             }
             // 660
             if (cB == Globals.aPieces[12] && cX == Globals.aPieces[5])
             {
-                await MakeTurnAsync("TurnUp--");
-                await MakeTurnAsync("TurnLeft+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync(Globals.TurnUp2);
+                await MakeTurnAsync(Globals.TurnLeftCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
                 goto Line510;
             }
             // 665
             if (cB == Globals.aPieces[50] && cX == Globals.aPieces[16])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp--");
-                await MakeTurnAsync("TurnDown++");
-                await MakeTurnAsync("TurnLeft+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUp2);
+                await MakeTurnAsync(Globals.TurnDown2);
+                await MakeTurnAsync(Globals.TurnLeftCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnRightCCW);
                 goto Line510;
             }
             // 670
             if (cB == Globals.aPieces[16] && cX == Globals.aPieces[50])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
                 goto Line510;
             }
             // 675
             if (cB == Globals.aPieces[21] && cX == Globals.aPieces[14])
             {
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCCW);
+                await MakeTurnAsync(Globals.TurnRightCCW);
                 goto Line510;
             }
             // 680
             if (cB == Globals.aPieces[14] && cX == Globals.aPieces[21])
             {
-                await MakeTurnAsync("TurnUp--");
-                await MakeTurnAsync("TurnLeft-");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync(Globals.TurnUp2);
+                await MakeTurnAsync(Globals.TurnLeftCCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnDownCCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
                 goto Line510;
             }
             // 685
             if (cB == Globals.aPieces[41] && cX != Globals.aPieces[10])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
                 goto Line510;
             }
             // 690
             if (cB == Globals.aPieces[10] && cX != Globals.aPieces[41])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnBack+");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
             }
             // 695
             goto Line510;
@@ -216,7 +216,7 @@
             // 745
             if (O == 1 && P == 1 && Q == 1)
             {
-                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync(Globals.TurnUp2);
                 goto Line800;
             }
             // 750
@@ -226,7 +226,7 @@
             // 755
             if (O == 1 && Q == 1)
             {
-                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync(Globals.TurnUp2);
                 goto Line800;
             }
             // 760
@@ -236,7 +236,7 @@
             // 765
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync(Globals.TurnUpCW);
                 goto Line800;
             }
             // 770
@@ -246,7 +246,7 @@
             // 775
             if (O == 1 && R == 1)
             {
-                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync(Globals.TurnUpCCW);
                 goto Line800;
             }
             // 780
@@ -255,19 +255,19 @@
             // 785
             if (cB != Globals.aPieces[38])
             {
-                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync(Globals.TurnUpCW);
                 goto Line800;
             }
             // 790
             if (cB != Globals.aPieces[42])
             {
-                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync(Globals.TurnUpCCW);
                 goto Line800;
             }
             // 795
             if (cB != Globals.aPieces[36])
             {
-                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync(Globals.TurnUp2);
             }
         
         // 800
@@ -277,52 +277,52 @@
             // 805
             if (cB == Globals.aPieces[17] || cB == Globals.aPieces[24] || cB == Globals.aPieces[53])
             {
-                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync(Globals.TurnDownCCW);
                 goto Line880;
             }
             // 810
             if (cB == Globals.aPieces[6] || cB == Globals.aPieces[35] || cB == Globals.aPieces[45])
             {
-                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync(Globals.TurnDownCW);
                 goto Line880;
             }
             // 815
             if (cB == Globals.aPieces[26] || cB == Globals.aPieces[33] || cB == Globals.aPieces[51])
             {
-                await MakeTurnAsync("TurnDown++");
+                await MakeTurnAsync(Globals.TurnDown2);
                 goto Line880;
             }
             // 870
-            await MakeTurnAsync("TurnRight++");
+            await MakeTurnAsync(Globals.TurnRight2);
             goto Line710;
         
         // 880
         Line880:
             if (cB == Globals.aPieces[8])
             {
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
                 goto Line710;
             }
             // 885
             if (cB == Globals.aPieces[15])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnRight+");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnDownCCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
                 goto Line710;
             }
             // 890
             if (cB == Globals.aPieces[47])
             {
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnRight+");
-                await MakeTurnAsync("TurnDown++");
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnDown-");
-                await MakeTurnAsync("TurnRight+");
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
+                await MakeTurnAsync(Globals.TurnDown2);
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnDownCCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
             }
             // 895
             goto Line710;
@@ -361,19 +361,19 @@
             //1050
             if (cV == Globals.aPieces[10])
             {
-                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync(Globals.TurnUpCW);
                 goto Line1010;
             }
             //1060
             if (cV == Globals.aPieces[28])
             {
-                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync(Globals.TurnUpCCW);
                 goto Line1010;
             }
             //1070
             if (cV == Globals.aPieces[19])
             {
-                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync(Globals.TurnUp2);
                 goto Line1010;
             }
             //1080
@@ -395,37 +395,37 @@
             //1130
             if (cV == cP && cX == Globals.aPieces[50])
             {
-                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync(Globals.TurnDownCCW);
                 goto Line1410;
             }
             //1140
             if (cV == cP && cZ == Globals.aPieces[50])
             {
-                await MakeTurnAsync("TurnDown-");
+                await MakeTurnAsync(Globals.TurnDownCCW);
                 goto Line1420;
             }
             //1150
             if (cV == cQ && cX == Globals.aPieces[52])
             {
-                await MakeTurnAsync("TurnDown++");
+                await MakeTurnAsync(Globals.TurnDown2);
                 goto Line1410;
             }
             //1160
             if (cV == cQ && cZ == Globals.aPieces[52])
             {
-                await MakeTurnAsync("TurnDown++");
+                await MakeTurnAsync(Globals.TurnDown2);
                 goto Line1420;
             }
             //1170
             if (cV == cR && cX == Globals.aPieces[48])
             {
-                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync(Globals.TurnDownCW);
                 goto Line1410;
             }
             //1180
             if (cV == cR && cZ == Globals.aPieces[48])
             {
-                await MakeTurnAsync("TurnDown+");
+                await MakeTurnAsync(Globals.TurnDownCW);
                 goto Line1420;
             }
             //1210
@@ -507,46 +507,46 @@
             if (cV != Globals.aPieces[3])
                 goto Line1420;
             //1380
-            await MakeTurnAsync("TurnCubeFrontToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
 
         //1410
         Line1410:
-            await MakeTurnAsync("TurnDown-");
-            await MakeTurnAsync("TurnRight-");
-            await MakeTurnAsync("TurnDown+");
-            await MakeTurnAsync("TurnRight+");
-            await MakeTurnAsync("TurnDown+");
-            await MakeTurnAsync("TurnFront+");
-            await MakeTurnAsync("TurnDown-");
-            await MakeTurnAsync("TurnFront-");
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnRightCCW);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnRightCW);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnFrontCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnFrontCCW);
             goto Line1010;
 
         //1420
         Line1420:
-            await MakeTurnAsync("TurnDown+");
-            await MakeTurnAsync("TurnLeft+");
-            await MakeTurnAsync("TurnDown-");
-            await MakeTurnAsync("TurnLeft-");
-            await MakeTurnAsync("TurnDown-");
-            await MakeTurnAsync("TurnFront-");
-            await MakeTurnAsync("TurnDown+");
-            await MakeTurnAsync("TurnFront+");
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnLeftCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnLeftCCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnFrontCCW);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnFrontCW);
             goto Line1010;
 
         //1460
         Line1460:
-            await MakeTurnAsync("TurnCubeFrontToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             goto Line1010;
 
         //1470
         Line1470:
-            await MakeTurnAsync("TurnCubeFrontToRight");
+            await MakeTurnAsync(Globals.TurnCubeFrontToRight);
             goto Line1010;
 
         //1480
         Line1480:
-            await MakeTurnAsync("TurnCubeFrontToLeft");
-            await MakeTurnAsync("TurnCubeFrontToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
 
         //1500
         // Bottom layer
@@ -554,8 +554,8 @@
         //1510
         Line1510:
             //1512
-            await MakeTurnAsync("TurnCubeUpToRight");
-            await MakeTurnAsync("TurnCubeUpToRight");
+            await MakeTurnAsync(Globals.TurnCubeUpToRight);
+            await MakeTurnAsync(Globals.TurnCubeUpToRight);
             //1515
             Line1515:
             cV = Globals.aPieces[4];
@@ -591,7 +591,7 @@
             //1552
             if (O == 1 && Q == 1)
             {
-                await MakeTurnAsync("TurnUp+");
+                await MakeTurnAsync(Globals.TurnUpCW);
                 goto Line1515;
             }
             //1554
@@ -601,11 +601,11 @@
             //1556
             if (O == 1 && R == 1)
             {
-                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync(Globals.TurnUpCCW);
                 goto Line1515;
             }
             //1558
-            await MakeTurnAsync("TurnUp++");
+            await MakeTurnAsync(Globals.TurnUp2);
             goto Line1515;
 
         //1560
@@ -620,14 +620,14 @@
             //1570
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnLeft-");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnRight+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnLeft+");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp-");
+                await MakeTurnAsync(Globals.TurnLeftCCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnLeftCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
                 goto Line1515;
             }
             //1575
@@ -641,14 +641,14 @@
             //1582
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnRight+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnLeft-");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnLeft+");
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnLeftCCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnLeftCW);
                 goto Line1515;
             }
             //1584
@@ -662,14 +662,14 @@
             //1588
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnFront-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnBack-");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnFront-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnBack+");
-                await MakeTurnAsync("TurnUp++");
+                await MakeTurnAsync(Globals.TurnFrontCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnBackCCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
+                await MakeTurnAsync(Globals.TurnUp2);
                 goto Line1515;
             }
             //1590
@@ -683,18 +683,18 @@
             //1594
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnRight+");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnRight-");
-                await MakeTurnAsync("TurnFront-");
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnRightCCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
                 goto Line1515;
 
             }
             //1596
-            await MakeTurnAsync("TurnCubeFrontToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             goto Line1515;
 
         //1600
@@ -735,15 +735,15 @@
             //1650
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnFront-");
-                await MakeTurnAsync("TurnBack+");
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnBack-");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnBackCCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnLeft2);
                 goto Line1610;
             }
             //1655
@@ -757,15 +757,15 @@
             //1665
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnFront-");
-                await MakeTurnAsync("TurnBack+");
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnBack-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnBackCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnLeft2);
                 goto Line1610;
             }
             //1670
@@ -780,17 +780,17 @@
             //1680
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnRight++");
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnRight++");
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnUp++");
-                await MakeTurnAsync("TurnRight++");
-                await MakeTurnAsync("TurnLeft++");
-                await MakeTurnAsync("TurnDown+");
-                await MakeTurnAsync("TurnRight++");
-                await MakeTurnAsync("TurnLeft++");
+                await MakeTurnAsync(Globals.TurnRight2);
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnRight2);
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnUp2);
+                await MakeTurnAsync(Globals.TurnRight2);
+                await MakeTurnAsync(Globals.TurnLeft2);
+                await MakeTurnAsync(Globals.TurnDownCW);
+                await MakeTurnAsync(Globals.TurnRight2);
+                await MakeTurnAsync(Globals.TurnLeft2);
                 goto Line1610;
             }
             //1685
@@ -804,21 +804,21 @@
             //1692
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync("TurnRight+");
-                await MakeTurnAsync("TurnBack+");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnBack-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnRight++");
-                await MakeTurnAsync("TurnFront-");
-                await MakeTurnAsync("TurnUp-");
-                await MakeTurnAsync("TurnFront+");
-                await MakeTurnAsync("TurnUp+");
-                await MakeTurnAsync("TurnRight+");
+                await MakeTurnAsync(Globals.TurnRightCW);
+                await MakeTurnAsync(Globals.TurnBackCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnBackCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnRight2);
+                await MakeTurnAsync(Globals.TurnFrontCCW);
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                await MakeTurnAsync(Globals.TurnFrontCW);
+                await MakeTurnAsync(Globals.TurnUpCW);
+                await MakeTurnAsync(Globals.TurnRightCW);
 
             }
             //1694
-            await MakeTurnAsync("TurnCubeFrontToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             goto Line1610;
 
         //1700

@@ -1,6 +1,7 @@
 ﻿// Global usings
 global using RubiksCube.Resources.Languages;
 global using System.Globalization;
+//global using static RubiksCube.Globals;
 
 namespace RubiksCube;
 
@@ -31,6 +32,43 @@ internal static class Globals
     public static string[] aPiecesTemp = new string[54];
     public static string[] aStartPieces = new string[54];
     public static List<string> lCubeTurns = [];
+
+    // Cube turns
+    public const string TurnFrontCW = "TurnFrontCW";
+    public const string TurnFrontCCW = "TurnFrontCCW";
+    public const string TurnFront2 = "TurnFront2";
+    public const string TurnRightCW = "TurnRightCW";
+    public const string TurnRightCCW = "TurnRightCCW";
+    public const string TurnRight2 = "TurnRight2";
+    public const string TurnBackCW = "TurnBackCW";
+    public const string TurnBackCCW = "TurnBackCCW";
+    public const string TurnBack2 = "TurnBack2";
+    public const string TurnLeftCW = "TurnLeftCW";
+    public const string TurnLeftCCW = "TurnLeftCCW";
+    public const string TurnLeft2 = "TurnLeft2";
+    public const string TurnUpCW = "TurnUpCW";
+    public const string TurnUpCCW = "TurnUpCCW";
+    public const string TurnUp2 = "TurnUp2";
+    public const string TurnDownCW = "TurnDownCW";
+    public const string TurnDownCCW = "TurnDownCCW";
+    public const string TurnDown2 = "TurnDown2";
+
+    public const string TurnUpHorMiddleRight = "TurnUpHorMiddleRight";
+    public const string TurnUpHorMiddleLeft = "TurnUpHorMiddleLeft";
+    public const string TurnUpHorMiddle2 = "TurnUpHorMiddle2";
+    public const string TurnUpVerMiddleBack = "TurnUpVerMiddleBack";
+    public const string TurnUpVerMiddleFront = "TurnUpVerMiddleFront";
+    public const string TurnUpVerMiddle2 = "TurnUpVerMiddle2";
+    public const string TurnFrontHorMiddleLeft = "TurnFrontHorMiddleLeft";
+    public const string TurnFrontHorMiddleRight = "TurnFrontHorMiddleRight";
+    public const string TurnFrontHorMiddle2 = "TurnFrontHorMiddle2";
+
+    public const string TurnCubeFrontToRight = "TurnCubeFrontToRight";
+    public const string TurnCubeFrontToLeft = "TurnCubeFrontToLeft";
+    public const string TurnCubeFrontToUp = "TurnCubeFrontToUp";
+    public const string TurnCubeFrontToDown = "TurnCubeFrontToDown";
+    public const string TurnCubeUpToRight = "TurnCubeUpToRight";
+    public const string TurnCubeUpToLeft = "TurnCubeUpToLeft";
 
     // Global methods
     // Set the theme

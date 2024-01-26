@@ -11,41 +11,41 @@
             // Solve the edges of the top layer - Chapter 4, page 14-2
             if (Globals.aPieces[40] == Globals.aPieces[3])
             {
-                await MakeTurnAsync("TurnLeft+");
+                await MakeTurnAsync(Globals.TurnLeftCW);
 
                 if (Globals.aPieces[34] == Globals.aPieces[4])
                 {
-                    await MakeTurnAsync("TurnDown+");
+                    await MakeTurnAsync(Globals.TurnDownCW);
                 }
 
                 if (Globals.aPieces[34] == Globals.aPieces[22])
                 {
-                    await MakeTurnAsync("TurnDown-");
+                    await MakeTurnAsync(Globals.TurnDownCCW);
                 }
 
                 if (Globals.aPieces[34] == Globals.aPieces[13])
                 {
-                    await MakeTurnAsync("TurnDown++");
+                    await MakeTurnAsync(Globals.TurnDown2);
                 }
             }
 
             if (Globals.aPieces[40] == Globals.aPieces[5])
             {
-                await MakeTurnAsync("TurnRight-");
+                await MakeTurnAsync(Globals.TurnRightCCW);
 
                 if (Globals.aPieces[16] == Globals.aPieces[4])
                 {
-                    await MakeTurnAsync("TurnDown-");
+                    await MakeTurnAsync(Globals.TurnDownCCW);
                 }
 
                 if (Globals.aPieces[16] == Globals.aPieces[22])
                 {
-                    await MakeTurnAsync("TurnDown+");
+                    await MakeTurnAsync(Globals.TurnDownCW);
                 }
 
                 if (Globals.aPieces[16] == Globals.aPieces[31])
                 {
-                    await MakeTurnAsync("TurnDown++");
+                    await MakeTurnAsync(Globals.TurnDown2);
                 }
             }
 
@@ -84,22 +84,22 @@
             {
                 if (Globals.aPieces[40] == Globals.aPieces[46] && Globals.aPieces[4] == Globals.aPieces[7])
                 {
-                    await MakeTurnAsync("TurnFront++");
+                    await MakeTurnAsync(Globals.TurnFront2);
                 }
 
                 if (Globals.aPieces[40] == Globals.aPieces[48] && Globals.aPieces[31] == Globals.aPieces[34])
                 {
-                    await MakeTurnAsync("TurnLeft++");
+                    await MakeTurnAsync(Globals.TurnLeft2);
                 }
 
                 if (Globals.aPieces[40] == Globals.aPieces[50] && Globals.aPieces[13] == Globals.aPieces[16])
                 {
-                    await MakeTurnAsync("TurnRight++");
+                    await MakeTurnAsync(Globals.TurnRight2);
                 }
 
                 if (Globals.aPieces[40] == Globals.aPieces[52] && Globals.aPieces[22] == Globals.aPieces[25])
                 {
-                    await MakeTurnAsync("TurnBack++");
+                    await MakeTurnAsync(Globals.TurnBack2);
                 }
             }
         }

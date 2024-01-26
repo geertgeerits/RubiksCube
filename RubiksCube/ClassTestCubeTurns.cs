@@ -6,52 +6,43 @@
         public async Task<bool> TestCubeTurnsAsync()
         {
             // Test the face turns
-            await MakeTurnAsync("TurnFront+");
-            await MakeTurnAsync("TurnFront++");
-            await MakeTurnAsync("TurnFront-");
-            await MakeTurnAsync("TurnFront--");
-            await MakeTurnAsync("TurnUp+");
-            await MakeTurnAsync("TurnUp++");
-            await MakeTurnAsync("TurnUp-");
-            await MakeTurnAsync("TurnUp--");
-            await MakeTurnAsync("TurnDown+");
-            await MakeTurnAsync("TurnDown++");
-            await MakeTurnAsync("TurnDown-");
-            await MakeTurnAsync("TurnDown--");
-            await MakeTurnAsync("TurnLeft+");
-            await MakeTurnAsync("TurnLeft++");
-            await MakeTurnAsync("TurnLeft-");
-            await MakeTurnAsync("TurnLeft--");
-            await MakeTurnAsync("TurnRight+");
-            await MakeTurnAsync("TurnRight++");
-            await MakeTurnAsync("TurnRight-");
-            await MakeTurnAsync("TurnRight--");
-            await MakeTurnAsync("TurnBack+");
-            await MakeTurnAsync("TurnBack++");
-            await MakeTurnAsync("TurnBack-");
-            await MakeTurnAsync("TurnBack--");
+            await MakeTurnAsync(Globals.TurnFrontCW);
+            await MakeTurnAsync(Globals.TurnFrontCCW);
+            await MakeTurnAsync(Globals.TurnFront2);
+            await MakeTurnAsync(Globals.TurnRightCW);
+            await MakeTurnAsync(Globals.TurnRightCCW);
+            await MakeTurnAsync(Globals.TurnRight2);
+            await MakeTurnAsync(Globals.TurnBackCW);
+            await MakeTurnAsync(Globals.TurnBackCCW);
+            await MakeTurnAsync(Globals.TurnBack2);
+            await MakeTurnAsync(Globals.TurnLeftCW);
+            await MakeTurnAsync(Globals.TurnLeftCCW);
+            await MakeTurnAsync(Globals.TurnLeft2);
+            await MakeTurnAsync(Globals.TurnUpCW);
+            await MakeTurnAsync(Globals.TurnUpCCW);
+            await MakeTurnAsync(Globals.TurnUp2);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnDown2);
 
             // Test the middle layer turns
-            await MakeTurnAsync("TurnUpHorMiddleRight+");
-            await MakeTurnAsync("TurnUpHorMiddleRight++");
-            await MakeTurnAsync("TurnUpHorMiddleLeft-");
-            await MakeTurnAsync("TurnUpHorMiddleLeft--");
-            await MakeTurnAsync("TurnUpVerMiddleBack+");
-            await MakeTurnAsync("TurnUpVerMiddleBack++");
-            await MakeTurnAsync("TurnUpVerMiddleFront-");
-            await MakeTurnAsync("TurnUpVerMiddleFront--");
-            await MakeTurnAsync("TurnFrontHorMiddleLeft+");
-            await MakeTurnAsync("TurnFrontHorMiddleLeft++");
-            await MakeTurnAsync("TurnFrontHorMiddleRight-");
-            await MakeTurnAsync("TurnFrontHorMiddleRight--");
+            await MakeTurnAsync(Globals.TurnUpHorMiddleRight);
+            await MakeTurnAsync(Globals.TurnUpHorMiddleLeft);
+            await MakeTurnAsync(Globals.TurnUpHorMiddle2);
+            await MakeTurnAsync(Globals.TurnUpVerMiddleBack);
+            await MakeTurnAsync(Globals.TurnUpVerMiddleFront);
+            await MakeTurnAsync(Globals.TurnUpVerMiddle2);
+            await MakeTurnAsync(Globals.TurnFrontHorMiddleLeft);
+            await MakeTurnAsync(Globals.TurnFrontHorMiddleRight);
+            await MakeTurnAsync(Globals.TurnFrontHorMiddle2);
 
             // Test the cube turns
-            await MakeTurnAsync("TurnCubeFrontToRight");
-            await MakeTurnAsync("TurnCubeFrontToLeft");
-            await MakeTurnAsync("TurnCubeFrontToUp");
-            await MakeTurnAsync("TurnCubeFrontToDown");
-            await MakeTurnAsync("TurnCubeUpToRight");
-            await MakeTurnAsync("TurnCubeUpToLeft");
+            await MakeTurnAsync(Globals.TurnCubeFrontToRight);
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            await MakeTurnAsync(Globals.TurnCubeFrontToUp);
+            await MakeTurnAsync(Globals.TurnCubeFrontToDown);
+            await MakeTurnAsync(Globals.TurnCubeUpToRight);
+            await MakeTurnAsync(Globals.TurnCubeUpToLeft);
 
             return true;
         }
