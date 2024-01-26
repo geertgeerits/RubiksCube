@@ -92,7 +92,7 @@ REM ** SOLCUBE ** ARRAY 'A$(217)' - INSTRUCTIONS
 Boven -> Up         Achter -> Back      M1  Down to Front      M2  Up to Right
 Rechts -> Right     Links -> Left      -M1  Up to Front       -M2  Down to Right
 Voor -> Front       Onder -> Down
-turn CW -> clockwise ; turn CCW -> counterclockwise ; turn 2 -> 2x turn CW (half turn)
+turn CW = clockwise ; turn CCW = counterclockwise ; turn 2 = 2 x turn CW (half turn)
 -------------------------------------------------------------------------------------
 |   0   V   FrontCW  |  54   L   LeftCW   | 108   R   RightCW  | 163   -B  UpCCW    |
 |   1   V   FrontCW  |  55   -B  UpCCW    | 109   V   FrontCW  | 164   O   DownCW   |

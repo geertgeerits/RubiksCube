@@ -214,12 +214,12 @@ public partial class MainPage : ContentPage
 
 
         // Test the turns of the cube
-        ClassTestCubeTurns classTestCubeTurns = new();
-        bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
+        //ClassTestCubeTurns classTestCubeTurns = new();
+        //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
 
         // Solve the cube from Basic-80 to C#
-        //ClassSolveCubeBas classSolveCubeBas = new();
-        //bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
+        ClassSolveCubeBas classSolveCubeBas = new();
+        bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
 
         // Solve the cube in C#
         //ClassSolveCube classSolveCube = new();
@@ -297,7 +297,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToRight_Text);
-        ClassCubeTurns.TurnFrontFaceTo("+");
+        ClassCubeTurns.TurnFrontFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -317,7 +317,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToRightFace_Text);
-        ClassCubeTurns.TurnUpHorMiddleTo("+");
+        ClassCubeTurns.TurnUpHorMiddleTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -331,7 +331,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToLeft_Text);
-        ClassCubeTurns.TurnBackFaceTo("-");
+        ClassCubeTurns.TurnBackFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -345,7 +345,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToRight_Text);
-        ClassCubeTurns.TurnLeftFaceTo("+");
+        ClassCubeTurns.TurnLeftFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -365,7 +365,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToFrontFace_Text);
-        ClassCubeTurns.TurnUpVerMiddleTo("-");
+        ClassCubeTurns.TurnUpVerMiddleTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -379,7 +379,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightFaceToLeft_Text);
-        ClassCubeTurns.TurnRightFaceTo("-");
+        ClassCubeTurns.TurnRightFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -393,7 +393,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToLeft_Text);
-        ClassCubeTurns.TurnUpFaceTo("-");
+        ClassCubeTurns.TurnUpFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -413,7 +413,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightFace_Text);
-        ClassCubeTurns.TurnFrontHorMiddleTo("-");
+        ClassCubeTurns.TurnFrontHorMiddleTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -427,7 +427,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnDownFaceToRight_Text);
-        ClassCubeTurns.TurnDownFaceTo("+");
+        ClassCubeTurns.TurnDownFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -441,7 +441,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToRight_Text);
-        ClassCubeTurns.TurnUpFaceTo("+");
+        ClassCubeTurns.TurnUpFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -461,7 +461,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontFace_Text);
-        ClassCubeTurns.TurnFrontHorMiddleTo("+");
+        ClassCubeTurns.TurnFrontHorMiddleTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -475,7 +475,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnDownFaceToLeft_Text);
-        ClassCubeTurns.TurnDownFaceTo("-");
+        ClassCubeTurns.TurnDownFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -489,7 +489,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToLeft_Text);
-        ClassCubeTurns.TurnLeftFaceTo("-");
+        ClassCubeTurns.TurnLeftFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -509,7 +509,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToUpFace_Text);
-        ClassCubeTurns.TurnUpVerMiddleTo("+");
+        ClassCubeTurns.TurnUpVerMiddleTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -523,7 +523,7 @@ public partial class MainPage : ContentPage
         }
         
         ExplainTurnCube(CubeLang.TurnRightFaceToRight_Text);
-        ClassCubeTurns.TurnRightFaceTo("+");
+        ClassCubeTurns.TurnRightFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -537,7 +537,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToLeft_Text);
-        ClassCubeTurns.TurnFrontFaceTo("-");
+        ClassCubeTurns.TurnFrontFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -557,7 +557,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToUpFace_Text);
-        ClassCubeTurns.TurnUpHorMiddleTo("-");
+        ClassCubeTurns.TurnUpHorMiddleTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -571,7 +571,7 @@ public partial class MainPage : ContentPage
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToRight_Text);
-        ClassCubeTurns.TurnBackFaceTo("+");
+        ClassCubeTurns.TurnBackFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -584,9 +584,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToLeftFace_Text);
         }
             
-        ClassCubeTurns.TurnUpFaceTo("+");
-        ClassCubeTurns.TurnFrontHorMiddleTo("+");
-        ClassCubeTurns.TurnDownFaceTo("-");
+        ClassCubeTurns.TurnUpFaceTo("CW");
+        ClassCubeTurns.TurnFrontHorMiddleTo("CW");
+        ClassCubeTurns.TurnDownFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -598,9 +598,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToRightFace_Text);
         }
 
-        ClassCubeTurns.TurnUpFaceTo("-");
-        ClassCubeTurns.TurnFrontHorMiddleTo("-");
-        ClassCubeTurns.TurnDownFaceTo("+");
+        ClassCubeTurns.TurnUpFaceTo("CCW");
+        ClassCubeTurns.TurnFrontHorMiddleTo("CCW");
+        ClassCubeTurns.TurnDownFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -612,9 +612,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToUpFace_Text);
         }
 
-        ClassCubeTurns.TurnRightFaceTo("+");
-        ClassCubeTurns.TurnUpVerMiddleTo("+");
-        ClassCubeTurns.TurnLeftFaceTo("-");
+        ClassCubeTurns.TurnRightFaceTo("CW");
+        ClassCubeTurns.TurnUpVerMiddleTo("CW");
+        ClassCubeTurns.TurnLeftFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -626,9 +626,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeFrontFaceToDownFace_Text);
         }
 
-        ClassCubeTurns.TurnRightFaceTo("-");
-        ClassCubeTurns.TurnUpVerMiddleTo("-");
-        ClassCubeTurns.TurnLeftFaceTo("+");
+        ClassCubeTurns.TurnRightFaceTo("CCW");
+        ClassCubeTurns.TurnUpVerMiddleTo("CCW");
+        ClassCubeTurns.TurnLeftFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 
@@ -640,9 +640,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeUpFaceToRightFace_Text);
         }
 
-        ClassCubeTurns.TurnFrontFaceTo("+");
-        ClassCubeTurns.TurnUpHorMiddleTo("+");
-        ClassCubeTurns.TurnBackFaceTo("-");
+        ClassCubeTurns.TurnFrontFaceTo("CW");
+        ClassCubeTurns.TurnUpHorMiddleTo("CW");
+        ClassCubeTurns.TurnBackFaceTo("CCW");
         SetCubeColorsFromArrays();
     }
 
@@ -654,9 +654,9 @@ public partial class MainPage : ContentPage
             ExplainTurnCube(CubeLang.TurnCubeUpFaceToLeftFace_Text);
         }
 
-        ClassCubeTurns.TurnFrontFaceTo("-");
-        ClassCubeTurns.TurnUpHorMiddleTo("-");
-        ClassCubeTurns.TurnBackFaceTo("+");
+        ClassCubeTurns.TurnFrontFaceTo("CCW");
+        ClassCubeTurns.TurnUpHorMiddleTo("CCW");
+        ClassCubeTurns.TurnBackFaceTo("CW");
         SetCubeColorsFromArrays();
     }
 

@@ -8,97 +8,97 @@
             switch (cTurnFaceAndDirection)
             {
                 case Globals.TurnFrontCW:
-                    TurnFrontFaceTo("+");
+                    TurnFrontFaceTo("CW");
                     break;
                 case Globals.TurnFrontCCW:
-                    TurnFrontFaceTo("-");
+                    TurnFrontFaceTo("CCW");
                     break;
                 case Globals.TurnFront2:
-                    TurnFrontFaceTo("+");
-                    TurnFrontFaceTo("+");
+                    TurnFrontFaceTo("CW");
+                    TurnFrontFaceTo("CW");
                     break;
                 case Globals.TurnRightCW:
-                    TurnRightFaceTo("+");
+                    TurnRightFaceTo("CW");
                     break;
                 case Globals.TurnRightCCW:
-                    TurnRightFaceTo("-");
+                    TurnRightFaceTo("CCW");
                     break;
                 case Globals.TurnRight2:
-                    TurnRightFaceTo("+");
-                    TurnRightFaceTo("+");
+                    TurnRightFaceTo("CW");
+                    TurnRightFaceTo("CW");
                     break;
                 case Globals.TurnBackCW:
-                    TurnBackFaceTo("+");
+                    TurnBackFaceTo("CW");
                     break;
                 case Globals.TurnBackCCW:
-                    TurnBackFaceTo("-");
+                    TurnBackFaceTo("CCW");
                     break;
                 case Globals.TurnBack2:
-                    TurnBackFaceTo("+");
-                    TurnBackFaceTo("+");
+                    TurnBackFaceTo("CW");
+                    TurnBackFaceTo("CW");
                     break;
                 case Globals.TurnLeftCW:
-                    TurnLeftFaceTo("+");
+                    TurnLeftFaceTo("CW");
                     break;
                 case Globals.TurnLeftCCW:
-                    TurnLeftFaceTo("-");
+                    TurnLeftFaceTo("CCW");
                     break;
                 case Globals.TurnLeft2:
-                    TurnLeftFaceTo("+");
-                    TurnLeftFaceTo("+");
+                    TurnLeftFaceTo("CW");
+                    TurnLeftFaceTo("CW");
                     break;
                 case Globals.TurnUpCW:
-                    TurnUpFaceTo("+");
+                    TurnUpFaceTo("CW");
                     break;
                 case Globals.TurnUpCCW:
-                    TurnUpFaceTo("-");
+                    TurnUpFaceTo("CCW");
                     break;
                 case Globals.TurnUp2:
-                    TurnUpFaceTo("+");
-                    TurnUpFaceTo("+");
+                    TurnUpFaceTo("CW");
+                    TurnUpFaceTo("CW");
                     break;
                 case Globals.TurnDownCW:
-                    TurnDownFaceTo("+");
+                    TurnDownFaceTo("CW");
                     break;
                 case Globals.TurnDownCCW:
-                    TurnDownFaceTo("-");
+                    TurnDownFaceTo("CCW");
                     break;
                 case Globals.TurnDown2:
-                    TurnDownFaceTo("+");
-                    TurnDownFaceTo("+");
+                    TurnDownFaceTo("CW");
+                    TurnDownFaceTo("CW");
                     break;
 
                 case Globals.TurnUpHorMiddleRight:
-                    TurnUpHorMiddleTo("+");
+                    TurnUpHorMiddleTo("CW");
                     break;
                 case Globals.TurnUpHorMiddleLeft:
-                    TurnUpHorMiddleTo("-");
+                    TurnUpHorMiddleTo("CCW");
                     break;
                 case Globals.TurnUpHorMiddle2:
-                    TurnUpHorMiddleTo("+");
-                    TurnUpHorMiddleTo("+");
+                    TurnUpHorMiddleTo("CW");
+                    TurnUpHorMiddleTo("CW");
                     break;
 
                 case Globals.TurnUpVerMiddleBack:
-                    TurnUpVerMiddleTo("+");
+                    TurnUpVerMiddleTo("CW");
                     break;
                 case Globals.TurnUpVerMiddleFront:
-                    TurnUpVerMiddleTo("-");
+                    TurnUpVerMiddleTo("CCW");
                     break;
                 case Globals.TurnUpVerMiddle2:
-                    TurnUpVerMiddleTo("+");
-                    TurnUpVerMiddleTo("+");
+                    TurnUpVerMiddleTo("CW");
+                    TurnUpVerMiddleTo("CW");
                     break;
 
                 case Globals.TurnFrontHorMiddleLeft:
-                    TurnFrontHorMiddleTo("+");
+                    TurnFrontHorMiddleTo("CW");
                     break;
                 case Globals.TurnFrontHorMiddleRight:
-                    TurnFrontHorMiddleTo("-");
+                    TurnFrontHorMiddleTo("CCW");
                     break;
                 case Globals.TurnFrontHorMiddle2:
-                    TurnFrontHorMiddleTo("+");
-                    TurnFrontHorMiddleTo("+");
+                    TurnFrontHorMiddleTo("CW");
+                    TurnFrontHorMiddleTo("CW");
                     break;
 
                 case Globals.TurnCubeFrontToRight:
@@ -130,49 +130,49 @@
         // Rotate the entire cube so that the front goes to the left face
         private void TurnCubeFrontFaceToLeftFace()
         {
-            TurnUpFaceTo("+");
-            TurnFrontHorMiddleTo("+");
-            TurnDownFaceTo("-");
+            TurnUpFaceTo("CW");
+            TurnFrontHorMiddleTo("CW");
+            TurnDownFaceTo("CCW");
         }
 
         // Rotate the entire cube so that the front goes to the right face
         private void TurnCubeFrontFaceToRightFace()
         {
-            TurnUpFaceTo("-");
-            TurnFrontHorMiddleTo("-");
-            TurnDownFaceTo("+");
+            TurnUpFaceTo("CCW");
+            TurnFrontHorMiddleTo("CCW");
+            TurnDownFaceTo("CW");
         }
 
         // Rotate the entire cube so that the front goes to the upper face
         private void TurnCubeFrontFaceToUpFace()
         {
-            TurnRightFaceTo("+");
-            TurnUpVerMiddleTo("+");
-            TurnLeftFaceTo("-");
+            TurnRightFaceTo("CW");
+            TurnUpVerMiddleTo("CW");
+            TurnLeftFaceTo("CCW");
         }
 
         // Rotate the entire cube so that the front goes to the down face
         private void TurnCubeFrontFaceToDownFace()
         {
-            TurnRightFaceTo("-");
-            TurnUpVerMiddleTo("-");
-            TurnLeftFaceTo("+");
+            TurnRightFaceTo("CCW");
+            TurnUpVerMiddleTo("CCW");
+            TurnLeftFaceTo("CW");
         }
 
         // Rotate the entire cube so that the upper face goes to the right face
         private void TurnCubeUpFaceToRightFace()
         {
-            TurnFrontFaceTo("+");
-            TurnUpHorMiddleTo("+");
-            TurnBackFaceTo("-");
+            TurnFrontFaceTo("CW");
+            TurnUpHorMiddleTo("CW");
+            TurnBackFaceTo("CCW");
         }
 
         // Rotate the entire cube so that the upper face goes to the left face
         private void TurnCubeUpFaceToLeftFace()
         {
-            TurnFrontFaceTo("-");
-            TurnUpHorMiddleTo("-");
-            TurnBackFaceTo("+");
+            TurnFrontFaceTo("CCW");
+            TurnUpHorMiddleTo("CCW");
+            TurnBackFaceTo("CW");
         }
 
         // Turn the entire front face clockwise or counter clockwise
@@ -180,7 +180,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[0] = Globals.aPiecesTemp[6];
                 Globals.aPieces[1] = Globals.aPiecesTemp[3];
@@ -208,7 +208,7 @@
                 Globals.aPieces[35] = Globals.aPiecesTemp[47];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[0] = Globals.aPiecesTemp[2];
                 Globals.aPieces[1] = Globals.aPiecesTemp[5];
@@ -242,7 +242,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[39] = Globals.aPiecesTemp[34];
                 Globals.aPieces[40] = Globals.aPiecesTemp[31];
@@ -261,7 +261,7 @@
                 Globals.aPieces[34] = Globals.aPiecesTemp[50];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[39] = Globals.aPiecesTemp[10];
                 Globals.aPieces[40] = Globals.aPiecesTemp[13];
@@ -286,7 +286,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[18] = Globals.aPiecesTemp[24];
                 Globals.aPieces[19] = Globals.aPiecesTemp[21];
@@ -314,7 +314,7 @@
                 Globals.aPieces[33] = Globals.aPiecesTemp[36];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[18] = Globals.aPiecesTemp[20];
                 Globals.aPieces[19] = Globals.aPiecesTemp[23];
@@ -348,7 +348,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[27] = Globals.aPiecesTemp[33];
                 Globals.aPieces[28] = Globals.aPiecesTemp[30];
@@ -376,7 +376,7 @@
                 Globals.aPieces[26] = Globals.aPiecesTemp[45];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[27] = Globals.aPiecesTemp[29];
                 Globals.aPieces[28] = Globals.aPiecesTemp[32];
@@ -410,7 +410,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[37] = Globals.aPiecesTemp[1];
                 Globals.aPieces[40] = Globals.aPiecesTemp[4];
@@ -429,7 +429,7 @@
                 Globals.aPieces[25] = Globals.aPiecesTemp[37];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[37] = Globals.aPiecesTemp[25];
                 Globals.aPieces[40] = Globals.aPiecesTemp[22];
@@ -454,7 +454,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[9] = Globals.aPiecesTemp[15];
                 Globals.aPieces[10] = Globals.aPiecesTemp[12];
@@ -482,7 +482,7 @@
                 Globals.aPieces[24] = Globals.aPiecesTemp[38];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[9] = Globals.aPiecesTemp[11];
                 Globals.aPieces[10] = Globals.aPiecesTemp[14];
@@ -516,7 +516,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[36] = Globals.aPiecesTemp[42];
                 Globals.aPieces[37] = Globals.aPiecesTemp[39];
@@ -544,7 +544,7 @@
                 Globals.aPieces[20] = Globals.aPiecesTemp[29];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[36] = Globals.aPiecesTemp[38];
                 Globals.aPieces[37] = Globals.aPiecesTemp[41];
@@ -578,7 +578,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[3] = Globals.aPiecesTemp[12];
                 Globals.aPieces[4] = Globals.aPiecesTemp[13];
@@ -597,7 +597,7 @@
                 Globals.aPieces[32] = Globals.aPiecesTemp[5];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[3] = Globals.aPiecesTemp[30];
                 Globals.aPieces[4] = Globals.aPiecesTemp[31];
@@ -622,7 +622,7 @@
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
 
-            if (cDirection == "+")
+            if (cDirection == "CW")
             {
                 Globals.aPieces[45] = Globals.aPiecesTemp[51];
                 Globals.aPieces[46] = Globals.aPiecesTemp[48];
@@ -650,7 +650,7 @@
                 Globals.aPieces[26] = Globals.aPiecesTemp[17];
             }
 
-            if (cDirection == "-")
+            if (cDirection == "CCW")
             {
                 Globals.aPieces[45] = Globals.aPiecesTemp[47];
                 Globals.aPieces[46] = Globals.aPiecesTemp[50];
