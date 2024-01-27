@@ -123,7 +123,7 @@ turn CW = clockwise ; turn CCW = counterclockwise ; turn 2 = 2 x turn CW (half t
 |  26   -B  UpCCW    |  80   O   DownCW   | 134   V   FrontCW  | 189   V   FrontCW  |
 |  27   -A  BackCCW  |  81   R   RightCW  | 135   -O  DownCCW  | 190   -B  UpCCW    |
 |  28   B   UpCW     |  82   R   RightCW  | 136   -V  FrontCCW | 191   O   DownCW   |
-|  29   -V  FrontCCW |  83   L   LeftCW   | 137   O   Down     | 192   -R  RightCCW |
+|  29   -V  FrontCCW |  83   L   LeftCW   | 137   O   DownCW   | 192   -R  RightCCW |
 |  30   -B  UpCCW    |  84   L   LeftCW   | 138   L   LeftCW   | 193   -R  RightCCW |
 |  31   A   BackCW   |  85   R   RightCW  | 139   -O  DownCCW  | 194   -B  UpCCW    |
 |  32   B   UpCW     |  86   A   BackCW   | 140   -L  LeftCCW  | 195   O   DownCW   |

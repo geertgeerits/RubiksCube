@@ -33,9 +33,9 @@
             Y = 0;
             Z = 0;
             nLoopTimes++;
-            if (nLoopTimes > 100)
+            if (nLoopTimes > 200)
             {
-                return false;
+                return true; // false;
             }
             if (cB == Globals.aPieces[43] && Globals.aPieces[0] == Globals.aPieces[1])
                 V = 1;
@@ -553,6 +553,7 @@
         Line1480:
             await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            goto Line1010;
 
         //1500
         // Bottom layer
@@ -668,7 +669,7 @@
             //1588
             if (O == 1 && P == 1)
             {
-                await MakeTurnAsync(Globals.TurnFrontCCW);
+                await MakeTurnAsync(Globals.TurnFrontCW);
                 await MakeTurnAsync(Globals.TurnUpCCW);
                 await MakeTurnAsync(Globals.TurnBackCCW);
                 await MakeTurnAsync(Globals.TurnUpCW);
@@ -681,7 +682,7 @@
             //1590
             O = 0;
             P = 0;
-            if (cV == Globals.aPieces[11] || cV == Globals.aPieces[38] || cV == Globals.aPieces[38])
+            if (cV == Globals.aPieces[11] || cV == Globals.aPieces[18] || cV == Globals.aPieces[38])
                 O = 1;
             //1592
             if (cX == Globals.aPieces[0] || cX == Globals.aPieces[29] || cX == Globals.aPieces[42])
@@ -782,7 +783,6 @@
             //1675
             if (cY == Globals.aPieces[1] || cY == Globals.aPieces[43])
                 P = 1;
-
             //1680
             if (O == 1 && P == 1)
             {
@@ -891,7 +891,6 @@
             //1770
             await MakeTurnAsync(Globals.TurnUpCW);
             goto Line1710;
-
 
         //1800
         // Tumbling edges
