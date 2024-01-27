@@ -570,11 +570,11 @@ REM ____________________________________________________________________________
 
 REM ==< SOLCUBE.BAS >== *** PROGRAM LIST *** DATE 1984-06-01					PAGE 5
 
-1840 IF V = D (28) THEN M = 12:
+1840 IF V = D(28) THEN M = 12:
      N = M:
      GOSUB 3510:					'Draaien kubus -B
      GOTO 1810						'Draaien randen
-1845 IF V = D (19) THEN M = 32:
+1845 IF V = D(19) THEN M = 32:
      N = 33:
      GOSUB 3510:					'Draaien kubus B B
      GOTO 1810						'Draaien randen

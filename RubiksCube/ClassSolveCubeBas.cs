@@ -8,6 +8,12 @@
         // Solve the cube.  From Basic-80 to C#
         public async Task<bool> SolveTheCubeBasAsync()
         {
+            // Check if the cube is already solved
+            if (ClassCheckColorsCube.CheckIfSolved())
+            {
+                return true;
+            }
+
             // Declare variables
             int O, P, Q, R, S, V, X, Y, Z;
             string cB, cO, cP, cQ, cR, cV, cX, cY, cZ;
@@ -29,7 +35,7 @@
             nLoopTimes++;
             if (nLoopTimes > 100)
             {
-                return true;  // false;
+                return false;
             }
             if (cB == Globals.aPieces[43] && Globals.aPieces[0] == Globals.aPieces[1])
                 V = 1;
@@ -825,10 +831,167 @@
         // Tumbling corners
         //1710
         Line1710:
+            cB = Globals.aPieces[40];
+            if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+                goto Line1810;
+            //1715
+            if (cB == Globals.aPieces[2])
+                goto Line1735;
+            //1720
+            if (cB == Globals.aPieces[11])
+            {
+                await MakeTurnAsync(Globals.TurnUpCW);
+                goto Line1735;
+            }
+            //1725
+            if (cB == Globals.aPieces[29])
+            {
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                goto Line1735;
+            }
+            //1730
+            if (cB == Globals.aPieces[20])
+                await MakeTurnAsync(Globals.TurnUp2);
+        //1735
+        Line1735:
+            await MakeTurnAsync(Globals.TurnRightCCW);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnRightCW);
+            await MakeTurnAsync(Globals.TurnFrontCW);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnFrontCCW);
+            //1740
+            if (cB == Globals.aPieces[9])
+                goto Line1760;
+            //1745
+            if (cB == Globals.aPieces[18])
+            {
+                await MakeTurnAsync(Globals.TurnUpCW);
+                goto Line1760;
+            }
+            //1750
+            if (cB == Globals.aPieces[0])
+            {
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                goto Line1760;
+            }
+            //1755
+            await MakeTurnAsync(Globals.TurnUp2);
+        //1760
+        Line1760:
+            await MakeTurnAsync(Globals.TurnFrontCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnFrontCCW);
+            await MakeTurnAsync(Globals.TurnRightCCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnRightCW);
+            //1765
+            if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+                goto Line1810;
+            //1770
+            await MakeTurnAsync(Globals.TurnUpCW);
+            goto Line1710;
 
 
+        //1800
+        // Tumbling edges
+        //1810
+        Line1810:
+            cB = Globals.aPieces[40];
+            cV = Globals.aPieces[4];
+            cX = Globals.aPieces[13];
+            cY = Globals.aPieces[22];
+            O = 0;
+            P = 0;
+            //1815
+            if (cB == Globals.aPieces[37] && cB == Globals.aPieces[39] && cB == Globals.aPieces[41] && cB == Globals.aPieces[43])
+                O = 1;
+            //1820
+            if (cV == Globals.aPieces[1] && cX == Globals.aPieces[10] && cY == Globals.aPieces[19])
+                P = 1;
+            //1825
+            if (O == 1 && P == 1)
+                goto Line2010;
+            //1830
+            if (O == 0)
+                goto Line1850;
+            //1835
+            if (cV == Globals.aPieces[10])
+            {
+                await MakeTurnAsync(Globals.TurnUpCW);
+                goto Line1810;
+            }
+            //1840
+            if (cV == Globals.aPieces[28])
+            {
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                goto Line1810;
+            }
+            //1845
+            if (cV == Globals.aPieces[19])
+            {
+                await MakeTurnAsync(Globals.TurnUp2);
+                goto Line1810;
+            }
+        //1850
+        Line1850:
+            if (cB != Globals.aPieces[43])
+                goto Line1890;
+            //1860
+            if (cB != Globals.aPieces[41])
+            {
+                await MakeTurnAsync(Globals.TurnUpCW);
+                goto Line1890;
+            }
+            //1870
+            if (cB != Globals.aPieces[39])
+            {
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                goto Line1890;
+            }
+            //1880
+            if (cB != Globals.aPieces[37])
+                await MakeTurnAsync(Globals.TurnUp2);
+        //1890
+        Line1890:
+            await MakeTurnAsync(Globals.TurnFrontCW);
+            await MakeTurnAsync(Globals.TurnUpCW);
+            await MakeTurnAsync(Globals.TurnDownCCW);
+            await MakeTurnAsync(Globals.TurnLeft2);
+            await MakeTurnAsync(Globals.TurnUp2);
+            await MakeTurnAsync(Globals.TurnDown2);
+            await MakeTurnAsync(Globals.TurnRightCW);
+            //1910
+            if (cB != Globals.aPieces[41])
+                goto Line1950;
+            //1920
+            if (cB != Globals.aPieces[37])
+            {
+                await MakeTurnAsync(Globals.TurnUpCW);
+                goto Line1950;
+            }
+            //1930
+            if (cB != Globals.aPieces[43])
+            {
+                await MakeTurnAsync(Globals.TurnUpCCW);
+                goto Line1950;
+            }
+            //1940
+            if (cB != Globals.aPieces[39])
+                await MakeTurnAsync(Globals.TurnUp2);
+        //1950
+        Line1950:
+            await MakeTurnAsync(Globals.TurnRightCCW);
+            await MakeTurnAsync(Globals.TurnDown2);
+            await MakeTurnAsync(Globals.TurnUp2);
+            await MakeTurnAsync(Globals.TurnLeft2);
+            await MakeTurnAsync(Globals.TurnDownCW);
+            await MakeTurnAsync(Globals.TurnUpCCW);
+            await MakeTurnAsync(Globals.TurnFrontCCW);
 
-
+        //2010
+        // Check if the cube is solved
+        Line2010:
             if (ClassCheckColorsCube.CheckIfSolved())
             {
                 return true;
