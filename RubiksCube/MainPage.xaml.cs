@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-27 (YYYY-MM-DD)
+// Date ........: 2024-01-28 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -217,8 +217,10 @@ public partial class MainPage : ContentPage
         //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
 
         // Solve the cube from Basic-80 to C#
-        ClassSolveCubeBas classSolveCubeBas = new();
-        bool bSolved = await classSolveCubeBas.SolveTheCubeBasAsync();
+        ClassSolveCubeBas1 classSolveCubeBas1 = new();
+        bool bSolved = await classSolveCubeBas1.SolveTheCubeBasAsync();
+        //ClassSolveCubeBas2 classSolveCubeBas2 = new();
+        //bool bSolved = await classSolveCubeBas2.SolveTheCubeBasAsync();
 
         // Solve the cube in C#
         //ClassSolveCube classSolveCube = new();

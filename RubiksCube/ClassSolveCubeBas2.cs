@@ -1,11 +1,11 @@
 ﻿namespace RubiksCube
 {
-    internal class ClassSolveCubeBas
+    internal class ClassSolveCubeBas2
     {
         // Note: comment out the lines after 710 to before 1010 to get the cross on the top layer,
         //       and change 'return false' to 'return true'
         
-        // Solve the cube.  From Basic-80 to C#
+        // Solve the cube.  From Basic-80 to C# - 1984-06-01
         public async Task<bool> SolveTheCubeBasAsync()
         {
             // Check if the cube is already solved
@@ -38,38 +38,53 @@
                 return true; // false;
             }
             if (cB == Globals.aPieces[43] && Globals.aPieces[0] == Globals.aPieces[1])
+            {
                 V = 1;
+            }
             // 520
             if (cB == Globals.aPieces[41] && Globals.aPieces[9] == Globals.aPieces[10])
+            {
                 X = 1;
+            }
             // 530
             if (cB == Globals.aPieces[37] && Globals.aPieces[18] == Globals.aPieces[19])
+            {
                 Y = 1;
+            }
             // 540
             if (cB == Globals.aPieces[39] && Globals.aPieces[27] == Globals.aPieces[28])
+            {
                 Z = 1;
+            }
             // 550
             if (V == 1 && X == 1 && Y == 1 && Z == 1)
+            {
                 goto Line710;
+            }
             // 560
             O = 0;
             P = 0;
             Q = 0;
 
             if (cB == Globals.aPieces[5] || cB == Globals.aPieces[10] || cB == Globals.aPieces[12] || cB == Globals.aPieces[14])
+            {
                 O = 1;
+            }
             // 570
             if (cB == Globals.aPieces[21] || cB == Globals.aPieces[16] || cB == Globals.aPieces[50])
+            {
                 P = 1;
+            }
             // 580
-            //cX = X.ToString();
-            //if (cB == Globals.aPieces[41] && cX != Globals.aPieces[10])         // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
-            //    Q = 1;
-            if (cB == Globals.aPieces[41])                                  // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+            if (cB == Globals.aPieces[41])                          // 580 IF B = D(41) AND X <> D(10) THEN Q = 1
+            {
                 Q = 1;
+            }
             // 590
             if (O == 1 || P == 1 || Q == 1)
+            {
                 goto Line610;
+            }
             // 600
             await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             goto Line510;
@@ -77,7 +92,9 @@
         // 610
         Line610:
             if (V == 1 && Y == 1 && Z == 1)
+            {
                 goto Line650;
+            }
             // 620
             if (Y == 1 && Z == 1)
             {
@@ -202,23 +219,35 @@
             R = 0;
             // 715
             if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+            {
                 O = 1;
+            }
             // 720
             if (Globals.aPieces[0] == Globals.aPieces[2])
+            {
                 P = 1;
+            }
             // 725
             if (Globals.aPieces[9] == Globals.aPieces[11])
+            {
                 Q = 1;
+            }
             // 730
             if (Globals.aPieces[18] == Globals.aPieces[20])
+            {
                 R = 1;
+            }
             // 735
             if (O == 1 && P == 1 && Q == 1 && R == 1)
+            {
                 goto Line1010;
+            }
             // 740
             O = 0;
             if (cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+            {
                 O = 1;
+            }
             // 745
             if (O == 1 && P == 1 && Q == 1)
             {
@@ -228,7 +257,9 @@
             // 750
             O = 0;
             if (cB == Globals.aPieces[38] && cB == Globals.aPieces[44])
+            {
                 O = 1;
+            }
             // 755
             if (O == 1 && Q == 1)
             {
@@ -238,7 +269,9 @@
             // 760
             O = 0;
             if (cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+            {
                 O = 1;
+            }
             // 765
             if (O == 1 && P == 1)
             {
@@ -248,7 +281,9 @@
             // 770
             O = 0;
             if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38])
+            {
                 O = 1;
+            }
             // 775
             if (O == 1 && R == 1)
             {
@@ -348,22 +383,34 @@
             S = 0;
             // 1015
             if (cV == Globals.aPieces[1] && cX == Globals.aPieces[10] && cY == Globals.aPieces[19])
+            {
                 O = 1;
+            }
             //1020
             if (cV == Globals.aPieces[3] && cV == Globals.aPieces[5])
+            {
                 P = 1;
+            }
             //1025
             if (cX == Globals.aPieces[12] && cX == Globals.aPieces[14])
+            {
                 Q = 1;
+            }
             //1030
             if (cY == Globals.aPieces[21] && cY == Globals.aPieces[23])
+            {
                 R = 1;
+            }
             //1035
             if (cZ == Globals.aPieces[30] && cZ == Globals.aPieces[32])
+            {
                 S = 1;
+            }
             //1040
             if (O == 1 && P == 1 && Q == 1 && R == 1 && S == 1)
+            {
                 goto Line1510;
+            }
             //1050
             if (cV == Globals.aPieces[10])
             {
@@ -384,20 +431,26 @@
             }
             //1080
             if (P == 1 && cX == Globals.aPieces[12] && cZ == Globals.aPieces[32])
+            {
                 goto Line1460;
+            }
 
             //1100
             cO = Globals.aPieces[7];
             cP = Globals.aPieces[16];
             cQ = Globals.aPieces[25];
             cR = Globals.aPieces[34];
-            
+
             //1110
             if (cV == cO && cX == Globals.aPieces[46])
+            {
                 goto Line1410;
+            }
             //1120
             if (cV == cO && cZ == Globals.aPieces[46])
+            {
                 goto Line1420;
+            }
             //1130
             if (cV == cP && cX == Globals.aPieces[50])
             {
@@ -436,82 +489,134 @@
             }
             //1210
             if (cX == cO && cV == Globals.aPieces[46])
+            {
                 goto Line1460;
+            }
             //1215
             if (cX == cO && cY == Globals.aPieces[46])
+            {
                 goto Line1460;
+            }
             //1220
             if (cX == cP && cV == Globals.aPieces[50])
+            {
                 goto Line1460;
+            }
             //1225
             if (cX == cP && cY == Globals.aPieces[50])
+            {
                 goto Line1460;
+            }
             //1230
             if (cX == cQ && cV == Globals.aPieces[52])
+            {
                 goto Line1460;
+            }
             //1235
             if (cX == cQ && cY == Globals.aPieces[52])
+            {
                 goto Line1460;
+            }
             //1240
             if (cX == cR && cV == Globals.aPieces[48])
+            {
                 goto Line1460;
+            }
             //1245
             if (cX == cR && cY == Globals.aPieces[48])
+            {
                 goto Line1460;
+            }
             //1250
             if (cZ == cO && cV == Globals.aPieces[46])
+            {
                 goto Line1470;
+            }
             //1255
             if (cZ == cO && cY == Globals.aPieces[46])
+            {
                 goto Line1470;
+            }
             //1260
             if (cZ == cP && cV == Globals.aPieces[50])
+            {
                 goto Line1470;
+            }
             //1265
             if (cZ == cP && cY == Globals.aPieces[50])
+            {
                 goto Line1470;
+            }
             //1270
             if (cZ == cQ && cV == Globals.aPieces[52])
+            {
                 goto Line1470;
+            }
             //1275
             if (cZ == cQ && cY == Globals.aPieces[52])
+            {
                 goto Line1470;
+            }
             //1280
             if (cZ == cR && cV == Globals.aPieces[48])
+            {
                 goto Line1470;
+            }
             //1285
             if (cZ == cR && cY == Globals.aPieces[48])
+            {
                 goto Line1470;
+            }
             //1290
             if (cY == cO && cX == Globals.aPieces[46])
+            {
                 goto Line1480;
+            }
             //1295
             if (cY == cO && cZ == Globals.aPieces[46])
+            {
                 goto Line1480;
+            }
             //1300
             if (cY == cP && cX == Globals.aPieces[50])
+            {
                 goto Line1480;
+            }
             //1305
             if (cY == cP && cZ == Globals.aPieces[50])
+            {
                 goto Line1480;
+            }
             //1310
             if (cY == cQ && cX == Globals.aPieces[52])
+            {
                 goto Line1480;
+            }
             //1315
             if (cY == cQ && cZ == Globals.aPieces[52])
+            {
                 goto Line1480;
+            }
             //1320
             if (cY == cR && cX == Globals.aPieces[48])
+            {
                 goto Line1480;
+            }
             //1325
             if (cY == cR && cZ == Globals.aPieces[48])
+            {
                 goto Line1480;
+            }
             //1360
             if (cV != Globals.aPieces[5])
+            {
                 goto Line1410;
+            }
             //1370
             if (cV != Globals.aPieces[3])
+            {
                 goto Line1420;
+            }
             //1380
             await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
 
@@ -563,8 +668,8 @@
             //1512
             await MakeTurnAsync(Globals.TurnCubeUpToRight);
             await MakeTurnAsync(Globals.TurnCubeUpToRight);
-            //1515
-            Line1515:
+        //1515
+        Line1515:
             cV = Globals.aPieces[4];
             cX = Globals.aPieces[13];
             cY = Globals.aPieces[22];
@@ -575,26 +680,40 @@
             Q = 0;
             R = 0;
             if (cV == Globals.aPieces[2] || cV == Globals.aPieces[9] || cV == Globals.aPieces[44])
+            {
                 O = 1;
+            }
             //1525
             if (cX == Globals.aPieces[2] || cX == Globals.aPieces[9] || cX == Globals.aPieces[44])
+            {
                 P = 1;
+            }
             //1530
             if (cX == Globals.aPieces[11] || cX == Globals.aPieces[18] || cX == Globals.aPieces[38])
+            {
                 Q = 1;
+            }
             //1535
             if (cV == Globals.aPieces[0] || cV == Globals.aPieces[29] || cV == Globals.aPieces[42])
+            {
                 R = 1;
+            }
             //1540
             if (O == 1 && P == 1 && Q == 1 && R == 1)
+            {
                 goto Line1610;
+            }
             //1545
             if (O == 1 && P == 1)
+            {
                 goto Line1560;
+            }
             //1550
             O = 0;
             if (cV == Globals.aPieces[11] || cV == Globals.aPieces[18] || cV == Globals.aPieces[38])
+            {
                 O = 1;
+            }
             //1552
             if (O == 1 && Q == 1)
             {
@@ -604,7 +723,9 @@
             //1554
             O = 0;
             if (cX == Globals.aPieces[0] || cX == Globals.aPieces[29] || cX == Globals.aPieces[42])
+            {
                 O = 1;
+            }
             //1556
             if (O == 1 && R == 1)
             {
@@ -620,10 +741,14 @@
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[11] || cV == Globals.aPieces[18] || cV == Globals.aPieces[38])
+            {
                 O = 1;
+            }
             //1565
-            if(cX == Globals.aPieces[20] || cX == Globals.aPieces[27] || cX == Globals.aPieces[36])
+            if (cX == Globals.aPieces[20] || cX == Globals.aPieces[27] || cX == Globals.aPieces[36])
+            {
                 P = 1;
+            }
             //1570
             if (O == 1 && P == 1)
             {
@@ -641,10 +766,14 @@
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[20] || cV == Globals.aPieces[27] || cV == Globals.aPieces[36])
+            {
                 O = 1;
+            }
             //1580
             if (cX == Globals.aPieces[0] || cX == Globals.aPieces[29] || cX == Globals.aPieces[42])
+            {
                 P = 1;
+            }
             //1582
             if (O == 1 && P == 1)
             {
@@ -662,10 +791,14 @@
             O = 0;
             P = 0;
             if (cX == Globals.aPieces[20] || cX == Globals.aPieces[27] || cX == Globals.aPieces[36])
+            {
                 O = 1;
+            }
             //1586
             if (cZ == Globals.aPieces[11] || cZ == Globals.aPieces[18] || cZ == Globals.aPieces[38])
+            {
                 P = 1;
+            }
             //1588
             if (O == 1 && P == 1)
             {
@@ -683,10 +816,14 @@
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[11] || cV == Globals.aPieces[18] || cV == Globals.aPieces[38])
+            {
                 O = 1;
+            }
             //1592
             if (cX == Globals.aPieces[0] || cX == Globals.aPieces[29] || cX == Globals.aPieces[42])
+            {
                 P = 1;
+            }
             //1594
             if (O == 1 && P == 1)
             {
@@ -718,27 +855,41 @@
             Q = 0;
             R = 0;
             if (cV == Globals.aPieces[1] || cV == Globals.aPieces[43])
+            {
                 O = 1;
+            }
             //1620
             if (cX == Globals.aPieces[10] || cX == Globals.aPieces[41])
+            {
                 P = 1;
+            }
             //1625
             if (cY == Globals.aPieces[19] || cY == Globals.aPieces[37])
+            {
                 Q = 1;
+            }
             //1630
             if (cZ == Globals.aPieces[28] || cZ == Globals.aPieces[39])
+            {
                 R = 1;
+            }
             //1635
             if (O == 1 && P == 1 && Q == 1 && R == 1)
+            {
                 goto Line1710;
+            }
             //1640
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[19] || cV == Globals.aPieces[37])
+            {
                 O = 1;
+            }
             //1645
             if (cY == Globals.aPieces[28] || cY == Globals.aPieces[39])
+            {
                 P = 1;
+            }
             //1650
             if (O == 1 && P == 1)
             {
@@ -757,10 +908,14 @@
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[28] || cV == Globals.aPieces[39])
+            {
                 O = 1;
+            }
             //1660
             if (cY == Globals.aPieces[1] || cY == Globals.aPieces[43])
+            {
                 P = 1;
+            }
             //1665
             if (O == 1 && P == 1)
             {
@@ -779,10 +934,14 @@
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[19] || cV == Globals.aPieces[37])
+            {
                 O = 1;
+            }
             //1675
             if (cY == Globals.aPieces[1] || cY == Globals.aPieces[43])
+            {
                 P = 1;
+            }
             //1680
             if (O == 1 && P == 1)
             {
@@ -803,10 +962,14 @@
             O = 0;
             P = 0;
             if (cV == Globals.aPieces[28] || cV == Globals.aPieces[39])
+            {
                 O = 1;
+            }
             //1690
             if (cX == Globals.aPieces[19] || cX == Globals.aPieces[37])
+            {
                 P = 1;
+            }
             //1692
             if (O == 1 && P == 1)
             {
@@ -833,10 +996,14 @@
         Line1710:
             cB = Globals.aPieces[40];
             if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+            {
                 goto Line1810;
+            }
             //1715
             if (cB == Globals.aPieces[2])
+            {
                 goto Line1735;
+            }
             //1720
             if (cB == Globals.aPieces[11])
             {
@@ -851,7 +1018,9 @@
             }
             //1730
             if (cB == Globals.aPieces[20])
+            {
                 await MakeTurnAsync(Globals.TurnUp2);
+            }
         //1735
         Line1735:
             await MakeTurnAsync(Globals.TurnRightCCW);
@@ -862,7 +1031,9 @@
             await MakeTurnAsync(Globals.TurnFrontCCW);
             //1740
             if (cB == Globals.aPieces[9])
+            {
                 goto Line1760;
+            }
             //1745
             if (cB == Globals.aPieces[18])
             {
@@ -887,7 +1058,9 @@
             await MakeTurnAsync(Globals.TurnRightCW);
             //1765
             if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+            {
                 goto Line1810;
+            }
             //1770
             await MakeTurnAsync(Globals.TurnUpCW);
             goto Line1710;
@@ -904,16 +1077,24 @@
             P = 0;
             //1815
             if (cB == Globals.aPieces[37] && cB == Globals.aPieces[39] && cB == Globals.aPieces[41] && cB == Globals.aPieces[43])
+            {
                 O = 1;
+            }
             //1820
             if (cV == Globals.aPieces[1] && cX == Globals.aPieces[10] && cY == Globals.aPieces[19])
+            {
                 P = 1;
+            }
             //1825
             if (O == 1 && P == 1)
+            {
                 goto Line2010;
+            }
             //1830
             if (O == 0)
+            {
                 goto Line1850;
+            }
             //1835
             if (cV == Globals.aPieces[10])
             {
@@ -951,8 +1132,8 @@
             //1880
             if (cB != Globals.aPieces[37])
                 await MakeTurnAsync(Globals.TurnUp2);
-        //1890
-        Line1890:
+            //1890
+            Line1890:
             await MakeTurnAsync(Globals.TurnFrontCW);
             await MakeTurnAsync(Globals.TurnUpCW);
             await MakeTurnAsync(Globals.TurnDownCCW);
@@ -962,7 +1143,9 @@
             await MakeTurnAsync(Globals.TurnRightCW);
             //1910
             if (cB != Globals.aPieces[41])
+            {
                 goto Line1950;
+            }
             //1920
             if (cB != Globals.aPieces[37])
             {
@@ -977,7 +1160,9 @@
             }
             //1940
             if (cB != Globals.aPieces[39])
+            {
                 await MakeTurnAsync(Globals.TurnUp2);
+            }
         //1950
         Line1950:
             await MakeTurnAsync(Globals.TurnRightCCW);
@@ -987,6 +1172,7 @@
             await MakeTurnAsync(Globals.TurnDownCW);
             await MakeTurnAsync(Globals.TurnUpCCW);
             await MakeTurnAsync(Globals.TurnFrontCCW);
+            goto Line1810;
 
         //2010
         // Check if the cube is solved
