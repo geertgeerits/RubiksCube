@@ -724,6 +724,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the back side, right side stays..
+        /// </summary>
+        internal static string TurnCubeFrontFaceToBackFaceRightStays_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeFrontFaceToBackFaceRightStays_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the back side, top side stays..
+        /// </summary>
+        internal static string TurnCubeFrontFaceToBackFaceUpStays_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeFrontFaceToBackFaceUpStays_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the bottom side..
         /// </summary>
         internal static string TurnCubeFrontFaceToDownFace_Text {
@@ -756,6 +774,15 @@ namespace RubiksCube.Resources.Languages {
         internal static string TurnCubeFrontFaceToUpFace_Text {
             get {
                 return ResourceManager.GetString("TurnCubeFrontFaceToUpFace_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the bottom side, front side stays..
+        /// </summary>
+        internal static string TurnCubeUpFaceToDownFaceFrontStays_Text {
+            get {
+                return ResourceManager.GetString("TurnCubeUpFaceToDownFaceFrontStays_Text", resourceCulture);
             }
         }
         

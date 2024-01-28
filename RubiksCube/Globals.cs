@@ -65,9 +65,12 @@ internal static class Globals
 
     public const string TurnCubeFrontToRight = "TurnCubeFrontToRight";
     public const string TurnCubeFrontToLeft = "TurnCubeFrontToLeft";
+    public const string TurnCubeFrontToLeft2 = "TurnCubeFrontToLeft2";
     public const string TurnCubeFrontToUp = "TurnCubeFrontToUp";
+    public const string TurnCubeFrontToUp2 = "TurnCubeFrontToUp2";
     public const string TurnCubeFrontToDown = "TurnCubeFrontToDown";
     public const string TurnCubeUpToRight = "TurnCubeUpToRight";
+    public const string TurnCubeUpToRight2 = "TurnCubeUpToRight2";
     public const string TurnCubeUpToLeft = "TurnCubeUpToLeft";
 
     //public enum Turns
@@ -103,9 +106,12 @@ internal static class Globals
 
     //    TurnCubeFrontToRight,
     //    TurnCubeFrontToLeft,
+    //    TurnCubeFrontToLeft2,
     //    TurnCubeFrontToUp,
+    //    TurnCubeFrontToUp2,
     //    TurnCubeFrontToDown,
     //    TurnCubeUpToRight,
+    //    TurnCubeUpToRight2,
     //    TurnCubeUpToLeft,
     //}
 

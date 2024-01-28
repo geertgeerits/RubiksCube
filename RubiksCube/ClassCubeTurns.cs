@@ -107,13 +107,25 @@
                 case Globals.TurnCubeFrontToLeft:
                     TurnCubeFrontFaceToLeftFace();
                     break;
+                case Globals.TurnCubeFrontToLeft2:
+                    TurnCubeFrontFaceToLeftFace();
+                    TurnCubeFrontFaceToLeftFace();
+                    break;
                 case Globals.TurnCubeFrontToUp:
+                    TurnCubeFrontFaceToUpFace();
+                    break;
+                case Globals.TurnCubeFrontToUp2:
+                    TurnCubeFrontFaceToUpFace();
                     TurnCubeFrontFaceToUpFace();
                     break;
                 case Globals.TurnCubeFrontToDown:
                     TurnCubeFrontFaceToDownFace();
                     break;
                 case Globals.TurnCubeUpToRight:
+                    TurnCubeUpFaceToRightFace();
+                    break;
+                case Globals.TurnCubeUpToRight2:
+                    TurnCubeUpFaceToRightFace();
                     TurnCubeUpFaceToRightFace();
                     break;
                 case Globals.TurnCubeUpToLeft:

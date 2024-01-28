@@ -107,13 +107,6 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new PageSettings());
     }
 
-    // Select a color for dropping on a cube and put it in a tempory polygon
-    private void OnColorDragStarting(object sender, DragStartingEventArgs e)
-    {
-        Polygon polygon = (sender as Element).Parent as Polygon;
-        plgCubeColorSelect.Fill = polygon.Fill;
-    }
-
     // Select a color by tapping on a cube and put it in a tempory polygon
     private void OnGetColorTapped(object sender, TappedEventArgs args)
     {
@@ -121,21 +114,15 @@ public partial class MainPage : ContentPage
         plgCubeColorSelect.Fill = polygon.Fill;
     }
 
-    // Drop the selected color on the cube and fill the cube with the color from the tempory polygon
-    private void OnColorDrop(object sender, DropEventArgs e)
-    {
-        Polygon polygon = (sender as Element).Parent as Polygon;
-        polygon.Fill = plgCubeColorSelect.Fill;
-        
-        plgCubeColorSelect.Fill = Color.FromArgb("#000000");
-        SetCubeColorsInArrays();
-    }
-
     // Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
     private void OnSetColorTapped(object sender, TappedEventArgs args)
     {
         Polygon polygon = (sender) as Polygon;
-        polygon.Fill = plgCubeColorSelect.Fill;
+
+        if (plgCubeColorSelect.Fill != null)
+        {
+            polygon.Fill = plgCubeColorSelect.Fill;
+        }
     }
 
     // Drag and drop colors on the cube
@@ -147,6 +134,7 @@ public partial class MainPage : ContentPage
         {
             btnSolveCube.IsEnabled = false;
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
+            plgCubeColorSelect.Fill = null;
             IsVisibleCubeColors(true);
             IsEnabledArrows(false);
 
@@ -799,15 +787,18 @@ public partial class MainPage : ContentPage
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
             case Globals.TurnCubeFrontToLeft:
+            case Globals.TurnCubeFrontToLeft2:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
             case Globals.TurnCubeFrontToUp:
+            case Globals.TurnCubeFrontToUp2:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
                 break;
             case Globals.TurnCubeFrontToDown:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
                 break;
             case Globals.TurnCubeUpToRight:
+            case Globals.TurnCubeUpToRight2:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
             case Globals.TurnCubeUpToLeft:
@@ -918,14 +909,23 @@ public partial class MainPage : ContentPage
             case Globals.TurnCubeFrontToLeft:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToLeftFace_Text;
                 break;
+            case Globals.TurnCubeFrontToLeft2:
+                cTurnCubeText = CubeLang.TurnCubeFrontFaceToBackFaceUpStays_Text;
+                break;
             case Globals.TurnCubeFrontToUp:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToUpFace_Text;
+                break;
+            case Globals.TurnCubeFrontToUp2:
+                cTurnCubeText = CubeLang.TurnCubeFrontFaceToBackFaceRightStays_Text;
                 break;
             case Globals.TurnCubeFrontToDown:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToDownFace_Text;
                 break;
             case Globals.TurnCubeUpToRight:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToRightFace_Text;
+                break;
+            case Globals.TurnCubeUpToRight2:
+                cTurnCubeText = CubeLang.TurnCubeUpFaceToDownFaceFrontStays_Text;
                 break;
             case Globals.TurnCubeUpToLeft:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToLeftFace_Text;
@@ -1335,7 +1335,7 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
             }
         }
     }

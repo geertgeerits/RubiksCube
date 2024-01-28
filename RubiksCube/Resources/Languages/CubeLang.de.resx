@@ -442,4 +442,13 @@ Nicht erlaubt:</value>
   <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
     <value>Der Würfel kann nicht gelöst werden.</value>
   </data>
+  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
+    <value>Turn the entire cube so that the front goes to the back side, right side stays.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
+    <value>Turn the entire cube so that the front goes to the back side, top side stays.</value>
+  </data>
+  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
+    <value>Turn the entire cube so that the top goes to the bottom side, front side stays.</value>
+  </data>
 </root>

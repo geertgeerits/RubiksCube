@@ -78,7 +78,6 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Points="0,0 20,0 20,30 0,30"
-                Fill="Black"
                 IsVisible="False">
             </Polygon>
 
@@ -90,7 +89,6 @@
                 Fill="Red"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                     <TapGestureRecognizer Tapped="OnGetColorTapped" />
                 </Polygon.GestureRecognizers>
             </Polygon>
@@ -103,7 +101,6 @@
                 Fill="Blue"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                     <TapGestureRecognizer Tapped="OnGetColorTapped" />
                 </Polygon.GestureRecognizers>
             </Polygon>
@@ -116,7 +113,6 @@
                 Fill="Orange"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                     <TapGestureRecognizer Tapped="OnGetColorTapped" />
                 </Polygon.GestureRecognizers>
             </Polygon>
@@ -129,7 +125,6 @@
                 Fill="Green"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                     <TapGestureRecognizer Tapped="OnGetColorTapped" />
                 </Polygon.GestureRecognizers>
             </Polygon>
@@ -142,7 +137,6 @@
                 Fill="White"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                     <TapGestureRecognizer Tapped="OnGetColorTapped" />
                 </Polygon.GestureRecognizers>
             </Polygon>
@@ -155,7 +149,6 @@
                 Fill="Yellow"
                 IsVisible="False">
                 <Polygon.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="OnColorDragStarting" />
                     <TapGestureRecognizer Tapped="OnGetColorTapped" />
                 </Polygon.GestureRecognizers>
             </Polygon>
@@ -342,7 +335,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="88,0">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -352,7 +344,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="142,11">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -362,7 +353,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="197,22">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -372,7 +362,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="45,22">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -382,7 +371,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="99,33">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -392,7 +380,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="153,44">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -402,7 +389,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="2,45">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -412,7 +398,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="56,56">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -422,7 +407,6 @@
                         Style="{StaticResource polygonStyleCubeUp}"
                         AbsoluteLayout.LayoutBounds="110,66">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -432,7 +416,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="0,69">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -442,7 +425,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="53,79">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -452,7 +434,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="106,89">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -462,7 +443,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                          AbsoluteLayout.LayoutBounds="0,122">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -472,7 +452,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="53,132">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -482,7 +461,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="106,142">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -492,7 +470,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="0,175">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -502,7 +479,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="53,185">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -512,7 +488,6 @@
                         Style="{StaticResource polygonStyleCubeFront}"
                         AbsoluteLayout.LayoutBounds="106,195">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -522,7 +497,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="160,69">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -532,7 +506,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="204,47">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -542,7 +515,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="248,25">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -552,7 +524,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="160,122">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -562,7 +533,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="204,100">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -572,7 +542,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="248,78">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -582,7 +551,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="160,175">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -592,7 +560,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="204,153">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -602,7 +569,6 @@
                         Style="{StaticResource polygonStyleCubeRight}"
                         AbsoluteLayout.LayoutBounds="248,131">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -735,7 +701,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="88,0">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -745,7 +710,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="44,22">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -755,7 +719,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="0,44">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -765,7 +728,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="88,54">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -775,7 +737,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="44,76">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -785,7 +746,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="0,98">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -795,7 +755,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="88,108">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -805,7 +764,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="44,130">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -815,7 +773,6 @@
                         Style="{StaticResource polygonStyleCubeLeft}"
                         AbsoluteLayout.LayoutBounds="0,152">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -825,7 +782,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="240,22">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -835,7 +791,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="186,11">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -845,7 +800,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="132,0">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -855,7 +809,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="240,76">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -865,7 +818,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="186,65">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -875,7 +827,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="132,54">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -885,7 +836,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="240,129">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -895,7 +845,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="186,118">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -905,7 +854,6 @@
                         Style="{StaticResource polygonStyleCubeBack}"
                         AbsoluteLayout.LayoutBounds="132,107">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -915,7 +863,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="2,206">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -925,7 +872,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="57,218">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -935,7 +881,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="114,229">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -945,7 +890,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="46,184">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -955,7 +899,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="102,195">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -965,7 +908,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="158,206">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -975,7 +917,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="91,161">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -985,7 +926,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="146,172">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>
@@ -995,7 +935,6 @@
                         Style="{StaticResource polygonStyleCubeDown}"
                         AbsoluteLayout.LayoutBounds="201,183">
                         <Polygon.GestureRecognizers>
-                            <DropGestureRecognizer Drop="OnColorDrop" />
                             <TapGestureRecognizer Tapped="OnSetColorTapped" />
                         </Polygon.GestureRecognizers>
                     </Polygon>

@@ -39,9 +39,12 @@
             // Test the cube turns
             await MakeTurnAsync(Globals.TurnCubeFrontToRight);
             await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft2);
             await MakeTurnAsync(Globals.TurnCubeFrontToUp);
+            await MakeTurnAsync(Globals.TurnCubeFrontToUp2);
             await MakeTurnAsync(Globals.TurnCubeFrontToDown);
             await MakeTurnAsync(Globals.TurnCubeUpToRight);
+            await MakeTurnAsync(Globals.TurnCubeUpToRight2);
             await MakeTurnAsync(Globals.TurnCubeUpToLeft);
 
             return true;
