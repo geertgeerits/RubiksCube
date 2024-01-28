@@ -111,10 +111,17 @@ public partial class MainPage : ContentPage
     private void OnColorDragStarting(object sender, DragStartingEventArgs e)
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
-        plgCubeColorSelect.Fill = polygon.Fill;        
+        plgCubeColorSelect.Fill = polygon.Fill;
     }
 
-    // Drop the selected color on the cube and fill the cube with the color of the tempory polygon
+    // Select a color by tapping on a cube and put it in a tempory polygon
+    private void OnGetColorTapped(object sender, TappedEventArgs args)
+    {
+        Polygon polygon = (sender) as Polygon;
+        plgCubeColorSelect.Fill = polygon.Fill;
+    }
+
+    // Drop the selected color on the cube and fill the cube with the color from the tempory polygon
     private void OnColorDrop(object sender, DropEventArgs e)
     {
         Polygon polygon = (sender as Element).Parent as Polygon;
@@ -123,7 +130,14 @@ public partial class MainPage : ContentPage
         plgCubeColorSelect.Fill = Color.FromArgb("#000000");
         SetCubeColorsInArrays();
     }
-    
+
+    // Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
+    private void OnSetColorTapped(object sender, TappedEventArgs args)
+    {
+        Polygon polygon = (sender) as Polygon;
+        polygon.Fill = plgCubeColorSelect.Fill;
+    }
+
     // Drag and drop colors on the cube
     private void OnButtonSetColorsCubeClicked(object sender, EventArgs e)
     {
