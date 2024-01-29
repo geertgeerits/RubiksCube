@@ -238,17 +238,17 @@ public partial class MainPage : ContentPage
         stopwatch.Stop();
         var elapsedMs = stopwatch.ElapsedMilliseconds;
 
-        // Display the number of turns and the elapsed time in milliseconds
-        int nTotalTurns = Globals.lCubeTurns.Count;
-        await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
-
         if (bSolved)
         {
+            // Display the number of turns and the elapsed time in milliseconds
+            int nTotalTurns = Globals.lCubeTurns.Count;
+            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+
             // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
             CleanDoublesListCubeTurns();
             
-            //nTotalTurns = Globals.lCubeTurns.Count;
-            //await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+            nTotalTurns = Globals.lCubeTurns.Count;
+            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
             // Make the turns of the cube
             int nTurns = -1;
