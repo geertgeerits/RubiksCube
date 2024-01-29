@@ -5,8 +5,6 @@
         // Save the cube
         public bool CubeDataSave()
         {
-            //SetCubeColorsInArrays();
-
             string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
 
             if (File.Exists(cFileName))
@@ -78,7 +76,39 @@
                 return false;
             }
 
-            //SetCubeColorsFromArrays();
+            return true;
+        }
+        
+        // Save the cube turns
+        public bool CubeTurnsSave(string cFile)
+        {
+            string cFileName = System.IO.Path.Combine(FileSystem.AppDataDirectory, cFile);
+
+            if (File.Exists(cFileName))
+            {
+                File.Delete(cFileName);
+            }
+
+            try
+            {
+                using StreamWriter sw = new(cFileName, false);
+
+                foreach (string cItem in Globals.lCubeTurns)
+                {
+                    sw.WriteLine(cItem);
+                }
+
+                // Close the StreamWriter object
+                sw.Close();
+            }
+            catch (Exception ex)
+            {
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                return false;
+            }
+
+            _ = Application.Current.MainPage.DisplayAlert("CubeTurnsSave", cFileName, CubeLang.ButtonClose_Text);
+
             return true;
         }
     }
