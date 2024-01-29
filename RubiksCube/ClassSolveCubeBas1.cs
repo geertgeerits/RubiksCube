@@ -15,6 +15,7 @@
             int O, P, Q, R, S, V, X, Y, Z;
             string cB, cO, cP, cQ, cR, cV, cX, cY, cZ;
             int nLoopTimes = 0;
+            int nLoopTimesMax = 400;
 
         // 500
         // Top layer
@@ -22,7 +23,7 @@
         // 510
         Line510:
             nLoopTimes++;
-            if (nLoopTimes > 200)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }
@@ -189,7 +190,7 @@
         // 710
         Line710:
             nLoopTimes++;
-            if (nLoopTimes > 400)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }
@@ -377,7 +378,7 @@
         // 1010
         Line1010:
             nLoopTimes++;
-            if (nLoopTimes > 400)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }
@@ -683,7 +684,7 @@
         //1515
         Line1515:
             nLoopTimes++;
-            if (nLoopTimes > 400)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }
@@ -864,7 +865,7 @@
         //1610
         Line1610:
             nLoopTimes++;
-            if (nLoopTimes > 400)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }
@@ -1019,7 +1020,7 @@
         //1710
         Line1710:
             nLoopTimes++;
-            if (nLoopTimes > 400)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }
@@ -1100,7 +1101,7 @@
         //1810
         Line1810:
             nLoopTimes++;
-            if (nLoopTimes > 400)
+            if (nLoopTimes > nLoopTimesMax)
             {
                 return false;
             }

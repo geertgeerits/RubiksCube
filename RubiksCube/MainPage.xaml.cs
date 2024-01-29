@@ -244,7 +244,7 @@ public partial class MainPage : ContentPage
 
         if (bSolved)
         {
-            // Clean the list with the cube turns by replacing the double turns with a half turn
+            // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
             CleanDoublesListCubeTurns();
             
             //nTotalTurns = Globals.lCubeTurns.Count;
@@ -288,7 +288,7 @@ public partial class MainPage : ContentPage
         imgbtnSaveCube.IsEnabled = true;
     }
 
-    // Clean the list with the cube turns by replacing the double turns with a half turn
+    // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
     private static void CleanDoublesListCubeTurns()
     {
         ClassSaveRestoreCube classSaveRestoreCube = new();
