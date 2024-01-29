@@ -207,7 +207,7 @@ Pour les autres côtés, vous devez toujours « imaginer » que vous êtes dir
     <value>Enregistrez le cube actuel.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Transférez les couleurs du cube pêle-mêle vers ce cube par glisser-déposer. Appuyez à nouveau sur ce bouton pour quitter cette section.</value>
+    <value>Transférez les couleurs du cube pêle-mêle vers ce cube. Sélectionnez une couleur dans la barre de couleurs ci-dessus, puis appuyez sur les morceaux du cube pour les modifier. Appuyez à nouveau sur ce bouton pour quitter cette section.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Codes couleurs hexadécimaux:
@@ -335,7 +335,7 @@ Interdit:</value>
     <value>Enregistrez le cube</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Bouton bascule: faites glisser les couleurs sur le cube</value>
+    <value>Bouton bascule: définissez les couleurs sur le cube</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Tournez la face arrière d'un demi-tour.</value>
@@ -450,5 +450,11 @@ Interdit:</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
     <value>Tournez l'ensemble du cube de manière à ce que le haut aille vers le bas, la face avant reste à l'avant.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Temps en millisecondes:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Nombre de tours:</value>
   </data>
 </root>

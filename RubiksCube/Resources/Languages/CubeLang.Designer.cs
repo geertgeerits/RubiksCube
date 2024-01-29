@@ -324,7 +324,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transfer the colors from the jumbled cube to this cube using drag and drop. Press this button again to exit this section..
+        ///   Looks up a localized string similar to Transfer the colors from the jumbled cube to this cube. Select a color from the color bar above and then tap the pieces of the cube to change them. Press this button again to leave this section..
         /// </summary>
         internal static string HelpSetColorsCube_Text {
             get {
@@ -523,6 +523,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time in milliseconds:.
+        /// </summary>
+        internal static string ResultTime_Text {
+            get {
+                return ResourceManager.GetString("ResultTime_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of turns:.
+        /// </summary>
+        internal static string ResultTurns_Text {
+            get {
+                return ResourceManager.GetString("ResultTurns_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rubik&apos;s Cube.
         /// </summary>
         internal static string RubiksCube_Text {
@@ -688,7 +706,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toggle button: Drag the colors onto the cube.
+        ///   Looks up a localized string similar to Toggle button: Set the colors on the cube.
         /// </summary>
         internal static string ToolTipSetColorsCube_Text {
             get {

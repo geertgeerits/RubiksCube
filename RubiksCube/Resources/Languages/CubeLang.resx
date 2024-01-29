@@ -207,7 +207,7 @@ For the other sides you always have to 'imagine' that you are directly in front 
     <value>Save the current cube.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Transfer the colors from the jumbled cube to this cube using drag and drop. Press this button again to exit this section.</value>
+    <value>Transfer the colors from the jumbled cube to this cube. Select a color from the color bar above and then tap the pieces of the cube to change them. Press this button again to leave this section.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimal color codes:
@@ -335,7 +335,7 @@ Not allowed:</value>
     <value>Save the cube</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Toggle button: Drag the colors onto the cube</value>
+    <value>Toggle button: Set the colors on the cube</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Turn the back side half a turn.</value>
@@ -450,5 +450,11 @@ Not allowed:</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
     <value>Turn the entire cube so that the top goes to the bottom, the front side remains at the front.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Time in milliseconds:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Number of turns:</value>
   </data>
 </root>

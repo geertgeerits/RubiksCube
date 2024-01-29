@@ -207,7 +207,7 @@ Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draa
     <value>Sla de huidige kubus op.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Breng de kleuren van de door elkaar gegooide kubus over naar deze kubus door middel van slepen en neerzetten. Druk nogmaals op deze knop om dit gedeelte te verlaten.</value>
+    <value>Breng de kleuren van de door elkaar gegooide kubus over naar deze kubus. Selecteer een kleur uit de kleurenbalk hierboven en tik vervolgens op de stukjes van de kubus om ze te veranderen. Druk nogmaals op deze knop om dit gedeelte te verlaten.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimale kleurcodes:
@@ -335,7 +335,7 @@ Niet toegestaan:</value>
     <value>Bewaar de kubus</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Wisselknop: sleep de kleuren naar de kubus</value>
+    <value>Wisselknop: stel de kleuren op de kubus in</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Draai de achterkant een halve slag.</value>
@@ -450,5 +450,11 @@ Niet toegestaan:</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
     <value>Draai de hele kubus zo dat de bovenkant naar de onderkant gaat, de voorkant blijft vooraan.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Tijd in milliseconden:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Aantal draaibewegingen:</value>
   </data>
 </root>

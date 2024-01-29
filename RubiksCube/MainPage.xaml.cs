@@ -240,10 +240,16 @@ public partial class MainPage : ContentPage
 
         // Display the number of turns and the elapsed time in milliseconds
         int nTotalTurns = Globals.lCubeTurns.Count;
-        await DisplayAlert("", $"Turns: {nTotalTurns}\nTime in milliseconds: {elapsedMs}", CubeLang.ButtonClose_Text);
+        await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
         if (bSolved)
         {
+            // Clean the list with the cube turns by replacing the double turns with a half turn
+            //CleanDoublesListCubeTurns();
+            
+            //nTotalTurns = Globals.lCubeTurns.Count;
+            //await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+
             // Make the turns of the cube
             int nTurns = -1;
 
@@ -280,6 +286,27 @@ public partial class MainPage : ContentPage
         imgbtnSetColorsCube.IsEnabled = true;
         imgbtnOpenCube.IsEnabled = true;
         imgbtnSaveCube.IsEnabled = true;
+    }
+
+    // Clean the list with the cube turns by replacing the double turns with a half turn
+    private static void CleanDoublesListCubeTurns()
+    {
+        for (int i = 0; i < Globals.lCubeTurns.Count - 1; i++)
+        {
+            if (Globals.lCubeTurns[i] == Globals.lCubeTurns[i + 1])
+            {
+                if (Globals.lCubeTurns[i].EndsWith("CCW"))
+                {
+                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i].Substring(0, Globals.lCubeTurns[i].Length - 3) + "2";
+                }
+                else if (Globals.lCubeTurns[i].EndsWith("CW"))
+                {
+                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i].Substring(0, Globals.lCubeTurns[i].Length - 2) + "2";
+                }
+
+                Globals.lCubeTurns.RemoveAt(i + 1);
+            }
+        }
     }
 
     // Check the number of colors of the cube

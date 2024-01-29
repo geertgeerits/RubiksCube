@@ -207,7 +207,7 @@ Para los otros lados, siempre tiene que 'imaginar' que está directamente frente
     <value>Guarde el cubo actual.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Transfiera los colores del cubo desordenado a este cubo arrastrando y soltando. Presione este botón nuevamente para salir de esta sección.</value>
+    <value>Transfiere los colores del cubo desordenado a este cubo. Seleccione un color de la barra de colores de arriba y luego toque las piezas del cubo para cambiarlas. Presione este botón nuevamente para salir de esta sección.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Códigos de color hexadecimales:
@@ -335,7 +335,7 @@ No permitido:</value>
     <value>Guarda el cubo</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Botón de alternar: arrastre los colores al cubo</value>
+    <value>Botón de alternancia: establece los colores en el cubo</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Gire la parte de atrás media vuelta.</value>
@@ -450,5 +450,11 @@ No permitido:</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
     <value>Gire todo el cubo de modo que la parte superior vaya hacia abajo, la parte frontal permanezca en el frente.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Tiempo en milisegundos:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Número de vueltas:</value>
   </data>
 </root>

@@ -207,7 +207,7 @@ Para os outros lados, você sempre deve 'imaginar' que está diretamente na fren
     <value>Salve o cubo atual.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Transfira as cores do cubo confuso para este cubo arrastando e soltando. Pressione este botão novamente para sair desta seção.</value>
+    <value>Transfira as cores do cubo misturado para este cubo. Selecione uma cor na barra de cores acima e toque nas peças do cubo para alterá-las. Pressione este botão novamente para sair desta seção.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Códigos de cores hexadecimais:
@@ -335,7 +335,7 @@ Não permitido:</value>
     <value>Salve o cubo</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Botão de alternância: Arraste as cores para o cubo</value>
+    <value>Botão de alternância: defina as cores do cubo</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Vire a parte de trás meia volta.</value>
@@ -450,5 +450,11 @@ Não permitido:</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
     <value>Vire o cubo inteiro de forma que a parte superior vá para a parte inferior, a parte frontal permaneça na frente.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Tempo em milissegundos:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Número de voltas:</value>
   </data>
 </root>

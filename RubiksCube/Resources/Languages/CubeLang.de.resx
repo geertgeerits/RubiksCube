@@ -207,7 +207,7 @@ Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor de
     <value>Speichern Sie den aktuellen Cube.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Übertragen Sie die Farben vom durcheinandergewürfelten Würfel per Drag &amp; Drop auf diesen Würfel. Drücken Sie diese Taste erneut, um diesen Abschnitt zu verlassen.</value>
+    <value>Übertragen Sie die Farben vom durcheinandergebrachten Würfel auf diesen Würfel. Wählen Sie in der Farbleiste oben eine Farbe aus und tippen Sie dann auf die Würfelteile, um sie zu ändern. Drücken Sie diese Taste erneut, um diesen Abschnitt zu verlassen.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadezimale Farbcodes:
@@ -335,7 +335,7 @@ Nicht erlaubt:</value>
     <value>Speichern Sie den Würfel</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Umschaltknopf: Ziehen Sie die Farben auf den Würfel</value>
+    <value>Umschalttaste: Legen Sie die Farben für den Würfel fest</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
     <value>Drehen Sie die Rückseite um eine halbe Umdrehung.</value>
@@ -450,5 +450,11 @@ Nicht erlaubt:</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Oberseite nach unten geht, die Vorderseite vorne bleibt.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Zeit in Millisekunden:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Anzahl der Züge:</value>
   </data>
 </root>
