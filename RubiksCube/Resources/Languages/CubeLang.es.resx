@@ -356,22 +356,22 @@ No permitido:</value>
     <value>Gire el lado inferior un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
   <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Gire todo el cubo para que el frente vaya hacia el lado inferior.</value>
+    <value>Gira todo el cubo de modo que el frente vaya hacia abajo, el lado derecho quede a la derecha.</value>
   </data>
   <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Gire todo el cubo para que el frente vaya hacia el lado izquierdo.</value>
+    <value>Gira todo el cubo de modo que el frente vaya hacia el lado izquierdo y el lado superior quede arriba.</value>
   </data>
   <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Gire todo el cubo para que el frente vaya hacia el lado derecho.</value>
+    <value>Gira todo el cubo de modo que el frente vaya hacia el lado derecho y la parte superior quede arriba.</value>
   </data>
   <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Gire todo el cubo para que el frente vaya hacia el lado superior.</value>
+    <value>Gira todo el cubo de modo que el frente vaya hacia arriba y el lado derecho quede a la derecha.</value>
   </data>
   <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Gire todo el cubo para que la parte superior vaya hacia el lado izquierdo.</value>
+    <value>Gira todo el cubo de modo que la parte superior vaya hacia el lado izquierdo y la parte frontal quede al frente.</value>
   </data>
   <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Gire todo el cubo para que la parte superior vaya hacia el lado derecho.</value>
+    <value>Gira todo el cubo de modo que la parte superior quede hacia el lado derecho y la parte frontal quede al frente.</value>
   </data>
   <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
     <value>Gire la capa frontal-media un cuarto de vuelta hacia el lado derecho (-).</value>
@@ -443,12 +443,12 @@ No permitido:</value>
     <value>El cubo no se puede resolver.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the back side, right side stays.</value>
+    <value>Gira todo el cubo de modo que el frente vaya hacia atrás, el lado derecho quede a la derecha.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the back side, top side stays.</value>
+    <value>Gira todo el cubo de modo que el frente vaya hacia atrás y la parte superior quede arriba.</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the top goes to the bottom side, front side stays.</value>
+    <value>Gire todo el cubo de modo que la parte superior vaya hacia abajo, la parte frontal permanezca en el frente.</value>
   </data>
 </root>

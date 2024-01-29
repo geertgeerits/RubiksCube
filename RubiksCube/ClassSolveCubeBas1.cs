@@ -666,8 +666,9 @@
 
         //1480
         Line1480:
-            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
-            await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            //await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            //await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
+            await MakeTurnAsync(Globals.TurnCubeFrontToLeft2);
             goto Line1010;
 
         //1500
@@ -676,8 +677,9 @@
         //1510
         Line1510:
             //1512
-            await MakeTurnAsync(Globals.TurnCubeUpToRight);
-            await MakeTurnAsync(Globals.TurnCubeUpToRight);
+            //await MakeTurnAsync(Globals.TurnCubeUpToRight);
+            //await MakeTurnAsync(Globals.TurnCubeUpToRight);
+            await MakeTurnAsync(Globals.TurnCubeUpToRight2);
         //1515
         Line1515:
             nLoopTimes++;

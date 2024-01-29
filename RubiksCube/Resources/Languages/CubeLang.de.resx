@@ -356,22 +356,22 @@ Nicht erlaubt:</value>
     <value>Drehen Sie die Unterseite um eine Vierteldrehung 'im Uhrzeigersinn' (+).</value>
   </data>
   <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Unterseite geht.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach unten zeigt, die rechte Seite bleibt rechts.</value>
   </data>
   <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur linken Seite geht.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach links zeigt, die Oberseite bleibt oben.</value>
   </data>
   <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite auf die rechte Seite geht.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach rechts zeigt, die Oberseite oben bleibt.</value>
   </data>
   <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite zur Oberseite geht.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach oben zeigt, die rechte Seite bleibt rechts.</value>
   </data>
   <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite zur linken Seite geht.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite nach links geht, die Vorderseite bleibt vorne.</value>
   </data>
   <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite auf die rechte Seite geht.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite auf die rechte Seite geht, die Vorderseite bleibt vorne.</value>
   </data>
   <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
     <value>Drehen Sie die vordere mittlere Schicht um eine Vierteldrehung auf die rechte Seite (-).</value>
@@ -443,12 +443,12 @@ Nicht erlaubt:</value>
     <value>Der Würfel kann nicht gelöst werden.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the back side, right side stays.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach hinten geht, die rechte Seite bleibt rechts.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the back side, top side stays.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach hinten geht, die Oberseite oben bleibt.</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the top goes to the bottom side, front side stays.</value>
+    <value>Drehen Sie den gesamten Würfel so, dass die Oberseite nach unten geht, die Vorderseite vorne bleibt.</value>
   </data>
 </root>

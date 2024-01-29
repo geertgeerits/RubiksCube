@@ -724,7 +724,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the back side, right side stays..
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the back, the right side remains at the right..
         /// </summary>
         internal static string TurnCubeFrontFaceToBackFaceRightStays_Text {
             get {
@@ -733,7 +733,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the back side, top side stays..
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the back, the top side remains at the top..
         /// </summary>
         internal static string TurnCubeFrontFaceToBackFaceUpStays_Text {
             get {
@@ -742,7 +742,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the bottom side..
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the bottom, the right side remains at the right..
         /// </summary>
         internal static string TurnCubeFrontFaceToDownFace_Text {
             get {
@@ -751,7 +751,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the left side..
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the left side, the top side remains at the top..
         /// </summary>
         internal static string TurnCubeFrontFaceToLeftFace_Text {
             get {
@@ -760,7 +760,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the right side..
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the right side, the top side remains at the top..
         /// </summary>
         internal static string TurnCubeFrontFaceToRightFace_Text {
             get {
@@ -769,7 +769,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the top side..
+        ///   Looks up a localized string similar to Turn the entire cube so that the front goes to the top, the right side remains at the right..
         /// </summary>
         internal static string TurnCubeFrontFaceToUpFace_Text {
             get {
@@ -778,7 +778,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the bottom side, front side stays..
+        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the bottom, the front side remains at the front..
         /// </summary>
         internal static string TurnCubeUpFaceToDownFaceFrontStays_Text {
             get {
@@ -787,7 +787,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the left side..
+        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the left side, the front side remains at the front..
         /// </summary>
         internal static string TurnCubeUpFaceToLeftFace_Text {
             get {
@@ -796,7 +796,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the right side..
+        ///   Looks up a localized string similar to Turn the entire cube so that the top goes to the right side, the front side remains at the front..
         /// </summary>
         internal static string TurnCubeUpFaceToRightFace_Text {
             get {
