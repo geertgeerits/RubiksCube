@@ -3,7 +3,7 @@
     internal class ClassSolveCube
     {
         // Solve the cube.
-        public async Task<bool> SolveTheCubeAsync()
+        public static async Task<bool> SolveTheCubeAsync()
         {
             // Solve the edges of the top layer - Chapter 4, page 14-3
             await SolveEdgesTopLayerAsync();
@@ -78,7 +78,7 @@
         }
 
         // Solve the edges of the top layer - Chapter 4, page 14-3
-        private async Task SolveEdgesTopLayerAsync()
+        private static async Task SolveEdgesTopLayerAsync()
         {
             for (int nTimes = 1; nTimes < 11; nTimes++)
             {
@@ -105,14 +105,13 @@
         }
 
         // Make a turn of the cube/face/side
-        private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        private static async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
             // Add the turn to the list
             Globals.lCubeTurns.Add(cTurnFaceAndDirection);
 
             // Turn the cube/face/side
-            ClassCubeTurns classCubeTurns = new();
-            await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         }
     }
 }

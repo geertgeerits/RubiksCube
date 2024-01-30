@@ -6,7 +6,7 @@
         //       and change 'return false' to 'return true'
         
         // Solve the cube.  From Basic-80 to C# - 1984-06-01
-        public async Task<bool> SolveTheCubeBasAsync()
+        public static async Task<bool> SolveTheCubeBasAsync()
         {
             // Check if the cube is already solved
             if (ClassCheckColorsCube.CheckIfSolved())
@@ -672,7 +672,7 @@
         Line1515:
             cV = Globals.aPieces[4];
             cX = Globals.aPieces[13];
-            cY = Globals.aPieces[22];
+            //cY = Globals.aPieces[22];
             cZ = Globals.aPieces[31];
             //1520
             O = 0;
@@ -1186,14 +1186,13 @@
         }
 
         // Make a turn of the cube/face/side
-        private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        private static async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
             // Add the turn to the list
             Globals.lCubeTurns.Add(cTurnFaceAndDirection);
 
             // Turn the cube/face/side
-            ClassCubeTurns classCubeTurns = new();
-            await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         }
     }
 }

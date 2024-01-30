@@ -3,7 +3,7 @@
     internal class ClassSaveRestoreCube
     {
         // Save the cube
-        public bool CubeDataSave()
+        public static bool CubeDataSave()
         {
             string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
 
@@ -41,7 +41,7 @@
         }
 
         // Open, restore the cube
-        public bool CubeDataOpen()
+        public static bool CubeDataOpen()
         {
             string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
 
@@ -80,7 +80,7 @@
         }
         
         // Save the cube turns
-        public bool CubeTurnsSave(string cFile)
+        public static bool CubeTurnsSave(string cFile)
         {
             string cFileName = System.IO.Path.Combine(FileSystem.AppDataDirectory, cFile);
 
@@ -107,7 +107,7 @@
                 return false;
             }
 #if DEBUG
-            _ = Application.Current.MainPage.DisplayAlert("CubeTurnsSave", cFileName, CubeLang.ButtonClose_Text);
+            //_ = Application.Current.MainPage.DisplayAlert("CubeTurnsSave", cFileName, CubeLang.ButtonClose_Text);
 #endif
             return true;
         }

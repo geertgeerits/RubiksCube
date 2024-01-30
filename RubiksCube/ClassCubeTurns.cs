@@ -3,7 +3,7 @@
     internal class ClassCubeTurns
     {
         // Turn the faces of the cube
-        public async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
+        public static async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
         {
             switch (cTurnFaceAndDirection)
             {
@@ -140,7 +140,7 @@
 
         // Turn the entire cube a quarter turn
         // Rotate the entire cube so that the front goes to the left face
-        private void TurnCubeFrontFaceToLeftFace()
+        private static void TurnCubeFrontFaceToLeftFace()
         {
             TurnUpFaceTo("CW");
             TurnFrontHorMiddleTo("CW");
@@ -148,7 +148,7 @@
         }
 
         // Rotate the entire cube so that the front goes to the right face
-        private void TurnCubeFrontFaceToRightFace()
+        private static void TurnCubeFrontFaceToRightFace()
         {
             TurnUpFaceTo("CCW");
             TurnFrontHorMiddleTo("CCW");
@@ -156,7 +156,7 @@
         }
 
         // Rotate the entire cube so that the front goes to the upper face
-        private void TurnCubeFrontFaceToUpFace()
+        private static void TurnCubeFrontFaceToUpFace()
         {
             TurnRightFaceTo("CW");
             TurnUpVerMiddleTo("CW");
@@ -164,7 +164,7 @@
         }
 
         // Rotate the entire cube so that the front goes to the down face
-        private void TurnCubeFrontFaceToDownFace()
+        private static void TurnCubeFrontFaceToDownFace()
         {
             TurnRightFaceTo("CCW");
             TurnUpVerMiddleTo("CCW");
@@ -172,7 +172,7 @@
         }
 
         // Rotate the entire cube so that the upper face goes to the right face
-        private void TurnCubeUpFaceToRightFace()
+        private static void TurnCubeUpFaceToRightFace()
         {
             TurnFrontFaceTo("CW");
             TurnUpHorMiddleTo("CW");
@@ -180,7 +180,7 @@
         }
 
         // Rotate the entire cube so that the upper face goes to the left face
-        private void TurnCubeUpFaceToLeftFace()
+        private static void TurnCubeUpFaceToLeftFace()
         {
             TurnFrontFaceTo("CCW");
             TurnUpHorMiddleTo("CCW");

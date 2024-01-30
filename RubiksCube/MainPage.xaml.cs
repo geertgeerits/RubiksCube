@@ -229,18 +229,14 @@ public partial class MainPage : ContentPage
         else
         {
             // Test the turns of the cube
-            //ClassTestCubeTurns classTestCubeTurns = new();
-            //bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
+            //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
             // Solve the cube from Basic-80 to C#
-            ClassSolveCubeBas1 classSolveCubeBas1 = new();
-            bSolved = await classSolveCubeBas1.SolveTheCubeBasAsync();
-            //ClassSolveCubeBas2 classSolveCubeBas2 = new();
-            //bSolved = await classSolveCubeBas2.SolveTheCubeBasAsync();
+            bSolved = await ClassSolveCubeBas1.SolveTheCubeBasAsync();
+            //bSolved = await ClassSolveCubeBas2.SolveTheCubeBasAsync();
 
             // Solve the cube in C#
-            //ClassSolveCube classSolveCube = new();
-            //bSolved = await classSolveCube.SolveTheCubeAsync();
+            //bSolved = await ClassSolveCube.SolveTheCubeAsync();
         }
 
         // Restore the start colors of the cube from array aStartPieces[]
@@ -311,8 +307,7 @@ public partial class MainPage : ContentPage
     private static void CleanDoublesListCubeTurns()
     {
 #if DEBUG
-        ClassSaveRestoreCube classSaveRestoreCube = new();
-        _ = classSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
+        _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
 #endif
         for (int i = 0; i < Globals.lCubeTurns.Count - 1; i++)
         {
@@ -320,12 +315,12 @@ public partial class MainPage : ContentPage
             {
                 if (Globals.lCubeTurns[i].EndsWith("CCW"))
                 {
-                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i].Substring(0, Globals.lCubeTurns[i].Length - 3) + "2";
+                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^3] + "2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i].EndsWith("CW"))
                 {
-                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i].Substring(0, Globals.lCubeTurns[i].Length - 2) + "2";
+                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^2] + "2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i] == Globals.TurnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.TurnUpHorMiddleLeft)
@@ -362,7 +357,7 @@ public partial class MainPage : ContentPage
         }
 
 #if DEBUG
-        _ = classSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
+        _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
 #endif
     }
 
@@ -882,8 +877,7 @@ public partial class MainPage : ContentPage
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, false);
 
         // Turn the faces of the cube
-        ClassCubeTurns classCubeTurns = new();
-        await classCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+        await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         
         SetCubeColorsFromArrays();
     }
@@ -1124,7 +1118,7 @@ public partial class MainPage : ContentPage
                 cTurnCubeText = cTurnCubeText.Substring(0, cTurnCubeText.Length - 5);
             }
 
-            ConvertTextToSpeech(cTurnCubeText);
+            _ = ConvertTextToSpeechAsync(cTurnCubeText);
         }
     }
 
@@ -1132,21 +1126,21 @@ public partial class MainPage : ContentPage
     private void OnButtonSaveCubeClicked(object sender, EventArgs e)
     {
         SetCubeColorsInArrays();
-
-        ClassSaveRestoreCube classSaveRestoreCube = new();
-        _ = classSaveRestoreCube.CubeDataSave();
-
-        return;
+        _ = ClassSaveRestoreCube.CubeDataSave();
     }
 
     // On clicked event: Open, restore the cube
     private void OnButtonOpenCubeClicked(object sender, EventArgs e)
     {
-        ClassSaveRestoreCube classSaveRestoreCube = new();
-        _ = classSaveRestoreCube.CubeDataOpen();
+        _ = ClassSaveRestoreCube.CubeDataOpen();
 
         SetCubeColorsFromArrays();
-        return;
+        Globals.lCubeTurns.Clear();
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            IsEnabledArrows(false);
+        }
     }
 
     // On clicked event: Reset the colors of the cube or restart the app
@@ -1489,8 +1483,8 @@ public partial class MainPage : ContentPage
     // If you do not wait long enough in the Task 'MakeTurnAsync()' with a Task.Delay(),
     // an error message will sometimes appear: 'The operation was canceled'.
     // This only occurs if the 'Explained by speech' setting is enabled.
-    // The error occurs in the method 'ConvertTextToSpeech()'.
-    private async void ConvertTextToSpeech(string cTurnCubeText)
+    // The error occurs in the method 'ConvertTextToSpeechAsync()'.
+    private async Task ConvertTextToSpeechAsync(string cTurnCubeText)
     {
         // Cancel the text to speech
         if (Globals.bTextToSpeechIsBusy)

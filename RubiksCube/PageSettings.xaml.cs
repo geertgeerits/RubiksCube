@@ -65,7 +65,7 @@ public partial class PageSettings : ContentPage
 
         // Workaround for !!!BUG!!! in iOS with the Slider right margin
 #if IOS
-        Slider slider = new Slider
+        Slider slider = new()
         {
             Margin = new Thickness(0, 0, 25, 0)
         };
