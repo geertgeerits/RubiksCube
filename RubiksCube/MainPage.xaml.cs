@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-29 (YYYY-MM-DD)
+// Date ........: 2024-01-30 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -21,6 +21,7 @@ public partial class MainPage : ContentPage
     private IEnumerable<Locale> locales;
     private bool bColorDrop;
     private bool bSolvingCube;
+    private bool bSolved;
     private bool bArrowButtonPressed;
 
     public MainPage()
@@ -167,7 +168,7 @@ public partial class MainPage : ContentPage
             ToolTipProperties.SetText(imgbtnTurnUpVerMiddleToBackFace, CubeLang.TurnFrontMiddleToUpFace_Text);
             ToolTipProperties.SetText(imgbtnTurnUpHorMiddleToLeftFace, CubeLang.TurnRightMiddleToUpFace_Text);
 
-            IsEnabledArrows(true);
+            IsEnabledArrows(false);
             IsVisibleCubeColors(false);
             grdCubeColorSelect.BackgroundColor = Color.FromArgb("#00000000");
 
@@ -181,6 +182,13 @@ public partial class MainPage : ContentPage
         // Check the number of colors of the cube
         if (!CheckNumberColorsCube())
         {
+            return;
+        }
+
+        // Check if the cube is already solved
+        if (ClassCheckColorsCube.CheckIfSolved())
+        {
+            Globals.lCubeTurns.Clear();
             return;
         }
 
@@ -200,9 +208,6 @@ public partial class MainPage : ContentPage
         lblCubeInsideView.IsVisible = false;
         lblExplainTurnCube2.IsVisible = true;
 
-        // Reset the list with the cube turns
-        Globals.lCubeTurns.Clear();
-
         // Start the activity indicator
         activityIndicator.IsRunning = true;
         await Task.Delay(200);
@@ -214,19 +219,29 @@ public partial class MainPage : ContentPage
         SetCubeColorsInArrays();
         Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
 
-        // Test the turns of the cube
-        //ClassTestCubeTurns classTestCubeTurns = new();
-        //bool bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
+        // Solve the cube from the turns the user has made in reverse order
+        if (Globals.lCubeTurns.Count > 0)
+        {
+            Globals.lCubeTurns.Reverse();
+            bSolved = true;
+        }
+        // Solve the cube from the turns the program has made
+        else
+        {
+            // Test the turns of the cube
+            //ClassTestCubeTurns classTestCubeTurns = new();
+            //bSolved = await classTestCubeTurns.TestCubeTurnsAsync();
 
-        // Solve the cube from Basic-80 to C#
-        ClassSolveCubeBas1 classSolveCubeBas1 = new();
-        bool bSolved = await classSolveCubeBas1.SolveTheCubeBasAsync();
-        //ClassSolveCubeBas2 classSolveCubeBas2 = new();
-        //bool bSolved = await classSolveCubeBas2.SolveTheCubeBasAsync();
+            // Solve the cube from Basic-80 to C#
+            ClassSolveCubeBas1 classSolveCubeBas1 = new();
+            bSolved = await classSolveCubeBas1.SolveTheCubeBasAsync();
+            //ClassSolveCubeBas2 classSolveCubeBas2 = new();
+            //bSolved = await classSolveCubeBas2.SolveTheCubeBasAsync();
 
-        // Solve the cube in C#
-        //ClassSolveCube classSolveCube = new();
-        //bool bSolved = await classSolveCube.SolveTheCubeAsync();
+            // Solve the cube in C#
+            //ClassSolveCube classSolveCube = new();
+            //bSolved = await classSolveCube.SolveTheCubeAsync();
+        }
 
         // Restore the start colors of the cube from array aStartPieces[]
         Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
@@ -242,8 +257,9 @@ public partial class MainPage : ContentPage
         {
             // Display the number of turns and the elapsed time in milliseconds
             int nTotalTurns = Globals.lCubeTurns.Count;
+#if DEBUG
             await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
-
+#endif
             // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
             CleanDoublesListCubeTurns();
             
@@ -263,6 +279,9 @@ public partial class MainPage : ContentPage
             lblNumberTurns.Text = $"{nTurns + 1}/{nTotalTurns}";
             await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
             lblNumberTurns.Text = "";
+
+            // Clear the list with the cube turns
+            Globals.lCubeTurns.Clear();
         }
 
         if (!bSolved)
@@ -291,9 +310,10 @@ public partial class MainPage : ContentPage
     // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
     private static void CleanDoublesListCubeTurns()
     {
+#if DEBUG
         ClassSaveRestoreCube classSaveRestoreCube = new();
         _ = classSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
-
+#endif
         for (int i = 0; i < Globals.lCubeTurns.Count - 1; i++)
         {
             if (Globals.lCubeTurns[i] == Globals.lCubeTurns[i + 1])
@@ -301,17 +321,49 @@ public partial class MainPage : ContentPage
                 if (Globals.lCubeTurns[i].EndsWith("CCW"))
                 {
                     Globals.lCubeTurns[i] = Globals.lCubeTurns[i].Substring(0, Globals.lCubeTurns[i].Length - 3) + "2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i].EndsWith("CW"))
                 {
                     Globals.lCubeTurns[i] = Globals.lCubeTurns[i].Substring(0, Globals.lCubeTurns[i].Length - 2) + "2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-
-                Globals.lCubeTurns.RemoveAt(i + 1);
+                else if (Globals.lCubeTurns[i] == Globals.TurnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.TurnUpHorMiddleLeft)
+                {
+                    Globals.lCubeTurns[i] = "TurnUpHorMiddle2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                }
+                else if (Globals.lCubeTurns[i] == Globals.TurnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.TurnUpVerMiddleFront)
+                {
+                    Globals.lCubeTurns[i] = "TurnUpVerMiddle2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                }
+                else if (Globals.lCubeTurns[i] == Globals.TurnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.TurnFrontHorMiddleRight)
+                {
+                    Globals.lCubeTurns[i] = "TurnFrontHorMiddle2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                }
+                else if (Globals.lCubeTurns[i] == Globals.TurnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.TurnCubeFrontToLeft)
+                {
+                    Globals.lCubeTurns[i] = "TurnCubeFrontToLeft2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                }
+                else if (Globals.lCubeTurns[i] == Globals.TurnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.TurnCubeFrontToDown)
+                {
+                    Globals.lCubeTurns[i] = "TurnCubeFrontToUp2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                }
+                else if (Globals.lCubeTurns[i] == Globals.TurnCubeUpToRight || Globals.lCubeTurns[i] == Globals.TurnCubeUpToLeft)
+                {
+                    Globals.lCubeTurns[i] = "TurnCubeUpToRight2";
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                }
             }
         }
 
+#if DEBUG
         _ = classSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
+#endif
     }
 
     // Check the number of colors of the cube
@@ -329,6 +381,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnFrontCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToRight_Text);
@@ -351,6 +408,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnUpHorMiddleLeft);
+        }
+
         ExplainTurnCube(CubeLang.TurnUpMiddleToRightFace_Text);
         ClassCubeTurns.TurnUpHorMiddleTo("CW");
         SetCubeColorsFromArrays();
@@ -365,6 +427,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnBackCW);
+        }
+
         ExplainTurnCube(CubeLang.TurnBackFaceToLeft_Text);
         ClassCubeTurns.TurnBackFaceTo("CCW");
         SetCubeColorsFromArrays();
@@ -377,6 +444,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnLeftCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToRight_Text);
@@ -399,6 +471,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnUpVerMiddleBack);
+        }
+
         ExplainTurnCube(CubeLang.TurnUpMiddleToFrontFace_Text);
         ClassCubeTurns.TurnUpVerMiddleTo("CCW");
         SetCubeColorsFromArrays();
@@ -413,6 +490,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnRightCW);
+        }
+
         ExplainTurnCube(CubeLang.TurnRightFaceToLeft_Text);
         ClassCubeTurns.TurnRightFaceTo("CCW");
         SetCubeColorsFromArrays();
@@ -425,6 +507,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnUpCW);
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToLeft_Text);
@@ -447,6 +534,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnFrontHorMiddleLeft);
+        }
+
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightFace_Text);
         ClassCubeTurns.TurnFrontHorMiddleTo("CCW");
         SetCubeColorsFromArrays();
@@ -461,6 +553,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnDownCCW);
+        }
+
         ExplainTurnCube(CubeLang.TurnDownFaceToRight_Text);
         ClassCubeTurns.TurnDownFaceTo("CW");
         SetCubeColorsFromArrays();
@@ -473,6 +570,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnUpCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToRight_Text);
@@ -495,6 +597,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnFrontHorMiddleRight);
+        }
+
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontFace_Text);
         ClassCubeTurns.TurnFrontHorMiddleTo("CW");
         SetCubeColorsFromArrays();
@@ -509,6 +616,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnDownCW);
+        }
+
         ExplainTurnCube(CubeLang.TurnDownFaceToLeft_Text);
         ClassCubeTurns.TurnDownFaceTo("CCW");
         SetCubeColorsFromArrays();
@@ -521,6 +633,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnLeftCW);
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToLeft_Text);
@@ -543,6 +660,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnUpVerMiddleFront);
+        }
+
         ExplainTurnCube(CubeLang.TurnFrontMiddleToUpFace_Text);
         ClassCubeTurns.TurnUpVerMiddleTo("CW");
         SetCubeColorsFromArrays();
@@ -556,7 +678,12 @@ public partial class MainPage : ContentPage
             bArrowButtonPressed = true;
             return;
         }
-        
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnRightCCW);
+        }
+
         ExplainTurnCube(CubeLang.TurnRightFaceToRight_Text);
         ClassCubeTurns.TurnRightFaceTo("CW");
         SetCubeColorsFromArrays();
@@ -569,6 +696,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnFrontCW);
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToLeft_Text);
@@ -591,6 +723,11 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnUpHorMiddleRight);
+        }
+
         ExplainTurnCube(CubeLang.TurnRightMiddleToUpFace_Text);
         ClassCubeTurns.TurnUpHorMiddleTo("CCW");
         SetCubeColorsFromArrays();
@@ -603,6 +740,11 @@ public partial class MainPage : ContentPage
         {
             bArrowButtonPressed = true;
             return;
+        }
+
+        if (!bSolvingCube && !bColorDrop)
+        {
+            Globals.lCubeTurns.Add(Globals.TurnBackCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToRight_Text);
@@ -724,8 +866,9 @@ public partial class MainPage : ContentPage
         // Start a program loop and wait for the arrow button to be pressed
         while (true)
         {
-            // Wait for 100 milliseconds on the button click event handler
-            await Task.Delay(100);
+            // Wait for 400 milliseconds on the button click event handler
+
+            await Task.Delay(400);
 
             // Check if the button has been clicked and stop the loop if clicked
             if (bArrowButtonPressed)
@@ -1009,6 +1152,8 @@ public partial class MainPage : ContentPage
     // On clicked event: Reset the colors of the cube or restart the app
     private void OnBtnResetClicked(object sender, EventArgs e)
     {
+        Globals.lCubeTurns.Clear();
+
         if (bSolvingCube)
         {
             // Restart the application to get out of the loop in the Task MakeTurnAsync()
@@ -1017,6 +1162,10 @@ public partial class MainPage : ContentPage
         else
         {
             ResetCube();
+            if (!bColorDrop)
+            {
+                IsEnabledArrows(true);
+            }
         }
     }
 
@@ -1337,6 +1486,10 @@ public partial class MainPage : ContentPage
     }
 
     // Convert text to speech
+    // If you do not wait long enough in the Task 'MakeTurnAsync()' with a Task.Delay(),
+    // an error message will sometimes appear: 'The operation was canceled'.
+    // This only occurs if the 'Explained by speech' setting is enabled.
+    // The error occurs in the method 'ConvertTextToSpeech()'.
     private async void ConvertTextToSpeech(string cTurnCubeText)
     {
         // Cancel the text to speech
@@ -1367,7 +1520,11 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
+#if DEBUG
                 await DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
+#else
+                await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+#endif
             }
         }
     }

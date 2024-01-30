@@ -106,9 +106,9 @@
                 _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
-
+#if DEBUG
             _ = Application.Current.MainPage.DisplayAlert("CubeTurnsSave", cFileName, CubeLang.ButtonClose_Text);
-
+#endif
             return true;
         }
     }

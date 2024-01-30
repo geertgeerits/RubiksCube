@@ -5,12 +5,6 @@
         // Solve the cube.  From Basic-80 to C# - 1984-04-10
         public async Task<bool> SolveTheCubeBasAsync()
         {
-            // Check if the cube is already solved
-            if (ClassCheckColorsCube.CheckIfSolved())
-            {
-                return true;
-            }
-
             // Declare variables
             int O, P, Q, R, S, V, X, Y, Z;
             string cB, cO, cP, cQ, cR, cV, cX, cY, cZ;
@@ -667,8 +661,6 @@
 
         //1480
         Line1480:
-            //await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
-            //await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             await MakeTurnAsync(Globals.TurnCubeFrontToLeft2);
             goto Line1010;
 
@@ -678,8 +670,6 @@
         //1510
         Line1510:
             //1512
-            //await MakeTurnAsync(Globals.TurnCubeUpToRight);
-            //await MakeTurnAsync(Globals.TurnCubeUpToRight);
             await MakeTurnAsync(Globals.TurnCubeUpToRight2);
         //1515
         Line1515:
