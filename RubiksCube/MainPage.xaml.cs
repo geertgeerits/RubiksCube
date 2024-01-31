@@ -111,17 +111,19 @@ public partial class MainPage : ContentPage
     // Select a color by tapping on a cube and put it in a tempory polygon
     private void OnGetColorTapped(object sender, TappedEventArgs args)
     {
-        Polygon polygon = (sender) as Polygon;
-        plgCubeColorSelect.Fill = polygon.Fill;
+        if (bColorDrop)
+        {
+            Polygon polygon = sender as Polygon;
+            plgCubeColorSelect.Fill = polygon.Fill;
+        }
     }
 
     // Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
     private void OnSetColorTapped(object sender, TappedEventArgs args)
     {
-        Polygon polygon = (sender) as Polygon;
-
-        if (plgCubeColorSelect.Fill != null)
+        if (plgCubeColorSelect.Fill != null && bColorDrop)
         {
+            Polygon polygon = sender as Polygon;
             polygon.Fill = plgCubeColorSelect.Fill;
         }
     }
@@ -155,6 +157,8 @@ public partial class MainPage : ContentPage
         }
         else
         {
+            Globals.lCubeTurns.Clear();
+
             if (!CheckNumberColorsCube())
             {
                 bColorDrop = true;
@@ -274,15 +278,15 @@ public partial class MainPage : ContentPage
             lblNumberTurns.Text = $"{nTurns + 1}/{nTotalTurns}";
             await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
             lblNumberTurns.Text = "";
-
-            // Clear the list with the cube turns
-            Globals.lCubeTurns.Clear();
         }
 
         if (!bSolved)
         {
             await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
         }
+
+        // Clear the list with the cube turns
+        Globals.lCubeTurns.Clear();
 
         // Settings
         lblExplainTurnCube1.Text = "";
