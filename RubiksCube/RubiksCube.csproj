@@ -49,6 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="ClassSolveCubeBas - Copy.cs" />
+	  <Compile Remove="ClassSolveCubeBas1.cs" />
+	  <Compile Remove="ClassSolveCubeBas2.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="CubeNumbering.txt" />
 	  <None Remove="Resources\AppIcon\cube_appicon_128p.png" />
 	  <None Remove="Resources\Images\arrow_left.png" />
