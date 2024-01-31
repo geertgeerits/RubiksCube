@@ -2,36 +2,17 @@
 {
     internal class ClassSolveCubeBas3
     {
-        // Declare variables
-        private static bool bO, bP, bQ, bR, bS, bV, bX, bY, bZ;
-        private static string cB, cO, cP, cQ, cR, cV, cX, cY, cZ;
-        private static int nLoopTimes = 0;
-        private static int nLoopTimesMax = 400;
-
         // Solve the cube.  From Basic-80 to C# - 1984-04-10
         public static async Task<bool> SolveTheCubeBasAsync()
         {
-            await SolveTopLayerCornersAsync();
-            await SolveTopLayerEdgesAsync();
-            await SolveMiddleLayerAsync();
-            await SolveBottomLayerCornersAsync();
-            await SolveBottomLayerEdgesAsync();
-            await SolveBottomLayerTumblingCornersAsync();
-            await SolveBottomLayerTumblingEdgesAsync();
+            // Declare variables
+            bool bO, bP, bQ, bR, bS, bV, bX, bY, bZ;
+            string cB, cO, cP, cQ, cR, cV, cX, cY, cZ;
+            int nLoopTimes = 0;
+            int nLoopTimesMax = 400;
 
-            // Check if the cube is solved
-            if (ClassCheckColorsCube.CheckIfSolved())
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        // Top layer
-        // Solve the corners of the top layer - Chapter 6, page 16
-        private static async Task<bool> SolveTopLayerCornersAsync()
-        {
+            // Top layer
+            // Solve the corners of the top layer - Chapter 6, page 16
             while (true)
             {
                 nLoopTimes++;
@@ -198,12 +179,7 @@
                 }
             }
 
-            return true;
-        }
-
-        // Solve the edges of the top layer - Chapter 4, page 14-3
-        private static async Task<bool> SolveTopLayerEdgesAsync()
-        {
+            // Solve the edges of the top layer - Chapter 4, page 14-3
             while (true)
             {
                 nLoopTimes++;
@@ -391,12 +367,7 @@
                 // 960
             }
 
-            return true;
-        }
-
-        // Solve the middle layer - Chapter 10, page 21
-        private static async Task<bool> SolveMiddleLayerAsync()
-        {
+            // Solve the middle layer - Chapter 10, page 21
             while (true)
             {
                 nLoopTimes++;
@@ -693,14 +664,10 @@
             Line1480:
                 await MakeTurnAsync(Globals.TurnCubeFrontToLeft2);
             }
-            
-            return true;
-        }
 
-        // Bottom layer
-        // Corners on the right place
-        private static async Task<bool> SolveBottomLayerCornersAsync()
-        {
+            // Bottom layer
+            // Corners on the right place
+            //1512
             await MakeTurnAsync(Globals.TurnCubeUpToRight2);
 
             while (true)
@@ -881,13 +848,8 @@
                 //1596
                 await MakeTurnAsync(Globals.TurnCubeFrontToLeft);
             }
-            
-            return true;
-        }
 
-        // Edges on the right place
-        private static async Task<bool> SolveBottomLayerEdgesAsync()
-        {
+            // Edges on the right place
             while (true)
             {
                 nLoopTimes++;
@@ -1042,12 +1004,7 @@
                 continue;
             }
 
-            return true;
-        }
-
-        // Tumbling corners
-        private static async Task<bool> SolveBottomLayerTumblingCornersAsync()
-        {
+            // Tumbling corners
             while (true)
             {
                 nLoopTimes++;
@@ -1128,12 +1085,7 @@
                 await MakeTurnAsync(Globals.TurnUpCW);
             }
 
-            return true;
-        }
-
-        // Tumbling edges
-        private static async Task<bool> SolveBottomLayerTumblingEdgesAsync()
-        {
+            // Tumbling edges
             while (true)
             {
                 nLoopTimes++;
@@ -1206,8 +1158,8 @@
                 //1880
                 if (cB != Globals.aPieces[37])
                     await MakeTurnAsync(Globals.TurnUp2);
-                //1890
-                Line1890:
+            //1890
+            Line1890:
                 await MakeTurnAsync(Globals.TurnFrontCW);
                 await MakeTurnAsync(Globals.TurnUpCW);
                 await MakeTurnAsync(Globals.TurnDownCCW);
@@ -1247,8 +1199,14 @@
                 await MakeTurnAsync(Globals.TurnUpCCW);
                 await MakeTurnAsync(Globals.TurnFrontCCW);
             }
-            
-            return true;
+
+            // Check if the cube is solved
+            if (ClassCheckColorsCube.CheckIfSolved())
+            {
+                return true;
+            }
+
+            return false;
         }
 
         // Make a turn of the cube/face/side

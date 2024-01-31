@@ -52,6 +52,7 @@
 	  <Compile Remove="ClassSolveCubeBas - Copy.cs" />
 	  <Compile Remove="ClassSolveCubeBas1.cs" />
 	  <Compile Remove="ClassSolveCubeBas2.cs" />
+	  <Compile Remove="ClassSolveCubeBas3.cs" />
 	</ItemGroup>
 
 	<ItemGroup>

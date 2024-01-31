@@ -232,7 +232,6 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
             // Solve the cube from Basic-80 to C#
-            //ClassSolveCubeBas classSolveCubeBas = new();
             bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();
 
             // Solve the cube in C#
