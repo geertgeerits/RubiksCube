@@ -207,7 +207,7 @@ Pour les autres côtés, vous devez toujours « imaginer » que vous êtes dir
     <value>Enregistrez le cube actuel.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Transférez les couleurs du cube pêle-mêle vers ce cube. Sélectionnez une couleur dans la barre de couleurs ci-dessus, puis appuyez sur les morceaux du cube pour les modifier. Appuyez à nouveau sur ce bouton pour quitter cette section.</value>
+    <value>Transférez les couleurs du cube pêle-mêle vers ce cube. Sélectionnez une couleur dans la barre de couleurs en haut, puis appuyez sur les morceaux du cube pour les modifier. Appuyez à nouveau sur ce bouton pour quitter cette section et appuyez sur le bouton 'Résoudre'.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Codes couleurs hexadécimaux:
@@ -456,5 +456,11 @@ Interdit:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
     <value>Nombre de tours:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Il existe trois options pour résoudre le cube :
+1. Sur l'écran d'accueil, utilisez les touches fléchées pour mélanger les couleurs et résolvez le cube lui-même avec les touches fléchées.
+2. Identique à la première option, mais résolvez le cube avec le bouton 'Résoudre'. Le cube est ensuite résolu dans l'ordre inverse.
+3. Utilisez le bouton en bas avec le cube (voir explication de ce bouton). Le cube est résolu par l'application. Transférez ensuite les mouvements proposés sur le cube réel. Cela ne garantit pas que tous les cubes puissent être résolus.</value>
   </data>
 </root>

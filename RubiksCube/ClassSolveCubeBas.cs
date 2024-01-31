@@ -1126,6 +1126,7 @@
                 {
                     await MakeTurnAsync(Globals.TurnUp2);
                 }
+            
             //1735
             Line1735:
                 await MakeTurnAsync(Globals.TurnRightCCW);
@@ -1153,6 +1154,7 @@
                 }
                 //1755
                 await MakeTurnAsync(Globals.TurnUp2);
+            
             //1760
             Line1760:
                 await MakeTurnAsync(Globals.TurnFrontCW);
@@ -1176,8 +1178,8 @@
         // Tumbling edges
         private static async Task<bool> SolveBottomLayerTumblingEdgesAsync()
         {
-            bool bO, bP, bQ, bR, bS, bV, bX, bY, bZ;
-            string cB, cO, cP, cQ, cR, cV, cX, cY, cZ;
+            bool bO, bP;
+            string cB, cV, cX, cY;
 
             while (true)
             {
@@ -1232,6 +1234,7 @@
                     await MakeTurnAsync(Globals.TurnUp2);
                     continue;
                 }
+            
             //1850
             Line1850:
                 if (cB != Globals.aPieces[43])
@@ -1282,6 +1285,7 @@
                 {
                     await MakeTurnAsync(Globals.TurnUp2);
                 }
+            
             //1950
             Line1950:
                 await MakeTurnAsync(Globals.TurnRightCCW);

@@ -860,9 +860,9 @@ public partial class MainPage : ContentPage
         // Start a program loop and wait for the arrow button to be pressed
         while (true)
         {
-            // Wait for 400 milliseconds on the button click event handler
+            // Wait for 300 milliseconds on the button click event handler
 
-            await Task.Delay(400);
+            await Task.Delay(300);
 
             // Check if the button has been clicked and stop the loop if clicked
             if (bArrowButtonPressed)

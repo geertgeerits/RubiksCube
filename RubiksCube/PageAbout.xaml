@@ -87,6 +87,11 @@
                             Text="{x:Static resx:CubeLang.LicenseMit2_Text}">
                         </Label>
 
+                        <Label
+                            x:Name="lblHelpOptionsSolveCube"
+                            Style="{StaticResource labelStyleInfo}">
+                        </Label>
+
                         <Grid
                             RowDefinitions="Auto, Auto, Auto"
                             ColumnDefinitions="50, 250*"

@@ -207,7 +207,7 @@ Für die anderen Seiten muss man sich immer 'vorstellen', dass man direkt vor de
     <value>Speichern Sie den aktuellen Cube.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Übertragen Sie die Farben vom durcheinandergebrachten Würfel auf diesen Würfel. Wählen Sie in der Farbleiste oben eine Farbe aus und tippen Sie dann auf die Würfelteile, um sie zu ändern. Drücken Sie diese Taste erneut, um diesen Abschnitt zu verlassen.</value>
+    <value>Übertragen Sie die Farben vom durcheinandergebrachten Würfel auf diesen Würfel. Wählen Sie oben in der Farbleiste eine Farbe aus und tippen Sie dann auf die Würfelteile, um sie zu ändern. Drücken Sie diese Schaltfläche erneut, um diesen Abschnitt zu verlassen, und klicken Sie auf die Schaltfläche 'Lösen'.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadezimale Farbcodes:
@@ -456,5 +456,11 @@ Nicht erlaubt:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
     <value>Anzahl der Züge:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Es gibt drei Möglichkeiten, den Würfel zu lösen:
+1. Mischen Sie auf dem Startbildschirm mit den Pfeiltasten die Farben und lösen Sie den Würfel selbst mit den Pfeiltasten.
+2. Wie die erste Option, aber lösen Sie den Würfel mit der Schaltfläche 'Lösen'. Anschließend wird der Würfel in umgekehrter Reihenfolge gelöst.
+3. Benutzen Sie die Schaltfläche unten mit dem Würfel (siehe Erklärung dieser Schaltfläche). Der Würfel wird durch die Anwendung gelöst. Anschließend übertragen Sie die vorgeschlagenen Bewegungen auf den realen Würfel. Dies ist keine Garantie dafür, dass alle Würfel gelöst werden können.</value>
   </data>
 </root>

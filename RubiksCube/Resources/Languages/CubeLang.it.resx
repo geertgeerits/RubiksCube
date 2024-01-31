@@ -207,7 +207,7 @@ Per gli altri lati devi sempre 'immaginare' di essere direttamente davanti al la
     <value>Salva il cubo corrente.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Trasferisci i colori dal cubo confuso a questo cubo. Seleziona un colore dalla barra dei colori in alto e poi tocca i pezzi del cubo per cambiarli. Premere nuovamente questo pulsante per uscire da questa sezione.</value>
+    <value>Trasferisci i colori dal cubo confuso a questo cubo. Seleziona un colore dalla barra dei colori in alto e poi tocca i pezzi del cubo per cambiarli. Premi nuovamente questo pulsante per uscire da questa sezione e premi il pulsante 'Risolvere'.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Codici colore esadecimali:
@@ -456,5 +456,11 @@ Non autorizzato:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
     <value>Numero di giri:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Ci sono tre opzioni per risolvere il cubo:
+1. Nella schermata iniziale, usa i tasti freccia per mescolare i colori e risolvi il cubo stesso con i tasti freccia.
+2. Come la prima opzione, ma risolvi il cubo con il pulsante 'Risolvere'. Il cubo viene quindi risolto in ordine inverso.
+3. Usa il pulsante in basso con il cubo (vedi spiegazione di quel pulsante). Il cubo viene risolto dall'applicazione. Quindi trasferisci i movimenti proposti sul cubo reale. Questa non è una garanzia che tutti i cubi possano essere risolti.</value>
   </data>
 </root>

@@ -315,6 +315,18 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are three options to solve the cube:
+        ///1. On the home screen, use the arrow keys to mix up the colors and solve the cube itself with the arrow keys.
+        ///2. Same as the first option, but solve the cube with the &apos;Solve&apos; button. The cube is then solved in reverse order.
+        ///3. Use the button at the bottom with the cube (see explanation of that button). The cube is solved by the application. Then transfer the proposed movements to the real cube. This is not a guarantee that all cubes can be solved..
+        /// </summary>
+        internal static string HelpOptionsSolveCube_Text {
+            get {
+                return ResourceManager.GetString("HelpOptionsSolveCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save the current cube..
         /// </summary>
         internal static string HelpSaveCube_Text {
@@ -324,7 +336,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transfer the colors from the jumbled cube to this cube. Select a color from the color bar above and then tap the pieces of the cube to change them. Press this button again to leave this section..
+        ///   Looks up a localized string similar to Transfer the colors from the jumbled cube to this cube. Select a color from the color bar at the top and then tap the pieces of the cube to change them. Press this button again to leave this section and press the &apos;Solve&apos; button..
         /// </summary>
         internal static string HelpSetColorsCube_Text {
             get {

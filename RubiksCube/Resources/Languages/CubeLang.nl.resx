@@ -207,7 +207,7 @@ Voor de andere zijden moet u zich steeds 'inbeelden' dat u recht voor de te draa
     <value>Sla de huidige kubus op.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Breng de kleuren van de door elkaar gegooide kubus over naar deze kubus. Selecteer een kleur uit de kleurenbalk hierboven en tik vervolgens op de stukjes van de kubus om ze te veranderen. Druk nogmaals op deze knop om dit gedeelte te verlaten.</value>
+    <value>Breng de kleuren van de door elkaar gegooide kubus over naar deze kubus. Selecteer een kleur uit de kleurenbalk bovenaan en tik vervolgens op de stukjes van de kubus om ze te veranderen. Druk nogmaals op deze knop om dit gedeelte te verlaten en druk op de 'Los op' knop.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Hexadecimale kleurcodes:
@@ -456,5 +456,11 @@ Niet toegestaan:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
     <value>Aantal draaibewegingen:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Er zijn drie opties om de kubus op te lossen:
+1. Gebruik op het startscherm de pijltjestoetsen om de kleuren door elkaar te halen en los de kubus zelf op met de pijltjestoetsen.
+2. Hetzelfde als de eerste optie, maar los de kubus op met de knop 'Los op'. De kubus wordt vervolgens in omgekeerde volgorde opgelost.
+3. Gebruik de knop onderaan met de kubus (zie uitleg bij die knop). De kubus wordt opgelost door de applicatie. Breng vervolgens de voorgestelde bewegingen over naar de echte kubus. Dit is geen garantie dat alle kubussen kunnen worden opgelost.</value>
   </data>
 </root>

@@ -207,7 +207,7 @@ Para os outros lados, você sempre deve 'imaginar' que está diretamente na fren
     <value>Salve o cubo atual.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
-    <value>Transfira as cores do cubo misturado para este cubo. Selecione uma cor na barra de cores acima e toque nas peças do cubo para alterá-las. Pressione este botão novamente para sair desta seção.</value>
+    <value>Transfira as cores do cubo misturado para este cubo. Selecione uma cor na barra de cores na parte superior e toque nas peças do cubo para alterá-las. Pressione este botão novamente para sair desta seção e pressione o botão 'Resolver'.</value>
   </data>
   <data name="HexColorCodes_Text" xml:space="preserve">
     <value>Códigos de cores hexadecimais:
@@ -456,5 +456,11 @@ Não permitido:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
     <value>Número de voltas:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Existem três opções para resolver o cubo:
+1. Na tela inicial, use as setas do teclado para misturar as cores e resolver o próprio cubo com as setas do teclado.
+2. Igual à primeira opção, mas resolva o cubo com o botão 'Resolver'. O cubo é então resolvido na ordem inversa.
+3. Use o botão na parte inferior com o cubo (veja a explicação desse botão). O cubo é resolvido pelo aplicativo. Em seguida, transfira os movimentos propostos para o cubo real. Isto não é uma garantia de que todos os cubos possam ser resolvidos.</value>
   </data>
 </root>
