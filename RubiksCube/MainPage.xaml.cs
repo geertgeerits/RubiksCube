@@ -122,6 +122,8 @@ public partial class MainPage : ContentPage
         {
             Polygon polygon = sender as Polygon;
             polygon.Fill = plgCubeColorSelect.Fill;
+
+            SetCubeColorsInArrays();
         }
     }
 
