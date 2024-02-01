@@ -463,4 +463,7 @@ Não permitido:</value>
 2. Igual à primeira opção, mas resolva o cubo com o botão 'Resolver'. O cubo é então resolvido na ordem inversa.
 3. Use o botão na parte inferior com o cubo (veja a explicação desse botão). O cubo é resolvido pelo aplicativo. Em seguida, transfira os movimentos propostos para o cubo real. Isto não é uma garantia de que todos os cubos possam ser resolvidos.</value>
   </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>O cubo está de volta ao seu estado anterior.</value>
+  </data>
 </root>

@@ -463,4 +463,7 @@ Interdit:</value>
 2. Identique à la première option, mais résolvez le cube avec le bouton 'Résoudre'. Le cube est ensuite résolu dans l'ordre inverse.
 3. Utilisez le bouton en bas avec le cube (voir explication de ce bouton). Le cube est résolu par l'application. Transférez ensuite les mouvements proposés sur le cube réel. Cela ne garantit pas que tous les cubes puissent être résolus.</value>
   </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Le cube est revenu à son état précédent.</value>
+  </data>
 </root>

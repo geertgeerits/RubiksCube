@@ -463,4 +463,7 @@ Nicht erlaubt:</value>
 2. Wie die erste Option, aber lösen Sie den Würfel mit der Schaltfläche 'Lösen'. Anschließend wird der Würfel in umgekehrter Reihenfolge gelöst.
 3. Benutzen Sie die Schaltfläche unten mit dem Würfel (siehe Erklärung dieser Schaltfläche). Der Würfel wird durch die Anwendung gelöst. Anschließend übertragen Sie die vorgeschlagenen Bewegungen auf den realen Würfel. Dies ist keine Garantie dafür, dass alle Würfel gelöst werden können.</value>
   </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Der Würfel befindet sich wieder in seinem vorherigen Zustand.</value>
+  </data>
 </root>

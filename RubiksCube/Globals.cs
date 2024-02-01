@@ -73,48 +73,6 @@ internal static class Globals
     public const string TurnCubeUpToRight2 = "TurnCubeUpToRight2";
     public const string TurnCubeUpToLeft = "TurnCubeUpToLeft";
 
-    //public enum Turns
-    //{
-    //    TurnFrontCW,
-    //    TurnFrontCCW,
-    //    TurnFront2,
-    //    TurnRightCW,
-    //    TurnRightCCW,
-    //    TurnRight2,
-    //    TurnBackCW,
-    //    TurnBackCCW,
-    //    TurnBack2,
-    //    TurnLeftCW,
-    //    TurnLeftCCW,
-    //    TurnLeft2,
-    //    TurnUpCW,
-    //    TurnUpCCW,
-    //    TurnUp2,
-    //    TurnDownCW,
-    //    TurnDownCCW,
-    //    TurnDown2,
-
-    //    TurnUpHorMiddleRight,
-    //    TurnUpHorMiddleLeft,
-    //    TurnUpHorMiddle2,
-    //    TurnUpVerMiddleBack,
-    //    TurnUpVerMiddleFront,
-    //    TurnUpVerMiddle2,
-    //    TurnFrontHorMiddleLeft,
-    //    TurnFrontHorMiddleRight,
-    //    TurnFrontHorMiddle2,
-
-    //    TurnCubeFrontToRight,
-    //    TurnCubeFrontToLeft,
-    //    TurnCubeFrontToLeft2,
-    //    TurnCubeFrontToUp,
-    //    TurnCubeFrontToUp2,
-    //    TurnCubeFrontToDown,
-    //    TurnCubeUpToRight,
-    //    TurnCubeUpToRight2,
-    //    TurnCubeUpToLeft,
-    //}
-
     // Global methods
     // Set the theme
     public static void SetTheme()

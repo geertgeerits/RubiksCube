@@ -454,6 +454,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The cube is back in its previous state..
+        /// </summary>
+        internal static string MessageCubeBackInPreviousState_Text {
+            get {
+                return ResourceManager.GetString("MessageCubeBackInPreviousState_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The cube cannot be solved..
         /// </summary>
         internal static string MessageCubeCannotBeSolved_Text {

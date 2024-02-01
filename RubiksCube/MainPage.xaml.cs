@@ -271,7 +271,16 @@ public partial class MainPage : ContentPage
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nTurnsAfterClean}";
-            await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
+
+            if (ClassColorsCube.CheckIfSolved())
+            {
+                await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
+            }
+            else
+            {
+                await DisplayAlert("", CubeLang.MessageCubeBackInPreviousState_Text, CubeLang.ButtonClose_Text);
+            }
+
             lblNumberTurns.Text = "";
         }
 
@@ -1134,11 +1143,6 @@ public partial class MainPage : ContentPage
 
         SetCubeColorsFromArrays();
         Globals.lCubeTurns.Clear();
-
-        if (!bSolvingCube && !bColorDrop)
-        {
-            IsEnabledArrows(false);
-        }
     }
 
     // On clicked event: Reset the colors of the cube or restart the app

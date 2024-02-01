@@ -130,8 +130,6 @@
                 {
 #if DEBUG
                     await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
-#else
-                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
 #endif
                 }
             }

@@ -461,6 +461,9 @@ Niet toegestaan:</value>
     <value>Er zijn drie opties om de kubus op te lossen:
 1. Gebruik op het startscherm de pijltjestoetsen om de kleuren door elkaar te halen en los de kubus zelf op met de pijltjestoetsen.
 2. Hetzelfde als de eerste optie, maar los de kubus op met de knop 'Los op'. De kubus wordt vervolgens in omgekeerde volgorde opgelost.
-3. Gebruik de knop onderaan met de kubus (zie uitleg bij die knop). De kubus wordt opgelost door de applicatie. Breng vervolgens de voorgestelde bewegingen over naar de echte kubus. Dit is geen garantie dat alle kubussen kunnen worden opgelost.</value>
+3. Gebruik de knop onderaan met de kubus (zie uitleg bij die knop). De kubus wordt opgelost door de applicatie. Breng vervolgens de voorgestelde bewegingen over naar de echte kubus. Dit is geen garantie dat alle kubussen kunnen opgelost worden.</value>
+  </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>De kubus is terug in zijn vorige staat.</value>
   </data>
 </root>

@@ -463,4 +463,7 @@ Not allowed:</value>
 2. Same as the first option, but solve the cube with the 'Solve' button. The cube is then solved in reverse order.
 3. Use the button at the bottom with the cube (see explanation of that button). The cube is solved by the application. Then transfer the proposed movements to the real cube. This is not a guarantee that all cubes can be solved.</value>
   </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>The cube is back in its previous state.</value>
+  </data>
 </root>
