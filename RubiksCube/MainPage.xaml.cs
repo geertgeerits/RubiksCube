@@ -122,8 +122,6 @@ public partial class MainPage : ContentPage
         {
             Polygon polygon = sender as Polygon;
             polygon.Fill = plgCubeColorSelect.Fill;
-
-            SetCubeColorsInArrays();
         }
     }
 
@@ -182,6 +180,10 @@ public partial class MainPage : ContentPage
     // Solve the cube
     private async void OnBtnSolveCubeClicked(object sender, EventArgs e)
     {
+        //Globals.lCubeTurns.Clear();
+        //SetCubeColorsInArrays();
+        //SetCubeColorsFromArrays();
+
         // Check the number of colors of the cube
         if (!CheckNumberColorsCube())
         {
@@ -402,6 +404,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
+            SetCubeColorsInArrays();
             TurnCubeUpFaceToRightFace();
             return;
         }
@@ -465,6 +468,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
+            SetCubeColorsInArrays();
             TurnCubeFrontFaceToDownFace();
             return;
         }
@@ -528,6 +532,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
+            SetCubeColorsInArrays();
             TurnCubeFrontFaceToRightFace();
             return;
         }
@@ -591,6 +596,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
+            SetCubeColorsInArrays();
             TurnCubeFrontFaceToLeftFace();
             return;
         }
@@ -654,6 +660,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
+            SetCubeColorsInArrays();
             TurnCubeFrontFaceToUpFace();
             return;
         }
@@ -717,6 +724,7 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
+            SetCubeColorsInArrays();
             TurnCubeUpFaceToLeftFace();
             return;
         }

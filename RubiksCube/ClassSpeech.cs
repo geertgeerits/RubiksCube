@@ -134,5 +134,18 @@
                 }
             }
         }
+        
+        // Cancel speech if a cancellation token exists & hasn't been already requested
+        public static void CancelTextToSpeech()
+        {
+            if (Globals.bTextToSpeechIsBusy)
+            {
+                if (Globals.cts?.IsCancellationRequested ?? true)
+                    return;
+
+                Globals.cts.Cancel();
+                Globals.bTextToSpeechIsBusy = false;
+            }
+        }
     }
 }
