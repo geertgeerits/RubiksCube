@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-01-31 (YYYY-MM-DD)
+// Date ........: 2024-02-01 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -18,7 +18,6 @@ namespace RubiksCube;
 public partial class MainPage : ContentPage
 {
     // Local variables
-    private IEnumerable<Locale> locales;
     private bool bColorDrop;
     private bool bSolvingCube;
     private bool bSolved;
@@ -83,7 +82,7 @@ public partial class MainPage : ContentPage
             cCultureName = "en-US";
         }
 
-        InitializeTextToSpeech(cCultureName);
+        ClassSpeech.InitializeTextToSpeech(cCultureName);
 
         // Initialize the cube colors
         Globals.aFaceColors[1] = Globals.cCubeColor1;
@@ -94,7 +93,8 @@ public partial class MainPage : ContentPage
         Globals.aFaceColors[6] = Globals.cCubeColor6;
 
         // Reset the colors of the cube
-        ResetCube();
+        ClassColorsCube.ResetCube();
+        SetCubeColorsFromArrays();
     }
 
     // TitleView buttons clicked events
@@ -111,11 +111,8 @@ public partial class MainPage : ContentPage
     // Select a color by tapping on a cube and put it in a tempory polygon
     private void OnGetColorTapped(object sender, TappedEventArgs args)
     {
-        if (bColorDrop)
-        {
-            Polygon polygon = sender as Polygon;
-            plgCubeColorSelect.Fill = polygon.Fill;
-        }
+        Polygon polygon = sender as Polygon;
+        plgCubeColorSelect.Fill = polygon.Fill;
     }
 
     // Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
@@ -190,7 +187,7 @@ public partial class MainPage : ContentPage
         }
 
         // Check if the cube is already solved
-        if (ClassCheckColorsCube.CheckIfSolved())
+        if (ClassColorsCube.CheckIfSolved())
         {
             Globals.lCubeTurns.Clear();
             return;
@@ -255,15 +252,13 @@ public partial class MainPage : ContentPage
         if (bSolved)
         {
             // Display the number of turns and the elapsed time in milliseconds
-            int nTotalTurns = Globals.lCubeTurns.Count;
-#if DEBUG
-            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
-#endif
+            int nTurnsBeforeClean = Globals.lCubeTurns.Count;
+
             // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
             CleanDoublesListCubeTurns();
             
-            nTotalTurns = Globals.lCubeTurns.Count;
-            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTotalTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+            int nTurnsAfterClean = Globals.lCubeTurns.Count;
+            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTurnsBeforeClean} -> {nTurnsAfterClean}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
             // Make the turns of the cube
             int nTurns = -1;
@@ -271,11 +266,11 @@ public partial class MainPage : ContentPage
             foreach (string cItem in Globals.lCubeTurns)
             {
                 nTurns++;
-                lblNumberTurns.Text = $"{nTurns}/{nTotalTurns}";
+                lblNumberTurns.Text = $"{nTurns}/{nTurnsAfterClean}";
                 await MakeTurnAsync(cItem);
             }
 
-            lblNumberTurns.Text = $"{nTurns + 1}/{nTotalTurns}";
+            lblNumberTurns.Text = $"{nTurns + 1}/{nTurnsAfterClean}";
             await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
             lblNumberTurns.Text = "";
         }
@@ -368,7 +363,7 @@ public partial class MainPage : ContentPage
     private bool CheckNumberColorsCube()
     {
         SetCubeColorsInArrays();
-        return ClassCheckColorsCube.CheckNumberColors();
+        return ClassColorsCube.CheckNumberColors();
     }
 
     // Turn the faces of the cube
@@ -1121,7 +1116,7 @@ public partial class MainPage : ContentPage
                 cTurnCubeText = cTurnCubeText.Substring(0, cTurnCubeText.Length - 5);
             }
 
-            _ = ConvertTextToSpeechAsync(cTurnCubeText);
+            _ = ClassSpeech.ConvertTextToSpeechAsync(cTurnCubeText);
         }
     }
 
@@ -1158,50 +1153,14 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            ResetCube();
+            ClassColorsCube.ResetCube();
+            SetCubeColorsFromArrays();
+
             if (!bColorDrop)
             {
                 IsEnabledArrows(true);
             }
         }
-    }
-
-    // Reset the colors of the cube
-    private void ResetCube()
-    {
-        int nRow;
-
-        for (nRow = 0; nRow < 9; nRow++)
-        {
-            Globals.aPieces[nRow] = Globals.aFaceColors[1];
-        }
-
-        for (nRow = 9; nRow < 18; nRow++)
-        {
-            Globals.aPieces[nRow] = Globals.aFaceColors[2];
-        }
-
-        for (nRow = 18; nRow < 27; nRow++)
-        {
-            Globals.aPieces[nRow] = Globals.aFaceColors[3];
-        }
-
-        for (nRow = 27; nRow < 36; nRow++)
-        {
-            Globals.aPieces[nRow] = Globals.aFaceColors[4];
-        }
-
-        for (nRow = 36; nRow < 45; nRow++)
-        {
-            Globals.aPieces[nRow] = Globals.aFaceColors[5];
-        }
-
-        for (nRow = 45; nRow < 54; nRow++)
-        {
-            Globals.aPieces[nRow] = Globals.aFaceColors[6];
-        }
-
-        SetCubeColorsFromArrays();
     }
 
     // Store the cube colors from the polygons in the arrays
@@ -1390,139 +1349,6 @@ public partial class MainPage : ContentPage
         if (!bSolvingCube)
         {
             SetArrowTooltips(true);
-        }
-    }
-
-    // Initialize text to speech and fill the the array with the speech languages
-    // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
-    private async void InitializeTextToSpeech(string cCultureName)
-    {
-        // Initialize text to speech
-        int nTotalItems;
-
-        try
-        {
-            locales = await TextToSpeech.Default.GetLocalesAsync();
-
-            nTotalItems = locales.Count();
-
-            if (nTotalItems == 0)
-            {
-                return;
-            }
-        }
-        catch (Exception ex)
-        {
-            // Text to speech is not supported on this device
-            await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
-            Globals.bExplainSpeech = false;
-            return;
-        }
-
-        Globals.bLanguageLocalesExist = true;
-
-        // Put the locales in the array and sort the array
-        Globals.cLanguageLocales = new string[nTotalItems];
-        int nItem = 0;
-
-        foreach (var l in locales)
-        {
-            Globals.cLanguageLocales[nItem] = l.Language + "-" + l.Country + " " + l.Name;
-            nItem++;
-        }
-
-        Array.Sort(Globals.cLanguageLocales);
-
-        // Search for the language after a first start or reset of the application
-        if (Globals.cLanguageSpeech == "")
-        {
-            SearchArrayWithSpeechLanguages(cCultureName);
-        }
-        //await DisplayAlert("Globals.cLanguageSpeech", Globals.cLanguageSpeech, "OK");  // For testing
-    }
-
-    // Search for the language after a first start or reset of the application
-    private void SearchArrayWithSpeechLanguages(string cCultureName)
-    {
-        try
-        {
-            int nTotalItems = Globals.cLanguageLocales.Length;
-
-            for (int nItem = 0; nItem < nTotalItems; nItem++)
-            {
-                if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
-                {
-                    Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                    break;
-                }
-            }
-
-            // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
-            if (Globals.cLanguageSpeech == "")
-            {
-                for (int nItem = 0; nItem < nTotalItems; nItem++)
-                {
-                    if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
-                    {
-                        Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                        break;
-                    }
-                }
-            }
-
-            // If the language is still not found use the first language in the array
-            if (Globals.cLanguageSpeech == "")
-            {
-                Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
-            }
-        }
-        catch (Exception ex)
-        {
-            DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-        }
-    }
-
-    // Convert text to speech
-    // If you do not wait long enough in the Task 'MakeTurnAsync()' with a Task.Delay(),
-    // an error message will sometimes appear: 'The operation was canceled'.
-    // This only occurs if the 'Explained by speech' setting is enabled.
-    // The error occurs in the method 'ConvertTextToSpeechAsync()'.
-    private async Task ConvertTextToSpeechAsync(string cTurnCubeText)
-    {
-        // Cancel the text to speech
-        if (Globals.bTextToSpeechIsBusy)
-        {
-            if (Globals.cts?.IsCancellationRequested ?? true)
-                return;
-
-            Globals.cts.Cancel();
-        }
-
-        // Start with the text to speech
-        if (cTurnCubeText != null && cTurnCubeText != "")
-        {
-            Globals.bTextToSpeechIsBusy = true;
-
-            try
-            {
-                Globals.cts = new CancellationTokenSource();
-
-                SpeechOptions options = new()
-                {
-                    Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
-                };
-
-                await TextToSpeech.Default.SpeakAsync(cTurnCubeText, options, cancelToken: Globals.cts.Token);
-                Globals.bTextToSpeechIsBusy = false;
-            }
-            catch (Exception ex)
-            {
-#if DEBUG
-                await DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
-#else
-                await DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
-#endif
-            }
         }
     }
 }

@@ -1204,7 +1204,7 @@
         //2010
         // Check if the cube is solved
         Line2010:
-            if (ClassCheckColorsCube.CheckIfSolved())
+            if (ClassColorsCube.CheckIfSolved())
             {
                 return true;
             }

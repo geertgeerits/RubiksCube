@@ -69,7 +69,7 @@
 
 
             // Check if the cube is solved
-            if (ClassCheckColorsCube.CheckIfSolved())
+            if (ClassColorsCube.CheckIfSolved())
             {
                 return true;
             }

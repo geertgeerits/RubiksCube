@@ -1,6 +1,6 @@
 ﻿namespace RubiksCube
 {
-    internal class ClassCheckColorsCube
+    internal class ClassColorsCube
     {
         // Check the number of colors of the cube
         public static bool CheckNumberColors()
@@ -399,6 +399,42 @@
             }
 
             return true;
+        }
+
+        // Reset the colors of the cube
+        public static void ResetCube()
+        {
+            int nRow;
+
+            for (nRow = 0; nRow < 9; nRow++)
+            {
+                Globals.aPieces[nRow] = Globals.aFaceColors[1];
+            }
+
+            for (nRow = 9; nRow < 18; nRow++)
+            {
+                Globals.aPieces[nRow] = Globals.aFaceColors[2];
+            }
+
+            for (nRow = 18; nRow < 27; nRow++)
+            {
+                Globals.aPieces[nRow] = Globals.aFaceColors[3];
+            }
+
+            for (nRow = 27; nRow < 36; nRow++)
+            {
+                Globals.aPieces[nRow] = Globals.aFaceColors[4];
+            }
+
+            for (nRow = 36; nRow < 45; nRow++)
+            {
+                Globals.aPieces[nRow] = Globals.aFaceColors[5];
+            }
+
+            for (nRow = 45; nRow < 54; nRow++)
+            {
+                Globals.aPieces[nRow] = Globals.aFaceColors[6];
+            }
         }
     }
 }
