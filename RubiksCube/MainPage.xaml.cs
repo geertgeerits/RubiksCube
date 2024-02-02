@@ -175,10 +175,6 @@ public partial class MainPage : ContentPage
     // Solve the cube
     private async void OnBtnSolveCubeClicked(object sender, EventArgs e)
     {
-        //Globals.lCubeTurns.Clear();
-        //SetCubeColorsInArrays();
-        //GetCubeColorsFromArrays();
-
         // Check the number of colors of the cube
         if (!CheckNumberColorsCube())
         {
@@ -225,7 +221,6 @@ public partial class MainPage : ContentPage
         else
         {
             // Save the start colors of the cube to array aStartPieces[]
-            //SetCubeColorsInArrays();
             Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
 
             // Test the turns of the cube
@@ -239,7 +234,6 @@ public partial class MainPage : ContentPage
 
             // Restore the start colors of the cube from array aStartPieces[]
             Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
-            //GetCubeColorsFromArrays();
         }
 
         // Stop the activity indicator
@@ -287,12 +281,6 @@ public partial class MainPage : ContentPage
         if (!bSolved)
         {
             await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
-            //Array.Clear(Globals.aPieces, 0, Globals.aPieces.Length);
-            //Array.Clear(Globals.aPiecesTemp, 0, Globals.aPiecesTemp.Length);
-            //Array.Clear(Globals.aFaceColors, 0, Globals.aFaceColors.Length);
-
-            //SetCubeColorsInArrays();
-            //GetCubeColorsFromArrays();
         }
 
         // Clear the list with the cube turns
