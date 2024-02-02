@@ -427,6 +427,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The colors of the opposite center pieces are wrong..
+        /// </summary>
+        internal static string MessageColorCenterPiece_Text {
+            get {
+                return ResourceManager.GetString("MessageColorCenterPiece_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The color of the central square can only occur once..
         /// </summary>
         internal static string MessageColorCentralCube_Text {

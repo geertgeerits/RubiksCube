@@ -466,4 +466,7 @@ Non autorizzato:</value>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Il cubo è tornato allo stato precedente.</value>
   </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>I colori dei pezzi centrali opposti sono sbagliati.</value>
+  </data>
 </root>

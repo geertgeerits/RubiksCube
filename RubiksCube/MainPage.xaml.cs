@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-02-01 (YYYY-MM-DD)
+// Date ........: 2024-02-02 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -41,12 +41,12 @@ public partial class MainPage : ContentPage
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
         Globals.bExplainText = Preferences.Default.Get("SettingExplainText", false);
         Globals.bExplainSpeech = Preferences.Default.Get("SettingExplainSpeech", false);
-        Globals.cCubeColor1 = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Front face: Red
-        Globals.cCubeColor2 = Preferences.Default.Get("SettingCubeColor2", "#0000FF");   // Right face: Blue
-        Globals.cCubeColor3 = Preferences.Default.Get("SettingCubeColor3", "#FF8000");   // Back face: Orange
-        Globals.cCubeColor4 = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Left face: Green
-        Globals.cCubeColor5 = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // Up face: White
-        Globals.cCubeColor6 = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Down face: Yellow
+        Globals.aFaceColors[1] = Preferences.Default.Get("SettingCubeColor1", "#FF0000");   // Front face: Red
+        Globals.aFaceColors[2] = Preferences.Default.Get("SettingCubeColor2", "#0000FF");   // Right face: Blue
+        Globals.aFaceColors[3] = Preferences.Default.Get("SettingCubeColor3", "#FF8000");   // Back face: Orange
+        Globals.aFaceColors[4] = Preferences.Default.Get("SettingCubeColor4", "#008000");   // Left face: Green
+        Globals.aFaceColors[5] = Preferences.Default.Get("SettingCubeColor5", "#FFFFFF");   // Up face: White
+        Globals.aFaceColors[6] = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Down face: Yellow
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
         // Set the theme
@@ -84,17 +84,9 @@ public partial class MainPage : ContentPage
 
         ClassSpeech.InitializeTextToSpeech(cCultureName);
 
-        // Initialize the cube colors
-        Globals.aFaceColors[1] = Globals.cCubeColor1;
-        Globals.aFaceColors[2] = Globals.cCubeColor2;
-        Globals.aFaceColors[3] = Globals.cCubeColor3;
-        Globals.aFaceColors[4] = Globals.cCubeColor4;
-        Globals.aFaceColors[5] = Globals.cCubeColor5;
-        Globals.aFaceColors[6] = Globals.cCubeColor6;
-
         // Reset the colors of the cube
         ClassColorsCube.ResetCube();
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // TitleView buttons clicked events
@@ -122,6 +114,8 @@ public partial class MainPage : ContentPage
         {
             Polygon polygon = sender as Polygon;
             polygon.Fill = plgCubeColorSelect.Fill;
+
+            SetCubeColorsInArrays();
         }
     }
 
@@ -156,6 +150,7 @@ public partial class MainPage : ContentPage
         {
             Globals.lCubeTurns.Clear();
 
+            
             if (!CheckNumberColorsCube())
             {
                 bColorDrop = true;
@@ -182,7 +177,7 @@ public partial class MainPage : ContentPage
     {
         //Globals.lCubeTurns.Clear();
         //SetCubeColorsInArrays();
-        //SetCubeColorsFromArrays();
+        //GetCubeColorsFromArrays();
 
         // Check the number of colors of the cube
         if (!CheckNumberColorsCube())
@@ -220,10 +215,6 @@ public partial class MainPage : ContentPage
         // Create and start a stopwatch instance
         Stopwatch stopwatch = Stopwatch.StartNew();
 
-        // Save the start colors of the cube to array aStartPieces[]
-        SetCubeColorsInArrays();
-        Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
-
         // Solve the cube from the turns the user has made in reverse order
         if (Globals.lCubeTurns.Count > 0)
         {
@@ -233,6 +224,10 @@ public partial class MainPage : ContentPage
         // Solve the cube from the turns the program has made
         else
         {
+            // Save the start colors of the cube to array aStartPieces[]
+            //SetCubeColorsInArrays();
+            Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
+
             // Test the turns of the cube
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
@@ -241,10 +236,11 @@ public partial class MainPage : ContentPage
 
             // Solve the cube in C#
             //bSolved = await ClassSolveCube.SolveTheCubeAsync();
-        }
 
-        // Restore the start colors of the cube from array aStartPieces[]
-        Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
+            // Restore the start colors of the cube from array aStartPieces[]
+            Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
+            //GetCubeColorsFromArrays();
+        }
 
         // Stop the activity indicator
         activityIndicator.IsRunning = false;
@@ -291,6 +287,12 @@ public partial class MainPage : ContentPage
         if (!bSolved)
         {
             await DisplayAlert("", CubeLang.MessageCubeCannotBeSolved_Text, CubeLang.ButtonClose_Text);
+            //Array.Clear(Globals.aPieces, 0, Globals.aPieces.Length);
+            //Array.Clear(Globals.aPiecesTemp, 0, Globals.aPiecesTemp.Length);
+            //Array.Clear(Globals.aFaceColors, 0, Globals.aFaceColors.Length);
+
+            //SetCubeColorsInArrays();
+            //GetCubeColorsFromArrays();
         }
 
         // Clear the list with the cube turns
@@ -396,7 +398,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToRight_Text);
         ClassCubeTurns.TurnFrontFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the upper horizontal middle to the right face (+)
@@ -404,7 +406,6 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            SetCubeColorsInArrays();
             TurnCubeUpFaceToRightFace();
             return;
         }
@@ -422,7 +423,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToRightFace_Text);
         ClassCubeTurns.TurnUpHorMiddleTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the back face counter clockwise (to left -)
@@ -441,7 +442,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnBackFaceToLeft_Text);
         ClassCubeTurns.TurnBackFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the left face clockwise (to right +)
@@ -460,7 +461,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToRight_Text);
         ClassCubeTurns.TurnLeftFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the upper vertical middle to the front face (-)
@@ -468,7 +469,6 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            SetCubeColorsInArrays();
             TurnCubeFrontFaceToDownFace();
             return;
         }
@@ -486,7 +486,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToFrontFace_Text);
         ClassCubeTurns.TurnUpVerMiddleTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the right face counter clockwise (to left -)
@@ -505,7 +505,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightFaceToLeft_Text);
         ClassCubeTurns.TurnRightFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the upper face counter clockwise (to left -)
@@ -524,7 +524,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpFaceToLeft_Text);
         ClassCubeTurns.TurnUpFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the front horizontal middle to the right face (-)
@@ -532,7 +532,6 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            SetCubeColorsInArrays();
             TurnCubeFrontFaceToRightFace();
             return;
         }
@@ -550,7 +549,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightFace_Text);
         ClassCubeTurns.TurnFrontHorMiddleTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the down face clockwise (to right +)
@@ -569,7 +568,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnDownFaceToRight_Text);
         ClassCubeTurns.TurnDownFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the upper face clockwise (to right +)
@@ -588,7 +587,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnUpFaceToRight_Text);
         ClassCubeTurns.TurnUpFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the front horizontal middle to the left face (+)
@@ -596,7 +595,6 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            SetCubeColorsInArrays();
             TurnCubeFrontFaceToLeftFace();
             return;
         }
@@ -614,7 +612,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontFace_Text);
         ClassCubeTurns.TurnFrontHorMiddleTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the down face counter clockwise (to left -)
@@ -633,7 +631,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnDownFaceToLeft_Text);
         ClassCubeTurns.TurnDownFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the left face counter clockwise (to left -)
@@ -652,7 +650,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToLeft_Text);
         ClassCubeTurns.TurnLeftFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the upper vertical middle to the back face (+)
@@ -660,7 +658,6 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            SetCubeColorsInArrays();
             TurnCubeFrontFaceToUpFace();
             return;
         }
@@ -678,7 +675,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToUpFace_Text);
         ClassCubeTurns.TurnUpVerMiddleTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the right face clockwise (to right +)
@@ -697,7 +694,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightFaceToRight_Text);
         ClassCubeTurns.TurnRightFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the front face counter clockwise (to left -)
@@ -716,7 +713,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToLeft_Text);
         ClassCubeTurns.TurnFrontFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the upper horizontal middle to the left face (-)
@@ -724,7 +721,6 @@ public partial class MainPage : ContentPage
     {
         if (bColorDrop)
         {
-            SetCubeColorsInArrays();
             TurnCubeUpFaceToLeftFace();
             return;
         }
@@ -742,7 +738,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToUpFace_Text);
         ClassCubeTurns.TurnUpHorMiddleTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the back face clockwise (to right +)
@@ -761,7 +757,7 @@ public partial class MainPage : ContentPage
 
         ExplainTurnCube(CubeLang.TurnBackFaceToRight_Text);
         ClassCubeTurns.TurnBackFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Turn the entire cube a quarter turn
@@ -776,7 +772,7 @@ public partial class MainPage : ContentPage
         ClassCubeTurns.TurnUpFaceTo("CW");
         ClassCubeTurns.TurnFrontHorMiddleTo("CW");
         ClassCubeTurns.TurnDownFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the front goes to the right face
@@ -790,7 +786,7 @@ public partial class MainPage : ContentPage
         ClassCubeTurns.TurnUpFaceTo("CCW");
         ClassCubeTurns.TurnFrontHorMiddleTo("CCW");
         ClassCubeTurns.TurnDownFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the front goes to the upper face
@@ -804,7 +800,7 @@ public partial class MainPage : ContentPage
         ClassCubeTurns.TurnRightFaceTo("CW");
         ClassCubeTurns.TurnUpVerMiddleTo("CW");
         ClassCubeTurns.TurnLeftFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the front goes to the down face
@@ -818,7 +814,7 @@ public partial class MainPage : ContentPage
         ClassCubeTurns.TurnRightFaceTo("CCW");
         ClassCubeTurns.TurnUpVerMiddleTo("CCW");
         ClassCubeTurns.TurnLeftFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the upper face goes to the right face
@@ -832,7 +828,7 @@ public partial class MainPage : ContentPage
         ClassCubeTurns.TurnFrontFaceTo("CW");
         ClassCubeTurns.TurnUpHorMiddleTo("CW");
         ClassCubeTurns.TurnBackFaceTo("CCW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Rotate the entire cube so that the upper face goes to the left face
@@ -846,7 +842,7 @@ public partial class MainPage : ContentPage
         ClassCubeTurns.TurnFrontFaceTo("CCW");
         ClassCubeTurns.TurnUpHorMiddleTo("CCW");
         ClassCubeTurns.TurnBackFaceTo("CW");
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
     }
 
     // Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods
@@ -896,7 +892,8 @@ public partial class MainPage : ContentPage
         // Turn the faces of the cube
         await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
         
-        SetCubeColorsFromArrays();
+        // Set the cube colors from the arrays in the polygons
+        GetCubeColorsFromArrays();
     }
 
     // Enalbe or disable the arrow imagebuttons
@@ -1126,7 +1123,7 @@ public partial class MainPage : ContentPage
     }
 
     // Explain the turn of the cube with speech
-    private void ExplainTurnCubeSpeech(string cTurnCubeText)
+    private static void ExplainTurnCubeSpeech(string cTurnCubeText)
     {
         if (Globals.bExplainSpeech)
         {
@@ -1151,7 +1148,7 @@ public partial class MainPage : ContentPage
     {
         _ = ClassSaveRestoreCube.CubeDataOpen();
 
-        SetCubeColorsFromArrays();
+        GetCubeColorsFromArrays();
         Globals.lCubeTurns.Clear();
     }
 
@@ -1168,7 +1165,7 @@ public partial class MainPage : ContentPage
         else
         {
             ClassColorsCube.ResetCube();
-            SetCubeColorsFromArrays();
+            GetCubeColorsFromArrays();
 
             if (!bColorDrop)
             {
@@ -1194,15 +1191,8 @@ public partial class MainPage : ContentPage
     }
 
     // Set the cube colors from the arrays in the polygons
-    private void SetCubeColorsFromArrays()
+    private void GetCubeColorsFromArrays()
     {
-        Globals.cCubeColor1 = Globals.aFaceColors[1];
-        Globals.cCubeColor2 = Globals.aFaceColors[2];
-        Globals.cCubeColor3 = Globals.aFaceColors[3];
-        Globals.cCubeColor4 = Globals.aFaceColors[4];
-        Globals.cCubeColor5 = Globals.aFaceColors[5];
-        Globals.cCubeColor6 = Globals.aFaceColors[6];
-
         for (int i = 1; i < 7; i++)
         {
             Polygon polygon = this.FindByName<Polygon>($"plgCubeColor{i}");

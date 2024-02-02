@@ -466,4 +466,7 @@ Nicht erlaubt:</value>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Der Würfel befindet sich wieder in seinem vorherigen Zustand.</value>
   </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Die Farben der gegenüberliegenden Mittelstücke sind falsch.</value>
+  </data>
 </root>

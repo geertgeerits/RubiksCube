@@ -20,12 +20,6 @@ internal static class Globals
     public static bool bTextToSpeechIsBusy = false;
     public static CancellationTokenSource cts;
     public static bool bLicense;
-    public static string cCubeColor1;
-    public static string cCubeColor2;
-    public static string cCubeColor3;
-    public static string cCubeColor4;
-    public static string cCubeColor5;
-    public static string cCubeColor6;
 
     public static string[] aFaceColors = new string[7];
     public static string[] aPieces = new string[54];

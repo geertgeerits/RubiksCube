@@ -466,4 +466,7 @@ Interdit:</value>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Le cube est revenu à son état précédent.</value>
   </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Les couleurs des pièces centrales opposées sont fausses.</value>
+  </data>
 </root>

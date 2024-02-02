@@ -466,4 +466,7 @@ Not allowed:</value>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>The cube is back in its previous state.</value>
   </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>The colors of the opposite center pieces are wrong.</value>
+  </data>
 </root>

@@ -1,4 +1,6 @@
-﻿namespace RubiksCube
+﻿using Microsoft.Maui.ApplicationModel.Communication;
+
+namespace RubiksCube
 {
     internal class ClassColorsCube
     {
@@ -351,6 +353,118 @@
             }
 
             return true;
+            // Check the opposite center pieces of the cube
+            // Colors: 1= red, 2= blue, 3= orange, 4= green, 5= white, 6= yellow
+            // Center pieces: 4= front/red, 13= right/blue, 22= back/orange, 31= left/green, 40= up/white, 49= down/yellow
+
+            if (Globals.aPieces[4] == Globals.aFaceColors[1])
+            {
+                bool bResult1 = CheckOppositeCenterPieces(4, 1, 22, 3);
+                bool bResult2 = CheckOppositeCenterPieces(13, 2, 31, 4);
+                bool bResult3 = CheckOppositeCenterPieces(22, 3, 4, 1);
+                bool bResult4 = CheckOppositeCenterPieces(31, 4, 13, 2);
+                bool bResult5 = CheckOppositeCenterPieces(40, 5, 49, 6);
+                bool bResult6 = CheckOppositeCenterPieces(49, 6, 40, 5);
+
+                if (!bResult1 || !bResult2 || !bResult3 || !bResult4 || !bResult5 || !bResult6)
+                {
+                    _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "1 " + CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                    return false;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aFaceColors[2])
+            {
+                bool bResult1 = CheckOppositeCenterPieces(4, 2, 22, 4);
+                bool bResult2 = CheckOppositeCenterPieces(13, 3, 31, 1);
+                bool bResult3 = CheckOppositeCenterPieces(22, 4, 4, 2);
+                bool bResult4 = CheckOppositeCenterPieces(31, 1, 13, 3);
+                bool bResult5 = CheckOppositeCenterPieces(40, 5, 49, 6);
+                bool bResult6 = CheckOppositeCenterPieces(49, 6, 40, 5);
+
+                if (!bResult1 || !bResult2 || !bResult3 || !bResult4 || !bResult5 || !bResult6)
+                {
+                    _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "2 " + CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                    return false;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aFaceColors[3])
+            {
+                bool bResult1 = CheckOppositeCenterPieces(4, 3, 22, 1);
+                bool bResult2 = CheckOppositeCenterPieces(13, 4, 31, 2);
+                bool bResult3 = CheckOppositeCenterPieces(22, 1, 4, 3);
+                bool bResult4 = CheckOppositeCenterPieces(31, 2, 13, 4);
+                bool bResult5 = CheckOppositeCenterPieces(40, 5, 49, 6);
+                bool bResult6 = CheckOppositeCenterPieces(49, 6, 40, 5);
+
+                if (!bResult1 || !bResult2 || !bResult3 || !bResult4 || !bResult5 || !bResult6)
+                {
+                    _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "3 " + CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                    return false;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aFaceColors[4])
+            {
+                bool bResult1 = CheckOppositeCenterPieces(4, 4, 22, 2);
+                bool bResult2 = CheckOppositeCenterPieces(13, 1, 31, 3);
+                bool bResult3 = CheckOppositeCenterPieces(22, 2, 4, 4);
+                bool bResult4 = CheckOppositeCenterPieces(31, 3, 13, 1);
+                bool bResult5 = CheckOppositeCenterPieces(40, 5, 49, 6);
+                bool bResult6 = CheckOppositeCenterPieces(49, 6, 40, 5);
+
+                if (!bResult1 || !bResult2 || !bResult3 || !bResult4 || !bResult5 || !bResult6)
+                {
+                    _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "4 " + CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                    return false;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aFaceColors[5])
+            {
+                bool bResult1 = CheckOppositeCenterPieces(4, 5, 22, 6);
+                bool bResult2 = CheckOppositeCenterPieces(13, 2, 31, 4);
+                bool bResult3 = CheckOppositeCenterPieces(22, 6, 4, 5);
+                bool bResult4 = CheckOppositeCenterPieces(31, 4, 13, 2);
+                bool bResult5 = CheckOppositeCenterPieces(40, 3, 49, 1);
+                bool bResult6 = CheckOppositeCenterPieces(49, 1, 40, 3);
+
+                if (!bResult1 || !bResult2 || !bResult3 || !bResult4 || !bResult5 || !bResult6)
+                {
+                    _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "5 " + CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                    return false;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aFaceColors[6])
+            {
+                bool bResult1 = CheckOppositeCenterPieces(4, 6, 22, 5);
+                bool bResult2 = CheckOppositeCenterPieces(13, 2, 31, 4);
+                bool bResult3 = CheckOppositeCenterPieces(22, 5, 4, 6);
+                bool bResult4 = CheckOppositeCenterPieces(31, 4, 13, 2);
+                bool bResult5 = CheckOppositeCenterPieces(40, 1, 49, 3);
+                bool bResult6 = CheckOppositeCenterPieces(49, 3, 40, 1);
+
+                if (!bResult1 || !bResult2 || !bResult3 || !bResult4 || !bResult5 || !bResult6)
+                {
+                    _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "6 " + CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Check the opposite center pieces of the cube
+        private static bool CheckOppositeCenterPieces(int nPiece1, int nColor1, int nPiece2, int nColor2)
+        {
+            if (Globals.aPieces[nPiece1] == Globals.aFaceColors[nColor1] && Globals.aPieces[nPiece2] == Globals.aFaceColors[nColor2])
+            {
+                return true;
+            }
+
+            return false;
         }
 
         // Check if the cube is solved

@@ -56,12 +56,12 @@ public partial class PageSettings : ContentPage
         swtExplainSpeech.IsToggled = Globals.bExplainSpeech;
 
         // Initialize the cube colors
-        plgCubeColor1.Fill = Color.FromArgb(Globals.cCubeColor1);
-        plgCubeColor2.Fill = Color.FromArgb(Globals.cCubeColor2);
-        plgCubeColor3.Fill = Color.FromArgb(Globals.cCubeColor3);
-        plgCubeColor4.Fill = Color.FromArgb(Globals.cCubeColor4);
-        plgCubeColor5.Fill = Color.FromArgb(Globals.cCubeColor5);
-        plgCubeColor6.Fill = Color.FromArgb(Globals.cCubeColor6);
+        plgCubeColor1.Fill = Color.FromArgb(Globals.aFaceColors[1]);
+        plgCubeColor2.Fill = Color.FromArgb(Globals.aFaceColors[2]);
+        plgCubeColor3.Fill = Color.FromArgb(Globals.aFaceColors[3]);
+        plgCubeColor4.Fill = Color.FromArgb(Globals.aFaceColors[4]);
+        plgCubeColor5.Fill = Color.FromArgb(Globals.aFaceColors[5]);
+        plgCubeColor6.Fill = Color.FromArgb(Globals.aFaceColors[6]);
 
         // Workaround for !!!BUG!!! in iOS with the Slider right margin
 #if IOS
@@ -275,33 +275,33 @@ public partial class PageSettings : ContentPage
 
         if (rbnCubeColor1.IsChecked)
         {
-            entHexColor.Text = Globals.cCubeColor1[1..];
-            HexToRgbColor(Globals.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.aFaceColors[1][1..];
+            HexToRgbColor(Globals.aFaceColors[1], ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor2.IsChecked)
         {
-            entHexColor.Text = Globals.cCubeColor2[1..];
-            HexToRgbColor(Globals.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.aFaceColors[2][1..];
+            HexToRgbColor(Globals.aFaceColors[2], ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor3.IsChecked)
         {
-            entHexColor.Text = Globals.cCubeColor3[1..];
-            HexToRgbColor(Globals.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.aFaceColors[3][1..];
+            HexToRgbColor(Globals.aFaceColors[3], ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor4.IsChecked)
         {
-            entHexColor.Text = Globals.cCubeColor4[1..];
-            HexToRgbColor(Globals.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.aFaceColors[4][1..];
+            HexToRgbColor(Globals.aFaceColors[4], ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor5.IsChecked)
         {
-            entHexColor.Text = Globals.cCubeColor5[1..];
-            HexToRgbColor(Globals.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.aFaceColors[5][1..];
+            HexToRgbColor(Globals.aFaceColors[5], ref nRed, ref nGreen, ref nBlue);
         }
         else if (rbnCubeColor6.IsChecked)
         {
-            entHexColor.Text = Globals.cCubeColor6[1..];
-            HexToRgbColor(Globals.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
+            entHexColor.Text = Globals.aFaceColors[6][1..];
+            HexToRgbColor(Globals.aFaceColors[6], ref nRed, ref nGreen, ref nBlue);
         }
 
         sldColorRed.Value = nRed;
@@ -343,33 +343,33 @@ public partial class PageSettings : ContentPage
         {
             if (rbnCubeColor1.IsChecked)
             {
-                Globals.cCubeColor1 = "#" + entHexColor.Text;
-                HexToRgbColor(Globals.cCubeColor1, ref nRed, ref nGreen, ref nBlue);
+                Globals.aFaceColors[1] = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.aFaceColors[1], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor2.IsChecked)
             {
-                Globals.cCubeColor2 = "#" + entHexColor.Text;
-                HexToRgbColor(Globals.cCubeColor2, ref nRed, ref nGreen, ref nBlue);
+                Globals.aFaceColors[2] = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.aFaceColors[2], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor3.IsChecked)
             {
-                Globals.cCubeColor3 = "#" + entHexColor.Text;
-                HexToRgbColor(Globals.cCubeColor3, ref nRed, ref nGreen, ref nBlue);
+                Globals.aFaceColors[3] = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.aFaceColors[3], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor4.IsChecked)
             {
-                Globals.cCubeColor4 = "#" + entHexColor.Text;
-                HexToRgbColor(Globals.cCubeColor4, ref nRed, ref nGreen, ref nBlue);
+                Globals.aFaceColors[4] = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.aFaceColors[4], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor5.IsChecked)
             {
-                Globals.cCubeColor5 = "#" + entHexColor.Text;
-                HexToRgbColor(Globals.cCubeColor5, ref nRed, ref nGreen, ref nBlue);
+                Globals.aFaceColors[5] = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.aFaceColors[5], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor6.IsChecked)
             {
-                Globals.cCubeColor6 = "#" + entHexColor.Text;
-                HexToRgbColor(Globals.cCubeColor6, ref nRed, ref nGreen, ref nBlue);
+                Globals.aFaceColors[6] = "#" + entHexColor.Text;
+                HexToRgbColor(Globals.aFaceColors[6], ref nRed, ref nGreen, ref nBlue);
             }
 
             sldColorRed.Value = nRed;
@@ -449,32 +449,32 @@ public partial class PageSettings : ContentPage
         if (rbnCubeColor1.IsChecked)
         {
             plgCubeColor1.Fill = Color.FromArgb(cColorFgHex);
-            Globals.cCubeColor1 = "#" + cColorFgHex;
+            Globals.aFaceColors[1] = "#" + cColorFgHex;
         }
         else if(rbnCubeColor2.IsChecked)
         {
             plgCubeColor2.Fill = Color.FromArgb(cColorFgHex);
-            Globals.cCubeColor2 = "#" + cColorFgHex;
+            Globals.aFaceColors[2] = "#" + cColorFgHex;
         }
         else if (rbnCubeColor3.IsChecked)
         {
             plgCubeColor3.Fill = Color.FromArgb(cColorFgHex);
-            Globals.cCubeColor3 = "#" + cColorFgHex;
+            Globals.aFaceColors[3] = "#" + cColorFgHex;
         }
         else if (rbnCubeColor4.IsChecked)
         {
             plgCubeColor4.Fill = Color.FromArgb(cColorFgHex);
-            Globals.cCubeColor4 = "#" + cColorFgHex;
+            Globals.aFaceColors[4] = "#" + cColorFgHex;
         }
         else if (rbnCubeColor5.IsChecked)
         {
             plgCubeColor5.Fill = Color.FromArgb(cColorFgHex);
-            Globals.cCubeColor5 = "#" + cColorFgHex;
+            Globals.aFaceColors[5] = "#" + cColorFgHex;
         }
         else if (rbnCubeColor6.IsChecked)
         {
             plgCubeColor6.Fill = Color.FromArgb(cColorFgHex);
-            Globals.cCubeColor6 = "#" + cColorFgHex;
+            Globals.aFaceColors[6] = "#" + cColorFgHex;
         }
     }
 
@@ -500,12 +500,12 @@ public partial class PageSettings : ContentPage
         Preferences.Default.Set("SettingLanguageSpeech", Globals.cLanguageSpeech);
         Preferences.Default.Set("SettingExplainText", Globals.bExplainText);
         Preferences.Default.Set("SettingExplainSpeech", Globals.bExplainSpeech);
-        Preferences.Default.Set("SettingCubeColor1", Globals.cCubeColor1);
-        Preferences.Default.Set("SettingCubeColor2", Globals.cCubeColor2);
-        Preferences.Default.Set("SettingCubeColor3", Globals.cCubeColor3);
-        Preferences.Default.Set("SettingCubeColor4", Globals.cCubeColor4);
-        Preferences.Default.Set("SettingCubeColor5", Globals.cCubeColor5);
-        Preferences.Default.Set("SettingCubeColor6", Globals.cCubeColor6);
+        Preferences.Default.Set("SettingCubeColor1", Globals.aFaceColors[1]);
+        Preferences.Default.Set("SettingCubeColor2", Globals.aFaceColors[2]);
+        Preferences.Default.Set("SettingCubeColor3", Globals.aFaceColors[3]);
+        Preferences.Default.Set("SettingCubeColor4", Globals.aFaceColors[4]);
+        Preferences.Default.Set("SettingCubeColor5", Globals.aFaceColors[5]);
+        Preferences.Default.Set("SettingCubeColor6", Globals.aFaceColors[6]);
 
         // Wait 500 milliseconds otherwise the settings are not saved in Android
         Task.Delay(500).Wait();
