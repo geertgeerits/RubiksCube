@@ -338,7 +338,10 @@ public partial class MainPage : ContentPage
 
         // Restore the start colors of the cube from array aStartPieces[]
         Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
-        
+
+        // Add the turn to the list
+        Globals.lCubeTurns.Add(cTurn);
+
         // Turn the faces of the cube
         await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
         
