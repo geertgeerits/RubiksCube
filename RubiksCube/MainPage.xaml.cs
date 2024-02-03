@@ -227,7 +227,8 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
             // Solve the cube from Basic-80 to C#
-            bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();
+            //bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();
+            bSolved = await SolveCubeFromMultiplePositionsAsync();
 
             // Solve the cube in C#
             //bSolved = await ClassSolveCube.SolveTheCubeAsync();
@@ -304,6 +305,47 @@ public partial class MainPage : ContentPage
         imgbtnSaveCube.IsEnabled = true;
     }
 
+    // Try to solve the cube from other positions of the cube
+    private static async Task<bool> SolveCubeFromMultiplePositionsAsync()
+    {
+        if (await ClassSolveCubeBas.SolveTheCubeBasAsync())
+        {
+            return true;
+        }
+
+        if (await SolveCubeFromMultiplePositions2Async(Globals.turnCubeFrontToRight))
+        {
+            return true;
+        }
+
+        if (await SolveCubeFromMultiplePositions2Async(Globals.turnCubeFrontToLeft))
+        {
+            return true;
+        }
+
+        if (await SolveCubeFromMultiplePositions2Async(Globals.turnCubeFrontToLeft2))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static async Task<bool> SolveCubeFromMultiplePositions2Async(string cTurn)
+    {
+        // Clear the list with the cube turns
+        Globals.lCubeTurns.Clear();
+
+        // Restore the start colors of the cube from array aStartPieces[]
+        Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
+        
+        // Turn the faces of the cube
+        await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+        
+        // Try to solve the cube
+        return await ClassSolveCubeBas.SolveTheCubeBasAsync();
+    }
+
     // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
     private static void CleanDoublesListCubeTurns()
     {
@@ -326,32 +368,32 @@ public partial class MainPage : ContentPage
                 }
                 else if (Globals.lCubeTurns[i] == Globals.turnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.turnUpHorMiddleLeft)
                 {
-                    Globals.lCubeTurns[i] = "TurnUpHorMiddle2";
+                    Globals.lCubeTurns[i] = Globals.turnUpHorMiddle2;
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i] == Globals.turnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.turnUpVerMiddleFront)
                 {
-                    Globals.lCubeTurns[i] = "TurnUpVerMiddle2";
+                    Globals.lCubeTurns[i] = Globals.turnUpVerMiddle2;
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleRight)
                 {
-                    Globals.lCubeTurns[i] = "TurnFrontHorMiddle2";
+                    Globals.lCubeTurns[i] = Globals.turnFrontHorMiddle2;
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.turnCubeFrontToLeft)
                 {
-                    Globals.lCubeTurns[i] = "TurnCubeFrontToLeft2";
+                    Globals.lCubeTurns[i] = Globals.turnCubeFrontToLeft2;
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.turnCubeFrontToDown)
                 {
-                    Globals.lCubeTurns[i] = "TurnCubeFrontToUp2";
+                    Globals.lCubeTurns[i] = Globals.turnCubeFrontToUp2;
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
                 else if (Globals.lCubeTurns[i] == Globals.turnCubeUpToRight || Globals.lCubeTurns[i] == Globals.turnCubeUpToLeft)
                 {
-                    Globals.lCubeTurns[i] = "TurnCubeUpToRight2";
+                    Globals.lCubeTurns[i] = Globals.turnCubeUpToRight2;
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
             }

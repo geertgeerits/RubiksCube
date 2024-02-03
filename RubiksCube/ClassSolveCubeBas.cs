@@ -3,7 +3,7 @@
     internal class ClassSolveCubeBas
     {
         // Declare variables
-        private const int nLoopTimesMax = 10000;
+        private const int nLoopTimesMax = 5000;
 
         // Solve the cube.  From Basic-80 to C# - 1984-04-10
         public static async Task<bool> SolveTheCubeBasAsync()
