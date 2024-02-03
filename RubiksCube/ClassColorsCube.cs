@@ -355,6 +355,7 @@ namespace RubiksCube
             // Check the opposite center pieces of the cube
             // Colors: 1= red, 2= blue, 3= orange, 4= green, 5= white, 6= yellow
             // Center pieces: 4= front/red, 13= right/blue, 22= back/orange, 31= left/green, 40= up/white, 49= down/yellow
+            // Opposite colors: red-orange 1-3, blue-green 2-4, white-yellow 5-6
             bool bResult1 = CheckOppositeCenterPieces(4, 1, 22, 3);
             bool bResult2 = CheckOppositeCenterPieces(4, 2, 22, 4);
             bool bResult3 = CheckOppositeCenterPieces(4, 3, 22, 1);

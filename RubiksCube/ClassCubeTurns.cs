@@ -7,128 +7,128 @@
         {
             switch (cTurnFaceAndDirection)
             {
-                case Globals.TurnFrontCW:
+                case Globals.turnFrontCW:
                     TurnFrontFaceTo("CW");
                     break;
-                case Globals.TurnFrontCCW:
+                case Globals.turnFrontCCW:
                     TurnFrontFaceTo("CCW");
                     break;
-                case Globals.TurnFront2:
+                case Globals.turnFront2:
                     TurnFrontFaceTo("CW");
                     TurnFrontFaceTo("CW");
                     break;
-                case Globals.TurnRightCW:
+                case Globals.turnRightCW:
                     TurnRightFaceTo("CW");
                     break;
-                case Globals.TurnRightCCW:
+                case Globals.turnRightCCW:
                     TurnRightFaceTo("CCW");
                     break;
-                case Globals.TurnRight2:
+                case Globals.turnRight2:
                     TurnRightFaceTo("CW");
                     TurnRightFaceTo("CW");
                     break;
-                case Globals.TurnBackCW:
+                case Globals.turnBackCW:
                     TurnBackFaceTo("CW");
                     break;
-                case Globals.TurnBackCCW:
+                case Globals.turnBackCCW:
                     TurnBackFaceTo("CCW");
                     break;
-                case Globals.TurnBack2:
+                case Globals.turnBack2:
                     TurnBackFaceTo("CW");
                     TurnBackFaceTo("CW");
                     break;
-                case Globals.TurnLeftCW:
+                case Globals.turnLeftCW:
                     TurnLeftFaceTo("CW");
                     break;
-                case Globals.TurnLeftCCW:
+                case Globals.turnLeftCCW:
                     TurnLeftFaceTo("CCW");
                     break;
-                case Globals.TurnLeft2:
+                case Globals.turnLeft2:
                     TurnLeftFaceTo("CW");
                     TurnLeftFaceTo("CW");
                     break;
-                case Globals.TurnUpCW:
+                case Globals.turnUpCW:
                     TurnUpFaceTo("CW");
                     break;
-                case Globals.TurnUpCCW:
+                case Globals.turnUpCCW:
                     TurnUpFaceTo("CCW");
                     break;
-                case Globals.TurnUp2:
+                case Globals.turnUp2:
                     TurnUpFaceTo("CW");
                     TurnUpFaceTo("CW");
                     break;
-                case Globals.TurnDownCW:
+                case Globals.turnDownCW:
                     TurnDownFaceTo("CW");
                     break;
-                case Globals.TurnDownCCW:
+                case Globals.turnDownCCW:
                     TurnDownFaceTo("CCW");
                     break;
-                case Globals.TurnDown2:
+                case Globals.turnDown2:
                     TurnDownFaceTo("CW");
                     TurnDownFaceTo("CW");
                     break;
 
-                case Globals.TurnUpHorMiddleRight:
+                case Globals.turnUpHorMiddleRight:
                     TurnUpHorMiddleTo("CW");
                     break;
-                case Globals.TurnUpHorMiddleLeft:
+                case Globals.turnUpHorMiddleLeft:
                     TurnUpHorMiddleTo("CCW");
                     break;
-                case Globals.TurnUpHorMiddle2:
+                case Globals.turnUpHorMiddle2:
                     TurnUpHorMiddleTo("CW");
                     TurnUpHorMiddleTo("CW");
                     break;
 
-                case Globals.TurnUpVerMiddleBack:
+                case Globals.turnUpVerMiddleBack:
                     TurnUpVerMiddleTo("CW");
                     break;
-                case Globals.TurnUpVerMiddleFront:
+                case Globals.turnUpVerMiddleFront:
                     TurnUpVerMiddleTo("CCW");
                     break;
-                case Globals.TurnUpVerMiddle2:
+                case Globals.turnUpVerMiddle2:
                     TurnUpVerMiddleTo("CW");
                     TurnUpVerMiddleTo("CW");
                     break;
 
-                case Globals.TurnFrontHorMiddleLeft:
+                case Globals.turnFrontHorMiddleLeft:
                     TurnFrontHorMiddleTo("CW");
                     break;
-                case Globals.TurnFrontHorMiddleRight:
+                case Globals.turnFrontHorMiddleRight:
                     TurnFrontHorMiddleTo("CCW");
                     break;
-                case Globals.TurnFrontHorMiddle2:
+                case Globals.turnFrontHorMiddle2:
                     TurnFrontHorMiddleTo("CW");
                     TurnFrontHorMiddleTo("CW");
                     break;
 
-                case Globals.TurnCubeFrontToRight:
+                case Globals.turnCubeFrontToRight:
                     TurnCubeFrontFaceToRightFace();
                     break;
-                case Globals.TurnCubeFrontToLeft:
+                case Globals.turnCubeFrontToLeft:
                     TurnCubeFrontFaceToLeftFace();
                     break;
-                case Globals.TurnCubeFrontToLeft2:
+                case Globals.turnCubeFrontToLeft2:
                     TurnCubeFrontFaceToLeftFace();
                     TurnCubeFrontFaceToLeftFace();
                     break;
-                case Globals.TurnCubeFrontToUp:
+                case Globals.turnCubeFrontToUp:
                     TurnCubeFrontFaceToUpFace();
                     break;
-                case Globals.TurnCubeFrontToUp2:
+                case Globals.turnCubeFrontToUp2:
                     TurnCubeFrontFaceToUpFace();
                     TurnCubeFrontFaceToUpFace();
                     break;
-                case Globals.TurnCubeFrontToDown:
+                case Globals.turnCubeFrontToDown:
                     TurnCubeFrontFaceToDownFace();
                     break;
-                case Globals.TurnCubeUpToRight:
+                case Globals.turnCubeUpToRight:
                     TurnCubeUpFaceToRightFace();
                     break;
-                case Globals.TurnCubeUpToRight2:
+                case Globals.turnCubeUpToRight2:
                     TurnCubeUpFaceToRightFace();
                     TurnCubeUpFaceToRightFace();
                     break;
-                case Globals.TurnCubeUpToLeft:
+                case Globals.turnCubeUpToLeft:
                     TurnCubeUpFaceToLeftFace();
                     break;
 

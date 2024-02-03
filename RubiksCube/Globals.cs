@@ -28,44 +28,44 @@ internal static class Globals
     public static List<string> lCubeTurns = [];
 
     // Cube turns
-    public const string TurnFrontCW = "TurnFrontCW";
-    public const string TurnFrontCCW = "TurnFrontCCW";
-    public const string TurnFront2 = "TurnFront2";
-    public const string TurnRightCW = "TurnRightCW";
-    public const string TurnRightCCW = "TurnRightCCW";
-    public const string TurnRight2 = "TurnRight2";
-    public const string TurnBackCW = "TurnBackCW";
-    public const string TurnBackCCW = "TurnBackCCW";
-    public const string TurnBack2 = "TurnBack2";
-    public const string TurnLeftCW = "TurnLeftCW";
-    public const string TurnLeftCCW = "TurnLeftCCW";
-    public const string TurnLeft2 = "TurnLeft2";
-    public const string TurnUpCW = "TurnUpCW";
-    public const string TurnUpCCW = "TurnUpCCW";
-    public const string TurnUp2 = "TurnUp2";
-    public const string TurnDownCW = "TurnDownCW";
-    public const string TurnDownCCW = "TurnDownCCW";
-    public const string TurnDown2 = "TurnDown2";
+    public const string turnFrontCW = "TurnFrontCW";
+    public const string turnFrontCCW = "TurnFrontCCW";
+    public const string turnFront2 = "TurnFront2";
+    public const string turnRightCW = "TurnRightCW";
+    public const string turnRightCCW = "TurnRightCCW";
+    public const string turnRight2 = "TurnRight2";
+    public const string turnBackCW = "TurnBackCW";
+    public const string turnBackCCW = "TurnBackCCW";
+    public const string turnBack2 = "TurnBack2";
+    public const string turnLeftCW = "TurnLeftCW";
+    public const string turnLeftCCW = "TurnLeftCCW";
+    public const string turnLeft2 = "TurnLeft2";
+    public const string turnUpCW = "TurnUpCW";
+    public const string turnUpCCW = "TurnUpCCW";
+    public const string turnUp2 = "TurnUp2";
+    public const string turnDownCW = "TurnDownCW";
+    public const string turnDownCCW = "TurnDownCCW";
+    public const string turnDown2 = "TurnDown2";
 
-    public const string TurnUpHorMiddleRight = "TurnUpHorMiddleRight";
-    public const string TurnUpHorMiddleLeft = "TurnUpHorMiddleLeft";
-    public const string TurnUpHorMiddle2 = "TurnUpHorMiddle2";
-    public const string TurnUpVerMiddleBack = "TurnUpVerMiddleBack";
-    public const string TurnUpVerMiddleFront = "TurnUpVerMiddleFront";
-    public const string TurnUpVerMiddle2 = "TurnUpVerMiddle2";
-    public const string TurnFrontHorMiddleLeft = "TurnFrontHorMiddleLeft";
-    public const string TurnFrontHorMiddleRight = "TurnFrontHorMiddleRight";
-    public const string TurnFrontHorMiddle2 = "TurnFrontHorMiddle2";
+    public const string turnUpHorMiddleRight = "TurnUpHorMiddleRight";
+    public const string turnUpHorMiddleLeft = "TurnUpHorMiddleLeft";
+    public const string turnUpHorMiddle2 = "TurnUpHorMiddle2";
+    public const string turnUpVerMiddleBack = "TurnUpVerMiddleBack";
+    public const string turnUpVerMiddleFront = "TurnUpVerMiddleFront";
+    public const string turnUpVerMiddle2 = "TurnUpVerMiddle2";
+    public const string turnFrontHorMiddleLeft = "TurnFrontHorMiddleLeft";
+    public const string turnFrontHorMiddleRight = "TurnFrontHorMiddleRight";
+    public const string turnFrontHorMiddle2 = "TurnFrontHorMiddle2";
 
-    public const string TurnCubeFrontToRight = "TurnCubeFrontToRight";
-    public const string TurnCubeFrontToLeft = "TurnCubeFrontToLeft";
-    public const string TurnCubeFrontToLeft2 = "TurnCubeFrontToLeft2";
-    public const string TurnCubeFrontToUp = "TurnCubeFrontToUp";
-    public const string TurnCubeFrontToUp2 = "TurnCubeFrontToUp2";
-    public const string TurnCubeFrontToDown = "TurnCubeFrontToDown";
-    public const string TurnCubeUpToRight = "TurnCubeUpToRight";
-    public const string TurnCubeUpToRight2 = "TurnCubeUpToRight2";
-    public const string TurnCubeUpToLeft = "TurnCubeUpToLeft";
+    public const string turnCubeFrontToRight = "TurnCubeFrontToRight";
+    public const string turnCubeFrontToLeft = "TurnCubeFrontToLeft";
+    public const string turnCubeFrontToLeft2 = "TurnCubeFrontToLeft2";
+    public const string turnCubeFrontToUp = "TurnCubeFrontToUp";
+    public const string turnCubeFrontToUp2 = "TurnCubeFrontToUp2";
+    public const string turnCubeFrontToDown = "TurnCubeFrontToDown";
+    public const string turnCubeUpToRight = "TurnCubeUpToRight";
+    public const string turnCubeUpToRight2 = "TurnCubeUpToRight2";
+    public const string turnCubeUpToLeft = "TurnCubeUpToLeft";
 
     // Global methods
     // Set the theme

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-02-02 (YYYY-MM-DD)
+// Date ........: 2024-02-03 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -324,32 +324,32 @@ public partial class MainPage : ContentPage
                     Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^2] + "2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-                else if (Globals.lCubeTurns[i] == Globals.TurnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.TurnUpHorMiddleLeft)
+                else if (Globals.lCubeTurns[i] == Globals.turnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.turnUpHorMiddleLeft)
                 {
                     Globals.lCubeTurns[i] = "TurnUpHorMiddle2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-                else if (Globals.lCubeTurns[i] == Globals.TurnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.TurnUpVerMiddleFront)
+                else if (Globals.lCubeTurns[i] == Globals.turnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.turnUpVerMiddleFront)
                 {
                     Globals.lCubeTurns[i] = "TurnUpVerMiddle2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-                else if (Globals.lCubeTurns[i] == Globals.TurnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.TurnFrontHorMiddleRight)
+                else if (Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleRight)
                 {
                     Globals.lCubeTurns[i] = "TurnFrontHorMiddle2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-                else if (Globals.lCubeTurns[i] == Globals.TurnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.TurnCubeFrontToLeft)
+                else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.turnCubeFrontToLeft)
                 {
                     Globals.lCubeTurns[i] = "TurnCubeFrontToLeft2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-                else if (Globals.lCubeTurns[i] == Globals.TurnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.TurnCubeFrontToDown)
+                else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.turnCubeFrontToDown)
                 {
                     Globals.lCubeTurns[i] = "TurnCubeFrontToUp2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
                 }
-                else if (Globals.lCubeTurns[i] == Globals.TurnCubeUpToRight || Globals.lCubeTurns[i] == Globals.TurnCubeUpToLeft)
+                else if (Globals.lCubeTurns[i] == Globals.turnCubeUpToRight || Globals.lCubeTurns[i] == Globals.turnCubeUpToLeft)
                 {
                     Globals.lCubeTurns[i] = "TurnCubeUpToRight2";
                     Globals.lCubeTurns.RemoveAt(i + 1);
@@ -381,7 +381,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnFrontCCW);
+            Globals.lCubeTurns.Add(Globals.turnFrontCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToRight_Text);
@@ -406,7 +406,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnUpHorMiddleLeft);
+            Globals.lCubeTurns.Add(Globals.turnUpHorMiddleLeft);
         }
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToRightFace_Text);
@@ -425,7 +425,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnBackCW);
+            Globals.lCubeTurns.Add(Globals.turnBackCW);
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToLeft_Text);
@@ -444,7 +444,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnLeftCCW);
+            Globals.lCubeTurns.Add(Globals.turnLeftCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToRight_Text);
@@ -469,7 +469,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnUpVerMiddleBack);
+            Globals.lCubeTurns.Add(Globals.turnUpVerMiddleBack);
         }
 
         ExplainTurnCube(CubeLang.TurnUpMiddleToFrontFace_Text);
@@ -488,7 +488,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnRightCW);
+            Globals.lCubeTurns.Add(Globals.turnRightCW);
         }
 
         ExplainTurnCube(CubeLang.TurnRightFaceToLeft_Text);
@@ -507,7 +507,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnUpCW);
+            Globals.lCubeTurns.Add(Globals.turnUpCW);
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToLeft_Text);
@@ -532,7 +532,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnFrontHorMiddleLeft);
+            Globals.lCubeTurns.Add(Globals.turnFrontHorMiddleLeft);
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToRightFace_Text);
@@ -551,7 +551,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnDownCCW);
+            Globals.lCubeTurns.Add(Globals.turnDownCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnDownFaceToRight_Text);
@@ -570,7 +570,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnUpCCW);
+            Globals.lCubeTurns.Add(Globals.turnUpCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnUpFaceToRight_Text);
@@ -595,7 +595,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnFrontHorMiddleRight);
+            Globals.lCubeTurns.Add(Globals.turnFrontHorMiddleRight);
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToFrontFace_Text);
@@ -614,7 +614,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnDownCW);
+            Globals.lCubeTurns.Add(Globals.turnDownCW);
         }
 
         ExplainTurnCube(CubeLang.TurnDownFaceToLeft_Text);
@@ -633,7 +633,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnLeftCW);
+            Globals.lCubeTurns.Add(Globals.turnLeftCW);
         }
 
         ExplainTurnCube(CubeLang.TurnLeftFaceToLeft_Text);
@@ -658,7 +658,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnUpVerMiddleFront);
+            Globals.lCubeTurns.Add(Globals.turnUpVerMiddleFront);
         }
 
         ExplainTurnCube(CubeLang.TurnFrontMiddleToUpFace_Text);
@@ -677,7 +677,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnRightCCW);
+            Globals.lCubeTurns.Add(Globals.turnRightCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnRightFaceToRight_Text);
@@ -696,7 +696,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnFrontCW);
+            Globals.lCubeTurns.Add(Globals.turnFrontCW);
         }
 
         ExplainTurnCube(CubeLang.TurnFrontFaceToLeft_Text);
@@ -721,7 +721,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnUpHorMiddleRight);
+            Globals.lCubeTurns.Add(Globals.turnUpHorMiddleRight);
         }
 
         ExplainTurnCube(CubeLang.TurnRightMiddleToUpFace_Text);
@@ -740,7 +740,7 @@ public partial class MainPage : ContentPage
 
         if (!bSolvingCube && !bColorDrop)
         {
-            Globals.lCubeTurns.Add(Globals.TurnBackCCW);
+            Globals.lCubeTurns.Add(Globals.turnBackCCW);
         }
 
         ExplainTurnCube(CubeLang.TurnBackFaceToRight_Text);
@@ -889,90 +889,90 @@ public partial class MainPage : ContentPage
     {
         switch (cTurnFaceAndDirection)
         {
-            case Globals.TurnFrontCW:
-            case Globals.TurnFront2:
+            case Globals.turnFrontCW:
+            case Globals.turnFront2:
                 imgbtnTurnFrontFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnFrontCCW:
+            case Globals.turnFrontCCW:
                 imgbtnTurnFrontFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnRightCW:
-            case Globals.TurnRight2:
+            case Globals.turnRightCW:
+            case Globals.turnRight2:
                 imgbtnTurnRightFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnRightCCW:
+            case Globals.turnRightCCW:
                 imgbtnTurnRightFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnBackCW:
-            case Globals.TurnBack2:
+            case Globals.turnBackCW:
+            case Globals.turnBack2:
                 imgbtnTurnBackFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnBackCCW:
+            case Globals.turnBackCCW:
                 imgbtnTurnBackFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnLeftCW:
-            case Globals.TurnLeft2:
+            case Globals.turnLeftCW:
+            case Globals.turnLeft2:
                 imgbtnTurnLeftFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnLeftCCW:
+            case Globals.turnLeftCCW:
                 imgbtnTurnLeftFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnUpCW:
-            case Globals.TurnUp2:
+            case Globals.turnUpCW:
+            case Globals.turnUp2:
                 imgbtnTurnUpFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnUpCCW:
+            case Globals.turnUpCCW:
                 imgbtnTurnUpFaceToLeft.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnDownCW:
-            case Globals.TurnDown2:
+            case Globals.turnDownCW:
+            case Globals.turnDown2:
                 imgbtnTurnDownFaceToRight.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnDownCCW:
+            case Globals.turnDownCCW:
                 imgbtnTurnDownFaceToLeft.IsEnabled = bIsEnabled;
                 break;
 
-            case Globals.TurnUpHorMiddleRight:
-            case Globals.TurnUpHorMiddle2:
+            case Globals.turnUpHorMiddleRight:
+            case Globals.turnUpHorMiddle2:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnUpHorMiddleLeft:
+            case Globals.turnUpHorMiddleLeft:
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnUpVerMiddleBack:
-            case Globals.TurnUpVerMiddle2:
+            case Globals.turnUpVerMiddleBack:
+            case Globals.turnUpVerMiddle2:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnUpVerMiddleFront:
+            case Globals.turnUpVerMiddleFront:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnFrontHorMiddleLeft:
-            case Globals.TurnFrontHorMiddle2:
+            case Globals.turnFrontHorMiddleLeft:
+            case Globals.turnFrontHorMiddle2:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnFrontHorMiddleRight:
+            case Globals.turnFrontHorMiddleRight:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
 
-            case Globals.TurnCubeFrontToRight:
+            case Globals.turnCubeFrontToRight:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnCubeFrontToLeft:
-            case Globals.TurnCubeFrontToLeft2:
+            case Globals.turnCubeFrontToLeft:
+            case Globals.turnCubeFrontToLeft2:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnCubeFrontToUp:
-            case Globals.TurnCubeFrontToUp2:
+            case Globals.turnCubeFrontToUp:
+            case Globals.turnCubeFrontToUp2:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnCubeFrontToDown:
+            case Globals.turnCubeFrontToDown:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnCubeUpToRight:
-            case Globals.TurnCubeUpToRight2:
+            case Globals.turnCubeUpToRight:
+            case Globals.turnCubeUpToRight2:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
-            case Globals.TurnCubeUpToLeft:
+            case Globals.turnCubeUpToLeft:
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
                 break;
 
@@ -989,116 +989,116 @@ public partial class MainPage : ContentPage
 
         switch (cTurnFaceAndDirection)
         {
-            case Globals.TurnFrontCW:
+            case Globals.turnFrontCW:
                 cTurnCubeText = CubeLang.TurnFrontFaceToRight_Text;
                 break;
-            case Globals.TurnFrontCCW:
+            case Globals.turnFrontCCW:
                 cTurnCubeText = CubeLang.TurnFrontFaceToLeft_Text;
                 break;
-            case Globals.TurnFront2:
+            case Globals.turnFront2:
                 cTurnCubeText = CubeLang.TurnFrontFaceHalfTurn_Text;
                 break;
-            case Globals.TurnRightCW:
+            case Globals.turnRightCW:
                 cTurnCubeText = CubeLang.TurnRightFaceToRight_Text;
                 break;
-            case Globals.TurnRightCCW:
+            case Globals.turnRightCCW:
                 cTurnCubeText = CubeLang.TurnRightFaceToLeft_Text;
                 break;
-            case Globals.TurnRight2:
+            case Globals.turnRight2:
                 cTurnCubeText = CubeLang.TurnRightFaceHalfTurn_Text;
                 break;
-            case Globals.TurnBackCW:
+            case Globals.turnBackCW:
                 cTurnCubeText = CubeLang.TurnBackFaceToRight_Text;
                 break;
-            case Globals.TurnBackCCW:
+            case Globals.turnBackCCW:
                 cTurnCubeText = CubeLang.TurnBackFaceToLeft_Text;
                 break;
-            case Globals.TurnBack2:
+            case Globals.turnBack2:
                 cTurnCubeText = CubeLang.TurnBackFaceHalfTurn_Text;
                 break;
-            case Globals.TurnLeftCW:
+            case Globals.turnLeftCW:
                 cTurnCubeText = CubeLang.TurnLeftFaceToRight_Text;
                 break;
-            case Globals.TurnLeftCCW:
+            case Globals.turnLeftCCW:
                 cTurnCubeText = CubeLang.TurnLeftFaceToLeft_Text;
                 break;
-            case Globals.TurnLeft2:
+            case Globals.turnLeft2:
                 cTurnCubeText = CubeLang.TurnLeftFaceHalfTurn_Text;
                 break;
-            case Globals.TurnUpCW:
+            case Globals.turnUpCW:
                 cTurnCubeText = CubeLang.TurnUpFaceToRight_Text;
                 break;
-            case Globals.TurnUpCCW:
+            case Globals.turnUpCCW:
                 cTurnCubeText = CubeLang.TurnUpFaceToLeft_Text;
                 break;
-            case Globals.TurnUp2:
+            case Globals.turnUp2:
                 cTurnCubeText = CubeLang.TurnUpFaceHalfTurn_Text;
                 break;
-            case Globals.TurnDownCW:
+            case Globals.turnDownCW:
                 cTurnCubeText = CubeLang.TurnDownFaceToRight_Text;
                 break;
-            case Globals.TurnDownCCW:
+            case Globals.turnDownCCW:
                 cTurnCubeText = CubeLang.TurnDownFaceToLeft_Text;
                 break;
-            case Globals.TurnDown2:
+            case Globals.turnDown2:
                 cTurnCubeText = CubeLang.TurnDownFaceHalfTurn_Text;
                 break;
 
-            case Globals.TurnUpHorMiddleRight:
+            case Globals.turnUpHorMiddleRight:
                 cTurnCubeText = CubeLang.TurnUpMiddleToRightFace_Text ;
                 break;
-            case Globals.TurnUpHorMiddleLeft:
+            case Globals.turnUpHorMiddleLeft:
                 cTurnCubeText = CubeLang.TurnRightMiddleToUpFace_Text;
                 break;
-            case Globals.TurnUpHorMiddle2:
+            case Globals.turnUpHorMiddle2:
                 cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
                 break;
 
-            case Globals.TurnUpVerMiddleBack:
+            case Globals.turnUpVerMiddleBack:
                 cTurnCubeText = CubeLang.TurnFrontMiddleToUpFace_Text;
                 break;
-            case Globals.TurnUpVerMiddleFront:
+            case Globals.turnUpVerMiddleFront:
                 cTurnCubeText = CubeLang.TurnUpMiddleToFrontFace_Text;
                 break;
-            case Globals.TurnUpVerMiddle2:
+            case Globals.turnUpVerMiddle2:
                 cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
                 break;
 
-            case Globals.TurnFrontHorMiddleLeft:
+            case Globals.turnFrontHorMiddleLeft:
                 cTurnCubeText = CubeLang.TurnRightMiddleToFrontFace_Text;
                 break;
-            case Globals.TurnFrontHorMiddleRight:
+            case Globals.turnFrontHorMiddleRight:
                 cTurnCubeText = CubeLang.TurnFrontMiddleToRightFace_Text;
                 break;
-            case Globals.TurnFrontHorMiddle2:
+            case Globals.turnFrontHorMiddle2:
                 cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
                 break;
 
-            case Globals.TurnCubeFrontToRight:
+            case Globals.turnCubeFrontToRight:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToRightFace_Text;
                 break;
-            case Globals.TurnCubeFrontToLeft:
+            case Globals.turnCubeFrontToLeft:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToLeftFace_Text;
                 break;
-            case Globals.TurnCubeFrontToLeft2:
+            case Globals.turnCubeFrontToLeft2:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToBackFaceUpStays_Text;
                 break;
-            case Globals.TurnCubeFrontToUp:
+            case Globals.turnCubeFrontToUp:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToUpFace_Text;
                 break;
-            case Globals.TurnCubeFrontToUp2:
+            case Globals.turnCubeFrontToUp2:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToBackFaceRightStays_Text;
                 break;
-            case Globals.TurnCubeFrontToDown:
+            case Globals.turnCubeFrontToDown:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToDownFace_Text;
                 break;
-            case Globals.TurnCubeUpToRight:
+            case Globals.turnCubeUpToRight:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToRightFace_Text;
                 break;
-            case Globals.TurnCubeUpToRight2:
+            case Globals.turnCubeUpToRight2:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToDownFaceFrontStays_Text;
                 break;
-            case Globals.TurnCubeUpToLeft:
+            case Globals.turnCubeUpToLeft:
                 cTurnCubeText = CubeLang.TurnCubeUpFaceToLeftFace_Text;
                 break;
             
