@@ -3,14 +3,11 @@
     internal class ClassSolveCube
     {
         // Declare variables
-        private static int nLoopTimes;
-        private static readonly int nLoopTimesMax = 2000;
+        //private const int nLoopTimesMax = 10000;
 
         // Solve the cube.
         public static async Task<bool> SolveTheCubeAsync()
         {
-            nLoopTimes = 0;
-
             if (!await SolveTopLayerEdgesAsync())
             {
                 return false;

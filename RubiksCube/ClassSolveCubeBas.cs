@@ -3,14 +3,11 @@
     internal class ClassSolveCubeBas
     {
         // Declare variables
-        private static int nLoopTimes;
-        private static readonly int nLoopTimesMax = 2000;
+        private const int nLoopTimesMax = 10000;
 
         // Solve the cube.  From Basic-80 to C# - 1984-04-10
         public static async Task<bool> SolveTheCubeBasAsync()
         {
-            nLoopTimes = 0;
-
             if (!await SolveTopLayerCornersAsync())
             {
                 return false;
@@ -61,6 +58,7 @@
         {
             bool bO, bP, bQ, bR;
             string cB;
+            int nLoopTimes = 0;
 
             while (true)
             {
@@ -236,6 +234,7 @@
         {
             bool bO, bP, bQ, bV, bX, bY, bZ;
             string cB, cX;
+            int nLoopTimes = 0;
 
             while (true)
             {
@@ -432,6 +431,7 @@
         {
             bool bO, bP, bQ, bR, bS;
             string cO, cP, cQ, cR, cV, cX, cY, cZ;
+            int nLoopTimes = 0;
 
             while (true)
             {
@@ -739,6 +739,7 @@
         {
             bool bO, bP, bQ, bR;
             string cV, cX, cZ;
+            int nLoopTimes = 0;
 
             await MakeTurnAsync(Globals.turnCubeUpToRight2);
 
@@ -929,6 +930,7 @@
         {
             bool bO, bP, bQ, bR;
             string cV, cX, cY, cZ;
+            int nLoopTimes = 0;
 
             while (true)
             {
@@ -1091,6 +1093,7 @@
         private static async Task<bool> SolveBottomLayerTumblingCornersAsync()
         {
             string cB;
+            int nLoopTimes = 0;
 
             while (true)
             {
@@ -1182,6 +1185,7 @@
         {
             bool bO, bP;
             string cB, cV, cX, cY;
+            int nLoopTimes = 0;
 
             while (true)
             {
