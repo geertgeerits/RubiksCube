@@ -4,15 +4,12 @@
     {
         private static List<string> lCubeTurnsTemp = [];
         private static List<string> lCubePositions = [];
-        private static string[] aStartPiecesTemp = new string[54];
 
         // Try to solve the cube from other positions of the cube
         public static async Task<bool> SolveCubeFromMultiplePositionsAsync()
         {
+            // Clear the lists
             lCubeTurnsTemp.Clear();
-
-            // Copy the start pieces to the temp array
-            Array.Copy(Globals.aStartPieces, aStartPiecesTemp, 54);
             lCubePositions.Clear();
 
             // 1. Start position
@@ -60,8 +57,11 @@
         }
 
         // Turn the front to the right, left and back
-        private static async Task<bool> SolveCubeFromMultiplePositions2Async()
+        private static async Task SolveCubeFromMultiplePositions2Async()
         {
+            // Add 'None' to the list
+            lCubePositions.Add("None");
+
             // 1. Start position
             Globals.lCubeTurns.Clear();
             if (await SolveCubeFromMultiplePositions3Async(""))
@@ -90,33 +90,33 @@
                 CopyListToTemp();
             }
 
-            return true;
+            lCubePositions.Clear();
         }
 
         // Solve the cube from the start colors of the cube
         private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cTurn)
         {
-            // Restore the start colors of the cube from array aStartPiecesTemp[]
-            Array.Copy(aStartPiecesTemp, Globals.aPieces, 54);
-
             if (cTurn != "")
             {
-                // Add the turn to the list
-                lCubePositions.Add(cTurn);
-
-                // Turn the faces of the cube
-                await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+                // Replace the last item in the list with the new turn
+                lCubePositions[lCubePositions.Count - 1] = cTurn;
             }
+
+            //_ = Application.Current.MainPage.DisplayAlert("lCubePositions", $"{lCubePositions.Count}", "OK");
+
+            // Copy the start colors of the cube to the array aPieces[]
+            Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
 
             if (lCubePositions.Count > 0)
             {
                 foreach (string cItem in lCubePositions)
                 {
-                    await ClassCubeTurns.TurnFaceCubeAsync(cItem);
+                    if (cItem != "None")
+                    {
+                        await ClassCubeTurns.TurnFaceCubeAsync(cItem);
+                    }
                 }
             }
-
-            lCubePositions.Clear();
 
             // Try to solve the cube
             return await ClassSolveCubeBas.SolveTheCubeBasAsync();
@@ -125,7 +125,7 @@
         // Copy the list to the temp list
         private static void CopyListToTemp()
         {
-            _ = Application.Current.MainPage.DisplayAlert("lCubeTurns / lCubeTurnsTemp", $"{Globals.lCubeTurns.Count} / {lCubeTurnsTemp.Count}", "OK");
+            //_ = Application.Current.MainPage.DisplayAlert("lCubeTurns / lCubeTurnsTemp", $"{Globals.lCubeTurns.Count} / {lCubeTurnsTemp.Count}", "OK");
 
             if (Globals.lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)
             {
