@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-02-04 (YYYY-MM-DD)
+// Date ........: 2024-02-05 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -228,8 +228,7 @@ public partial class MainPage : ContentPage
 
             // Solve the cube from Basic-80 to C#
             //bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();
-            bSolved = await SolveCubeFromMultiplePositionsAsync();
-            //bSolved = await ClassCubePositions.SolveCubeFromMultiplePositionsAsync();
+            bSolved = await ClassCubePositions.SolveCubeFromMultiplePositionsAsync();
 
             // Solve the cube in C#
             //bSolved = await ClassSolveCube.SolveTheCubeAsync();
@@ -251,7 +250,7 @@ public partial class MainPage : ContentPage
             int nTurnsBeforeClean = Globals.lCubeTurns.Count;
 
             // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
-            CleanDoublesListCubeTurns();
+            ClassCubePositions.CleanDoublesListCubeTurns();
             
             int nTurnsAfterClean = Globals.lCubeTurns.Count;
             await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTurnsBeforeClean} -> {nTurnsAfterClean}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
@@ -304,108 +303,6 @@ public partial class MainPage : ContentPage
         imgbtnSetColorsCube.IsEnabled = true;
         imgbtnOpenCube.IsEnabled = true;
         imgbtnSaveCube.IsEnabled = true;
-    }
-
-    // Try to solve the cube from other positions of the cube
-    private static async Task<bool> SolveCubeFromMultiplePositionsAsync()
-    {
-        if (await ClassSolveCubeBas.SolveTheCubeBasAsync())
-        {
-            return true;
-        }
-
-        if (await SolveCubeFromMultiplePositions2Async(Globals.turnCubeFrontToRight))
-        {
-            return true;
-        }
-
-        if (await SolveCubeFromMultiplePositions2Async(Globals.turnCubeFrontToLeft))
-        {
-            return true;
-        }
-
-        if (await SolveCubeFromMultiplePositions2Async(Globals.turnCubeFrontToLeft2))
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    private static async Task<bool> SolveCubeFromMultiplePositions2Async(string cTurn)
-    {
-        // Clear the list with the cube turns
-        Globals.lCubeTurns.Clear();
-
-        // Restore the start colors of the cube from array aStartPieces[]
-        Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
-
-        // Add the turn to the list
-        Globals.lCubeTurns.Add(cTurn);
-
-        // Turn the faces of the cube
-        await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
-
-        // Try to solve the cube
-        return await ClassSolveCubeBas.SolveTheCubeBasAsync();
-    }
-
-    // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
-    private static void CleanDoublesListCubeTurns()
-    {
-#if DEBUG
-        _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
-#endif
-        for (int i = 0; i < Globals.lCubeTurns.Count - 1; i++)
-        {
-            if (Globals.lCubeTurns[i] == Globals.lCubeTurns[i + 1])
-            {
-                if (Globals.lCubeTurns[i].EndsWith("CCW"))
-                {
-                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^3] + "2";
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i].EndsWith("CW"))
-                {
-                    Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^2] + "2";
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i] == Globals.turnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.turnUpHorMiddleLeft)
-                {
-                    Globals.lCubeTurns[i] = Globals.turnUpHorMiddle2;
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i] == Globals.turnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.turnUpVerMiddleFront)
-                {
-                    Globals.lCubeTurns[i] = Globals.turnUpVerMiddle2;
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleRight)
-                {
-                    Globals.lCubeTurns[i] = Globals.turnFrontHorMiddle2;
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.turnCubeFrontToLeft)
-                {
-                    Globals.lCubeTurns[i] = Globals.turnCubeFrontToLeft2;
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.turnCubeFrontToDown)
-                {
-                    Globals.lCubeTurns[i] = Globals.turnCubeFrontToUp2;
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-                else if (Globals.lCubeTurns[i] == Globals.turnCubeUpToRight || Globals.lCubeTurns[i] == Globals.turnCubeUpToLeft)
-                {
-                    Globals.lCubeTurns[i] = Globals.turnCubeUpToRight2;
-                    Globals.lCubeTurns.RemoveAt(i + 1);
-                }
-            }
-        }
-
-#if DEBUG
-        _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
-#endif
     }
 
     // Check the number of colors of the cube
