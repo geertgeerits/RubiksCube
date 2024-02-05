@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿// This module tries to solve the cube in 24 different starting positions.
+// The solution with the fewest rotations is then used.
+
+using System.Diagnostics;
 
 namespace RubiksCube
 {
@@ -46,7 +49,7 @@ namespace RubiksCube
                 Globals.lCubeTurns.Clear();
                 Globals.lCubeTurns.AddRange(lCubeTurnsTemp);
 
-                if (Globals.lCubeTurns.Count > 3)
+                if (Globals.lCubeTurns.Count > 0)
                 {
                     return true;
                 }

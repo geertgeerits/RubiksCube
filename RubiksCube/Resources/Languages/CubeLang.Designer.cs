@@ -372,7 +372,8 @@ namespace RubiksCube.Resources.Languages {
         ///
         ///Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
         ///The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
-        ///        /// [rest of string was truncated]&quot;;.
+        ///
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoExplanation_Text {
             get {

@@ -1,11 +1,18 @@
-﻿namespace RubiksCube
+﻿// This solution is based on the program 'SolCube' I wrote in 1981 in Microsoft Basic-80 for a Commodore PET 2001.
+// The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
+// It is not the most efficient solution, but it works most of the time.
+// Basic-80 was a language with line numbers.
+// I haven't been able to get rid of all the line numbers, so there are still some 'goto' statements left.
+// The majority were replaced by tasks, while loops, continue and break statements.
+
+namespace RubiksCube
 {
     internal class ClassSolveCubeBas
     {
         // Declare variables
         private const int nLoopTimesMax = 2000;
 
-        // Solve the cube.  From Basic-80 to C# - 1984-04-10
+        // Solve the cube.  From Basic-80 to C# - 1981-1984
         public static async Task<bool> SolveTheCubeBasAsync()
         {
             if (!await SolveTopLayerCornersAsync())

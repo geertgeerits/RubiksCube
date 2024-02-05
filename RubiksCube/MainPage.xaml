@@ -72,13 +72,6 @@
             Grid.Column="0"
             Grid.ColumnSpan="3">
 
-            <!--<Border
-                x:Name="brdCubeColorSelect"
-                Grid.Row="0"
-                Grid.Column="0"
-                Grid.ColumnSpan="9">
-            </Border>-->
-            
             <Polygon
                 x:Name="plgCubeColorSelect"
                 Style="{StaticResource polygonStyleColor}"

@@ -227,7 +227,6 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
             // Solve the cube from Basic-80 to C#
-            //bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();
             bSolved = await ClassCubePositions.SolveCubeFromMultiplePositionsAsync();
 
             // Solve the cube in C#
@@ -322,6 +321,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnFrontCCW);
@@ -347,6 +347,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnUpHorMiddleLeft);
@@ -366,6 +367,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnBackCW);
@@ -385,6 +387,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnLeftCCW);
@@ -410,6 +413,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnUpVerMiddleBack);
@@ -429,6 +433,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnRightCW);
@@ -448,6 +453,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnUpCW);
@@ -473,6 +479,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnFrontHorMiddleLeft);
@@ -492,6 +499,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnDownCCW);
@@ -511,6 +519,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnUpCCW);
@@ -536,6 +545,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnFrontHorMiddleRight);
@@ -555,6 +565,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnDownCW);
@@ -574,6 +585,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnLeftCW);
@@ -599,6 +611,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnUpVerMiddleFront);
@@ -618,6 +631,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnRightCCW);
@@ -637,6 +651,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnFrontCW);
@@ -662,6 +677,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnUpHorMiddleRight);
@@ -681,6 +697,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        // Reverse the turn when solving the cube in reverse order
         if (!bSolvingCube && !bColorDrop)
         {
             Globals.lCubeTurns.Add(Globals.turnBackCCW);
