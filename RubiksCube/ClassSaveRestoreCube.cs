@@ -79,7 +79,7 @@
             return true;
         }
         
-        // Save the cube turns
+        // Save the cube turns (for testing)
         public static bool CubeTurnsSave(string cFile)
         {
             string cFileName = System.IO.Path.Combine(FileSystem.AppDataDirectory, cFile);

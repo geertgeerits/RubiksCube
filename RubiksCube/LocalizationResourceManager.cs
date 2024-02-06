@@ -1,8 +1,7 @@
-﻿using RubiksCube.Resources.Languages;
-using System.ComponentModel;
-using System.Globalization;
+﻿using System.ComponentModel;
 
-namespace RubiksCube {
+namespace RubiksCube
+{
     public class LocalizationResourceManager : INotifyPropertyChanged {
         private LocalizationResourceManager() {
             CubeLang.Culture = CultureInfo.CurrentCulture;
