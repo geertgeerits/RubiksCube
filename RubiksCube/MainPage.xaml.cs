@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-02-05 (YYYY-MM-DD)
+// Date ........: 2024-02-06 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -215,6 +215,7 @@ public partial class MainPage : ContentPage
         if (Globals.lCubeTurns.Count > 0)
         {
             Globals.lCubeTurns.Reverse();
+            ClassSolveCubeMain.CleanListCubeTurns();
             bSolved = true;
         }
         // Solve the cube from the turns the program has made
@@ -226,11 +227,8 @@ public partial class MainPage : ContentPage
             // Test the turns of the cube
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
-            // Solve the cube from Basic-80 to C#
-            bSolved = await ClassCubePositions.SolveCubeFromMultiplePositionsAsync();
-
-            // Solve the cube in C#
-            //bSolved = await ClassSolveCube.SolveTheCubeAsync();
+            // Solve the cube
+            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync();
 
             // Restore the start colors of the cube from array aStartPieces[]
             Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
@@ -246,13 +244,8 @@ public partial class MainPage : ContentPage
         if (bSolved)
         {
             // Display the number of turns and the elapsed time in milliseconds
-            int nTurnsBeforeClean = Globals.lCubeTurns.Count;
-
-            // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
-            ClassCubePositions.CleanDoublesListCubeTurns();
-            
-            int nTurnsAfterClean = Globals.lCubeTurns.Count;
-            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nTurnsBeforeClean} -> {nTurnsAfterClean}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+            int nNumberOfTurns = Globals.lCubeTurns.Count;
+            await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
             // Make the turns of the cube
             int nTurns = -1;
@@ -260,11 +253,11 @@ public partial class MainPage : ContentPage
             foreach (string cItem in Globals.lCubeTurns)
             {
                 nTurns++;
-                lblNumberTurns.Text = $"{nTurns}/{nTurnsAfterClean}";
+                lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
                 await MakeTurnAsync(cItem);
             }
 
-            lblNumberTurns.Text = $"{nTurns + 1}/{nTurnsAfterClean}";
+            lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
 
             if (ClassColorsCube.CheckIfSolved())
             {

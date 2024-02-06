@@ -1,16 +1,16 @@
-﻿// This module tries to solve the cube in 24 different starting positions.
+﻿// This module tries to solve the cube from 24 different starting positions.
 // The solution with the fewest rotations is then used.
 
 using System.Diagnostics;
 
 namespace RubiksCube
 {
-    internal class ClassCubePositions
+    internal class ClassSolveCubeMain
     {
         private static List<string> lCubeTurnsTemp = [];
         private static List<string> lCubePositions = [];
 
-        // Try to solve the cube from other positions of the cube
+        // Try to solve the cube from 24 positions of the cube
         public static async Task<bool> SolveCubeFromMultiplePositionsAsync()
         {
             // Clear the lists
@@ -51,6 +51,9 @@ namespace RubiksCube
 
                 if (Globals.lCubeTurns.Count > 0)
                 {
+                    // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
+                    CleanListCubeTurns();
+                    
                     return true;
                 }
             }
@@ -121,20 +124,25 @@ namespace RubiksCube
             }
 
             // Try to solve the cube
+            // Solve the cube from Basic-80 to C#
             return await ClassSolveCubeBas.SolveTheCubeBasAsync();
+
+            // Solve the cube (new solution)
+            //return await ClassSolveCubeNew.SolveTheCubeNewAsync();
         }
 
-        // Copy the list to the temp list
+        // Copy the list to the temp list if the list is has less items than the temp list
         private static void CopyListToTemp()
         {
-            //_ = Application.Current.MainPage.DisplayAlert("lCubeTurns / lCubeTurnsTemp", $"{Globals.lCubeTurns.Count} / {lCubeTurnsTemp.Count}", "OK");
             Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {Globals.lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
 
+            // If the list is empty, copy the list to the temp list
             if (Globals.lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)
             {
                 lCubeTurnsTemp.AddRange(Globals.lCubeTurns);
             }
 
+            // If the list has less items than the temp list, copy the list to the temp list
             if (Globals.lCubeTurns.Count > 0 && Globals.lCubeTurns.Count < lCubeTurnsTemp.Count)
             {
                 lCubeTurnsTemp.Clear();
@@ -143,55 +151,132 @@ namespace RubiksCube
         }
 
         // Clean the list with the cube turns by replacing the double 1/4 turns with a half turn
-        public static void CleanDoublesListCubeTurns()
+        public static void CleanListCubeTurns()
         {
 #if DEBUG
             _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
 #endif
+            if (Globals.lCubeTurns.Count < 3)
+            {
+                return;
+            }
+
             for (int i = 0; i < Globals.lCubeTurns.Count - 1; i++)
             {
                 if (Globals.lCubeTurns[i] == Globals.lCubeTurns[i + 1])
                 {
-                    if (Globals.lCubeTurns[i].EndsWith("CCW"))
+                    if (Globals.lCubeTurns[i].EndsWith("CCW") && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^3] + "2";
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i].EndsWith("CW"))
+                    else if (Globals.lCubeTurns[i].EndsWith("CW") && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.lCubeTurns[i][..^2] + "2";
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i] == Globals.turnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.turnUpHorMiddleLeft)
+                    else if ((Globals.lCubeTurns[i] == Globals.turnUpHorMiddleRight || Globals.lCubeTurns[i] == Globals.turnUpHorMiddleLeft) && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.turnUpHorMiddle2;
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i] == Globals.turnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.turnUpVerMiddleFront)
+                    else if ((Globals.lCubeTurns[i] == Globals.turnUpVerMiddleBack || Globals.lCubeTurns[i] == Globals.turnUpVerMiddleFront) && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.turnUpVerMiddle2;
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleRight)
+                    else if ((Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleLeft || Globals.lCubeTurns[i] == Globals.turnFrontHorMiddleRight) && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.turnFrontHorMiddle2;
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.turnCubeFrontToLeft)
+                    else if ((Globals.lCubeTurns[i] == Globals.turnCubeFrontToRight || Globals.lCubeTurns[i] == Globals.turnCubeFrontToLeft) && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.turnCubeFrontToLeft2;
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i] == Globals.turnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.turnCubeFrontToDown)
+                    else if ((Globals.lCubeTurns[i] == Globals.turnCubeFrontToUp || Globals.lCubeTurns[i] == Globals.turnCubeFrontToDown) && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.turnCubeFrontToUp2;
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
-                    else if (Globals.lCubeTurns[i] == Globals.turnCubeUpToRight || Globals.lCubeTurns[i] == Globals.turnCubeUpToLeft)
+                    else if ((Globals.lCubeTurns[i] == Globals.turnCubeUpToRight || Globals.lCubeTurns[i] == Globals.turnCubeUpToLeft) && Globals.lCubeTurns.Count > 3)
                     {
                         Globals.lCubeTurns[i] = Globals.turnCubeUpToRight2;
                         Globals.lCubeTurns.RemoveAt(i + 1);
                     }
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnFrontCW && Globals.lCubeTurns[i + 1] == Globals.turnFrontCCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnFrontCCW && Globals.lCubeTurns[i + 1] == Globals.turnFrontCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnRightCW && Globals.lCubeTurns[i + 1] == Globals.turnRightCCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnRightCCW && Globals.lCubeTurns[i + 1] == Globals.turnRightCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnBackCW && Globals.lCubeTurns[i + 1] == Globals.turnBackCCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnBackCCW && Globals.lCubeTurns[i + 1] == Globals.turnBackCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnLeftCW && Globals.lCubeTurns[i + 1] == Globals.turnLeftCCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnLeftCCW && Globals.lCubeTurns[i + 1] == Globals.turnLeftCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnUpCW && Globals.lCubeTurns[i + 1] == Globals.turnUpCCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnUpCCW && Globals.lCubeTurns[i + 1] == Globals.turnUpCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnDownCW && Globals.lCubeTurns[i + 1] == Globals.turnDownCCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
+                }
+
+                if (Globals.lCubeTurns[i] == Globals.turnDownCCW && Globals.lCubeTurns[i + 1] == Globals.turnDownCW && Globals.lCubeTurns.Count > 3)
+                {
+                    Globals.lCubeTurns.RemoveAt(i + 1);
+                    Globals.lCubeTurns.RemoveAt(i);
                 }
             }
 

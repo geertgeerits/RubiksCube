@@ -93,6 +93,9 @@
             {
                 using StreamWriter sw = new(cFileName, false);
 
+                sw.WriteLine($"Turns: {Globals.lCubeTurns.Count}");
+                sw.WriteLine();
+
                 foreach (string cItem in Globals.lCubeTurns)
                 {
                     sw.WriteLine(cItem);

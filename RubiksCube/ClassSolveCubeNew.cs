@@ -1,12 +1,12 @@
 ﻿namespace RubiksCube
 {
-    internal class ClassSolveCube
+    internal class ClassSolveCubeNew
     {
         // Declare variables
         //private const int nLoopTimesMax = 2000;
 
         // Solve the cube.
-        public static async Task<bool> SolveTheCubeAsync()
+        public static async Task<bool> SolveTheCubeNewAsync()
         {
             if (!await SolveTopLayerEdgesAsync())
             {
