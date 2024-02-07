@@ -5,7 +5,7 @@
         // Save the cube
         public static bool CubeDataSave()
         {
-            string cFileName = System.IO.Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
+            string cFileName = Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
 
             if (File.Exists(cFileName))
             {
@@ -82,7 +82,7 @@
         // Save the cube turns (for testing)
         public static bool CubeTurnsSave(string cFile)
         {
-            string cFileName = System.IO.Path.Combine(FileSystem.AppDataDirectory, cFile);
+            string cFileName = Path.Combine(FileSystem.AppDataDirectory, cFile);
 
             if (File.Exists(cFileName))
             {

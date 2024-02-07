@@ -437,8 +437,8 @@
                 <Setter Property="BackgroundColor" Value="Gold" />
             </Trigger>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="False">
-                <Setter Property="BorderColor" Value="LightGray"/>
-                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -453,8 +453,8 @@
                 <Setter Property="BackgroundColor" Value="Gold" />
             </Trigger>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="False">
-                <Setter Property="BorderColor" Value="LightGray"/>
-                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
             </Trigger>
         </Style.Triggers>
     </Style>

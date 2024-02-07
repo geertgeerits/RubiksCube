@@ -2,7 +2,7 @@
 {
     internal class ClassCubeTurns
     {
-        // Turn the faces of the cube
+        // Turn the faces of the cube (CW = Clockwise, CCW = Counter Clockwise, 2 = two quarter turns)
         public static async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
         {
             switch (cTurnFaceAndDirection)

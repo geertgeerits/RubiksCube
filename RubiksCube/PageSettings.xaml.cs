@@ -5,7 +5,7 @@ namespace RubiksCube;
 public partial class PageSettings : ContentPage
 {
     // Local variables
-    private readonly string cHexCharacters = "0123456789ABCDEFabcdef";
+    private const string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
     public PageSettings()
@@ -318,7 +318,7 @@ public partial class PageSettings : ContentPage
     // Entry HexColor Unfocused event
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
-        var entry = (Entry)sender;
+        Entry entry = (Entry)sender;
 
         // Test for allowed characters
         if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
@@ -395,6 +395,11 @@ public partial class PageSettings : ContentPage
     // Test for allowed characters in hex value
     private bool TestAllowedCharacters(string cAllowedCharacters, string cHexColor)
     {
+        if (string.IsNullOrEmpty(cHexColor))
+        {
+            return false;        
+        }
+
         // Remove leading # if present
         if (cHexColor[..1] == "#")
         {

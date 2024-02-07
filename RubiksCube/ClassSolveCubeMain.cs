@@ -287,6 +287,42 @@ namespace RubiksCube
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
+
+                if (lCubeTurnsTemp[i] == Globals.turnUpHorMiddleRight && lCubeTurnsTemp[i + 1] == Globals.turnUpHorMiddleLeft)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnUpHorMiddleLeft && lCubeTurnsTemp[i + 1] == Globals.turnUpHorMiddleRight)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnUpVerMiddleBack && lCubeTurnsTemp[i + 1] == Globals.turnUpVerMiddleFront)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnUpVerMiddleFront && lCubeTurnsTemp[i + 1] == Globals.turnUpVerMiddleBack)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleLeft && lCubeTurnsTemp[i + 1] == Globals.turnFrontHorMiddleRight)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleRight && lCubeTurnsTemp[i + 1] == Globals.turnFrontHorMiddleLeft)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
             }
 
             // Copy the temp list to the list
