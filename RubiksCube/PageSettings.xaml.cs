@@ -87,7 +87,7 @@ public partial class PageSettings : ContentPage
     {
         string cLanguageOld = Globals.cLanguage;
 
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -144,7 +144,7 @@ public partial class PageSettings : ContentPage
     // Put text in the chosen language in the controls and variables
     private void SetLanguage()
     {
-        var ThemeList = new List<string>
+        List<string> ThemeList = new()
         {
             CubeLang.ThemeSystem_Text,
             CubeLang.ThemeLight_Text,
@@ -203,7 +203,7 @@ public partial class PageSettings : ContentPage
     // Picker speech language clicked event
     private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -215,7 +215,7 @@ public partial class PageSettings : ContentPage
     // Picker theme clicked event
     private void OnPickerThemeChanged(object sender, EventArgs e)
     {
-        var picker = (Picker)sender;
+        Picker picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
 
         if (selectedIndex != -1)
@@ -250,12 +250,15 @@ public partial class PageSettings : ContentPage
     }
 
     // On entry HexColor text changed event
-    private void EntryHexColorTextChanged(object sender, EventArgs e)
+    private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
     {
-        var entry = (Entry)sender;
+        Entry entry = (Entry)sender;
+
+        string oldText = e.OldTextValue;
 
         if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
         {
+            entry.Text = oldText;
             entry.Focus();
         }
     }
@@ -343,32 +346,32 @@ public partial class PageSettings : ContentPage
         {
             if (rbnCubeColor1.IsChecked)
             {
-                Globals.aFaceColors[1] = "#" + entHexColor.Text;
+                Globals.aFaceColors[1] = $"#{entHexColor.Text}";
                 HexToRgbColor(Globals.aFaceColors[1], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor2.IsChecked)
             {
-                Globals.aFaceColors[2] = "#" + entHexColor.Text;
+                Globals.aFaceColors[2] = $"#{entHexColor.Text}";
                 HexToRgbColor(Globals.aFaceColors[2], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor3.IsChecked)
             {
-                Globals.aFaceColors[3] = "#" + entHexColor.Text;
+                Globals.aFaceColors[3] = $"#{entHexColor.Text}";
                 HexToRgbColor(Globals.aFaceColors[3], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor4.IsChecked)
             {
-                Globals.aFaceColors[4] = "#" + entHexColor.Text;
+                Globals.aFaceColors[4] = $"#{entHexColor.Text}";
                 HexToRgbColor(Globals.aFaceColors[4], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor5.IsChecked)
             {
-                Globals.aFaceColors[5] = "#" + entHexColor.Text;
+                Globals.aFaceColors[5] = $"#{entHexColor.Text}";
                 HexToRgbColor(Globals.aFaceColors[5], ref nRed, ref nGreen, ref nBlue);
             }
             else if (rbnCubeColor6.IsChecked)
             {
-                Globals.aFaceColors[6] = "#" + entHexColor.Text;
+                Globals.aFaceColors[6] = $"#{entHexColor.Text}";
                 HexToRgbColor(Globals.aFaceColors[6], ref nRed, ref nGreen, ref nBlue);
             }
 
@@ -412,7 +415,7 @@ public partial class PageSettings : ContentPage
 
             if (bResult == false)
             {
-                DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CubeLang.AllowedCharNot_Text + " " + cChar, CubeLang.ButtonClose_Text);
+                _ = DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.AllowedChar_Text + "\n" + cAllowedCharacters + "\n\n" + CubeLang.AllowedCharNot_Text + " " + cChar, CubeLang.ButtonClose_Text);
                 return false;
             }
         }
@@ -427,7 +430,7 @@ public partial class PageSettings : ContentPage
         int nColorGreen = 0;
         int nColorBlue = 0;
 
-        var slider = (Slider)sender;
+        Slider slider = (Slider)sender;
 
         if (slider == sldColorRed)
         {

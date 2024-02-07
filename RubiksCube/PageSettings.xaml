@@ -174,7 +174,6 @@
                             ClearButtonVisibility="WhileEditing"
                             Keyboard="Text"
                             ReturnType="Next"
-                            Completed="EntryHexColorUnfocused"
                             MaxLength="6"
                             TextChanged="EntryHexColorTextChanged"
                             Unfocused="EntryHexColorUnfocused">
