@@ -270,7 +270,7 @@
                 return false;
             }
 
-            /// Check the number of colors of the corner cubes of the cube
+            /// Check the number of colors of the corner cubes of the cube if there are no corner cubes with the same color
             bool bColorCornerCube = true;
 
             if (Globals.aPieces[42] == Globals.aPieces[29] || Globals.aPieces[42] == Globals.aPieces[0] || Globals.aPieces[0] == Globals.aPieces[29])
@@ -303,23 +303,39 @@
                 return false;
             }
 
+            /// Check the number of colors of the corner cubes if there are no more than 4 of the same colors on an corner
+            int[] aNumberOfColors = [0, 0, 0, 0, 0, 0, 0];
+
+            CheckNumberColorsCornerCube(aNumberOfColors, 1);
+            CheckNumberColorsCornerCube(aNumberOfColors, 2);
+            CheckNumberColorsCornerCube(aNumberOfColors, 3);
+            CheckNumberColorsCornerCube(aNumberOfColors, 4);
+            CheckNumberColorsCornerCube(aNumberOfColors, 5);
+            CheckNumberColorsCornerCube(aNumberOfColors, 6);
+
+            if (aNumberOfColors[1] > 4 || aNumberOfColors[2] > 4 || aNumberOfColors[3] > 4 || aNumberOfColors[4] > 4 || aNumberOfColors[5] > 4 || aNumberOfColors[6] > 4)
+            {
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageFourSameColorCornerCube_Text, CubeLang.ButtonClose_Text);
+                return false;
+            }
+
             /// Check the number of colors of the edge cubes if there are no edge cubes with the same color
-            bool bColorEdgeCube = true;
+            bColorCornerCube = true;
 
             if (Globals.aPieces[37] == Globals.aPieces[19] || Globals.aPieces[39] == Globals.aPieces[28] || Globals.aPieces[41] == Globals.aPieces[10] || Globals.aPieces[43] == Globals.aPieces[1])
-                bColorEdgeCube = false;
+                bColorCornerCube = false;
 
             if (Globals.aPieces[46] == Globals.aPieces[7] || Globals.aPieces[48] == Globals.aPieces[34] || Globals.aPieces[50] == Globals.aPieces[16] || Globals.aPieces[52] == Globals.aPieces[25])
-                bColorEdgeCube = false;
+                bColorCornerCube = false;
 
-            if (!bColorEdgeCube)
+            if (!bColorCornerCube)
             {
                 _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorEdgeCube_Text, CubeLang.ButtonClose_Text);
                 return false;
             }
 
             /// Check the number of colors of the edge cubes if there are no more than 4 of the same colors on an edge
-            int[] aNumberOfColors = [0, 0, 0, 0, 0, 0, 0];
+            aNumberOfColors = [0, 0, 0, 0, 0, 0, 0];
 
             CheckNumberColorsEdgeCube(aNumberOfColors, 1);
             CheckNumberColorsEdgeCube(aNumberOfColors, 2);
@@ -429,6 +445,70 @@
             }
 
             return true;
+        }
+
+        /// Check the number of colors on the corner cubes
+        private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)
+        {
+            // Up face
+            if (Globals.aPieces[0] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[2] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[6] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[8] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+
+            // Right face
+            if (Globals.aPieces[9] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[11] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[15] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[17] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+
+            // Back face
+            if (Globals.aPieces[18] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[20] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[24] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[26] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+
+            // Left face
+            if (Globals.aPieces[27] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[29] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[33] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[35] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+
+            // Up face
+            if (Globals.aPieces[36] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[38] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[42] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[44] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+
+            // Down face
+            if (Globals.aPieces[45] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[47] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[51] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
+            if (Globals.aPieces[53] == Globals.aFaceColors[nColor])
+                aNumberOfColors[nColor]++;
         }
 
         /// Check the number of colors on the edge cubes

@@ -2,7 +2,7 @@
 {
     internal class ClassTestCubeTurns
     {
-        // Test the turns of the cube
+        //// Test the turns of the cube
         public static async Task<bool> TestCubeTurnsAsync()
         {
             // Test the face turns

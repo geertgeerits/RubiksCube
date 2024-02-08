@@ -4,7 +4,7 @@ namespace RubiksCube;
 
 public partial class PageSettings : ContentPage
 {
-    // Local variables
+    //// Local variables
     private const string cHexCharacters = "0123456789ABCDEFabcdef";
     private readonly Stopwatch stopWatch = new();
 
@@ -20,10 +20,10 @@ public partial class PageSettings : ContentPage
             return;
         }
 
-        // Put text in the chosen language in the controls and variables
+        //// Put text in the chosen language in the controls and variables
         SetLanguage();
 
-        // Set the current language in the picker
+        //// Set the current language in the picker
         pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
             // German (Deutsch)
@@ -48,14 +48,14 @@ public partial class PageSettings : ContentPage
             _ => 1,
         };
 
-        // Fill the picker with the speech languages and set the saved language in the picker
+        //// Fill the picker with the speech languages and set the saved language in the picker
         FillPickerWithSpeechLanguages();
 
-        // Set the explaination of text and speech to false or true
+        //// Set the explaination of text and speech to false or true
         swtExplainText.IsToggled = Globals.bExplainText;
         swtExplainSpeech.IsToggled = Globals.bExplainSpeech;
 
-        // Initialize the cube colors
+        //// Initialize the cube colors
         plgCubeColor1.Fill = Color.FromArgb(Globals.aFaceColors[1]);
         plgCubeColor2.Fill = Color.FromArgb(Globals.aFaceColors[2]);
         plgCubeColor3.Fill = Color.FromArgb(Globals.aFaceColors[3]);
@@ -82,7 +82,7 @@ public partial class PageSettings : ContentPage
         stopWatch.Start();
     }
 
-    // Picker language clicked event
+    //// Picker language clicked event
     private void OnPickerLanguageChanged(object sender, EventArgs e)
     {
         string cLanguageOld = Globals.cLanguage;
@@ -141,7 +141,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Put text in the chosen language in the controls and variables
+    //// Put text in the chosen language in the controls and variables
     private void SetLanguage()
     {
         List<string> ThemeList = new()
@@ -166,7 +166,7 @@ public partial class PageSettings : ContentPage
         };
     }
 
-    // Fill the picker with the speech languages from the array
+    //// Fill the picker with the speech languages from the array
     // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private void FillPickerWithSpeechLanguages()
     {
@@ -200,7 +200,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker speech language clicked event
+    //// Picker speech language clicked event
     private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -212,7 +212,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Picker theme clicked event
+    //// Picker theme clicked event
     private void OnPickerThemeChanged(object sender, EventArgs e)
     {
         Picker picker = (Picker)sender;
@@ -237,19 +237,19 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Switch explain text toggled
+    //// Switch explain text toggled
     private void OnSwtExplainTextToggled(object sender, ToggledEventArgs e)
     {
         Globals.bExplainText = swtExplainText.IsToggled;
     }
 
-    // Switch explain speech toggled
+    //// Switch explain speech toggled
     private void OnSwtExplainSpeechToggled(object sender, ToggledEventArgs e)
     {
         Globals.bExplainSpeech = swtExplainSpeech.IsToggled;
     }
 
-    // On entry HexColor text changed event
+    //// On entry HexColor text changed event
     private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
     {
         Entry entry = (Entry)sender;
@@ -263,13 +263,13 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Radiobutton checked changed event
+    //// Radiobutton checked changed event
     private void OnRbnCubeColorCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         SetCubeHexColor();
     }
 
-    // Set the hex colorcode in the entry field and set the slider positions
+    //// Set the hex colorcode in the entry field and set the slider positions
     private void SetCubeHexColor()
     {
         int nRed = 0;
@@ -312,13 +312,13 @@ public partial class PageSettings : ContentPage
         sldColorBlue.Value = nBlue;
     }
 
-    // Display help for Hex color
+    //// Display help for Hex color
     private async void OnSettingsHexColorClicked(object sender, EventArgs e)
     {
         await DisplayAlert("?", CubeLang.HexColorCodes_Text, CubeLang.ButtonClose_Text);
     }
 
-    // Entry HexColor Unfocused event
+    //// Entry HexColor Unfocused event
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
         // Length must be 6 characters
@@ -375,7 +375,7 @@ public partial class PageSettings : ContentPage
         _ = btnSettingsSave.Focus();
     }
 
-    // Test for allowed characters in hex value
+    //// Test for allowed characters in hex value
     private bool TestAllowedCharacters(string cAllowedCharacters, string cHexColor)
     {
         if (string.IsNullOrEmpty(cHexColor))
@@ -403,7 +403,7 @@ public partial class PageSettings : ContentPage
         return true;
     }
 
-    // Slider color cube value change
+    //// Slider color cube value change
     private void OnSliderColorValueChanged(object sender, ValueChangedEventArgs args)
     {
         int nColorRed = 0;
@@ -466,7 +466,7 @@ public partial class PageSettings : ContentPage
         }
     }
 
-    // Convert RRGGBB Hex color to RGB color
+    //// Convert RRGGBB Hex color to RGB color
     private static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
     {
         // Remove leading # if present
@@ -480,7 +480,7 @@ public partial class PageSettings : ContentPage
         nBlue = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
     }
 
-    // Button save settings clicked event
+    //// Button save settings clicked event
     private static void OnSettingsSaveClicked(object sender, EventArgs e)
     {
         Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -503,7 +503,7 @@ public partial class PageSettings : ContentPage
         Application.Current.MainPage = new NavigationPage(new MainPage());
     }
 
-    // Button reset settings clicked event
+    //// Button reset settings clicked event
     private void OnSettingsResetClicked(object sender, EventArgs e)
     {
         // Get the elapsed time in milli seconds

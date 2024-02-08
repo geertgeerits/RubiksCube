@@ -440,7 +440,9 @@ Niet toegestaan:</value>
     <value>Ja</value>
   </data>
   <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>De kubus kan niet opgelost worden.</value>
+    <value>De kubus kan niet worden opgelost.
+
+Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
     <value>Draai de hele kubus zo dat de voorkant naar achteren gaat, de rechterkant blijft rechts.</value>
@@ -471,5 +473,8 @@ Niet toegestaan:</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>Van elke beschikbare kleur moeten er vier van dezelfde kleur op een randblokje staan.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Van elke beschikbare kleur moeten er vier van dezelfde kleur op een hoekblokje staan.</value>
   </data>
 </root>

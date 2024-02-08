@@ -10,7 +10,7 @@ namespace RubiksCube
         private static readonly List<string> lCubeTurnsTemp = [];
         private static readonly List<string> lCubePositions = [];
 
-        // Try to solve the cube from 24 positions of the cube
+        //// Try to solve the cube from 24 positions of the cube
         public static async Task<bool> SolveCubeFromMultiplePositionsAsync()
         {
             // Clear the lists
@@ -61,7 +61,7 @@ namespace RubiksCube
             return false;
         }
 
-        // Turn the front to the right, left and back
+        /// Turn the front to the right, left and back
         private static async Task SolveCubeFromMultiplePositions2Async()
         {
             // Add 'None' to the list
@@ -94,7 +94,7 @@ namespace RubiksCube
             lCubePositions.Clear();
         }
 
-        // Solve the cube from the start colors of the cube
+        /// Solve the cube from the start colors of the cube
         private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cTurn)
         {
             Globals.lCubeTurns.Clear();
@@ -131,7 +131,7 @@ namespace RubiksCube
             //return await ClassSolveCubeNew.SolveTheCubeNewAsync();
         }
 
-        // Copy the list to the temp list if the list is has less items than the temp list
+        /// Copy the list to the temp list if the list is has less items than the temp list
         private static void CopyListToTemp()
         {
             Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {Globals.lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
@@ -150,7 +150,7 @@ namespace RubiksCube
             }
         }
 
-        // Clean the list with the cube turns by replacing or removing turns
+        /// Clean the list with the cube turns by replacing or removing turns
         public static void CleanListCubeTurns()
         {
 #if DEBUG

@@ -440,7 +440,9 @@ Nicht erlaubt:</value>
     <value>Ja</value>
   </data>
   <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Der Würfel kann nicht gelöst werden.</value>
+    <value>Der Würfel kann nicht gelöst werden.
+
+Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
     <value>Drehen Sie den gesamten Würfel so, dass die Vorderseite nach hinten geht, die rechte Seite bleibt rechts.</value>
@@ -471,5 +473,8 @@ Nicht erlaubt:</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>Von jeder verfügbaren Farbe müssen vier gleiche Farben auf einem Kantenwürfel vorhanden sein.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Von jeder verfügbaren Farbe müssen vier gleiche Farben auf einem Eckwürfel vorhanden sein.</value>
   </data>
 </root>

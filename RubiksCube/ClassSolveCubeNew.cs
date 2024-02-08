@@ -2,10 +2,10 @@
 {
     internal class ClassSolveCubeNew
     {
-        // Declare variables
+        //// Declare variables
         //private const int nLoopTimesMax = 2000;
 
-        // Solve the cube.
+        //// Solve the cube.
         public static async Task<bool> SolveTheCubeNewAsync()
         {
             if (!await SolveTopLayerEdgesAsync())

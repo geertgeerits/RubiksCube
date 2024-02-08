@@ -1,14 +1,14 @@
-﻿// Global usings
+﻿//// Global usings
 global using RubiksCube.Resources.Languages;
 global using System.Globalization;
 //global using static RubiksCube.Globals;
 
 namespace RubiksCube;
 
-// Global variables and methods
+//// Global variables and methods
 internal static class Globals
 {
-    // Global variables
+    /// Global variables
     public static string cTheme;
     public static string cLanguage;
     public static bool bLanguageChanged = false;
@@ -67,7 +67,7 @@ internal static class Globals
     public const string turnCubeUpToRight2 = "TurnCubeUpToRight2";
     public const string turnCubeUpToLeft = "TurnCubeUpToLeft";
 
-    // Global methods
+    /// Global methods
     // Set the theme
     public static void SetTheme()
     {

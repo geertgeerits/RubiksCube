@@ -9,10 +9,10 @@ namespace RubiksCube
 {
     internal class ClassSolveCubeBas
     {
-        // Declare variables
+        //// Declare variables
         private const int nLoopTimesMax = 2000;
 
-        // Solve the cube.  From Basic-80 to C# - 1981-1984
+        //// Solve the cube.  From Basic-80 to C# - 1981-1984
         public static async Task<bool> SolveTheCubeBasAsync()
         {
             if (!await SolveTopLayerCornersAsync())
@@ -59,7 +59,7 @@ namespace RubiksCube
             return false;
         }
 
-        // Top layer
+        /// Solve the top layer of the cube
         // Solve the corners of the top layer - Chapter 6, page 16
         private static async Task<bool> SolveTopLayerCornersAsync()
         {
@@ -433,7 +433,7 @@ namespace RubiksCube
             return true;
         }
 
-        // Solve the middle layer - Chapter 10, page 21
+        /// Solve the middle layer of the cube - Chapter 10, page 21
         private static async Task<bool> SolveMiddleLayerAsync()
         {
             bool bO, bP, bQ, bR, bS;
@@ -740,7 +740,7 @@ namespace RubiksCube
             return true;
         }
 
-        // Bottom layer
+        /// Solve the bottom layer of the cube
         // Corners on the right place
         private static async Task<bool> SolveBottomLayerCornersAsync()
         {

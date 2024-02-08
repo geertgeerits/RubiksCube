@@ -472,7 +472,9 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The cube cannot be solved..
+        ///   Looks up a localized string similar to The cube cannot be solved.
+        ///
+        ///Possible cause is incorrect transfer of colors to this cube..
         /// </summary>
         internal static string MessageCubeCannotBeSolved_Text {
             get {
@@ -495,6 +497,15 @@ namespace RubiksCube.Resources.Languages {
         internal static string MessageCubeNotSolved_Text {
             get {
                 return ResourceManager.GetString("MessageCubeNotSolved_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Of each available color, there must be four of the same color on a corner cube..
+        /// </summary>
+        internal static string MessageFourSameColorCornerCube_Text {
+            get {
+                return ResourceManager.GetString("MessageFourSameColorCornerCube_Text", resourceCulture);
             }
         }
         

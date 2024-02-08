@@ -35,7 +35,7 @@ public partial class MainPage : ContentPage
             return;
         }
 
-        // Get the saved settings
+        //// Get the saved settings
         Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
         Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
         Globals.cLanguageSpeech = Preferences.Default.Get("SettingLanguageSpeech", "");
@@ -49,10 +49,10 @@ public partial class MainPage : ContentPage
         Globals.aFaceColors[6] = Preferences.Default.Get("SettingCubeColor6", "#FFFF00");   // Down face: Yellow
         Globals.bLicense = Preferences.Default.Get("SettingLicense", false);
 
-        // Set the theme
+        //// Set the theme
         Globals.SetTheme();
 
-        // Get and set the system OS user language
+        //// Get and set the system OS user language
         try
         {
             if (Globals.cLanguage == "")
@@ -67,7 +67,7 @@ public partial class MainPage : ContentPage
 
         SetTextLanguage();
 
-        // Initialize text to speech and get and set the speech language
+        //// Initialize text to speech and get and set the speech language
         string cCultureName = "";
 
         try
@@ -84,12 +84,12 @@ public partial class MainPage : ContentPage
 
         ClassSpeech.InitializeTextToSpeech(cCultureName);
 
-        // Reset the colors of the cube
+        //// Reset the colors of the cube
         ClassColorsCube.ResetCube();
         GetCubeColorsFromArrays();
     }
 
-    // TitleView buttons clicked events
+    //// TitleView buttons clicked events
     private async void OnPageAboutClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PageAbout());
@@ -100,14 +100,14 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new PageSettings());
     }
 
-    // Select a color by tapping on a cube and put it in a tempory polygon
+    //// Select a color by tapping on a cube and put it in a tempory polygon
     private void OnGetColorTapped(object sender, TappedEventArgs args)
     {
         Polygon polygon = sender as Polygon;
         plgCubeColorSelect.Fill = polygon.Fill;
     }
 
-    // Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
+    //// Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
     private void OnSetColorTapped(object sender, TappedEventArgs args)
     {
         if (plgCubeColorSelect.Fill != null && bColorDrop)
@@ -119,7 +119,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Drag and drop colors on the cube
+    //// Set the colors on the cube
     private void OnButtonSetColorsCubeClicked(object sender, EventArgs e)
     {
         bColorDrop = !bColorDrop;
@@ -172,7 +172,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Solve the cube
+    //// Solve the cube
     private async void OnBtnSolveCubeClicked(object sender, EventArgs e)
     {
         // Check the number of colors of the cube
@@ -297,15 +297,15 @@ public partial class MainPage : ContentPage
         imgbtnSaveCube.IsEnabled = true;
     }
 
-    // Check the number of colors of the cube
+    //// Check the number of colors of the cube
     private bool CheckNumberColorsCube()
     {
         SetCubeColorsInArrays();
         return ClassColorsCube.CheckNumberColors();
     }
 
-    // Turn the faces of the cube
-    // Turn the front face clockwise (to right +)
+    //// Turn the faces of the cube
+    /// Turn the front face clockwise (to right +)
     private void OnTurnFrontFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -325,7 +325,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the upper horizontal middle to the right face (+)
+    /// Turn the upper horizontal middle to the right face (+)
     private void OnTurnUpHorMiddleToRightFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -351,7 +351,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the back face counter clockwise (to left -)
+    /// Turn the back face counter clockwise (to left -)
     private void OnTurnBackFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -371,7 +371,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the left face clockwise (to right +)
+    /// Turn the left face clockwise (to right +)
     private void OnTurnLeftFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -391,7 +391,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the upper vertical middle to the front face (-)
+    /// Turn the upper vertical middle to the front face (-)
     private void OnTurnUpVerMiddleToFrontFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -417,7 +417,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the right face counter clockwise (to left -)
+    /// Turn the right face counter clockwise (to left -)
     private void OnTurnRightFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -437,7 +437,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the upper face counter clockwise (to left -)
+    /// Turn the upper face counter clockwise (to left -)
     private void OnTurnUpFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -457,7 +457,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the front horizontal middle to the right face (-)
+    /// Turn the front horizontal middle to the right face (-)
     private void OnTurnFrontHorMiddleToRightFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -483,7 +483,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the down face clockwise (to right +)
+    /// Turn the down face clockwise (to right +)
     private void OnTurnDownFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -503,7 +503,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the upper face clockwise (to right +)
+    /// Turn the upper face clockwise (to right +)
     private void OnTurnUpFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -523,7 +523,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the front horizontal middle to the left face (+)
+    /// Turn the front horizontal middle to the left face (+)
     private void OnTurnFrontHorMiddleToLeftFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -549,7 +549,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the down face counter clockwise (to left -)
+    /// Turn the down face counter clockwise (to left -)
     private void OnTurnDownFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -569,7 +569,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the left face counter clockwise (to left -)
+    /// Turn the left face counter clockwise (to left -)
     private void OnTurnLeftFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -589,7 +589,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the upper vertical middle to the back face (+)
+    /// Turn the upper vertical middle to the back face (+)
     private void OnTurnUpVerMiddleToBackFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -615,7 +615,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the right face clockwise (to right +)
+    /// Turn the right face clockwise (to right +)
     private void OnTurnRightFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -635,7 +635,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the front face counter clockwise (to left -)
+    /// Turn the front face counter clockwise (to left -)
     private void OnTurnFrontFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -655,7 +655,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the upper horizontal middle to the left face (-)
+    /// Turn the upper horizontal middle to the left face (-)
     private void OnTurnUpHorMiddleToLeftFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -681,7 +681,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the back face clockwise (to right +)
+    /// Turn the back face clockwise (to right +)
     private void OnTurnBackFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -701,7 +701,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Turn the entire cube a quarter turn
+    /// Turn the entire cube a quarter turn
     // Rotate the entire cube so that the front goes to the left face
     private void TurnCubeFrontFaceToLeftFace()
     {
@@ -786,7 +786,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods
+    //// Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods
     private async void ExplainTurnCube(string cTurnCubeText)
     {
         // Convert text to speech
@@ -798,7 +798,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
+    //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
     private async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
         // Enable the arrow button and set the background color to Active
@@ -837,7 +837,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    // Enalbe or disable the arrow imagebuttons
+    //// Enalbe or disable the arrow imagebuttons
     private async Task SetImageButtonArrowIsEnabledAsync(string cTurnFaceAndDirection, bool bIsEnabled)
     {
         switch (cTurnFaceAndDirection)
@@ -935,7 +935,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set the explain text depending on the direction of rotation of the cube face
+    //// Set the explain text depending on the direction of rotation of the cube face
     private async Task<string> SetExplainTextAsync(string cTurnFaceAndDirection)
     {
         string cTurnCubeText = "";
@@ -1063,7 +1063,7 @@ public partial class MainPage : ContentPage
         return cTurnCubeText;
     }
 
-    // Explain the turn of the cube with speech
+    //// Explain the turn of the cube with speech
     private static void ExplainTurnCubeSpeech(string cTurnCubeText)
     {
         if (Globals.bExplainSpeech)
@@ -1077,14 +1077,14 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // On clicked event: Save the cube
+    //// On clicked event: Save the cube
     private void OnButtonSaveCubeClicked(object sender, EventArgs e)
     {
         SetCubeColorsInArrays();
         _ = ClassSaveRestoreCube.CubeDataSave();
     }
 
-    // On clicked event: Open, restore the cube
+    //// On clicked event: Open, restore the cube
     private void OnButtonOpenCubeClicked(object sender, EventArgs e)
     {
         _ = ClassSaveRestoreCube.CubeDataOpen();
@@ -1093,7 +1093,7 @@ public partial class MainPage : ContentPage
         Globals.lCubeTurns.Clear();
     }
 
-    // On clicked event: Reset the colors of the cube or restart the app
+    //// On clicked event: Reset the colors of the cube or restart the app
     private void OnBtnResetClicked(object sender, EventArgs e)
     {
         Globals.lCubeTurns.Clear();
@@ -1115,7 +1115,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Store the cube colors from the polygons in the arrays
+    //// Store the cube colors from the polygons in the arrays
     private void SetCubeColorsInArrays()
     {
         for (int i = 1; i < 7; i++)
@@ -1131,7 +1131,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set the cube colors from the arrays in the polygons
+    //// Set the cube colors from the arrays in the polygons
     private void GetCubeColorsFromArrays()
     {
         for (int i = 1; i < 7; i++)
@@ -1147,7 +1147,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Get the hex color code from the polygon fill property
+    //// Get the hex color code from the polygon fill property
     private static string GetHexColorPolygon(Polygon polygon)
     {
         SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
@@ -1157,7 +1157,7 @@ public partial class MainPage : ContentPage
         return color.ToHex();
     }
 
-    // Set the cube colors for drag and drop to visible or invisible
+    //// Set the cube colors for drag and drop to visible or invisible
     private void IsVisibleCubeColors(bool bEnableDisable)
     {
         plgCubeColorSelect.IsVisible = bEnableDisable;
@@ -1169,7 +1169,7 @@ public partial class MainPage : ContentPage
         plgCubeColor6.IsVisible = bEnableDisable;
     }
 
-    // Set the arrow buttons tooltip
+    //// Set the arrow buttons tooltip
     private void SetArrowTooltips(bool bSetArrowTooltip)
     {
         if (bSetArrowTooltip)
@@ -1216,7 +1216,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Enable or Disable the arrows
+    //// Enable or Disable the arrows
     private void IsEnabledArrows(bool bEnableDisable)
     {
         imgbtnTurnFrontFaceToRight.IsEnabled = bEnableDisable;
@@ -1239,7 +1239,7 @@ public partial class MainPage : ContentPage
         imgbtnTurnBackFaceToRight.IsEnabled = bEnableDisable;
     }
 
-    // Show license using the Loaded event of the MainPage.xaml
+    //// Show license using the Loaded event of the MainPage.xaml
     private async void OnPageLoad(object sender, EventArgs e)
     {
         // Show license
@@ -1274,7 +1274,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Set language using the Appearing event of the MainPage.xaml
+    //// Set language using the Appearing event of the MainPage.xaml
     private void OnPageAppearing(object sender, EventArgs e)
     {
         if (Globals.bLanguageChanged)
@@ -1284,7 +1284,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    // Put text in the chosen language in the controls
+    //// Put text in the chosen language in the controls
     private void SetTextLanguage()
     {
         // Set the current UI culture of the selected language

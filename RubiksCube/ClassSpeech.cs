@@ -4,7 +4,7 @@
     {
         private static IEnumerable<Locale> locales;
 
-        // Initialize text to speech and fill the the array with the speech languages
+        //// Initialize text to speech and fill the the array with the speech languages
         // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
         public static async void InitializeTextToSpeech(string cCultureName)
         {
@@ -52,7 +52,7 @@
             //await Application.Current.MainPage.DisplayAlert("Globals.cLanguageSpeech", Globals.cLanguageSpeech, "OK");  // For testing
         }
 
-        // Search for the language after a first start or reset of the application
+        //// Search for the language after a first start or reset of the application
         private static void SearchArrayWithSpeechLanguages(string cCultureName)
         {
             try
@@ -93,7 +93,7 @@
             }
         }
 
-        // Convert text to speech
+        //// Convert text to speech
         // If you do not wait long enough in the Task 'MakeTurnAsync()' with a Task.Delay(),
         // an error message will sometimes appear: 'The operation was canceled'.
         // This only occurs if the 'Explained by speech' setting is enabled.
@@ -135,7 +135,7 @@
             }
         }
         
-        // Cancel speech if a cancellation token exists & hasn't been already requested
+        //// Cancel speech if a cancellation token exists & hasn't been already requested
         public static void CancelTextToSpeech()
         {
             if (Globals.bTextToSpeechIsBusy)

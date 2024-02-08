@@ -440,7 +440,9 @@ Non autorizzato:</value>
     <value>Sì</value>
   </data>
   <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Il cubo non può essere risolto.</value>
+    <value>Il cubo non può essere risolto.
+
+La possibile causa è un trasferimento errato dei colori su questo cubo.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
     <value>Gira l'intero cubo in modo che la parte anteriore vada dietro, il lato destro rimanga a destra.</value>
@@ -471,5 +473,8 @@ Non autorizzato:</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>Di ogni colore disponibile, devono essercene quattro dello stesso colore sul bordo del cubo.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Di ogni colore disponibile, devono essercene quattro dello stesso colore su un cubo d'angolo.</value>
   </data>
 </root>

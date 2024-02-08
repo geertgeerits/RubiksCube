@@ -440,7 +440,9 @@ No permitido:</value>
     <value>Sí</value>
   </data>
   <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>El cubo no se puede resolver.</value>
+    <value>El cubo no se puede resolver.
+
+La posible causa es la transferencia incorrecta de colores a este cubo.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
     <value>Gira todo el cubo de modo que el frente vaya hacia atrás, el lado derecho quede a la derecha.</value>
@@ -471,5 +473,8 @@ No permitido:</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>De cada color disponible, debe haber cuatro del mismo color en un cubo de arista.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>De cada color disponible, debe haber cuatro del mismo color en un cubo de esquina.</value>
   </data>
 </root>
