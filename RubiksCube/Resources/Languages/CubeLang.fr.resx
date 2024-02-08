@@ -257,10 +257,10 @@ Utilisez ce programme entièrement à vos propres risques.</value>
     <value>Félicitations, le cube a été résolu.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
-    <value>Le cube n'est pas résolu!</value>
+    <value>Le cube n'est pas résolu.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
-    <value>De chaque couleur disponible, il doit y en avoir neuf de la même couleur !</value>
+    <value>De chaque couleur disponible, il doit y en avoir neuf de la même couleur.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -468,5 +468,8 @@ Interdit:</value>
   </data>
   <data name="MessageColorCenterPiece_Text" xml:space="preserve">
     <value>Les couleurs des pièces centrales opposées sont fausses.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>De chaque couleur disponible, il doit y en avoir quatre de la même couleur sur un cube de bord.</value>
   </data>
 </root>

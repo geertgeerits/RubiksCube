@@ -257,10 +257,10 @@ Gebruik dit programma geheel op eigen risico.</value>
     <value>Gefeliciteerd, de kubus is opgelost.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
-    <value>De kubus is niet opgelost!</value>
+    <value>De kubus is niet opgelost.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
-    <value>Van elke beschikbare kleur moeten er negen van dezelfde kleur zijn!</value>
+    <value>Van elke beschikbare kleur moeten er negen van dezelfde kleur zijn.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -468,5 +468,8 @@ Niet toegestaan:</value>
   </data>
   <data name="MessageColorCenterPiece_Text" xml:space="preserve">
     <value>De kleuren van de tegenoverliggende middenstukken zijn verkeerd.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>Van elke beschikbare kleur moeten er vier van dezelfde kleur op een randblokje staan.</value>
   </data>
 </root>

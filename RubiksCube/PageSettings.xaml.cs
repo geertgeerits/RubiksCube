@@ -321,19 +321,10 @@ public partial class PageSettings : ContentPage
     // Entry HexColor Unfocused event
     private void EntryHexColorUnfocused(object sender, EventArgs e)
     {
-        Entry entry = (Entry)sender;
-
-        // Test for allowed characters
-        if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
-        {
-            entry.Focus();
-            return;
-        }
-
         // Length must be 6 characters
-        if (entry.Text.Length != 6)
+        if (entHexColor.Text.Length != 6)
         {
-            entry.Focus();
+            entHexColor.Focus();
             return;
         }
 
@@ -342,57 +333,46 @@ public partial class PageSettings : ContentPage
         int nGreen = 0;
         int nBlue = 0;
 
-        if (entry == entHexColor)
+        if (rbnCubeColor1.IsChecked)
         {
-            if (rbnCubeColor1.IsChecked)
-            {
-                Globals.aFaceColors[1] = $"#{entHexColor.Text}";
-                HexToRgbColor(Globals.aFaceColors[1], ref nRed, ref nGreen, ref nBlue);
-            }
-            else if (rbnCubeColor2.IsChecked)
-            {
-                Globals.aFaceColors[2] = $"#{entHexColor.Text}";
-                HexToRgbColor(Globals.aFaceColors[2], ref nRed, ref nGreen, ref nBlue);
-            }
-            else if (rbnCubeColor3.IsChecked)
-            {
-                Globals.aFaceColors[3] = $"#{entHexColor.Text}";
-                HexToRgbColor(Globals.aFaceColors[3], ref nRed, ref nGreen, ref nBlue);
-            }
-            else if (rbnCubeColor4.IsChecked)
-            {
-                Globals.aFaceColors[4] = $"#{entHexColor.Text}";
-                HexToRgbColor(Globals.aFaceColors[4], ref nRed, ref nGreen, ref nBlue);
-            }
-            else if (rbnCubeColor5.IsChecked)
-            {
-                Globals.aFaceColors[5] = $"#{entHexColor.Text}";
-                HexToRgbColor(Globals.aFaceColors[5], ref nRed, ref nGreen, ref nBlue);
-            }
-            else if (rbnCubeColor6.IsChecked)
-            {
-                Globals.aFaceColors[6] = $"#{entHexColor.Text}";
-                HexToRgbColor(Globals.aFaceColors[6], ref nRed, ref nGreen, ref nBlue);
-            }
-
-            sldColorRed.Value = nRed;
-            sldColorGreen.Value = nGreen;
-            sldColorBlue.Value = nBlue;
+            Globals.aFaceColors[1] = $"#{entHexColor.Text}";
+            HexToRgbColor(Globals.aFaceColors[1], ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor2.IsChecked)
+        {
+            Globals.aFaceColors[2] = $"#{entHexColor.Text}";
+            HexToRgbColor(Globals.aFaceColors[2], ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor3.IsChecked)
+        {
+            Globals.aFaceColors[3] = $"#{entHexColor.Text}";
+            HexToRgbColor(Globals.aFaceColors[3], ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor4.IsChecked)
+        {
+            Globals.aFaceColors[4] = $"#{entHexColor.Text}";
+            HexToRgbColor(Globals.aFaceColors[4], ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor5.IsChecked)
+        {
+            Globals.aFaceColors[5] = $"#{entHexColor.Text}";
+            HexToRgbColor(Globals.aFaceColors[5], ref nRed, ref nGreen, ref nBlue);
+        }
+        else if (rbnCubeColor6.IsChecked)
+        {
+            Globals.aFaceColors[6] = $"#{entHexColor.Text}";
+            HexToRgbColor(Globals.aFaceColors[6], ref nRed, ref nGreen, ref nBlue);
         }
 
-        // Set focus to the next or save button
-        if (sender.Equals(entHexColor))
-        {
-            //entHexColorBg.Focus();
-        }
-        else
-        {
-            // Hide the keyboard
-            entry.IsEnabled = false;
-            entry.IsEnabled = true;
+        sldColorRed.Value = nRed;
+        sldColorGreen.Value = nGreen;
+        sldColorBlue.Value = nBlue;
 
-            //_ = btnSettingsSave.Focus();
-        }
+        // Hide the keyboard
+        entHexColor.IsEnabled = false;
+        entHexColor.IsEnabled = true;
+
+        _ = btnSettingsSave.Focus();
     }
 
     // Test for allowed characters in hex value

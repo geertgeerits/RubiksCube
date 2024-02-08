@@ -358,6 +358,7 @@
         </ScrollView>
 
         <Button
+            x:Name="btnSettingsSave"
             Style="{StaticResource buttonStyleDefault}"
             Grid.Row="2"
             HorizontalOptions="Start"

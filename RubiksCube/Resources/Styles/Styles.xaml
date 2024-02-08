@@ -428,8 +428,8 @@
     </Style>
 
     <Style x:Key="imageButtonArrowHorizontal" TargetType="ImageButton">
-        <Setter Property="HeightRequest" Value="36" />
-        <Setter Property="WidthRequest" Value="22" />
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="WidthRequest" Value="24" />
         <Setter Property="BorderWidth" Value="2"/>
         <Style.Triggers>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="True">
@@ -438,14 +438,14 @@
             </Trigger>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="False">
                 <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource MidGray}, Dark={StaticResource MidGray}}" />
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="imageButtonArrowVertical" TargetType="ImageButton">
-        <Setter Property="HeightRequest" Value="22" />
-        <Setter Property="WidthRequest" Value="36" />
+        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="WidthRequest" Value="38" />
         <Setter Property="BorderWidth" Value="2"/>
         <Style.Triggers>
             <Trigger TargetType="ImageButton" Property="IsEnabled" Value="True">

@@ -372,8 +372,7 @@ namespace RubiksCube.Resources.Languages {
         ///
         ///Google Translate was used for the translation of the text. This is not a guarantee that all translations are correct.
         ///The supporting languages are: Dutch, English, French, German, Italian, Portuguese and Spanish.
-        ///
-        /// [rest of string was truncated]&quot;;.
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InfoExplanation_Text {
             get {
@@ -491,7 +490,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The cube is not solved!.
+        ///   Looks up a localized string similar to The cube is not solved..
         /// </summary>
         internal static string MessageCubeNotSolved_Text {
             get {
@@ -500,7 +499,16 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Of each available color, there must be nine of the same color!.
+        ///   Looks up a localized string similar to Of each available color, there must be four of the same color on a edge cube..
+        /// </summary>
+        internal static string MessageFourSameColorEdgeCube_Text {
+            get {
+                return ResourceManager.GetString("MessageFourSameColorEdgeCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Of each available color, there must be nine of the same color..
         /// </summary>
         internal static string MessageNineSameColor_Text {
             get {
