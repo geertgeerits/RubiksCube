@@ -3,14 +3,15 @@
     internal class ClassSolveCubeNew
     {
         //// Declare variables
-        //private const int nLoopTimesMax = 2000;
+        //private const int nLoopTimesMax = 500;
 
         //// Solve the cube.
         public static async Task<bool> SolveTheCubeNewAsync()
         {
             if (!await SolveTopLayerEdgesAsync())
             {
-                return false;
+                return true;
+                //return false;
             }
 
             //if (!await SolveTopLayerCornersAsync())
@@ -49,7 +50,8 @@
                 return true;
             }
 
-            return false;
+            return true;
+            //return false;
         }
 
         // Solve the edges of the top layer - Chapter 4, page 14-3
@@ -108,8 +110,8 @@
                 return true;
             }
 
-            return false;
-
+            return true;
+            //return false;
         }
 
 

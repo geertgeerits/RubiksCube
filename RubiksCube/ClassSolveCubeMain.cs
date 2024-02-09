@@ -10,7 +10,7 @@ namespace RubiksCube
         private static readonly List<string> lCubeTurnsTemp = [];
         private static readonly List<string> lCubePositions = [];
 
-        //// Try to solve the cube from 24 positions of the cube
+        //// Try to solve the cube from 24 different positions of the cube
         public static async Task<bool> SolveCubeFromMultiplePositionsAsync()
         {
             // Clear the lists

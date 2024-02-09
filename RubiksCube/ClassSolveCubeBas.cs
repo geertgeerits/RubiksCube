@@ -5,12 +5,14 @@
 // I haven't been able to get rid of all the line numbers, so there are still some 'goto' statements left.
 // The majority were replaced by tasks, while loops, continue and break statements.
 
+using System.Diagnostics;
+
 namespace RubiksCube
 {
     internal class ClassSolveCubeBas
     {
         //// Declare variables
-        private const int nLoopTimesMax = 2000;
+        private const int nLoopTimesMax = 500;
 
         //// Solve the cube.  From Basic-80 to C# - 1981-1984
         public static async Task<bool> SolveTheCubeBasAsync()
@@ -72,6 +74,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes top layer corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -248,8 +251,10 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes top layer edges: " + nLoopTimes);
                     return false;
                 }
+                //Debug.WriteLine("nLoopTimes top layer edges: " + nLoopTimes);
 
                 // 710
                 cB = Globals.aPieces[40];
@@ -445,6 +450,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes middle layer: " + nLoopTimes);
                     return false;
                 }
 
@@ -755,6 +761,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes bottom layer corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -944,6 +951,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes bottom layer edges: " + nLoopTimes);
                     return false;
                 }
 
@@ -1107,6 +1115,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes bottom layer tumbling corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -1199,6 +1208,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
+                    Debug.WriteLine("nLoopTimes bottom layer tumbling edges: " + nLoopTimes);
                     return false;
                 }
 
