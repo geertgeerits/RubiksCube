@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿// This solution is based on the video: https://www.youtube.com/watch?v=7Ron6MN45LY&t=34s
+
+using System.Diagnostics;
 
 namespace RubiksCube
 {
@@ -12,14 +14,14 @@ namespace RubiksCube
         {
             if (!await SolveTopLayerEdgesAsync())
             {
+                return false;
+            }
+
+            if (!await SolveTopLayerCornersAsync())
+            {
                 return true;
                 //return false;
             }
-
-            //if (!await SolveTopLayerCornersAsync())
-            //{
-            //    return false;
-            //}
 
             //if (!await SolveMiddleLayerAsync())
             //{
@@ -56,7 +58,7 @@ namespace RubiksCube
             //return false;
         }
 
-        /// Solve the edges of the top layer - Chapter 4, page 14-3
+        /// Solve the edges of the top layer
         private static async Task<bool> SolveTopLayerEdgesAsync()
         {
             string cB = Globals.aPieces[40];
@@ -349,34 +351,72 @@ namespace RubiksCube
                     await MakeTurnAsync(Globals.turnFrontCCW);
                     await MakeTurnAsync(Globals.turnDownCW);
                 }
-
-
-
             }
 
+            return true;
+        }
 
+        /// Solve the corners of the top layer
+        private static async Task<bool> SolveTopLayerCornersAsync()
+        {
+            string cB = Globals.aPieces[40];
 
+            int nLoopTimes = 0;
 
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("nLoopTimes top layer corners: " + nLoopTimes);
+                    return false;
+                }
 
+                if (cB == Globals.aPieces[36] && cB == Globals.aPieces[38] && cB == Globals.aPieces[42] && cB == Globals.aPieces[44])
+                {
+                    break;
+                }
+                
+                if (Globals.aPieces[1] == Globals.aPieces[13])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                }
 
+                if (Globals.aPieces[1] == Globals.aPieces[31])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                }
 
+                if (Globals.aPieces[1] == Globals.aPieces[22])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                }
 
-            //if (cB == Globals.aPieces[16] && Globals.aPieces[50] == Globals.aPieces[13])
-            //{
-            //    await MakeTurnAsync(Globals.turnDownCCW);
-            //    await MakeTurnAsync(Globals.turnFrontCCW);
-            //    await MakeTurnAsync(Globals.turnUpCCW);
-            //    await MakeTurnAsync(Globals.turnRightCW);
-            //}
+                await MakeTurnAsync(Globals.turnCubeUpToRight2);
 
+                cB = Globals.aPieces[49];
+                
+                if (cB == Globals.aPieces[0] && Globals.aPieces[4] == Globals.aPieces[42] && Globals.aPieces[31] == Globals.aPieces[29])
+                {
+                    await MakeTurnAsync(Globals.turnLeftCW);
+                }
+
+                //await MakeTurnAsync(Globals.turnRightCW);
+                //await MakeTurnAsync(Globals.turnUpCW);
+                //await MakeTurnAsync(Globals.turnRightCCW);
+                //await MakeTurnAsync(Globals.turnUpCCW);
+
+                //await MakeTurnAsync(Globals.turnLeftCCW);
+                //await MakeTurnAsync(Globals.turnUpCCW);
+                //await MakeTurnAsync(Globals.turnLeftCW);
+                //await MakeTurnAsync(Globals.turnUpCW);
+            }
 
             return true;
         }
 
 
 
-
-        // Solve the corners of the top layer - Chapter 6, page 16
 
         /// Solve the middle layer - Chapter 10, page 21
 
