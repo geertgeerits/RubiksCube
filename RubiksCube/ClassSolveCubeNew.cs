@@ -1,4 +1,5 @@
 ﻿// This solution is based on the video: https://www.youtube.com/watch?v=7Ron6MN45LY&t=34s
+// https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/#step1
 
 using System.Diagnostics;
 
@@ -14,7 +15,7 @@ namespace RubiksCube
         {
             if (!await SolveTopLayerEdgesAsync())
             {
-                return true;
+                return false;
             }
 
             if (!await SolveTopLayerCornersAsync())
@@ -82,124 +83,132 @@ namespace RubiksCube
                     }
                 }
 
-                // Top color is at the down face and the second color is at the right face
-                if (cB == Globals.aPieces[46] && Globals.aPieces[13] == Globals.aPieces[7])
+                // Top color is at the down face and the second color is at another face of the bottom layer
+                if (cB == Globals.aPieces[46])
                 {
-                    await MakeTurnAsync(Globals.turnDownCW);
-                    await MakeTurnAsync(Globals.turnRight2);
+                    if (Globals.aPieces[7] == Globals.aPieces[4])
+                    {
+                        await MakeTurnAsync(Globals.turnFront2);
+                    }
+
+                    if (Globals.aPieces[7] == Globals.aPieces[13])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCW);
+                        await MakeTurnAsync(Globals.turnRight2);
+                    }
+
+                    if (Globals.aPieces[7] == Globals.aPieces[22])
+                    {
+                        await MakeTurnAsync(Globals.turnDown2);
+                        await MakeTurnAsync(Globals.turnBack2);
+                    }
+
+                    if (Globals.aPieces[7] == Globals.aPieces[31])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCCW);
+                        await MakeTurnAsync(Globals.turnLeft2);
+                    }
                 }
 
-                if (cB == Globals.aPieces[48] && Globals.aPieces[13] == Globals.aPieces[34])
+                if (cB == Globals.aPieces[48])
                 {
-                    await MakeTurnAsync(Globals.turnDown2);
-                    await MakeTurnAsync(Globals.turnRight2);
+                    if (Globals.aPieces[34] == Globals.aPieces[31])
+                    {
+                        await MakeTurnAsync(Globals.turnLeft2);
+                    }
+
+                    if (Globals.aPieces[34] == Globals.aPieces[4])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCW);
+                        await MakeTurnAsync(Globals.turnFront2);
+                    }
+
+                    if (Globals.aPieces[34] == Globals.aPieces[13])
+                    {
+                        await MakeTurnAsync(Globals.turnDown2);
+                        await MakeTurnAsync(Globals.turnRight2);
+                    }
+
+                    if (Globals.aPieces[34] == Globals.aPieces[22])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCCW);
+                        await MakeTurnAsync(Globals.turnBack2);
+                    }
                 }
 
-                if (cB == Globals.aPieces[50] && Globals.aPieces[13] == Globals.aPieces[16])
+                if (cB == Globals.aPieces[50])
                 {
-                    await MakeTurnAsync(Globals.turnRight2);
+                    if (Globals.aPieces[16] == Globals.aPieces[13])
+                    {
+                        await MakeTurnAsync(Globals.turnRight2);
+                    }
+
+                    if (Globals.aPieces[16] == Globals.aPieces[4])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCCW);
+                        await MakeTurnAsync(Globals.turnFront2);
+                    }
+
+                    if (Globals.aPieces[16] == Globals.aPieces[22])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCW);
+                        await MakeTurnAsync(Globals.turnBack2);
+                    }
+
+                    if (Globals.aPieces[16] == Globals.aPieces[31])
+                    {
+                        await MakeTurnAsync(Globals.turnDown2);
+                        await MakeTurnAsync(Globals.turnLeft2);
+                    }
                 }
 
-                if (cB == Globals.aPieces[52] && Globals.aPieces[13] == Globals.aPieces[25])
+                if (cB == Globals.aPieces[52])
                 {
-                    await MakeTurnAsync(Globals.turnDownCCW);
-                    await MakeTurnAsync(Globals.turnRight2);
+                    if (Globals.aPieces[25] == Globals.aPieces[22])
+                    {
+                        await MakeTurnAsync(Globals.turnBack2);
+                    }
+
+                    if (Globals.aPieces[25] == Globals.aPieces[4])
+                    {
+                        await MakeTurnAsync(Globals.turnDown2);
+                        await MakeTurnAsync(Globals.turnFront2);
+                    }
+
+                    if (Globals.aPieces[25] == Globals.aPieces[13])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCCW);
+                        await MakeTurnAsync(Globals.turnRight2);
+                    }
+
+                    if (Globals.aPieces[25] == Globals.aPieces[31])
+                    {
+                        await MakeTurnAsync(Globals.turnDownCW);
+                        await MakeTurnAsync(Globals.turnLeft2);
+                    }
                 }
 
-                // Top color is at the down face and the second color is at the front face
-                if (cB == Globals.aPieces[46] && Globals.aPieces[4] == Globals.aPieces[7])
-                {
-                    await MakeTurnAsync(Globals.turnFront2);
-                }
-
-                if (cB == Globals.aPieces[48] && Globals.aPieces[4] == Globals.aPieces[34])
-                {
-                    await MakeTurnAsync(Globals.turnDownCW);
-                    await MakeTurnAsync(Globals.turnFront2);
-                }
-
-                if (cB == Globals.aPieces[50] && Globals.aPieces[4] == Globals.aPieces[16])
-                {
-                    await MakeTurnAsync(Globals.turnDownCCW);
-                    await MakeTurnAsync(Globals.turnFront2);
-                }
-
-                if (cB == Globals.aPieces[52] && Globals.aPieces[4] == Globals.aPieces[25])
-                {
-                    await MakeTurnAsync(Globals.turnDown2);
-                    await MakeTurnAsync(Globals.turnFront2);
-                }
-
-                // Top color is at the down face and the second color is at the left face
-                if (cB == Globals.aPieces[46] && Globals.aPieces[31] == Globals.aPieces[7])
-                {
-                    await MakeTurnAsync(Globals.turnDownCCW);
-                    await MakeTurnAsync(Globals.turnLeft2);
-                }
-
-                if (cB == Globals.aPieces[48] && Globals.aPieces[31] == Globals.aPieces[34])
-                {
-                    await MakeTurnAsync(Globals.turnLeft2);
-                }
-
-                if (cB == Globals.aPieces[50] && Globals.aPieces[31] == Globals.aPieces[16])
-                {
-                    await MakeTurnAsync(Globals.turnDown2);
-                    await MakeTurnAsync(Globals.turnLeft2);
-                }
-
-                if (cB == Globals.aPieces[52] && Globals.aPieces[31] == Globals.aPieces[25])
-                {
-                    await MakeTurnAsync(Globals.turnDownCW);
-                    await MakeTurnAsync(Globals.turnLeft2);
-                }
-
-                // Top color is at the down face and the second color is at the back face
-                if (cB == Globals.aPieces[46] && Globals.aPieces[22] == Globals.aPieces[7])
-                {
-                    await MakeTurnAsync(Globals.turnDown2);
-                    await MakeTurnAsync(Globals.turnBack2);
-                }
-
-                if (cB == Globals.aPieces[48] && Globals.aPieces[22] == Globals.aPieces[34])
-                {
-                    await MakeTurnAsync(Globals.turnDownCCW);
-                    await MakeTurnAsync(Globals.turnBack2);
-                }
-
-                if (cB == Globals.aPieces[50] && Globals.aPieces[22] == Globals.aPieces[16])
-                {
-                    await MakeTurnAsync(Globals.turnDownCW);
-                    await MakeTurnAsync(Globals.turnBack2);
-                }
-
-                if (cB == Globals.aPieces[52] && Globals.aPieces[22] == Globals.aPieces[25])
-                {
-                    await MakeTurnAsync(Globals.turnBack2);
-                }
-
-                // Top color is at the bottom-front face and the second color is at the down face
+                // Top color is at the bottom - front / right / back / left face and the second color is at the down face
                 if (cB == Globals.aPieces[7])
                 {
                     await SolveTopLayerEdges2Async();
                 }
 
-                // Top color is at the bottom-right/back/left face and the second color is at the down face
                 if (cB == Globals.aPieces[16])
                 {
-                    await MakeTurnAsync(Globals.turnDownCCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
                     await SolveTopLayerEdges2Async();
                 }
 
                 if (cB == Globals.aPieces[25])
                 {
-                    await MakeTurnAsync(Globals.turnDown2);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
                     await SolveTopLayerEdges2Async();
                 }
 
                 if (cB == Globals.aPieces[34])
                 {
-                    await MakeTurnAsync(Globals.turnDownCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
                     await SolveTopLayerEdges2Async();
                 }
 
@@ -267,62 +276,49 @@ namespace RubiksCube
         /// Solve the edges of the top layer part 2
         private static async Task SolveTopLayerEdges2Async()
         {
-            //string cB = Globals.aPieces[40];
-
-            if (Globals.aPieces[4] == Globals.aPieces[46])
-            {
-                await MakeTurnAsync(Globals.turnFrontCCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnRightCW);
-                await MakeTurnAsync(Globals.turnUpCW);
-            }
-
-            if (Globals.aPieces[4] == Globals.aPieces[50])
-            {
-                await MakeTurnAsync(Globals.turnDownCCW);
-                await MakeTurnAsync(Globals.turnFrontCCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnRightCW);
-                await MakeTurnAsync(Globals.turnUpCW);
-            }
-
-            if (Globals.aPieces[4] == Globals.aPieces[52])
-            {
-                await MakeTurnAsync(Globals.turnDown2);
-                await MakeTurnAsync(Globals.turnFrontCCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnRightCW);
-                await MakeTurnAsync(Globals.turnUpCW);
-            }
-
-            if (Globals.aPieces[4] == Globals.aPieces[48])
+            if (Globals.aPieces[46] == Globals.aPieces[13])
             {
                 await MakeTurnAsync(Globals.turnDownCW);
-                await MakeTurnAsync(Globals.turnFrontCCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnRightCW);
-                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnCubeFrontToLeft);
             }
+
+            if (Globals.aPieces[46] == Globals.aPieces[31])
+            {
+                await MakeTurnAsync(Globals.turnDownCCW);
+                await MakeTurnAsync(Globals.turnCubeFrontToRight);
+            }
+
+            if (Globals.aPieces[46] == Globals.aPieces[22])
+            {
+                await MakeTurnAsync(Globals.turnDown2);
+                await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+            }
+
+            await MakeTurnAsync(Globals.turnFront2);
+            await MakeTurnAsync(Globals.turnFrontCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnRightCW);
+            await MakeTurnAsync(Globals.turnUpCW);
         }
 
         /// Solve the corners of the top layer
         private static async Task<bool> SolveTopLayerCornersAsync()
         {
             // Check if the center of the top layer is the same of the middle layer
-            //if (Globals.aPieces[1] == Globals.aPieces[13])
-            //{
-            //    await MakeTurnAsync(Globals.turnUpCCW);
-            //}
+            if (Globals.aPieces[1] == Globals.aPieces[13])
+            {
+                await MakeTurnAsync(Globals.turnUpCCW);
+            }
 
-            //if (Globals.aPieces[1] == Globals.aPieces[31])
-            //{
-            //    await MakeTurnAsync(Globals.turnUpCW);
-            //}
+            if (Globals.aPieces[1] == Globals.aPieces[31])
+            {
+                await MakeTurnAsync(Globals.turnUpCW);
+            }
 
-            //if (Globals.aPieces[1] == Globals.aPieces[22])
-            //{
-            //    await MakeTurnAsync(Globals.turnUp2);
-            //}
+            if (Globals.aPieces[1] == Globals.aPieces[22])
+            {
+                await MakeTurnAsync(Globals.turnUp2);
+            }
 
             // Turn the cube to the right, front stays at the front
             await MakeTurnAsync(Globals.turnCubeUpToRight2);
@@ -340,18 +336,9 @@ namespace RubiksCube
                 }
 
                 // If solved, break the loop
-                //if (cB == Globals.aPieces[45] && cB == Globals.aPieces[46] && cB == Globals.aPieces[47] && cB == Globals.aPieces[48] && cB == Globals.aPieces[50] && cB == Globals.aPieces[51] && cB == Globals.aPieces[52] && cB == Globals.aPieces[53])
-                if (cB == Globals.aPieces[46] && cB == Globals.aPieces[48] && cB == Globals.aPieces[50] && cB == Globals.aPieces[52])
+                if (cB == Globals.aPieces[45] && cB == Globals.aPieces[46] && cB == Globals.aPieces[47] && cB == Globals.aPieces[48] && cB == Globals.aPieces[50] && cB == Globals.aPieces[51] && cB == Globals.aPieces[52] && cB == Globals.aPieces[53])
                 {
                     break;
-                    if (Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[22] == Globals.aPieces[25] && Globals.aPieces[31] == Globals.aPieces[34])
-                    {
-                        break;
-                    }
-                }
-                else
-                {
-                    //await MakeTurnAsync(Globals.turnUpCW);
                 }
 
                 // The down color (before turning the cube: Up color) is at the back face [18]
@@ -361,7 +348,7 @@ namespace RubiksCube
                     {
                         if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[38])
                         {
-                            await MakeTurnAsync(Globals.turnCubeFrontToLeft );
+                            await MakeTurnAsync(Globals.turnCubeFrontToLeft);
                         }
                     }
                 }
@@ -640,11 +627,13 @@ namespace RubiksCube
                     await MakeTurnAsync(Globals.turnLeftCW);
                     await MakeTurnAsync(Globals.turnUpCW);
                 }
+
+                await MakeTurnAsync(Globals.turnUpCW);
             }
 
             return true;
         }
-
+        
         /// Solve the middle layer - Chapter 10, page 21
         private static async Task<bool> SolveMiddleLayerAsync()
         {
