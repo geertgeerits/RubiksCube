@@ -1148,7 +1148,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    //// Get the hex color code from the polygon fill property
+    //// Get the hexadecimal color code from the polygon fill property
     private static string GetHexColorPolygon(Polygon polygon)
     {
         SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
@@ -1156,6 +1156,16 @@ public partial class MainPage : ContentPage
 
         color = Color.FromRgb(color.Red, color.Green, color.Blue);
         return color.ToHex();
+    }
+
+    //// Get the decimal color code from the polygon fill property
+    private static int GetDecColorPolygon(Polygon polygon)
+    {
+        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
+        Color color = brush.Color;
+
+        color = Color.FromRgb(color.Red, color.Green, color.Blue);
+        return int.Parse(color.ToHex().Replace("#", ""), NumberStyles.HexNumber);
     }
 
     //// Set the cube colors for drag and drop to visible or invisible
