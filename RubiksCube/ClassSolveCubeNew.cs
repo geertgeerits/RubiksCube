@@ -81,6 +81,10 @@ namespace RubiksCube
                     {
                         break;
                     }
+                    else
+                    {
+                        await SwitchEdgeCubesTopLayerAsync();
+                    }
                 }
 
                 // Top color is at the down face and the second color is at another face of the bottom layer
@@ -634,29 +638,383 @@ namespace RubiksCube
             return true;
         }
         
-        /// Solve the middle layer - Chapter 10, page 21
+        /// Solve the middle layer
         private static async Task<bool> SolveMiddleLayerAsync()
         {
+            string cB = Globals.aPieces[40];
+            int nLoopTimes = 0;
 
-            
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("nLoopTimes middle layer: " + nLoopTimes);
+                    return false;
+                }
+
+                // If solved, break the loop
+                if (Globals.aPieces[4] == Globals.aPieces[3] && Globals.aPieces[4] == Globals.aPieces[5] && Globals.aPieces[13] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[14] && Globals.aPieces[22] == Globals.aPieces[21] && Globals.aPieces[22] == Globals.aPieces[23] && Globals.aPieces[31] == Globals.aPieces[30] && Globals.aPieces[31] == Globals.aPieces[32])
+                {
+                    break;
+                }
+
+                // If an edge cube at the top layer does not have the color of the up face center cube
+                if (Globals.aPieces[1] == Globals.aPieces[4] && cB != Globals.aPieces[43])
+                {
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[1] == Globals.aPieces[13] && cB != Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[1] == Globals.aPieces[22] && cB != Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[1] == Globals.aPieces[31] && cB != Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[10] == Globals.aPieces[4] && cB != Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[10] == Globals.aPieces[13] && cB != Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[10] == Globals.aPieces[22] && cB != Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[10] == Globals.aPieces[31] && cB != Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[19] == Globals.aPieces[4] && cB != Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[19] == Globals.aPieces[13] && cB != Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[19] == Globals.aPieces[22] && cB != Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[19] == Globals.aPieces[31] && cB != Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[28] == Globals.aPieces[4] && cB != Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[28] == Globals.aPieces[13] && cB != Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[28] == Globals.aPieces[22] && cB != Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SolveMiddleLayer2Async();
+                }
+
+                if (Globals.aPieces[28] == Globals.aPieces[31] && cB != Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                    await SolveMiddleLayer2Async();
+                }
+
+                // Wrong orientation of the edge cubes at the middle layer
+                if (Globals.aPieces[4] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[5])
+                {
+                    await SolveMiddleLayer3Async();
+                }
+
+                if (Globals.aPieces[13] == Globals.aPieces[21] && Globals.aPieces[22] == Globals.aPieces[14])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await SolveMiddleLayer3Async();
+                }
+
+                if (Globals.aPieces[22] == Globals.aPieces[30] && Globals.aPieces[31] == Globals.aPieces[23])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SolveMiddleLayer3Async();
+                }
+
+                if (Globals.aPieces[31] == Globals.aPieces[3] && Globals.aPieces[4] == Globals.aPieces[32])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                    await SolveMiddleLayer3Async();
+                }
+
+                // If an edge cube at the top layer must switch with a cube at the middle layer - Turn the cube
+                if (Globals.aPieces[13] == Globals.aPieces[10] && Globals.aPieces[22] == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                }
+
+                if (Globals.aPieces[22] == Globals.aPieces[19] && Globals.aPieces[31] == Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                }
+
+                if (Globals.aPieces[31] == Globals.aPieces[28] && Globals.aPieces[4] == Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                }
+
+                // If an edge cube at the top layer must switch with a cube at the middle layer - Right algorithm
+                if (Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[13] == Globals.aPieces[43])
+                {
+                    await SolveMiddleLayer4RightAsync();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await SolveMiddleLayer4RightAsync();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[19] && Globals.aPieces[13] == Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                    await SolveMiddleLayer4RightAsync();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[28] && Globals.aPieces[13] == Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await SolveMiddleLayer4RightAsync();
+                }
+
+                // If an edge cube at the top layer must switch with a cube at the middle layer - Left algorithm
+                if (Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[31] == Globals.aPieces[43])
+                {
+                    await SolveMiddleLayer4LeftAsync();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[10] && Globals.aPieces[31] == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await SolveMiddleLayer4LeftAsync();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[19] && Globals.aPieces[31] == Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                    await SolveMiddleLayer4LeftAsync();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[28] && Globals.aPieces[31] == Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await SolveMiddleLayer4LeftAsync();
+                }
+            }
             
             return true;
         }
 
+        /// Solve the middle layer - Part 2
+        /// If an edge cube at the top layer does not have the color of the up face center cube
+        private static async Task SolveMiddleLayer2Async()
+        {
+            if (Globals.aPieces[43] == Globals.aPieces[13])
+            {
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnRightCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnRightCCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                await MakeTurnAsync(Globals.turnLeftCCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnLeftCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+            }
+
+            if (Globals.aPieces[43] == Globals.aPieces[28])
+            {
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnLeftCCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnLeftCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                await MakeTurnAsync(Globals.turnRightCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnRightCCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+            }
+        }
+
+        /// Solve the middle layer - Part 3
+        /// Wrong orientation of the edge cubes at the middle layer
+        private static async Task SolveMiddleLayer3Async()
+        {
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnRightCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnRightCCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnFrontCCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnFrontCW);
+            await MakeTurnAsync(Globals.turnUp2);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnRightCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnRightCCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnFrontCCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnFrontCW);
+        }
+
+        /// Solve the middle layer - Part 4
+        /// If an edge cube at the top layer must switch with a cube at the middle layer - Right algorithm
+        private static async Task SolveMiddleLayer4RightAsync()
+        {
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnRightCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnRightCCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnFrontCCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnFrontCW);
+        }
+
+        /// Solve the middle layer - Part 4
+        /// If an edge cube at the top layer must switch with a cube at the middle layer - Left algorithm
+        private static async Task SolveMiddleLayer4LeftAsync()
+        {
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnLeftCCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnLeftCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnFrontCW);
+            await MakeTurnAsync(Globals.turnUpCCW);
+            await MakeTurnAsync(Globals.turnFrontCCW);
+        }
+
+        /// Solve the bottom layer
 
 
-
-        /// Solve the bottom layer - Chapter 11, page 23
-
-        // Put the edges on the correct place
-
-        // Flip the corners
-
-        // Turning the edges
+        /// Put the edges on the correct place
 
 
+        /// Flip the corners
 
-        // Make a turn of the cube/face/side
+
+        /// Turning the edges
+
+
+        /// Switch the edge cubes at the top layer
+        private static async Task SwitchEdgeCubesTopLayerAsync()
+        {
+            string cB = Globals.aPieces[40];
+
+            if (cB == Globals.aPieces[37] && cB == Globals.aPieces[39] && cB == Globals.aPieces[41] && cB == Globals.aPieces[43])
+            {
+                if (Globals.aPieces[4] == Globals.aPieces[28] && Globals.aPieces[31] == Globals.aPieces[1])
+                {
+                    await SwitchEdgeCubesTopLayer2Async();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[1])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await SwitchEdgeCubesTopLayer2Async();
+                }
+
+                if (Globals.aPieces[13] == Globals.aPieces[19] && Globals.aPieces[22] == Globals.aPieces[10])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SwitchEdgeCubesTopLayer2Async();
+                }
+
+                if (Globals.aPieces[22] == Globals.aPieces[28] && Globals.aPieces[31] == Globals.aPieces[19])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                    await SwitchEdgeCubesTopLayer2Async();
+                }
+
+                if (Globals.aPieces[13] == Globals.aPieces[28] && Globals.aPieces[31] == Globals.aPieces[10])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await SwitchEdgeCubesTopLayer2Async();
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SwitchEdgeCubesTopLayer2Async();
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[19] && Globals.aPieces[22] == Globals.aPieces[1])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await SwitchEdgeCubesTopLayer2Async();
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    await SwitchEdgeCubesTopLayer2Async();
+                }
+            }
+        }
+
+        /// Switch the edge cubes at the top layer - Part 2
+        private static async Task SwitchEdgeCubesTopLayer2Async()
+        {
+            await MakeTurnAsync(Globals.turnRightCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnRightCCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+            await MakeTurnAsync(Globals.turnRightCW);
+            await MakeTurnAsync(Globals.turnUp2);
+            await MakeTurnAsync(Globals.turnRightCCW);
+            await MakeTurnAsync(Globals.turnUpCW);
+        }
+
+        /// Make a turn of the cube/face/side
         private static async Task MakeTurnAsync(string cTurnFaceAndDirection)
         {
             // Add the turn to the list
