@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.11
-// Date ........: 2024-02-15 (YYYY-MM-DD)
+// Date ........: 2024-02-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -22,6 +22,7 @@ public partial class MainPage : ContentPage
     private bool bSolvingCube;
     private bool bSolved;
     private bool bArrowButtonPressed;
+    private bool bTestSolveCube;
 
     public MainPage()
 	{
@@ -242,6 +243,9 @@ public partial class MainPage : ContentPage
         stopwatch.Stop();
         var elapsedMs = stopwatch.ElapsedMilliseconds;
 
+        // Test variable to disable the steps to solve te cube one at a time in the task MakeTurnAsync()
+        bTestSolveCube = false;
+
         if (bSolved)
         {
             // Display the number of turns and the elapsed time in milliseconds
@@ -255,6 +259,7 @@ public partial class MainPage : ContentPage
             {
                 nTurns++;
                 lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
+                
                 await MakeTurnAsync(cItem);
             }
 
@@ -802,6 +807,18 @@ public partial class MainPage : ContentPage
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
     private async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
+        // If bTestSolveCube = true then do not use the steps to solve te cube one at a time
+        if (bTestSolveCube)
+        {
+            // Turn the faces of the cube
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+
+            // Set the cube colors from the arrays in the polygons
+            GetCubeColorsFromArrays();
+            
+            return;
+        }
+        
         // Enable the arrow button and set the background color to Active
         await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
 
@@ -817,7 +834,6 @@ public partial class MainPage : ContentPage
         while (true)
         {
             // Wait for 300 milliseconds on the button click event handler
-
             await Task.Delay(300);
 
             // Check if the button has been clicked and stop the loop if clicked

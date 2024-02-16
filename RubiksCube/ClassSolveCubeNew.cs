@@ -25,14 +25,13 @@ namespace RubiksCube
 
             if (!await SolveMiddleLayerAsync())
             {
-                return true;
-                //return false;
+                return false;
             }
 
-            //if (!await SolveBottomLayerCornersAsync())
-            //{
-            //    return false;
-            //}
+            if (!await SolveBottomLayerEdgesAsync())
+            {
+                return true;
+            }
 
             //if (!await SolveBottomLayerEdgesAsync())
             //{
@@ -59,7 +58,7 @@ namespace RubiksCube
             //return false;
         }
 
-        /// Solve the edges of the top layer
+        /// Solve the edges of the top layer - Part 1
         private static async Task<bool> SolveTopLayerEdgesAsync()
         {
             string cB = Globals.aPieces[40];
@@ -277,7 +276,7 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the edges of the top layer part 2
+        /// Solve the edges of the top layer - Part 2
         private static async Task SolveTopLayerEdges2Async()
         {
             if (Globals.aPieces[46] == Globals.aPieces[13])
@@ -638,7 +637,7 @@ namespace RubiksCube
             return true;
         }
         
-        /// Solve the middle layer
+        /// Solve the middle layer - Part 1
         private static async Task<bool> SolveMiddleLayerAsync()
         {
             string cB = Globals.aPieces[40];
@@ -940,7 +939,100 @@ namespace RubiksCube
             await MakeTurnAsync(Globals.turnFrontCCW);
         }
 
-        /// Solve the bottom layer
+        /// Solve the bottom layer - Put the edges on the correct place
+        private static async Task<bool> SolveBottomLayerEdgesAsync()
+        {
+            string cB = Globals.aPieces[40];
+            int nLoopTimes = 0;
+
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("nLoopTimes bottom layer edges: " + nLoopTimes);
+                    return false;
+                }
+
+                // If solved, break the loop
+                if (cB == Globals.aPieces[37] && cB == Globals.aPieces[39] && cB == Globals.aPieces[41] && cB == Globals.aPieces[43])
+                {
+                    break;
+                    //if (Globals.aPieces[1] == Globals.aPieces[4] && Globals.aPieces[10] == Globals.aPieces[13] && Globals.aPieces[19] == Globals.aPieces[22] && Globals.aPieces[28] == Globals.aPieces[31])
+                    //{
+                    //    break;
+                    //}
+                }
+
+                if (cB != Globals.aPieces[1] && cB == Globals.aPieces[10])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                }
+
+                if (cB != Globals.aPieces[1] && cB == Globals.aPieces[19])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                }
+
+                if (cB != Globals.aPieces[1] && cB == Globals.aPieces[28])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                }
+
+                if (cB == Globals.aPieces[1])
+                {
+                    await MakeTurnAsync(Globals.turnFrontCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnFrontCCW);
+                }
+
+                if (cB == Globals.aPieces[41] && cB == Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                }
+
+                if (cB == Globals.aPieces[37] && cB == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                }
+
+                if (cB == Globals.aPieces[39] && cB == Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                }
+
+                if (cB == Globals.aPieces[37] && cB == Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnFrontCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnFrontCCW);
+                }
+
+                if (cB == Globals.aPieces[37] && cB == Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                }
+
+                if (cB == Globals.aPieces[39] && cB == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnFrontCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnFrontCCW);
+                }
+
+            }
+
+            return true;
+        }
 
 
         /// Put the edges on the correct place
@@ -952,7 +1044,7 @@ namespace RubiksCube
         /// Turning the edges
 
 
-        /// Switch the edge cubes at the top layer
+        /// Switch the edge cubes at the top layer - Part 1
         private static async Task SwitchEdgeCubesTopLayerAsync()
         {
             string cB = Globals.aPieces[40];
