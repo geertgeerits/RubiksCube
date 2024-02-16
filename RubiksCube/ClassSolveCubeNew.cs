@@ -1128,7 +1128,28 @@ namespace RubiksCube
                     break;
                 }
 
+                //
+                //if (nLoopTimes > 1)
+                //{
+                //    await MakeTurnAsync(Globals.turnUpCW);
+                //    await MakeTurnAsync(Globals.turnRightCW);
+                //    await MakeTurnAsync(Globals.turnUpCCW);
+                //    await MakeTurnAsync(Globals.turnLeftCCW);
+                //    await MakeTurnAsync(Globals.turnUpCW);
+                //    await MakeTurnAsync(Globals.turnRightCCW);
+                //    await MakeTurnAsync(Globals.turnUpCCW);
+                //    await MakeTurnAsync(Globals.turnLeftCW);
+                //}
+
                 // Corners on their places
+                if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        goto Line1010;
+                    }
+                }
+
                 if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
                 {
                     if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
@@ -1156,60 +1177,47 @@ namespace RubiksCube
                     }
                 }
 
-                if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
-                {
-                    if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
-                    {
-                        goto Line1010;
-                    }
-                }
-                
                 // If no corner is on its place
-                await MakeTurnAsync(Globals.turnLeftCCW);
-                await MakeTurnAsync(Globals.turnUpCW);
-                await MakeTurnAsync(Globals.turnRightCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnLeftCW);
-                await MakeTurnAsync(Globals.turnUpCW);
-                await MakeTurnAsync(Globals.turnRightCCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
+                if (Globals.aPieces[4] != Globals.aPieces[2] && Globals.aPieces[4] != Globals.aPieces[9] && Globals.aPieces[4] != Globals.aPieces[44])
+                {
+                    await MakeTurnAsync(Globals.turnLeftCCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnLeftCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                }
+
                 continue;
 
                 // If a corner is on its place
             Line1010:
-                //await MakeTurnAsync(Globals.turnUpCW);
-                //await MakeTurnAsync(Globals.turnRightCW);
-                //await MakeTurnAsync(Globals.turnUpCCW);
-                //await MakeTurnAsync(Globals.turnLeftCCW);
-                //await MakeTurnAsync(Globals.turnUpCW);
-                //await MakeTurnAsync(Globals.turnRightCCW);
-                //await MakeTurnAsync(Globals.turnUpCCW);
-                //await MakeTurnAsync(Globals.turnLeftCW);
-
-                await MakeTurnAsync(Globals.turnLeftCCW);
                 await MakeTurnAsync(Globals.turnUpCW);
                 await MakeTurnAsync(Globals.turnRightCW);
                 await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnLeftCW);
+                await MakeTurnAsync(Globals.turnLeftCCW);
                 await MakeTurnAsync(Globals.turnUpCW);
                 await MakeTurnAsync(Globals.turnRightCCW);
                 await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnLeftCW);
+
+                //if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
+                //{
+                //    if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
+                //    {
+                //        await MakeTurnAsync(Globals.turnUpCW);
+                //        await MakeTurnAsync(Globals.turnRightCW);
+                //        await MakeTurnAsync(Globals.turnUpCCW);
+                //        await MakeTurnAsync(Globals.turnLeftCCW);
+                //        await MakeTurnAsync(Globals.turnUpCW);
+                //        await MakeTurnAsync(Globals.turnRightCCW);
+                //        await MakeTurnAsync(Globals.turnUpCCW);
+                //        await MakeTurnAsync(Globals.turnLeftCW);
+                //    }
 
 
-
-                if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
-                {
-                    if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
-                    {
-                        //await MakeTurnAsync(Globals.turnUpCW);
-                        //await MakeTurnAsync(Globals.turnRightCW);
-                        //await MakeTurnAsync(Globals.turnUpCCW);
-                        //await MakeTurnAsync(Globals.turnLeftCCW);
-                        //await MakeTurnAsync(Globals.turnUpCW);
-                        //await MakeTurnAsync(Globals.turnRightCCW);
-                        //await MakeTurnAsync(Globals.turnUpCCW);
-                        //await MakeTurnAsync(Globals.turnLeftCW);
-                    }
 
                     //await MakeTurnAsync(Globals.turnUpCW);
                     //await MakeTurnAsync(Globals.turnRightCW);
@@ -1220,7 +1228,36 @@ namespace RubiksCube
                     //await MakeTurnAsync(Globals.turnUpCCW);
                     //await MakeTurnAsync(Globals.turnLeftCW);
 
-                }
+                    //await MakeTurnAsync(Globals.turnLeftCCW);
+                    //await MakeTurnAsync(Globals.turnUpCW);
+                    //await MakeTurnAsync(Globals.turnRightCW);
+                    //await MakeTurnAsync(Globals.turnUpCCW);
+                    //await MakeTurnAsync(Globals.turnLeftCW);
+                    //await MakeTurnAsync(Globals.turnUpCW);
+                    //await MakeTurnAsync(Globals.turnRightCCW);
+                    //await MakeTurnAsync(Globals.turnUpCCW);
+
+                    //await MakeTurnAsync(Globals.turnLeftCCW);
+                    //await MakeTurnAsync(Globals.turnUpCW);
+                    //await MakeTurnAsync(Globals.turnRightCW);
+                    //await MakeTurnAsync(Globals.turnUpCCW);
+                    //await MakeTurnAsync(Globals.turnLeftCW);
+                    //await MakeTurnAsync(Globals.turnUpCW);
+                    //await MakeTurnAsync(Globals.turnRightCCW);
+                    //await MakeTurnAsync(Globals.turnUpCCW);
+
+
+
+                    //await MakeTurnAsync(Globals.turnUpCW);
+                    //await MakeTurnAsync(Globals.turnRightCW);
+                    //await MakeTurnAsync(Globals.turnUpCCW);
+                    //await MakeTurnAsync(Globals.turnLeftCCW);
+                    //await MakeTurnAsync(Globals.turnUpCW);
+                    //await MakeTurnAsync(Globals.turnRightCCW);
+                    //await MakeTurnAsync(Globals.turnUpCCW);
+                    //await MakeTurnAsync(Globals.turnLeftCW);
+
+                //}
 
                 //if (Globals.aPieces[31] == Globals.aPieces[0] || Globals.aPieces[31] == Globals.aPieces[29] || Globals.aPieces[31] == Globals.aPieces[42])
                 //{
