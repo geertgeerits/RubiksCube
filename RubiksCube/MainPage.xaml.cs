@@ -241,9 +241,10 @@ public partial class MainPage : ContentPage
 
         // Stop the stopwatch and get the elapsed time
         stopwatch.Stop();
-        var elapsedMs = stopwatch.ElapsedMilliseconds;
+        long elapsedMs = stopwatch.ElapsedMilliseconds;
 
-        // Test variable to disable the steps to solve te cube one at a time in the task MakeTurnAsync()
+        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnAsync()
+        // If not testing the solution to solve the cube then set bTestSolveCube = false
         bTestSolveCube = false;
 
         if (bSolved)
@@ -807,7 +808,7 @@ public partial class MainPage : ContentPage
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
     private async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
-        // If bTestSolveCube = true then do not use the steps to solve te cube one at a time
+        // If bTestSolveCube = true then do not use the 'steps one at a time' to solve te cube
         if (bTestSolveCube)
         {
             // Turn the faces of the cube
