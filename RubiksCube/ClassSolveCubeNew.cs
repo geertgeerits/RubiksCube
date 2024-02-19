@@ -3,6 +3,11 @@
 // https://www.learnhowtosolvearubikscube.com/step-7-moving-the-corners-into-place
 // https://www.youtube.com/@RichardSchouw
 // https://www.bing.com/videos/riverview/relatedvideo?q=how+to+move+corners+on+rubik%27s&mid=D8975C707A0A2C50FCEFD8975C707A0A2C50FCEF&FORM=VIRE
+// file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
+
+// https://www.youtube.com/watch?v=Lm9jRkikhlI
+// https://www.youtube.com/watch?v=lgm7NuQGgtw&list=PLfZ_bKS9WEOA-woYuj-_y3EmQqzhRboNw&index=57&t=706s
+
 
 using System.Diagnostics;
 
@@ -43,13 +48,13 @@ namespace RubiksCube
 
             if (!await SolveBottomLayerCornersAsync())
             {
-                return true;
+                return false;
             }
 
-            //if (!await SolveBottomLayerTumblingCornersAsync())
-            //{
-            //    return false;
-            //}
+            if (!await SolveBottomLayerTumblingCornersAsync())
+            {
+                return true;
+            }
 
             //if (!await SolveBottomLayerTumblingEdgesAsync())
             //{
@@ -1093,50 +1098,38 @@ namespace RubiksCube
                 }
 
                 // Corners on their places
-                if (Globals.aPieces[40] == Globals.aPieces[2] || Globals.aPieces[40] == Globals.aPieces[9] || Globals.aPieces[40] == Globals.aPieces[44])
+                if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
                 {
-                    if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
+                    if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
                     {
-                        if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
-                        {
-                            goto Line1010;
-                        }
+                        goto Line1010;
                     }
                 }
 
-                if (Globals.aPieces[40] == Globals.aPieces[11] || Globals.aPieces[40] == Globals.aPieces[18] || Globals.aPieces[40] == Globals.aPieces[38])
+                if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
                 {
-                    if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+                    if (Globals.aPieces[22] == Globals.aPieces[11] || Globals.aPieces[22] == Globals.aPieces[18] || Globals.aPieces[22] == Globals.aPieces[38])
                     {
-                        if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
-                        {
-                            await MakeTurnAsync(Globals.turnCubeFrontToLeft);
-                            goto Line1010;
-                        }
+                        await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                        goto Line1010;
                     }
                 }
 
-                if (Globals.aPieces[40] == Globals.aPieces[20] || Globals.aPieces[40] == Globals.aPieces[27] || Globals.aPieces[40] == Globals.aPieces[36])
+                if (Globals.aPieces[22] == Globals.aPieces[20] || Globals.aPieces[22] == Globals.aPieces[27] || Globals.aPieces[22] == Globals.aPieces[36])
                 {
-                    if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
+                    if (Globals.aPieces[31] == Globals.aPieces[20] || Globals.aPieces[31] == Globals.aPieces[27] || Globals.aPieces[31] == Globals.aPieces[36])
                     {
-                        if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
-                        {
-                            await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
-                            goto Line1010;
-                        }
+                        await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                        goto Line1010;
                     }
                 }
 
-                if (Globals.aPieces[40] == Globals.aPieces[0] || Globals.aPieces[40] == Globals.aPieces[29] || Globals.aPieces[40] == Globals.aPieces[42])
+                if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
                 {
-                    if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
+                    if (Globals.aPieces[31] == Globals.aPieces[0] || Globals.aPieces[31] == Globals.aPieces[29] || Globals.aPieces[31] == Globals.aPieces[42])
                     {
-                        if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
-                        {
-                            await MakeTurnAsync(Globals.turnCubeFrontToRight);
-                            goto Line1010;
-                        }
+                        await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                        goto Line1010;
                     }
                 }
 
@@ -1150,6 +1143,8 @@ namespace RubiksCube
                 await MakeTurnAsync(Globals.turnUpCCW);
                 await MakeTurnAsync(Globals.turnLeftCW);
 
+                continue;
+
                 // If a corner is on its place
             Line1010:
                 await MakeTurnAsync(Globals.turnUpCW);
@@ -1161,19 +1156,218 @@ namespace RubiksCube
                 await MakeTurnAsync(Globals.turnUpCCW);
                 await MakeTurnAsync(Globals.turnLeftCW);
 
+                // If there is still one or more corners not in their place
+                if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
+                    {
+                        goto Line1010;
+                    }
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
+                    {
+                        goto Line1010;
+                    }
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
+                    {
+                        goto Line1010;
+                    }
+                }
+
                 if (await SolveBottomLayerCheckCornersInRightPlaceAsync())
                 {
                     return true;
                 }
 
-                await MakeTurnAsync(Globals.turnUpCW);
-                await MakeTurnAsync(Globals.turnRightCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnLeftCCW);
-                await MakeTurnAsync(Globals.turnUpCW);
-                await MakeTurnAsync(Globals.turnRightCCW);
-                await MakeTurnAsync(Globals.turnUpCCW);
-                await MakeTurnAsync(Globals.turnLeftCW);
+                continue;
+
+                //await MakeTurnAsync(Globals.turnUpCW);
+                //await MakeTurnAsync(Globals.turnRightCW);
+                //await MakeTurnAsync(Globals.turnUpCCW);
+                //await MakeTurnAsync(Globals.turnLeftCCW);
+                //await MakeTurnAsync(Globals.turnUpCW);
+                //await MakeTurnAsync(Globals.turnRightCCW);
+                //await MakeTurnAsync(Globals.turnUpCCW);
+                //await MakeTurnAsync(Globals.turnLeftCW);
+
+                // Switch: 42 -> 44 -> 42
+                if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
+                    {
+                        if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
+                        {
+                            if (Globals.aPieces[31] == Globals.aPieces[2] || Globals.aPieces[31] == Globals.aPieces[9] || Globals.aPieces[31] == Globals.aPieces[44])
+                            {
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnFrontCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnBack2);
+                                await MakeTurnAsync(Globals.turnRightCW);
+                                await MakeTurnAsync(Globals.turnFrontCCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnBack2);
+                                await MakeTurnAsync(Globals.turnRight2);
+
+                                continue;
+                            }
+                        }
+                    }
+                }
+
+                // Switch: 36 -> 38 -> 36
+                if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
+                    {
+                        if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
+                        {
+                            if (Globals.aPieces[31] == Globals.aPieces[2] || Globals.aPieces[31] == Globals.aPieces[9] || Globals.aPieces[31] == Globals.aPieces[44])
+                            {
+                                //await MakeTurnAsync(Globals.turnFrontCW);
+                                //await MakeTurnAsync(Globals.turnUpCCW);
+                                //await MakeTurnAsync(Globals.turnBackCCW);
+                                //await MakeTurnAsync(Globals.turnUpCW);
+                                //await MakeTurnAsync(Globals.turnFrontCCW);
+                                //await MakeTurnAsync(Globals.turnUpCCW);
+                                //await MakeTurnAsync(Globals.turnBackCW);
+                                //await MakeTurnAsync(Globals.turnUp2);
+
+                                await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                                
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnFrontCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnBack2);
+                                await MakeTurnAsync(Globals.turnRightCW);
+                                await MakeTurnAsync(Globals.turnFrontCCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnBack2);
+                                await MakeTurnAsync(Globals.turnRight2);
+
+                                continue;
+                            }
+                        }
+                    }
+                }
+
+                // Switch: 36 -> 44 -> 36
+                if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
+                    {
+                        if (Globals.aPieces[22] == Globals.aPieces[2] || Globals.aPieces[22] == Globals.aPieces[9] || Globals.aPieces[22] == Globals.aPieces[44])
+                        {
+                            if (Globals.aPieces[31] == Globals.aPieces[2] || Globals.aPieces[31] == Globals.aPieces[9] || Globals.aPieces[31] == Globals.aPieces[44])
+                            {
+                                await MakeTurnAsync(Globals.turnFrontCW);
+                                await MakeTurnAsync(Globals.turnRightCW);
+                                await MakeTurnAsync(Globals.turnUpCCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnUpCCW);
+                                await MakeTurnAsync(Globals.turnRightCW);
+                                await MakeTurnAsync(Globals.turnUpCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnFrontCCW);
+                                await MakeTurnAsync(Globals.turnRightCW);
+                                await MakeTurnAsync(Globals.turnUpCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnUpCCW);
+                                await MakeTurnAsync(Globals.turnRightCCW);
+                                await MakeTurnAsync(Globals.turnFrontCW);
+                                await MakeTurnAsync(Globals.turnRightCW);
+                                await MakeTurnAsync(Globals.turnFrontCCW);
+
+                                continue;
+                            }
+                        }
+                    }
+                }
+
+                // Switch: 36 -> 38 -> 36
+                if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
+                {
+                    if (Globals.aPieces[22] == Globals.aPieces[20] || Globals.aPieces[22] == Globals.aPieces[27] || Globals.aPieces[22] == Globals.aPieces[36])
+                    {
+                        if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
+                        {
+                            if (Globals.aPieces[22] == Globals.aPieces[11] || Globals.aPieces[22] == Globals.aPieces[18] || Globals.aPieces[22] == Globals.aPieces[38])
+                            {
+                                await MakeTurnAsync(Globals.turnFrontCW);
+                                await MakeTurnAsync(Globals.turnUpCCW);
+                                await MakeTurnAsync(Globals.turnBackCCW);
+                                await MakeTurnAsync(Globals.turnUpCW);
+                                await MakeTurnAsync(Globals.turnFrontCCW);
+                                await MakeTurnAsync(Globals.turnUpCCW);
+                                await MakeTurnAsync(Globals.turnBackCW);
+                                await MakeTurnAsync(Globals.turnUp2);
+
+                                continue;
+                            }
+                        }
+                    }
+                }
+
+                // Correct the orientation of the edge cubes
+                if (Globals.aPieces[22] == Globals.aPieces[1])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+
+                    await MakeTurnAsync(Globals.turnFront2);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnLeftCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnFront2);
+                    await MakeTurnAsync(Globals.turnLeftCCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnFront2);
+
+                    continue;
+                }
+
+                if (Globals.aPieces[22] == Globals.aPieces[10])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+
+                    await MakeTurnAsync(Globals.turnFront2);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnLeftCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnFront2);
+                    await MakeTurnAsync(Globals.turnLeftCCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnFront2);
+
+                    continue;
+                }
+
+                if (Globals.aPieces[22] == Globals.aPieces[28])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+
+                    await MakeTurnAsync(Globals.turnFront2);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnLeftCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnFront2);
+                    await MakeTurnAsync(Globals.turnLeftCCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnFront2);
+
+                    continue;
+                }
+
+                continue;
 
                 while (true)
                 {
@@ -1187,79 +1381,110 @@ namespace RubiksCube
                     // If all corners are on their places, break the loop
                     if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
 
-                    if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
-                    {
-                        if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
-                        {
-                            await MakeTurnAsync(Globals.turnLeftCCW);
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnRightCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                            await MakeTurnAsync(Globals.turnLeftCW);
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnRightCCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
+                    // Set the colors of the corner cubes in the right place 44
+                    //await SolveBottomLayerSetCornerInRightPlaceAsync();
 
-                            continue;
-                        }
-                    }
+                    // Switch: 38 -> 42 -> 36 -> 38
+                    //if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+                    //{
+                    //    if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
+                    //    {
+                    //        if (Globals.aPieces[22] == Globals.aPieces[0] || Globals.aPieces[22] == Globals.aPieces[29] || Globals.aPieces[22] == Globals.aPieces[42])
+                    //        {
+                    //            if (Globals.aPieces[31] == Globals.aPieces[0] || Globals.aPieces[31] == Globals.aPieces[29] || Globals.aPieces[31] == Globals.aPieces[42])
+                    //            {
+                    //                await MakeTurnAsync(Globals.turnLeftCCW);
+                    //                await MakeTurnAsync(Globals.turnUpCW);
+                    //                await MakeTurnAsync(Globals.turnRightCW);
+                    //                await MakeTurnAsync(Globals.turnUpCCW);
+                    //                await MakeTurnAsync(Globals.turnLeftCW);
+                    //                await MakeTurnAsync(Globals.turnUpCW);
+                    //                await MakeTurnAsync(Globals.turnRightCCW);
+                    //                await MakeTurnAsync(Globals.turnUpCCW);
+
+                    //                continue;
+                    //            }
+                    //        }
+                    //    }
+                    //}
 
                     // If all corners are on their places, break the loop
                     if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
 
+                    // Switch: 38 -> 36 -> 42 -> 38
                     if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
                     {
                         if (Globals.aPieces[22] == Globals.aPieces[0] || Globals.aPieces[22] == Globals.aPieces[29] || Globals.aPieces[22] == Globals.aPieces[42])
                         {
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnRightCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                            await MakeTurnAsync(Globals.turnLeftCCW);
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnRightCCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                            await MakeTurnAsync(Globals.turnLeftCW);
-                            
-                            continue;
+                            if (Globals.aPieces[22] == Globals.aPieces[11] || Globals.aPieces[22] == Globals.aPieces[18] || Globals.aPieces[22] == Globals.aPieces[38])
+                            {
+                                if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
+                                {
+                                    await MakeTurnAsync(Globals.turnUpCW);
+                                    await MakeTurnAsync(Globals.turnRightCW);
+                                    await MakeTurnAsync(Globals.turnUpCCW);
+                                    await MakeTurnAsync(Globals.turnLeftCCW);
+                                    await MakeTurnAsync(Globals.turnUpCW);
+                                    await MakeTurnAsync(Globals.turnRightCCW);
+                                    await MakeTurnAsync(Globals.turnUpCCW);
+                                    await MakeTurnAsync(Globals.turnLeftCW);
+
+                                    continue;
+                                }
+                            }
                         }
                     }
 
                     // If all corners are on their places, break the loop
-                    if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
+                    //if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
 
-                    if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
-                    {
-                        if (Globals.aPieces[22] == Globals.aPieces[20] || Globals.aPieces[22] == Globals.aPieces[27] || Globals.aPieces[22] == Globals.aPieces[36])
-                        {
-                            await MakeTurnAsync(Globals.turnFrontCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                            await MakeTurnAsync(Globals.turnBackCCW);
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnFrontCCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                            await MakeTurnAsync(Globals.turnBackCW);
-                            await MakeTurnAsync(Globals.turnUp2);
+                    // Switch: 36 -> 38 -> 36
+                    //if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
+                    //{
+                    //    if (Globals.aPieces[22] == Globals.aPieces[20] || Globals.aPieces[22] == Globals.aPieces[27] || Globals.aPieces[22] == Globals.aPieces[36])
+                    //    {
+                    //        if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
+                    //        {
+                    //            if (Globals.aPieces[22] == Globals.aPieces[11] || Globals.aPieces[22] == Globals.aPieces[18] || Globals.aPieces[22] == Globals.aPieces[38])
+                    //            {
+                    //                await MakeTurnAsync(Globals.turnFrontCW);
+                    //                await MakeTurnAsync(Globals.turnUpCCW);
+                    //                await MakeTurnAsync(Globals.turnBackCCW);
+                    //                await MakeTurnAsync(Globals.turnUpCW);
+                    //                await MakeTurnAsync(Globals.turnFrontCCW);
+                    //                await MakeTurnAsync(Globals.turnUpCCW);
+                    //                await MakeTurnAsync(Globals.turnBackCW);
+                    //                await MakeTurnAsync(Globals.turnUp2);
 
-                            continue;
-                        }
-                    }
+                    //                continue;
+                    //            }
+                    //        }
+                    //    }
+                    //}
 
                     // If all corners are on their places, break the loop
-                    if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
+                    //if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
 
-                    if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
-                    {
-                        if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
-                        {
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnFrontCW);
-                            await MakeTurnAsync(Globals.turnUpCW);
-                            await MakeTurnAsync(Globals.turnRightCW);
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                            await MakeTurnAsync(Globals.turnRightCCW);
-                            await MakeTurnAsync(Globals.turnFrontCCW);
-                        }
-                    }
+                    // Switch: 38 -> 42 -> 38
+                    //if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+                    //{
+                    //    if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
+                    //    {
+                    //        if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
+                    //        {
+                    //            if (Globals.aPieces[22] == Globals.aPieces[0] || Globals.aPieces[22] == Globals.aPieces[29] || Globals.aPieces[22] == Globals.aPieces[42])
+                    //            {
+                    //                await MakeTurnAsync(Globals.turnUpCW);
+                    //                await MakeTurnAsync(Globals.turnFrontCW);
+                    //                await MakeTurnAsync(Globals.turnUpCW);
+                    //                await MakeTurnAsync(Globals.turnRightCW);
+                    //                await MakeTurnAsync(Globals.turnUpCCW);
+                    //                await MakeTurnAsync(Globals.turnRightCCW);
+                    //                await MakeTurnAsync(Globals.turnFrontCCW);
+                    //            }
+                    //        }
+                    //    }
+                    //}
 
                     // If all corners are on their places, break the loop
                     if (await SolveBottomLayerCheckCornersInRightPlaceAsync()) { return true; }
@@ -1293,28 +1518,69 @@ namespace RubiksCube
         }
 
         /// Corners on their places - Part 2
+        /// // Set the colors of the corner cubes in the right place 44
+        private static async Task SolveBottomLayerSetCornerInRightPlaceAsync()
+        {
+            if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
+            {
+                if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
+                {
+                    return;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+            {
+                if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+                    return;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
+            {
+                if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+                    return;
+                }
+            }
+
+            if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
+            {
+                if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
+                {
+                    await MakeTurnAsync(Globals.turnCubeFrontToRight);
+                }
+            }
+        }
+
+        /// Corners on their places - Part 3
         private static async Task<bool> SolveBottomLayerCheckCornersInRightPlaceAsync()
         {
+            // Lign up the center cube with the cube above the center cube
+            //if (Globals.aPieces[4] == Globals.aPieces[10])
+            //{
+            //    await MakeTurnAsync(Globals.turnUpCW);
+            //}
+
+            //if (Globals.aPieces[4] == Globals.aPieces[19])
+            //{
+            //    await MakeTurnAsync(Globals.turnUp2);
+            //}
+
+            //if (Globals.aPieces[4] == Globals.aPieces[28])
+            //{
+            //    await MakeTurnAsync(Globals.turnUpCCW);
+            //}
+
+            // Check if the corners are in the right place
             // If all corners are on their places, break the loop
             bool bCorner36 = false;
             bool bCorner38 = false;
             bool bCorner42 = false;
             bool bCorner44 = false;
-
-            if (Globals.aPieces[4] == Globals.aPieces[10])
-            {
-                await MakeTurnAsync(Globals.turnUpCW);
-            }
-
-            if (Globals.aPieces[4] == Globals.aPieces[19])
-            {
-                await MakeTurnAsync(Globals.turnUp2);
-            }
-
-            if (Globals.aPieces[4] == Globals.aPieces[28])
-            {
-                await MakeTurnAsync(Globals.turnUpCCW);
-            }
 
             if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
             {
@@ -1351,8 +1617,30 @@ namespace RubiksCube
             return bCorner36 && bCorner38 && bCorner42 && bCorner44;
         }
 
-        /// Turning the edges
+        /// Solve the bottom layer
+        /// Tumbling the corners
+        private static async Task<bool> SolveBottomLayerTumblingCornersAsync()
+        {
+            string cB = Globals.aPieces[40];
+            int nLoopTimes = 0;
 
+            await MakeTurnAsync(Globals.turnCubeUpToRight2);
+
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("nLoopTimes bottom layer corners: " + nLoopTimes);
+                    return false;
+                }
+
+
+
+            }
+
+            return true;
+        }
 
         /// Switch the edge cubes at the top layer - Part 1
         private static async Task SwitchEdgeCubesTopLayerAsync()
