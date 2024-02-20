@@ -1064,6 +1064,16 @@ namespace RubiksCube
                     }
                 }
 
+                if (cB != Globals.aPieces[37] && cB != Globals.aPieces[39] && cB != Globals.aPieces[41] && cB != Globals.aPieces[43])
+                {
+                    await MakeTurnAsync(Globals.turnFrontCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnFrontCCW);
+                }
+
                 await SwitchEdgeCubesTopLayerAsync();
             }
 
@@ -1189,22 +1199,6 @@ namespace RubiksCube
         /// Corners on their places - Part 2
         private static async Task<bool> SolveBottomLayerCheckCornersInRightPlaceAsync()
         {
-            // Lign up the center cube with the cube above the center cube
-            //if (Globals.aPieces[4] == Globals.aPieces[10])
-            //{
-            //    await MakeTurnAsync(Globals.turnUpCW);
-            //}
-
-            //if (Globals.aPieces[4] == Globals.aPieces[19])
-            //{
-            //    await MakeTurnAsync(Globals.turnUp2);
-            //}
-
-            //if (Globals.aPieces[4] == Globals.aPieces[28])
-            //{
-            //    await MakeTurnAsync(Globals.turnUpCCW);
-            //}
-
             // Check if the corners are in the right place
             // If all corners are on their places, break the loop
             bool bCorner36 = false;
@@ -1326,6 +1320,16 @@ namespace RubiksCube
         private static async Task SwitchEdgeCubesTopLayerAsync()
         {
             string cB = Globals.aPieces[40];
+
+            //if (cB != Globals.aPieces[37] && cB != Globals.aPieces[39] && cB != Globals.aPieces[41] && cB != Globals.aPieces[43])
+            //{
+            //    await MakeTurnAsync(Globals.turnFrontCW);
+            //    await MakeTurnAsync(Globals.turnRightCW);
+            //    await MakeTurnAsync(Globals.turnUpCW);
+            //    await MakeTurnAsync(Globals.turnRightCCW);
+            //    await MakeTurnAsync(Globals.turnUpCCW);
+            //    await MakeTurnAsync(Globals.turnFrontCCW);
+            //}
 
             if (cB == Globals.aPieces[37] && cB == Globals.aPieces[39] && cB == Globals.aPieces[41] && cB == Globals.aPieces[43])
             {
