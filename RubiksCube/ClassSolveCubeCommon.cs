@@ -1,4 +1,6 @@
-﻿// file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
+﻿// This turns are based on:
+// the book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981
+// file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
 
 namespace RubiksCube
 {
@@ -73,6 +75,61 @@ namespace RubiksCube
                         await MakeTurnAsync(Globals.turnFront2);
 
                         return true;
+                    }
+                }
+            }
+
+            // Swap: 37 -> 43 -> 37 and 39 -> 41 -> 39
+            if (Globals.aPieces[4] == Globals.aPieces[19] || Globals.aPieces[4] == Globals.aPieces[37])
+            {
+                if (Globals.aPieces[22] == Globals.aPieces[1] || Globals.aPieces[22] == Globals.aPieces[43])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[28] || Globals.aPieces[13] == Globals.aPieces[39])
+                    {
+                        if (Globals.aPieces[31] == Globals.aPieces[10] || Globals.aPieces[31] == Globals.aPieces[41])
+                        {
+                            await MakeTurnAsync(Globals.turnRight2);
+                            await MakeTurnAsync(Globals.turnLeft2);
+                            await MakeTurnAsync(Globals.turnDownCW);
+                            await MakeTurnAsync(Globals.turnRight2);
+                            await MakeTurnAsync(Globals.turnLeft2);
+                            await MakeTurnAsync(Globals.turnUp2);
+                            await MakeTurnAsync(Globals.turnRight2);
+                            await MakeTurnAsync(Globals.turnLeft2);
+                            await MakeTurnAsync(Globals.turnDownCW);
+                            await MakeTurnAsync(Globals.turnRight2);
+                            await MakeTurnAsync(Globals.turnLeft2);
+
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            // Swap: 37 -> 41 -> 37 and Swap: 39 -> 43 -> 39
+            if (Globals.aPieces[4] == Globals.aPieces[28] || Globals.aPieces[4] == Globals.aPieces[39])
+            {
+                if (Globals.aPieces[31] == Globals.aPieces[1] || Globals.aPieces[31] == Globals.aPieces[43])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[19] || Globals.aPieces[13] == Globals.aPieces[37])
+                    {
+                        if (Globals.aPieces[22] == Globals.aPieces[10] || Globals.aPieces[22] == Globals.aPieces[41])
+                        {
+                        
+                            await MakeTurnAsync(Globals.turnRightCW);
+                            await MakeTurnAsync(Globals.turnBackCW);
+                            await MakeTurnAsync(Globals.turnUpCW);
+                            await MakeTurnAsync(Globals.turnBackCCW);
+                            await MakeTurnAsync(Globals.turnUpCCW);
+                            await MakeTurnAsync(Globals.turnRight2);
+                            await MakeTurnAsync(Globals.turnFrontCCW);
+                            await MakeTurnAsync(Globals.turnUpCCW);
+                            await MakeTurnAsync(Globals.turnFrontCW);
+                            await MakeTurnAsync(Globals.turnUpCW);
+                            await MakeTurnAsync(Globals.turnRightCW);
+
+                            return true;
+                        }
                     }
                 }
             }
