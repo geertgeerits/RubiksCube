@@ -54,11 +54,11 @@ namespace RubiksCube
             //    return false;
             //}
 
-            //// Check if the cube is solved
-            //if (ClassColorsCube.CheckIfSolved())
-            //{
-            //    return true;
-            //}
+            // Check if the cube is solved
+            if (ClassColorsCube.CheckIfSolved())
+            {
+                return true;
+            }
 
             return true;
         }
@@ -619,6 +619,88 @@ namespace RubiksCube
                     break;
                 }
 
+                // 1-43 has to go to the left 3-32
+                if (Globals.aPieces[4] == Globals.aPieces[10] && Globals.aPieces[31] == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[28] && Globals.aPieces[31] == Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[19] && Globals.aPieces[31] == Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                }
+
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnLeftCCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnLeftCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnFrontCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnFrontCCW);
+
+                // 1-43 has to go to the right 5-12
+                if (Globals.aPieces[4] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[41])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[28] && Globals.aPieces[13] == Globals.aPieces[39])
+                {
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                }
+
+                if (Globals.aPieces[4] == Globals.aPieces[19] && Globals.aPieces[13] == Globals.aPieces[37])
+                {
+                    await MakeTurnAsync(Globals.turnUp2);
+                }
+
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnRightCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnRightCCW);
+                await MakeTurnAsync(Globals.turnUpCCW);
+                await MakeTurnAsync(Globals.turnFrontCCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnFrontCW);
+
+                // Edge in the right place but flipped
+                if (Globals.aPieces[4] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[5])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnFrontCCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnFrontCW);
+                }
+
+                // Edge in the wrong place within the middle layer
+                if (Globals.aPieces[4] != Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[5])
+                {
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnRightCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnRightCCW);
+                    await MakeTurnAsync(Globals.turnUpCCW);
+                    await MakeTurnAsync(Globals.turnFrontCCW);
+                    await MakeTurnAsync(Globals.turnUpCW);
+                    await MakeTurnAsync(Globals.turnFrontCW);
+                }
+
+                await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+
+                continue;
+
+
+
                 // Edge cube is at the top layer
                 if (Globals.aPieces[40] != Globals.aPieces[1] && Globals.aPieces[40] != Globals.aPieces[43])
                 {
@@ -1051,7 +1133,7 @@ namespace RubiksCube
 
                 /// Solve the bottom layer
                 /// Make a cross
-                private static async Task<bool> SolveBottomLayerEdgesAsync()
+        private static async Task<bool> SolveBottomLayerEdgesAsync()
         {
             string cB = Globals.aPieces[40];
             int nLoopTimes = 0;
