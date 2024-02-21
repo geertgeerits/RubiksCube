@@ -35,7 +35,7 @@ namespace RubiksCube
         /// Swap edges on the top layer
         public static async Task<bool> SolveTopLayerSwapEdgesAsync()
         {
-            // Swap: 39 -> 41 -> 43 -> 39 - Rotate EFG clockwise
+            // Swap 39 -> 41 -> 43 -> 39 - Rotate EFG clockwise
             if (Globals.aPieces[4] == Globals.aPieces[10] || Globals.aPieces[4] == Globals.aPieces[41])
             {
                 if (Globals.aPieces[13] == Globals.aPieces[28] || Globals.aPieces[13] == Globals.aPieces[39])
@@ -57,7 +57,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 39 -> 43 -> 41 -> 39 - Rotate EFG counter-clockwise
+            // Swap 39 -> 43 -> 41 -> 39 - Rotate EFG counter-clockwise
             if (Globals.aPieces[4] == Globals.aPieces[28] || Globals.aPieces[4] == Globals.aPieces[39])
             {
                 if (Globals.aPieces[13] == Globals.aPieces[1] || Globals.aPieces[13] == Globals.aPieces[43])
@@ -79,7 +79,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 37 -> 43 -> 37 and 39 -> 41 -> 39
+            // Swap 37 -> 43 -> 37 and 39 -> 41 -> 39
             if (Globals.aPieces[4] == Globals.aPieces[19] || Globals.aPieces[4] == Globals.aPieces[37])
             {
                 if (Globals.aPieces[22] == Globals.aPieces[1] || Globals.aPieces[22] == Globals.aPieces[43])
@@ -106,7 +106,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 37 -> 41 -> 37 and Swap: 39 -> 43 -> 39
+            // Swap 37 -> 41 -> 37 and swap 39 -> 43 -> 39
             if (Globals.aPieces[4] == Globals.aPieces[28] || Globals.aPieces[4] == Globals.aPieces[39])
             {
                 if (Globals.aPieces[31] == Globals.aPieces[1] || Globals.aPieces[31] == Globals.aPieces[43])
@@ -140,7 +140,7 @@ namespace RubiksCube
         /// Swap corners on the top layer
         public static async Task<bool> SolveTopLayerSwapCornersAsync()
         {
-            // Swap: 36 -> 38 -> 36
+            // Swap 36 -> 38 -> 36
             if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
             {
                 if (Globals.aPieces[22] == Globals.aPieces[20] || Globals.aPieces[22] == Globals.aPieces[27] || Globals.aPieces[22] == Globals.aPieces[36])
@@ -164,7 +164,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 42 -> 44 -> 42
+            // Swap 42 -> 44 -> 42
             if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
             {
                 if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
@@ -189,7 +189,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 36 -> 44 -> 36
+            // Swap 36 -> 44 -> 36
             if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
             {
                 if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
@@ -222,7 +222,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 38 -> 42 -> 38
+            // Swap 38 -> 42 -> 38
             if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
             {
                 if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
@@ -245,7 +245,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 36 -> 38 -> 42 -> 36
+            // Swap 36 -> 38 -> 42 -> 36
             if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
             {
                 if (Globals.aPieces[31] == Globals.aPieces[11] || Globals.aPieces[31] == Globals.aPieces[18] || Globals.aPieces[31] == Globals.aPieces[38])
@@ -269,7 +269,7 @@ namespace RubiksCube
                 }
             }
 
-            // Swap: 36 -> 42 -> 38 -> 36
+            // Swap 36 -> 42 -> 38 -> 36
             if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
             {
                 if (Globals.aPieces[31] == Globals.aPieces[20] || Globals.aPieces[31] == Globals.aPieces[27] || Globals.aPieces[31] == Globals.aPieces[36])
