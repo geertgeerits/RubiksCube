@@ -14,13 +14,13 @@ using System.Diagnostics;
 
 namespace RubiksCube
 {
-    internal class ClassSolveCubeNew
+    internal class ClassSolveCubeCross
     {
         //// Declare variables
-        private const int nLoopTimesMax = 500;
+        private const int nLoopTimesMax = 400;
 
         //// Solve the cube.
-        public static async Task<bool> SolveTheCubeNewAsync()
+        public static async Task<bool> SolveTheCubeCrossAsync()
         {
             if (!await SolveTopLayerEdgesAsync())
             {

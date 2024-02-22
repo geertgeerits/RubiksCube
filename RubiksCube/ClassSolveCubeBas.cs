@@ -12,7 +12,7 @@ namespace RubiksCube
     internal class ClassSolveCubeBas
     {
         //// Declare variables
-        private const int nLoopTimesMax = 500;
+        private const int nLoopTimesMax = 400;
 
         //// Solve the cube.  From Basic-80 to C# - 1981-1984
         public static async Task<bool> SolveTheCubeBasAsync()

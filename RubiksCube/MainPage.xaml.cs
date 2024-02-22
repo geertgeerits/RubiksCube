@@ -229,10 +229,21 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
             // Solve the cube
-            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync();
-            //bSolved = await ClassSolveCubeNew.SolveTheCubeBasAsync();   // For testing
-            //bSolved = await ClassSolveCubeNew.SolveTheCubeNewAsync();   // For testing
+            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Bas");
+
+            if (!bSolved)
+            {
+                bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Daisy");
+            }
+
+            if (!bSolved)
+            {
+                bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
+            }
+            
+            //bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();   // For testing
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
+            //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
 
             // Restore the start colors of the cube from array aStartPieces[]
             Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);

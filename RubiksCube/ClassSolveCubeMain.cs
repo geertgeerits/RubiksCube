@@ -11,37 +11,37 @@ namespace RubiksCube
         private static readonly List<string> lCubePositions = [];
 
         //// Try to solve the cube from 24 different positions of the cube
-        public static async Task<bool> SolveCubeFromMultiplePositionsAsync()
+        public static async Task<bool> SolveCubeFromMultiplePositionsAsync(string cSolution)
         {
             // Clear the lists
             lCubeTurnsTemp.Clear();
             lCubePositions.Clear();
 
             // 1. Start position
-            await SolveCubeFromMultiplePositions2Async();
+            await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 2. Turn the front face to the upper face
             lCubePositions.Add(Globals.turnCubeFrontToUp);
-            await SolveCubeFromMultiplePositions2Async();
+            await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 3. Turn the front face to the left face and the front face to the upper face
             lCubePositions.Add(Globals.turnCubeFrontToLeft);
             lCubePositions.Add(Globals.turnCubeFrontToUp);
-            await SolveCubeFromMultiplePositions2Async();
+            await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 4. Turn the front face to the right face and the front face to the upper face
             lCubePositions.Add(Globals.turnCubeFrontToRight);
             lCubePositions.Add(Globals.turnCubeFrontToUp);
-            await SolveCubeFromMultiplePositions2Async();
+            await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 5. Turn the front face to the back face and the front face to the upper face
             lCubePositions.Add(Globals.turnCubeFrontToLeft2);
             lCubePositions.Add(Globals.turnCubeFrontToUp);
-            await SolveCubeFromMultiplePositions2Async();
+            await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 6. Turn the upper face to the down face
             lCubePositions.Add(Globals.turnCubeUpToRight2);
-            await SolveCubeFromMultiplePositions2Async();
+            await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // Copy the temp list to the list
             if (lCubeTurnsTemp.Count > 0)
@@ -62,31 +62,31 @@ namespace RubiksCube
         }
 
         /// Turn the front to the right, left and back
-        private static async Task SolveCubeFromMultiplePositions2Async()
+        private static async Task SolveCubeFromMultiplePositions2Async(string cSolution)
         {
             // Add 'None' to the list
             lCubePositions.Add("None");
 
             // 1. Start position
-            if (await SolveCubeFromMultiplePositions3Async(""))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, ""))
             {
                 CopyListToTemp();
             }
 
             // 2. Turn the front face to the left face
-            if (await SolveCubeFromMultiplePositions3Async(Globals.turnCubeFrontToLeft))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, Globals.turnCubeFrontToLeft))
             {
                 CopyListToTemp();
             }
 
             // 3. Turn the front face to the right face
-            if (await SolveCubeFromMultiplePositions3Async(Globals.turnCubeFrontToRight))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, Globals.turnCubeFrontToRight))
             {
                 CopyListToTemp();
             }
 
             // 4. Turn the front face to the back face
-            if (await SolveCubeFromMultiplePositions3Async(Globals.turnCubeFrontToLeft2))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, Globals.turnCubeFrontToLeft2))
             {
                 CopyListToTemp();
             }
@@ -95,7 +95,7 @@ namespace RubiksCube
         }
 
         /// Solve the cube from the start colors of the cube
-        private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cTurn)
+        private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cSolution, string cTurn)
         {
             Globals.lCubeTurns.Clear();
 
@@ -124,11 +124,25 @@ namespace RubiksCube
             }
 
             // Try to solve the cube
-            // Solve the cube from Basic-80 to C#
-            return await ClassSolveCubeBas.SolveTheCubeBasAsync();
+            // Solve the cube (Basic-80 solution)
+            if (cSolution == "Bas")
+            {
+                return await ClassSolveCubeBas.SolveTheCubeBasAsync();
+            }
 
-            // Solve the cube (new solution)
-            //return await ClassSolveCubeNew.SolveTheCubeNewAsync();
+            // Solve the cube (Daisy solution)
+            if (cSolution == "Daisy")
+            {
+                return await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();
+            }
+
+            // Solve the cube (Cross solution)
+            if (cSolution == "Cross")
+            {
+                return await ClassSolveCubeCross.SolveTheCubeCrossAsync();
+            }
+
+            return false;
         }
 
         /// Copy the list to the temp list if the list is has less items than the temp list
@@ -319,6 +333,42 @@ namespace RubiksCube
                 }
 
                 if (lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleRight && lCubeTurnsTemp[i + 1] == Globals.turnFrontHorMiddleLeft)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToLeft && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToRight)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToRight && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToLeft)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnCubeUpToLeft && lCubeTurnsTemp[i + 1] == Globals.turnCubeUpToRight)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnCubeUpToRight && lCubeTurnsTemp[i + 1] == Globals.turnCubeUpToLeft)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToUp && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToDown)
+                {
+                    lCubeTurnsTemp[i] = "None";
+                    lCubeTurnsTemp[i + 1] = "None";
+                }
+
+                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToDown && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToUp)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
