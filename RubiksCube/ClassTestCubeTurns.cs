@@ -51,13 +51,13 @@
         }
 
         // Make a turn of the cube/face/side
-        private static async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        private static async Task MakeTurnAsync(string cTurn)
         {
             // Add the turn to the list
-            Globals.lCubeTurns.Add(cTurnFaceAndDirection);
+            Globals.lCubeTurns.Add(cTurn);
 
             // Turn the cube/face/side
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
         }
     }
 }

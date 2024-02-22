@@ -5,10 +5,8 @@
 // https://www.youtube.com/@RichardSchouw
 // https://www.bing.com/videos/riverview/relatedvideo?q=how+to+move+corners+on+rubik%27s&mid=D8975C707A0A2C50FCEFD8975C707A0A2C50FCEF&FORM=VIRE
 // file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
-
 // https://www.youtube.com/watch?v=Lm9jRkikhlI
 // https://www.youtube.com/watch?v=lgm7NuQGgtw&list=PLfZ_bKS9WEOA-woYuj-_y3EmQqzhRboNw&index=57&t=706s
-
 
 using System.Diagnostics;
 
@@ -17,7 +15,7 @@ namespace RubiksCube
     internal class ClassSolveCubeCross
     {
         //// Declare variables
-        private const int nLoopTimesMax = 400;
+        private const int nLoopTimesMax = 200;
 
         //// Solve the cube.
         public static async Task<bool> SolveTheCubeCrossAsync()
@@ -77,7 +75,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes top layer edges: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes top layer edges: " + nLoopTimes);
                     return false;
                 }
 
@@ -342,7 +340,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes top layer corners: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes top layer corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -656,7 +654,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes middle layer: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes middle layer: " + nLoopTimes);
                     return false;
                 }
 
@@ -959,7 +957,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer edges: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes bottom layer edges: " + nLoopTimes);
                     return false;
                 }
 
@@ -1051,7 +1049,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer edges 2: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes bottom layer edges 2: " + nLoopTimes);
                     return false;
                 }
 
@@ -1091,7 +1089,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer corners: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes bottom layer corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -1254,7 +1252,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer corners 2: " + nLoopTimes);
+                    Debug.WriteLine("Cross: nLoopTimes bottom layer corners 2: " + nLoopTimes);
                     return false;
                 }
 
@@ -1389,13 +1387,13 @@ namespace RubiksCube
         }
 
         /// Make a turn of the cube/face/side
-        private static async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        private static async Task MakeTurnAsync(string cTurn)
         {
             // Add the turn to the list
-            Globals.lCubeTurns.Add(cTurnFaceAndDirection);
+            Globals.lCubeTurns.Add(cTurn);
 
             // Turn the cube/face/side
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
         }
     }
 }

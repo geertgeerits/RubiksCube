@@ -229,7 +229,7 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
 
             // Solve the cube
-            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Bas");
+            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Basic");
 
             if (!bSolved)
             {
@@ -240,8 +240,8 @@ public partial class MainPage : ContentPage
             {
                 bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
             }
-            
-            //bSolved = await ClassSolveCubeBas.SolveTheCubeBasAsync();   // For testing
+
+            //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();   // For testing
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
             //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
 
@@ -1189,14 +1189,14 @@ public partial class MainPage : ContentPage
     }
 
     //// Get the decimal color code from the polygon fill property
-    private static int GetDecColorPolygon(Polygon polygon)
-    {
-        SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
-        Color color = brush.Color;
+    //private static int GetDecColorPolygon(Polygon polygon)
+    //{
+    //    SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
+    //    Color color = brush.Color;
 
-        color = Color.FromRgb(color.Red, color.Green, color.Blue);
-        return int.Parse(color.ToHex().Replace("#", ""), NumberStyles.HexNumber);
-    }
+    //    color = Color.FromRgb(color.Red, color.Green, color.Blue);
+    //    return int.Parse(color.ToHex().Replace("#", ""), NumberStyles.HexNumber);
+    //}
 
     //// Set the cube colors for drag and drop to visible or invisible
     private void IsVisibleCubeColors(bool bEnableDisable)

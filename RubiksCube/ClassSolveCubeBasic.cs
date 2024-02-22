@@ -9,13 +9,13 @@ using System.Diagnostics;
 
 namespace RubiksCube
 {
-    internal class ClassSolveCubeBas
+    internal class ClassSolveCubeBasic
     {
         //// Declare variables
-        private const int nLoopTimesMax = 400;
+        private const int nLoopTimesMax = 200;
 
         //// Solve the cube.  From Basic-80 to C# - 1981-1984
-        public static async Task<bool> SolveTheCubeBasAsync()
+        public static async Task<bool> SolveTheCubeBasicAsync()
         {
             if (!await SolveTopLayerCornersAsync())
             {
@@ -74,7 +74,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes top layer corners: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes top layer corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -251,10 +251,10 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes top layer edges: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes top layer edges: " + nLoopTimes);
                     return false;
                 }
-                //Debug.WriteLine("nLoopTimes top layer edges: " + nLoopTimes);
+                //Debug.WriteLine("Basic: nLoopTimes top layer edges: " + nLoopTimes);
 
                 // 710
                 cB = Globals.aPieces[40];
@@ -450,7 +450,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes middle layer: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes middle layer: " + nLoopTimes);
                     return false;
                 }
 
@@ -761,7 +761,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer corners: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes bottom layer corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -951,7 +951,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer edges: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes bottom layer edges: " + nLoopTimes);
                     return false;
                 }
 
@@ -1115,7 +1115,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer tumbling corners: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes bottom layer tumbling corners: " + nLoopTimes);
                     return false;
                 }
 
@@ -1208,7 +1208,7 @@ namespace RubiksCube
                 nLoopTimes++;
                 if (nLoopTimes > nLoopTimesMax)
                 {
-                    Debug.WriteLine("nLoopTimes bottom layer tumbling edges: " + nLoopTimes);
+                    Debug.WriteLine("Basic: nLoopTimes bottom layer tumbling edges: " + nLoopTimes);
                     return false;
                 }
 
@@ -1324,13 +1324,13 @@ namespace RubiksCube
         }
 
         // Make a turn of the cube/face/side
-        private static async Task MakeTurnAsync(string cTurnFaceAndDirection)
+        private static async Task MakeTurnAsync(string cTurn)
         {
             // Add the turn to the list
-            Globals.lCubeTurns.Add(cTurnFaceAndDirection);
+            Globals.lCubeTurns.Add(cTurn);
 
             // Turn the cube/face/side
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
         }
     }
 }

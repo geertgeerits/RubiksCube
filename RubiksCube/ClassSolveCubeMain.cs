@@ -125,9 +125,9 @@ namespace RubiksCube
 
             // Try to solve the cube
             // Solve the cube (Basic-80 solution)
-            if (cSolution == "Bas")
+            if (cSolution == "Basic")
             {
-                return await ClassSolveCubeBas.SolveTheCubeBasAsync();
+                return await ClassSolveCubeBasic.SolveTheCubeBasicAsync();
             }
 
             // Solve the cube (Daisy solution)
