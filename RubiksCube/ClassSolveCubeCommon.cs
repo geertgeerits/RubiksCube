@@ -1,5 +1,5 @@
 ﻿// This turns are based on:
-// the book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981
+// the book: Mastering Rubik's Cube, by Don Taylor, Dutch version 1981
 // file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
 
 namespace RubiksCube
@@ -35,50 +35,6 @@ namespace RubiksCube
         /// Swap edges on the top layer
         public static async Task<bool> SolveTopLayerSwapEdgesAsync()
         {
-            // Swap 39 -> 41 -> 43 -> 39 - Rotate EFG clockwise
-            if (Globals.aPieces[4] == Globals.aPieces[10] || Globals.aPieces[4] == Globals.aPieces[41])
-            {
-                if (Globals.aPieces[13] == Globals.aPieces[28] || Globals.aPieces[13] == Globals.aPieces[39])
-                {
-                    if (Globals.aPieces[31] == Globals.aPieces[1] || Globals.aPieces[31] == Globals.aPieces[43])
-                    {
-                        await MakeTurnAsync(Globals.turnFront2);
-                        await MakeTurnAsync(Globals.turnUpCW);
-                        await MakeTurnAsync(Globals.turnLeftCW);
-                        await MakeTurnAsync(Globals.turnRightCCW);
-                        await MakeTurnAsync(Globals.turnFront2);
-                        await MakeTurnAsync(Globals.turnLeftCCW);
-                        await MakeTurnAsync(Globals.turnRightCW);
-                        await MakeTurnAsync(Globals.turnUpCW);
-                        await MakeTurnAsync(Globals.turnFront2);
-
-                        return true;
-                    }
-                }
-            }
-
-            // Swap 39 -> 43 -> 41 -> 39 - Rotate EFG counter-clockwise
-            if (Globals.aPieces[4] == Globals.aPieces[28] || Globals.aPieces[4] == Globals.aPieces[39])
-            {
-                if (Globals.aPieces[13] == Globals.aPieces[1] || Globals.aPieces[13] == Globals.aPieces[43])
-                {
-                    if (Globals.aPieces[31] == Globals.aPieces[10] || Globals.aPieces[31] == Globals.aPieces[41])
-                    {
-                        await MakeTurnAsync(Globals.turnFront2);
-                        await MakeTurnAsync(Globals.turnUpCCW);
-                        await MakeTurnAsync(Globals.turnLeftCW);
-                        await MakeTurnAsync(Globals.turnRightCCW);
-                        await MakeTurnAsync(Globals.turnFront2);
-                        await MakeTurnAsync(Globals.turnLeftCCW);
-                        await MakeTurnAsync(Globals.turnRightCW);
-                        await MakeTurnAsync(Globals.turnUpCCW);
-                        await MakeTurnAsync(Globals.turnFront2);
-
-                        return true;
-                    }
-                }
-            }
-
             // Swap 37 -> 43 -> 37 and 39 -> 41 -> 39
             if (Globals.aPieces[4] == Globals.aPieces[19] || Globals.aPieces[4] == Globals.aPieces[37])
             {
@@ -115,7 +71,7 @@ namespace RubiksCube
                     {
                         if (Globals.aPieces[22] == Globals.aPieces[10] || Globals.aPieces[22] == Globals.aPieces[41])
                         {
-                        
+
                             await MakeTurnAsync(Globals.turnRightCW);
                             await MakeTurnAsync(Globals.turnBackCW);
                             await MakeTurnAsync(Globals.turnUpCW);
@@ -127,6 +83,86 @@ namespace RubiksCube
                             await MakeTurnAsync(Globals.turnFrontCW);
                             await MakeTurnAsync(Globals.turnUpCW);
                             await MakeTurnAsync(Globals.turnRightCW);
+
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            // Rotate 39-41-43 (EFG) clockwise or counter-clockwise
+            // If no edges are in the correct position, then execute either sequence
+            // This will put one of the pieces into the correct position and then execute the appropriate sequence
+            if (Globals.aPieces[40] != Globals.aPieces[37] && Globals.aPieces[40] != Globals.aPieces[39] && Globals.aPieces[40] != Globals.aPieces[41] && Globals.aPieces[40] != Globals.aPieces[43])
+            {
+                await MakeTurnAsync(Globals.turnFront2);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnLeftCW);
+                await MakeTurnAsync(Globals.turnRightCCW);
+                await MakeTurnAsync(Globals.turnFront2);
+                await MakeTurnAsync(Globals.turnLeftCCW);
+                await MakeTurnAsync(Globals.turnRightCW);
+                await MakeTurnAsync(Globals.turnUpCW);
+                await MakeTurnAsync(Globals.turnFront2);
+            }
+
+            // If one of the edge pieces is in the correct position, orient the cube so this edge is in the back
+            // Then execute one of the sequences below
+            if (Globals.aPieces[40] == Globals.aPieces[39])
+            {
+                await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+            }
+
+            if (Globals.aPieces[40] == Globals.aPieces[41])
+            {
+                await MakeTurnAsync(Globals.turnCubeFrontToRight);
+            }
+
+            if (Globals.aPieces[40] == Globals.aPieces[43])
+            {
+                await MakeTurnAsync(Globals.turnCubeFrontToLeft2);
+            }
+
+            if (Globals.aPieces[40] == Globals.aPieces[37])
+            {
+                // Swap 39 -> 41 -> 43 -> 39 - Rotate EFG clockwise
+                if (Globals.aPieces[4] == Globals.aPieces[10] || Globals.aPieces[4] == Globals.aPieces[41])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[28] || Globals.aPieces[13] == Globals.aPieces[39])
+                    {
+                        if (Globals.aPieces[31] == Globals.aPieces[1] || Globals.aPieces[31] == Globals.aPieces[43])
+                        {
+                            await MakeTurnAsync(Globals.turnFront2);
+                            await MakeTurnAsync(Globals.turnUpCW);
+                            await MakeTurnAsync(Globals.turnLeftCW);
+                            await MakeTurnAsync(Globals.turnRightCCW);
+                            await MakeTurnAsync(Globals.turnFront2);
+                            await MakeTurnAsync(Globals.turnLeftCCW);
+                            await MakeTurnAsync(Globals.turnRightCW);
+                            await MakeTurnAsync(Globals.turnUpCW);
+                            await MakeTurnAsync(Globals.turnFront2);
+
+                            return true;
+                        }
+                    }
+                }
+
+                // Swap 39 -> 43 -> 41 -> 39 - Rotate EFG counter-clockwise
+                if (Globals.aPieces[4] == Globals.aPieces[28] || Globals.aPieces[4] == Globals.aPieces[39])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[1] || Globals.aPieces[13] == Globals.aPieces[43])
+                    {
+                        if (Globals.aPieces[31] == Globals.aPieces[10] || Globals.aPieces[31] == Globals.aPieces[41])
+                        {
+                            await MakeTurnAsync(Globals.turnFront2);
+                            await MakeTurnAsync(Globals.turnUpCCW);
+                            await MakeTurnAsync(Globals.turnLeftCW);
+                            await MakeTurnAsync(Globals.turnRightCCW);
+                            await MakeTurnAsync(Globals.turnFront2);
+                            await MakeTurnAsync(Globals.turnLeftCCW);
+                            await MakeTurnAsync(Globals.turnRightCW);
+                            await MakeTurnAsync(Globals.turnUpCCW);
+                            await MakeTurnAsync(Globals.turnFront2);
 
                             return true;
                         }

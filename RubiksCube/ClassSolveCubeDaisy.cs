@@ -65,7 +65,7 @@ namespace RubiksCube
         }
 
         /// Solve the edges of the top layer - Part 1
-        private static async Task<bool> SolveTopLayerEdgesAsync()
+        public static async Task<bool> SolveTopLayerEdgesAsync()
         {
             string cB = Globals.aPieces[49];
             int nLoopTimes = 0;
@@ -220,7 +220,7 @@ namespace RubiksCube
         }
 
         /// Solve the edges of the top layer but turned at the bottom - Part 2
-        private static async Task<bool> SolveTopLayerEdges2Async()
+        public static async Task<bool> SolveTopLayerEdges2Async()
         {
             string cB = Globals.aPieces[49];
             int nLoopTimes = 0;
@@ -286,7 +286,7 @@ namespace RubiksCube
         }
 
         /// Solve the corners of the top layer but turned at the bottom
-        private static async Task<bool> SolveTopLayerCornersAsync()
+        public static async Task<bool> SolveTopLayerCornersAsync()
         {
             string cB = Globals.aPieces[49];
             int nLoopTimes = 0;
