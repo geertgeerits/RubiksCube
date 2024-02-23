@@ -1,4 +1,5 @@
 ﻿// This solution is based on:
+// https://ruwix.com/the-rubiks-cube/notation/advanced/
 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/
 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/white-cross/
 
@@ -101,6 +102,8 @@ namespace RubiksCube
                     }
                 }
 
+                // 1. Easy cases
+                // 1.1
                 if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[37])
                 {
                     if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[44])
@@ -111,6 +114,7 @@ namespace RubiksCube
                     }
                 }
 
+                // 1.2
                 if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[44])
                 {
                     if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[39])
@@ -121,6 +125,452 @@ namespace RubiksCube
                     }
                 }
 
+                // 1.3
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[43] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 1.4
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[41] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 2. Case: Corner in bottom, edge in top layer
+                // 2.1
+                if (Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[8])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[15] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[43])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 2.2
+                if (Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[8] && Globals.aPieces[4] == Globals.aPieces[41])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[15] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 2.3
+                if (cB == Globals.aPieces[15] && Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[4] == Globals.aPieces[7])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[8] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[43])
+                    {
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 2.4
+                if (cB == Globals.aPieces[15] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[41])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[8] && Globals.aPieces[13] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 2.5
+                if (cB == Globals.aPieces[8] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[15] && Globals.aPieces[4] == Globals.aPieces[41])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 2.6
+                if (cB == Globals.aPieces[8] && Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[15])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[43])
+                    {
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 3. case: Corner in top, edge in middle
+                // 3.1
+                if (cB == Globals.aPieces[44] && Globals.aPieces[4] == Globals.aPieces[5] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[9])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[2])
+                    {
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 3.2
+                if (cB == Globals.aPieces[44] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[12])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[2] && Globals.aPieces[13] == Globals.aPieces[5])
+                    {
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+
+                        // Turn d = clockwise rotation of the two bottom layers
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnCubeFrontToRight);
+
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                    }
+                }
+
+                // 3.3
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[5] && Globals.aPieces[4] == Globals.aPieces[7])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 3.4
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[12])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[5] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+
+                        // Turn d' = counter clockwise rotation of the two bottom layers
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                    }
+                }
+
+                // 3.5
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[5] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 3.6
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[12] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[5] && Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+
+                        // Turn d = clockwise rotation of the two bottom layers
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnCubeFrontToRight);
+
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                    }
+                }
+
+                // 4. case: Corner pointing outwards, edge in top layer
+                // 4.1
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[10])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[41] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+
+                        // Turn d = clockwise rotation of the two bottom layers
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnCubeFrontToRight);
+
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                    }
+                }
+
+                // 4.2
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[43] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[1] && Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+
+                        // Turn d' = counter clockwise rotation of the two bottom layers
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                    }
+                }
+
+                // 4.3
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[37] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 4.4
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[39] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 4.5
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[39] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 4.6
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[37] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 4.7
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[41])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[10] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 4.8
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[1] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[43])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 4.9
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[39])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 4.10
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[37])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 4.11
+                if (cB == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[43])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[1] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[44])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                    }
+                }
+
+                // 4.12
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[10] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[41])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+                        await MakeTurnAsync(Globals.turnUpCW);
+                        await MakeTurnAsync(Globals.turnFrontCCW);
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnFrontCW);
+                    }
+                }
+
+                // 5. case: Corner pointing upwards, edge in top layer
+                // 5.1
+                // 5.2
+                // 5.3
+                // 5.4
+                // 5.5
+                // 5.6
+                // 5.7
+                // 5.8
+
+
+                // 6. case: Corner in bottom, edge in middle
+                // 6.1
+                // 6.2
+                // 6.3
+                // 6.4
+                // 6.5
 
 
 
