@@ -241,10 +241,10 @@ public partial class MainPage : ContentPage
                 bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
             }
 
-            if (!bSolved)
-            {
-                bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("CFOP");
-            }
+            //if (!bSolved)
+            //{
+            //    bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("CFOP");
+            //}
 
             //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();   // For testing
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing

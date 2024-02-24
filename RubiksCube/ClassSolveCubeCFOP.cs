@@ -105,46 +105,75 @@ namespace RubiksCube
                 }
 
                 // Bring the corner on the top layer to the correct place on the top layer
-                if (cB == Globals.aPieces[11] || cB == Globals.aPieces[18] || cB == Globals.aPieces[38])
+                if (cB == Globals.aPieces[2] || cB == Globals.aPieces[9] || cB == Globals.aPieces[44])
                 {
-                    if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+                    if (Globals.aPieces[4] == Globals.aPieces[2] || Globals.aPieces[4] == Globals.aPieces[9] || Globals.aPieces[4] == Globals.aPieces[44])
                     {
-                        if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
+                        if (Globals.aPieces[13] == Globals.aPieces[2] || Globals.aPieces[13] == Globals.aPieces[9] || Globals.aPieces[13] == Globals.aPieces[44])
                         {
-                            await MakeTurnAsync(Globals.turnUpCW);
+                            // Do nothing
+                        }
+                    }
+                }
+                else
+                {
+                    if (cB == Globals.aPieces[11] || cB == Globals.aPieces[18] || cB == Globals.aPieces[38])
+                    {
+                        if (Globals.aPieces[4] == Globals.aPieces[11] || Globals.aPieces[4] == Globals.aPieces[18] || Globals.aPieces[4] == Globals.aPieces[38])
+                        {
+                            if (Globals.aPieces[13] == Globals.aPieces[11] || Globals.aPieces[13] == Globals.aPieces[18] || Globals.aPieces[13] == Globals.aPieces[38])
+                            {
+                                await MakeTurnAsync(Globals.turnUpCW);
+                            }
+                        }
+                    }
+
+                    if (cB == Globals.aPieces[0] || cB == Globals.aPieces[29] || cB == Globals.aPieces[42])
+                    {
+                        if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
+                        {
+                            if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
+                            {
+                                await MakeTurnAsync(Globals.turnUpCCW);
+                            }
+                        }
+                    }
+
+                    if (cB == Globals.aPieces[20] || cB == Globals.aPieces[27] || cB == Globals.aPieces[36])
+                    {
+                        if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
+                        {
+                            if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
+                            {
+                                await MakeTurnAsync(Globals.turnUp2);
+                            }
                         }
                     }
                 }
 
-                if (cB == Globals.aPieces[0] || cB == Globals.aPieces[29] || cB == Globals.aPieces[42])
-                {
-                    if (Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[4] == Globals.aPieces[29] || Globals.aPieces[4] == Globals.aPieces[42])
-                    {
-                        if (Globals.aPieces[13] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29] || Globals.aPieces[13] == Globals.aPieces[42])
-                        {
-                            await MakeTurnAsync(Globals.turnUpCCW);
-                        }
-                    }
-                }
 
-                if (cB == Globals.aPieces[20] || cB == Globals.aPieces[27] || cB == Globals.aPieces[36])
-                {
-                    if (Globals.aPieces[4] == Globals.aPieces[20] || Globals.aPieces[4] == Globals.aPieces[27] || Globals.aPieces[4] == Globals.aPieces[36])
-                    {
-                        if (Globals.aPieces[13] == Globals.aPieces[20] || Globals.aPieces[13] == Globals.aPieces[27] || Globals.aPieces[13] == Globals.aPieces[36])
-                        {
-                            await MakeTurnAsync(Globals.turnUp2);
-                        }
-                    }
-                }
 
-                if (cB == Globals.aPieces[42] || Globals.aPieces[4] == Globals.aPieces[0] || Globals.aPieces[13] == Globals.aPieces[29])
+                if (cB == Globals.aPieces[42] && Globals.aPieces[4] == Globals.aPieces[0] && Globals.aPieces[13] == Globals.aPieces[29])
                 {
                     await MakeTurnAsync(Globals.turnRightCW);
                     await MakeTurnAsync(Globals.turnUp2);
                     await MakeTurnAsync(Globals.turnRightCCW);
+
+                    continue;
                 }
 
+                if (cB == Globals.aPieces[2] && Globals.aPieces[4] == Globals.aPieces[3] && Globals.aPieces[4] == Globals.aPieces[6] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[39] && Globals.aPieces[4] == Globals.aPieces[44])
+                {
+                    if (Globals.aPieces[13] == Globals.aPieces[9] && Globals.aPieces[13] == Globals.aPieces[16])
+                    {
+                        await MakeTurnAsync(Globals.turnUpCCW);
+                        await MakeTurnAsync(Globals.turnRightCW);
+                        await MakeTurnAsync(Globals.turnUp2);
+                        await MakeTurnAsync(Globals.turnRightCCW);
+
+                        continue;
+                    }
+                }
 
                 // 1. Easy cases
                 // 1.1   R U R'
@@ -310,7 +339,7 @@ namespace RubiksCube
                 // 3.1   (R U R' U') (R U R' U') (R U R')
                 if (cB == Globals.aPieces[44] && Globals.aPieces[4] == Globals.aPieces[5] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[9])
                 {
-                    if (Globals.aPieces[13] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[2])
+                    if (Globals.aPieces[13] == Globals.aPieces[2] && Globals.aPieces[13] == Globals.aPieces[12] && Globals.aPieces[13] == Globals.aPieces[16])
                     {
                         await MakeTurnAsync(Globals.turnRightCW);
                         await MakeTurnAsync(Globals.turnUpCW);
@@ -331,7 +360,7 @@ namespace RubiksCube
                 // 3.2   (R U' R') (d R' U R)
                 if (cB == Globals.aPieces[44] && Globals.aPieces[4] == Globals.aPieces[7] && Globals.aPieces[4] == Globals.aPieces[9] && Globals.aPieces[4] == Globals.aPieces[12])
                 {
-                    if (Globals.aPieces[13] == Globals.aPieces[16] && Globals.aPieces[13] == Globals.aPieces[2] && Globals.aPieces[13] == Globals.aPieces[5])
+                    if (Globals.aPieces[13] == Globals.aPieces[2] && Globals.aPieces[13] == Globals.aPieces[5] && Globals.aPieces[13] == Globals.aPieces[16])
                     {
                         await MakeTurnAsync(Globals.turnRightCW);
                         await MakeTurnAsync(Globals.turnUpCCW);
@@ -930,7 +959,9 @@ namespace RubiksCube
                     }
                 }
             }
-
+            
+            //await MakeTurnAsync(Globals.turnCubeFrontToLeft);
+            
             return true;
         }
 
