@@ -2,6 +2,7 @@
 // The solution with the fewest rotations is then used.
 
 using System.Diagnostics;
+using static RubiksCube.Globals;
 
 namespace RubiksCube
 {
@@ -21,35 +22,35 @@ namespace RubiksCube
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 2. Turn the front face to the upper face
-            lCubePositions.Add(Globals.turnCubeFrontToUp);
+            lCubePositions.Add(turnCubeFrontToUp);
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 3. Turn the front face to the left face and the front face to the upper face
-            lCubePositions.Add(Globals.turnCubeFrontToLeft);
-            lCubePositions.Add(Globals.turnCubeFrontToUp);
+            lCubePositions.Add(turnCubeFrontToLeft);
+            lCubePositions.Add(turnCubeFrontToUp);
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 4. Turn the front face to the right face and the front face to the upper face
-            lCubePositions.Add(Globals.turnCubeFrontToRight);
-            lCubePositions.Add(Globals.turnCubeFrontToUp);
+            lCubePositions.Add(turnCubeFrontToRight);
+            lCubePositions.Add(turnCubeFrontToUp);
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 5. Turn the front face to the back face and the front face to the upper face
-            lCubePositions.Add(Globals.turnCubeFrontToLeft2);
-            lCubePositions.Add(Globals.turnCubeFrontToUp);
+            lCubePositions.Add(turnCubeFrontToLeft2);
+            lCubePositions.Add(turnCubeFrontToUp);
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // 6. Turn the upper face to the down face
-            lCubePositions.Add(Globals.turnCubeUpToRight2);
+            lCubePositions.Add(turnCubeUpToRight2);
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
             // Copy the temp list to the list
             if (lCubeTurnsTemp.Count > 0)
             {
-                Globals.lCubeTurns.Clear();
-                Globals.lCubeTurns.AddRange(lCubeTurnsTemp);
+                lCubeTurns.Clear();
+                lCubeTurns.AddRange(lCubeTurnsTemp);
 
-                if (Globals.lCubeTurns.Count > 0)
+                if (lCubeTurns.Count > 0)
                 {
                     // Clean the list with the cube turns by replacing or removing turns
                     CleanListCubeTurns();
@@ -74,19 +75,19 @@ namespace RubiksCube
             }
 
             // 2. Turn the front face to the left face
-            if (await SolveCubeFromMultiplePositions3Async(cSolution, Globals.turnCubeFrontToLeft))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, turnCubeFrontToLeft))
             {
                 CopyListToTemp();
             }
 
             // 3. Turn the front face to the right face
-            if (await SolveCubeFromMultiplePositions3Async(cSolution, Globals.turnCubeFrontToRight))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, turnCubeFrontToRight))
             {
                 CopyListToTemp();
             }
 
             // 4. Turn the front face to the back face
-            if (await SolveCubeFromMultiplePositions3Async(cSolution, Globals.turnCubeFrontToLeft2))
+            if (await SolveCubeFromMultiplePositions3Async(cSolution, turnCubeFrontToLeft2))
             {
                 CopyListToTemp();
             }
@@ -97,7 +98,7 @@ namespace RubiksCube
         /// Solve the cube from the start colors of the cube
         private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cSolution, string cTurn)
         {
-            Globals.lCubeTurns.Clear();
+            lCubeTurns.Clear();
 
             if (cTurn != "")
             {
@@ -106,7 +107,7 @@ namespace RubiksCube
             }
 
             // Copy the start colors of the cube to the array aPieces[]
-            Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
+            Array.Copy(aStartPieces, aPieces, 54);
 
             if (lCubePositions.Count > 0)
             {
@@ -115,7 +116,7 @@ namespace RubiksCube
                     if (cItem != "None")
                     {
                         // Add the turn to the list
-                        Globals.lCubeTurns.Add(cItem);
+                        lCubeTurns.Add(cItem);
 
                         // Turn the face of the cube
                         await ClassCubeTurns.TurnFaceCubeAsync(cItem);
@@ -148,19 +149,19 @@ namespace RubiksCube
         /// Copy the list to the temp list if the list is has less items than the temp list
         private static void CopyListToTemp()
         {
-            Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {Globals.lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
+            Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
 
             // If the list is empty, copy the list to the temp list
-            if (Globals.lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)
+            if (lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)
             {
-                lCubeTurnsTemp.AddRange(Globals.lCubeTurns);
+                lCubeTurnsTemp.AddRange(lCubeTurns);
             }
 
             // If the list has less items than the temp list, copy the list to the temp list
-            if (Globals.lCubeTurns.Count > 0 && Globals.lCubeTurns.Count < lCubeTurnsTemp.Count)
+            if (lCubeTurns.Count > 0 && lCubeTurns.Count < lCubeTurnsTemp.Count)
             {
                 lCubeTurnsTemp.Clear();
-                lCubeTurnsTemp.AddRange(Globals.lCubeTurns);
+                lCubeTurnsTemp.AddRange(lCubeTurns);
             }
         }
 
@@ -170,14 +171,14 @@ namespace RubiksCube
 #if DEBUG
             _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
 #endif
-            if (Globals.lCubeTurns.Count < 4)
+            if (lCubeTurns.Count < 4)
             {
                 return;
             }
             
             // Copy the list to the temp list
             lCubeTurnsTemp.Clear();
-            lCubeTurnsTemp.AddRange(Globals.lCubeTurns);
+            lCubeTurnsTemp.AddRange(lCubeTurns);
 
             // Replace the double 1/4 turns with a half turn
             for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
@@ -194,34 +195,34 @@ namespace RubiksCube
                         lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^2] + "2";
                         lCubeTurnsTemp[i + 1] = "None";
                     }
-                    else if (lCubeTurnsTemp[i] == Globals.turnUpHorMiddleRight || lCubeTurnsTemp[i] == Globals.turnUpHorMiddleLeft)
+                    else if (lCubeTurnsTemp[i] == turnUpHorMiddleRight || lCubeTurnsTemp[i] == turnUpHorMiddleLeft)
                     {
-                        lCubeTurnsTemp[i] = Globals.turnUpHorMiddle2;
+                        lCubeTurnsTemp[i] = turnUpHorMiddle2;
                         lCubeTurnsTemp[i + 1] = "None";
                     }
-                    else if (lCubeTurnsTemp[i] == Globals.turnUpVerMiddleBack || lCubeTurnsTemp[i] == Globals.turnUpVerMiddleFront)
+                    else if (lCubeTurnsTemp[i] == turnUpVerMiddleBack || lCubeTurnsTemp[i] == turnUpVerMiddleFront)
                     {
-                        lCubeTurnsTemp[i] = Globals.turnUpVerMiddle2;
+                        lCubeTurnsTemp[i] = turnUpVerMiddle2;
                         lCubeTurnsTemp[i + 1] = "None";
                     }
-                    else if (lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleLeft || lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleRight)
+                    else if (lCubeTurnsTemp[i] == turnFrontHorMiddleLeft || lCubeTurnsTemp[i] == turnFrontHorMiddleRight)
                     {
-                        lCubeTurnsTemp[i] = Globals.turnFrontHorMiddle2;
+                        lCubeTurnsTemp[i] = turnFrontHorMiddle2;
                         lCubeTurnsTemp[i + 1] = "None";
                     }
-                    else if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToRight || lCubeTurnsTemp[i] == Globals.turnCubeFrontToLeft)
+                    else if (lCubeTurnsTemp[i] == turnCubeFrontToRight || lCubeTurnsTemp[i] == turnCubeFrontToLeft)
                     {
-                        lCubeTurnsTemp[i] = Globals.turnCubeFrontToLeft2;
+                        lCubeTurnsTemp[i] = turnCubeFrontToLeft2;
                         lCubeTurnsTemp[i + 1] = "None";
                     }
-                    else if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToUp || lCubeTurnsTemp[i] == Globals.turnCubeFrontToDown)
+                    else if (lCubeTurnsTemp[i] == turnCubeFrontToUp || lCubeTurnsTemp[i] == turnCubeFrontToDown)
                     {
-                        lCubeTurnsTemp[i] = Globals.turnCubeFrontToUp2;
+                        lCubeTurnsTemp[i] = turnCubeFrontToUp2;
                         lCubeTurnsTemp[i + 1] = "None";
                     }
-                    else if (lCubeTurnsTemp[i] == Globals.turnCubeUpToRight || lCubeTurnsTemp[i] == Globals.turnCubeUpToLeft)
+                    else if (lCubeTurnsTemp[i] == turnCubeUpToRight || lCubeTurnsTemp[i] == turnCubeUpToLeft)
                     {
-                        lCubeTurnsTemp[i] = Globals.turnCubeUpToRight2;
+                        lCubeTurnsTemp[i] = turnCubeUpToRight2;
                         lCubeTurnsTemp[i + 1] = "None";
                     }
                 }
@@ -230,145 +231,145 @@ namespace RubiksCube
             // Remove the opposite turns
             for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
             {
-                if (lCubeTurnsTemp[i] == Globals.turnFrontCW && lCubeTurnsTemp[i + 1] == Globals.turnFrontCCW)
+                if (lCubeTurnsTemp[i] == turnFrontCW && lCubeTurnsTemp[i + 1] == turnFrontCCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnFrontCCW && lCubeTurnsTemp[i + 1] == Globals.turnFrontCW)
+                if (lCubeTurnsTemp[i] == turnFrontCCW && lCubeTurnsTemp[i + 1] == turnFrontCW)
                 {
                     lCubeTurnsTemp.RemoveAt(i + 1);
                     lCubeTurnsTemp.RemoveAt(i);
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnRightCW && lCubeTurnsTemp[i + 1] == Globals.turnRightCCW)
+                if (lCubeTurnsTemp[i] == turnRightCW && lCubeTurnsTemp[i + 1] == turnRightCCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnRightCCW && lCubeTurnsTemp[i + 1] == Globals.turnRightCW)
+                if (lCubeTurnsTemp[i] == turnRightCCW && lCubeTurnsTemp[i + 1] == turnRightCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnBackCW && lCubeTurnsTemp[i + 1] == Globals.turnBackCCW)
+                if (lCubeTurnsTemp[i] == turnBackCW && lCubeTurnsTemp[i + 1] == turnBackCCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnBackCCW && lCubeTurnsTemp[i + 1] == Globals.turnBackCW)
+                if (lCubeTurnsTemp[i] == turnBackCCW && lCubeTurnsTemp[i + 1] == turnBackCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnLeftCW && lCubeTurnsTemp[i + 1] == Globals.turnLeftCCW)
+                if (lCubeTurnsTemp[i] == turnLeftCW && lCubeTurnsTemp[i + 1] == turnLeftCCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnLeftCCW && lCubeTurnsTemp[i + 1] == Globals.turnLeftCW)
+                if (lCubeTurnsTemp[i] == turnLeftCCW && lCubeTurnsTemp[i + 1] == turnLeftCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnUpCW && lCubeTurnsTemp[i + 1] == Globals.turnUpCCW)
+                if (lCubeTurnsTemp[i] == turnUpCW && lCubeTurnsTemp[i + 1] == turnUpCCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnUpCCW && lCubeTurnsTemp[i + 1] == Globals.turnUpCW)
+                if (lCubeTurnsTemp[i] == turnUpCCW && lCubeTurnsTemp[i + 1] == turnUpCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnDownCW && lCubeTurnsTemp[i + 1] == Globals.turnDownCCW)
+                if (lCubeTurnsTemp[i] == turnDownCW && lCubeTurnsTemp[i + 1] == turnDownCCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnDownCCW && lCubeTurnsTemp[i + 1] == Globals.turnDownCW)
+                if (lCubeTurnsTemp[i] == turnDownCCW && lCubeTurnsTemp[i + 1] == turnDownCW)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnUpHorMiddleRight && lCubeTurnsTemp[i + 1] == Globals.turnUpHorMiddleLeft)
+                if (lCubeTurnsTemp[i] == turnUpHorMiddleRight && lCubeTurnsTemp[i + 1] == turnUpHorMiddleLeft)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnUpHorMiddleLeft && lCubeTurnsTemp[i + 1] == Globals.turnUpHorMiddleRight)
+                if (lCubeTurnsTemp[i] == turnUpHorMiddleLeft && lCubeTurnsTemp[i + 1] == turnUpHorMiddleRight)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnUpVerMiddleBack && lCubeTurnsTemp[i + 1] == Globals.turnUpVerMiddleFront)
+                if (lCubeTurnsTemp[i] == turnUpVerMiddleBack && lCubeTurnsTemp[i + 1] == turnUpVerMiddleFront)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnUpVerMiddleFront && lCubeTurnsTemp[i + 1] == Globals.turnUpVerMiddleBack)
+                if (lCubeTurnsTemp[i] == turnUpVerMiddleFront && lCubeTurnsTemp[i + 1] == turnUpVerMiddleBack)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleLeft && lCubeTurnsTemp[i + 1] == Globals.turnFrontHorMiddleRight)
+                if (lCubeTurnsTemp[i] == turnFrontHorMiddleLeft && lCubeTurnsTemp[i + 1] == turnFrontHorMiddleRight)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnFrontHorMiddleRight && lCubeTurnsTemp[i + 1] == Globals.turnFrontHorMiddleLeft)
+                if (lCubeTurnsTemp[i] == turnFrontHorMiddleRight && lCubeTurnsTemp[i + 1] == turnFrontHorMiddleLeft)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToLeft && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToRight)
+                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft && lCubeTurnsTemp[i + 1] == turnCubeFrontToRight)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToRight && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToLeft)
+                if (lCubeTurnsTemp[i] == turnCubeFrontToRight && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnCubeUpToLeft && lCubeTurnsTemp[i + 1] == Globals.turnCubeUpToRight)
+                if (lCubeTurnsTemp[i] == turnCubeUpToLeft && lCubeTurnsTemp[i + 1] == turnCubeUpToRight)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnCubeUpToRight && lCubeTurnsTemp[i + 1] == Globals.turnCubeUpToLeft)
+                if (lCubeTurnsTemp[i] == turnCubeUpToRight && lCubeTurnsTemp[i + 1] == turnCubeUpToLeft)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToUp && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToDown)
+                if (lCubeTurnsTemp[i] == turnCubeFrontToUp && lCubeTurnsTemp[i + 1] == turnCubeFrontToDown)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
                 }
 
-                if (lCubeTurnsTemp[i] == Globals.turnCubeFrontToDown && lCubeTurnsTemp[i + 1] == Globals.turnCubeFrontToUp)
+                if (lCubeTurnsTemp[i] == turnCubeFrontToDown && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp)
                 {
                     lCubeTurnsTemp[i] = "None";
                     lCubeTurnsTemp[i + 1] = "None";
@@ -376,13 +377,13 @@ namespace RubiksCube
             }
 
             // Copy the temp list to the list
-            Globals.lCubeTurns.Clear();
+            lCubeTurns.Clear();
             
             for (int i = 0; i < lCubeTurnsTemp.Count; i++)
             {
                 if (lCubeTurnsTemp[i] != "None")
                 {
-                    Globals.lCubeTurns.Add(lCubeTurnsTemp[i]);
+                    lCubeTurns.Add(lCubeTurnsTemp[i]);
                 }
             }
 #if DEBUG

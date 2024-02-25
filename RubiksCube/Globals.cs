@@ -92,4 +92,91 @@ internal static class Globals
             // Do nothing
         }
     }
+
+    /// Make a turn of the cube/face/side
+    public static async Task MakeTurnAsync(string cTurn)
+    {
+        // cTurn contains no spaces and is a single turn
+        if (!cTurn.Contains(' '))
+        {
+            // Add the turn to the list
+            lCubeTurns.Add(cTurn);
+
+            // Turn the cube/face/side
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+
+            return;
+        }
+
+        // cTurn contains spaces and is a multiple turn
+        foreach (string cTurnPart in cTurn.Split(' '))
+        {
+            switch (cTurnPart)
+            {
+                case "F":
+                    cTurn = turnFrontCW;
+                    break;
+                case "F'":
+                    cTurn = turnFrontCCW;
+                    break;
+                case "F2":
+                    cTurn = turnFront2;
+                    break;
+                case "R":
+                    cTurn = turnRightCW;
+                    break;
+                case "R'":
+                    cTurn = turnRightCCW;
+                    break;
+                case "R2":
+                    cTurn = turnRight2;
+                    break;
+                case "B":
+                    cTurn = turnBackCW;
+                    break;
+                case "B'":
+                    cTurn = turnBackCCW;
+                    break;
+                case "B2":
+                    cTurn = turnBack2;
+                    break;
+                case "L":
+                    cTurn = turnLeftCW;
+                    break;
+                case "L'":
+                    cTurn = turnLeftCCW;
+                    break;
+                case "L2":
+                    cTurn = turnLeft2;
+                    break;
+                case "U":
+                    cTurn = turnUpCW;
+                    break;
+                case "U'":
+                    cTurn = turnUpCCW;
+                    break;
+                case "U2":
+                    cTurn = turnUp2;
+                    break;
+                case "D":
+                    cTurn = turnDownCW;
+                    break;
+                case "D'":
+                    cTurn = turnDownCCW;
+                    break;
+                case "D2":
+                    cTurn = turnDown2;
+                    break;
+
+                default:
+                    break;
+            }
+
+            // Add the turn to the list
+            lCubeTurns.Add(cTurn);
+
+            // Turn the cube/face/side
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurnPart);
+        }
+    }
 }
