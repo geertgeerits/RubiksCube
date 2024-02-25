@@ -260,7 +260,7 @@ public partial class MainPage : ContentPage
         stopwatch.Stop();
         long elapsedMs = stopwatch.ElapsedMilliseconds;
 
-        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnWordAsync()
+        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnAsync()
         // If not testing the solution to solve the cube then set bTestSolveCube = false
         bTestSolveCube = false;
 
@@ -278,7 +278,7 @@ public partial class MainPage : ContentPage
                 nTurns++;
                 lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
                 
-                await MakeTurnWordAsync(cItem);
+                await MakeTurnAsync(cItem);
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
@@ -823,7 +823,7 @@ public partial class MainPage : ContentPage
     }
 
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
-    private async Task MakeTurnWordAsync(string cTurnFaceAndDirection)
+    private async Task MakeTurnAsync(string cTurnFaceAndDirection)
     {
         // If bTestSolveCube = true then do not use the 'steps one at a time' to solve te cube
         if (bTestSolveCube)
@@ -1241,7 +1241,7 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            // Restart the application to get out of the loop in the Task MakeTurnWordAsync()
+            // Restart the application to get out of the loop in the Task MakeTurnAsync()
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
         else
