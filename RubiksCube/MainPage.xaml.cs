@@ -225,9 +225,6 @@ public partial class MainPage : ContentPage
             // Save the start colors of the cube to array aStartPieces[]
             Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
 
-            // Test the turns of the cube
-            //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();
-
             // Solve the cube
             bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Basic");
 
@@ -246,6 +243,7 @@ public partial class MainPage : ContentPage
             //    bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("CFOP");
             //}
 
+            //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();   // Test the turns of the cube
             //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();   // For testing
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
             //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
@@ -262,7 +260,7 @@ public partial class MainPage : ContentPage
         stopwatch.Stop();
         long elapsedMs = stopwatch.ElapsedMilliseconds;
 
-        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnAsync()
+        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnWordAsync()
         // If not testing the solution to solve the cube then set bTestSolveCube = false
         bTestSolveCube = false;
 
@@ -280,7 +278,7 @@ public partial class MainPage : ContentPage
                 nTurns++;
                 lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
                 
-                await MakeTurnAsync(cItem);
+                await MakeTurnWordAsync(cItem);
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
@@ -825,7 +823,7 @@ public partial class MainPage : ContentPage
     }
 
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
-    private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+    private async Task MakeTurnWordAsync(string cTurnFaceAndDirection)
     {
         // If bTestSolveCube = true then do not use the 'steps one at a time' to solve te cube
         if (bTestSolveCube)
@@ -879,6 +877,7 @@ public partial class MainPage : ContentPage
     {
         switch (cTurnFaceAndDirection)
         {
+            // Face rotations
             case Globals.turnFrontCW:
             case Globals.turnFront2:
                 imgbtnTurnFrontFaceToRight.IsEnabled = bIsEnabled;
@@ -922,6 +921,7 @@ public partial class MainPage : ContentPage
                 imgbtnTurnDownFaceToLeft.IsEnabled = bIsEnabled;
                 break;
 
+            // Middle layer rotations
             case Globals.turnUpHorMiddleRight:
             case Globals.turnUpHorMiddle2:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
@@ -944,6 +944,51 @@ public partial class MainPage : ContentPage
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
 
+            // Two layers at the same time
+            case Globals.turn2LayersFrontCW:
+            case Globals.turn2LayersFront2:
+                imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersFrontCCW:
+                imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersRightCW:
+            case Globals.turn2LayersRight2:
+                imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersRightCCW:
+                imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersBackCW:
+            case Globals.turn2LayersBack2:
+                imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersBackCCW:
+                imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersLeftCW:
+            case Globals.turn2LayersLeft2:
+                imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersLeftCCW:
+                imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersUpCW:
+            case Globals.turn2LayersUp2:
+                imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersUpCCW:
+                imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersDownCW:
+            case Globals.turn2LayersDown2:
+                imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                break;
+            case Globals.turn2LayersDownCCW:
+                imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                break;
+
+            // Cube rotations
             case Globals.turnCubeFrontToRight:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
                 break;
@@ -967,7 +1012,7 @@ public partial class MainPage : ContentPage
                 break;
 
             default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"Turn {cTurnFaceAndDirection} not found", CubeLang.ButtonClose_Text);
                 break;
         }
     }
@@ -979,6 +1024,7 @@ public partial class MainPage : ContentPage
 
         switch (cTurnFaceAndDirection)
         {
+            // Face rotations
             case Globals.turnFrontCW:
                 cTurnCubeText = CubeLang.TurnFrontFaceToRight_Text;
                 break;
@@ -1034,6 +1080,7 @@ public partial class MainPage : ContentPage
                 cTurnCubeText = CubeLang.TurnDownFaceHalfTurn_Text;
                 break;
 
+            // Middle layer rotations
             case Globals.turnUpHorMiddleRight:
                 cTurnCubeText = CubeLang.TurnUpMiddleToRightFace_Text ;
                 break;
@@ -1064,6 +1111,63 @@ public partial class MainPage : ContentPage
                 cTurnCubeText = CubeLang.TurnMiddleLayerHalfTurn_Text;
                 break;
 
+            // Two layers at the same time
+            case Globals.turn2LayersFrontCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersFrontCCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersFront2:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersRightCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersRightCCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersRight2:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersBackCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersBackCCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersBack2:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersLeftCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersLeftCCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersLeft2:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersUpCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersUpCCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersUp2:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersDownCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersDownCCW:
+                cTurnCubeText = "";
+                break;
+            case Globals.turn2LayersDown2:
+                cTurnCubeText = "";
+                break;
+
+            // Cube rotations
             case Globals.turnCubeFrontToRight:
                 cTurnCubeText = CubeLang.TurnCubeFrontFaceToRightFace_Text;
                 break;
@@ -1093,7 +1197,7 @@ public partial class MainPage : ContentPage
                 break;
             
             default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"Turn {cTurnFaceAndDirection} not found", CubeLang.ButtonClose_Text);
                 break;
         }
 
@@ -1137,7 +1241,7 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            // Restart the application to get out of the loop in the Task MakeTurnAsync()
+            // Restart the application to get out of the loop in the Task MakeTurnWordAsync()
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
         else

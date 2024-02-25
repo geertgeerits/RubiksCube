@@ -1,4 +1,6 @@
-﻿namespace RubiksCube
+﻿using System.Diagnostics;
+
+namespace RubiksCube
 {
     internal class ClassCubeTurns
     {
@@ -7,6 +9,7 @@
         {
             switch (cTurnFaceAndDirection)
             {
+                // Face rotations
                 case Globals.turnFrontCW:
                     TurnFrontFaceTo("CW");
                     break;
@@ -68,6 +71,7 @@
                     TurnDownFaceTo("CW");
                     break;
 
+                // Middle layer rotations
                 case Globals.turnUpHorMiddleRight:
                     TurnUpHorMiddleTo("CW");
                     break;
@@ -101,6 +105,98 @@
                     TurnFrontHorMiddleTo("CW");
                     break;
 
+                // Two layers at the same time
+                case Globals.turn2LayersFrontCW:
+                    TurnFrontFaceTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+                case Globals.turn2LayersFrontCCW:
+                    TurnFrontFaceTo("CCW");
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+                case Globals.turn2LayersFront2:
+                    TurnFrontFaceTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    TurnFrontFaceTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+
+                case Globals.turn2LayersRightCW:
+                    TurnRightFaceTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+                case Globals.turn2LayersRightCCW:
+                    TurnRightFaceTo("CCW");
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+                case Globals.turn2LayersRight2:
+                    TurnRightFaceTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    TurnRightFaceTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+
+                case Globals.turn2LayersBackCW:
+                    TurnBackFaceTo("CW");
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+                case Globals.turn2LayersBackCCW:
+                    TurnBackFaceTo("CCW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+                case Globals.turn2LayersBack2:
+                    TurnBackFaceTo("CW");
+                    TurnUpHorMiddleTo("CCW");
+                    TurnBackFaceTo("CW");
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+
+                case Globals.turn2LayersLeftCW:
+                    TurnLeftFaceTo("CW");
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+                case Globals.turn2LayersLeftCCW:
+                    TurnLeftFaceTo("CCW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+                case Globals.turn2LayersLeft2:
+                    TurnLeftFaceTo("CW");
+                    TurnUpVerMiddleTo("CCW");
+                    TurnLeftFaceTo("CW");
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+
+                case Globals.turn2LayersUpCW:
+                    TurnUpFaceTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+                case Globals.turn2LayersUpCCW:
+                    TurnUpFaceTo("CCW");
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+                case Globals.turn2LayersUp2:
+                    TurnUpFaceTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    TurnUpFaceTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+
+                case Globals.turn2LayersDownCW:
+                    TurnDownFaceTo("CW");
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+                case Globals.turn2LayersDownCCW:
+                    TurnDownFaceTo("CCW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+                case Globals.turn2LayersDown2:
+                    TurnDownFaceTo("CW");
+                    TurnFrontHorMiddleTo("CCW");
+                    TurnDownFaceTo("CW");
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+
+                // Cube rotations
                 case Globals.turnCubeFrontToRight:
                     TurnCubeFrontFaceToRightFace();
                     break;
@@ -133,7 +229,7 @@
                     break;
 
                 default:
-                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, "Turn not found", CubeLang.ButtonClose_Text);
+                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"Turn {cTurnFaceAndDirection} not found", CubeLang.ButtonClose_Text);
                     return;
             }
         }

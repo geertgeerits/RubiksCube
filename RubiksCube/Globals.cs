@@ -1,6 +1,7 @@
 ﻿//// Global usings
 global using RubiksCube.Resources.Languages;
 global using System.Globalization;
+using System.Diagnostics;
 //global using static RubiksCube.Globals;
 
 namespace RubiksCube;
@@ -28,6 +29,7 @@ internal static class Globals
     public static List<string> lCubeTurns = [];
 
     // Cube turns
+    // Face rotations
     public const string turnFrontCW = "TurnFrontCW";
     public const string turnFrontCCW = "TurnFrontCCW";
     public const string turnFront2 = "TurnFront2";
@@ -47,6 +49,7 @@ internal static class Globals
     public const string turnDownCCW = "TurnDownCCW";
     public const string turnDown2 = "TurnDown2";
 
+    // Slice turns
     public const string turnUpHorMiddleRight = "TurnUpHorMiddleRight";
     public const string turnUpHorMiddleLeft = "TurnUpHorMiddleLeft";
     public const string turnUpHorMiddle2 = "TurnUpHorMiddle2";
@@ -57,6 +60,27 @@ internal static class Globals
     public const string turnFrontHorMiddleRight = "TurnFrontHorMiddleRight";
     public const string turnFrontHorMiddle2 = "TurnFrontHorMiddle2";
 
+    // Two layers at the same time
+    public const string turn2LayersFrontCW = "Turn2LayersFrontCW";
+    public const string turn2LayersFrontCCW = "Turn2LayersFrontCCW";
+    public const string turn2LayersFront2 = "Turn2LayersFront2";
+    public const string turn2LayersRightCW = "Turn2LayersRightCW";
+    public const string turn2LayersRightCCW = "Turn2LayersRightCCW";
+    public const string turn2LayersRight2 = "Turn2LayersRight2";
+    public const string turn2LayersBackCW = "Turn2LayersBackCW";
+    public const string turn2LayersBackCCW = "Turn2LayersBackCCW";
+    public const string turn2LayersBack2 = "Turn2LayersBack2";
+    public const string turn2LayersLeftCW = "Turn2LayersLeftCW";
+    public const string turn2LayersLeftCCW = "Turn2LayersLeftCCW";
+    public const string turn2LayersLeft2 = "Turn2LayersLeft2";
+    public const string turn2LayersUpCW = "Turn2LayersUpCW";
+    public const string turn2LayersUpCCW = "Turn2LayersUpCCW";
+    public const string turn2LayersUp2 = "Turn2LayersUp2";
+    public const string turn2LayersDownCW = "Turn2LayersDownCW";
+    public const string turn2LayersDownCCW = "Turn2LayersDownCCW";
+    public const string turn2LayersDown2 = "Turn2LayersDown2";
+
+    // Whole cube turns
     public const string turnCubeFrontToRight = "TurnCubeFrontToRight";
     public const string turnCubeFrontToLeft = "TurnCubeFrontToLeft";
     public const string turnCubeFrontToLeft2 = "TurnCubeFrontToLeft2";
@@ -93,28 +117,28 @@ internal static class Globals
         }
     }
 
-    /// Make a turn of the cube/face/side
-    public static async Task MakeTurnAsync(string cTurn)
+    /// Make a turn (with 1 word) of the cube/face/side
+    public static async Task MakeTurnWordAsync(string cTurn)
     {
-        // cTurn contains no spaces and is a single turn
-        if (!cTurn.Contains(' '))
-        {
-            // Add the turn to the list
-            lCubeTurns.Add(cTurn);
+        // Add the turn to the list
+        lCubeTurns.Add(cTurn);
 
-            // Turn the cube/face/side
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+        // Turn the cube/face/side
+        await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+    }
 
-            return;
-        }
-
-        // cTurn contains spaces and is a multiple turn
+    /// Make a turn (with 1 or more letters) of the cube/face/side
+    public static async Task MakeTurnLetterAsync(string cTurn)
+    {
+        // Split the string into individual turns
         foreach (string cTurnPart in cTurn.Split(' '))
         {
             switch (cTurnPart)
             {
+                // Face rotations
                 case "F":
                     cTurn = turnFrontCW;
+                    //Debug.WriteLine("MakeTurnLetterAsync: *" + cTurn + "*");
                     break;
                 case "F'":
                     cTurn = turnFrontCCW;
@@ -167,7 +191,120 @@ internal static class Globals
                 case "D2":
                     cTurn = turnDown2;
                     break;
-
+                
+                // Slice turns
+                case "M":
+                    cTurn = turnUpVerMiddleFront;
+                    break;
+                case "M'":
+                    cTurn = turnUpVerMiddleBack;
+                    break;
+                case "M2":
+                    cTurn = turnUpVerMiddle2;
+                    break;
+                case "E":
+                    cTurn = turnFrontHorMiddleRight;
+                    break;
+                case "E'":
+                    cTurn = turnFrontHorMiddleLeft;
+                    break;
+                case "E2":
+                    cTurn = turnFrontHorMiddle2;
+                    break;
+                case "S":
+                    cTurn = turnUpHorMiddleRight;
+                    break;
+                case "S'":
+                    cTurn = turnUpHorMiddleLeft;
+                    break;
+                case "S2":
+                    cTurn = turnUpHorMiddle2;
+                    break;
+                
+                // Two layers at the same time
+                case "f":
+                    cTurn = turn2LayersFrontCW;
+                    break;
+                case "f'":
+                    cTurn = turn2LayersFrontCCW;
+                    break;
+                case "f2":
+                    cTurn = turn2LayersFront2;
+                    break;
+                case "r":
+                    cTurn = turn2LayersRightCW;
+                    break;
+                case "r'":
+                    cTurn = turn2LayersRightCCW;
+                    break;
+                case "r2":
+                    cTurn = turn2LayersRight2;
+                    break;
+                case "b":
+                    cTurn = turn2LayersBackCW;
+                    break;
+                case "b'":
+                    cTurn = turn2LayersBackCCW;
+                    break;
+                case "b2":
+                    cTurn = turn2LayersBack2;
+                    break;
+                case "l":
+                    cTurn = turn2LayersLeftCW;
+                    break;
+                case "l'":
+                    cTurn = turn2LayersLeftCCW;
+                    break;
+                case "l2":
+                    cTurn = turn2LayersLeft2;
+                    break;
+                case "u":
+                    cTurn = turn2LayersUpCW;
+                    break;
+                case "u'":
+                    cTurn = turn2LayersUpCCW;
+                    break;
+                case "u2":
+                    cTurn = turn2LayersUp2;
+                    break;
+                case "d":
+                    cTurn = turn2LayersDownCW;
+                    break;
+                case "d'":
+                    cTurn = turn2LayersDownCCW;
+                    break;
+                case "d2":
+                    cTurn = turn2LayersDown2;
+                    break;
+                
+                // Whole cube turns
+                case "x":
+                    cTurn = turnCubeFrontToUp;
+                    break;
+                case "x'":
+                    cTurn = turnCubeFrontToDown;
+                    break;
+                case "x2":
+                    cTurn = turnCubeFrontToUp2;
+                    break;
+                case "y":
+                    cTurn = turnCubeFrontToLeft;
+                    break;
+                case "y'":
+                    cTurn = turnCubeFrontToRight;
+                    break;
+                case "y2":
+                    cTurn = turnCubeFrontToLeft2;
+                    break;
+                case "z":
+                    cTurn = turnCubeUpToRight;
+                    break;
+                case "z'":
+                    cTurn = turnCubeUpToLeft;
+                    break;
+                case "z2":
+                    cTurn = turnCubeUpToRight2;
+                    break;
                 default:
                     break;
             }
@@ -176,7 +313,7 @@ internal static class Globals
             lCubeTurns.Add(cTurn);
 
             // Turn the cube/face/side
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurnPart);
+            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
         }
     }
 }
