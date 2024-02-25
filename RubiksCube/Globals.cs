@@ -138,7 +138,6 @@ internal static class Globals
                 // Face rotations
                 case "F":
                     cTurn = turnFrontCW;
-                    //Debug.WriteLine("MakeTurnLetterAsync: *" + cTurn + "*");
                     break;
                 case "F'":
                     cTurn = turnFrontCCW;
@@ -306,6 +305,7 @@ internal static class Globals
                     cTurn = turnCubeUpToRight2;
                     break;
                 default:
+                    Debug.WriteLine("MakeTurnLetterAsync cTurnPart: " + cTurnPart);
                     break;
             }
 

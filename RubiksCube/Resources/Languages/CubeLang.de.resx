@@ -477,4 +477,58 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
     <value>Von jeder verfügbaren Farbe müssen vier gleiche Farben auf einem Eckwürfel vorhanden sein.</value>
   </data>
+  <data name="Turn2LayersBack2_Text" xml:space="preserve">
+    <value>Drehen Sie die Rückseite und die Mittelseite jeweils eine halbe Umdrehung.</value>
+  </data>
+  <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
+    <value>Drehen Sie die hintere und mittlere Seite eine Vierteldrehung „gegen den Uhrzeigersinn“ (-).</value>
+  </data>
+  <data name="Turn2LayersBackCW_Text" xml:space="preserve">
+    <value>Drehen Sie die hintere und mittlere Seite um eine Vierteldrehung im Uhrzeigersinn (+).</value>
+  </data>
+  <data name="Turn2LayersDown2_Text" xml:space="preserve">
+    <value>Drehen Sie die untere und mittlere Seite jeweils eine halbe Umdrehung.</value>
+  </data>
+  <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
+    <value>Drehen Sie die untere und mittlere Seite eine Vierteldrehung „gegen den Uhrzeigersinn“ (-).</value>
+  </data>
+  <data name="Turn2LayersDownCW_Text" xml:space="preserve">
+    <value>Drehen Sie die untere und mittlere Seite um eine Vierteldrehung im Uhrzeigersinn (+).</value>
+  </data>
+  <data name="Turn2LayersFront2_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorder- und Mittelseite jeweils eine halbe Umdrehung.</value>
+  </data>
+  <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorder- und Mittelseite eine Vierteldrehung „gegen den Uhrzeigersinn“ (-).</value>
+  </data>
+  <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
+    <value>Drehen Sie die Vorder- und Mittelseite um eine Vierteldrehung im Uhrzeigersinn (+).</value>
+  </data>
+  <data name="Turn2LayersLeft2_Text" xml:space="preserve">
+    <value>Drehen Sie die linke und mittlere Seite jeweils eine halbe Umdrehung.</value>
+  </data>
+  <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
+    <value>Drehen Sie die linke und mittlere Seite eine Vierteldrehung „gegen den Uhrzeigersinn“ (-).</value>
+  </data>
+  <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
+    <value>Drehen Sie die linke und mittlere Seite eine Vierteldrehung im Uhrzeigersinn (+).</value>
+  </data>
+  <data name="Turn2LayersRight2_Text" xml:space="preserve">
+    <value>Drehen Sie die rechte und mittlere Seite jeweils eine halbe Umdrehung.</value>
+  </data>
+  <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
+    <value>Drehen Sie die rechte und mittlere Seite eine Vierteldrehung „gegen den Uhrzeigersinn“ (-).</value>
+  </data>
+  <data name="Turn2LayersRightCW_Text" xml:space="preserve">
+    <value>Drehen Sie die rechte und mittlere Seite eine Vierteldrehung „im Uhrzeigersinn“ (+).</value>
+  </data>
+  <data name="Turn2LayersUp2_Text" xml:space="preserve">
+    <value>Drehen Sie die Ober- und Mittelseite jeweils eine halbe Umdrehung.</value>
+  </data>
+  <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
+    <value>Drehen Sie die obere und mittlere Seite eine Vierteldrehung „gegen den Uhrzeigersinn“ (-).</value>
+  </data>
+  <data name="Turn2LayersUpCW_Text" xml:space="preserve">
+    <value>Drehen Sie die obere und mittlere Seite um eine Vierteldrehung im Uhrzeigersinn (+).</value>
+  </data>
 </root>

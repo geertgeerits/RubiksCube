@@ -477,4 +477,58 @@ A possível causa é a transferência incorreta de cores para este cubo.</value>
   <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
     <value>De cada cor disponível, deve haver quatro da mesma cor em um cubo de canto.</value>
   </data>
+  <data name="Turn2LayersBack2_Text" xml:space="preserve">
+    <value>Vire as costas e o lado do meio meia volta.</value>
+  </data>
+  <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
+    <value>Gire o lado traseiro e central um quarto de volta no sentido anti-horário (-).</value>
+  </data>
+  <data name="Turn2LayersBackCW_Text" xml:space="preserve">
+    <value>Gire o lado traseiro e central um quarto de volta no sentido horário (+).</value>
+  </data>
+  <data name="Turn2LayersDown2_Text" xml:space="preserve">
+    <value>Gire o lado inferior e central meia volta.</value>
+  </data>
+  <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
+    <value>Gire o lado inferior e central um quarto de volta no sentido anti-horário (-).</value>
+  </data>
+  <data name="Turn2LayersDownCW_Text" xml:space="preserve">
+    <value>Gire o lado inferior e central um quarto de volta no sentido horário (+).</value>
+  </data>
+  <data name="Turn2LayersFront2_Text" xml:space="preserve">
+    <value>Gire o lado frontal e central meia volta.</value>
+  </data>
+  <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
+    <value>Gire o lado frontal e central um quarto de volta no sentido anti-horário (-).</value>
+  </data>
+  <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
+    <value>Gire o lado frontal e central um quarto de volta no sentido horário (+).</value>
+  </data>
+  <data name="Turn2LayersLeft2_Text" xml:space="preserve">
+    <value>Gire o lado esquerdo e do meio meia volta.</value>
+  </data>
+  <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
+    <value>Gire o lado esquerdo e central um quarto de volta no sentido anti-horário (-).</value>
+  </data>
+  <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
+    <value>Gire o lado esquerdo e central um quarto de volta no sentido horário (+).</value>
+  </data>
+  <data name="Turn2LayersRight2_Text" xml:space="preserve">
+    <value>Gire o lado direito e do meio meia volta.</value>
+  </data>
+  <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
+    <value>Gire o lado direito e central um quarto de volta no sentido anti-horário (-).</value>
+  </data>
+  <data name="Turn2LayersRightCW_Text" xml:space="preserve">
+    <value>Gire o lado direito e central um quarto de volta no sentido horário (+).</value>
+  </data>
+  <data name="Turn2LayersUp2_Text" xml:space="preserve">
+    <value>Gire o lado superior e central meia volta.</value>
+  </data>
+  <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
+    <value>Gire o lado superior e central um quarto de volta no sentido anti-horário (-).</value>
+  </data>
+  <data name="Turn2LayersUpCW_Text" xml:space="preserve">
+    <value>Gire o lado superior e central um quarto de volta no sentido horário (+).</value>
+  </data>
 </root>

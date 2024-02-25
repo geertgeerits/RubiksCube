@@ -477,4 +477,58 @@ La possibile causa è un trasferimento errato dei colori su questo cubo.</value>
   <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
     <value>Di ogni colore disponibile, devono essercene quattro dello stesso colore su un cubo d'angolo.</value>
   </data>
+  <data name="Turn2LayersBack2_Text" xml:space="preserve">
+    <value>Girare il lato posteriore e quello centrale di mezzo giro.</value>
+  </data>
+  <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
+    <value>Ruotare il lato posteriore e centrale di un quarto di giro in senso antiorario (-).</value>
+  </data>
+  <data name="Turn2LayersBackCW_Text" xml:space="preserve">
+    <value>Ruotare il lato posteriore e quello centrale di un quarto di giro in senso orario (+).</value>
+  </data>
+  <data name="Turn2LayersDown2_Text" xml:space="preserve">
+    <value>Girare il lato inferiore e quello centrale di mezzo giro.</value>
+  </data>
+  <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
+    <value>Ruotare il lato inferiore e centrale di un quarto di giro in senso antiorario (-).</value>
+  </data>
+  <data name="Turn2LayersDownCW_Text" xml:space="preserve">
+    <value>Ruotare il lato inferiore e centrale di un quarto di giro in senso orario (+).</value>
+  </data>
+  <data name="Turn2LayersFront2_Text" xml:space="preserve">
+    <value>Girare il lato anteriore e quello centrale di mezzo giro.</value>
+  </data>
+  <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
+    <value>Ruotare il lato anteriore e quello centrale di un quarto di giro in senso antiorario (-).</value>
+  </data>
+  <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
+    <value>Ruotare il lato anteriore e quello centrale di un quarto di giro in senso orario (+).</value>
+  </data>
+  <data name="Turn2LayersLeft2_Text" xml:space="preserve">
+    <value>Girare il lato sinistro e quello centrale di mezzo giro.</value>
+  </data>
+  <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
+    <value>Ruotare il lato sinistro e centrale di un quarto di giro in senso antiorario (-).</value>
+  </data>
+  <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
+    <value>Ruotare il lato sinistro e quello centrale di un quarto di giro in senso orario (+).</value>
+  </data>
+  <data name="Turn2LayersRight2_Text" xml:space="preserve">
+    <value>Girare il lato destro e quello centrale di mezzo giro.</value>
+  </data>
+  <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
+    <value>Ruotare il lato destro e quello centrale di un quarto di giro in senso antiorario (-).</value>
+  </data>
+  <data name="Turn2LayersRightCW_Text" xml:space="preserve">
+    <value>Ruotare il lato destro e quello centrale di un quarto di giro in senso orario (+).</value>
+  </data>
+  <data name="Turn2LayersUp2_Text" xml:space="preserve">
+    <value>Girare il lato superiore e quello centrale di mezzo giro.</value>
+  </data>
+  <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
+    <value>Ruotare il lato superiore e quello centrale di un quarto di giro in senso antiorario (-).</value>
+  </data>
+  <data name="Turn2LayersUpCW_Text" xml:space="preserve">
+    <value>Ruotare il lato superiore e quello centrale di un quarto di giro in senso orario (+).</value>
+  </data>
 </root>

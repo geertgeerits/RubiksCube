@@ -477,4 +477,58 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
   <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
     <value>De chaque couleur disponible, il doit y en avoir quatre de la même couleur sur un cube de coin.</value>
   </data>
+  <data name="Turn2LayersBack2_Text" xml:space="preserve">
+    <value>Tournez l'arrière et le côté central d'un demi-tour.</value>
+  </data>
+  <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
+    <value>Tournez l'arrière et le milieu d'un quart de tour dans le sens inverse des aiguilles d'une montre (-).</value>
+  </data>
+  <data name="Turn2LayersBackCW_Text" xml:space="preserve">
+    <value>Tournez l'arrière et le milieu d'un quart de tour dans le sens des aiguilles d'une montre (+).</value>
+  </data>
+  <data name="Turn2LayersDown2_Text" xml:space="preserve">
+    <value>Tournez le côté inférieur et central d’un demi-tour.</value>
+  </data>
+  <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
+    <value>Tournez les côtés inférieur et central d'un quart de tour dans le sens inverse des aiguilles d'une montre (-).</value>
+  </data>
+  <data name="Turn2LayersDownCW_Text" xml:space="preserve">
+    <value>Tournez les côtés inférieur et central d'un quart de tour dans le sens des aiguilles d'une montre (+).</value>
+  </data>
+  <data name="Turn2LayersFront2_Text" xml:space="preserve">
+    <value>Tournez l’avant et le milieu d’un demi-tour.</value>
+  </data>
+  <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
+    <value>Tournez l'avant et le milieu d'un quart de tour dans le sens inverse des aiguilles d'une montre (-).</value>
+  </data>
+  <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
+    <value>Tournez l'avant et le milieu d'un quart de tour dans le sens des aiguilles d'une montre (+).</value>
+  </data>
+  <data name="Turn2LayersLeft2_Text" xml:space="preserve">
+    <value>Tournez le côté gauche et central d’un demi-tour.</value>
+  </data>
+  <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
+    <value>Tournez les côtés gauche et central d'un quart de tour dans le sens inverse des aiguilles d'une montre (-).</value>
+  </data>
+  <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
+    <value>Tournez les côtés gauche et central d'un quart de tour dans le sens des aiguilles d'une montre (+).</value>
+  </data>
+  <data name="Turn2LayersRight2_Text" xml:space="preserve">
+    <value>Tournez le côté droit et central d’un demi-tour.</value>
+  </data>
+  <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
+    <value>Tournez le côté droit et central d'un quart de tour dans le sens inverse des aiguilles d'une montre (-).</value>
+  </data>
+  <data name="Turn2LayersRightCW_Text" xml:space="preserve">
+    <value>Tournez le côté droit et central d'un quart de tour dans le sens des aiguilles d'une montre (+).</value>
+  </data>
+  <data name="Turn2LayersUp2_Text" xml:space="preserve">
+    <value>Tournez le côté supérieur et central d’un demi-tour.</value>
+  </data>
+  <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
+    <value>Tournez les côtés supérieur et central d'un quart de tour dans le sens inverse des aiguilles d'une montre (-).</value>
+  </data>
+  <data name="Turn2LayersUpCW_Text" xml:space="preserve">
+    <value>Tournez les côtés supérieur et central d'un quart de tour dans le sens des aiguilles d'une montre (+).</value>
+  </data>
 </root>

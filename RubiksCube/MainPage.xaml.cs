@@ -1113,58 +1113,58 @@ public partial class MainPage : ContentPage
 
             // Two layers at the same time
             case Globals.turn2LayersFrontCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersFrontCW_Text;
                 break;
             case Globals.turn2LayersFrontCCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersFrontCCW_Text;
                 break;
             case Globals.turn2LayersFront2:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersFront2_Text;
                 break;
             case Globals.turn2LayersRightCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersRightCW_Text;
                 break;
             case Globals.turn2LayersRightCCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersRightCCW_Text;
                 break;
             case Globals.turn2LayersRight2:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersRight2_Text;
                 break;
             case Globals.turn2LayersBackCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersBackCW_Text;
                 break;
             case Globals.turn2LayersBackCCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersBackCCW_Text;
                 break;
             case Globals.turn2LayersBack2:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersBack2_Text;
                 break;
             case Globals.turn2LayersLeftCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersLeftCW_Text;
                 break;
             case Globals.turn2LayersLeftCCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersLeftCCW_Text;
                 break;
             case Globals.turn2LayersLeft2:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersLeft2_Text;
                 break;
             case Globals.turn2LayersUpCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersUpCW_Text;
                 break;
             case Globals.turn2LayersUpCCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersUpCCW_Text;
                 break;
             case Globals.turn2LayersUp2:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersUp2_Text;
                 break;
             case Globals.turn2LayersDownCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersDownCW_Text;
                 break;
             case Globals.turn2LayersDownCCW:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersDownCCW_Text;
                 break;
             case Globals.turn2LayersDown2:
-                cTurnCubeText = "";
+                cTurnCubeText = CubeLang.Turn2LayersDown2_Text;
                 break;
 
             // Cube rotations
