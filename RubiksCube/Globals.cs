@@ -305,7 +305,7 @@ internal static class Globals
                     cTurn = turnCubeUpToRight2;
                     break;
                 default:
-                    Debug.WriteLine("MakeTurnLetterAsync cTurnPart: " + cTurnPart);
+                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"MakeTurnLetterAsync cTurnPart: {cTurnPart} not found", CubeLang.ButtonClose_Text);
                     break;
             }
 

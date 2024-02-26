@@ -158,22 +158,16 @@ namespace RubiksCube
 
                 if (cB == aPieces[42] && aPieces[4] == aPieces[0] && aPieces[13] == aPieces[29])
                 {
-                    await MakeTurnWordAsync(turnRightCW);
-                    await MakeTurnWordAsync(turnUp2);
-                    await MakeTurnWordAsync(turnRightCCW);
-
+                    await MakeTurnLetterAsync("R U2 R'");
                     continue;
                 }
 
+                // U' R U2 R'
                 if (cB == aPieces[2] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[6] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[39] && aPieces[4] == aPieces[44])
                 {
                     if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[16])
                     {
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUp2);
-                        await MakeTurnWordAsync(turnRightCCW);
-
+                        await MakeTurnLetterAsync("U' R U2 R'");
                         continue;
                     }
                 }
@@ -329,18 +323,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[5] && aPieces[13] == aPieces[16])
                     {
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-
-                        // Turn d = clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("R U' R' d R' U R");
                         continue;
                     }
                 }
@@ -360,19 +343,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[44])
                     {
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnFrontCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnFrontCW);
-
-                        // Turn d' = counter clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnCubeFrontToLeft);
-
-                        await MakeTurnWordAsync(turnFrontCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnFrontCCW);
-
+                        await MakeTurnLetterAsync("U F' U' F d' F U F'");
                         continue;
                     }
                 }
@@ -392,19 +363,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[9] && aPieces[13] == aPieces[16])
                     {
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-
-                        // Turn d = clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("U' R U R' d R' U' R");
                         continue;
                     }
                 }
@@ -415,19 +374,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[16] && aPieces[13] == aPieces[41] && aPieces[13] == aPieces[44])
                     {
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCW);
-
-                        // Turn d = clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("R U' R' U d R' U' R");
                         continue;
                     }
                 }
@@ -437,19 +384,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[1] && aPieces[13] == aPieces[9] && aPieces[13] == aPieces[16])
                     {
-                        await MakeTurnWordAsync(turnFrontCCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnFrontCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-
-                        // Turn d' = counter clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnCubeFrontToLeft);
-
-                        await MakeTurnWordAsync(turnFrontCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnFrontCCW);
-
+                        await MakeTurnLetterAsync("F' U F U' d' F U F'");
                         continue;
                     }
                 }
@@ -570,22 +505,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[41])
                     {
-                        // y' - rotate the entire cube on U
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("y' R' U' R U U R' U' R U R' U' R");
                         continue;
                     }
                 }
@@ -656,22 +576,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[15] && aPieces[13] == aPieces[16])
                     {
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-
-                        // Turn d = clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUp2);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUp2);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("R U' R' d R' U2 R U R' U2 R");
                         continue;
                     }
                 }
@@ -704,25 +609,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[8] && aPieces[13] == aPieces[16])
                     {
-                        //await MakeTurnLetterAsync("R U R' U' R U' R' U d R' U' R");
-
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCW);
-
-                        // Turn d = clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("R U R' U' R U' R' U d R' U' R");
                         continue;
                     }
                 }
@@ -732,22 +619,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[16])
                     {
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-
-                        // Turn d = clockwise rotation of the two bottom layers
-                        await MakeTurnWordAsync(turnUpCW);
-                        await MakeTurnWordAsync(turnCubeFrontToRight);
-
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCCW);
-                        await MakeTurnWordAsync(turnUpCCW);
-                        await MakeTurnWordAsync(turnRightCW);
-
+                        await MakeTurnLetterAsync("R U' R' d R' U' R U' R' U' R");
                         continue;
                     }
                 }
