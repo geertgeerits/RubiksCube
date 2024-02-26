@@ -823,13 +823,13 @@ public partial class MainPage : ContentPage
     }
 
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
-    private async Task MakeTurnAsync(string cTurnFaceAndDirection)
+    private async Task MakeTurnAsync(string cTurn)
     {
         // If bTestSolveCube = true then do not use the 'steps one at a time' to solve te cube
         if (bTestSolveCube)
         {
             // Turn the faces of the cube
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+            await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
 
             // Set the cube colors from the arrays in the polygons
             GetCubeColorsFromArrays();
@@ -838,10 +838,10 @@ public partial class MainPage : ContentPage
         }
         
         // Enable the arrow button and set the background color to Active
-        await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, true);
+        await SetImageButtonArrowIsEnabledAsync(cTurn, true);
 
         // Show the text
-        string cTurnCubeText = await SetExplainTextAsync(cTurnFaceAndDirection);
+        string cTurnCubeText = await SetExplainTextAsync(cTurn);
         lblExplainTurnCube1.Text = cTurnCubeText;
         lblExplainTurnCube2.Text = cTurnCubeText;
 
@@ -863,19 +863,19 @@ public partial class MainPage : ContentPage
 
         // Restore settings
         bArrowButtonPressed = false;
-        await SetImageButtonArrowIsEnabledAsync(cTurnFaceAndDirection, false);
+        await SetImageButtonArrowIsEnabledAsync(cTurn, false);
 
         // Turn the faces of the cube
-        await ClassCubeTurns.TurnFaceCubeAsync(cTurnFaceAndDirection);
+        await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
         
         // Set the cube colors from the arrays in the polygons
         GetCubeColorsFromArrays();
     }
 
     //// Enalbe or disable the arrow imagebuttons
-    private async Task SetImageButtonArrowIsEnabledAsync(string cTurnFaceAndDirection, bool bIsEnabled)
+    private async Task SetImageButtonArrowIsEnabledAsync(string cTurn, bool bIsEnabled)
     {
-        switch (cTurnFaceAndDirection)
+        switch (cTurn)
         {
             // Face rotations
             case Globals.turnFrontCW:
@@ -1012,17 +1012,17 @@ public partial class MainPage : ContentPage
                 break;
 
             default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, $"Turn {cTurnFaceAndDirection} not found", CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"SetImageButtonArrowIsEnabledAsync cTurn: {cTurn} not found", CubeLang.ButtonClose_Text);
                 break;
         }
     }
 
     //// Set the explain text depending on the direction of rotation of the cube face
-    private async Task<string> SetExplainTextAsync(string cTurnFaceAndDirection)
+    private async Task<string> SetExplainTextAsync(string cTurn)
     {
         string cTurnCubeText = "";
 
-        switch (cTurnFaceAndDirection)
+        switch (cTurn)
         {
             // Face rotations
             case Globals.turnFrontCW:
@@ -1197,7 +1197,7 @@ public partial class MainPage : ContentPage
                 break;
             
             default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, $"Turn {cTurnFaceAndDirection} not found", CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"SetExplainTextAsync cTurn: {cTurn} not found", CubeLang.ButtonClose_Text);
                 break;
         }
 
@@ -1448,3 +1448,61 @@ public partial class MainPage : ContentPage
         }
     }
 }
+
+/*
+Numbering of cube surfaces
+--------------------------
+
+    Outside view              Up              Inside view              Back
+                     ______ ______ ______                      ______ ______ ______
+                   /      /      /      /|                   /|      !      !      |
+                 /  36  /  37  /  38  /  |                 /  |  20  !  19  !  18  |
+               /______/______/______/ 11 |               / 27 |______!______!______|
+             /      /      /      / !    /       Left  / !    |      !      !      |
+           /  39  /  40  /  41  /   !  / |           /   !  / |  23  !  22  !  21  |
+         /______/______/______/  10 !/ 14|         /  28 !/   |______!______!______|
+       /      /      /      / !    /!    /       /  !   /! 30 |      !      !      |
+     /  42  /  43  /  44  /   !  /  !  / |     /    ! /  !  / |  26  !  25  !  24  |
+   /______/______/______/  9  !/ 13 !/17 |    | 29  ! 31 !/   |______!______!______|
+   |      !      !      |    /!    /!    /    |   / !   /!33 /      /      /      /
+   |  0   !  1   !  2   |  /  !  /  !  /      | /   ! /  !  /  51  /  52 /  53  /
+   |______!______!______|/ 12 !/ 16 !/        | 32  ! 34 !/______/______/______/
+   |      !      !      |    /!    /          |   / !   /      /      /      /
+   |  3   !  4   !  5   |  /  !  /            | /   ! / 48   / 49   /  50  /
+   |______!______!______|/ 15 !/ Right        | 35  !______/______/______/
+   |      !      !      |    /                |   /      /      /      /
+   |  6   !  7   !  8   |  /                  | /  45  /  46  / 47   /
+   |______!______!______|/                    |______/______/______/
+           Front                                       Down
+
+                                  Back
+                        _________________________
+                        |       |       |       |
+                        |  26   |  25   |  24   |
+                        |_______|_______|_______|
+                        |       |       |       |
+                        |  23   |  22   |  21   |
+                        |_______|_______|_______|
+                        |       |       |       |
+           Left         |  20   |  19   |  18   |         Right                   Down
+________________________|_______|_______|_______|________________________________________________
+|       |       |       |       |       |       |       |       |       |       |       |       |
+|  33   |  30   |  27   |  36   |  37   |  38   |  11   |  14   |  17   |  53   |  52   |  51   |
+|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+|       |       |       |       |  Up   |       |       |       |       |       |       |       |
+|  34   |  31   |  28   |  39   |  40   |  41   |  10   |  13   |  16   |  50   |  49   |  48   |
+|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+|       |       |       |       |       |       |       |       |       |       |       |       |
+|  35   |  32   |  29   |  42   |  43   |  44   |   9   |  12   |  15   |  47   |  46   |  45   |
+|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+                        |       |       |       |
+                        |   0   |   1   |   2   |
+                        |_______|_______|_______|
+                        |       |       |       |
+                        |   3   |   4   |   5   |
+                        |_______|_______|_______|
+                        |       |       |       |
+                        |   6   |   7   |   8   |
+                        |_______|_______|_______|
+                                  Front
+*/

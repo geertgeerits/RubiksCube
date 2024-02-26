@@ -119,7 +119,7 @@ namespace RubiksCube
                         lCubeTurns.Add(cItem);
 
                         // Turn the face of the cube
-                        await ClassCubeTurns.TurnFaceCubeAsync(cItem);
+                        await ClassCubeTurns.TurnCubeLayersAsync(cItem);
                     }
                 }
             }

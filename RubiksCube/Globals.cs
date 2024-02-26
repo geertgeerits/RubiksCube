@@ -1,8 +1,6 @@
 ﻿//// Global usings
 global using RubiksCube.Resources.Languages;
 global using System.Globalization;
-using System.Diagnostics;
-//global using static RubiksCube.Globals;
 
 namespace RubiksCube;
 
@@ -124,7 +122,7 @@ internal static class Globals
         lCubeTurns.Add(cTurn);
 
         // Turn the cube/face/side
-        await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+        await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
     }
 
     /// Make a turn (with 1 or more letters) of the cube/face/side
@@ -313,7 +311,7 @@ internal static class Globals
             lCubeTurns.Add(cTurn);
 
             // Turn the cube/face/side
-            await ClassCubeTurns.TurnFaceCubeAsync(cTurn);
+            await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
         }
     }
 }

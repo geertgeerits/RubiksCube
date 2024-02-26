@@ -102,6 +102,7 @@ namespace RubiksCube
                     }
                 }
 
+                // Turn the cube
                 if (nLoopTimes > 1)
                 {
                     await MakeTurnWordAsync(turnCubeFrontToLeft);

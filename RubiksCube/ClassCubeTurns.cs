@@ -1,13 +1,11 @@
-﻿using System.Diagnostics;
-
-namespace RubiksCube
+﻿namespace RubiksCube
 {
     internal class ClassCubeTurns
     {
-        //// Turn the faces of the cube (CW = Clockwise, CCW = Counter Clockwise, 2 = two quarter turns)
-        public static async Task TurnFaceCubeAsync(string cTurnFaceAndDirection)
+        //// Turn the layers of the cube (CW = Clockwise, CCW = Counter clockwise, 2 = two quarter turns)
+        public static async Task TurnCubeLayersAsync(string cTurn)
         {
-            switch (cTurnFaceAndDirection)
+            switch (cTurn)
             {
                 // Face rotations
                 case Globals.turnFrontCW:
@@ -229,7 +227,7 @@ namespace RubiksCube
                     break;
 
                 default:
-                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"Turn {cTurnFaceAndDirection} not found", CubeLang.ButtonClose_Text);
+                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync cTurn: {cTurn} not found", CubeLang.ButtonClose_Text);
                     return;
             }
         }
