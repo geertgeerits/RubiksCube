@@ -478,57 +478,57 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
     <value>Van elke beschikbare kleur moeten er vier van dezelfde kleur op een hoekblokje staan.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
-    <value>Draai de achterkant en middelste laag een halve slag.</value>
+    <value>Draai de achter- en middenlaag samen een halve slag.</value>
   </data>
   <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
-    <value>Draai de achterkant en middelste laag een kwartslag 'tegen de klok in' (-).</value>
+    <value>Draai de achter- en middenlaag samen een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="Turn2LayersBackCW_Text" xml:space="preserve">
-    <value>Draai de achterkant en middelste laag een kwartslag 'met de klok mee' (+).</value>
+    <value>Draai de achter- en middenlaag samen een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="Turn2LayersDown2_Text" xml:space="preserve">
-    <value>Draai de onderkant en middelste laag een halve slag.</value>
+    <value>Draai de onderste en middelste laag samen een halve slag.</value>
   </data>
   <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
-    <value>Draai de onderkant en middelste laag een kwartslag 'tegen de klok in' (-).</value>
+    <value>Draai de onderste en middelste laag samen een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="Turn2LayersDownCW_Text" xml:space="preserve">
-    <value>Draai de onderkant en middelste laag een kwartslag 'met de klok mee' (+).</value>
+    <value>Draai de onderste en middelste laag samen een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="Turn2LayersFront2_Text" xml:space="preserve">
-    <value>Draai de voorkant en middelste laag een halve slag.</value>
+    <value>Draai de voor- en middenlaag samen een halve slag.</value>
   </data>
   <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
-    <value>Draai de voorkant en middelste laag een kwartslag 'tegen de klok in' (-).</value>
+    <value>Draai de voor- en middenlaag samen een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
-    <value>Draai de voorkant en middelste laag een kwartslag 'met de klok mee' (+).</value>
+    <value>Draai de voor- en middenlaag samen een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="Turn2LayersLeft2_Text" xml:space="preserve">
-    <value>Draai de linkerkant en middelste laag een halve slag.</value>
+    <value>Draai de linker- en middelste laag samen een halve slag.</value>
   </data>
   <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
-    <value>Draai de linkerkant en middelste laag een kwartslag 'tegen de klok in' (-).</value>
+    <value>Draai de linker- en middelste laag samen een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
-    <value>Draai de linkerkant en middelste laag een kwartslag 'met de klok mee' (+).</value>
+    <value>Draai de linker- en middelste laag samen een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="Turn2LayersRight2_Text" xml:space="preserve">
-    <value>Draai de rechterkant en middelste laag een halve slag.</value>
+    <value>Draai de rechter- en middelste laag samen een halve slag.</value>
   </data>
   <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
-    <value>Draai de rechterkant en middelste laag een kwartslag 'tegen de klok in' (-).</value>
+    <value>Draai de rechter- en middelste laag samen een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="Turn2LayersRightCW_Text" xml:space="preserve">
-    <value>Draai de rechterkant en middelste laag een kwartslag 'met de klok mee' (+).</value>
+    <value>Draai de rechter- en middelste laag samen een kwartslag 'met de klok mee' (+).</value>
   </data>
   <data name="Turn2LayersUp2_Text" xml:space="preserve">
-    <value>Draai de bovenkant en middelste laag een halve slag.</value>
+    <value>Draai de bovenste en middelste laag samen een halve slag.</value>
   </data>
   <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
-    <value>Draai de bovenkant en middelste laag een kwartslag 'tegen de klok in' (-).</value>
+    <value>Draai de bovenste en middelste laag samen een kwartslag 'tegen de klok in' (-).</value>
   </data>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
-    <value>Draai de bovenkant en middelste laag een kwartslag 'met de klok mee' (+).</value>
+    <value>Draai de bovenste en middelste laag samen een kwartslag 'met de klok mee' (+).</value>
   </data>
 </root>

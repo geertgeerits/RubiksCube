@@ -765,7 +765,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the back and middle side half a turn..
+        ///   Looks up a localized string similar to Turn the back and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersBack2_Text {
             get {
@@ -774,7 +774,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the back and middle side a quarter turn &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the back and middle layer together a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string Turn2LayersBackCCW_Text {
             get {
@@ -783,7 +783,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the back and middle side a quarter turn &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the back and middle layer together a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string Turn2LayersBackCW_Text {
             get {
@@ -792,7 +792,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom and middle side half a turn..
+        ///   Looks up a localized string similar to Turn the bottom and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersDown2_Text {
             get {
@@ -801,7 +801,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom and middle side a quarter turn &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the bottom and middle layer together a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string Turn2LayersDownCCW_Text {
             get {
@@ -810,7 +810,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the bottom and middle side a quarter turn &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the bottom and middle layer together a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string Turn2LayersDownCW_Text {
             get {
@@ -819,7 +819,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front and middle side half a turn..
+        ///   Looks up a localized string similar to Turn the front and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersFront2_Text {
             get {
@@ -828,7 +828,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front and middle side a quarter turn &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the front and middle layer together a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string Turn2LayersFrontCCW_Text {
             get {
@@ -837,7 +837,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the front and middle side a quarter turn &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the front and middle layer together a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string Turn2LayersFrontCW_Text {
             get {
@@ -846,7 +846,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the left and middle side half a turn..
+        ///   Looks up a localized string similar to Turn the left and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersLeft2_Text {
             get {
@@ -855,7 +855,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the left and middle side a quarter turn &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the left and middle layer together a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string Turn2LayersLeftCCW_Text {
             get {
@@ -864,7 +864,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the left and middle side a quarter turn &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the left and middle layer together a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string Turn2LayersLeftCW_Text {
             get {
@@ -873,7 +873,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right and middle side half a turn..
+        ///   Looks up a localized string similar to Turn the right and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersRight2_Text {
             get {
@@ -882,7 +882,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right and middle side a quarter turn &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the right and middle layer together a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string Turn2LayersRightCCW_Text {
             get {
@@ -891,7 +891,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the right and middle side a quarter turn &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the right and middle layer together a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string Turn2LayersRightCW_Text {
             get {
@@ -900,7 +900,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top and middle side half a turn..
+        ///   Looks up a localized string similar to Turn the top and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersUp2_Text {
             get {
@@ -909,7 +909,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top and middle side a quarter turn &apos;counter clockwise&apos; (-)..
+        ///   Looks up a localized string similar to Turn the top and middle layer together a quarter turn &apos;counter clockwise&apos; (-)..
         /// </summary>
         internal static string Turn2LayersUpCCW_Text {
             get {
@@ -918,7 +918,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn the top and middle side a quarter turn &apos;clockwise&apos; (+)..
+        ///   Looks up a localized string similar to Turn the top and middle layer together a quarter turn &apos;clockwise&apos; (+)..
         /// </summary>
         internal static string Turn2LayersUpCW_Text {
             get {

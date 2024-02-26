@@ -143,6 +143,12 @@ namespace RubiksCube
                 return await ClassSolveCubeCross.SolveTheCubeCrossAsync();
             }
 
+            // Solve the cube (CFOP solution)
+            if (cSolution == "CFOP")
+            {
+                return await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();
+            }
+
             return false;
         }
 

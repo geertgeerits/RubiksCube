@@ -162,7 +162,7 @@ namespace RubiksCube
                     continue;
                 }
 
-                // U' R U2 R'
+                // F U2 F' or U' R U2 R'
                 if (cB == aPieces[2] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[6] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[39] && aPieces[4] == aPieces[44])
                 {
                     if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[16])

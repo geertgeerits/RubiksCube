@@ -478,57 +478,57 @@ La posible causa es la transferencia incorrecta de colores a este cubo.</value>
     <value>De cada color disponible, debe haber cuatro del mismo color en un cubo de esquina.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
-    <value>Gire la parte posterior y media media vuelta.</value>
+    <value>Junte la capa posterior y media media vuelta.</value>
   </data>
   <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
-    <value>Gire la parte posterior y central un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
+    <value>Gire la capa posterior y la intermedia juntas un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
   </data>
   <data name="Turn2LayersBackCW_Text" xml:space="preserve">
-    <value>Gire la parte posterior y central un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
+    <value>Gire la capa posterior y la intermedia juntas un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
   <data name="Turn2LayersDown2_Text" xml:space="preserve">
-    <value>Gire la parte inferior y media media vuelta.</value>
+    <value>Junte la capa inferior y media media vuelta.</value>
   </data>
   <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
-    <value>Gire el lado inferior y medio un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
+    <value>Gire las capas inferior y media juntas un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
   </data>
   <data name="Turn2LayersDownCW_Text" xml:space="preserve">
-    <value>Gire el lado inferior y medio un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
+    <value>Gire las capas inferior y media juntas un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
   <data name="Turn2LayersFront2_Text" xml:space="preserve">
-    <value>Gire el frente y el medio media vuelta.</value>
+    <value>Gire la capa frontal y media juntas media vuelta.</value>
   </data>
   <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
-    <value>Gire el lado frontal y central un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
+    <value>Gire la capa frontal y media juntas un cuarto de vuelta en sentido contrario a las agujas del reloj (-).</value>
   </data>
   <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
-    <value>Gire el lado delantero y medio un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
+    <value>Gire la capa frontal y media juntas un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
   <data name="Turn2LayersLeft2_Text" xml:space="preserve">
-    <value>Gire media vuelta el lado izquierdo y el medio.</value>
+    <value>Gire la capa izquierda y media juntas media vuelta.</value>
   </data>
   <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
-    <value>Gire el lado izquierdo y medio un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
+    <value>Gire las capas izquierda y media juntas un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
   </data>
   <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
-    <value>Gire el lado izquierdo y medio un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
+    <value>Gire las capas izquierda y media juntas un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
   <data name="Turn2LayersRight2_Text" xml:space="preserve">
-    <value>Gire el lado derecho y medio media vuelta.</value>
+    <value>Gire la capa derecha y la del medio juntas media vuelta.</value>
   </data>
   <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
-    <value>Gire el lado derecho y medio un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
+    <value>Gire la capa derecha y la del medio juntas un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
   </data>
   <data name="Turn2LayersRightCW_Text" xml:space="preserve">
-    <value>Gire el lado derecho y medio un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
+    <value>Gire las capas derecha y media juntas un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
   <data name="Turn2LayersUp2_Text" xml:space="preserve">
-    <value>Gire la parte superior y media media vuelta.</value>
+    <value>Junte la capa superior y la intermedia media vuelta.</value>
   </data>
   <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
-    <value>Gire los lados superior y medio un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
+    <value>Gire las capas superior e intermedia un cuarto de vuelta en el sentido contrario a las agujas del reloj (-).</value>
   </data>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
-    <value>Gire los lados superior y medio un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
+    <value>Gire las capas superior e intermedia un cuarto de vuelta en el sentido de las agujas del reloj (+).</value>
   </data>
 </root>

@@ -478,57 +478,57 @@ Possible cause is incorrect transfer of colors to this cube.</value>
     <value>Of each available color, there must be four of the same color on a corner cube.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
-    <value>Turn the back and middle side half a turn.</value>
+    <value>Turn the back and middle layer together half a turn.</value>
   </data>
   <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
-    <value>Turn the back and middle side a quarter turn 'counter clockwise' (-).</value>
+    <value>Turn the back and middle layer together a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="Turn2LayersBackCW_Text" xml:space="preserve">
-    <value>Turn the back and middle side a quarter turn 'clockwise' (+).</value>
+    <value>Turn the back and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Turn2LayersDown2_Text" xml:space="preserve">
-    <value>Turn the bottom and middle side half a turn.</value>
+    <value>Turn the bottom and middle layer together half a turn.</value>
   </data>
   <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
-    <value>Turn the bottom and middle side a quarter turn 'counter clockwise' (-).</value>
+    <value>Turn the bottom and middle layer together a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="Turn2LayersDownCW_Text" xml:space="preserve">
-    <value>Turn the bottom and middle side a quarter turn 'clockwise' (+).</value>
+    <value>Turn the bottom and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Turn2LayersFront2_Text" xml:space="preserve">
-    <value>Turn the front and middle side half a turn.</value>
+    <value>Turn the front and middle layer together half a turn.</value>
   </data>
   <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
-    <value>Turn the front and middle side a quarter turn 'counter clockwise' (-).</value>
+    <value>Turn the front and middle layer together a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
-    <value>Turn the front and middle side a quarter turn 'clockwise' (+).</value>
+    <value>Turn the front and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Turn2LayersLeft2_Text" xml:space="preserve">
-    <value>Turn the left and middle side half a turn.</value>
+    <value>Turn the left and middle layer together half a turn.</value>
   </data>
   <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
-    <value>Turn the left and middle side a quarter turn 'counter clockwise' (-).</value>
+    <value>Turn the left and middle layer together a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
-    <value>Turn the left and middle side a quarter turn 'clockwise' (+).</value>
+    <value>Turn the left and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Turn2LayersRight2_Text" xml:space="preserve">
-    <value>Turn the right and middle side half a turn.</value>
+    <value>Turn the right and middle layer together half a turn.</value>
   </data>
   <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
-    <value>Turn the right and middle side a quarter turn 'counter clockwise' (-).</value>
+    <value>Turn the right and middle layer together a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="Turn2LayersRightCW_Text" xml:space="preserve">
-    <value>Turn the right and middle side a quarter turn 'clockwise' (+).</value>
+    <value>Turn the right and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
   <data name="Turn2LayersUp2_Text" xml:space="preserve">
-    <value>Turn the top and middle side half a turn.</value>
+    <value>Turn the top and middle layer together half a turn.</value>
   </data>
   <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
-    <value>Turn the top and middle side a quarter turn 'counter clockwise' (-).</value>
+    <value>Turn the top and middle layer together a quarter turn 'counter clockwise' (-).</value>
   </data>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
-    <value>Turn the top and middle side a quarter turn 'clockwise' (+).</value>
+    <value>Turn the top and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
 </root>
