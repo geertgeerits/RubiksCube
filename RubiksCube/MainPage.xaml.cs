@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.15
-// Date ........: 2024-02-26 (YYYY-MM-DD)
+// Date ........: 2024-02-27 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -948,44 +948,56 @@ public partial class MainPage : ContentPage
             case Globals.turn2LayersFrontCW:
             case Globals.turn2LayersFront2:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                imgbtnTurnFrontFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersFrontCCW:
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                imgbtnTurnFrontFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersRightCW:
             case Globals.turn2LayersRight2:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
+                imgbtnTurnRightFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersRightCCW:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
+                imgbtnTurnRightFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersBackCW:
             case Globals.turn2LayersBack2:
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                imgbtnTurnBackFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersBackCCW:
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                imgbtnTurnBackFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersLeftCW:
             case Globals.turn2LayersLeft2:
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
+                imgbtnTurnLeftFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersLeftCCW:
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
+                imgbtnTurnLeftFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersUpCW:
             case Globals.turn2LayersUp2:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                imgbtnTurnUpFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersUpCCW:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                imgbtnTurnUpFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersDownCW:
             case Globals.turn2LayersDown2:
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                imgbtnTurnDownFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turn2LayersDownCCW:
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                imgbtnTurnDownFaceToLeft.IsEnabled = bIsEnabled;
                 break;
 
             // Cube rotations
