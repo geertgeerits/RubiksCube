@@ -227,6 +227,7 @@ namespace RubiksCube
                 }
             }
 
+            Debug.WriteLine("Basic: number of turns top layer corners: " + lCubeTurns.Count);
             return true;
         }
 
@@ -385,6 +386,7 @@ namespace RubiksCube
                 // 960
             }
 
+            Debug.WriteLine("Basic: number of turns top layer edges: " + lCubeTurns.Count);
             return true;
         }
 
@@ -678,7 +680,8 @@ namespace RubiksCube
             Line1480:
                 await MakeTurnWordAsync(turnCubeFrontToLeft2);
             }
-            
+
+            Debug.WriteLine("Basic: number of turns middle layer: " + lCubeTurns.Count);
             return true;
         }
 
@@ -844,7 +847,8 @@ namespace RubiksCube
                 //1596
                 await MakeTurnWordAsync(turnCubeFrontToLeft);
             }
-            
+
+            Debug.WriteLine("Basic: number of turns bottom layer corners: " + lCubeTurns.Count);
             return true;
         }
 
@@ -974,6 +978,7 @@ namespace RubiksCube
                 continue;
             }
 
+            Debug.WriteLine("Basic: number of turns bottom layer edges: " + lCubeTurns.Count);
             return true;
         }
 
@@ -1056,6 +1061,7 @@ namespace RubiksCube
                 await MakeTurnWordAsync(turnUpCW);
             }
 
+            Debug.WriteLine("Basic: number of turns bottom layer tumbling corners: " + lCubeTurns.Count);
             return true;
         }
 
@@ -1170,7 +1176,8 @@ namespace RubiksCube
             Line1950:
                 await MakeTurnLetterAsync("R' D2 U2 L2 D U' F'");
             }
-            
+
+            Debug.WriteLine("Basic: number of turns bottom layer tumbling edges: " + lCubeTurns.Count);
             return true;
         }
     }

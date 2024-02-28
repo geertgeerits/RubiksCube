@@ -83,6 +83,7 @@ namespace RubiksCube
                 // If solved, break the loop
                 if (cB == aPieces[37] && cB == aPieces[39] && cB == aPieces[41] && cB == aPieces[43])
                 {
+                    Debug.WriteLine("Daisy: number of turns top layer edges: " + lCubeTurns.Count);
                     break;
                 }
 
@@ -240,6 +241,7 @@ namespace RubiksCube
                 {
                     if (aPieces[4] == aPieces[7] && aPieces[13] == aPieces[16] && aPieces[22] == aPieces[25] && aPieces[31] == aPieces[34])
                     {
+                        Debug.WriteLine("Daisy: number of turns top layer edges 2: " + lCubeTurns.Count);
                         break;
                     }
                     else
@@ -301,6 +303,7 @@ namespace RubiksCube
                 // If solved, break the loop
                 if (cB == aPieces[45] && cB == aPieces[46] && cB == aPieces[47] && cB == aPieces[48] && cB == aPieces[50] && cB == aPieces[51] && cB == aPieces[52] && cB == aPieces[53])
                 {
+                    Debug.WriteLine("Daisy: number of turns top layer corners: " + lCubeTurns.Count);
                     break;
                 }
 
@@ -597,6 +600,7 @@ namespace RubiksCube
                 // If solved, break the loop
                 if (aPieces[4] == aPieces[3] && aPieces[4] == aPieces[5] && aPieces[13] == aPieces[12] && aPieces[13] == aPieces[14] && aPieces[22] == aPieces[21] && aPieces[22] == aPieces[23] && aPieces[31] == aPieces[30] && aPieces[31] == aPieces[32])
                 {
+                    Debug.WriteLine("Daisy: number of turns middle layer: " + lCubeTurns.Count);
                     break;
                 }
 
@@ -679,6 +683,7 @@ namespace RubiksCube
                 // If solved, break the loop
                 if (cB == aPieces[37] && cB == aPieces[39] && cB == aPieces[41] && cB == aPieces[43])
                 {
+                    Debug.WriteLine("Daisy: number of turns bottom layer edges: " + lCubeTurns.Count);
                     break;
                 }
 
@@ -750,6 +755,7 @@ namespace RubiksCube
                 {
                     if (aPieces[1] == aPieces[4] && aPieces[10] == aPieces[13] && aPieces[19] == aPieces[22] && aPieces[28] == aPieces[31])
                     {
+                        Debug.WriteLine("Daisy: number of turns bottom layer edges 2: " + lCubeTurns.Count);
                         break;
                     }
                 }
@@ -783,6 +789,7 @@ namespace RubiksCube
                 // If all corners are on their places, break the loop
                 if (await SolveBottomLayerCheckCornersInRightPlaceAsync())
                 {
+                    Debug.WriteLine("Daisy: number of turns bottom layer corners: " + lCubeTurns.Count);
                     break;
                 }
 
