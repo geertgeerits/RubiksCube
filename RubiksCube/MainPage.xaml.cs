@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.15
-// Date ........: 2024-02-27 (YYYY-MM-DD)
+// Date ........: 2024-02-28 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -248,6 +248,7 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
             //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
             //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();   // For testing
+
 
             // Restore the start colors of the cube from array aStartPieces[]
             Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
