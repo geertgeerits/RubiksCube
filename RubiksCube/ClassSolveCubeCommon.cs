@@ -1,6 +1,7 @@
 ﻿// This turns are based on:
 // the book: Mastering Rubik's Cube, by Don Taylor, Dutch version 1981
 // file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
+// https://www.rubiksplace.com/speedcubing/guide/
 
 using static RubiksCube.Globals;
 
@@ -220,6 +221,38 @@ namespace RubiksCube
                         {
                             await MakeTurnLetterAsync("U R U' L' U R' U' L");
                             return true;
+                        }
+                    }
+                }
+            }
+
+            // Swap 36 -> 38 -> 44 -> 36   l' U R' D2 R U' R' D2 R2
+            if (aPieces[4] == aPieces[11] || aPieces[4] == aPieces[18] || aPieces[4] == aPieces[38])
+            {
+                if (aPieces[13] == aPieces[20] || aPieces[13] == aPieces[27] || aPieces[13] == aPieces[36])
+                {
+                    if (aPieces[22] == aPieces[2] || aPieces[22] == aPieces[9] || aPieces[22] == aPieces[44])
+                    {
+                        if (aPieces[31] == aPieces[2] || aPieces[31] == aPieces[9] || aPieces[31] == aPieces[44])
+                        {
+                            await MakeTurnLetterAsync("l' U R' D2 R U' R' D2 R2");
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            // Swap 36 -> 42 -> 36 and 38 -> 44 -> 38   x' [R U' R' D] [R U R' D'] [R U R' D] [R U' R' D']
+            if (aPieces[4] == aPieces[20] || aPieces[4] == aPieces[27] || aPieces[4] == aPieces[36])
+            {
+                if (aPieces[22] == aPieces[0] || aPieces[22] == aPieces[29] || aPieces[22] == aPieces[42])
+                {
+                    if (aPieces[4] == aPieces[11] || aPieces[4] == aPieces[18] || aPieces[4] == aPieces[38])
+                    {
+                        if (aPieces[22] == aPieces[2] || aPieces[22] == aPieces[9] || aPieces[22] == aPieces[44])
+                        {
+                            await MakeTurnLetterAsync("x' R U' R' D R U R' D' R U R' D R U' R' D'");
+
                         }
                     }
                 }

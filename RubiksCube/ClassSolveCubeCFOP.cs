@@ -4,9 +4,11 @@
 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/white-cross/
 // https://solvethecube.com/speedcubing#betterf2l
 // https://www.cubeskills.com/categories/3x3-algs
+// https://www.rubiksplace.com/speedcubing/guide/
 // https://www.youtube.com/watch?v=MS5jByTX_pk
 // https://www.youtube.com/watch?v=q_Hslj2aXuE&t=114s
 // https://www.youtube.com/watch?v=z6c6ll_rpBo
+// https://www.youtube.com/watch?v=JHxLRfN4rSQ
 
 using System.Diagnostics;
 using static RubiksCube.Globals;
