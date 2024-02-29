@@ -15,16 +15,19 @@ namespace RubiksCube
             if (aPieces[4] == aPieces[10])
             {
                 await MakeTurnWordAsync(turnUpCW);
+                return true;
             }
 
             if (aPieces[4] == aPieces[19])
             {
                 await MakeTurnWordAsync(turnUp2);
+                return true;
             }
 
             if (aPieces[4] == aPieces[28])
             {
                 await MakeTurnWordAsync(turnUpCCW);
+                return true;
             }
 
             if (aPieces[4] == aPieces[1] && aPieces[13] == aPieces[10] && aPieces[22] == aPieces[19] && aPieces[31] == aPieces[28])

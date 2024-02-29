@@ -44,14 +44,14 @@ namespace RubiksCube
             // OLL (Orientation of Last Layer) Bottom layer edges
             if (!await SolveBottomLayerEdgesAsync())
             {
-                return true;
+                return false;
             }
 
             // OLL (Orientation of Last Layer) Bottom layer corners
-            //if (!await SolveBottomLayerCornersAsync())
-            //{
-            //    return true;
-            //}
+            if (!await SolveBottomLayerCornersAsync())
+            {
+                return true;
+            }
 
             // PLL (Permutation if Last Layer)
             //if (!await SolveBottomLayerPermutationAsync())
@@ -1223,6 +1223,7 @@ namespace RubiksCube
         }
 
         // OLL (Orientation of Last Layer) Solve bottom layer edges (Cross)
+        // 2-Look OLL
         private static async Task<bool> SolveBottomLayerEdgesAsync()
         {
             int nLoopTimes = 0;
@@ -1243,6 +1244,14 @@ namespace RubiksCube
                     break;
                 }
 
+                //for (int i = 0; i < 5; i++)
+                //{
+                //    await ClassSolveCubeCommon.SolveTopLayerSwapEdgesAsync();
+                //    //await ClassSolveCubeCommon.SolveTopLayerSwapCornersAsync();
+                //}
+
+                //await SolveBottomLayerSwapEdgesAsync();
+
                 // https://www.youtube.com/watch?v=JHxLRfN4rSQ
                 // Line case
                 if (aPieces[40] == aPieces[39] && aPieces[40] == aPieces[41] && aPieces[40] != aPieces[37] && aPieces[40] != aPieces[43])
@@ -1255,6 +1264,14 @@ namespace RubiksCube
                 {
                     await MakeTurnLetterAsync("y F R U R' U' F'");
                     continue;
+                }
+
+                // Dot case
+                if (aPieces[40] != aPieces[37] && aPieces[40] != aPieces[39] && aPieces[40] != aPieces[41] && aPieces[40] != aPieces[43])
+                {
+                    //await MakeTurnLetterAsync("F R U R' U' F' f R U R' U' f'");
+                    await MakeTurnLetterAsync("F R U R' U' F'");
+                    //continue;
                 }
 
                 // L-shape case
@@ -1283,17 +1300,21 @@ namespace RubiksCube
                 }
 
                 // Dot case
-                if (aPieces[40] != aPieces[37] && aPieces[40] != aPieces[39] && aPieces[40] != aPieces[41] && aPieces[40] != aPieces[43])
-                {
-                    await MakeTurnLetterAsync("F R U R' U' F' f R U R' U' f'");
-                    continue;
-                }
+                //if (aPieces[40] != aPieces[37] && aPieces[40] != aPieces[39] && aPieces[40] != aPieces[41] && aPieces[40] != aPieces[43])
+                //{
+                //    await MakeTurnLetterAsync("F R U R' U' F' f R U R' U' f'");
+                //    continue;
+                //}
             }
+
+            _ = await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
+            await SolveBottomLayerSwapEdgesAsync();
 
             return true;
         }
 
         // OLL (Orientation of Last Layer) Solve bottom layer corners
+        // 2-Look OLL
         private static async Task<bool> SolveBottomLayerCornersAsync()
         {
             //await MakeTurnWordAsync(turnCubeUpToRight2);
@@ -1315,6 +1336,8 @@ namespace RubiksCube
                     Debug.WriteLine("CFOP: number of turns last layer corners: " + lCubeTurns.Count);
                     break;
                 }
+
+                //await SolveBottomLayerSwapCornersAsync();
 
                 // https://www.youtube.com/watch?v=JHxLRfN4rSQ
                 // Sune case
@@ -1484,7 +1507,57 @@ namespace RubiksCube
 
             }
 
+            //_ = await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
+            //await SolveBottomLayerSwapEdgesAsync();
+            await SolveBottomLayerSwapCornersAsync();
+
             return true;
+        }
+
+        // Swap edges last layer
+        // https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-5-swap-yellow-edges/
+        private static async Task SolveBottomLayerSwapEdgesAsync()
+        {
+            //_ = await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
+
+            // Switch two edges in the last layer
+            if (aPieces[4] == aPieces[28] && aPieces[31] == aPieces[1])
+            {
+                await MakeTurnLetterAsync("R U R' U R U2 R' U");
+            }
+
+            if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1])
+            {
+                await MakeTurnLetterAsync("y R U R' U R U2 R' U");
+            }
+
+            if (aPieces[13] == aPieces[19] && aPieces[22] == aPieces[10])
+            {
+                await MakeTurnLetterAsync("y2 R U R' U R U2 R' U");
+            }
+
+            if (aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
+            {
+                await MakeTurnLetterAsync("y' R U R' U R U2 R' U");
+            }
+
+            // Swap to pieces in the opposite sides of the cube
+            if (aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
+            {
+                await MakeTurnLetterAsync("U R U R' U R U2 R' U y2 R U R' U R U2 R' U");
+            }
+
+            if (aPieces[4] == aPieces[19] && aPieces[22] == aPieces[1])
+            {
+                await MakeTurnLetterAsync("y U R U R' U R U2 R' U y2 R U R' U R U2 R' U");
+            }
+        }
+
+        // Swap corners last layer
+        // https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-6-position-yellow-corners/
+        private static async Task SolveBottomLayerSwapCornersAsync()
+        {
+        
         }
     }
 }
