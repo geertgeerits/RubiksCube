@@ -255,7 +255,7 @@ namespace RubiksCube
                         if (aPieces[22] == aPieces[2] || aPieces[22] == aPieces[9] || aPieces[22] == aPieces[44])
                         {
                             await MakeTurnLetterAsync("x' R U' R' D R U R' D' R U R' D R U' R' D'");
-
+                            return true;
                         }
                     }
                 }

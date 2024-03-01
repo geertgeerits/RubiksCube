@@ -50,6 +50,18 @@ namespace RubiksCube
             // OLL (Orientation of Last Layer) Bottom layer corners
             if (!await SolveBottomLayerCornersAsync())
             {
+                return false;
+            }
+
+            // Swap edges last layer
+            if (!await SolveBottomLayerSwapEdgesAsync())
+            {
+                return false;
+            }
+
+            // Swap corners last layer
+            if (!await SolveBottomLayerSwapCornersAsync())
+            {
                 return true;
             }
 
@@ -1331,7 +1343,7 @@ namespace RubiksCube
                 }
 
                 // If solved, break the loop
-                if (ClassColorsCube.CheckIfSolved())
+                if (aPieces[40] == aPieces[36] && aPieces[40] == aPieces[38] && aPieces[40] == aPieces[42] && aPieces[40] == aPieces[44])
                 {
                     Debug.WriteLine("CFOP: number of turns last layer corners: " + lCubeTurns.Count);
                     break;
@@ -1507,57 +1519,176 @@ namespace RubiksCube
 
             }
 
-            //_ = await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
-            //await SolveBottomLayerSwapEdgesAsync();
-            await SolveBottomLayerSwapCornersAsync();
-
             return true;
         }
 
         // Swap edges last layer
-        // https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-5-swap-yellow-edges/
-        private static async Task SolveBottomLayerSwapEdgesAsync()
+        private static async Task<bool> SolveBottomLayerSwapEdgesAsync()
         {
-            //_ = await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
+            _ = await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
 
-            // Switch two edges in the last layer
-            if (aPieces[4] == aPieces[28] && aPieces[31] == aPieces[1])
+            int nLoopTimes = 0;
+
+            while (true)
             {
-                await MakeTurnLetterAsync("R U R' U R U2 R' U");
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("CFOP: nLoopTimes last layer swap edges: " + nLoopTimes);
+                    return false;
+                }
+
+                // If solved, break the loop
+                if (aPieces[4] == aPieces[1] && aPieces[13] == aPieces[10] && aPieces[22] == aPieces[19] && aPieces[31] == aPieces[28])
+                {
+                    Debug.WriteLine("CFOP: number of turns last layer swap edges: " + lCubeTurns.Count);
+                    break;
+                }
+
+                _ = await ClassSolveCubeCommon.SolveTopLayerSwapEdgesAsync();
+
+                // https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-5-swap-yellow-edges/
+                // Switch two edges in the last layer
+                //if (aPieces[4] == aPieces[28] && aPieces[31] == aPieces[1])
+                //{
+                //    await MakeTurnLetterAsync("R U R' U R U2 R' U");
+                //}
+
+                //if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1])
+                //{
+                //    await MakeTurnLetterAsync("y R U R' U R U2 R' U");
+                //}
+
+                //if (aPieces[13] == aPieces[19] && aPieces[22] == aPieces[10])
+                //{
+                //    await MakeTurnLetterAsync("y2 R U R' U R U2 R' U");
+                //}
+
+                //if (aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
+                //{
+                //    await MakeTurnLetterAsync("y' R U R' U R U2 R' U");
+                //}
+
+                //// Swap to pieces in the opposite sides of the cube
+                //if (aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
+                //{
+                //    await MakeTurnLetterAsync("U R U R' U R U2 R' U y2 R U R' U R U2 R' U");
+                //}
+
+                //if (aPieces[4] == aPieces[19] && aPieces[22] == aPieces[1])
+                //{
+                //    await MakeTurnLetterAsync("y U R U R' U R U2 R' U y2 R U R' U R U2 R' U");
+                //}
             }
 
-            if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1])
-            {
-                await MakeTurnLetterAsync("y R U R' U R U2 R' U");
-            }
-
-            if (aPieces[13] == aPieces[19] && aPieces[22] == aPieces[10])
-            {
-                await MakeTurnLetterAsync("y2 R U R' U R U2 R' U");
-            }
-
-            if (aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
-            {
-                await MakeTurnLetterAsync("y' R U R' U R U2 R' U");
-            }
-
-            // Swap to pieces in the opposite sides of the cube
-            if (aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
-            {
-                await MakeTurnLetterAsync("U R U R' U R U2 R' U y2 R U R' U R U2 R' U");
-            }
-
-            if (aPieces[4] == aPieces[19] && aPieces[22] == aPieces[1])
-            {
-                await MakeTurnLetterAsync("y U R U R' U R U2 R' U y2 R U R' U R U2 R' U");
-            }
+            return true;
         }
 
         // Swap corners last layer
-        // https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-6-position-yellow-corners/
-        private static async Task SolveBottomLayerSwapCornersAsync()
+        private static async Task<bool> SolveBottomLayerSwapCornersAsync()
         {
-        
+            int nLoopTimes = 0;
+
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("CFOP: nLoopTimes last layer swap corners: " + nLoopTimes);
+                    return false;
+                }
+
+                // If solved, break the loop
+                //if (ClassColorsCube.CheckIfSolved())
+                if (aPieces[4] == aPieces[2] && aPieces[13] == aPieces[9] && aPieces[13] == aPieces[11] && aPieces[22] == aPieces[18] && aPieces[22] == aPieces[20] && aPieces[31] == aPieces[27] && aPieces[31] == aPieces[29] && aPieces[4] == aPieces[0])
+                {
+                    Debug.WriteLine("CFOP: number of turns last layer swap corners: " + lCubeTurns.Count);
+                    break;
+                }
+
+                //_ = await ClassSolveCubeCommon.SolveTopLayerSwapCornersAsync();
+
+                // https://www.youtube.com/watch?v=KGUNLrlEtW4
+                if (aPieces[4] != aPieces[0] || aPieces[13] != aPieces[9] || aPieces[22] != aPieces[18] || aPieces[31] != aPieces[27])
+                {
+                    await MakeTurnLetterAsync("R B' R F2 R' B R F2 R2");
+                }
+
+                if (aPieces[4] == aPieces[0] && aPieces[4] == aPieces[2] && aPieces[13] == aPieces[9] && aPieces[31] == aPieces[29])
+                {
+                    if (aPieces[13] != aPieces[11] || aPieces[22] != aPieces[18] || aPieces[22] != aPieces[20] || aPieces[31] != aPieces[27])
+                    {
+                        await MakeTurnLetterAsync("R B' R F2 R' B R F2 R2");
+                        continue;
+                    }
+                }
+
+                if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[11] && aPieces[4] == aPieces[2] && aPieces[22] == aPieces[18])
+                {
+                    if (aPieces[4] != aPieces[0] || aPieces[22] != aPieces[20] || aPieces[31] != aPieces[27] || aPieces[31] != aPieces[29])
+                    {
+                        await MakeTurnLetterAsync("y R B' R F2 R' B R F2 R2");
+                        continue;
+                    }
+                }
+
+                if (aPieces[31] == aPieces[27] && aPieces[31] == aPieces[29] && aPieces[4] == aPieces[0] && aPieces[22] == aPieces[20])
+                {
+                    if (aPieces[4] != aPieces[2] || aPieces[13] != aPieces[9] || aPieces[13] != aPieces[11] || aPieces[22] != aPieces[18])
+                    {
+                        await MakeTurnLetterAsync("y' R B' R F2 R' B R F2 R2");
+                        continue;
+                    }
+                }
+
+                if (aPieces[22] == aPieces[18] && aPieces[22] == aPieces[20] && aPieces[13] == aPieces[11] && aPieces[31] == aPieces[27])
+                {
+                    if (aPieces[4] != aPieces[0] || aPieces[4] != aPieces[2] || aPieces[13] != aPieces[9] || aPieces[31] != aPieces[29])
+                    {
+                        await MakeTurnLetterAsync("y2 R B' R F2 R' B R F2 R2");
+                        continue;
+                    }
+                }
+
+
+
+                //await MakeTurnWordAsync(turnCubeFrontToLeft);
+
+
+                //
+                //if (aPieces[4] == aPieces[2] && aPieces[13] == aPieces[9])
+                //{
+                //    await MakeTurnLetterAsync("U R U' L' U R' U' L");
+                //    continue;
+                //}
+
+                //if (aPieces[13] == aPieces[11] && aPieces[22] == aPieces[18])
+                //{
+                //    await MakeTurnLetterAsync("y U R U' L' U R' U' L");
+                //    continue;
+                //}
+
+                //if (aPieces[22] == aPieces[20] && aPieces[31] == aPieces[27])
+                //{
+                //    //await MakeTurnLetterAsync("y2 U R U' L' U R' U' L");
+                //    await MakeTurnLetterAsync("y2 L' U R U' L U R' U'");
+                //    continue;
+                //}
+
+                //if (aPieces[31] == aPieces[29] && aPieces[4] == aPieces[0])
+                //{
+                //    await MakeTurnLetterAsync("y' U R U' L' U R' U' L");
+                //    continue;
+                //}
+
+                //if (aPieces[4] != aPieces[2] && aPieces[13] != aPieces[11] && aPieces[22] != aPieces[20] && aPieces[31] != aPieces[29])
+                //{
+                //    await MakeTurnLetterAsync("U R U' L' U R' U' L");
+                //    continue;
+                //}
+            }
+
+            return true;
         }
     }
 }
