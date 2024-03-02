@@ -128,6 +128,9 @@ internal static class Globals
     /// Make a turn (with 1 or more letters) of the cube/face/side
     public static async Task MakeTurnLetterAsync(string cTurn)
     {
+        // Remove leading and trailing whitespace
+        cTurn = cTurn.Trim();
+
         // Split the string into individual turns
         foreach (string cTurnPart in cTurn.Split(' '))
         {

@@ -79,6 +79,20 @@ namespace RubiksCube
             await MakeTurnLetterAsync("y y' y2");
             await MakeTurnLetterAsync("z z' z2");
 
+            // Test single cube turns
+            await MakeTurnLetterAsync("U");
+            await MakeTurnLetterAsync("U'");
+            await MakeTurnLetterAsync("U2");
+
+            await MakeTurnLetterAsync("y");
+            await MakeTurnLetterAsync("y'");
+            await MakeTurnLetterAsync("y2");
+
+            // Test invalid cube turns
+            //await MakeTurnLetterAsync("U ");
+            //await MakeTurnLetterAsync(" U");
+            //await MakeTurnLetterAsync("U RR U");
+
             return true;
         }
     }

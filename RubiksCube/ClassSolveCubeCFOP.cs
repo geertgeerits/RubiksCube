@@ -126,10 +126,11 @@ namespace RubiksCube
                 if (nLoopTimes > 1)
                 {
                     //await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    await MakeTurnWordAsync(turnUpCW);
                 }
 
                 // https://www.youtube.com/watch?v=Ar_Zit1VLG0
-                // 
+                // 4. Fundamental algorithms
                 if (aPieces[49] == aPieces[29] && aPieces[4] == aPieces[42] && aPieces[4] == aPieces[43] && aPieces[13] == aPieces[0] && aPieces[13] == aPieces[1])
                 {
                     await MakeTurnLetterAsync("R U' R'");
@@ -158,19 +159,59 @@ namespace RubiksCube
                 {
                     await MakeTurnLetterAsync("R U R'");
 
+                    // 2. Is white facing up?
+                    // 3.  If not, move the corner piece
                     if (aPieces[49] == aPieces[9])
                     {
                         await MakeTurnLetterAsync("U");
                     }
 
+                    // 4. Are top colors the same?
+                    if (aPieces[42] == aPieces[37])
+                    {
+                        // 5. If, move the edge piece
+                        await MakeTurnLetterAsync("F' U' F U'");
+                        // 6. Insert
+                        await MakeTurnLetterAsync("U' L' U L");
+                        continue;
+                    }
 
+                    // 1. Both pieces in top layer
+                    // 2. Is white facing up?
+                    if (aPieces[49] == aPieces[29] && aPieces[4] == aPieces[42] && aPieces[4] == aPieces[10] && aPieces[13] == aPieces[0] && aPieces[13] == aPieces[41])
+                    {
+                        // 3. If not, move the corner piece
+                        await MakeTurnLetterAsync("U' U' ");
+
+                        // 4. Are top colors the same?
+                        if (aPieces[39] != aPieces[38])
+                        {
+                            // 5. If not, move the edge piece
+                            await MakeTurnLetterAsync("R U' R'");
+                            // 6. Insert
+                            await MakeTurnLetterAsync("U L' U' L");
+                        }
+
+                        // 2. White is facing up
+                        // 3. Move the edge piece
+                        if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[19] && aPieces[31] == aPieces[9] && aPieces[31] == aPieces[37])
+                        {
+                            // 4. Put the corner above edge
+                            await MakeTurnLetterAsync("y' U2 R U2 R'");
+                            //5. Insert
+                            await MakeTurnLetterAsync("R U' R'");
+                        }                     
+                    }
 
                     continue;
                 }
 
+                // Special cases
+                // Option 1: algorithms
+                // Option 2: split it up
                 if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[13] == aPieces[44] && aPieces[13] == aPieces[8] && aPieces[13] == aPieces[39])
                 {
-                    await MakeTurnLetterAsync("U ");
+                    //await MakeTurnLetterAsync("");
                     continue;
                 }
 
