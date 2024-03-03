@@ -3,12 +3,236 @@
 // file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
 // https://www.rubiksplace.com/speedcubing/guide/
 
+using System.Diagnostics;
 using static RubiksCube.Globals;
 
 namespace RubiksCube
 {
     internal class ClassSolveCubeCommon
     {
+        //// Declare variables
+        private const int nLoopTimesMax = 200;
+
+        /// Solve the edges of the top layer - Part 1
+        public static async Task<bool> SolveTopLayerEdgesAsync()
+        {
+            string cB = aPieces[49];
+            int nLoopTimes = 0;
+
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("Daisy: nLoopTimes top layer edges: " + nLoopTimes);
+                    return false;
+                }
+
+                // If solved, break the loop
+                if (cB == aPieces[37] && cB == aPieces[39] && cB == aPieces[41] && cB == aPieces[43])
+                {
+                    Debug.WriteLine("Daisy: number of turns top layer edges: " + lCubeTurns.Count);
+                    break;
+                }
+
+                // Move 1 -> 3
+                if (aPieces[49] == aPieces[1])
+                {
+                    await MakeTurnWordAsync(turnFrontCCW);
+                }
+
+                if (aPieces[49] == aPieces[3])
+                {
+                    if (aPieces[49] == aPieces[39])
+                    {
+                        while (true)
+                        {
+                            if (aPieces[49] != aPieces[37])
+                            {
+                                await MakeTurnWordAsync(turnUpCCW);
+                                break;
+                            }
+
+                            if (aPieces[49] != aPieces[43])
+                            {
+                                await MakeTurnWordAsync(turnUpCW);
+                                break;
+                            }
+
+                            if (aPieces[49] != aPieces[41])
+                            {
+                                await MakeTurnWordAsync(turnUp2);
+                                break;
+                            }
+
+                            break;
+                        }
+
+                    }
+
+                    await MakeTurnWordAsync(turnLeftCCW);
+                    continue;
+                }
+
+                // Move 7 -> 5
+                if (aPieces[49] == aPieces[7])
+                {
+                    await MakeTurnWordAsync(turnFrontCCW);
+                }
+
+                if (aPieces[49] == aPieces[5])
+                {
+                    if (aPieces[49] == aPieces[41])
+                    {
+                        while (true)
+                        {
+                            if (aPieces[49] != aPieces[37])
+                            {
+                                await MakeTurnWordAsync(turnUpCW);
+                                break;
+                            }
+
+                            if (aPieces[49] != aPieces[43])
+                            {
+                                await MakeTurnWordAsync(turnUpCCW);
+                                break;
+                            }
+
+                            if (aPieces[49] != aPieces[39])
+                            {
+                                await MakeTurnWordAsync(turnUp2);
+                                break;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    await MakeTurnWordAsync(turnRightCW);
+                    continue;
+                }
+
+                if (aPieces[49] == aPieces[50])
+                {
+                    if (aPieces[49] == aPieces[41])
+                    {
+                        while (true)
+                        {
+                            if (aPieces[49] != aPieces[37])
+                            {
+                                await MakeTurnWordAsync(turnUpCW);
+                                break;
+                            }
+
+                            if (aPieces[49] != aPieces[43])
+                            {
+                                await MakeTurnWordAsync(turnUpCCW);
+                                break;
+                            }
+
+                            if (aPieces[49] != aPieces[39])
+                            {
+                                await MakeTurnWordAsync(turnUp2);
+                                break;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    await MakeTurnWordAsync(turnRight2);
+                    continue;
+                }
+
+                if (cB == aPieces[10] || cB == aPieces[12] || cB == aPieces[14] || cB == aPieces[16] || cB == aPieces[52])
+                {
+                    await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    continue;
+                }
+
+                if (cB == aPieces[19] || cB == aPieces[21] || cB == aPieces[23] || cB == aPieces[25] || cB == aPieces[48])
+                {
+                    await MakeTurnWordAsync(turnCubeFrontToLeft2);
+                    continue;
+                }
+
+                if (cB == aPieces[28] || cB == aPieces[30] || cB == aPieces[32] || cB == aPieces[34] || cB == aPieces[46])
+                {
+                    await MakeTurnWordAsync(turnCubeFrontToRight);
+                    continue;
+                }
+
+                //await MakeTurnWordAsync(turnCubeFrontToLeft);
+                continue;
+            }
+
+            return true;
+        }
+
+        /// Solve the edges of the top layer but turned at the bottom - Part 2
+        public static async Task<bool> SolveTopLayerEdges2Async()
+        {
+            string cB = aPieces[49];
+            int nLoopTimes = 0;
+
+            while (true)
+            {
+                nLoopTimes++;
+                if (nLoopTimes > nLoopTimesMax)
+                {
+                    Debug.WriteLine("Daisy: nLoopTimes top layer edges 2: " + nLoopTimes);
+                    return false;
+                }
+
+                // If solved, break the loop
+                if (cB == aPieces[46] && cB == aPieces[48] && cB == aPieces[50] && cB == aPieces[52])
+                {
+                    if (aPieces[4] == aPieces[7] && aPieces[13] == aPieces[16] && aPieces[22] == aPieces[25] && aPieces[31] == aPieces[34])
+                    {
+                        Debug.WriteLine("Daisy: number of turns top layer edges 2: " + lCubeTurns.Count);
+                        break;
+                    }
+                    else
+                    {
+                        //await SwitchEdgeCubesTopLayerAsync();
+                    }
+                }
+
+                while (true)
+                {
+                    if (cB == aPieces[43] && aPieces[1] == aPieces[4])
+                    {
+                        await MakeTurnLetterAsync("F2");
+                        break;
+                    }
+
+                    if (cB == aPieces[43] && aPieces[1] == aPieces[13])
+                    {
+                        await MakeTurnLetterAsync("U' R2");
+                        break;
+                    }
+
+                    if (cB == aPieces[43] && aPieces[1] == aPieces[31])
+                    {
+                        await MakeTurnLetterAsync("U L2");
+                        break;
+                    }
+
+                    if (cB == aPieces[43] && aPieces[1] == aPieces[22])
+                    {
+                        await MakeTurnLetterAsync("U2 B2");
+                        break;
+                    }
+
+                    break;
+                }
+
+                await MakeTurnWordAsync(turnCubeFrontToLeft);
+            }
+
+            return true;
+        }
+
         // Lign up the center cube with the cube above the center cube
         public static async Task<bool> SolveTopLayerLineUpCenterAsync()
         {
