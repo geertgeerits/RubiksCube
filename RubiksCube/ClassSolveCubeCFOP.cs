@@ -11,6 +11,7 @@
 // https://www.youtube.com/watch?v=z6c6ll_rpBo
 // https://www.youtube.com/watch?v=JHxLRfN4rSQ
 // https://www.youtube.com/watch?v=jKS9otGuu50&t=58s
+// https://www.youtube.com/watch?v=z6c6ll_rpBo
 
 using System.Diagnostics;
 using static RubiksCube.Globals;
@@ -263,7 +264,7 @@ namespace RubiksCube
                 {
                     if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[37])
                     {
-                        await MakeTurnLetterAsync("U F' U’ F U'");
+                        await MakeTurnLetterAsync("U F' U' F U'");
                         continue;
                     }
                 }
@@ -319,22 +320,394 @@ namespace RubiksCube
                 }
 
                 // 5 Case mirror ?????????????????????????
-                //if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[39])
-                //{
-                //    if (aPieces[13] == aPieces[28] && aPieces[13] == aPieces[39])
-                //    {
-                //        await MakeTurnLetterAsync("U' R U R' U");
-                //        continue;
-                //    }
-                //}
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[37] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[19])
+                    {
+                        await MakeTurnLetterAsync("U' R U R' U");
+                        continue;
+                    }
+                }
+                
                 // Type 2 Cases
+                // 1 Case
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[10])
+                {
+                    if (aPieces[13] == aPieces[41] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("R U' R'");
+                        continue;
+                    }
+                }
 
+                // 1 Case mirror
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[43] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[1] && aPieces[13] == aPieces[9])
+                    {
+                        await MakeTurnLetterAsync("F' U F");
+                        continue;
+                    }
+                }
 
+                // 2 Case ?????????????????????????????????
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[10])
+                    {
+                        await MakeTurnLetterAsync("R U2 R'");
+                        continue;
+                    }
+                }
 
+                // 2 Case mirror
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[9])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("F' U2 F");
+                        continue;
+                    }
+                }
 
+                // 3 Case
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[37])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[19])
+                    {
+                        await MakeTurnLetterAsync("U R U2 R'");
+                        continue;
+                    }
+                }
 
+                // 3 Case mirror
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[28])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[39])
+                    {
+                        await MakeTurnLetterAsync("U' F' U2 F");
+                        continue;
+                    }
+                }
 
+                // 4 Case
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[39])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[28])
+                    {
+                        await MakeTurnLetterAsync("U2 R U R'");
+                        continue;
+                    }
+                }
 
+                // 4 Case mirror
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[19])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[37])
+                    {
+                        await MakeTurnLetterAsync("U2 F' U' F");
+                        continue;
+                    }
+                }
+
+                // Case 3: Corner on Bottom, Edge on Top
+                // 1 Case
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[8])
+                {
+                    if (aPieces[13] == aPieces[15] && aPieces[13] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 1 Case mirror
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[10] && aPieces[13] == aPieces[15])
+                    {
+                        await MakeTurnLetterAsync("U' F' U F");
+                        continue;
+                    }
+                }
+
+                // 2 Case
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[10] && aPieces[13] == aPieces[15])
+                    {
+                        await MakeTurnLetterAsync("F' U F");
+                        continue;
+                    }
+                }
+
+                // 2 Case mirror
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[15] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[10] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("R U' R'");
+                        continue;
+                    }
+                }
+
+                // 3 Case
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[41] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[8] && aPieces[13] == aPieces[10])
+                    {
+                        await MakeTurnLetterAsync("R U R'");
+                        continue;
+                    }
+                }
+
+                // 3 Case mirror
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[15])
+                {
+                    if (aPieces[13] == aPieces[43] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("F' U' F");
+                        continue;
+                    }
+                }
+
+                // Case 4: Corner on Top, Edge in Middle
+                // 1 Case
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[5])
+                {
+                    if (aPieces[13] == aPieces[12] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U F' U F");
+                        continue;
+                    }
+                }
+
+                // 1 Case mirror
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("U' R U' R'");
+                        continue;
+                    }
+                }
+
+                // 2 Case
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("U F' U' F");
+                        continue;
+                    }
+                }
+
+                // 2 Case mirror
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[9])
+                    {
+                        await MakeTurnLetterAsync("U' R U R'");
+                        continue;
+                    }
+                }
+
+                // 3 Case
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[12])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[5])
+                    {
+                        await MakeTurnLetterAsync("R U2 R'");
+                        continue;
+                    }
+                }
+
+                // 4 Case
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[9])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("R U R' U' R U R'");
+                        continue;
+                    }
+                }
+
+                // Case 5: Corner on Bottom, Edge in Middle
+                // 1 Special Case
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[8] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("R U2 R U R' U R U2 R2");
+                        continue;
+                    }
+                }
+
+                // 1 Special Case mirror
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[15])
+                {
+                    if (aPieces[13] == aPieces[12] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("R2' U2 R' U' R U' R' U2 R'");
+                        continue;
+                    }
+                }
+
+                // 2 Special Case
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[8])
+                    {
+                        await MakeTurnLetterAsync("R U' R' F' L' U2 L F");
+                        continue;
+                    }
+                }
+
+                // 2 Special Case mirror
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[15])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("R U' R U y' L U' L' B2");
+                        continue;
+                    }
+                }
+
+                // Advanced F2L Techniques
+                // 1. Stuck in the wrong slots
+                // Edge in the wrong slot
+                // Case: The edge is in the wrong slot, but the corner is still in the top
+                // 1
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[31] == aPieces[2] && aPieces[31] == aPieces[5])
+                    {
+                        await MakeTurnLetterAsync("U F' U F U'");
+                        continue;
+                    }
+                }
+
+                // 2
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[31] == aPieces[2] && aPieces[31] == aPieces[5])
+                    {
+                        await MakeTurnLetterAsync("U' R U R' U");
+                        continue;
+                    }
+                }
+
+                // Corner in the wrong slot.
+                // Case: The corner is in the wrong slot, but the edge is still in the top.
+                // 1
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[31] == aPieces[2] && aPieces[31] == aPieces[5])
+                    {
+                        await MakeTurnLetterAsync("R U' R'");
+                        continue;
+                    }
+                }
+
+                // 2
+                if (aPieces[49] == aPieces[15] && aPieces[13] == aPieces[41] && aPieces[13] == aPieces[47])
+                {
+                    if (aPieces[22] == aPieces[8] && aPieces[22] == aPieces[10])
+                    {
+                        await MakeTurnLetterAsync("R U R' U'");
+                        continue;
+                    }
+                }
+
+                // 2. Stuck pieces
+                // At times you would find that the corner and the edge pieces are not on top, but instead are stuck in random incorrect slots.
+                // To set it up, use the algorithm stated below.
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[32] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[3] && aPieces[13] == aPieces[9])
+                    {
+                        await MakeTurnLetterAsync("U R' D' F D R");
+                        // Now, in the next step, use the algorithm.
+                        await MakeTurnLetterAsync("R' U' R' U R");
+                        continue;
+                    }
+                }
+
+                // 3. Special shortcuts
+                // At times when the F2L pieces are stuck in other slots, there are a few shortcuts that you can use.
+                // We have mentioned a few below. However, you could find yourself in many other situations.
+                // 1 Case
+                if (aPieces[49] == aPieces[8] && aPieces[13] == aPieces[15] && aPieces[13] == aPieces[41])
+                {
+                    if (aPieces[22] == aPieces[10] && aPieces[22] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("y L' R U' L R'");
+                        continue;
+                    }
+                }
+
+                // 1 Case mirror ??????????????????????????
+                //await MakeTurnLetterAsync("L' R U L R'");
+
+                // 2 Case
+                if (aPieces[49] == aPieces[15] && aPieces[13] == aPieces[1] && aPieces[13] == aPieces[47])
+                {
+                    if (aPieces[22] == aPieces[8] && aPieces[22] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("R U2 R2 U R");
+                        continue;
+                    }
+                }
+
+                // 2 Case mirror
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[10] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[31] == aPieces[15] && aPieces[31] == aPieces[41])
+                    {
+                        await MakeTurnLetterAsync("y' R' U2 R2 U' R'");
+                        continue;
+                    }
+                }
+
+                // 3 Case
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[21])
+                {
+                    if (aPieces[13] == aPieces[14] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("R' U' R2 U R'");
+                        continue;
+                    }
+                }
+
+                // 3 Case mirror
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[32])
+                    {
+                        await MakeTurnLetterAsync("y' R U R2 U' R");
+                        continue;
+                    }
+                }
+
+                // 4 Case
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[4] == aPieces[21])
+                {
+                    if (aPieces[13] == aPieces[14] && aPieces[13] == aPieces[15])
+                    {
+                        await MakeTurnLetterAsync("R2 U' R2 U R2");
+                        continue;
+                    }
+                }
+
+                // 4 Case mirror
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[8])
+                {
+                    if (aPieces[13] == aPieces[15] && aPieces[13] == aPieces[32])
+                    {
+                        await MakeTurnLetterAsync("y' R2 U R2 U' R2");
+                        continue;
+                    }
+                }
 
                 continue;
 
