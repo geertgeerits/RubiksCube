@@ -1784,18 +1784,160 @@ namespace RubiksCube
                 }
 
                 // Shape _| 1
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[2] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[42])
+                {
+                    await MakeTurnLetterAsync("L F R' F R F2 L'");
+                    continue;
+                }
 
+                // Shape _| 2
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[36] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("F R' F' R U R U' R'");
+                    continue;
+                }
+
+                // Shape _| 3
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("R' U' R y' x' R U' R' F R U R'");
+                    continue;
+                }
+
+                // Shape _| 4
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[42] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("U' R U2' R' U' R U' R2 y' R' U' R U B");
+                    continue;
+                }
+
+                // Shape _| 5
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[2] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[39])
+                {
+                    await MakeTurnLetterAsync("F R U R' U' R U R' U' F'");
+                    continue;
+                }
+
+                // Shape _| 6
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[2] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[39])
+                {
+                    await MakeTurnLetterAsync("L F' L' F U2 L2 y' L F L' F");
+                    continue;
+                }
 
                 // Shape |_ 1
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[42] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("U' R' U2 R U R' U R2 y R U R' U' F'");
+                    continue;
+                }
 
+                // Shape |_ 2
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[9] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[38] && aPieces[40] == aPieces[41])
+                {
+                    await MakeTurnLetterAsync("r U2 R' U' R U' r'");
+                    continue;
+                }
+
+                // Shape |_ 3
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[9] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[38] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[42])
+                {
+                    await MakeTurnLetterAsync("R' U2 l R U' R' U l' U2 R");
+                    continue;
+                }
+
+                // Shape |_ 4
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[9] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[41])
+                {
+                    await MakeTurnLetterAsync("F' L' U' L U L' U' L U F");
+                    continue;
+                }
+
+                // Shape |_ 5
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[2] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[41])
+                {
+                    await MakeTurnLetterAsync("R' F R' F' R2 U2 x' U' R U R'");
+                    continue;
+                }
+
+                // Shape |_ 6
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[2] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[41])
+                {
+                    await MakeTurnLetterAsync("R' F R F' U2 R2 y R' F' R F'");
+                    continue;
+                }
 
                 // Shape -| 1
+                if (aPieces[40] == aPieces[2] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[38] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("R U R' y R' F R U' R' F' R");
+                    continue;
+                }
 
+                // Shape -| 2
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[9] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[36] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("L' B' L U' R' U R L' B L");
+                    continue;
+                }
+
+                // Shape -| 3
+                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[43] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("U2 r R2' U' R U' R' U2 R U' M");
+                    continue;
+                }
+
+                // Shape -| 4
+                if (aPieces[40] == aPieces[9] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[36] && aPieces[40] == aPieces[38] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("x' U' R U' R2' F x R U R' U' R B2");
+                    continue;
+                }
 
                 // Shape |- 1
+                if (aPieces[40] == aPieces[2] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("L U' y' R' U2' R' U R U' R U2 R d' L'");
+                    continue;
+                }
 
+                // Shape |- 2
+                if (aPieces[40] == aPieces[2] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[42] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("U2 l' L2 U L' U L U2 L' U M");
+                    continue;
+                }
+
+                // Shape |- 3
+                if (aPieces[40] == aPieces[9] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[36] && aPieces[40] == aPieces[38] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("R2' U R' B' R U' R2' U l U l'");
+                    continue;
+                }
+
+                // Shape |- 4
+                if (aPieces[40] == aPieces[11] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[29] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[43] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("r' U2 R U R' U r");
+                    continue;
+                }
 
                 // C 1
+                if (aPieces[40] == aPieces[9] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[36] && aPieces[40] == aPieces[37] && aPieces[40] == aPieces[42] && aPieces[40] == aPieces[43])
+                {
+                    await MakeTurnLetterAsync("R U x' R U' R' U x U' R'");
+                    continue;
+                }
+
+                // C 2
+                if (aPieces[40] == aPieces[1] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[39] && aPieces[40] == aPieces[41] && aPieces[40] == aPieces[42] && aPieces[40] == aPieces[44])
+                {
+                    await MakeTurnLetterAsync("R U R' U' x D' R' U R E'");
+                    continue;
+                }
+
+                // L 1
 
 
             }
