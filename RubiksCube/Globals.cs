@@ -144,6 +144,7 @@ internal static class Globals
                     cTurn = turnFrontCCW;
                     break;
                 case "F2":
+                case "F2'":
                     cTurn = turnFront2;
                     break;
                 case "R":
@@ -153,6 +154,7 @@ internal static class Globals
                     cTurn = turnRightCCW;
                     break;
                 case "R2":
+                case "R2'":
                     cTurn = turnRight2;
                     break;
                 case "B":
@@ -162,6 +164,7 @@ internal static class Globals
                     cTurn = turnBackCCW;
                     break;
                 case "B2":
+                case "B2'":
                     cTurn = turnBack2;
                     break;
                 case "L":
@@ -171,6 +174,7 @@ internal static class Globals
                     cTurn = turnLeftCCW;
                     break;
                 case "L2":
+                case "L2'":
                     cTurn = turnLeft2;
                     break;
                 case "U":
@@ -180,6 +184,7 @@ internal static class Globals
                     cTurn = turnUpCCW;
                     break;
                 case "U2":
+                case "U2'":
                     cTurn = turnUp2;
                     break;
                 case "D":
@@ -189,6 +194,7 @@ internal static class Globals
                     cTurn = turnDownCCW;
                     break;
                 case "D2":
+                case "D2'":
                     cTurn = turnDown2;
                     break;
                 
@@ -200,6 +206,7 @@ internal static class Globals
                     cTurn = turnUpVerMiddleBack;
                     break;
                 case "M2":
+                case "M2'":
                     cTurn = turnUpVerMiddle2;
                     break;
                 case "E":
@@ -209,6 +216,7 @@ internal static class Globals
                     cTurn = turnFrontHorMiddleLeft;
                     break;
                 case "E2":
+                case "E2'":
                     cTurn = turnFrontHorMiddle2;
                     break;
                 case "S":
@@ -218,6 +226,7 @@ internal static class Globals
                     cTurn = turnUpHorMiddleLeft;
                     break;
                 case "S2":
+                case "S2'":
                     cTurn = turnUpHorMiddle2;
                     break;
                 
@@ -229,6 +238,7 @@ internal static class Globals
                     cTurn = turn2LayersFrontCCW;
                     break;
                 case "f2":
+                case "f2'":
                     cTurn = turn2LayersFront2;
                     break;
                 case "r":
@@ -238,6 +248,7 @@ internal static class Globals
                     cTurn = turn2LayersRightCCW;
                     break;
                 case "r2":
+                case "r2'":
                     cTurn = turn2LayersRight2;
                     break;
                 case "b":
@@ -247,6 +258,7 @@ internal static class Globals
                     cTurn = turn2LayersBackCCW;
                     break;
                 case "b2":
+                case "b2'":
                     cTurn = turn2LayersBack2;
                     break;
                 case "l":
@@ -256,6 +268,7 @@ internal static class Globals
                     cTurn = turn2LayersLeftCCW;
                     break;
                 case "l2":
+                case "l2'":
                     cTurn = turn2LayersLeft2;
                     break;
                 case "u":
@@ -265,6 +278,7 @@ internal static class Globals
                     cTurn = turn2LayersUpCCW;
                     break;
                 case "u2":
+                case "u2'":
                     cTurn = turn2LayersUp2;
                     break;
                 case "d":
@@ -274,6 +288,7 @@ internal static class Globals
                     cTurn = turn2LayersDownCCW;
                     break;
                 case "d2":
+                case "d2'":
                     cTurn = turn2LayersDown2;
                     break;
                 
@@ -285,6 +300,7 @@ internal static class Globals
                     cTurn = turnCubeFrontToDown;
                     break;
                 case "x2":
+                case "x2'":
                     cTurn = turnCubeFrontToUp2;
                     break;
                 case "y":
@@ -294,6 +310,7 @@ internal static class Globals
                     cTurn = turnCubeFrontToRight;
                     break;
                 case "y2":
+                case "y2'":
                     cTurn = turnCubeFrontToLeft2;
                     break;
                 case "z":
@@ -303,6 +320,7 @@ internal static class Globals
                     cTurn = turnCubeUpToLeft;
                     break;
                 case "z2":
+                case "z2'":
                     cTurn = turnCubeUpToRight2;
                     break;
                 default:
