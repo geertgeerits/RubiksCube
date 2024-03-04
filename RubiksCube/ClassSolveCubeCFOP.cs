@@ -2077,7 +2077,7 @@ namespace RubiksCube
                 }
 
                 // A 2
-                if (aPieces[22] == aPieces[9] && aPieces[13] == aPieces[0] && aPieces[31] == aPieces[18])
+                if (aPieces[4] == aPieces[29] && aPieces[13] == aPieces[0] && aPieces[31] == aPieces[11])
                 {
                     await MakeTurnLetterAsync("x' R U' R D2 R' U R D2 R2");
                     continue;
@@ -2104,7 +2104,7 @@ namespace RubiksCube
                     continue;
                 }
 
-                // I 1
+                // T 1
                 if (aPieces[4] == aPieces[18] && aPieces[22] == aPieces[2] && aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
                 {
                     await MakeTurnLetterAsync("R U R' U' R' F R2 U' R' U' R U R' F'");
@@ -2125,14 +2125,14 @@ namespace RubiksCube
                     continue;
                 }
 
-                // K 1
+                // R 1
                 if (aPieces[4] == aPieces[28] && aPieces[31] == aPieces[1] && aPieces[13] == aPieces[27] && aPieces[31] == aPieces[11])
                 {
-                    await MakeTurnLetterAsync("L U2' L' U2' L F' L' U' L U L F L2' U");
+                    await MakeTurnLetterAsync("L U2 L' U2 L F' L' U' L U L F L2 U");
                     continue;
                 }
 
-                // K 2
+                // R 2
                 if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1] && aPieces[13] == aPieces[27] && aPieces[31] == aPieces[11])
                 {
                     await MakeTurnLetterAsync("R' U2 R U2 R' F R U R' U' R' F' R2 U'");
@@ -2186,10 +2186,47 @@ namespace RubiksCube
                     }
                 }
 
-                // H 1
+                // F 1
+                if (aPieces[13] == aPieces[29] && aPieces[31] == aPieces[9] && aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
+                {
+                    await MakeTurnLetterAsync("R' U2 R' d' R' F' R2 U' R' U R' F R U' F");
+                    continue;
+                }
 
+                // Z 1
+                if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1] && aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
+                {
+                    await MakeTurnLetterAsync("M2 U M2 U M' U2 M2 U2 M' U2");
+                    continue;
+                }
 
+                // Y 1
+                if (aPieces[4] == aPieces[20] && aPieces[22] == aPieces[2] && aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
+                {
+                    await MakeTurnLetterAsync("F R U' R' U' R U R' F' R U R' U' R' F R F'");
+                    continue;
+                }
 
+                // N 1
+                if (aPieces[4] == aPieces[20] && aPieces[22] == aPieces[2] && aPieces[4] == aPieces[19] && aPieces[22] == aPieces[1])
+                {
+                    await MakeTurnLetterAsync("L U' R U2 L' U R' L U' R U2 L' U R' U");
+                    continue;
+                }
+
+                // N 2
+                if (aPieces[4] == aPieces[18] && aPieces[22] == aPieces[0] && aPieces[4] == aPieces[19] && aPieces[22] == aPieces[1])
+                {
+                    await MakeTurnLetterAsync("R' U L' U2 R U' L R' U L' U2 R U' L U'");
+                    continue;
+                }
+
+                // E 1
+                if (aPieces[4] == aPieces[20] && aPieces[22] == aPieces[0] && aPieces[4] == aPieces[18] && aPieces[22] == aPieces[2])
+                {
+                    await MakeTurnLetterAsync("X' R U' R' D R U R' u2 R' U R D R' U' R");
+                    continue;
+                }
 
 
 
