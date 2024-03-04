@@ -2048,6 +2048,8 @@ namespace RubiksCube
         // Permutate the last layer - PLL
         private static async Task<bool> SolveBottomLayerPermutationAsync()
         {
+            await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
+            
             int nLoopTimes = 0;
 
             while (true)
@@ -2060,13 +2062,132 @@ namespace RubiksCube
                 }
 
                 // If solved, break the loop
-                if (aPieces[40] == aPieces[0] && aPieces[40] == aPieces[1] && aPieces[40] == aPieces[2] && aPieces[40] == aPieces[9] && aPieces[40] == aPieces[10] && aPieces[40] == aPieces[11] && aPieces[40] == aPieces[18] && aPieces[40] == aPieces[19] && aPieces[40] == aPieces[20] && aPieces[40] == aPieces[27] && aPieces[40] == aPieces[28] && aPieces[40] == aPieces[29])
+                if (aPieces[4] == aPieces[0] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[2] && aPieces[13] == aPieces[9] && aPieces[13] == aPieces[10] && aPieces[13] == aPieces[11] && aPieces[22] == aPieces[18] && aPieces[22] == aPieces[19] && aPieces[22] == aPieces[20] && aPieces[31] == aPieces[27] && aPieces[31] == aPieces[28] && aPieces[31] == aPieces[29])
                 {
                     Debug.WriteLine("CFOP: number of turns last layer permutation: " + lCubeTurns.Count);
                     break;
                 }
 
                 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/permutate-the-last-layer-pll/
+                // A 1
+                if (aPieces[4] == aPieces[11] && aPieces[13] == aPieces[20] && aPieces[22] == aPieces[2])
+                {
+                    await MakeTurnLetterAsync("x R' U R' D2 R U' R' D2 R2");
+                    continue;
+                }
+
+                // A 2
+                if (aPieces[22] == aPieces[9] && aPieces[13] == aPieces[0] && aPieces[31] == aPieces[18])
+                {
+                    await MakeTurnLetterAsync("x' R U' R D2 R' U R D2 R2");
+                    continue;
+                }
+
+                // U 1
+                if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[28] && aPieces[31] == aPieces[1])
+                {
+                    await MakeTurnLetterAsync("R2 U R U R' U' R' U' R' U R'");
+                    continue;
+                }
+
+                // U 2
+                if (aPieces[4] == aPieces[28] && aPieces[13] == aPieces[1] && aPieces[31] == aPieces[10])
+                {
+                    await MakeTurnLetterAsync("R U' R U R U R U' R' U' R2");
+                    continue;
+                }
+
+                // H 1
+                if (aPieces[4] == aPieces[19] && aPieces[22] == aPieces[1] && aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
+                {
+                    await MakeTurnLetterAsync("M2 U M2 U2 M2 U M2");
+                    continue;
+                }
+
+                // I 1
+                if (aPieces[4] == aPieces[18] && aPieces[22] == aPieces[2] && aPieces[13] == aPieces[28] && aPieces[31] == aPieces[10])
+                {
+                    await MakeTurnLetterAsync("R U R' U' R' F R2 U' R' U' R U R' F'");
+                    continue;
+                }
+
+                // J 1
+                if (aPieces[13] == aPieces[27] && aPieces[31] == aPieces[11] && aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
+                {
+                    await MakeTurnLetterAsync("R' U L' U2 R U' R' U2 R L U'");
+                    continue;
+                }
+
+                // J 2
+                if (aPieces[4] == aPieces[18] && aPieces[22] == aPieces[2] && aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1])
+                {
+                    await MakeTurnLetterAsync("R U R' F' R U R' U' R' F R2 U' R' U'");
+                    continue;
+                }
+
+                // K 1
+                if (aPieces[4] == aPieces[28] && aPieces[31] == aPieces[1] && aPieces[13] == aPieces[27] && aPieces[31] == aPieces[11])
+                {
+                    await MakeTurnLetterAsync("L U2' L' U2' L F' L' U' L U L F L2' U");
+                    continue;
+                }
+
+                // K 2
+                if (aPieces[4] == aPieces[10] && aPieces[13] == aPieces[1] && aPieces[13] == aPieces[27] && aPieces[31] == aPieces[11])
+                {
+                    await MakeTurnLetterAsync("R' U2 R U2 R' F R U R' U' R' F' R2 U'");
+                    continue;
+                }
+
+                // V 1
+                if (aPieces[4] == aPieces[20] && aPieces[22] == aPieces[2] && aPieces[13] == aPieces[19] && aPieces[22] == aPieces[10])
+                {
+                    await MakeTurnLetterAsync("R' U R' d' R' F' R2 U' R' U R' F R F");
+                    continue;
+                }
+
+                // G 1
+                if (aPieces[4] == aPieces[18] && aPieces[13] == aPieces[20] && aPieces[22] == aPieces[29])
+                {
+                    if (aPieces[13] == aPieces[28] && aPieces[22] == aPieces[10] && aPieces[31] == aPieces[19])
+                    {
+                        await MakeTurnLetterAsync("R2 u R' U R' U' R u' R2 y' R' U R");
+                        continue;
+                    }
+                }
+
+                // G 2
+                if (aPieces[4] == aPieces[29] && aPieces[31] == aPieces[20] && aPieces[22] == aPieces[2])
+                {
+                    if (aPieces[4] == aPieces[19] && aPieces[31] == aPieces[1] && aPieces[22] == aPieces[28])
+                    {
+                        await MakeTurnLetterAsync("R' U' R y R2 u R' U R U' R u' R2");
+                        continue;
+                    }
+                }
+
+                // G 3
+                if (aPieces[4] == aPieces[29] && aPieces[31] == aPieces[20] && aPieces[22] == aPieces[2])
+                {
+                    if (aPieces[4] == aPieces[10] && aPieces[31] == aPieces[1] && aPieces[13] == aPieces[28])
+                    {
+                        await MakeTurnLetterAsync("R2 u' R U' R U R' u R2 y R U' R'");
+                        continue;
+                    }
+                }
+
+                // G 4
+                if (aPieces[4] == aPieces[18] && aPieces[22] == aPieces[0] && aPieces[13] == aPieces[20])
+                {
+                    if (aPieces[4] == aPieces[28] && aPieces[31] == aPieces[19] && aPieces[22] == aPieces[1])
+                    {
+                        await MakeTurnLetterAsync("R U R' y' R2 u' R U' R' U R' u R2");
+                        continue;
+                    }
+                }
+
+                // H 1
+
 
 
 

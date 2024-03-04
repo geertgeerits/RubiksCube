@@ -236,6 +236,12 @@ namespace RubiksCube
         // Lign up the center cube with the cube above the center cube
         public static async Task<bool> SolveTopLayerLineUpCenterAsync()
         {
+            if (aPieces[4] == aPieces[1])
+            {
+                // Do nothing
+                return true;
+            }
+
             if (aPieces[4] == aPieces[10])
             {
                 await MakeTurnWordAsync(turnUpCW);
