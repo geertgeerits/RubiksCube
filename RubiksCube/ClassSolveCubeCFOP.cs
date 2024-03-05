@@ -108,55 +108,8 @@ namespace RubiksCube
                 // Turn the cube
                 if (nLoopTimes > 1)
                 {
-                    await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    //await MakeTurnWordAsync(turnCubeFrontToLeft);
                 }
-
-                // https://solvethecube.com/algorithms
-                // 1. Basic cases
-                // 1.1   R U R'
-                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[37])
-                {
-                    if (aPieces[13] == aPieces[19] && aPieces[13] == aPieces[44])
-                    {
-                        await MakeTurnLetterAsync("R U R'");
-                        continue;
-                    }
-                }
-
-                // 1.2   F' U' F
-                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[28] && aPieces[4] == aPieces[44])
-                {
-                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[39])
-                    {
-                        await MakeTurnLetterAsync("F' U' F");
-                        continue;
-                    }
-                }
-
-                // 1.3   U R U' R'
-                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[41] && aPieces[4] == aPieces[44])
-                {
-                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[10])
-                    {
-                        await MakeTurnLetterAsync("U R U' R'");
-                        continue;
-                    }
-                }
-
-                // 1.4   U' F' U F
-                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[2])
-                {
-                    if (aPieces[13] == aPieces[43] && aPieces[13] == aPieces[44])
-                    {
-                        await MakeTurnLetterAsync("U' F' U F");
-                        continue;
-                    }
-                }
-
-                // 2. Corner and edge in top
-
-
-                ///////////////////////////////////////////////////////////////////////////////////////
 
                 // When two adjacent faces (front and right) have been solved, turn the cube
                 if (aPieces[49] == aPieces[46] && aPieces[49] == aPieces[47] && aPieces[49] == aPieces[50])
@@ -203,6 +156,429 @@ namespace RubiksCube
                         }
                     }
                 }
+
+                ///////////////////////////////////////////////////////////////////////////////////////
+
+                // https://solvethecube.com/algorithms
+                // 1. Basic cases
+                // 1.1   R U R'
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[37])
+                {
+                    if (aPieces[13] == aPieces[19] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("R U R'");
+                        continue;
+                    }
+                }
+
+                // 1.2   F' U' F
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[28] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[39])
+                    {
+                        await MakeTurnLetterAsync("F' U' F");
+                        continue;
+                    }
+                }
+
+                // 1.3   U R U' R'
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[41] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[10])
+                    {
+                        await MakeTurnLetterAsync("U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 1.4   U' F' U F
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[2])
+                {
+                    if (aPieces[13] == aPieces[43] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U' F' U F");
+                        continue;
+                    }
+                }
+
+                // 2. Corner and edge in top
+                // 2.1   (U' R U') (R' U R) U R'
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[10] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U' R U' R' U R U R'");
+                        continue;
+                    }
+                }
+
+                // 2.2   (U F' U) (F U' F') U' F
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("U F' U F U' F' U' F");
+                        continue;
+                    }
+                }
+
+                // 2.3   (U' R U) (R' U R) U R'
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[39])
+                {
+                    if (aPieces[13] == aPieces[28] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U' R U R' U R U R'");
+                        continue;
+                    }
+                }
+
+                // 2.4   (U F' U') (F U' F') U' F
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[19] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[37])
+                    {
+                        await MakeTurnLetterAsync("U F' U' F U' F' U' F");
+                        continue;
+                    }
+                }
+
+                // 2.5   d (R' U2 R) d' (R U R')
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[43])
+                {
+                    if (aPieces[13] == aPieces[1] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("d R' U2 R d' R U R'");
+                        continue;
+                    }
+                }
+
+                // 2.6   U' (R U2 R') d (R' U' R)
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[10] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[41])
+                    {
+                        await MakeTurnLetterAsync("U' R U2 R' d R' U' R");
+                        continue;
+                    }
+                }
+
+                // 2.7   (R U' R' U) d (R' U' R)
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[10])
+                {
+                    if (aPieces[13] == aPieces[41] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("R U' R' U d R' U' R");
+                        continue;
+                    }
+                }
+
+                // 2.8   (F' U F U') d' (F U F')
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[43] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[1] && aPieces[13] == aPieces[9])
+                    {
+                        await MakeTurnLetterAsync("F' U F U' d' F U F'");
+                        continue;
+                    }
+                }
+
+                // 2.9   (U F' U2 F) (U F' U2 F)
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[19])
+                {
+                    if (aPieces[13] == aPieces[37] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U F' U2 F U F' U2 F");
+                        continue;
+                    }
+                }
+
+                // 2.10   (U' R U2 R') (U' R U2 R')
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[39] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[28])
+                    {
+                        await MakeTurnLetterAsync("U' R U2 R' U' R U2 R'");
+                        continue;
+                    }
+                }
+
+                // 2.11   (U F' U' F) (U F' U2 F)
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[28])
+                {
+                    if (aPieces[13] == aPieces[39] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U F' U' F U F' U2 F");
+                        continue;
+                    }
+                }
+
+                // 2.12   (U' R U R') (U' R U2 R')
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[37] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[19])
+                    {
+                        await MakeTurnLetterAsync("U' R U R' U' R U2 R'");
+                        continue;
+                    }
+                }
+
+                // 3. Corner pointing up, edge in top
+                // 3.1   (R U2 R' U') (R U R')
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[10])
+                    {
+                        await MakeTurnLetterAsync("R U2 R' U' R U R'");
+                        continue;
+                    }
+                }
+
+                // 3.2   (F' U2 F U) (F' U' F)
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[9])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("F' U2 F U F' U' F");
+                        continue;
+                    }
+                }
+
+                // 3.3   (U R U2 R') (U R U' R')
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[37])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[19])
+                    {
+                        await MakeTurnLetterAsync("U R U2 R' U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 3.4   (U' F' U2 F) (U' F' U F)
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[28])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[39])
+                    {
+                        await MakeTurnLetterAsync("U' F' U2 F U' F' U F");
+                        continue;
+                    }
+                }
+
+                // 3.5   U2 (R U R' U) (R U' R')
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[39])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[28])
+                    {
+                        await MakeTurnLetterAsync("U2 R U R' U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 3.6   U2 (F' U' F U') (F' U F)
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[19])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[37])
+                    {
+                        await MakeTurnLetterAsync("U2 F' U' F U' F' U F");
+                        continue;
+                    }
+                }
+
+                // 3.7   (R U R' U') U' (R U R' U') (R U R')
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[43])
+                {
+                    if (aPieces[13] == aPieces[1] && aPieces[13] == aPieces[2])
+                    {
+                        await MakeTurnLetterAsync("R U R' U' U' R U R' U' R U R'");
+                        continue;
+                    }
+                }
+
+                // 3.8   y' (R' U' R U) U (R' U' R U) (R' U' R)
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[10])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[41])
+                    {
+                        await MakeTurnLetterAsync("y' R' U' R U U R' U' R U R' U' R");
+                        continue;
+                    }
+                }
+
+                // 4. Corner in top, edge in middle
+                // 4.1   (U F' U F) (U F' U2 F)
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[5])
+                {
+                    if (aPieces[13] == aPieces[12] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U F' U F U F' U2 F");
+                        continue;
+                    }
+                }
+
+                // 4.2   (U' R U' R') (U' R U2 R')
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("U' R U' R' U' R U2 R'");
+                        continue;
+                    }
+                }
+
+                // 4.3   (U F' U' F) (d' F U F')
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[12])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("U F' U' F d' F U F'");
+                        continue;
+                    }
+                }
+
+                // 4.4   (U' R U R') (d R' U' R)
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[9])
+                    {
+                        await MakeTurnLetterAsync("U' R U R' d R' U' R");
+                        continue;
+                    }
+                }
+
+                // 4.5   (R U' R') (d R' U R)
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[12])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[5])
+                    {
+                        await MakeTurnLetterAsync("R U' R' d R' U R");
+                        continue;
+                    }
+                }
+
+                // 4.6   (R U R' U') (R U R' U') (R U R')
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[9])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("R U R' U' R U R' U' R U R'");
+                        continue;
+                    }
+                }
+
+                // 5. Corner in bottom, edge in top
+                // 5.1   (U R U' R') (U' F' U F)
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[8])
+                {
+                    if (aPieces[13] == aPieces[15] && aPieces[13] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("U R U' R' U' F' U F");
+                        continue;
+                    }
+                }
+
+                // 5.2   (U' F' U F) (U R U' R')
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[10] && aPieces[13] == aPieces[15])
+                    {
+                        await MakeTurnLetterAsync("U' F' U F U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 5.3   (F' U F) (U' F' U F)
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[8] && aPieces[13] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("F' U F U' F' U F");
+                        continue;
+                    }
+                }
+
+                // 5.4   (R U' R') (U R U' R')
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[15] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[10] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("R U' R' U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 5.5   (R U R') (U' R U R')
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[41] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[8] && aPieces[13] == aPieces[10])
+                    {
+                        await MakeTurnLetterAsync("R U R' U' R U R'");
+                        continue;
+                    }
+                }
+
+                // 5.6   (F' U' F) (U F' U' F)
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[15])
+                {
+                    if (aPieces[13] == aPieces[43] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("F' U' F U F' U' F");
+                        continue;
+                    }
+                }
+
+                // 6. Corner in bottom, edge in middle
+                // 6.1   (R U' R' U) R U2 R' (U R U' R')
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[8] && aPieces[13] == aPieces[12])
+                    {
+                        await MakeTurnLetterAsync("R U' R' U R U2 R' U R U' R'");
+                        continue;
+                    }
+                }
+
+                // 6.2   (R U' R' U') (R U R' U') (R U2 R')
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[5] && aPieces[4] == aPieces[15])
+                {
+                    if (aPieces[13] == aPieces[12] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("R U' R' U' R U R' U' R U2 R'");
+                        continue;
+                    }
+                }
+
+                // 6.3   (R U R' U') (R U' R') U d (R' U' R)
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[8])
+                    {
+                        await MakeTurnLetterAsync("R U R' U' R U' R' U d R' U' R");
+                        continue;
+                    }
+                }
+
+                // 6.4   (R U' R') d (R' U' R U') (R' U' R)
+                if (aPieces[49] == aPieces[8] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[15])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[47])
+                    {
+                        await MakeTurnLetterAsync("R U' R' d R' U' R U' R' U' R");
+                        continue;
+                    }
+                }
+
+                // 6.5   (R U' R' d R' U2 R) (U R' U2 R)
+                if (aPieces[49] == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[4] == aPieces[12])
+                {
+                    if (aPieces[13] == aPieces[5] && aPieces[13] == aPieces[15])
+                    {
+                        await MakeTurnLetterAsync("R U' R' d R' U2 R U R' U2 R");
+                        continue;
+                    }
+                }
+
+                //continue;
+
+                ///////////////////////////////////////////////////////////////////////////////////////
 
                 // https://www.cubelelo.com/blogs/cubing/f2l-method-explained-solve-rubiks-cube-under-30-seconds
                 // Case 1: Basic cases

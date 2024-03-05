@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.15
-// Date ........: 2024-03-04 (YYYY-MM-DD)
+// Date ........: 2024-03-05 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -226,7 +226,12 @@ public partial class MainPage : ContentPage
             Array.Copy(Globals.aPieces, Globals.aStartPieces, 54);
 
             // Solve the cube
-            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Basic");
+            bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("CFOP");
+
+            if (!bSolved)
+            {
+                bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Basic");
+            }
 
             if (!bSolved)
             {
@@ -238,16 +243,11 @@ public partial class MainPage : ContentPage
                 bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
             }
 
-            //if (!bSolved)
-            //{
-            //    bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("CFOP");
-            //}
-
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();   // Test the turns of the cube
+            //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();   // For testing
             //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();   // For testing
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
             //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
-            //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();   // For testing
 
 
             // Restore the start colors of the cube from array aStartPieces[]
