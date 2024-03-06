@@ -15,6 +15,7 @@
 // https://www.youtube.com/watch?v=JHxLRfN4rSQ
 // https://www.youtube.com/watch?v=jKS9otGuu50&t=58s
 // https://www.youtube.com/watch?v=z6c6ll_rpBo
+// https://www.youtube.com/watch?v=Hx9ZbPdX8zM
 
 using System.Diagnostics;
 using static RubiksCube.Globals;
@@ -110,7 +111,7 @@ namespace RubiksCube
                 // Turn the cube
                 if (nLoopTimes > 1)
                 {
-                    //await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    await MakeTurnWordAsync(turnCubeFrontToLeft);
                 }
 
                 // When two adjacent faces (front and right) have been solved, turn the cube
@@ -183,11 +184,120 @@ namespace RubiksCube
                     }
                 }
 
-                // Situation 3
+                // Situation 3.1
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[6] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[28] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[14] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[17] && aPieces[13] == aPieces[39])
+                    {
+                        await MakeTurnLetterAsync("F' U F");
+                        continue;
+                    }
+                }
 
+                // Situation 3.2
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[6] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[19] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[14] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[17] && aPieces[13] == aPieces[37])
+                    {
+                        await MakeTurnLetterAsync("U' R U");
+                        continue;
+                    }
+                }
 
-                
                 ///////////////////////////////////////////////////////////////////////////////////////
+
+                // https://www.youtube.com/watch?v=Hx9ZbPdX8zM
+                // Part 1. Converting cases. Convert any F2L case into one of five using a 3-step process
+                if (aPieces[49] == aPieces[15] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[14] && aPieces[4] == aPieces[47])
+                {
+                    if (aPieces[13] == aPieces[8] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[21])
+                    {
+                        await MakeTurnLetterAsync("R U R' y R U' R'");
+                        continue;
+                    }
+                }
+
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[1] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[7])
+                {
+                    if (aPieces[31] == aPieces[9] && aPieces[31] == aPieces[34] && aPieces[31] == aPieces[43])
+                    {
+                        await MakeTurnLetterAsync("R' U R");
+                        continue;
+                    }
+                }
+
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[41])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[10] && aPieces[13] == aPieces[16])
+                    {
+                        await MakeTurnLetterAsync("U' R U' R'");
+                        continue;
+                    }
+                }
+
+                // Part 2. Five fundamental cases
+                // Case 1. Matching
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[19])
+                {
+                    if (aPieces[13] == aPieces[16] && aPieces[13] == aPieces[37] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("R' U2 R y U' L' U L");
+                        continue;
+                    }
+                }
+
+                // Case 2. Non-matching
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[37])
+                {
+                    if (aPieces[13] == aPieces[16] && aPieces[13] == aPieces[19] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("R U R'");
+                        continue;
+                    }
+                }
+
+                // Case 3. White on top
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[19])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[37])
+                    {
+                        await MakeTurnLetterAsync("U2 F' U' R y U' L' U L");
+                        continue;
+                    }
+                }
+
+                // Case 4. Mirrored matching
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[39] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[28])
+                    {
+                        await MakeTurnLetterAsync("U' R U2 R' U2 R U' R'");
+                        continue;
+                    }
+                }
+
+                // Case 5. Mirrored non-matching
+                if (aPieces[49] == aPieces[2] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[28] && aPieces[4] == aPieces[44])
+                {
+                    if (aPieces[13] == aPieces[9] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[39])
+                    {
+                        await MakeTurnLetterAsync("y L' U' L");
+                        continue;
+                    }
+                }
+
+                // Part 3. Solving the last pair
+                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[2] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[6] && aPieces[4] == aPieces[7] && aPieces[4] == aPieces[43])
+                {
+                    if (aPieces[13] == aPieces[1] && aPieces[13] == aPieces[14] && aPieces[13] == aPieces[16] && aPieces[13] == aPieces[17] && aPieces[13] == aPieces[44])
+                    {
+                        await MakeTurnLetterAsync("y' U R' U2 R y U' R U R'");
+                        continue;
+                    }
+                }
+
+                ///////////////////////////////////////////////////////////////////////////////////////
+
                 // https://solvethecube.com/algorithms
 
                 // 1. Basic cases
@@ -1003,14 +1113,14 @@ namespace RubiksCube
                 // Edge in the wrong slot
                 // Case: The edge is in the wrong slot, but the corner is still in the top
                 // 1
-                if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
-                {
-                    if (aPieces[31] == aPieces[2] && aPieces[31] == aPieces[5])
-                    {
-                        await MakeTurnLetterAsync("U F' U F U'");
-                        continue;
-                    }
-                }
+                //if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
+                //{
+                //    if (aPieces[31] == aPieces[2] && aPieces[31] == aPieces[5])
+                //    {
+                //        await MakeTurnLetterAsync("U F' U F U'");
+                //        continue;
+                //    }
+                //}
 
                 // 2 (!!! same picture as the previous one !!!)
                 //if (aPieces[49] == aPieces[9] && aPieces[4] == aPieces[12] && aPieces[4] == aPieces[44])
@@ -2050,59 +2160,53 @@ namespace RubiksCube
                 //    }
                 //}
 
+                /////////////////////////////////////////////////////////////////////////////////////////////////
+
                 // https://drive.google.com/file/d/1nzAXYUWZJ6H2wIOXaHdWXep3W57tArbR/view
                 // Section 2: Advanced F2L
                 // 36 advanced cases: 1 piece is in the wrong slot.
                 // Section 2A: Edge is in the wrong slot.
                 // White sticker faces Up
                 // 1. U' R' U R2 U' R'
-                //if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[21])
-                //{
-                //    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[14])
-                //    {
-                //        await MakeTurnLetterAsync("U' R' U R2 U' R'");
-                //        continue;
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[21])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[14])
+                    {
+                        await MakeTurnLetterAsync("U' R' U R2 U' R'");
+                        continue;
 
-                //    }
-                //}
+                    }
+                }
 
-                //// 2. y U L U' L2' U L
-                //if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[9])
-                //{
-                //    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[32])
-                //    {
-                //        await MakeTurnLetterAsync("y U L U' L2' U L");
-                //        continue;
-                //    }
-                //}
+                // 2. y U L U' L2' U L
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[3] && aPieces[4] == aPieces[9])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[32])
+                    {
+                        await MakeTurnLetterAsync("y U L U' L2' U L");
+                        continue;
+                    }
+                }
 
-                //// 3. U2 (R' U R) U' (S R S') or y R' F R2 U' R' U2 F' or y2 U2 (L F' L' F) (L U L')
-                //if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[14])
-                //{
-                //    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[21])
-                //    {
-                //        await MakeTurnLetterAsync("U2 R' U R U' S R S'");
-                //        continue;
-                //    }
-                //}
+                // 3. U2 (R' U R) U' (S R S') or y R' F R2 U' R' U2 F' or y2 U2 (L F' L' F) (L U L')
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[14])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[21])
+                    {
+                        await MakeTurnLetterAsync("U2 R' U R U' S R S'");
+                        continue;
+                    }
+                }
 
-                //// 4. y U2 (L U' L') U (S' L' S) or L F' L2' U L U2' F or y' U2 (R' F R F') (R' U' R)
-                //if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[32])
-                //{
-                //    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[3])
-                //    {
-                //        await MakeTurnLetterAsync("y U2 L U' L' U S' L' S");
-                //        continue;
-                //    }
-                //}
-
-
-
-
-
-
-
-
+                // 4. y U2 (L U' L') U (S' L' S) or L F' L2' U L U2' F or y' U2 (R' F R F') (R' U' R)
+                if (aPieces[49] == aPieces[44] && aPieces[4] == aPieces[9] && aPieces[4] == aPieces[32])
+                {
+                    if (aPieces[13] == aPieces[2] && aPieces[13] == aPieces[3])
+                    {
+                        await MakeTurnLetterAsync("y U2 L U' L' U S' L' S");
+                        continue;
+                    }
+                }
             }
 
             return true;
@@ -2634,7 +2738,7 @@ namespace RubiksCube
                 // Y
                 if (aPieces[13] == aPieces[27] && aPieces[31] == aPieces[9] && aPieces[22] == aPieces[28] && aPieces[31] == aPieces[19])
                 {
-                    await MakeTurnLetterAsync("(F R U' R' U' R U R' F' R U R' U' R' F R F'");
+                    await MakeTurnLetterAsync("F R U' R' U' R U R' F' R U R' U' R' F R F'");
                     continue;
                 }
 
