@@ -8,6 +8,7 @@ namespace RubiksCube
 {
     internal class ClassSolveCubeMain
     {
+        private const string cNone = "None";
         private static readonly List<string> lCubeTurnsTemp = [];
         private static readonly List<string> lCubePositions = [];
 
@@ -66,7 +67,7 @@ namespace RubiksCube
         private static async Task SolveCubeFromMultiplePositions2Async(string cSolution)
         {
             // Add 'None' to the list
-            lCubePositions.Add("None");
+            lCubePositions.Add(cNone);
 
             // 1. Start position
             if (await SolveCubeFromMultiplePositions3Async(cSolution, ""))
@@ -113,7 +114,7 @@ namespace RubiksCube
             {
                 foreach (string cItem in lCubePositions)
                 {
-                    if (cItem != "None")
+                    if (cItem != cNone)
                     {
                         // Add the turn to the list
                         lCubeTurns.Add(cItem);
@@ -194,42 +195,42 @@ namespace RubiksCube
                     if (lCubeTurnsTemp[i].EndsWith("CCW"))
                     {
                         lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^3] + "2";
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i].EndsWith("CW"))
                     {
                         lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^2] + "2";
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i] == turnUpHorMiddleRight || lCubeTurnsTemp[i] == turnUpHorMiddleLeft)
                     {
                         lCubeTurnsTemp[i] = turnUpHorMiddle2;
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i] == turnUpVerMiddleBack || lCubeTurnsTemp[i] == turnUpVerMiddleFront)
                     {
                         lCubeTurnsTemp[i] = turnUpVerMiddle2;
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i] == turnFrontHorMiddleLeft || lCubeTurnsTemp[i] == turnFrontHorMiddleRight)
                     {
                         lCubeTurnsTemp[i] = turnFrontHorMiddle2;
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i] == turnCubeFrontToRight || lCubeTurnsTemp[i] == turnCubeFrontToLeft)
                     {
                         lCubeTurnsTemp[i] = turnCubeFrontToLeft2;
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i] == turnCubeFrontToUp || lCubeTurnsTemp[i] == turnCubeFrontToDown)
                     {
                         lCubeTurnsTemp[i] = turnCubeFrontToUp2;
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                     else if (lCubeTurnsTemp[i] == turnCubeUpToRight || lCubeTurnsTemp[i] == turnCubeUpToLeft)
                     {
                         lCubeTurnsTemp[i] = turnCubeUpToRight2;
-                        lCubeTurnsTemp[i + 1] = "None";
+                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                 }
             }
@@ -239,8 +240,8 @@ namespace RubiksCube
             {
                 if (lCubeTurnsTemp[i] == turnFrontCW && lCubeTurnsTemp[i + 1] == turnFrontCCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnFrontCCW && lCubeTurnsTemp[i + 1] == turnFrontCW)
@@ -251,134 +252,162 @@ namespace RubiksCube
 
                 if (lCubeTurnsTemp[i] == turnRightCW && lCubeTurnsTemp[i + 1] == turnRightCCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnRightCCW && lCubeTurnsTemp[i + 1] == turnRightCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnBackCW && lCubeTurnsTemp[i + 1] == turnBackCCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnBackCCW && lCubeTurnsTemp[i + 1] == turnBackCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnLeftCW && lCubeTurnsTemp[i + 1] == turnLeftCCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnLeftCCW && lCubeTurnsTemp[i + 1] == turnLeftCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnUpCW && lCubeTurnsTemp[i + 1] == turnUpCCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnUpCCW && lCubeTurnsTemp[i + 1] == turnUpCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnDownCW && lCubeTurnsTemp[i + 1] == turnDownCCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnDownCCW && lCubeTurnsTemp[i + 1] == turnDownCW)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnUpHorMiddleRight && lCubeTurnsTemp[i + 1] == turnUpHorMiddleLeft)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnUpHorMiddleLeft && lCubeTurnsTemp[i + 1] == turnUpHorMiddleRight)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnUpVerMiddleBack && lCubeTurnsTemp[i + 1] == turnUpVerMiddleFront)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnUpVerMiddleFront && lCubeTurnsTemp[i + 1] == turnUpVerMiddleBack)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnFrontHorMiddleLeft && lCubeTurnsTemp[i + 1] == turnFrontHorMiddleRight)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnFrontHorMiddleRight && lCubeTurnsTemp[i + 1] == turnFrontHorMiddleLeft)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnCubeFrontToLeft && lCubeTurnsTemp[i + 1] == turnCubeFrontToRight)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnCubeFrontToRight && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnCubeUpToLeft && lCubeTurnsTemp[i + 1] == turnCubeUpToRight)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnCubeUpToRight && lCubeTurnsTemp[i + 1] == turnCubeUpToLeft)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnCubeFrontToUp && lCubeTurnsTemp[i + 1] == turnCubeFrontToDown)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
                 }
 
                 if (lCubeTurnsTemp[i] == turnCubeFrontToDown && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp)
                 {
-                    lCubeTurnsTemp[i] = "None";
-                    lCubeTurnsTemp[i + 1] = "None";
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+            }
+
+            // Remove or change other turns
+            for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
+            {
+                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft2)
+                {
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+
+                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
+                {
+                    lCubeTurnsTemp[i] = "turnCubeFrontToRight";
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+
+                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == cNone && lCubeTurnsTemp[i + 2] == turnCubeFrontToLeft2)
+                {
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 2] = cNone;
+                }
+
+                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == cNone && lCubeTurnsTemp[i + 2] == turnCubeFrontToLeft)
+                {
+                    lCubeTurnsTemp[i] = "turnCubeFrontToRight";
+                    lCubeTurnsTemp[i + 2] = cNone;
                 }
             }
 
@@ -387,7 +416,7 @@ namespace RubiksCube
             
             for (int i = 0; i < lCubeTurnsTemp.Count; i++)
             {
-                if (lCubeTurnsTemp[i] != "None")
+                if (lCubeTurnsTemp[i] != cNone)
                 {
                     lCubeTurns.Add(lCubeTurnsTemp[i]);
                 }
