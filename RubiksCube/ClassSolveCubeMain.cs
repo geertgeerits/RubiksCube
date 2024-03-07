@@ -235,6 +235,9 @@ namespace RubiksCube
                 }
             }
 
+            // Remove the items with 'None'
+            lCubeTurnsTemp.RemoveAll(x => x == cNone);
+
             // Remove the opposite turns
             for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
             {
@@ -383,6 +386,9 @@ namespace RubiksCube
                 }
             }
 
+            // Remove the items with 'None'
+            lCubeTurnsTemp.RemoveAll(x => x == cNone);
+
             // Remove or change other turns
             for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
             {
@@ -394,20 +400,8 @@ namespace RubiksCube
 
                 if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
                 {
-                    lCubeTurnsTemp[i] = "turnCubeFrontToRight";
+                    lCubeTurnsTemp[i] = turnCubeFrontToRight;
                     lCubeTurnsTemp[i + 1] = cNone;
-                }
-
-                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == cNone && lCubeTurnsTemp[i + 2] == turnCubeFrontToLeft2)
-                {
-                    lCubeTurnsTemp[i] = cNone;
-                    lCubeTurnsTemp[i + 2] = cNone;
-                }
-
-                if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == cNone && lCubeTurnsTemp[i + 2] == turnCubeFrontToLeft)
-                {
-                    lCubeTurnsTemp[i] = "turnCubeFrontToRight";
-                    lCubeTurnsTemp[i + 2] = cNone;
                 }
             }
 

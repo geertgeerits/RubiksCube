@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.15
-// Date ........: 2024-03-06 (YYYY-MM-DD)
+// Date ........: 2024-03-07 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -263,7 +263,7 @@ public partial class MainPage : ContentPage
 
         // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnAsync()
         // If not testing the solution to solve the cube then set bTestSolveCube = false
-        bTestSolveCube = false;
+        bTestSolveCube = true;
 
         if (bSolved)
         {
@@ -1025,7 +1025,7 @@ public partial class MainPage : ContentPage
                 break;
 
             default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, $"SetImageButtonArrowIsEnabledAsync cTurn: {cTurn} not found", CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"SetImageButtonArrowIsEnabledAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
                 break;
         }
     }
@@ -1210,7 +1210,7 @@ public partial class MainPage : ContentPage
                 break;
             
             default:
-                await DisplayAlert(CubeLang.ErrorTitle_Text, $"SetExplainTextAsync cTurn: {cTurn} not found", CubeLang.ButtonClose_Text);
+                await DisplayAlert(CubeLang.ErrorTitle_Text, $"SetExplainTextAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
                 break;
         }
 

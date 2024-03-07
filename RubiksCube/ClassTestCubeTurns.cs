@@ -42,15 +42,15 @@ namespace RubiksCube
             //// Test two layers at the same time
 
             //// Test the cube turns
-            //await MakeTurnWordAsync(turnCubeFrontToRight);
-            //await MakeTurnWordAsync(turnCubeFrontToLeft);
-            //await MakeTurnWordAsync(turnCubeFrontToLeft2);
-            //await MakeTurnWordAsync(turnCubeFrontToUp);
-            //await MakeTurnWordAsync(turnCubeFrontToUp2);
-            //await MakeTurnWordAsync(turnCubeFrontToDown);
-            //await MakeTurnWordAsync(turnCubeUpToRight);
-            //await MakeTurnWordAsync(turnCubeUpToRight2);
-            //await MakeTurnWordAsync(turnCubeUpToLeft);
+            await MakeTurnWordAsync(turnCubeFrontToRight);
+            await MakeTurnWordAsync(turnCubeFrontToLeft);
+            await MakeTurnWordAsync(turnCubeFrontToLeft2);
+            await MakeTurnWordAsync(turnCubeFrontToUp);
+            await MakeTurnWordAsync(turnCubeFrontToUp2);
+            await MakeTurnWordAsync(turnCubeFrontToDown);
+            await MakeTurnWordAsync(turnCubeUpToRight);
+            await MakeTurnWordAsync(turnCubeUpToRight2);
+            await MakeTurnWordAsync(turnCubeUpToLeft);
 
             // Use turn letters to test the turns of the cube
             // Test the face turns
