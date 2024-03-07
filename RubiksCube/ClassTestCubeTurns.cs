@@ -7,7 +7,7 @@ namespace RubiksCube
         //// Test the turns of the cube
         public static async Task<bool> TestCubeTurnsAsync()
         {
-            /// Use turn words to test the turns of the cube
+            //// Use turn words to test the turns of the cube
             // Test the face turns
             //await MakeTurnWordAsync(turnFrontCW);
             //await MakeTurnWordAsync(turnFrontCCW);

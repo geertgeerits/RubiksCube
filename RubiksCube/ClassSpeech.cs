@@ -5,7 +5,7 @@
         private static IEnumerable<Locale> locales;
 
         //// Initialize text to speech and fill the the array with the speech languages
-        // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        //   .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
         public static async void InitializeTextToSpeech(string cCultureName)
         {
             // Initialize text to speech

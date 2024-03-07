@@ -232,7 +232,7 @@
             }
         }
 
-        /// Turn the entire cube a quarter turn
+        //// Turn the entire cube a quarter turn
         // Rotate the entire cube so that the front goes to the left face
         private static void TurnCubeFrontFaceToLeftFace()
         {
@@ -281,7 +281,7 @@
             TurnBackFaceTo("CW");
         }
 
-        /// Turn the entire front face clockwise or counter clockwise
+        //// Turn the entire front face clockwise or counter clockwise
         public static void TurnFrontFaceTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -343,7 +343,7 @@
             }
         }
 
-        /// Turn the top horizontal middle layer to the right or left
+        //// Turn the top horizontal middle layer to the right or left
         public static void TurnUpHorMiddleTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -387,7 +387,7 @@
             }
         }
 
-        /// Turn the entire back face clockwise or counter clockwise
+        //// Turn the entire back face clockwise or counter clockwise
         public static void TurnBackFaceTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -449,7 +449,7 @@
             }
         }
 
-        /// Turn the entire left face clockwise or counter clockwise
+        //// Turn the entire left face clockwise or counter clockwise
         public static void TurnLeftFaceTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -511,7 +511,7 @@
             }
         }
 
-        /// Turn the top vertical middle layer to back or front
+        //// Turn the top vertical middle layer to back or front
         public static void TurnUpVerMiddleTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -555,7 +555,7 @@
             }
         }
 
-        /// Turn the entire right face clockwise or counter clockwise
+        //// Turn the entire right face clockwise or counter clockwise
         public static void TurnRightFaceTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -617,7 +617,7 @@
             }
         }
 
-        /// Turn the entire upper face clockwise or counter clockwise
+        //// Turn the entire upper face clockwise or counter clockwise
         public static void TurnUpFaceTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -679,7 +679,7 @@
             }
         }
 
-        /// Turn the front horizontal middle layer to right or left
+        //// Turn the front horizontal middle layer to right or left
         public static void TurnFrontHorMiddleTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
@@ -723,7 +723,7 @@
             }
         }
 
-        /// Turn the entire down face clockwise or counter clockwise
+        //// Turn the entire down face clockwise or counter clockwise
         public static void TurnDownFaceTo(string cDirection)
         {
             Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);

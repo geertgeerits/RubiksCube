@@ -263,7 +263,7 @@ public partial class MainPage : ContentPage
 
         // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnAsync()
         // If not testing the solution to solve the cube then set bTestSolveCube = false
-        bTestSolveCube = true;
+        bTestSolveCube = false;
 
         if (bSolved)
         {
@@ -330,7 +330,7 @@ public partial class MainPage : ContentPage
     }
 
     //// Turn the faces of the cube
-    /// Turn the front face clockwise (to right +)
+    //// Turn the front face clockwise (to right +)
     private void OnTurnFrontFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -350,7 +350,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the upper horizontal middle to the right face (+)
+    //// Turn the upper horizontal middle to the right face (+)
     private void OnTurnUpHorMiddleToRightFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -376,7 +376,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the back face counter clockwise (to left -)
+    //// Turn the back face counter clockwise (to left -)
     private void OnTurnBackFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -396,7 +396,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the left face clockwise (to right +)
+    //// Turn the left face clockwise (to right +)
     private void OnTurnLeftFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -416,7 +416,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the upper vertical middle to the front face (-)
+    //// Turn the upper vertical middle to the front face (-)
     private void OnTurnUpVerMiddleToFrontFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -442,7 +442,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the right face counter clockwise (to left -)
+    //// Turn the right face counter clockwise (to left -)
     private void OnTurnRightFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -462,7 +462,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the upper face counter clockwise (to left -)
+    //// Turn the upper face counter clockwise (to left -)
     private void OnTurnUpFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -482,7 +482,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the front horizontal middle to the right face (-)
+    //// Turn the front horizontal middle to the right face (-)
     private void OnTurnFrontHorMiddleToRightFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -508,7 +508,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the down face clockwise (to right +)
+    //// Turn the down face clockwise (to right +)
     private void OnTurnDownFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -528,7 +528,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the upper face clockwise (to right +)
+    //// Turn the upper face clockwise (to right +)
     private void OnTurnUpFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -548,7 +548,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the front horizontal middle to the left face (+)
+    //// Turn the front horizontal middle to the left face (+)
     private void OnTurnFrontHorMiddleToLeftFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -574,7 +574,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the down face counter clockwise (to left -)
+    //// Turn the down face counter clockwise (to left -)
     private void OnTurnDownFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -594,7 +594,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the left face counter clockwise (to left -)
+    //// Turn the left face counter clockwise (to left -)
     private void OnTurnLeftFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -614,7 +614,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the upper vertical middle to the back face (+)
+    //// Turn the upper vertical middle to the back face (+)
     private void OnTurnUpVerMiddleToBackFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -640,7 +640,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the right face clockwise (to right +)
+    //// Turn the right face clockwise (to right +)
     private void OnTurnRightFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -660,7 +660,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the front face counter clockwise (to left -)
+    //// Turn the front face counter clockwise (to left -)
     private void OnTurnFrontFaceToLeftClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -680,7 +680,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the upper horizontal middle to the left face (-)
+    //// Turn the upper horizontal middle to the left face (-)
     private void OnTurnUpHorMiddleToLeftFaceClicked(object sender, EventArgs e)
     {
         if (bColorDrop)
@@ -706,7 +706,7 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the back face clockwise (to right +)
+    //// Turn the back face clockwise (to right +)
     private void OnTurnBackFaceToRightClicked(object sender, EventArgs e)
     {
         if (bSolvingCube)
@@ -726,8 +726,8 @@ public partial class MainPage : ContentPage
         GetCubeColorsFromArrays();
     }
 
-    /// Turn the entire cube a quarter turn
-    // Rotate the entire cube so that the front goes to the left face
+    //// Turn the entire cube a quarter turn
+    //   Rotate the entire cube so that the front goes to the left face
     private void TurnCubeFrontFaceToLeftFace()
     {
         if (!bSolvingCube)

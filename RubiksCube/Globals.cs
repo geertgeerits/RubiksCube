@@ -7,7 +7,7 @@ namespace RubiksCube;
 //// Global variables and methods
 internal static class Globals
 {
-    /// Global variables
+    //// Global variables
     public static string cTheme;
     public static string cLanguage;
     public static bool bLanguageChanged = false;
@@ -89,7 +89,7 @@ internal static class Globals
     public const string turnCubeUpToRight2 = "TurnCubeUpToRight2";
     public const string turnCubeUpToLeft = "TurnCubeUpToLeft";
 
-    /// Global methods
+    //// Global methods
     // Set the theme
     public static void SetTheme()
     {
@@ -101,7 +101,7 @@ internal static class Globals
         };
     }
 
-    // Set the current UI culture of the selected language
+    //// Set the current UI culture of the selected language
     public static void SetCultureSelectedLanguage()
     {
         try
@@ -115,7 +115,7 @@ internal static class Globals
         }
     }
 
-    /// Make a turn (with 1 word) of the cube/face/side
+    //// Make a turn (with 1 word) of the cube/face/side
     public static async Task MakeTurnWordAsync(string cTurn)
     {
         // Add the turn to the list
@@ -125,7 +125,7 @@ internal static class Globals
         await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
     }
 
-    /// Make a turn (with 1 or more letters) of the cube/face/side
+    //// Make a turn (with 1 or more letters) of the cube/face/side
     public static async Task MakeTurnLetterAsync(string cTurn)
     {
         // Remove leading and trailing whitespace

@@ -14,7 +14,7 @@
 
             int nItem;
 
-            /// Check the number of colors of the cube
+            //// Check the number of colors of the cube
             // Front face
             for (nItem = 0; nItem < 9; nItem++)
             {
@@ -243,7 +243,7 @@
                 return false;
             }
 
-            /// Check the number of colors of the central square of the cube
+            //// Check the number of colors of the central square of the cube
             bool bColorCenterCube = true;
 
             if (Globals.aPieces[40] == Globals.aPieces[4] || Globals.aPieces[40] == Globals.aPieces[13] || Globals.aPieces[40] == Globals.aPieces[31] || Globals.aPieces[40] == Globals.aPieces[22] || Globals.aPieces[40] == Globals.aPieces[49])
@@ -270,7 +270,7 @@
                 return false;
             }
 
-            /// Check the number of colors of the corner cubes of the cube if there are no corner cubes with the same color
+            //// Check the number of colors of the corner cubes of the cube if there are no corner cubes with the same color
             bool bColorCornerCube = true;
 
             if (Globals.aPieces[42] == Globals.aPieces[29] || Globals.aPieces[42] == Globals.aPieces[0] || Globals.aPieces[0] == Globals.aPieces[29])
@@ -303,7 +303,7 @@
                 return false;
             }
 
-            /// Check the number of colors of the corner cubes if there are no more than 4 of the same colors on an corner
+            //// Check the number of colors of the corner cubes if there are no more than 4 of the same colors on an corner
             int[] aNumberOfColors = [0, 0, 0, 0, 0, 0, 0];
 
             CheckNumberColorsCornerCube(aNumberOfColors, 1);
@@ -319,7 +319,7 @@
                 return false;
             }
 
-            /// Check the number of colors of the edge cubes if there are no edge cubes with the same color
+            //// Check the number of colors of the edge cubes if there are no edge cubes with the same color
             bColorCornerCube = true;
 
             if (Globals.aPieces[37] == Globals.aPieces[19] || Globals.aPieces[39] == Globals.aPieces[28] || Globals.aPieces[41] == Globals.aPieces[10] || Globals.aPieces[43] == Globals.aPieces[1])
@@ -334,7 +334,7 @@
                 return false;
             }
 
-            /// Check the number of colors of the edge cubes if there are no more than 4 of the same colors on an edge
+            //// Check the number of colors of the edge cubes if there are no more than 4 of the same colors on an edge
             aNumberOfColors = [0, 0, 0, 0, 0, 0, 0];
 
             CheckNumberColorsEdgeCube(aNumberOfColors, 1);
@@ -350,7 +350,7 @@
                 return false;
             }
 
-            /// Check the opposite center pieces of the cube
+            //// Check the opposite center pieces of the cube
             // Colors: 1= red, 2= blue, 3= orange, 4= green, 5= white, 6= yellow
             // Center pieces: 4= front/red, 13= right/blue, 22= back/orange, 31= left/green, 40= up/white, 49= down/yellow
             // Opposite colors: red-orange 1-3, blue-green 2-4, white-yellow 5-6
@@ -436,7 +436,7 @@
             return true;
         }
 
-        /// Check the opposite center pieces of the cube
+        //// Check the opposite center pieces of the cube
         private static bool CheckOppositeCenterPieces(int nPiece1, int nColor1, int nPiece2, int nColor2)
         {
             if (Globals.aPieces[nPiece1] == Globals.aFaceColors[nColor1] && Globals.aPieces[nPiece2] != Globals.aFaceColors[nColor2])
@@ -447,7 +447,7 @@
             return true;
         }
 
-        /// Check the number of colors on the corner cubes
+        //// Check the number of colors on the corner cubes
         private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)
         {
             // Up face
@@ -511,7 +511,7 @@
                 aNumberOfColors[nColor]++;
         }
 
-        /// Check the number of colors on the edge cubes
+        //// Check the number of colors on the edge cubes
         private static void CheckNumberColorsEdgeCube(int[] aNumberOfColors, int nColor)
         {
             // Up face

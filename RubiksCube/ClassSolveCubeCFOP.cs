@@ -69,7 +69,7 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the first two layers (F2L)
+        //// Solve the first two layers (F2L)
         private static async Task<bool> SolveFirstTwoLayersAsync()
         {
             string cT;
@@ -160,7 +160,7 @@ namespace RubiksCube
                     }
                 }
 
-                ///////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://kubuspuzzel.nl/3x3-kubus-oplossen/f2l/
                 // Split
@@ -204,7 +204,7 @@ namespace RubiksCube
                     }
                 }
 
-                ///////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://www.youtube.com/watch?v=Hx9ZbPdX8zM
                 // Part 1. Converting cases. Convert any F2L case into one of five using a 3-step process
@@ -296,7 +296,7 @@ namespace RubiksCube
                     }
                 }
 
-                ///////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://solvethecube.com/algorithms
 
@@ -718,7 +718,7 @@ namespace RubiksCube
 
                 //continue;
 
-                ///////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://www.cubelelo.com/blogs/cubing/f2l-method-explained-solve-rubiks-cube-under-30-seconds
                 // Case 1: Basic cases
@@ -1253,7 +1253,7 @@ namespace RubiksCube
 
                 //continue;
 
-                /////////////////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/
                 // Step 2: First two layers - F2L
@@ -1647,7 +1647,7 @@ namespace RubiksCube
 
                 //continue;
 
-                /////////////////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://www.rubiksplace.com/speedcubing/F2L-algorithms/
                 // Corner on top, FL color facing side, edge colors match
@@ -2068,7 +2068,7 @@ namespace RubiksCube
 
                 //continue;
 
-                /////////////////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://www.youtube.com/watch?v=Ar_Zit1VLG0
                 // 4. Fundamental algorithms
@@ -2160,7 +2160,7 @@ namespace RubiksCube
                 //    }
                 //}
 
-                /////////////////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://drive.google.com/file/d/1nzAXYUWZJ6H2wIOXaHdWXep3W57tArbR/view
                 // Section 2: Advanced F2L
@@ -2212,7 +2212,7 @@ namespace RubiksCube
             return true;
         }
 
-        // OLL (Orientation of Last Layer)
+        //// OLL (Orientation of Last Layer)
         // 2-Look OLL
         private static async Task<bool> SolveBottomLayerOrientationAsync()
         {
@@ -2643,7 +2643,7 @@ namespace RubiksCube
             return true;
         }
 
-        // Permutate the last layer - PLL
+        //// Permutate the last layer - PLL
         private static async Task<bool> SolveBottomLayerPermutationAsync()
         {
             await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
@@ -2840,7 +2840,7 @@ namespace RubiksCube
 
                 continue;
 
-                /////////////////////////////////////////////////////////////////////////////////////////////
+                //--------------------------------------------------------------------------------------------------------------
 
                 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/permutate-the-last-layer-pll/
                 // A 1

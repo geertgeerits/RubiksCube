@@ -167,7 +167,7 @@ public partial class PageSettings : ContentPage
     }
 
     //// Fill the picker with the speech languages from the array
-    // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+    //   .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
     private void FillPickerWithSpeechLanguages()
     {
         // If there are no locales then return

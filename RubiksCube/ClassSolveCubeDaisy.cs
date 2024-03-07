@@ -65,7 +65,7 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the corners of the top layer but turned at the bottom
+        //// Solve the corners of the top layer but turned at the bottom
         private static async Task<bool> SolveTopLayerCornersAsync()
         {
             string cB = aPieces[49];
@@ -362,10 +362,9 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the middle layer
+        //// Solve the middle layer
         private static async Task<bool> SolveMiddleLayerAsync()
         {
-            string cB = aPieces[49];
             int nLoopTimes = 0;
 
             while (true)
@@ -444,8 +443,8 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the bottom layer
-        /// Make a cross
+        //// Solve the bottom layer
+        //   Make a cross
         private static async Task<bool> SolveBottomLayerEdgesAsync()
         {
             string cB = aPieces[40];
@@ -514,8 +513,8 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the bottom layer
-        /// Put the edges on the correct place
+        //// Solve the bottom layer
+        //   Put the edges on the correct place
         private static async Task<bool> SolveBottomLayerEdges2Async()
         {
             string cB = aPieces[40];
@@ -551,8 +550,8 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the bottom layer
-        /// Corners on their places
+        //// Solve the bottom layer
+        //   Corners on their places
         private static async Task<bool> SolveBottomLayerCornersAsync()
         {
             int nLoopTimes = 0;
@@ -651,7 +650,7 @@ namespace RubiksCube
             return true;
         }
 
-        /// Corners on their places - Part 2
+        //// Corners on their places - Part 2
         private static async Task<bool> SolveBottomLayerCheckCornersInRightPlaceAsync()
         {
             // Check if the corners are in the right place
@@ -696,8 +695,8 @@ namespace RubiksCube
             return bCorner36 && bCorner38 && bCorner42 && bCorner44;
         }
 
-        /// Solve the bottom layer
-        /// Tumbling the corners
+        //// Solve the bottom layer
+        //   Tumbling the corners
         private static async Task<bool> SolveBottomLayerTumblingCornersAsync()
         {
             int nLoopTimes = 0;
@@ -768,7 +767,7 @@ namespace RubiksCube
             }
         }
 
-        /// Switch the edge cubes at the top layer and bottom layer - Part 1
+        //// Switch the edge cubes at the top layer and bottom layer - Part 1
         private static async Task SwitchEdgeCubesTopLayerAsync()
         {
             string cB = aPieces[40];
@@ -817,7 +816,7 @@ namespace RubiksCube
             }
         }
 
-        /// Switch the edge cubes at the top layer - Part 2
+        //// Switch the edge cubes at the top layer - Part 2
         private static async Task SwitchEdgeCubesTopLayer2Async()
         {
             await MakeTurnLetterAsync("R U R' U R U2 R' U");

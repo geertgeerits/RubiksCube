@@ -13,7 +13,7 @@ namespace RubiksCube
         //// Declare variables
         private const int nLoopTimesMax = 200;
 
-        /// Solve the edges of the top layer - Part 1
+        //// Solve the edges of the top layer - Part 1
         public static async Task<bool> SolveTopLayerEdgesAsync()
         {
             string cB = aPieces[49];
@@ -169,7 +169,7 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the edges of the top layer but turned at the bottom - Part 2
+        //// Solve the edges of the top layer but turned at the bottom - Part 2
         public static async Task<bool> SolveTopLayerEdges2Async()
         {
             string cB = aPieces[49];
@@ -233,7 +233,7 @@ namespace RubiksCube
             return true;
         }
 
-        // Lign up the center cube with the cube above the center cube
+        //// Lign up the center cube with the cube above the center cube
         public static async Task<bool> SolveTopLayerLineUpCenterAsync()
         {
             if (aPieces[4] == aPieces[1])
@@ -268,7 +268,7 @@ namespace RubiksCube
             return false;
         }
         
-        /// Swap edges on the top layer
+        //// Swap edges on the top layer
         public static async Task<bool> SolveTopLayerSwapEdgesAsync()
         {
             // Swap 37 -> 43 -> 37 and 39 -> 41 -> 39
@@ -360,7 +360,7 @@ namespace RubiksCube
             return false;
         }
 
-        /// Swap corners on the top layer
+        //// Swap corners on the top layer
         public static async Task<bool> SolveTopLayerSwapCornersAsync()
         {
             // Swap 36 -> 38 -> 36

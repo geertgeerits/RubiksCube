@@ -1,4 +1,5 @@
-﻿namespace RubiksCube
+﻿using System.Diagnostics;
+namespace RubiksCube
 {
     internal class ClassSaveRestoreCube
     {
@@ -109,9 +110,9 @@
                 _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
-#if DEBUG
-            //_ = Application.Current.MainPage.DisplayAlert("CubeTurnsSave", cFileName, CubeLang.ButtonClose_Text);
-#endif
+            
+            Debug.WriteLine($"CubeTurnsSave cFileName:\n{cFileName}");
+
             return true;
         }
     }
