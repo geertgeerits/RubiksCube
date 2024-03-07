@@ -126,6 +126,12 @@ namespace RubiksCube
             }
 
             // Try to solve the cube
+            // Solve the cube (CFOP solution)
+            if (cSolution == "CFOP")
+            {
+                return await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();
+            }
+
             // Solve the cube (Basic-80 solution)
             if (cSolution == "Basic")
             {
@@ -142,12 +148,6 @@ namespace RubiksCube
             if (cSolution == "Cross")
             {
                 return await ClassSolveCubeCross.SolveTheCubeCrossAsync();
-            }
-
-            // Solve the cube (CFOP solution)
-            if (cSolution == "CFOP")
-            {
-                return await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();
             }
 
             return false;
@@ -389,7 +389,7 @@ namespace RubiksCube
             // Remove the items with 'None'
             lCubeTurnsTemp.RemoveAll(x => x == cNone);
 
-            // Remove or change other turns
+            // Remove or change turns that turn the whole cube
             for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
             {
                 if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft2)
@@ -398,9 +398,33 @@ namespace RubiksCube
                     lCubeTurnsTemp[i + 1] = cNone;
                 }
 
+                if (lCubeTurnsTemp[i] == turnCubeFrontToUp2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp2)
+                {
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+
+                if (lCubeTurnsTemp[i] == turnCubeUpToRight2 && lCubeTurnsTemp[i + 1] == turnCubeUpToRight2)
+                {
+                    lCubeTurnsTemp[i] = cNone;
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+
                 if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
                 {
                     lCubeTurnsTemp[i] = turnCubeFrontToRight;
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+
+                if (lCubeTurnsTemp[i] == turnCubeFrontToUp2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp)
+                {
+                    lCubeTurnsTemp[i] = turnCubeFrontToDown;
+                    lCubeTurnsTemp[i + 1] = cNone;
+                }
+
+                if (lCubeTurnsTemp[i] == turnCubeUpToRight2 && lCubeTurnsTemp[i + 1] == turnCubeUpToRight)
+                {
+                    lCubeTurnsTemp[i] = turnCubeUpToLeft;
                     lCubeTurnsTemp[i + 1] = cNone;
                 }
             }
