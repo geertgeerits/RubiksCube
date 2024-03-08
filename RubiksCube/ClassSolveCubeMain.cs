@@ -104,7 +104,7 @@ namespace RubiksCube
             if (cTurn != "")
             {
                 // Replace the last item in the list with the new turn
-                lCubePositions[lCubePositions.Count - 1] = cTurn;
+                lCubePositions[^1] = cTurn;
             }
 
             // Copy the start colors of the cube to the array aPieces[]
