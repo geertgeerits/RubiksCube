@@ -186,12 +186,12 @@
                 </Label>
 
                 <Label
-                    x:Name="lblExplainTurnCube1"
+                    x:Name="lblExplainTurnCube"
                     Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    MinimumHeightRequest="55"
+                    MinimumHeightRequest="80"
                     HorizontalOptions="Center"
                     BackgroundColor="Transparent"
                     IsVisible="False">
@@ -662,18 +662,20 @@
                     BackgroundColor="Transparent"
                     Text="{local:Translate CubeInsideView_Text}">
                 </Label>
-                
-                <Label
-                    x:Name="lblExplainTurnCube2"
-                    Style="{StaticResource labelStyleExplanation}"
+
+                <Button
+                    x:Name="btnLetterTurn"
+                    Style="{StaticResource buttonStyleDefault}"
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    MinimumHeightRequest="55"
-                    HorizontalOptions="Center"
-                    BackgroundColor="Transparent"
-                    IsVisible="False">
-                </Label>
+                    WidthRequest="120"
+                    BackgroundColor="Gold"
+                    TextColor="Black"
+                    ToolTipProperties.Text=""
+                    IsVisible="False"
+                    Clicked="OnBtnLetterTurnClicked">
+                </Button>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

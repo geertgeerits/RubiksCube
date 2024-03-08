@@ -9,39 +9,39 @@ namespace RubiksCube
         {
             //// Use turn words to test the turns of the cube
             // Test the face turns
-            //await MakeTurnWordAsync(turnFrontCW);
-            //await MakeTurnWordAsync(turnFrontCCW);
-            //await MakeTurnWordAsync(turnFront2);
-            //await MakeTurnWordAsync(turnRightCW);
-            //await MakeTurnWordAsync(turnRightCCW);
-            //await MakeTurnWordAsync(turnRight2);
-            //await MakeTurnWordAsync(turnBackCW);
-            //await MakeTurnWordAsync(turnBackCCW);
-            //await MakeTurnWordAsync(turnBack2);
-            //await MakeTurnWordAsync(turnLeftCW);
-            //await MakeTurnWordAsync(turnLeftCCW);
-            //await MakeTurnWordAsync(turnLeft2);
-            //await MakeTurnWordAsync(turnUpCW);
-            //await MakeTurnWordAsync(turnUpCCW);
-            //await MakeTurnWordAsync(turnUp2);
-            //await MakeTurnWordAsync(turnDownCW);
-            //await MakeTurnWordAsync(turnDownCCW);
-            //await MakeTurnWordAsync(turnDown2);
+            await MakeTurnWordAsync(turnFrontCW);
+            await MakeTurnWordAsync(turnFrontCCW);
+            await MakeTurnWordAsync(turnFront2);
+            await MakeTurnWordAsync(turnRightCW);
+            await MakeTurnWordAsync(turnRightCCW);
+            await MakeTurnWordAsync(turnRight2);
+            await MakeTurnWordAsync(turnBackCW);
+            await MakeTurnWordAsync(turnBackCCW);
+            await MakeTurnWordAsync(turnBack2);
+            await MakeTurnWordAsync(turnLeftCW);
+            await MakeTurnWordAsync(turnLeftCCW);
+            await MakeTurnWordAsync(turnLeft2);
+            await MakeTurnWordAsync(turnUpCW);
+            await MakeTurnWordAsync(turnUpCCW);
+            await MakeTurnWordAsync(turnUp2);
+            await MakeTurnWordAsync(turnDownCW);
+            await MakeTurnWordAsync(turnDownCCW);
+            await MakeTurnWordAsync(turnDown2);
 
-            //// Test the middle layer turns
-            //await MakeTurnWordAsync(turnUpHorMiddleRight);
-            //await MakeTurnWordAsync(turnUpHorMiddleLeft);
-            //await MakeTurnWordAsync(turnUpHorMiddle2);
-            //await MakeTurnWordAsync(turnUpVerMiddleBack);
-            //await MakeTurnWordAsync(turnUpVerMiddleFront);
-            //await MakeTurnWordAsync(turnUpVerMiddle2);
-            //await MakeTurnWordAsync(turnFrontHorMiddleLeft);
-            //await MakeTurnWordAsync(turnFrontHorMiddleRight);
-            //await MakeTurnWordAsync(turnFrontHorMiddle2);
+            // Test the middle layer turns
+            await MakeTurnWordAsync(turnUpHorMiddleRight);
+            await MakeTurnWordAsync(turnUpHorMiddleLeft);
+            await MakeTurnWordAsync(turnUpHorMiddle2);
+            await MakeTurnWordAsync(turnUpVerMiddleBack);
+            await MakeTurnWordAsync(turnUpVerMiddleFront);
+            await MakeTurnWordAsync(turnUpVerMiddle2);
+            await MakeTurnWordAsync(turnFrontHorMiddleLeft);
+            await MakeTurnWordAsync(turnFrontHorMiddleRight);
+            await MakeTurnWordAsync(turnFrontHorMiddle2);
 
-            //// Test two layers at the same time
+            // Test two layers at the same time
 
-            //// Test the cube turns
+            // Test the cube turns
             await MakeTurnWordAsync(turnCubeFrontToRight);
             await MakeTurnWordAsync(turnCubeFrontToLeft);
             await MakeTurnWordAsync(turnCubeFrontToLeft2);
@@ -52,7 +52,7 @@ namespace RubiksCube
             await MakeTurnWordAsync(turnCubeUpToRight2);
             await MakeTurnWordAsync(turnCubeUpToLeft);
 
-            // Use turn letters to test the turns of the cube
+            //// Use turn letters to test the turns of the cube
             // Test the face turns
             await MakeTurnLetterAsync("F F' F2");
             await MakeTurnLetterAsync("R R' R2");

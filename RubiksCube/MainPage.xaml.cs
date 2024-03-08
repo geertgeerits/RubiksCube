@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.15
-// Date ........: 2024-03-07 (YYYY-MM-DD)
+// Date ........: 2024-03-08 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -201,9 +201,9 @@ public partial class MainPage : ContentPage
         IsEnabledArrows(false);
 
         lblCubeOutsideView.IsVisible = false;
-        lblExplainTurnCube1.IsVisible = true;
+        lblExplainTurnCube.IsVisible = true;
         lblCubeInsideView.IsVisible = false;
-        lblExplainTurnCube2.IsVisible = true;
+        btnLetterTurn.IsVisible = true;
 
         // Start the activity indicator
         activityIndicator.IsRunning = true;
@@ -278,11 +278,13 @@ public partial class MainPage : ContentPage
             {
                 nTurns++;
                 lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
-                
+                btnLetterTurn.Text = CubeTurnFromWordToLetter(cItem);
+
                 await MakeTurnAsync(cItem);
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
+            btnLetterTurn.Text = "";
 
             if (ClassColorsCube.CheckIfSolved())
             {
@@ -305,11 +307,10 @@ public partial class MainPage : ContentPage
         Globals.lCubeTurns.Clear();
 
         // Settings
-        lblExplainTurnCube1.Text = "";
-        lblExplainTurnCube1.IsVisible = false;
+        lblExplainTurnCube.Text = "";
+        lblExplainTurnCube.IsVisible = false;
         lblCubeOutsideView.IsVisible = true;
-        lblExplainTurnCube2.Text = "";
-        lblExplainTurnCube2.IsVisible = false;
+        btnLetterTurn.IsVisible = false;
         lblCubeInsideView.IsVisible = true;
 
         IsEnabledArrows(true);
@@ -330,6 +331,12 @@ public partial class MainPage : ContentPage
     }
 
     //// Turn the faces of the cube
+    //// On button letter turn clicked
+    private void OnBtnLetterTurnClicked(object sender, EventArgs e)
+    {
+        bArrowButtonPressed = true;
+    }
+
     //// Turn the front face clockwise (to right +)
     private void OnTurnFrontFaceToRightClicked(object sender, EventArgs e)
     {
@@ -843,8 +850,7 @@ public partial class MainPage : ContentPage
 
         // Show the text
         string cTurnCubeText = await SetExplainTextAsync(cTurn);
-        lblExplainTurnCube1.Text = cTurnCubeText;
-        lblExplainTurnCube2.Text = cTurnCubeText;
+        lblExplainTurnCube.Text = cTurnCubeText;
 
         // Convert text to speech
         ExplainTurnCubeSpeech(cTurnCubeText);
@@ -1215,6 +1221,220 @@ public partial class MainPage : ContentPage
         }
 
         return cTurnCubeText;
+    }
+
+    //// Cube rotation from word to letter
+    private string CubeTurnFromWordToLetter(string cTurn)
+    {
+        //string cTurnCubeLetter = cTurn switch
+        //{
+        //    // Face rotations
+        //    Globals.turnFrontCW => "F",
+        //    Globals.turnFrontCCW => "F'",
+        //    Globals.turnFront2 => "F2",
+        //    Globals.turnRightCW => "R",
+        //    Globals.turnRightCCW => "R'",
+        //    Globals.turnRight2 => "R2",
+        //    Globals.turnBackCW => "B",
+        //    Globals.turnBackCCW => "B'",
+        //    Globals.turnBack2 => "B2",
+        //    Globals.turnLeftCW => "L",
+        //    Globals.turnLeftCCW => "L'",
+        //    Globals.turnLeft2 => "L2",
+        //    Globals.turnUpCW => "U",
+        //    Globals.turnUpCCW => "U'",
+        //    Globals.turnUp2 => "U2",
+        //    Globals.turnDownCW => "D",
+        //    Globals.turnDownCCW => "D'",
+        //    Globals.turnDown2 => "D2",
+        //    // Middle layer rotations
+
+        //    _
+        //    => throw new NotImplementedException(),
+        //};
+
+        string cTurnCubeLetter = "";
+
+        switch (cTurn)
+        {
+            // Face rotations
+            case Globals.turnFrontCW:
+                cTurnCubeLetter = "F";
+                break;
+            case Globals.turnFrontCCW:
+                cTurnCubeLetter = "F'";
+                break;
+            case Globals.turnFront2:
+                cTurnCubeLetter = "F2";
+                break;
+            case Globals.turnRightCW:
+                cTurnCubeLetter = "R";
+                break;
+            case Globals.turnRightCCW:
+                cTurnCubeLetter = "R'";
+                break;
+            case Globals.turnRight2:
+                cTurnCubeLetter = "R2";
+                break;
+            case Globals.turnBackCW:
+                cTurnCubeLetter = "B";
+                break;
+            case Globals.turnBackCCW:
+                cTurnCubeLetter = "B'";
+                break;
+            case Globals.turnBack2:
+                cTurnCubeLetter = "B2";
+                break;
+            case Globals.turnLeftCW:
+                cTurnCubeLetter = "L";
+                break;
+            case Globals.turnLeftCCW:
+                cTurnCubeLetter = "L'";
+                break;
+            case Globals.turnLeft2:
+                cTurnCubeLetter = "L2";
+                break;
+            case Globals.turnUpCW:
+                cTurnCubeLetter = "U";
+                break;
+            case Globals.turnUpCCW:
+                cTurnCubeLetter = "U'";
+                break;
+            case Globals.turnUp2:
+                cTurnCubeLetter = "U2";
+                break;
+            case Globals.turnDownCW:
+                cTurnCubeLetter = "D";
+                break;
+            case Globals.turnDownCCW:
+                cTurnCubeLetter = "D'";
+                break;
+            case Globals.turnDown2:
+                cTurnCubeLetter = "D2";
+                break;
+
+            // Middle layer rotations
+            case Globals.turnUpHorMiddleRight:
+                cTurnCubeLetter = "S";
+                break;
+            case Globals.turnUpHorMiddleLeft:
+                cTurnCubeLetter = "S'";
+                break;
+            case Globals.turnUpHorMiddle2:
+                cTurnCubeLetter = "S2";
+                break;
+
+            case Globals.turnUpVerMiddleBack:
+                cTurnCubeLetter = "M'";
+                break;
+            case Globals.turnUpVerMiddleFront:
+                cTurnCubeLetter = "M";
+                break;
+            case Globals.turnUpVerMiddle2:
+                cTurnCubeLetter = "M2";
+                break;
+
+            case Globals.turnFrontHorMiddleLeft:
+                cTurnCubeLetter = "E'";
+                break;
+            case Globals.turnFrontHorMiddleRight:
+                cTurnCubeLetter = "E";
+                break;
+            case Globals.turnFrontHorMiddle2:
+                cTurnCubeLetter = "E2";
+                break;
+
+            // Two layers at the same time
+            case Globals.turn2LayersFrontCW:
+                cTurnCubeLetter = "f";
+                break;
+            case Globals.turn2LayersFrontCCW:
+                cTurnCubeLetter = "f'";
+                break;
+            case Globals.turn2LayersFront2:
+                cTurnCubeLetter = "f2";
+                break;
+            case Globals.turn2LayersRightCW:
+                cTurnCubeLetter = "r";
+                break;
+            case Globals.turn2LayersRightCCW:
+                cTurnCubeLetter = "r'";
+                break;
+            case Globals.turn2LayersRight2:
+                cTurnCubeLetter = "r2";
+                break;
+            case Globals.turn2LayersBackCW:
+                cTurnCubeLetter = "b";
+                break;
+            case Globals.turn2LayersBackCCW:
+                cTurnCubeLetter = "b'";
+                break;
+            case Globals.turn2LayersBack2:
+                cTurnCubeLetter = "b2";
+                break;
+            case Globals.turn2LayersLeftCW:
+                cTurnCubeLetter = "l";
+                break;
+            case Globals.turn2LayersLeftCCW:
+                cTurnCubeLetter = "l'";
+                break;
+            case Globals.turn2LayersLeft2:
+                cTurnCubeLetter = "l2";
+                break;
+            case Globals.turn2LayersUpCW:
+                cTurnCubeLetter = "u";
+                break;
+            case Globals.turn2LayersUpCCW:
+                cTurnCubeLetter = "u'";
+                break;
+            case Globals.turn2LayersUp2:
+                cTurnCubeLetter = "u2";
+                break;
+            case Globals.turn2LayersDownCW:
+                cTurnCubeLetter = "d";
+                break;
+            case Globals.turn2LayersDownCCW:
+                cTurnCubeLetter = "d'";
+                break;
+            case Globals.turn2LayersDown2:
+                cTurnCubeLetter = "d2";
+                break;
+
+            // Cube rotations
+            case Globals.turnCubeFrontToRight:
+                cTurnCubeLetter = "y'";
+                break;
+            case Globals.turnCubeFrontToLeft:
+                cTurnCubeLetter = "y";
+                break;
+            case Globals.turnCubeFrontToLeft2:
+                cTurnCubeLetter = "y2";
+                break;
+            case Globals.turnCubeFrontToUp:
+                cTurnCubeLetter = "x";
+                break;
+            case Globals.turnCubeFrontToUp2:
+                cTurnCubeLetter = "x2";
+                break;
+            case Globals.turnCubeFrontToDown:
+                cTurnCubeLetter = "x'";
+                break;
+            case Globals.turnCubeUpToRight:
+                cTurnCubeLetter = "z";
+                break;
+            case Globals.turnCubeUpToRight2:
+                cTurnCubeLetter = "z2";
+                break;
+            case Globals.turnCubeUpToLeft:
+                cTurnCubeLetter = "z'";
+                break;
+
+            default:
+                DisplayAlert(CubeLang.ErrorTitle_Text, $"CubeTurnFromWordToLetter\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
+                break;
+        }
+
+        return cTurnCubeLetter;
     }
 
     //// Explain the turn of the cube with speech

@@ -15,11 +15,11 @@ public partial class App : Application
     {
         var window = base.CreateWindow(activationState);
 
-        const int newHeight = 1080;
+        const int newHeight = 990;
         const int newWidth = 900;
 
         window.X = 300;
-        window.Y = 10;
+        window.Y = 40;
 
         window.Height = newHeight;
         window.Width = newWidth;
