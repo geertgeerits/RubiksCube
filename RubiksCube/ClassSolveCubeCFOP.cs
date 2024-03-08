@@ -1,23 +1,4 @@
-﻿// This solution is based on:
-// https://en.wikipedia.org/wiki/CFOP_method
-// https://kubuspuzzel.nl/3x3-kubus-oplossen/cfop-methode/
-// https://ruwix.com/the-rubiks-cube/notation/advanced/
-// https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/
-// https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/white-cross/
-// https://solvethecube.com/speedcubing#betterf2l
-// https://www.cubeskills.com/categories/3x3-algs
-// https://www.rubiksplace.com/speedcubing/guide/
-// https://www.cubelelo.com/blogs/cubing/f2l-method-explained-solve-rubiks-cube-under-30-seconds
-// https://solvethecube.com/algorithms
-// https://www.youtube.com/watch?v=MS5jByTX_pk
-// https://www.youtube.com/watch?v=q_Hslj2aXuE&t=114s
-// https://www.youtube.com/watch?v=z6c6ll_rpBo
-// https://www.youtube.com/watch?v=JHxLRfN4rSQ
-// https://www.youtube.com/watch?v=jKS9otGuu50&t=58s
-// https://www.youtube.com/watch?v=z6c6ll_rpBo
-// https://www.youtube.com/watch?v=Hx9ZbPdX8zM
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using static RubiksCube.Globals;
 
 namespace RubiksCube

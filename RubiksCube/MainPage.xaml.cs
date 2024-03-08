@@ -249,7 +249,6 @@ public partial class MainPage : ContentPage
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
             //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
 
-
             // Restore the start colors of the cube from array aStartPieces[]
             Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
         }
@@ -1009,25 +1008,37 @@ public partial class MainPage : ContentPage
 
             // Cube rotations
             case Globals.turnCubeFrontToRight:
+                imgbtnTurnUpFaceToLeft.IsEnabled = bIsEnabled;
                 imgbtnTurnFrontHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                imgbtnTurnDownFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turnCubeFrontToLeft:
             case Globals.turnCubeFrontToLeft2:
+                imgbtnTurnUpFaceToRight.IsEnabled = bIsEnabled;
                 imgbtnTurnFrontHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                imgbtnTurnDownFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turnCubeFrontToUp:
             case Globals.turnCubeFrontToUp2:
+                imgbtnTurnLeftFaceToLeft.IsEnabled = bIsEnabled;
                 imgbtnTurnUpVerMiddleToBackFace.IsEnabled = bIsEnabled;
+                imgbtnTurnRightFaceToRight.IsEnabled = bIsEnabled;
                 break;
             case Globals.turnCubeFrontToDown:
+                imgbtnTurnLeftFaceToRight.IsEnabled = bIsEnabled;
                 imgbtnTurnUpVerMiddleToFrontFace.IsEnabled = bIsEnabled;
+                imgbtnTurnRightFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turnCubeUpToRight:
             case Globals.turnCubeUpToRight2:
+                imgbtnTurnFrontFaceToRight.IsEnabled = bIsEnabled;
                 imgbtnTurnUpHorMiddleToRightFace.IsEnabled = bIsEnabled;
+                imgbtnTurnBackFaceToLeft.IsEnabled = bIsEnabled;
                 break;
             case Globals.turnCubeUpToLeft:
+                imgbtnTurnFrontFaceToLeft.IsEnabled = bIsEnabled;
                 imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bIsEnabled;
+                imgbtnTurnBackFaceToRight.IsEnabled = bIsEnabled;
                 break;
 
             default:
@@ -1226,33 +1237,6 @@ public partial class MainPage : ContentPage
     //// Cube rotation from word to letter
     private string CubeTurnFromWordToLetter(string cTurn)
     {
-        //string cTurnCubeLetter = cTurn switch
-        //{
-        //    // Face rotations
-        //    Globals.turnFrontCW => "F",
-        //    Globals.turnFrontCCW => "F'",
-        //    Globals.turnFront2 => "F2",
-        //    Globals.turnRightCW => "R",
-        //    Globals.turnRightCCW => "R'",
-        //    Globals.turnRight2 => "R2",
-        //    Globals.turnBackCW => "B",
-        //    Globals.turnBackCCW => "B'",
-        //    Globals.turnBack2 => "B2",
-        //    Globals.turnLeftCW => "L",
-        //    Globals.turnLeftCCW => "L'",
-        //    Globals.turnLeft2 => "L2",
-        //    Globals.turnUpCW => "U",
-        //    Globals.turnUpCCW => "U'",
-        //    Globals.turnUp2 => "U2",
-        //    Globals.turnDownCW => "D",
-        //    Globals.turnDownCCW => "D'",
-        //    Globals.turnDown2 => "D2",
-        //    // Middle layer rotations
-
-        //    _
-        //    => throw new NotImplementedException(),
-        //};
-
         string cTurnCubeLetter = "";
 
         switch (cTurn)

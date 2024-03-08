@@ -153,7 +153,7 @@ namespace RubiksCube
             return false;
         }
 
-        //// Copy the list to the temp list if the list is has less items than the temp list
+        //// Copy the list to the temp list if the list has less items than the temp list
         private static void CopyListToTemp()
         {
             Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");

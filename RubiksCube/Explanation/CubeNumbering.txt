@@ -94,9 +94,9 @@ Face rotations: F (Front), U (Up), R (Right), B (Back), L (Left), D (Down)
                 U' - a 90-degree counterclockwise rotation of the U face
                 U2 - a half turn of the upper face
 
-Slice turns: M - Middle layer turn - in the same direction as an L turn between R and L.
-             E - Equatorial layer - direction as a D turn between U and D.
-             S - Standing layer - direction as an F turn between F and B.
+Slice turns: M (Middle): the layer between L and R, turn direction as L (top-down)
+             E (Equator): the layer between U and D, turn direction as D (left-right)
+             S (Standing): the layer between F and B, turn direction as F
 
              M' and M2, E' and E2, S' and S2
 
