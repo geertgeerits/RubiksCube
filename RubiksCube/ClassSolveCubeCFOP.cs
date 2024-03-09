@@ -47,7 +47,7 @@ namespace RubiksCube
                 return true;
             }
 
-            return true;
+            return false;
         }
 
         //// Solve the first two layers (F2L)

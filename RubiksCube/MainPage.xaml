@@ -672,7 +672,7 @@
                     WidthRequest="120"
                     BackgroundColor="Gold"
                     TextColor="Black"
-                    ToolTipProperties.Text=""
+                    FontAttributes="Bold"
                     IsVisible="False"
                     Clicked="OnBtnLetterTurnClicked">
                 </Button>

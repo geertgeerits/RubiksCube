@@ -62,7 +62,7 @@ namespace RubiksCube
                 return true;
             }
 
-            return true;
+            return false;
         }
 
         //// Solve the corners of the top layer but turned at the bottom
