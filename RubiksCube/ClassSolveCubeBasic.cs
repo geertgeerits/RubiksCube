@@ -119,7 +119,7 @@ namespace RubiksCube
                 // 545
                 if (bO && bP && bQ)
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                     goto Line600;
                 }
                 // 550
@@ -131,7 +131,7 @@ namespace RubiksCube
                 // 555
                 if (bO && bQ)
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                     goto Line600;
                 }
                 // 560
@@ -143,7 +143,7 @@ namespace RubiksCube
                 // 565
                 if (bO && bP)
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     goto Line600;
                 }
                 // 570
@@ -153,7 +153,7 @@ namespace RubiksCube
                 // 575
                 if (bO && bR)
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line600;
                 }
                 // 580
@@ -164,19 +164,19 @@ namespace RubiksCube
                 // 585
                 if (cB != aPieces[38])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     goto Line600;
                 }
                 // 590
                 if (cB != aPieces[42])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line600;
                 }
                 // 595
                 if (cB != aPieces[36])
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                 }
 
             // 600
@@ -188,23 +188,23 @@ namespace RubiksCube
                 // 605
                 if (cB == aPieces[17] || cB == aPieces[24] || cB == aPieces[53])
                 {
-                    await MakeTurnWordAsync(turnDownCCW);
+                    await MakeTurnLetterAsync("D'");
                     goto Line680;
                 }
                 // 610
                 if (cB == aPieces[6] || cB == aPieces[35] || cB == aPieces[45])
                 {
-                    await MakeTurnWordAsync(turnDownCW);
+                    await MakeTurnLetterAsync("D");
                     goto Line680;
                 }
                 // 615
                 if (cB == aPieces[26] || cB == aPieces[33] || cB == aPieces[51])
                 {
-                    await MakeTurnWordAsync(turnDown2);
+                    await MakeTurnLetterAsync("D2");
                     goto Line680;
                 }
                 // 670
-                await MakeTurnWordAsync(turnRight2);
+                await MakeTurnLetterAsync("R2");
                 continue;
 
             // 680
@@ -304,7 +304,7 @@ namespace RubiksCube
                     goto Line810;
                 }
                 // 800
-                await MakeTurnWordAsync(turnCubeFrontToLeft);
+                await MakeTurnLetterAsync("y");
                 continue;
 
             // 810
@@ -316,17 +316,17 @@ namespace RubiksCube
                 // 820
                 if (bY && bZ)
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line910;
                 }
                 // 830
                 if (bY)
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                     goto Line910;
                 }
                 // 840
-                await MakeTurnWordAsync(turnUpCW);
+                await MakeTurnLetterAsync("U");
 
             // 910
             Line910:
@@ -450,19 +450,19 @@ namespace RubiksCube
                 //1050
                 if (cV == aPieces[10])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     continue;
                 }
                 //1060
                 if (cV == aPieces[28])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     continue;
                 }
                 //1070
                 if (cV == aPieces[19])
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                     continue;
                 }
                 //1080
@@ -490,37 +490,37 @@ namespace RubiksCube
                 //1130
                 if (cV == cP && cX == aPieces[50])
                 {
-                    await MakeTurnWordAsync(turnDownCCW);
+                    await MakeTurnLetterAsync("D'");
                     goto Line1410;
                 }
                 //1140
                 if (cV == cP && cZ == aPieces[50])
                 {
-                    await MakeTurnWordAsync(turnDownCCW);
+                    await MakeTurnLetterAsync("D'");
                     goto Line1420;
                 }
                 //1150
                 if (cV == cQ && cX == aPieces[52])
                 {
-                    await MakeTurnWordAsync(turnDown2);
+                    await MakeTurnLetterAsync("D2");
                     goto Line1410;
                 }
                 //1160
                 if (cV == cQ && cZ == aPieces[52])
                 {
-                    await MakeTurnWordAsync(turnDown2);
+                    await MakeTurnLetterAsync("D2");
                     goto Line1420;
                 }
                 //1170
                 if (cV == cR && cX == aPieces[48])
                 {
-                    await MakeTurnWordAsync(turnDownCW);
+                    await MakeTurnLetterAsync("D");
                     goto Line1410;
                 }
                 //1180
                 if (cV == cR && cZ == aPieces[48])
                 {
-                    await MakeTurnWordAsync(turnDownCW);
+                    await MakeTurnLetterAsync("D");
                     goto Line1420;
                 }
                 //1210
@@ -654,7 +654,7 @@ namespace RubiksCube
                     goto Line1420;
                 }
                 //1380
-                await MakeTurnWordAsync(turnCubeFrontToLeft);
+                await MakeTurnLetterAsync("y");
 
             //1410
             Line1410:
@@ -668,17 +668,17 @@ namespace RubiksCube
 
             //1460
             Line1460:
-                await MakeTurnWordAsync(turnCubeFrontToLeft);
+                await MakeTurnLetterAsync("y");
                 continue;
 
             //1470
             Line1470:
-                await MakeTurnWordAsync(turnCubeFrontToRight);
+                await MakeTurnLetterAsync("y'");
                 continue;
 
             //1480
             Line1480:
-                await MakeTurnWordAsync(turnCubeFrontToLeft2);
+                await MakeTurnLetterAsync("y2");
             }
 
             Debug.WriteLine("Basic: number of turns middle layer: " + lCubeTurns.Count);
@@ -693,7 +693,7 @@ namespace RubiksCube
             string cV, cX, cZ;
             int nLoopTimes = 0;
 
-            await MakeTurnWordAsync(turnCubeUpToRight2);
+            await MakeTurnLetterAsync("z2");
 
             while (true)
             {
@@ -752,7 +752,7 @@ namespace RubiksCube
                 //1552
                 if (bO && bQ)
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     continue;
                 }
                 //1554
@@ -764,11 +764,11 @@ namespace RubiksCube
                 //1556
                 if (bO && bR)
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     continue;
                 }
                 //1558
-                await MakeTurnWordAsync(turnUp2);
+                await MakeTurnLetterAsync("U2");
                 continue;
 
             //1560
@@ -845,7 +845,7 @@ namespace RubiksCube
                     continue;
                 }
                 //1596
-                await MakeTurnWordAsync(turnCubeFrontToLeft);
+                await MakeTurnLetterAsync("y");
             }
 
             Debug.WriteLine("Basic: number of turns bottom layer corners: " + lCubeTurns.Count);
@@ -974,7 +974,7 @@ namespace RubiksCube
                     await MakeTurnLetterAsync("R B U B' U' R2 F' U' F U R");
                 }
                 //1694
-                await MakeTurnWordAsync(turnCubeFrontToLeft);
+                await MakeTurnLetterAsync("y");
                 continue;
             }
 
@@ -1011,19 +1011,19 @@ namespace RubiksCube
                 //1720
                 if (cB == aPieces[11])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     goto Line1735;
                 }
                 //1725
                 if (cB == aPieces[29])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line1735;
                 }
                 //1730
                 if (cB == aPieces[20])
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                 }
             
             //1735
@@ -1037,17 +1037,17 @@ namespace RubiksCube
                 //1745
                 if (cB == aPieces[18])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     goto Line1760;
                 }
                 //1750
                 if (cB == aPieces[0])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line1760;
                 }
                 //1755
-                await MakeTurnWordAsync(turnUp2);
+                await MakeTurnLetterAsync("U2");
             
             //1760
             Line1760:
@@ -1058,7 +1058,7 @@ namespace RubiksCube
                     break;
                 }
                 //1770
-                await MakeTurnWordAsync(turnUpCW);
+                await MakeTurnLetterAsync("U");
             }
 
             Debug.WriteLine("Basic: number of turns bottom layer tumbling corners: " + lCubeTurns.Count);
@@ -1111,19 +1111,19 @@ namespace RubiksCube
                 //1835
                 if (cV == aPieces[10])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     continue;
                 }
                 //1840
                 if (cV == aPieces[28])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     continue;
                 }
                 //1845
                 if (cV == aPieces[19])
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                     continue;
                 }
             
@@ -1134,18 +1134,18 @@ namespace RubiksCube
                 //1860
                 if (cB != aPieces[41])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     goto Line1890;
                 }
                 //1870
                 if (cB != aPieces[39])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line1890;
                 }
                 //1880
                 if (cB != aPieces[37])
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                 //1890
                 Line1890:
                 await MakeTurnLetterAsync("F U D' L2 U2 D2 R");
@@ -1157,19 +1157,19 @@ namespace RubiksCube
                 //1920
                 if (cB != aPieces[37])
                 {
-                    await MakeTurnWordAsync(turnUpCW);
+                    await MakeTurnLetterAsync("U");
                     goto Line1950;
                 }
                 //1930
                 if (cB != aPieces[43])
                 {
-                    await MakeTurnWordAsync(turnUpCCW);
+                    await MakeTurnLetterAsync("U'");
                     goto Line1950;
                 }
                 //1940
                 if (cB != aPieces[39])
                 {
-                    await MakeTurnWordAsync(turnUp2);
+                    await MakeTurnLetterAsync("U2");
                 }
             
             //1950
