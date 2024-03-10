@@ -92,7 +92,7 @@ namespace RubiksCube
                 // Turn the cube
                 if (nLoopTimes > 1)
                 {
-                    await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    await MakeTurnLetterAsync("y");
                 }
 
                 // When two adjacent faces (front and right) have been solved, turn the cube
@@ -2218,7 +2218,7 @@ namespace RubiksCube
                 // Turn the cube
                 if (nLoopTimes > 1)
                 {
-                    await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    await MakeTurnLetterAsync("y");
                 }
 
                 // https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/orient-the-last-layer-oll/
@@ -2653,7 +2653,7 @@ namespace RubiksCube
                 // Turn the cube
                 if (nLoopTimes > 1)
                 {
-                    await MakeTurnWordAsync(turnCubeFrontToLeft);
+                    await MakeTurnLetterAsync("y");
                 }
 
                 // https://solvethecube.com/algorithms

@@ -669,10 +669,11 @@
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    WidthRequest="120"
+                    WidthRequest="160"
                     BackgroundColor="Gold"
                     TextColor="Black"
                     FontAttributes="Bold"
+                    FontSize="20"
                     IsVisible="False"
                     Clicked="OnBtnLetterTurnClicked">
                 </Button>
