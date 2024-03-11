@@ -8,63 +8,12 @@ namespace RubiksCube
         //// Test the turns of the cube
         public static async Task<bool> TestCubeTurnsAsync()
         {
-            //await TestCubeTurnsWordAsync();
             await TestCubeTurnsLetterAsync();
             //await TestSolveCubeTurnsCFOP();
             //await TestSolveCubeTurnsBasic();
             //await TestSolveCubeTurnsDaisy();
             //await TestSolveCubeTurnsCross();
             //await TestSolveCubeOnly2Faces();
-
-            return true;
-        }
-
-        //// Use turn words to test the turns of the cube
-        private static async Task<bool> TestCubeTurnsWordAsync()
-        {
-            // Test the face turns
-            await MakeTurnWordAsync(turnFrontCW);
-            await MakeTurnWordAsync(turnFrontCCW);
-            await MakeTurnWordAsync(turnFront2);
-            await MakeTurnWordAsync(turnRightCW);
-            await MakeTurnWordAsync(turnRightCCW);
-            await MakeTurnWordAsync(turnRight2);
-            await MakeTurnWordAsync(turnBackCW);
-            await MakeTurnWordAsync(turnBackCCW);
-            await MakeTurnWordAsync(turnBack2);
-            await MakeTurnWordAsync(turnLeftCW);
-            await MakeTurnWordAsync(turnLeftCCW);
-            await MakeTurnWordAsync(turnLeft2);
-            await MakeTurnWordAsync(turnUpCW);
-            await MakeTurnWordAsync(turnUpCCW);
-            await MakeTurnWordAsync(turnUp2);
-            await MakeTurnWordAsync(turnDownCW);
-            await MakeTurnWordAsync(turnDownCCW);
-            await MakeTurnWordAsync(turnDown2);
-
-            // Test the middle layer turns
-            await MakeTurnWordAsync(turnUpHorMiddleRight);
-            await MakeTurnWordAsync(turnUpHorMiddleLeft);
-            await MakeTurnWordAsync(turnUpHorMiddle2);
-            await MakeTurnWordAsync(turnUpVerMiddleBack);
-            await MakeTurnWordAsync(turnUpVerMiddleFront);
-            await MakeTurnWordAsync(turnUpVerMiddle2);
-            await MakeTurnWordAsync(turnFrontHorMiddleLeft);
-            await MakeTurnWordAsync(turnFrontHorMiddleRight);
-            await MakeTurnWordAsync(turnFrontHorMiddle2);
-
-            // Test two layers at the same time
-
-            // Test the cube turns
-            await MakeTurnWordAsync(turnCubeFrontToRight);
-            await MakeTurnWordAsync(turnCubeFrontToLeft);
-            await MakeTurnWordAsync(turnCubeFrontToLeft2);
-            await MakeTurnWordAsync(turnCubeFrontToUp);
-            await MakeTurnWordAsync(turnCubeFrontToUp2);
-            await MakeTurnWordAsync(turnCubeFrontToDown);
-            await MakeTurnWordAsync(turnCubeUpToRight);
-            await MakeTurnWordAsync(turnCubeUpToRight2);
-            await MakeTurnWordAsync(turnCubeUpToLeft);
 
             return true;
         }
@@ -322,7 +271,7 @@ namespace RubiksCube
             await MakeTurnLetterAsync("R U' R'");
             await MakeTurnLetterAsync("R' U R ");
             await MakeTurnLetterAsync("U' R' U R2 U' R'");
-            await MakeTurnLetterAsync("y U L U' L2' U L");
+            await MakeTurnLetterAsync("y U L U' L2 U L");
             await MakeTurnLetterAsync("U2 R' U R U' S R S'");
             await MakeTurnLetterAsync("y U2 L U' L' U S' L' S");
             await MakeTurnLetterAsync("R U B' l U l2 x' U' R' F R F'");
@@ -389,7 +338,7 @@ namespace RubiksCube
             await MakeTurnLetterAsync("R' U R' U' R' U' R' U R U R2");
             await MakeTurnLetterAsync("x z' R2 U2 R' D' R U2 R' D R' z x'");
             await MakeTurnLetterAsync("x R2 D2 R U R' D2 R U' R x'");
-            await MakeTurnLetterAsync("R2 U R' U' y R U R' U' R U R' U' R U R' y' R U' R2'");
+            await MakeTurnLetterAsync("R2 U R' U' y R U R' U' R U R' U' R U R' y' R U' R2");
             await MakeTurnLetterAsync("R U R' U' R' F R2 U' R' U' R U R' F'");
             await MakeTurnLetterAsync("F R U' R' U' R U R' F' R U R' U' R' F R F'");
             await MakeTurnLetterAsync("U' R' U R U' R2 F' U' F U x R U R' U' R2 x'");
@@ -400,9 +349,9 @@ namespace RubiksCube
             await MakeTurnLetterAsync("R' U2 R U2 R' F R U R' U' R' F' R2 U'");
             await MakeTurnLetterAsync("R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'");
             await MakeTurnLetterAsync("R' U R U' R' F' U' F R U R' F R' F' R U' R");
-            await MakeTurnLetterAsync("y R2' u R' U R' U' R u' R2 y' R' U R");
+            await MakeTurnLetterAsync("y R2 u R' U R' U' R u' R2 y' R' U R");
             await MakeTurnLetterAsync("R' U' R y R2 u R' U R U' R u' R2");
-            await MakeTurnLetterAsync("y R2' u' R U' R U R' u R2 y R U' R'");
+            await MakeTurnLetterAsync("y R2 u' R U' R U R' u R2 y R U' R'");
             await MakeTurnLetterAsync("y2 R U R' y' R2 u' R U' R' U R' u R2");
             await MakeTurnLetterAsync("x R' U R' D2 R U' R' D2 R2");
             await MakeTurnLetterAsync("x' R U' R D2 R' U R D2 R2");
@@ -708,7 +657,7 @@ namespace RubiksCube
         {
             int nLoopTimes = 0;
 
-            while (!ClassColorsCube.CheckIfSolved())
+            while (true)
             {
                 nLoopTimes++;
                 if (nLoopTimes > 10000)
@@ -718,6 +667,11 @@ namespace RubiksCube
                 }
                 
                 await MakeTurnLetterAsync("L' U");
+                
+                if (ClassColorsCube.CheckIfSolved())
+                {
+                    break;
+                }
             }
 
             return true;

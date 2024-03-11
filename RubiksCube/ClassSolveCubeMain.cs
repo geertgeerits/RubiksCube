@@ -196,36 +196,26 @@ namespace RubiksCube
                     if (lCubeTurnsTemp[i] == lCubeTurnsTemp[i + 1])
                     {
                         // U & U -> U2
-                        //if (lCubeTurnsTemp[i].Length == 1)
-                        //{
-                        //    lCubeTurnsTemp[i] = lCubeTurnsTemp[i] + "2";
-                        //    lCubeTurnsTemp[i + 1] = cNone;
-                        //}
-
-                        //// U' & U' -> U2
-                        //if (lCubeTurnsTemp[i].EndsWith("'"))
-                        //{
-                        //    lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^1] + "2";
-                        //    lCubeTurnsTemp[i + 1] = cNone;
-                        //}
-
-                        //// U2 & U2 -> None
-                        //if (lCubeTurnsTemp[i].EndsWith("2"))
-                        //{
-                        //    lCubeTurnsTemp[i] = cNone;
-                        //    lCubeTurnsTemp[i + 1] = cNone;
-                        //}
-
-                        if (lCubeTurnsTemp[i].EndsWith("CCW"))
+                        if (lCubeTurnsTemp[i].Length == 1)
                         {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^3] + "2";
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i] + "2";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                        else if (lCubeTurnsTemp[i].EndsWith("CW"))
+
+                        // U' & U' -> U2
+                        else if (lCubeTurnsTemp[i].EndsWith("'"))
                         {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^2] + "2";
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^1] + "2";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
+
+                        // U2 & U2 -> None
+                        else if (lCubeTurnsTemp[i].EndsWith("2"))
+                        {
+                            lCubeTurnsTemp[i] = cNone;
+                            lCubeTurnsTemp[i + 1] = cNone;
+                        }
+
                         else if (lCubeTurnsTemp[i] == turnUpHorMiddleRight || lCubeTurnsTemp[i] == turnUpHorMiddleLeft)
                         {
                             lCubeTurnsTemp[i] = turnUpHorMiddle2;
@@ -453,8 +443,8 @@ namespace RubiksCube
                     }
                 }
 
-                // Remove the last turn if it is turning the whole cube (starts with "TurnCube")
-                if (lCubeTurnsTemp[^1].StartsWith(turnCubeUpToLeft[..8]))
+                // Remove the last turn if it is turning the whole cube (starts with x, y or z)
+                if (lCubeTurnsTemp[^1].StartsWith('x') || lCubeTurnsTemp[^1].StartsWith('y') || lCubeTurnsTemp[^1].StartsWith('z'))
                 {
                     lCubeTurnsTemp[^1] = cNone;
                 }
@@ -465,15 +455,9 @@ namespace RubiksCube
 
             // Copy the temp list to the list
             lCubeTurns.Clear();
-            
-            for (int i = 0; i < lCubeTurnsTemp.Count; i++)
-            {
-                if (lCubeTurnsTemp[i] != cNone)
-                {
-                    lCubeTurns.Add(lCubeTurnsTemp[i]);
-                }
-            }
+            lCubeTurns.AddRange(lCubeTurnsTemp);
 #if DEBUG
+            // Save the list with the cube turns to a file
             _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
 #endif
         }
