@@ -9,7 +9,7 @@ Supporting languages: Dutch, English, French, German, Italian, Portuguese and Sp
 The program was tested on a Samsung Galaxy A3 and S21 phone, iPhone 7 and 14, iPad 8th generation.
 
 Link on Google Play Store:
-
+https://play.google.com/store/apps/details?id=com.geertgeerits.rubikscube
 
 Link on Apple App Store:
 https://apps.apple.com/us/app/rubiks-cube-solver/id6479165194

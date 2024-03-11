@@ -28,6 +28,25 @@ internal static class Globals
 
     // Cube turns
     // Face rotations
+    //public const string turnFrontCW = "F";
+    //public const string turnFrontCCW = "F'";
+    //public const string turnFront2 = "F2";
+    //public const string turnRightCW = "R";
+    //public const string turnRightCCW = "R'";
+    //public const string turnRight2 = "R2";
+    //public const string turnBackCW = "B";
+    //public const string turnBackCCW = "B'";
+    //public const string turnBack2 = "B2";
+    //public const string turnLeftCW = "L";
+    //public const string turnLeftCCW = "L'";
+    //public const string turnLeft2 = "L2";
+    //public const string turnUpCW = "U";
+    //public const string turnUpCCW = "U'";
+    //public const string turnUp2 = "U2";
+    //public const string turnDownCW = "D";
+    //public const string turnDownCCW = "D'";
+    //public const string turnDown2 = "D2";
+
     public const string turnFrontCW = "TurnFrontCW";
     public const string turnFrontCCW = "TurnFrontCCW";
     public const string turnFront2 = "TurnFront2";
@@ -48,6 +67,16 @@ internal static class Globals
     public const string turnDown2 = "TurnDown2";
 
     // Slice turns
+    //public const string turnUpHorMiddleRight = "S";
+    //public const string turnUpHorMiddleLeft = "S'";
+    //public const string turnUpHorMiddle2 = "S2";
+    //public const string turnUpVerMiddleBack = "M'";
+    //public const string turnUpVerMiddleFront = "M";
+    //public const string turnUpVerMiddle2 = "M2";
+    //public const string turnFrontHorMiddleLeft = "E'";
+    //public const string turnFrontHorMiddleRight = "E";
+    //public const string turnFrontHorMiddle2 = "E2";
+
     public const string turnUpHorMiddleRight = "TurnUpHorMiddleRight";
     public const string turnUpHorMiddleLeft = "TurnUpHorMiddleLeft";
     public const string turnUpHorMiddle2 = "TurnUpHorMiddle2";
@@ -59,6 +88,25 @@ internal static class Globals
     public const string turnFrontHorMiddle2 = "TurnFrontHorMiddle2";
 
     // Two layers at the same time
+    //public const string turn2LayersFrontCW = "f";
+    //public const string turn2LayersFrontCCW = "f'";
+    //public const string turn2LayersFront2 = "f2";
+    //public const string turn2LayersRightCW = "r";
+    //public const string turn2LayersRightCCW = "r'";
+    //public const string turn2LayersRight2 = "r2";
+    //public const string turn2LayersBackCW = "b";
+    //public const string turn2LayersBackCCW = "b'";
+    //public const string turn2LayersBack2 = "b2";
+    //public const string turn2LayersLeftCW = "l";
+    //public const string turn2LayersLeftCCW = "l'";
+    //public const string turn2LayersLeft2 = "l2";
+    //public const string turn2LayersUpCW = "u";
+    //public const string turn2LayersUpCCW = "u'";
+    //public const string turn2LayersUp2 = "u2";
+    //public const string turn2LayersDownCW = "d";
+    //public const string turn2LayersDownCCW = "d'";
+    //public const string turn2LayersDown2 = "d2";
+
     public const string turn2LayersFrontCW = "Turn2LayersFrontCW";
     public const string turn2LayersFrontCCW = "Turn2LayersFrontCCW";
     public const string turn2LayersFront2 = "Turn2LayersFront2";
@@ -79,6 +127,16 @@ internal static class Globals
     public const string turn2LayersDown2 = "Turn2LayersDown2";
 
     // Whole cube turns
+    //public const string turnCubeFrontToRight = "y'";
+    //public const string turnCubeFrontToLeft = "y";
+    //public const string turnCubeFrontToLeft2 = "y2";
+    //public const string turnCubeFrontToUp = "x";
+    //public const string turnCubeFrontToUp2 = "x2";
+    //public const string turnCubeFrontToDown = "x'";
+    //public const string turnCubeUpToRight = "z";
+    //public const string turnCubeUpToRight2 = "z2";
+    //public const string turnCubeUpToLeft = "z'";
+
     public const string turnCubeFrontToRight = "TurnCubeFrontToRight";
     public const string turnCubeFrontToLeft = "TurnCubeFrontToLeft";
     public const string turnCubeFrontToLeft2 = "TurnCubeFrontToLeft2";
