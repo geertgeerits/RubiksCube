@@ -48,15 +48,15 @@ internal static class Globals
     public const string turnDown2 = "D2";
 
     // Slice turns
+    public const string turnUpVerMiddleFront = "M";
+    public const string turnUpVerMiddleBack = "M'";
+    public const string turnUpVerMiddle2 = "M2";
+    public const string turnFrontHorMiddleRight = "E";
+    public const string turnFrontHorMiddleLeft = "E'";
+    public const string turnFrontHorMiddle2 = "E2";
     public const string turnUpHorMiddleRight = "S";
     public const string turnUpHorMiddleLeft = "S'";
     public const string turnUpHorMiddle2 = "S2";
-    public const string turnUpVerMiddleBack = "M'";
-    public const string turnUpVerMiddleFront = "M";
-    public const string turnUpVerMiddle2 = "M2";
-    public const string turnFrontHorMiddleLeft = "E'";
-    public const string turnFrontHorMiddleRight = "E";
-    public const string turnFrontHorMiddle2 = "E2";
 
     // Two layers at the same time
     public const string turn2LayersFrontCW = "f";
@@ -79,15 +79,15 @@ internal static class Globals
     public const string turn2LayersDown2 = "d2";
 
     // Whole cube turns
-    public const string turnCubeFrontToRight = "y'";
-    public const string turnCubeFrontToLeft = "y";
-    public const string turnCubeFrontToLeft2 = "y2";
     public const string turnCubeFrontToUp = "x";
-    public const string turnCubeFrontToUp2 = "x2";
     public const string turnCubeFrontToDown = "x'";
+    public const string turnCubeFrontToUp2 = "x2";
+    public const string turnCubeFrontToLeft = "y";
+    public const string turnCubeFrontToRight = "y'";
+    public const string turnCubeFrontToLeft2 = "y2";
     public const string turnCubeUpToRight = "z";
-    public const string turnCubeUpToRight2 = "z2";
     public const string turnCubeUpToLeft = "z'";
+    public const string turnCubeUpToRight2 = "z2";
 
     //// Global methods
     // Set the theme
@@ -115,7 +115,7 @@ internal static class Globals
         }
     }
 
-    //// Make a turn (with 1 letter) of the cube/face/side
+    //// Make a turn (with 1 letter [plus ' or 2]) of the cube/face/side
     public static async Task MakeTurnLetterAsync(string cTurn)
     {
         // Remove leading and trailing whitespace
