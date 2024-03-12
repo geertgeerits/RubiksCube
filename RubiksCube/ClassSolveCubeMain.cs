@@ -190,9 +190,9 @@ namespace RubiksCube
             // Do the cleaning two times
             for (int NumberCleanings = 0; NumberCleanings < 2; NumberCleanings++)
             {
-                // Replace two same values with one value
                 for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
                 {
+                    // Replace two same turns with one turn or no turn
                     if (lCubeTurnsTemp[i] == lCubeTurnsTemp[i + 1])
                     {
                         // U & U -> U2
@@ -205,7 +205,7 @@ namespace RubiksCube
                         // U' & U' -> U2
                         else if (lCubeTurnsTemp[i].EndsWith("'"))
                         {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][..^1] + "2";
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "2";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
@@ -215,272 +215,52 @@ namespace RubiksCube
                             lCubeTurnsTemp[i] = cNone;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
+                    }
 
-                        // S & S' -> S2
-                        else if (lCubeTurnsTemp[i] == turnUpHorMiddleRight || lCubeTurnsTemp[i] == turnUpHorMiddleLeft)
+                    // Replace two same first letters of a turn with another turn or no turn
+                    else if (lCubeTurnsTemp[i][0] == lCubeTurnsTemp[i + 1][0])
+                    {
+                        // U & U' -> None
+                        if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith("'"))
                         {
-                            lCubeTurnsTemp[i] = turnUpHorMiddle2;
+                            lCubeTurnsTemp[i] = cNone;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                        
-                        // M & M' -> M2
-                        else if (lCubeTurnsTemp[i] == turnUpVerMiddleBack || lCubeTurnsTemp[i] == turnUpVerMiddleFront)
+
+                        // U' & U -> None
+                        else if (lCubeTurnsTemp[i].EndsWith("'") && lCubeTurnsTemp[i + 1].Length == 1)
                         {
-                            lCubeTurnsTemp[i] = turnUpVerMiddle2;
+                            lCubeTurnsTemp[i] = cNone;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                        
-                        // E & E' -> E2
-                        else if (lCubeTurnsTemp[i] == turnFrontHorMiddleLeft || lCubeTurnsTemp[i] == turnFrontHorMiddleRight)
+
+                        // U & U2 -> U'
+                        else if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith("2"))
                         {
-                            lCubeTurnsTemp[i] = turnFrontHorMiddle2;
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "'";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                        
-                        // y & y' -> y2
-                        else if (lCubeTurnsTemp[i] == turnCubeFrontToRight || lCubeTurnsTemp[i] == turnCubeFrontToLeft)
+
+                        // U2 & U -> U'
+                        else if (lCubeTurnsTemp[i].EndsWith("2") && lCubeTurnsTemp[i + 1].Length == 1)
                         {
-                            lCubeTurnsTemp[i] = turnCubeFrontToLeft2;
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i + 1] + "'";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                        
-                        // x & x' -> x2
-                        else if (lCubeTurnsTemp[i] == turnCubeFrontToUp || lCubeTurnsTemp[i] == turnCubeFrontToDown)
+
+                        // U' & U2 -> U
+                        else if (lCubeTurnsTemp[i].EndsWith("'") && lCubeTurnsTemp[i + 1].EndsWith("2"))
                         {
-                            lCubeTurnsTemp[i] = turnCubeFrontToUp2;
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                        
-                        // z & z' -> z2
-                        else if (lCubeTurnsTemp[i] == turnCubeUpToRight || lCubeTurnsTemp[i] == turnCubeUpToLeft)
+
+                        // U2 & U' -> U
+                        else if (lCubeTurnsTemp[i].EndsWith("2") && lCubeTurnsTemp[i + 1].EndsWith("'"))
                         {
-                            lCubeTurnsTemp[i] = turnCubeUpToRight2;
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
-                    }
-                }
-
-                // Remove the items with 'None'
-                lCubeTurnsTemp.RemoveAll(x => x == cNone);
-
-                // Remove the opposite turns
-                for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
-                {
-                    // F & F' -> None
-                    if (lCubeTurnsTemp[i] == turnFrontCW && lCubeTurnsTemp[i + 1] == turnFrontCCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // F' & F -> None
-                    if (lCubeTurnsTemp[i] == turnFrontCCW && lCubeTurnsTemp[i + 1] == turnFrontCW)
-                    {
-                        lCubeTurnsTemp.RemoveAt(i + 1);
-                        lCubeTurnsTemp.RemoveAt(i);
-                    }
-
-                    // R & R' -> None
-                    if (lCubeTurnsTemp[i] == turnRightCW && lCubeTurnsTemp[i + 1] == turnRightCCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // R' & R -> None
-                    if (lCubeTurnsTemp[i] == turnRightCCW && lCubeTurnsTemp[i + 1] == turnRightCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // B & B' -> None
-                    if (lCubeTurnsTemp[i] == turnBackCW && lCubeTurnsTemp[i + 1] == turnBackCCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // B' & B -> None
-                    if (lCubeTurnsTemp[i] == turnBackCCW && lCubeTurnsTemp[i + 1] == turnBackCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // L & L' -> None
-                    if (lCubeTurnsTemp[i] == turnLeftCW && lCubeTurnsTemp[i + 1] == turnLeftCCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // L' & L -> None
-                    if (lCubeTurnsTemp[i] == turnLeftCCW && lCubeTurnsTemp[i + 1] == turnLeftCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // U & U' -> None
-                    if (lCubeTurnsTemp[i] == turnUpCW && lCubeTurnsTemp[i + 1] == turnUpCCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // U' & U -> None
-                    if (lCubeTurnsTemp[i] == turnUpCCW && lCubeTurnsTemp[i + 1] == turnUpCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // D & D' -> None
-                    if (lCubeTurnsTemp[i] == turnDownCW && lCubeTurnsTemp[i + 1] == turnDownCCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // D' & D -> None
-                    if (lCubeTurnsTemp[i] == turnDownCCW && lCubeTurnsTemp[i + 1] == turnDownCW)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // S & S' -> None
-                    if (lCubeTurnsTemp[i] == turnUpHorMiddleRight && lCubeTurnsTemp[i + 1] == turnUpHorMiddleLeft)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // S' & S -> None
-                    if (lCubeTurnsTemp[i] == turnUpHorMiddleLeft && lCubeTurnsTemp[i + 1] == turnUpHorMiddleRight)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // M & M' -> None
-                    if (lCubeTurnsTemp[i] == turnUpVerMiddleBack && lCubeTurnsTemp[i + 1] == turnUpVerMiddleFront)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // M' & M -> None
-                    if (lCubeTurnsTemp[i] == turnUpVerMiddleFront && lCubeTurnsTemp[i + 1] == turnUpVerMiddleBack)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // E & E' -> None
-                    if (lCubeTurnsTemp[i] == turnFrontHorMiddleLeft && lCubeTurnsTemp[i + 1] == turnFrontHorMiddleRight)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // E' & E -> None
-                    if (lCubeTurnsTemp[i] == turnFrontHorMiddleRight && lCubeTurnsTemp[i + 1] == turnFrontHorMiddleLeft)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // x & x' -> None
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToUp && lCubeTurnsTemp[i + 1] == turnCubeFrontToDown)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // x' & x -> None
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToDown && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // y & y' -> None
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToLeft && lCubeTurnsTemp[i + 1] == turnCubeFrontToRight)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // y' & y -> None
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToRight && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // z & z' -> None
-                    if (lCubeTurnsTemp[i] == turnCubeUpToLeft && lCubeTurnsTemp[i + 1] == turnCubeUpToRight)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // z' & z -> None
-                    if (lCubeTurnsTemp[i] == turnCubeUpToRight && lCubeTurnsTemp[i + 1] == turnCubeUpToLeft)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-                }
-
-                // Remove the items with 'None'
-                lCubeTurnsTemp.RemoveAll(x => x == cNone);
-
-                // Remove or change turns that turn the whole cube
-                for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
-                {
-                    // x2 & x2 -> None
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToUp2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp2)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // y2 & y2 -> None
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft2)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // z2 & z2 -> None
-                    if (lCubeTurnsTemp[i] == turnCubeUpToRight2 && lCubeTurnsTemp[i + 1] == turnCubeUpToRight2)
-                    {
-                        lCubeTurnsTemp[i] = cNone;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // x2 & x -> x'
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToUp2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToUp)
-                    {
-                        lCubeTurnsTemp[i] = turnCubeFrontToDown;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // y2 & y -> y'
-                    if (lCubeTurnsTemp[i] == turnCubeFrontToLeft2 && lCubeTurnsTemp[i + 1] == turnCubeFrontToLeft)
-                    {
-                        lCubeTurnsTemp[i] = turnCubeFrontToRight;
-                        lCubeTurnsTemp[i + 1] = cNone;
-                    }
-
-                    // z2 & z -> z'
-                    if (lCubeTurnsTemp[i] == turnCubeUpToRight2 && lCubeTurnsTemp[i + 1] == turnCubeUpToRight)
-                    {
-                        lCubeTurnsTemp[i] = turnCubeUpToLeft;
-                        lCubeTurnsTemp[i + 1] = cNone;
                     }
                 }
 

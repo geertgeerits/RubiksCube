@@ -8,7 +8,8 @@ namespace RubiksCube
         //// Test the turns of the cube
         public static async Task<bool> TestCubeTurnsAsync()
         {
-            await TestCubeTurnsLetterAsync();
+            //await TestCubeTurnsLetterAsync();
+            await TestCubeTurnsToCleanAsync();
             //await TestSolveCubeTurnsCFOP();
             //await TestSolveCubeTurnsBasic();
             //await TestSolveCubeTurnsDaisy();
@@ -60,6 +61,32 @@ namespace RubiksCube
             await MakeTurnLetterAsync("U ");
             await MakeTurnLetterAsync(" U");
             await MakeTurnLetterAsync("U RR R2' U");
+
+            return true;
+        }
+
+        //// Test the cleaning process of the turns
+        private static async Task<bool> TestCubeTurnsToCleanAsync()
+        {
+            await MakeTurnLetterAsync("R");
+            await MakeTurnLetterAsync("L");
+
+            await MakeTurnLetterAsync("U U");       // -> U2
+            await MakeTurnLetterAsync("U' U'");     // -> U2
+            await MakeTurnLetterAsync("U2 U2");     // -> None
+            
+            await MakeTurnLetterAsync("U U'");      // -> None
+            await MakeTurnLetterAsync("U' U");      // -> None
+            await MakeTurnLetterAsync("U U2");      // -> U'
+            await MakeTurnLetterAsync("U2 U");      // -> U'
+            await MakeTurnLetterAsync("U' U2");     // -> U
+            await MakeTurnLetterAsync("U2 U'");     // -> U
+            
+            await MakeTurnLetterAsync("F");
+            await MakeTurnLetterAsync("x");
+            await MakeTurnLetterAsync("y'");
+
+            ClassSolveCubeMain.CleanListCubeTurns();
 
             return true;
         }
