@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.17
-// Date ........: 2024-03-11 (YYYY-MM-DD)
+// Date ........: 2024-03-12 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -1237,11 +1237,14 @@ public partial class MainPage : ContentPage
     //// Explain the turn of the cube with speech
     private static void ExplainTurnCubeSpeech(string cTurnCubeText)
     {
-        if (Globals.bExplainSpeech)
+        if (Globals.bExplainSpeech && !string.IsNullOrEmpty(cTurnCubeText))
         {
-            if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
+            if (cTurnCubeText.Length > 6)
             {
-                cTurnCubeText = cTurnCubeText.Substring(0, cTurnCubeText.Length - 5);
+                if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
+                {
+                    cTurnCubeText = cTurnCubeText.Substring(0, cTurnCubeText.Length - 5);
+                }
             }
 
             _ = ClassSpeech.ConvertTextToSpeechAsync(cTurnCubeText);
