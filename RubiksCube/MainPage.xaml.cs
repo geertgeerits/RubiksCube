@@ -1244,7 +1244,7 @@ public partial class MainPage : ContentPage
             {
                 if (cTurnCubeText.Substring(cTurnCubeText.Length - 2, 2) == ").")
                 {
-                    cTurnCubeText = cTurnCubeText.Substring(0, cTurnCubeText.Length - 5);
+                    cTurnCubeText = cTurnCubeText[..^5];
                 }
             }
 

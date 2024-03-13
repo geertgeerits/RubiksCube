@@ -929,7 +929,7 @@ namespace RubiksCube
                 }
 
                 // If all corners are on their places, break the loop
-                if (await SolveBottomLayerCheckCornersInRightPlaceAsync())
+                if (SolveBottomLayerCheckCornersInRightPlace())
                 {
                     break;
                 }
@@ -1004,7 +1004,7 @@ namespace RubiksCube
                     }
                 }
 
-                if (await SolveBottomLayerCheckCornersInRightPlaceAsync())
+                if (SolveBottomLayerCheckCornersInRightPlace())
                 {
                     return true;
                 }
@@ -1016,7 +1016,7 @@ namespace RubiksCube
         }
 
         //// Corners on their places - Part 2
-        private static async Task<bool> SolveBottomLayerCheckCornersInRightPlaceAsync()
+        private static bool SolveBottomLayerCheckCornersInRightPlace()
         {
             // Check if the corners are in the right place
             // If all corners are on their places, break the loop

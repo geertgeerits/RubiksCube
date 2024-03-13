@@ -9,6 +9,8 @@ namespace RubiksCube
     internal class ClassSolveCubeMain
     {
         private const string cNone = "None";
+        private const char cApos = '\'';
+        private const char c2 = '2';
         private static readonly List<string> lCubeTurnsTemp = [];
         private static readonly List<string> lCubePositions = [];
 
@@ -198,19 +200,19 @@ namespace RubiksCube
                         // U & U -> U2
                         if (lCubeTurnsTemp[i].Length == 1)
                         {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i] + "2";
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i] + c2;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U' & U' -> U2
-                        else if (lCubeTurnsTemp[i].EndsWith("'"))
+                        else if (lCubeTurnsTemp[i].EndsWith(cApos))
                         {
                             lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "2";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U2 & U2 -> None
-                        else if (lCubeTurnsTemp[i].EndsWith("2"))
+                        else if (lCubeTurnsTemp[i].EndsWith(c2))
                         {
                             lCubeTurnsTemp[i] = cNone;
                             lCubeTurnsTemp[i + 1] = cNone;
@@ -221,42 +223,42 @@ namespace RubiksCube
                     else if (lCubeTurnsTemp[i][0] == lCubeTurnsTemp[i + 1][0])
                     {
                         // U & U' -> None
-                        if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith("'"))
+                        if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith(cApos))
                         {
                             lCubeTurnsTemp[i] = cNone;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U' & U -> None
-                        else if (lCubeTurnsTemp[i].EndsWith("'") && lCubeTurnsTemp[i + 1].Length == 1)
+                        else if (lCubeTurnsTemp[i].EndsWith(cApos) && lCubeTurnsTemp[i + 1].Length == 1)
                         {
                             lCubeTurnsTemp[i] = cNone;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U & U2 -> U'
-                        else if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith("2"))
+                        else if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith(c2))
                         {
                             lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "'";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U2 & U -> U'
-                        else if (lCubeTurnsTemp[i].EndsWith("2") && lCubeTurnsTemp[i + 1].Length == 1)
+                        else if (lCubeTurnsTemp[i].EndsWith(c2) && lCubeTurnsTemp[i + 1].Length == 1)
                         {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i + 1] + "'";
+                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i + 1] + cApos;
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U' & U2 -> U
-                        else if (lCubeTurnsTemp[i].EndsWith("'") && lCubeTurnsTemp[i + 1].EndsWith("2"))
+                        else if (lCubeTurnsTemp[i].EndsWith(cApos) && lCubeTurnsTemp[i + 1].EndsWith(c2))
                         {
                             lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "";
                             lCubeTurnsTemp[i + 1] = cNone;
                         }
 
                         // U2 & U' -> U
-                        else if (lCubeTurnsTemp[i].EndsWith("2") && lCubeTurnsTemp[i + 1].EndsWith("'"))
+                        else if (lCubeTurnsTemp[i].EndsWith(c2) && lCubeTurnsTemp[i + 1].EndsWith(cApos))
                         {
                             lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "";
                             lCubeTurnsTemp[i + 1] = cNone;

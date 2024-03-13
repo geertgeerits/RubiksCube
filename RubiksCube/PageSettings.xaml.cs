@@ -144,12 +144,12 @@ public partial class PageSettings : ContentPage
     //// Put text in the chosen language in the controls and variables
     private void SetLanguage()
     {
-        List<string> ThemeList = new()
-        {
+        List<string> ThemeList =
+        [
             CubeLang.ThemeSystem_Text,
             CubeLang.ThemeLight_Text,
             CubeLang.ThemeDark_Text
-        };
+        ];
         pckTheme.ItemsSource = ThemeList;
 
         // Set the current theme in the picker
