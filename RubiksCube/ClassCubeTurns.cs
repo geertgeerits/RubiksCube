@@ -2,8 +2,8 @@
 {
     internal class ClassCubeTurns
     {
-        //// Turn the layers of the cube (CW = Clockwise, CCW = Counter clockwise, 2 = two quarter turns)
-        public static async Task TurnCubeLayersAsync(string cTurn)
+        //// Turn the layers of the cube (CW = Clockwise, CCW = Counter clockwise, 2 = two quarter turns or 1 half turn)
+        public static async Task<bool> TurnCubeLayersAsync(string cTurn)
         {
             switch (cTurn)
             {
@@ -228,8 +228,10 @@
 
                 default:
                     await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
-                    return;
+                    return false;
             }
+
+            return true;
         }
 
         //// Turn the entire cube a quarter turn

@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.17
-// Date ........: 2024-03-12 (YYYY-MM-DD)
+// Date ........: 2024-03-13 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -243,11 +243,12 @@ public partial class MainPage : ContentPage
                 bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
             }
 
-            //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();   // Test the turns of the cube
-            //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();   // For testing
+            //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
+            //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing
             //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();   // For testing
             //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing
             //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing
+            //ClassSolveCubeMain.CleanListCubeTurns();                        // For testing
 
             // Restore the start colors of the cube from array aStartPieces[]
             Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
@@ -260,7 +261,7 @@ public partial class MainPage : ContentPage
         stopwatch.Stop();
         long elapsedMs = stopwatch.ElapsedMilliseconds;
 
-        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeTurnAsync()
+        // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
         // If not testing the solution to solve the cube then set bTestSolveCube = false
         bTestSolveCube = false;
 
@@ -279,7 +280,7 @@ public partial class MainPage : ContentPage
                 lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
                 btnLetterTurn.Text = cItem;
 
-                await MakeTurnAsync(cItem);
+                await MakeExplainTurnAsync(cItem);
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
@@ -830,7 +831,7 @@ public partial class MainPage : ContentPage
     }
 
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
-    private async Task MakeTurnAsync(string cTurn)
+    private async Task MakeExplainTurnAsync(string cTurn)
     {
         // If bTestSolveCube = true then do not use the 'steps one at a time' to solve te cube
         if (bTestSolveCube)
@@ -1274,7 +1275,7 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            // Restart the application to get out of the loop in the Task MakeTurnAsync()
+            // Restart the application to get out of the loop in the Task MakeExplainTurnAsync()
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
         else

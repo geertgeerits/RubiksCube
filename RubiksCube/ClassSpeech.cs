@@ -94,7 +94,7 @@
         }
 
         //// Convert text to speech
-        // If you do not wait long enough in the Task 'MakeTurnAsync()' with a Task.Delay(),
+        // If you do not wait long enough in the Task 'MakeExplainTurnAsync()' with a Task.Delay(),
         // an error message will sometimes appear: 'The operation was canceled'.
         // This only occurs if the 'Explained by speech' setting is enabled.
         // The error occurs in the method 'ConvertTextToSpeechAsync()'.

@@ -116,7 +116,7 @@ internal static class Globals
     }
 
     //// Make a turn (with 1 letter [plus ' or 2]) of the cube/face/side
-    public static async Task MakeTurnLetterAsync(string cTurn)
+    public static async Task MakeTurnAsync(string cTurn)
     {
         // Remove leading and trailing whitespace
         cTurn = cTurn.Trim();
@@ -124,11 +124,12 @@ internal static class Globals
         // Split the string into individual turns
         foreach (string cTurnPart in cTurn.Split(' '))
         {
-            // Add the turn to the list
-            lCubeTurns.Add(cTurnPart);
-
             // Turn the cube/face/side
-            await ClassCubeTurns.TurnCubeLayersAsync(cTurnPart);
+            if (await ClassCubeTurns.TurnCubeLayersAsync(cTurnPart))
+            {
+                // Add the turn to the list
+                lCubeTurns.Add(cTurnPart);
+            }
         }
     }
 }
