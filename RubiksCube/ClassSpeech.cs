@@ -110,7 +110,7 @@
             }
 
             // Start with the text to speech
-            if (cTurnCubeText != null && cTurnCubeText != "")
+            if (cTurnCubeText is not null and not "")
             {
                 Globals.bTextToSpeechIsBusy = true;
 

@@ -289,6 +289,11 @@ public partial class MainPage : ContentPage
             if (ClassColorsCube.CheckIfSolved())
             {
                 await DisplayAlert("", CubeLang.MessageCubeIsSolved_Text, CubeLang.ButtonClose_Text);
+                
+                if (Globals.bExplainSpeech)
+                {
+                    _ = ClassSpeech.ConvertTextToSpeechAsync(CubeLang.MessageCubeIsSolved_Text);
+                }
             }
             else
             {
