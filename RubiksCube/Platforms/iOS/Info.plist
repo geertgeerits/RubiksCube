@@ -41,4 +41,30 @@
 	<key>CFBundleVersion</key>
 	<string>17</string>
 </dict>
+
+<key>NSPrivacyAccessedAPITypes</key>
+<dict>
+
+	<!--<key>NSPrivacyAccessedAPITypeReasons</key>
+	<string></string>-->
+
+	<key>NSPrivacyAccessedAPICategorySystemBootTime</key>
+	<array>
+		<string>App initialization</string>
+		<string>Performance optimization</string>
+		<string>Diagnostic and Troubleshooting</string>
+	</array>
+
+	<key>NSPrivacyAccessedAPICategoryFileTimestamp</key>
+	<array>
+		<string>Needs the timestamp for saving a file with the cube data</string>
+	</array>
+
+	<key>NSPrivacyAccessedAPICategoryDiskSpace</key>
+	<array>
+		<string>Saving and restore cube data</string>
+	</array>
+
+</dict>
+
 </plist>
