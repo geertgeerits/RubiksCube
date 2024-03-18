@@ -56,7 +56,7 @@
 				<string>3B52.1</string>
 			</array>
 			<key>NSPrivacyAccessedAPIReason</key>
-			<string>We access file timestamps to keep track of when files in our app were last modified for data integrity purposes.</string>
+			<string>Access to file timestamps is essential for managing files and ensuring data integrity.</string>
 		</dict>
 		<dict>
 			<key>NSPrivacyAccessedAPICategoryDiskSpace</key>

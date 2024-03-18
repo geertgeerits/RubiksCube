@@ -433,6 +433,8 @@
                 return false;
             }
 
+            // Check the neighbors of the center pieces of the cube
+            //return CheckNeighborsCenterPieces();
             return true;
         }
 
@@ -446,6 +448,92 @@
 
             return true;
         }
+
+        //// Check the neighbors of the center pieces of the cube
+        // Globals.aFaceColors[1] -> Front face: Red
+        // Globals.aFaceColors[2] -> Right face: Blue
+        // Globals.aFaceColors[3] -> Back face: Orange
+        // Globals.aFaceColors[4] -> Left face: Green
+        // Globals.aFaceColors[5] -> Up face: White
+        // Globals.aFaceColors[6] -> Down face: Yellow
+        private static bool CheckNeighborsCenterPieces()
+        {
+            // Globals.aFaceColors[1] -> Front face Red and Up face White -> Order: 1 2 3 4 5 6
+            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[13] == Globals.aFaceColors[2] && Globals.aPieces[22] == Globals.aFaceColors[3] && Globals.aPieces[31] == Globals.aFaceColors[4])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[2] -> Front face Blue and Up face White -> Order: 2 3 4 1 5 6
+            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[13] == Globals.aFaceColors[3] && Globals.aPieces[22] == Globals.aFaceColors[4] && Globals.aPieces[31] == Globals.aFaceColors[1])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[3] -> Front face Orange and Up face White -> Order: 3 4 1 2 5 6
+            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[13] == Globals.aFaceColors[4] && Globals.aPieces[22] == Globals.aFaceColors[1] && Globals.aPieces[31] == Globals.aFaceColors[2])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[4] -> Front face Green and Up face White -> Order: 4 1 2 3 5 6
+            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[13] == Globals.aFaceColors[1] && Globals.aPieces[22] == Globals.aFaceColors[2] && Globals.aPieces[31] == Globals.aFaceColors[3])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[5] -> Front face White and Up face Green -> Order: 5 3 6 1 4 2
+            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[13] == Globals.aFaceColors[3] && Globals.aPieces[22] == Globals.aFaceColors[6] && Globals.aPieces[31] == Globals.aFaceColors[1])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[3] -> Front face Orange and Up face Green -> Order: 3 6 1 5 4 2
+            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[13] == Globals.aFaceColors[6] && Globals.aPieces[22] == Globals.aFaceColors[1] && Globals.aPieces[31] == Globals.aFaceColors[5])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[6] -> Front face Yellow and Up face Green -> Order: 6 1 5 3 4 2
+            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[13] == Globals.aFaceColors[1] && Globals.aPieces[22] == Globals.aFaceColors[5] && Globals.aPieces[31] == Globals.aFaceColors[3])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                {
+                    return true;
+                }
+            }
+
+            // Globals.aFaceColors[1] -> Front face Red and Up face Green -> Order: 1 5 3 6 4 2
+            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[13] == Globals.aFaceColors[5] && Globals.aPieces[22] == Globals.aFaceColors[3] && Globals.aPieces[31] == Globals.aFaceColors[6])
+            {
+                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                {
+                    return true;
+                }
+            }
+
+            _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+            return false;
+        }
+
 
         //// Check the number of colors on the corner cubes
         private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)

@@ -469,7 +469,7 @@ La posible causa es la transferencia incorrecta de colores a este cubo.</value>
     <value>El cubo vuelve a su estado anterior.</value>
   </data>
   <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Los colores de las piezas centrales opuestas están mal.</value>
+    <value>Los colores de las piezas centrales están mal.</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>De cada color disponible, debe haber cuatro del mismo color en un cubo de arista.</value>

@@ -469,7 +469,7 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
     <value>De kubus is terug in zijn vorige staat.</value>
   </data>
   <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>De kleuren van de tegenoverliggende middenstukken zijn verkeerd.</value>
+    <value>De kleuren van de middenstukken zijn verkeerd.</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>Van elke beschikbare kleur moeten er vier van dezelfde kleur op een randblokje staan.</value>

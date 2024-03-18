@@ -469,7 +469,7 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
     <value>Le cube est revenu à son état précédent.</value>
   </data>
   <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Les couleurs des pièces centrales opposées sont fausses.</value>
+    <value>Les couleurs des pièces centrales sont fausses.</value>
   </data>
   <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
     <value>De chaque couleur disponible, il doit y en avoir quatre de la même couleur sur un cube de bord.</value>
