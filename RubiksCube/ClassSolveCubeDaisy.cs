@@ -168,6 +168,13 @@ namespace RubiksCube
                         {
                             while (true)
                             {
+                                nLoopTimes++;
+                                if (nLoopTimes > nLoopTimesMax)
+                                {
+                                    Debug.WriteLine("Daisy: nLoopTimes corners top layer: " + nLoopTimes);
+                                    return false;
+                                }
+
                                 if (cB == aPieces[45] && aPieces[4] == aPieces[6] && aPieces[31] == aPieces[35])
                                 {
                                     break;
@@ -188,6 +195,13 @@ namespace RubiksCube
                         {
                             while (true)
                             {
+                                nLoopTimes++;
+                                if (nLoopTimes > nLoopTimesMax)
+                                {
+                                    Debug.WriteLine("Daisy: nLoopTimes corners top layer: " + nLoopTimes);
+                                    return false;
+                                }
+
                                 if (cB == aPieces[45] && aPieces[4] == aPieces[6] && aPieces[31] == aPieces[35])
                                 {
                                     break;
@@ -208,6 +222,13 @@ namespace RubiksCube
                         {
                             while (true)
                             {
+                                nLoopTimes++;
+                                if (nLoopTimes > nLoopTimesMax)
+                                {
+                                    Debug.WriteLine("Daisy: nLoopTimes corners top layer: " + nLoopTimes);
+                                    return false;
+                                }
+
                                 if (cB == aPieces[45] && aPieces[4] == aPieces[6] && aPieces[31] == aPieces[35])
                                 {
                                     break;
@@ -228,6 +249,13 @@ namespace RubiksCube
                         {
                             while (true)
                             {
+                                nLoopTimes++;
+                                if (nLoopTimes > nLoopTimesMax)
+                                {
+                                    Debug.WriteLine("Daisy: nLoopTimes corners top layer: " + nLoopTimes);
+                                    return false;
+                                }
+
                                 if (cB == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[13] == aPieces[15])
                                 {
                                     break;
@@ -248,6 +276,13 @@ namespace RubiksCube
                         {
                             while (true)
                             {
+                                nLoopTimes++;
+                                if (nLoopTimes > nLoopTimesMax)
+                                {
+                                    Debug.WriteLine("Daisy: nLoopTimes corners top layer: " + nLoopTimes);
+                                    return false;
+                                }
+
                                 if (cB == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[13] == aPieces[15])
                                 {
                                     break;
@@ -268,6 +303,13 @@ namespace RubiksCube
                         {
                             while (true)
                             {
+                                nLoopTimes++;
+                                if (nLoopTimes > nLoopTimesMax)
+                                {
+                                    Debug.WriteLine("Daisy: nLoopTimes corners top layer: " + nLoopTimes);
+                                    return false;
+                                }
+
                                 if (cB == aPieces[47] && aPieces[4] == aPieces[8] && aPieces[13] == aPieces[15])
                                 {
                                     break;
@@ -712,6 +754,13 @@ namespace RubiksCube
                 {
                     while (true)
                     {
+                        nLoopTimes++;
+                        if (nLoopTimes > nLoopTimesMax)
+                        {
+                            Debug.WriteLine("Daisy: nLoopTimes bottom layer: " + nLoopTimes);
+                            return false;
+                        }
+
                         if (aPieces[4] == aPieces[8] && aPieces[13] == aPieces[15] || aPieces[49] == aPieces[47])
                         {
                             break;

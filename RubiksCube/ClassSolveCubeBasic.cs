@@ -246,7 +246,6 @@ namespace RubiksCube
                     Debug.WriteLine("Basic: nLoopTimes top layer edges: " + nLoopTimes);
                     return false;
                 }
-                //Debug.WriteLine("Basic: nLoopTimes top layer edges: " + nLoopTimes);
 
                 // 710
                 cB = aPieces[40];
