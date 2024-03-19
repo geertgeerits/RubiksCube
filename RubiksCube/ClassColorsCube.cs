@@ -434,7 +434,12 @@
             }
 
             // Check the neighbors of the center pieces of the cube
-            //return CheckNeighborsCenterPieces();
+            if (!CheckNeighborsCenterPieces())
+            {
+                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
+                return false;
+            }
+
             return true;
         }
 
@@ -449,7 +454,7 @@
             return true;
         }
 
-        //// Check the neighbors of the center pieces of the cube
+        //// Check the neighbors and opposite center pieces of the cube
         // Globals.aFaceColors[1] -> Front face: Red
         // Globals.aFaceColors[2] -> Right face: Blue
         // Globals.aFaceColors[3] -> Back face: Orange
@@ -458,80 +463,223 @@
         // Globals.aFaceColors[6] -> Down face: Yellow
         private static bool CheckNeighborsCenterPieces()
         {
-            // Globals.aFaceColors[1] -> Front face Red and Up face White -> Order: 1 2 3 4 5 6
-            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[13] == Globals.aFaceColors[2] && Globals.aPieces[22] == Globals.aFaceColors[3] && Globals.aPieces[31] == Globals.aFaceColors[4])
+            // Front face Red and Up face White
+            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[5])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[6])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[2] -> Front face Blue and Up face White -> Order: 2 3 4 1 5 6
-            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[13] == Globals.aFaceColors[3] && Globals.aPieces[22] == Globals.aFaceColors[4] && Globals.aPieces[31] == Globals.aFaceColors[1])
+            // Front face Blue and Up face White
+            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[5])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[6])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[3] -> Front face Orange and Up face White -> Order: 3 4 1 2 5 6
-            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[13] == Globals.aFaceColors[4] && Globals.aPieces[22] == Globals.aFaceColors[1] && Globals.aPieces[31] == Globals.aFaceColors[2])
+            // Front face Orange and Up face White
+            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[5])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[6])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[4] -> Front face Green and Up face White -> Order: 4 1 2 3 5 6
-            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[13] == Globals.aFaceColors[1] && Globals.aPieces[22] == Globals.aFaceColors[2] && Globals.aPieces[31] == Globals.aFaceColors[3])
+            // Front face Green and Up face White
+            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[5])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[5] && Globals.aPieces[49] == Globals.aFaceColors[6])
+                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[6])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[5] -> Front face White and Up face Green -> Order: 5 3 6 1 4 2
-            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[13] == Globals.aFaceColors[3] && Globals.aPieces[22] == Globals.aFaceColors[6] && Globals.aPieces[31] == Globals.aFaceColors[1])
+            // Front face White and Up face Red
+            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[1])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[3])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[3] -> Front face Orange and Up face Green -> Order: 3 6 1 5 4 2
-            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[13] == Globals.aFaceColors[6] && Globals.aPieces[22] == Globals.aFaceColors[1] && Globals.aPieces[31] == Globals.aFaceColors[5])
+            // Front face Green and Up face Red
+            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[1])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[3])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[6] -> Front face Yellow and Up face Green -> Order: 6 1 5 3 4 2
-            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[13] == Globals.aFaceColors[1] && Globals.aPieces[22] == Globals.aFaceColors[5] && Globals.aPieces[31] == Globals.aFaceColors[3])
+            // Front face Yellow and Up face Red
+            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[1])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[3])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            // Globals.aFaceColors[1] -> Front face Red and Up face Green -> Order: 1 5 3 6 4 2
-            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[13] == Globals.aFaceColors[5] && Globals.aPieces[22] == Globals.aFaceColors[3] && Globals.aPieces[31] == Globals.aFaceColors[6])
+            // Front face Blue and Up face Red
+            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[1])
             {
-                if (Globals.aPieces[40] == Globals.aFaceColors[4] && Globals.aPieces[49] == Globals.aFaceColors[2])
+                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[3])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
-            return false;
+            // Front face White and Up face Green
+            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Orange and Up face Green
+            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Yellow and Up face Green
+            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Red and Up face Green
+            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                {
+                    return false;
+                }
+            }
+
+            // Front face White and Up face Orange
+            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Blue and Up face Orange
+            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Yellow and Up face Orange
+            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Green and Up face Orange
+            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                {
+                    return false;
+                }
+            }
+
+            // Front face White and Up face Blue
+            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Red and Up face Blue
+            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Yellow and Up face Blue
+            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Orange and Up face Blue
+            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Red and Up face Yellow
+            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Green and Up face Yellow
+            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Orange and Up face Yellow
+            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                {
+                    return false;
+                }
+            }
+
+            // Front face Blue and Up face Yellow
+            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            {
+                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
 
