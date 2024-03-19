@@ -435,7 +435,7 @@ namespace RubiksCube
                 return false;
             }
 
-            // Check the neighbors of the center pieces of the cube
+            // Check the neighbors and opposite center pieces of the cube
             if (!CheckNeighborsCenterPieces())
             {
                 _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, CubeLang.MessageColorCenterPiece_Text, CubeLang.ButtonClose_Text);
@@ -683,7 +683,6 @@ namespace RubiksCube
 
             return true;
         }
-
 
         //// Check the number of colors on the corner cubes
         private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)
