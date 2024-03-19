@@ -1,4 +1,6 @@
-﻿namespace RubiksCube
+﻿using static RubiksCube.Globals;
+
+namespace RubiksCube
 {
     internal class ClassCubeTurns
     {
@@ -8,186 +10,186 @@
             switch (cTurn)
             {
                 // Face rotations
-                case Globals.turnFrontCW:
+                case turnFrontCW:
                     TurnFrontFaceTo("CW");
                     break;
-                case Globals.turnFrontCCW:
+                case turnFrontCCW:
                     TurnFrontFaceTo("CCW");
                     break;
-                case Globals.turnFront2:
+                case turnFront2:
                     TurnFrontFaceTo("CW");
                     TurnFrontFaceTo("CW");
                     break;
-                case Globals.turnRightCW:
+                case turnRightCW:
                     TurnRightFaceTo("CW");
                     break;
-                case Globals.turnRightCCW:
+                case turnRightCCW:
                     TurnRightFaceTo("CCW");
                     break;
-                case Globals.turnRight2:
+                case turnRight2:
                     TurnRightFaceTo("CW");
                     TurnRightFaceTo("CW");
                     break;
-                case Globals.turnBackCW:
+                case turnBackCW:
                     TurnBackFaceTo("CW");
                     break;
-                case Globals.turnBackCCW:
+                case turnBackCCW:
                     TurnBackFaceTo("CCW");
                     break;
-                case Globals.turnBack2:
+                case turnBack2:
                     TurnBackFaceTo("CW");
                     TurnBackFaceTo("CW");
                     break;
-                case Globals.turnLeftCW:
+                case turnLeftCW:
                     TurnLeftFaceTo("CW");
                     break;
-                case Globals.turnLeftCCW:
+                case turnLeftCCW:
                     TurnLeftFaceTo("CCW");
                     break;
-                case Globals.turnLeft2:
+                case turnLeft2:
                     TurnLeftFaceTo("CW");
                     TurnLeftFaceTo("CW");
                     break;
-                case Globals.turnUpCW:
+                case turnUpCW:
                     TurnUpFaceTo("CW");
                     break;
-                case Globals.turnUpCCW:
+                case turnUpCCW:
                     TurnUpFaceTo("CCW");
                     break;
-                case Globals.turnUp2:
+                case turnUp2:
                     TurnUpFaceTo("CW");
                     TurnUpFaceTo("CW");
                     break;
-                case Globals.turnDownCW:
+                case turnDownCW:
                     TurnDownFaceTo("CW");
                     break;
-                case Globals.turnDownCCW:
+                case turnDownCCW:
                     TurnDownFaceTo("CCW");
                     break;
-                case Globals.turnDown2:
+                case turnDown2:
                     TurnDownFaceTo("CW");
                     TurnDownFaceTo("CW");
                     break;
 
                 // Middle layer rotations
-                case Globals.turnUpHorMiddleRight:
+                case turnUpHorMiddleRight:
                     TurnUpHorMiddleTo("CW");
                     break;
-                case Globals.turnUpHorMiddleLeft:
+                case turnUpHorMiddleLeft:
                     TurnUpHorMiddleTo("CCW");
                     break;
-                case Globals.turnUpHorMiddle2:
+                case turnUpHorMiddle2:
                     TurnUpHorMiddleTo("CW");
                     TurnUpHorMiddleTo("CW");
                     break;
 
-                case Globals.turnUpVerMiddleBack:
+                case turnUpVerMiddleBack:
                     TurnUpVerMiddleTo("CW");
                     break;
-                case Globals.turnUpVerMiddleFront:
+                case turnUpVerMiddleFront:
                     TurnUpVerMiddleTo("CCW");
                     break;
-                case Globals.turnUpVerMiddle2:
+                case turnUpVerMiddle2:
                     TurnUpVerMiddleTo("CW");
                     TurnUpVerMiddleTo("CW");
                     break;
 
-                case Globals.turnFrontHorMiddleLeft:
+                case turnFrontHorMiddleLeft:
                     TurnFrontHorMiddleTo("CW");
                     break;
-                case Globals.turnFrontHorMiddleRight:
+                case turnFrontHorMiddleRight:
                     TurnFrontHorMiddleTo("CCW");
                     break;
-                case Globals.turnFrontHorMiddle2:
+                case turnFrontHorMiddle2:
                     TurnFrontHorMiddleTo("CW");
                     TurnFrontHorMiddleTo("CW");
                     break;
 
                 // Two layers at the same time
-                case Globals.turn2LayersFrontCW:
+                case turn2LayersFrontCW:
                     TurnFrontFaceTo("CW");
                     TurnUpHorMiddleTo("CW");
                     break;
-                case Globals.turn2LayersFrontCCW:
+                case turn2LayersFrontCCW:
                     TurnFrontFaceTo("CCW");
                     TurnUpHorMiddleTo("CCW");
                     break;
-                case Globals.turn2LayersFront2:
+                case turn2LayersFront2:
                     TurnFrontFaceTo("CW");
                     TurnUpHorMiddleTo("CW");
                     TurnFrontFaceTo("CW");
                     TurnUpHorMiddleTo("CW");
                     break;
 
-                case Globals.turn2LayersRightCW:
+                case turn2LayersRightCW:
                     TurnRightFaceTo("CW");
                     TurnUpVerMiddleTo("CW");
                     break;
-                case Globals.turn2LayersRightCCW:
+                case turn2LayersRightCCW:
                     TurnRightFaceTo("CCW");
                     TurnUpVerMiddleTo("CCW");
                     break;
-                case Globals.turn2LayersRight2:
+                case turn2LayersRight2:
                     TurnRightFaceTo("CW");
                     TurnUpVerMiddleTo("CW");
                     TurnRightFaceTo("CW");
                     TurnUpVerMiddleTo("CW");
                     break;
 
-                case Globals.turn2LayersBackCW:
+                case turn2LayersBackCW:
                     TurnBackFaceTo("CW");
                     TurnUpHorMiddleTo("CCW");
                     break;
-                case Globals.turn2LayersBackCCW:
+                case turn2LayersBackCCW:
                     TurnBackFaceTo("CCW");
                     TurnUpHorMiddleTo("CW");
                     break;
-                case Globals.turn2LayersBack2:
+                case turn2LayersBack2:
                     TurnBackFaceTo("CW");
                     TurnUpHorMiddleTo("CCW");
                     TurnBackFaceTo("CW");
                     TurnUpHorMiddleTo("CCW");
                     break;
 
-                case Globals.turn2LayersLeftCW:
+                case turn2LayersLeftCW:
                     TurnLeftFaceTo("CW");
                     TurnUpVerMiddleTo("CCW");
                     break;
-                case Globals.turn2LayersLeftCCW:
+                case turn2LayersLeftCCW:
                     TurnLeftFaceTo("CCW");
                     TurnUpVerMiddleTo("CW");
                     break;
-                case Globals.turn2LayersLeft2:
+                case turn2LayersLeft2:
                     TurnLeftFaceTo("CW");
                     TurnUpVerMiddleTo("CCW");
                     TurnLeftFaceTo("CW");
                     TurnUpVerMiddleTo("CCW");
                     break;
 
-                case Globals.turn2LayersUpCW:
+                case turn2LayersUpCW:
                     TurnUpFaceTo("CW");
                     TurnFrontHorMiddleTo("CW");
                     break;
-                case Globals.turn2LayersUpCCW:
+                case turn2LayersUpCCW:
                     TurnUpFaceTo("CCW");
                     TurnFrontHorMiddleTo("CCW");
                     break;
-                case Globals.turn2LayersUp2:
+                case turn2LayersUp2:
                     TurnUpFaceTo("CW");
                     TurnFrontHorMiddleTo("CW");
                     TurnUpFaceTo("CW");
                     TurnFrontHorMiddleTo("CW");
                     break;
 
-                case Globals.turn2LayersDownCW:
+                case turn2LayersDownCW:
                     TurnDownFaceTo("CW");
                     TurnFrontHorMiddleTo("CCW");
                     break;
-                case Globals.turn2LayersDownCCW:
+                case turn2LayersDownCCW:
                     TurnDownFaceTo("CCW");
                     TurnFrontHorMiddleTo("CW");
                     break;
-                case Globals.turn2LayersDown2:
+                case turn2LayersDown2:
                     TurnDownFaceTo("CW");
                     TurnFrontHorMiddleTo("CCW");
                     TurnDownFaceTo("CW");
@@ -195,34 +197,34 @@
                     break;
 
                 // Cube rotations
-                case Globals.turnCubeFrontToRight:
+                case turnCubeFrontToRight:
                     TurnCubeFrontFaceToRightFace();
                     break;
-                case Globals.turnCubeFrontToLeft:
+                case turnCubeFrontToLeft:
                     TurnCubeFrontFaceToLeftFace();
                     break;
-                case Globals.turnCubeFrontToLeft2:
+                case turnCubeFrontToLeft2:
                     TurnCubeFrontFaceToLeftFace();
                     TurnCubeFrontFaceToLeftFace();
                     break;
-                case Globals.turnCubeFrontToUp:
+                case turnCubeFrontToUp:
                     TurnCubeFrontFaceToUpFace();
                     break;
-                case Globals.turnCubeFrontToUp2:
+                case turnCubeFrontToUp2:
                     TurnCubeFrontFaceToUpFace();
                     TurnCubeFrontFaceToUpFace();
                     break;
-                case Globals.turnCubeFrontToDown:
+                case turnCubeFrontToDown:
                     TurnCubeFrontFaceToDownFace();
                     break;
-                case Globals.turnCubeUpToRight:
+                case turnCubeUpToRight:
                     TurnCubeUpFaceToRightFace();
                     break;
-                case Globals.turnCubeUpToRight2:
+                case turnCubeUpToRight2:
                     TurnCubeUpFaceToRightFace();
                     TurnCubeUpFaceToRightFace();
                     break;
-                case Globals.turnCubeUpToLeft:
+                case turnCubeUpToLeft:
                     TurnCubeUpFaceToLeftFace();
                     break;
 
@@ -286,504 +288,504 @@
         //// Turn the entire front face clockwise or counter clockwise
         public static void TurnFrontFaceTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[0] = Globals.aPiecesTemp[6];
-                Globals.aPieces[1] = Globals.aPiecesTemp[3];
-                Globals.aPieces[2] = Globals.aPiecesTemp[0];
-                Globals.aPieces[3] = Globals.aPiecesTemp[7];
-                Globals.aPieces[5] = Globals.aPiecesTemp[1];
-                Globals.aPieces[6] = Globals.aPiecesTemp[8];
-                Globals.aPieces[7] = Globals.aPiecesTemp[5];
-                Globals.aPieces[8] = Globals.aPiecesTemp[2];
+                aPieces[0] = aPiecesTemp[6];
+                aPieces[1] = aPiecesTemp[3];
+                aPieces[2] = aPiecesTemp[0];
+                aPieces[3] = aPiecesTemp[7];
+                aPieces[5] = aPiecesTemp[1];
+                aPieces[6] = aPiecesTemp[8];
+                aPieces[7] = aPiecesTemp[5];
+                aPieces[8] = aPiecesTemp[2];
 
-                Globals.aPieces[42] = Globals.aPiecesTemp[35];
-                Globals.aPieces[43] = Globals.aPiecesTemp[32];
-                Globals.aPieces[44] = Globals.aPiecesTemp[29];
+                aPieces[42] = aPiecesTemp[35];
+                aPieces[43] = aPiecesTemp[32];
+                aPieces[44] = aPiecesTemp[29];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[42];
-                Globals.aPieces[12] = Globals.aPiecesTemp[43];
-                Globals.aPieces[15] = Globals.aPiecesTemp[44];
+                aPieces[9] = aPiecesTemp[42];
+                aPieces[12] = aPiecesTemp[43];
+                aPieces[15] = aPiecesTemp[44];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[15];
-                Globals.aPieces[46] = Globals.aPiecesTemp[12];
-                Globals.aPieces[47] = Globals.aPiecesTemp[9];
+                aPieces[45] = aPiecesTemp[15];
+                aPieces[46] = aPiecesTemp[12];
+                aPieces[47] = aPiecesTemp[9];
 
-                Globals.aPieces[29] = Globals.aPiecesTemp[45];
-                Globals.aPieces[32] = Globals.aPiecesTemp[46];
-                Globals.aPieces[35] = Globals.aPiecesTemp[47];
+                aPieces[29] = aPiecesTemp[45];
+                aPieces[32] = aPiecesTemp[46];
+                aPieces[35] = aPiecesTemp[47];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[0] = Globals.aPiecesTemp[2];
-                Globals.aPieces[1] = Globals.aPiecesTemp[5];
-                Globals.aPieces[2] = Globals.aPiecesTemp[8];
-                Globals.aPieces[3] = Globals.aPiecesTemp[1];
-                Globals.aPieces[5] = Globals.aPiecesTemp[7];
-                Globals.aPieces[6] = Globals.aPiecesTemp[0];
-                Globals.aPieces[7] = Globals.aPiecesTemp[3];
-                Globals.aPieces[8] = Globals.aPiecesTemp[6];
+                aPieces[0] = aPiecesTemp[2];
+                aPieces[1] = aPiecesTemp[5];
+                aPieces[2] = aPiecesTemp[8];
+                aPieces[3] = aPiecesTemp[1];
+                aPieces[5] = aPiecesTemp[7];
+                aPieces[6] = aPiecesTemp[0];
+                aPieces[7] = aPiecesTemp[3];
+                aPieces[8] = aPiecesTemp[6];
 
-                Globals.aPieces[42] = Globals.aPiecesTemp[9];
-                Globals.aPieces[43] = Globals.aPiecesTemp[12];
-                Globals.aPieces[44] = Globals.aPiecesTemp[15];
+                aPieces[42] = aPiecesTemp[9];
+                aPieces[43] = aPiecesTemp[12];
+                aPieces[44] = aPiecesTemp[15];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[47];
-                Globals.aPieces[12] = Globals.aPiecesTemp[46];
-                Globals.aPieces[15] = Globals.aPiecesTemp[45];
+                aPieces[9] = aPiecesTemp[47];
+                aPieces[12] = aPiecesTemp[46];
+                aPieces[15] = aPiecesTemp[45];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[29];
-                Globals.aPieces[46] = Globals.aPiecesTemp[32];
-                Globals.aPieces[47] = Globals.aPiecesTemp[35];
+                aPieces[45] = aPiecesTemp[29];
+                aPieces[46] = aPiecesTemp[32];
+                aPieces[47] = aPiecesTemp[35];
 
-                Globals.aPieces[29] = Globals.aPiecesTemp[44];
-                Globals.aPieces[32] = Globals.aPiecesTemp[43];
-                Globals.aPieces[35] = Globals.aPiecesTemp[42];
+                aPieces[29] = aPiecesTemp[44];
+                aPieces[32] = aPiecesTemp[43];
+                aPieces[35] = aPiecesTemp[42];
             }
         }
 
         //// Turn the top horizontal middle layer to the right or left
         public static void TurnUpHorMiddleTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[39] = Globals.aPiecesTemp[34];
-                Globals.aPieces[40] = Globals.aPiecesTemp[31];
-                Globals.aPieces[41] = Globals.aPiecesTemp[28];
+                aPieces[39] = aPiecesTemp[34];
+                aPieces[40] = aPiecesTemp[31];
+                aPieces[41] = aPiecesTemp[28];
 
-                Globals.aPieces[10] = Globals.aPiecesTemp[39];
-                Globals.aPieces[13] = Globals.aPiecesTemp[40];
-                Globals.aPieces[16] = Globals.aPiecesTemp[41];
+                aPieces[10] = aPiecesTemp[39];
+                aPieces[13] = aPiecesTemp[40];
+                aPieces[16] = aPiecesTemp[41];
 
-                Globals.aPieces[48] = Globals.aPiecesTemp[16];
-                Globals.aPieces[49] = Globals.aPiecesTemp[13];
-                Globals.aPieces[50] = Globals.aPiecesTemp[10];
+                aPieces[48] = aPiecesTemp[16];
+                aPieces[49] = aPiecesTemp[13];
+                aPieces[50] = aPiecesTemp[10];
 
-                Globals.aPieces[28] = Globals.aPiecesTemp[48];
-                Globals.aPieces[31] = Globals.aPiecesTemp[49];
-                Globals.aPieces[34] = Globals.aPiecesTemp[50];
+                aPieces[28] = aPiecesTemp[48];
+                aPieces[31] = aPiecesTemp[49];
+                aPieces[34] = aPiecesTemp[50];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[39] = Globals.aPiecesTemp[10];
-                Globals.aPieces[40] = Globals.aPiecesTemp[13];
-                Globals.aPieces[41] = Globals.aPiecesTemp[16];
+                aPieces[39] = aPiecesTemp[10];
+                aPieces[40] = aPiecesTemp[13];
+                aPieces[41] = aPiecesTemp[16];
 
-                Globals.aPieces[10] = Globals.aPiecesTemp[50];
-                Globals.aPieces[13] = Globals.aPiecesTemp[49];
-                Globals.aPieces[16] = Globals.aPiecesTemp[48];
+                aPieces[10] = aPiecesTemp[50];
+                aPieces[13] = aPiecesTemp[49];
+                aPieces[16] = aPiecesTemp[48];
 
-                Globals.aPieces[48] = Globals.aPiecesTemp[28];
-                Globals.aPieces[49] = Globals.aPiecesTemp[31];
-                Globals.aPieces[50] = Globals.aPiecesTemp[34];
+                aPieces[48] = aPiecesTemp[28];
+                aPieces[49] = aPiecesTemp[31];
+                aPieces[50] = aPiecesTemp[34];
 
-                Globals.aPieces[28] = Globals.aPiecesTemp[41];
-                Globals.aPieces[31] = Globals.aPiecesTemp[40];
-                Globals.aPieces[34] = Globals.aPiecesTemp[39];
+                aPieces[28] = aPiecesTemp[41];
+                aPieces[31] = aPiecesTemp[40];
+                aPieces[34] = aPiecesTemp[39];
             }
         }
 
         //// Turn the entire back face clockwise or counter clockwise
         public static void TurnBackFaceTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[18] = Globals.aPiecesTemp[24];
-                Globals.aPieces[19] = Globals.aPiecesTemp[21];
-                Globals.aPieces[20] = Globals.aPiecesTemp[18];
-                Globals.aPieces[21] = Globals.aPiecesTemp[25];
-                Globals.aPieces[23] = Globals.aPiecesTemp[19];
-                Globals.aPieces[24] = Globals.aPiecesTemp[26];
-                Globals.aPieces[25] = Globals.aPiecesTemp[23];
-                Globals.aPieces[26] = Globals.aPiecesTemp[20];
+                aPieces[18] = aPiecesTemp[24];
+                aPieces[19] = aPiecesTemp[21];
+                aPieces[20] = aPiecesTemp[18];
+                aPieces[21] = aPiecesTemp[25];
+                aPieces[23] = aPiecesTemp[19];
+                aPieces[24] = aPiecesTemp[26];
+                aPieces[25] = aPiecesTemp[23];
+                aPieces[26] = aPiecesTemp[20];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[11];
-                Globals.aPieces[37] = Globals.aPiecesTemp[14];
-                Globals.aPieces[38] = Globals.aPiecesTemp[17];
+                aPieces[36] = aPiecesTemp[11];
+                aPieces[37] = aPiecesTemp[14];
+                aPieces[38] = aPiecesTemp[17];
 
-                Globals.aPieces[11] = Globals.aPiecesTemp[53];
-                Globals.aPieces[14] = Globals.aPiecesTemp[52];
-                Globals.aPieces[17] = Globals.aPiecesTemp[51];
+                aPieces[11] = aPiecesTemp[53];
+                aPieces[14] = aPiecesTemp[52];
+                aPieces[17] = aPiecesTemp[51];
 
-                Globals.aPieces[51] = Globals.aPiecesTemp[27];
-                Globals.aPieces[52] = Globals.aPiecesTemp[30];
-                Globals.aPieces[53] = Globals.aPiecesTemp[33];
+                aPieces[51] = aPiecesTemp[27];
+                aPieces[52] = aPiecesTemp[30];
+                aPieces[53] = aPiecesTemp[33];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[38];
-                Globals.aPieces[30] = Globals.aPiecesTemp[37];
-                Globals.aPieces[33] = Globals.aPiecesTemp[36];
+                aPieces[27] = aPiecesTemp[38];
+                aPieces[30] = aPiecesTemp[37];
+                aPieces[33] = aPiecesTemp[36];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[18] = Globals.aPiecesTemp[20];
-                Globals.aPieces[19] = Globals.aPiecesTemp[23];
-                Globals.aPieces[20] = Globals.aPiecesTemp[26];
-                Globals.aPieces[21] = Globals.aPiecesTemp[19];
-                Globals.aPieces[23] = Globals.aPiecesTemp[25];
-                Globals.aPieces[24] = Globals.aPiecesTemp[18];
-                Globals.aPieces[25] = Globals.aPiecesTemp[21];
-                Globals.aPieces[26] = Globals.aPiecesTemp[24];
+                aPieces[18] = aPiecesTemp[20];
+                aPieces[19] = aPiecesTemp[23];
+                aPieces[20] = aPiecesTemp[26];
+                aPieces[21] = aPiecesTemp[19];
+                aPieces[23] = aPiecesTemp[25];
+                aPieces[24] = aPiecesTemp[18];
+                aPieces[25] = aPiecesTemp[21];
+                aPieces[26] = aPiecesTemp[24];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[33];
-                Globals.aPieces[37] = Globals.aPiecesTemp[30];
-                Globals.aPieces[38] = Globals.aPiecesTemp[27];
+                aPieces[36] = aPiecesTemp[33];
+                aPieces[37] = aPiecesTemp[30];
+                aPieces[38] = aPiecesTemp[27];
 
-                Globals.aPieces[11] = Globals.aPiecesTemp[36];
-                Globals.aPieces[14] = Globals.aPiecesTemp[37];
-                Globals.aPieces[17] = Globals.aPiecesTemp[38];
+                aPieces[11] = aPiecesTemp[36];
+                aPieces[14] = aPiecesTemp[37];
+                aPieces[17] = aPiecesTemp[38];
 
-                Globals.aPieces[51] = Globals.aPiecesTemp[17];
-                Globals.aPieces[52] = Globals.aPiecesTemp[14];
-                Globals.aPieces[53] = Globals.aPiecesTemp[11];
+                aPieces[51] = aPiecesTemp[17];
+                aPieces[52] = aPiecesTemp[14];
+                aPieces[53] = aPiecesTemp[11];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[51];
-                Globals.aPieces[30] = Globals.aPiecesTemp[52];
-                Globals.aPieces[33] = Globals.aPiecesTemp[53];
+                aPieces[27] = aPiecesTemp[51];
+                aPieces[30] = aPiecesTemp[52];
+                aPieces[33] = aPiecesTemp[53];
             }
         }
 
         //// Turn the entire left face clockwise or counter clockwise
         public static void TurnLeftFaceTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[27] = Globals.aPiecesTemp[33];
-                Globals.aPieces[28] = Globals.aPiecesTemp[30];
-                Globals.aPieces[29] = Globals.aPiecesTemp[27];
-                Globals.aPieces[30] = Globals.aPiecesTemp[34];
-                Globals.aPieces[32] = Globals.aPiecesTemp[28];
-                Globals.aPieces[33] = Globals.aPiecesTemp[35];
-                Globals.aPieces[34] = Globals.aPiecesTemp[32];
-                Globals.aPieces[35] = Globals.aPiecesTemp[29];
+                aPieces[27] = aPiecesTemp[33];
+                aPieces[28] = aPiecesTemp[30];
+                aPieces[29] = aPiecesTemp[27];
+                aPieces[30] = aPiecesTemp[34];
+                aPieces[32] = aPiecesTemp[28];
+                aPieces[33] = aPiecesTemp[35];
+                aPieces[34] = aPiecesTemp[32];
+                aPieces[35] = aPiecesTemp[29];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[26];
-                Globals.aPieces[39] = Globals.aPiecesTemp[23];
-                Globals.aPieces[42] = Globals.aPiecesTemp[20];
+                aPieces[36] = aPiecesTemp[26];
+                aPieces[39] = aPiecesTemp[23];
+                aPieces[42] = aPiecesTemp[20];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[36];
-                Globals.aPieces[3] = Globals.aPiecesTemp[39];
-                Globals.aPieces[6] = Globals.aPiecesTemp[42];
+                aPieces[0] = aPiecesTemp[36];
+                aPieces[3] = aPiecesTemp[39];
+                aPieces[6] = aPiecesTemp[42];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[0];
-                Globals.aPieces[48] = Globals.aPiecesTemp[3];
-                Globals.aPieces[51] = Globals.aPiecesTemp[6];
+                aPieces[45] = aPiecesTemp[0];
+                aPieces[48] = aPiecesTemp[3];
+                aPieces[51] = aPiecesTemp[6];
 
-                Globals.aPieces[20] = Globals.aPiecesTemp[51];
-                Globals.aPieces[23] = Globals.aPiecesTemp[48];
-                Globals.aPieces[26] = Globals.aPiecesTemp[45];
+                aPieces[20] = aPiecesTemp[51];
+                aPieces[23] = aPiecesTemp[48];
+                aPieces[26] = aPiecesTemp[45];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[27] = Globals.aPiecesTemp[29];
-                Globals.aPieces[28] = Globals.aPiecesTemp[32];
-                Globals.aPieces[29] = Globals.aPiecesTemp[35];
-                Globals.aPieces[30] = Globals.aPiecesTemp[28];
-                Globals.aPieces[32] = Globals.aPiecesTemp[34];
-                Globals.aPieces[33] = Globals.aPiecesTemp[27];
-                Globals.aPieces[34] = Globals.aPiecesTemp[30];
-                Globals.aPieces[35] = Globals.aPiecesTemp[33];
+                aPieces[27] = aPiecesTemp[29];
+                aPieces[28] = aPiecesTemp[32];
+                aPieces[29] = aPiecesTemp[35];
+                aPieces[30] = aPiecesTemp[28];
+                aPieces[32] = aPiecesTemp[34];
+                aPieces[33] = aPiecesTemp[27];
+                aPieces[34] = aPiecesTemp[30];
+                aPieces[35] = aPiecesTemp[33];
 
-                Globals.aPieces[36] = Globals.aPiecesTemp[0];
-                Globals.aPieces[39] = Globals.aPiecesTemp[3];
-                Globals.aPieces[42] = Globals.aPiecesTemp[6];
+                aPieces[36] = aPiecesTemp[0];
+                aPieces[39] = aPiecesTemp[3];
+                aPieces[42] = aPiecesTemp[6];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[45];
-                Globals.aPieces[3] = Globals.aPiecesTemp[48];
-                Globals.aPieces[6] = Globals.aPiecesTemp[51];
+                aPieces[0] = aPiecesTemp[45];
+                aPieces[3] = aPiecesTemp[48];
+                aPieces[6] = aPiecesTemp[51];
 
-                Globals.aPieces[45] = Globals.aPiecesTemp[26];
-                Globals.aPieces[48] = Globals.aPiecesTemp[23];
-                Globals.aPieces[51] = Globals.aPiecesTemp[20];
+                aPieces[45] = aPiecesTemp[26];
+                aPieces[48] = aPiecesTemp[23];
+                aPieces[51] = aPiecesTemp[20];
 
-                Globals.aPieces[20] = Globals.aPiecesTemp[42];
-                Globals.aPieces[23] = Globals.aPiecesTemp[39];
-                Globals.aPieces[26] = Globals.aPiecesTemp[36];
+                aPieces[20] = aPiecesTemp[42];
+                aPieces[23] = aPiecesTemp[39];
+                aPieces[26] = aPiecesTemp[36];
             }
         }
 
         //// Turn the top vertical middle layer to back or front
         public static void TurnUpVerMiddleTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[37] = Globals.aPiecesTemp[1];
-                Globals.aPieces[40] = Globals.aPiecesTemp[4];
-                Globals.aPieces[43] = Globals.aPiecesTemp[7];
+                aPieces[37] = aPiecesTemp[1];
+                aPieces[40] = aPiecesTemp[4];
+                aPieces[43] = aPiecesTemp[7];
 
-                Globals.aPieces[1] = Globals.aPiecesTemp[46];
-                Globals.aPieces[4] = Globals.aPiecesTemp[49];
-                Globals.aPieces[7] = Globals.aPiecesTemp[52];
+                aPieces[1] = aPiecesTemp[46];
+                aPieces[4] = aPiecesTemp[49];
+                aPieces[7] = aPiecesTemp[52];
 
-                Globals.aPieces[46] = Globals.aPiecesTemp[25];
-                Globals.aPieces[49] = Globals.aPiecesTemp[22];
-                Globals.aPieces[52] = Globals.aPiecesTemp[19];
+                aPieces[46] = aPiecesTemp[25];
+                aPieces[49] = aPiecesTemp[22];
+                aPieces[52] = aPiecesTemp[19];
 
-                Globals.aPieces[19] = Globals.aPiecesTemp[43];
-                Globals.aPieces[22] = Globals.aPiecesTemp[40];
-                Globals.aPieces[25] = Globals.aPiecesTemp[37];
+                aPieces[19] = aPiecesTemp[43];
+                aPieces[22] = aPiecesTemp[40];
+                aPieces[25] = aPiecesTemp[37];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[37] = Globals.aPiecesTemp[25];
-                Globals.aPieces[40] = Globals.aPiecesTemp[22];
-                Globals.aPieces[43] = Globals.aPiecesTemp[19];
+                aPieces[37] = aPiecesTemp[25];
+                aPieces[40] = aPiecesTemp[22];
+                aPieces[43] = aPiecesTemp[19];
 
-                Globals.aPieces[1] = Globals.aPiecesTemp[37];
-                Globals.aPieces[4] = Globals.aPiecesTemp[40];
-                Globals.aPieces[7] = Globals.aPiecesTemp[43];
+                aPieces[1] = aPiecesTemp[37];
+                aPieces[4] = aPiecesTemp[40];
+                aPieces[7] = aPiecesTemp[43];
 
-                Globals.aPieces[46] = Globals.aPiecesTemp[1];
-                Globals.aPieces[49] = Globals.aPiecesTemp[4];
-                Globals.aPieces[52] = Globals.aPiecesTemp[7];
+                aPieces[46] = aPiecesTemp[1];
+                aPieces[49] = aPiecesTemp[4];
+                aPieces[52] = aPiecesTemp[7];
 
-                Globals.aPieces[19] = Globals.aPiecesTemp[52];
-                Globals.aPieces[22] = Globals.aPiecesTemp[49];
-                Globals.aPieces[25] = Globals.aPiecesTemp[46];
+                aPieces[19] = aPiecesTemp[52];
+                aPieces[22] = aPiecesTemp[49];
+                aPieces[25] = aPiecesTemp[46];
             }
         }
 
         //// Turn the entire right face clockwise or counter clockwise
         public static void TurnRightFaceTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[9] = Globals.aPiecesTemp[15];
-                Globals.aPieces[10] = Globals.aPiecesTemp[12];
-                Globals.aPieces[11] = Globals.aPiecesTemp[9];
-                Globals.aPieces[12] = Globals.aPiecesTemp[16];
-                Globals.aPieces[14] = Globals.aPiecesTemp[10];
-                Globals.aPieces[15] = Globals.aPiecesTemp[17];
-                Globals.aPieces[16] = Globals.aPiecesTemp[14];
-                Globals.aPieces[17] = Globals.aPiecesTemp[11];
+                aPieces[9] = aPiecesTemp[15];
+                aPieces[10] = aPiecesTemp[12];
+                aPieces[11] = aPiecesTemp[9];
+                aPieces[12] = aPiecesTemp[16];
+                aPieces[14] = aPiecesTemp[10];
+                aPieces[15] = aPiecesTemp[17];
+                aPieces[16] = aPiecesTemp[14];
+                aPieces[17] = aPiecesTemp[11];
 
-                Globals.aPieces[38] = Globals.aPiecesTemp[2];
-                Globals.aPieces[41] = Globals.aPiecesTemp[5];
-                Globals.aPieces[44] = Globals.aPiecesTemp[8];
+                aPieces[38] = aPiecesTemp[2];
+                aPieces[41] = aPiecesTemp[5];
+                aPieces[44] = aPiecesTemp[8];
 
-                Globals.aPieces[2] = Globals.aPiecesTemp[47];
-                Globals.aPieces[5] = Globals.aPiecesTemp[50];
-                Globals.aPieces[8] = Globals.aPiecesTemp[53];
+                aPieces[2] = aPiecesTemp[47];
+                aPieces[5] = aPiecesTemp[50];
+                aPieces[8] = aPiecesTemp[53];
 
-                Globals.aPieces[47] = Globals.aPiecesTemp[24];
-                Globals.aPieces[50] = Globals.aPiecesTemp[21];
-                Globals.aPieces[53] = Globals.aPiecesTemp[18];
+                aPieces[47] = aPiecesTemp[24];
+                aPieces[50] = aPiecesTemp[21];
+                aPieces[53] = aPiecesTemp[18];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[44];
-                Globals.aPieces[21] = Globals.aPiecesTemp[41];
-                Globals.aPieces[24] = Globals.aPiecesTemp[38];
+                aPieces[18] = aPiecesTemp[44];
+                aPieces[21] = aPiecesTemp[41];
+                aPieces[24] = aPiecesTemp[38];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[9] = Globals.aPiecesTemp[11];
-                Globals.aPieces[10] = Globals.aPiecesTemp[14];
-                Globals.aPieces[11] = Globals.aPiecesTemp[17];
-                Globals.aPieces[12] = Globals.aPiecesTemp[10];
-                Globals.aPieces[14] = Globals.aPiecesTemp[16];
-                Globals.aPieces[15] = Globals.aPiecesTemp[9];
-                Globals.aPieces[16] = Globals.aPiecesTemp[12];
-                Globals.aPieces[17] = Globals.aPiecesTemp[15];
+                aPieces[9] = aPiecesTemp[11];
+                aPieces[10] = aPiecesTemp[14];
+                aPieces[11] = aPiecesTemp[17];
+                aPieces[12] = aPiecesTemp[10];
+                aPieces[14] = aPiecesTemp[16];
+                aPieces[15] = aPiecesTemp[9];
+                aPieces[16] = aPiecesTemp[12];
+                aPieces[17] = aPiecesTemp[15];
 
-                Globals.aPieces[38] = Globals.aPiecesTemp[24];
-                Globals.aPieces[41] = Globals.aPiecesTemp[21];
-                Globals.aPieces[44] = Globals.aPiecesTemp[18];
+                aPieces[38] = aPiecesTemp[24];
+                aPieces[41] = aPiecesTemp[21];
+                aPieces[44] = aPiecesTemp[18];
 
-                Globals.aPieces[2] = Globals.aPiecesTemp[38];
-                Globals.aPieces[5] = Globals.aPiecesTemp[41];
-                Globals.aPieces[8] = Globals.aPiecesTemp[44];
+                aPieces[2] = aPiecesTemp[38];
+                aPieces[5] = aPiecesTemp[41];
+                aPieces[8] = aPiecesTemp[44];
 
-                Globals.aPieces[47] = Globals.aPiecesTemp[2];
-                Globals.aPieces[50] = Globals.aPiecesTemp[5];
-                Globals.aPieces[53] = Globals.aPiecesTemp[8];
+                aPieces[47] = aPiecesTemp[2];
+                aPieces[50] = aPiecesTemp[5];
+                aPieces[53] = aPiecesTemp[8];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[53];
-                Globals.aPieces[21] = Globals.aPiecesTemp[50];
-                Globals.aPieces[24] = Globals.aPiecesTemp[47];
+                aPieces[18] = aPiecesTemp[53];
+                aPieces[21] = aPiecesTemp[50];
+                aPieces[24] = aPiecesTemp[47];
             }
         }
 
         //// Turn the entire upper face clockwise or counter clockwise
         public static void TurnUpFaceTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[36] = Globals.aPiecesTemp[42];
-                Globals.aPieces[37] = Globals.aPiecesTemp[39];
-                Globals.aPieces[38] = Globals.aPiecesTemp[36];
-                Globals.aPieces[39] = Globals.aPiecesTemp[43];
-                Globals.aPieces[41] = Globals.aPiecesTemp[37];
-                Globals.aPieces[42] = Globals.aPiecesTemp[44];
-                Globals.aPieces[43] = Globals.aPiecesTemp[41];
-                Globals.aPieces[44] = Globals.aPiecesTemp[38];
+                aPieces[36] = aPiecesTemp[42];
+                aPieces[37] = aPiecesTemp[39];
+                aPieces[38] = aPiecesTemp[36];
+                aPieces[39] = aPiecesTemp[43];
+                aPieces[41] = aPiecesTemp[37];
+                aPieces[42] = aPiecesTemp[44];
+                aPieces[43] = aPiecesTemp[41];
+                aPieces[44] = aPiecesTemp[38];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[0];
-                Globals.aPieces[28] = Globals.aPiecesTemp[1];
-                Globals.aPieces[29] = Globals.aPiecesTemp[2];
+                aPieces[27] = aPiecesTemp[0];
+                aPieces[28] = aPiecesTemp[1];
+                aPieces[29] = aPiecesTemp[2];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[9];
-                Globals.aPieces[1] = Globals.aPiecesTemp[10];
-                Globals.aPieces[2] = Globals.aPiecesTemp[11];
+                aPieces[0] = aPiecesTemp[9];
+                aPieces[1] = aPiecesTemp[10];
+                aPieces[2] = aPiecesTemp[11];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[18];
-                Globals.aPieces[10] = Globals.aPiecesTemp[19];
-                Globals.aPieces[11] = Globals.aPiecesTemp[20];
+                aPieces[9] = aPiecesTemp[18];
+                aPieces[10] = aPiecesTemp[19];
+                aPieces[11] = aPiecesTemp[20];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[27];
-                Globals.aPieces[19] = Globals.aPiecesTemp[28];
-                Globals.aPieces[20] = Globals.aPiecesTemp[29];
+                aPieces[18] = aPiecesTemp[27];
+                aPieces[19] = aPiecesTemp[28];
+                aPieces[20] = aPiecesTemp[29];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[36] = Globals.aPiecesTemp[38];
-                Globals.aPieces[37] = Globals.aPiecesTemp[41];
-                Globals.aPieces[38] = Globals.aPiecesTemp[44];
-                Globals.aPieces[39] = Globals.aPiecesTemp[37];
-                Globals.aPieces[41] = Globals.aPiecesTemp[43];
-                Globals.aPieces[42] = Globals.aPiecesTemp[36];
-                Globals.aPieces[43] = Globals.aPiecesTemp[39];
-                Globals.aPieces[44] = Globals.aPiecesTemp[42];
+                aPieces[36] = aPiecesTemp[38];
+                aPieces[37] = aPiecesTemp[41];
+                aPieces[38] = aPiecesTemp[44];
+                aPieces[39] = aPiecesTemp[37];
+                aPieces[41] = aPiecesTemp[43];
+                aPieces[42] = aPiecesTemp[36];
+                aPieces[43] = aPiecesTemp[39];
+                aPieces[44] = aPiecesTemp[42];
 
-                Globals.aPieces[27] = Globals.aPiecesTemp[18];
-                Globals.aPieces[28] = Globals.aPiecesTemp[19];
-                Globals.aPieces[29] = Globals.aPiecesTemp[20];
+                aPieces[27] = aPiecesTemp[18];
+                aPieces[28] = aPiecesTemp[19];
+                aPieces[29] = aPiecesTemp[20];
 
-                Globals.aPieces[0] = Globals.aPiecesTemp[27];
-                Globals.aPieces[1] = Globals.aPiecesTemp[28];
-                Globals.aPieces[2] = Globals.aPiecesTemp[29];
+                aPieces[0] = aPiecesTemp[27];
+                aPieces[1] = aPiecesTemp[28];
+                aPieces[2] = aPiecesTemp[29];
 
-                Globals.aPieces[9] = Globals.aPiecesTemp[0];
-                Globals.aPieces[10] = Globals.aPiecesTemp[1];
-                Globals.aPieces[11] = Globals.aPiecesTemp[2];
+                aPieces[9] = aPiecesTemp[0];
+                aPieces[10] = aPiecesTemp[1];
+                aPieces[11] = aPiecesTemp[2];
 
-                Globals.aPieces[18] = Globals.aPiecesTemp[9];
-                Globals.aPieces[19] = Globals.aPiecesTemp[10];
-                Globals.aPieces[20] = Globals.aPiecesTemp[11];
+                aPieces[18] = aPiecesTemp[9];
+                aPieces[19] = aPiecesTemp[10];
+                aPieces[20] = aPiecesTemp[11];
             }
         }
 
         //// Turn the front horizontal middle layer to right or left
         public static void TurnFrontHorMiddleTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[3] = Globals.aPiecesTemp[12];
-                Globals.aPieces[4] = Globals.aPiecesTemp[13];
-                Globals.aPieces[5] = Globals.aPiecesTemp[14];
+                aPieces[3] = aPiecesTemp[12];
+                aPieces[4] = aPiecesTemp[13];
+                aPieces[5] = aPiecesTemp[14];
 
-                Globals.aPieces[12] = Globals.aPiecesTemp[21];
-                Globals.aPieces[13] = Globals.aPiecesTemp[22];
-                Globals.aPieces[14] = Globals.aPiecesTemp[23];
+                aPieces[12] = aPiecesTemp[21];
+                aPieces[13] = aPiecesTemp[22];
+                aPieces[14] = aPiecesTemp[23];
 
-                Globals.aPieces[21] = Globals.aPiecesTemp[30];
-                Globals.aPieces[22] = Globals.aPiecesTemp[31];
-                Globals.aPieces[23] = Globals.aPiecesTemp[32];
+                aPieces[21] = aPiecesTemp[30];
+                aPieces[22] = aPiecesTemp[31];
+                aPieces[23] = aPiecesTemp[32];
 
-                Globals.aPieces[30] = Globals.aPiecesTemp[3];
-                Globals.aPieces[31] = Globals.aPiecesTemp[4];
-                Globals.aPieces[32] = Globals.aPiecesTemp[5];
+                aPieces[30] = aPiecesTemp[3];
+                aPieces[31] = aPiecesTemp[4];
+                aPieces[32] = aPiecesTemp[5];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[3] = Globals.aPiecesTemp[30];
-                Globals.aPieces[4] = Globals.aPiecesTemp[31];
-                Globals.aPieces[5] = Globals.aPiecesTemp[32];
+                aPieces[3] = aPiecesTemp[30];
+                aPieces[4] = aPiecesTemp[31];
+                aPieces[5] = aPiecesTemp[32];
 
-                Globals.aPieces[12] = Globals.aPiecesTemp[3];
-                Globals.aPieces[13] = Globals.aPiecesTemp[4];
-                Globals.aPieces[14] = Globals.aPiecesTemp[5];
+                aPieces[12] = aPiecesTemp[3];
+                aPieces[13] = aPiecesTemp[4];
+                aPieces[14] = aPiecesTemp[5];
 
-                Globals.aPieces[21] = Globals.aPiecesTemp[12];
-                Globals.aPieces[22] = Globals.aPiecesTemp[13];
-                Globals.aPieces[23] = Globals.aPiecesTemp[14];
+                aPieces[21] = aPiecesTemp[12];
+                aPieces[22] = aPiecesTemp[13];
+                aPieces[23] = aPiecesTemp[14];
 
-                Globals.aPieces[30] = Globals.aPiecesTemp[21];
-                Globals.aPieces[31] = Globals.aPiecesTemp[22];
-                Globals.aPieces[32] = Globals.aPiecesTemp[23];
+                aPieces[30] = aPiecesTemp[21];
+                aPieces[31] = aPiecesTemp[22];
+                aPieces[32] = aPiecesTemp[23];
             }
         }
 
         //// Turn the entire down face clockwise or counter clockwise
         public static void TurnDownFaceTo(string cDirection)
         {
-            Array.Copy(Globals.aPieces, Globals.aPiecesTemp, 54);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                Globals.aPieces[45] = Globals.aPiecesTemp[51];
-                Globals.aPieces[46] = Globals.aPiecesTemp[48];
-                Globals.aPieces[47] = Globals.aPiecesTemp[45];
-                Globals.aPieces[48] = Globals.aPiecesTemp[52];
-                Globals.aPieces[50] = Globals.aPiecesTemp[46];
-                Globals.aPieces[51] = Globals.aPiecesTemp[53];
-                Globals.aPieces[52] = Globals.aPiecesTemp[50];
-                Globals.aPieces[53] = Globals.aPiecesTemp[47];
+                aPieces[45] = aPiecesTemp[51];
+                aPieces[46] = aPiecesTemp[48];
+                aPieces[47] = aPiecesTemp[45];
+                aPieces[48] = aPiecesTemp[52];
+                aPieces[50] = aPiecesTemp[46];
+                aPieces[51] = aPiecesTemp[53];
+                aPieces[52] = aPiecesTemp[50];
+                aPieces[53] = aPiecesTemp[47];
 
-                Globals.aPieces[33] = Globals.aPiecesTemp[24];
-                Globals.aPieces[34] = Globals.aPiecesTemp[25];
-                Globals.aPieces[35] = Globals.aPiecesTemp[26];
+                aPieces[33] = aPiecesTemp[24];
+                aPieces[34] = aPiecesTemp[25];
+                aPieces[35] = aPiecesTemp[26];
 
-                Globals.aPieces[6] = Globals.aPiecesTemp[33];
-                Globals.aPieces[7] = Globals.aPiecesTemp[34];
-                Globals.aPieces[8] = Globals.aPiecesTemp[35];
+                aPieces[6] = aPiecesTemp[33];
+                aPieces[7] = aPiecesTemp[34];
+                aPieces[8] = aPiecesTemp[35];
 
-                Globals.aPieces[15] = Globals.aPiecesTemp[6];
-                Globals.aPieces[16] = Globals.aPiecesTemp[7];
-                Globals.aPieces[17] = Globals.aPiecesTemp[8];
+                aPieces[15] = aPiecesTemp[6];
+                aPieces[16] = aPiecesTemp[7];
+                aPieces[17] = aPiecesTemp[8];
 
-                Globals.aPieces[24] = Globals.aPiecesTemp[15];
-                Globals.aPieces[25] = Globals.aPiecesTemp[16];
-                Globals.aPieces[26] = Globals.aPiecesTemp[17];
+                aPieces[24] = aPiecesTemp[15];
+                aPieces[25] = aPiecesTemp[16];
+                aPieces[26] = aPiecesTemp[17];
             }
 
             if (cDirection == "CCW")
             {
-                Globals.aPieces[45] = Globals.aPiecesTemp[47];
-                Globals.aPieces[46] = Globals.aPiecesTemp[50];
-                Globals.aPieces[47] = Globals.aPiecesTemp[53];
-                Globals.aPieces[48] = Globals.aPiecesTemp[46];
-                Globals.aPieces[50] = Globals.aPiecesTemp[52];
-                Globals.aPieces[51] = Globals.aPiecesTemp[45];
-                Globals.aPieces[52] = Globals.aPiecesTemp[48];
-                Globals.aPieces[53] = Globals.aPiecesTemp[51];
+                aPieces[45] = aPiecesTemp[47];
+                aPieces[46] = aPiecesTemp[50];
+                aPieces[47] = aPiecesTemp[53];
+                aPieces[48] = aPiecesTemp[46];
+                aPieces[50] = aPiecesTemp[52];
+                aPieces[51] = aPiecesTemp[45];
+                aPieces[52] = aPiecesTemp[48];
+                aPieces[53] = aPiecesTemp[51];
 
-                Globals.aPieces[33] = Globals.aPiecesTemp[6];
-                Globals.aPieces[34] = Globals.aPiecesTemp[7];
-                Globals.aPieces[35] = Globals.aPiecesTemp[8];
+                aPieces[33] = aPiecesTemp[6];
+                aPieces[34] = aPiecesTemp[7];
+                aPieces[35] = aPiecesTemp[8];
 
-                Globals.aPieces[6] = Globals.aPiecesTemp[15];
-                Globals.aPieces[7] = Globals.aPiecesTemp[16];
-                Globals.aPieces[8] = Globals.aPiecesTemp[17];
+                aPieces[6] = aPiecesTemp[15];
+                aPieces[7] = aPiecesTemp[16];
+                aPieces[8] = aPiecesTemp[17];
 
-                Globals.aPieces[15] = Globals.aPiecesTemp[24];
-                Globals.aPieces[16] = Globals.aPiecesTemp[25];
-                Globals.aPieces[17] = Globals.aPiecesTemp[26];
+                aPieces[15] = aPiecesTemp[24];
+                aPieces[16] = aPiecesTemp[25];
+                aPieces[17] = aPiecesTemp[26];
 
-                Globals.aPieces[24] = Globals.aPiecesTemp[33];
-                Globals.aPieces[25] = Globals.aPiecesTemp[34];
-                Globals.aPieces[26] = Globals.aPiecesTemp[35];
+                aPieces[24] = aPiecesTemp[33];
+                aPieces[25] = aPiecesTemp[34];
+                aPieces[26] = aPiecesTemp[35];
             }
         }
     }

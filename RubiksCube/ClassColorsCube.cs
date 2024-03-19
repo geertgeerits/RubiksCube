@@ -1,4 +1,6 @@
-﻿namespace RubiksCube
+﻿using static RubiksCube.Globals;
+
+namespace RubiksCube
 {
     internal class ClassColorsCube
     {
@@ -18,222 +20,222 @@
             // Front face
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[1])
+                if (aPieces[nItem] == aFaceColors[1])
                     nNumberOfColors1++;
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[2])
+                if (aPieces[nItem] == aFaceColors[2])
                     nNumberOfColors2++;
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[3])
+                if (aPieces[nItem] == aFaceColors[3])
                     nNumberOfColors3++;
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[4])
+                if (aPieces[nItem] == aFaceColors[4])
                     nNumberOfColors4++;
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[5])
+                if (aPieces[nItem] == aFaceColors[5])
                     nNumberOfColors5++;
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[6])
+                if (aPieces[nItem] == aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Right face
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[1])
+                if (aPieces[nItem] == aFaceColors[1])
                     nNumberOfColors1++;
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[2])
+                if (aPieces[nItem] == aFaceColors[2])
                     nNumberOfColors2++;
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[3])
+                if (aPieces[nItem] == aFaceColors[3])
                     nNumberOfColors3++;
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[4])
+                if (aPieces[nItem] == aFaceColors[4])
                     nNumberOfColors4++;
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[5])
+                if (aPieces[nItem] == aFaceColors[5])
                     nNumberOfColors5++;
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[6])
+                if (aPieces[nItem] == aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Back face
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[1])
+                if (aPieces[nItem] == aFaceColors[1])
                     nNumberOfColors1++;
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[2])
+                if (aPieces[nItem] == aFaceColors[2])
                     nNumberOfColors2++;
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[3])
+                if (aPieces[nItem] == aFaceColors[3])
                     nNumberOfColors3++;
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[4])
+                if (aPieces[nItem] == aFaceColors[4])
                     nNumberOfColors4++;
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[5])
+                if (aPieces[nItem] == aFaceColors[5])
                     nNumberOfColors5++;
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[6])
+                if (aPieces[nItem] == aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Left face
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[1])
+                if (aPieces[nItem] == aFaceColors[1])
                     nNumberOfColors1++;
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[2])
+                if (aPieces[nItem] == aFaceColors[2])
                     nNumberOfColors2++;
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[3])
+                if (aPieces[nItem] == aFaceColors[3])
                     nNumberOfColors3++;
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[4])
+                if (aPieces[nItem] == aFaceColors[4])
                     nNumberOfColors4++;
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[5])
+                if (aPieces[nItem] == aFaceColors[5])
                     nNumberOfColors5++;
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[6])
+                if (aPieces[nItem] == aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Top layer
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[1])
+                if (aPieces[nItem] == aFaceColors[1])
                     nNumberOfColors1++;
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[2])
+                if (aPieces[nItem] == aFaceColors[2])
                     nNumberOfColors2++;
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[3])
+                if (aPieces[nItem] == aFaceColors[3])
                     nNumberOfColors3++;
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[4])
+                if (aPieces[nItem] == aFaceColors[4])
                     nNumberOfColors4++;
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[5])
+                if (aPieces[nItem] == aFaceColors[5])
                     nNumberOfColors5++;
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[6])
+                if (aPieces[nItem] == aFaceColors[6])
                     nNumberOfColors6++;
             }
 
             // Bottom layer
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[1])
+                if (aPieces[nItem] == aFaceColors[1])
                     nNumberOfColors1++;
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[2])
+                if (aPieces[nItem] == aFaceColors[2])
                     nNumberOfColors2++;
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[3])
+                if (aPieces[nItem] == aFaceColors[3])
                     nNumberOfColors3++;
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[4])
+                if (aPieces[nItem] == aFaceColors[4])
                     nNumberOfColors4++;
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[5])
+                if (aPieces[nItem] == aFaceColors[5])
                     nNumberOfColors5++;
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (Globals.aPieces[nItem] == Globals.aFaceColors[6])
+                if (aPieces[nItem] == aFaceColors[6])
                     nNumberOfColors6++;
             }
 
@@ -246,22 +248,22 @@
             //// Check the number of colors of the central square of the cube
             bool bColorCenterCube = true;
 
-            if (Globals.aPieces[40] == Globals.aPieces[4] || Globals.aPieces[40] == Globals.aPieces[13] || Globals.aPieces[40] == Globals.aPieces[31] || Globals.aPieces[40] == Globals.aPieces[22] || Globals.aPieces[40] == Globals.aPieces[49])
+            if (aPieces[40] == aPieces[4] || aPieces[40] == aPieces[13] || aPieces[40] == aPieces[31] || aPieces[40] == aPieces[22] || aPieces[40] == aPieces[49])
                 bColorCenterCube = false;
 
-            if (Globals.aPieces[4] == Globals.aPieces[40] || Globals.aPieces[4] == Globals.aPieces[13] || Globals.aPieces[4] == Globals.aPieces[31] || Globals.aPieces[4] == Globals.aPieces[22] || Globals.aPieces[4] == Globals.aPieces[49])
+            if (aPieces[4] == aPieces[40] || aPieces[4] == aPieces[13] || aPieces[4] == aPieces[31] || aPieces[4] == aPieces[22] || aPieces[4] == aPieces[49])
                 bColorCenterCube = false;
 
-            if (Globals.aPieces[13] == Globals.aPieces[4] || Globals.aPieces[13] == Globals.aPieces[40] || Globals.aPieces[13] == Globals.aPieces[31] || Globals.aPieces[13] == Globals.aPieces[22] || Globals.aPieces[13] == Globals.aPieces[49])
+            if (aPieces[13] == aPieces[4] || aPieces[13] == aPieces[40] || aPieces[13] == aPieces[31] || aPieces[13] == aPieces[22] || aPieces[13] == aPieces[49])
                 bColorCenterCube = false;
 
-            if (Globals.aPieces[31] == Globals.aPieces[4] || Globals.aPieces[31] == Globals.aPieces[13] || Globals.aPieces[31] == Globals.aPieces[40] || Globals.aPieces[31] == Globals.aPieces[22] || Globals.aPieces[31] == Globals.aPieces[49])
+            if (aPieces[31] == aPieces[4] || aPieces[31] == aPieces[13] || aPieces[31] == aPieces[40] || aPieces[31] == aPieces[22] || aPieces[31] == aPieces[49])
                 bColorCenterCube = false;
 
-            if (Globals.aPieces[22] == Globals.aPieces[4] || Globals.aPieces[22] == Globals.aPieces[13] || Globals.aPieces[22] == Globals.aPieces[31] || Globals.aPieces[22] == Globals.aPieces[40] || Globals.aPieces[22] == Globals.aPieces[49])
+            if (aPieces[22] == aPieces[4] || aPieces[22] == aPieces[13] || aPieces[22] == aPieces[31] || aPieces[22] == aPieces[40] || aPieces[22] == aPieces[49])
                 bColorCenterCube = false;
 
-            if (Globals.aPieces[49] == Globals.aPieces[4] || Globals.aPieces[49] == Globals.aPieces[13] || Globals.aPieces[49] == Globals.aPieces[31] || Globals.aPieces[49] == Globals.aPieces[22] || Globals.aPieces[49] == Globals.aPieces[40])
+            if (aPieces[49] == aPieces[4] || aPieces[49] == aPieces[13] || aPieces[49] == aPieces[31] || aPieces[49] == aPieces[22] || aPieces[49] == aPieces[40])
                 bColorCenterCube = false;
 
             if (!bColorCenterCube)
@@ -273,28 +275,28 @@
             //// Check the number of colors of the corner cubes of the cube if there are no corner cubes with the same color
             bool bColorCornerCube = true;
 
-            if (Globals.aPieces[42] == Globals.aPieces[29] || Globals.aPieces[42] == Globals.aPieces[0] || Globals.aPieces[0] == Globals.aPieces[29])
+            if (aPieces[42] == aPieces[29] || aPieces[42] == aPieces[0] || aPieces[0] == aPieces[29])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[36] == Globals.aPieces[27] || Globals.aPieces[36] == Globals.aPieces[20] || Globals.aPieces[27] == Globals.aPieces[20])
+            if (aPieces[36] == aPieces[27] || aPieces[36] == aPieces[20] || aPieces[27] == aPieces[20])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[38] == Globals.aPieces[11] || Globals.aPieces[38] == Globals.aPieces[18] || Globals.aPieces[11] == Globals.aPieces[18])
+            if (aPieces[38] == aPieces[11] || aPieces[38] == aPieces[18] || aPieces[11] == aPieces[18])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[44] == Globals.aPieces[2] || Globals.aPieces[44] == Globals.aPieces[9] || Globals.aPieces[2] == Globals.aPieces[9])
+            if (aPieces[44] == aPieces[2] || aPieces[44] == aPieces[9] || aPieces[2] == aPieces[9])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[45] == Globals.aPieces[35] || Globals.aPieces[45] == Globals.aPieces[6] || Globals.aPieces[6] == Globals.aPieces[35])
+            if (aPieces[45] == aPieces[35] || aPieces[45] == aPieces[6] || aPieces[6] == aPieces[35])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[51] == Globals.aPieces[33] || Globals.aPieces[51] == Globals.aPieces[26] || Globals.aPieces[26] == Globals.aPieces[33])
+            if (aPieces[51] == aPieces[33] || aPieces[51] == aPieces[26] || aPieces[26] == aPieces[33])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[53] == Globals.aPieces[17] || Globals.aPieces[53] == Globals.aPieces[24] || Globals.aPieces[24] == Globals.aPieces[17])
+            if (aPieces[53] == aPieces[17] || aPieces[53] == aPieces[24] || aPieces[24] == aPieces[17])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[47] == Globals.aPieces[15] || Globals.aPieces[47] == Globals.aPieces[8] || Globals.aPieces[8] == Globals.aPieces[15])
+            if (aPieces[47] == aPieces[15] || aPieces[47] == aPieces[8] || aPieces[8] == aPieces[15])
                 bColorCornerCube = false;
 
             if (!bColorCornerCube)
@@ -322,10 +324,10 @@
             //// Check the number of colors of the edge cubes if there are no edge cubes with the same color
             bColorCornerCube = true;
 
-            if (Globals.aPieces[37] == Globals.aPieces[19] || Globals.aPieces[39] == Globals.aPieces[28] || Globals.aPieces[41] == Globals.aPieces[10] || Globals.aPieces[43] == Globals.aPieces[1])
+            if (aPieces[37] == aPieces[19] || aPieces[39] == aPieces[28] || aPieces[41] == aPieces[10] || aPieces[43] == aPieces[1])
                 bColorCornerCube = false;
 
-            if (Globals.aPieces[46] == Globals.aPieces[7] || Globals.aPieces[48] == Globals.aPieces[34] || Globals.aPieces[50] == Globals.aPieces[16] || Globals.aPieces[52] == Globals.aPieces[25])
+            if (aPieces[46] == aPieces[7] || aPieces[48] == aPieces[34] || aPieces[50] == aPieces[16] || aPieces[52] == aPieces[25])
                 bColorCornerCube = false;
 
             if (!bColorCornerCube)
@@ -446,7 +448,7 @@
         //// Check the opposite center pieces of the cube
         private static bool CheckOppositeCenterPieces(int nPiece1, int nColor1, int nPiece2, int nColor2)
         {
-            if (Globals.aPieces[nPiece1] == Globals.aFaceColors[nColor1] && Globals.aPieces[nPiece2] != Globals.aFaceColors[nColor2])
+            if (aPieces[nPiece1] == aFaceColors[nColor1] && aPieces[nPiece2] != aFaceColors[nColor2])
             {
                 return false;
             }
@@ -455,225 +457,225 @@
         }
 
         //// Check the neighbors and opposite center pieces of the cube
-        // Globals.aFaceColors[1] -> Front face: Red
-        // Globals.aFaceColors[2] -> Right face: Blue
-        // Globals.aFaceColors[3] -> Back face: Orange
-        // Globals.aFaceColors[4] -> Left face: Green
-        // Globals.aFaceColors[5] -> Up face: White
-        // Globals.aFaceColors[6] -> Down face: Yellow
+        // aFaceColors[1] -> Front face: Red
+        // aFaceColors[2] -> Right face: Blue
+        // aFaceColors[3] -> Back face: Orange
+        // aFaceColors[4] -> Left face: Green
+        // aFaceColors[5] -> Up face: White
+        // aFaceColors[6] -> Down face: Yellow
         private static bool CheckNeighborsCenterPieces()
         {
             // Front face Red and Up face White
-            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[5])
+            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[5])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[6])
+                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[6])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face White
-            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[5])
+            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[5])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[6])
+                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[6])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face White
-            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[5])
+            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[5])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[6])
+                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[6])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face White
-            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[5])
+            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[5])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[6])
+                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[6])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Red
-            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[1])
+            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[1])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[3])
+                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[3])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face Red
-            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[1])
+            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[1])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[3])
+                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[3])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Red
-            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[1])
+            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[1])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[3])
+                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[3])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face Red
-            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[1])
+            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[1])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[3])
+                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[3])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Green
-            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[4])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[2])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face Green
-            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[4])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[2])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Green
-            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[4])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[2])
                 {
                     return false;
                 }
             }
 
             // Front face Red and Up face Green
-            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[4])
+            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[4])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[2])
+                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[2])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Orange
-            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[3])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[1])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face Orange
-            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[3])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[1])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Orange
-            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[3])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[1])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face Orange
-            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[3])
+            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[3])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[1])
+                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[1])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Blue
-            if (Globals.aPieces[4] == Globals.aFaceColors[5] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[2])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[6] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[4])
                 {
                     return false;
                 }
             }
 
             // Front face Red and Up face Blue
-            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[2])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[6] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[5] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[4])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Blue
-            if (Globals.aPieces[4] == Globals.aFaceColors[6] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[2])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[5] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[4])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face Blue
-            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[2])
+            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[2])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[5] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[6] || Globals.aPieces[49] != Globals.aFaceColors[4])
+                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[4])
                 {
                     return false;
                 }
             }
 
             // Front face Red and Up face Yellow
-            if (Globals.aPieces[4] == Globals.aFaceColors[1] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[6])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[4] || Globals.aPieces[22] != Globals.aFaceColors[3] || Globals.aPieces[31] != Globals.aFaceColors[2] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[5])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face Yellow
-            if (Globals.aPieces[4] == Globals.aFaceColors[4] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[6])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[3] || Globals.aPieces[22] != Globals.aFaceColors[2] || Globals.aPieces[31] != Globals.aFaceColors[1] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[5])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face Yellow
-            if (Globals.aPieces[4] == Globals.aFaceColors[3] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[6])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[2] || Globals.aPieces[22] != Globals.aFaceColors[1] || Globals.aPieces[31] != Globals.aFaceColors[4] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[5])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face Yellow
-            if (Globals.aPieces[4] == Globals.aFaceColors[2] && Globals.aPieces[40] == Globals.aFaceColors[6])
+            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[6])
             {
-                if (Globals.aPieces[13] != Globals.aFaceColors[1] || Globals.aPieces[22] != Globals.aFaceColors[4] || Globals.aPieces[31] != Globals.aFaceColors[3] || Globals.aPieces[49] != Globals.aFaceColors[5])
+                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[5])
                 {
                     return false;
                 }
@@ -687,63 +689,63 @@
         private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)
         {
             // Up face
-            if (Globals.aPieces[0] == Globals.aFaceColors[nColor])
+            if (aPieces[0] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[2] == Globals.aFaceColors[nColor])
+            if (aPieces[2] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[6] == Globals.aFaceColors[nColor])
+            if (aPieces[6] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[8] == Globals.aFaceColors[nColor])
+            if (aPieces[8] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Right face
-            if (Globals.aPieces[9] == Globals.aFaceColors[nColor])
+            if (aPieces[9] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[11] == Globals.aFaceColors[nColor])
+            if (aPieces[11] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[15] == Globals.aFaceColors[nColor])
+            if (aPieces[15] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[17] == Globals.aFaceColors[nColor])
+            if (aPieces[17] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Back face
-            if (Globals.aPieces[18] == Globals.aFaceColors[nColor])
+            if (aPieces[18] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[20] == Globals.aFaceColors[nColor])
+            if (aPieces[20] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[24] == Globals.aFaceColors[nColor])
+            if (aPieces[24] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[26] == Globals.aFaceColors[nColor])
+            if (aPieces[26] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Left face
-            if (Globals.aPieces[27] == Globals.aFaceColors[nColor])
+            if (aPieces[27] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[29] == Globals.aFaceColors[nColor])
+            if (aPieces[29] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[33] == Globals.aFaceColors[nColor])
+            if (aPieces[33] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[35] == Globals.aFaceColors[nColor])
+            if (aPieces[35] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Up face
-            if (Globals.aPieces[36] == Globals.aFaceColors[nColor])
+            if (aPieces[36] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[38] == Globals.aFaceColors[nColor])
+            if (aPieces[38] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[42] == Globals.aFaceColors[nColor])
+            if (aPieces[42] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[44] == Globals.aFaceColors[nColor])
+            if (aPieces[44] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Down face
-            if (Globals.aPieces[45] == Globals.aFaceColors[nColor])
+            if (aPieces[45] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[47] == Globals.aFaceColors[nColor])
+            if (aPieces[47] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[51] == Globals.aFaceColors[nColor])
+            if (aPieces[51] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[53] == Globals.aFaceColors[nColor])
+            if (aPieces[53] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
         }
 
@@ -751,63 +753,63 @@
         private static void CheckNumberColorsEdgeCube(int[] aNumberOfColors, int nColor)
         {
             // Up face
-            if (Globals.aPieces[1] == Globals.aFaceColors[nColor])
+            if (aPieces[1] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[3] == Globals.aFaceColors[nColor])
+            if (aPieces[3] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[5] == Globals.aFaceColors[nColor])
+            if (aPieces[5] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[7] == Globals.aFaceColors[nColor])
+            if (aPieces[7] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Right face
-            if (Globals.aPieces[10] == Globals.aFaceColors[nColor])
+            if (aPieces[10] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[12] == Globals.aFaceColors[nColor])
+            if (aPieces[12] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[14] == Globals.aFaceColors[nColor])
+            if (aPieces[14] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[16] == Globals.aFaceColors[nColor])
+            if (aPieces[16] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Back face
-            if (Globals.aPieces[19] == Globals.aFaceColors[nColor])
+            if (aPieces[19] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[21] == Globals.aFaceColors[nColor])
+            if (aPieces[21] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[23] == Globals.aFaceColors[nColor])
+            if (aPieces[23] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[25] == Globals.aFaceColors[nColor])
+            if (aPieces[25] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Left face
-            if (Globals.aPieces[28] == Globals.aFaceColors[nColor])
+            if (aPieces[28] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[30] == Globals.aFaceColors[nColor])
+            if (aPieces[30] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[32] == Globals.aFaceColors[nColor])
+            if (aPieces[32] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[34] == Globals.aFaceColors[nColor])
+            if (aPieces[34] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Up face
-            if (Globals.aPieces[37] == Globals.aFaceColors[nColor])
+            if (aPieces[37] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[39] == Globals.aFaceColors[nColor])
+            if (aPieces[39] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[41] == Globals.aFaceColors[nColor])
+            if (aPieces[41] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[43] == Globals.aFaceColors[nColor])
+            if (aPieces[43] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
 
             // Down face
-            if (Globals.aPieces[46] == Globals.aFaceColors[nColor])
+            if (aPieces[46] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[48] == Globals.aFaceColors[nColor])
+            if (aPieces[48] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[50] == Globals.aFaceColors[nColor])
+            if (aPieces[50] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
-            if (Globals.aPieces[52] == Globals.aFaceColors[nColor])
+            if (aPieces[52] == aFaceColors[nColor])
                 aNumberOfColors[nColor]++;
         }
 
@@ -821,22 +823,22 @@
             bool bColorsBack = false;
             bool bColorsDown = false;
 
-            if (Globals.aPieces[36] == Globals.aPieces[37] && Globals.aPieces[36] == Globals.aPieces[38] && Globals.aPieces[36] == Globals.aPieces[39] && Globals.aPieces[36] == Globals.aPieces[40] && Globals.aPieces[36] == Globals.aPieces[41] && Globals.aPieces[36] == Globals.aPieces[42] && Globals.aPieces[36] == Globals.aPieces[43] && Globals.aPieces[36] == Globals.aPieces[44])
+            if (aPieces[36] == aPieces[37] && aPieces[36] == aPieces[38] && aPieces[36] == aPieces[39] && aPieces[36] == aPieces[40] && aPieces[36] == aPieces[41] && aPieces[36] == aPieces[42] && aPieces[36] == aPieces[43] && aPieces[36] == aPieces[44])
                 bColorsUp = true;
 
-            if (Globals.aPieces[0] == Globals.aPieces[1] && Globals.aPieces[0] == Globals.aPieces[2] && Globals.aPieces[0] == Globals.aPieces[3] && Globals.aPieces[0] == Globals.aPieces[4] && Globals.aPieces[0] == Globals.aPieces[5] && Globals.aPieces[0] == Globals.aPieces[6] && Globals.aPieces[0] == Globals.aPieces[7] && Globals.aPieces[0] == Globals.aPieces[8])
+            if (aPieces[0] == aPieces[1] && aPieces[0] == aPieces[2] && aPieces[0] == aPieces[3] && aPieces[0] == aPieces[4] && aPieces[0] == aPieces[5] && aPieces[0] == aPieces[6] && aPieces[0] == aPieces[7] && aPieces[0] == aPieces[8])
                 bColorsFront = true;
 
-            if (Globals.aPieces[9] == Globals.aPieces[10] && Globals.aPieces[9] == Globals.aPieces[11] && Globals.aPieces[9] == Globals.aPieces[12] && Globals.aPieces[9] == Globals.aPieces[13] && Globals.aPieces[9] == Globals.aPieces[14] && Globals.aPieces[9] == Globals.aPieces[15] && Globals.aPieces[9] == Globals.aPieces[16] && Globals.aPieces[9] == Globals.aPieces[17])
+            if (aPieces[9] == aPieces[10] && aPieces[9] == aPieces[11] && aPieces[9] == aPieces[12] && aPieces[9] == aPieces[13] && aPieces[9] == aPieces[14] && aPieces[9] == aPieces[15] && aPieces[9] == aPieces[16] && aPieces[9] == aPieces[17])
                 bColorsRight = true;
 
-            if (Globals.aPieces[27] == Globals.aPieces[28] && Globals.aPieces[27] == Globals.aPieces[29] && Globals.aPieces[27] == Globals.aPieces[30] && Globals.aPieces[27] == Globals.aPieces[31] && Globals.aPieces[27] == Globals.aPieces[32] && Globals.aPieces[27] == Globals.aPieces[33] && Globals.aPieces[27] == Globals.aPieces[34] && Globals.aPieces[27] == Globals.aPieces[35])
+            if (aPieces[27] == aPieces[28] && aPieces[27] == aPieces[29] && aPieces[27] == aPieces[30] && aPieces[27] == aPieces[31] && aPieces[27] == aPieces[32] && aPieces[27] == aPieces[33] && aPieces[27] == aPieces[34] && aPieces[27] == aPieces[35])
                 bColorsLeft = true;
 
-            if (Globals.aPieces[18] == Globals.aPieces[19] && Globals.aPieces[18] == Globals.aPieces[20] && Globals.aPieces[18] == Globals.aPieces[21] && Globals.aPieces[18] == Globals.aPieces[22] && Globals.aPieces[18] == Globals.aPieces[23] && Globals.aPieces[18] == Globals.aPieces[24] && Globals.aPieces[18] == Globals.aPieces[25] && Globals.aPieces[18] == Globals.aPieces[26])
+            if (aPieces[18] == aPieces[19] && aPieces[18] == aPieces[20] && aPieces[18] == aPieces[21] && aPieces[18] == aPieces[22] && aPieces[18] == aPieces[23] && aPieces[18] == aPieces[24] && aPieces[18] == aPieces[25] && aPieces[18] == aPieces[26])
                 bColorsBack = true;
 
-            if (Globals.aPieces[45] == Globals.aPieces[46] && Globals.aPieces[45] == Globals.aPieces[47] && Globals.aPieces[45] == Globals.aPieces[48] && Globals.aPieces[45] == Globals.aPieces[49] && Globals.aPieces[45] == Globals.aPieces[50] && Globals.aPieces[45] == Globals.aPieces[51] && Globals.aPieces[45] == Globals.aPieces[52] && Globals.aPieces[45] == Globals.aPieces[53])
+            if (aPieces[45] == aPieces[46] && aPieces[45] == aPieces[47] && aPieces[45] == aPieces[48] && aPieces[45] == aPieces[49] && aPieces[45] == aPieces[50] && aPieces[45] == aPieces[51] && aPieces[45] == aPieces[52] && aPieces[45] == aPieces[53])
                 bColorsDown = true;
 
             if (!bColorsUp || !bColorsFront || !bColorsRight || !bColorsLeft || !bColorsBack || !bColorsDown)
@@ -852,32 +854,32 @@
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                Globals.aPieces[nItem] = Globals.aFaceColors[1];
+                aPieces[nItem] = aFaceColors[1];
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                Globals.aPieces[nItem] = Globals.aFaceColors[2];
+                aPieces[nItem] = aFaceColors[2];
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                Globals.aPieces[nItem] = Globals.aFaceColors[3];
+                aPieces[nItem] = aFaceColors[3];
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                Globals.aPieces[nItem] = Globals.aFaceColors[4];
+                aPieces[nItem] = aFaceColors[4];
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                Globals.aPieces[nItem] = Globals.aFaceColors[5];
+                aPieces[nItem] = aFaceColors[5];
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                Globals.aPieces[nItem] = Globals.aFaceColors[6];
+                aPieces[nItem] = aFaceColors[6];
             }
         }
     }
