@@ -298,70 +298,73 @@ Ennek lehetséges oka a színek helytelen átvitele erre a kockára.</value>
     <value>Személyes és egyéb adatokat nem tárolunk, illetve nem adunk át magamnak és másoknak.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>Az alkalmazás újraindul.</value>
   </data>
   <data name="ResultTime_Text" xml:space="preserve">
-    <value>Time in milliseconds:</value>
+    <value>Idő ezredmásodpercben:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Number of turns:</value>
+    <value>A fordulatok száma:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Visszaállítás</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Néhány módosított beállítást el kell menteni az alkalmazásukhoz.
+Mentés után az alkalmazás újraindul, és a kocka alaphelyzetbe áll.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Megment</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Beállítások</value>
   </data>
   <data name="Solve_Text" xml:space="preserve">
-    <value>Solve</value>
+    <value>Oldja meg</value>
   </data>
   <data name="Stop_Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>Állj meg</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.</value>
+    <value>A szöveg egy vagy több nem megengedett karaktert tartalmaz.
+
+Nem megengedett:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Ez az eszköz nem támogatja a szövegfelolvasást.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Sötét</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Világos</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Rendszer</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Téma:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>Menjen vissza</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>Menj előre</value>
   </data>
   <data name="ToolTipHelp_Text" xml:space="preserve">
-    <value>Help</value>
+    <value>Segítség</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
-    <value>Open the cube</value>
+    <value>Nyissa ki a kockát</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
-    <value>Save the cube</value>
+    <value>Mentse el a kockát</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Toggle button: Set the colors on the cube</value>
+    <value>Váltógomb: Állítsa be a kocka színeit</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Turn the back and middle layer together half a turn.</value>
@@ -520,12 +523,12 @@ Ennek lehetséges oka a színek helytelen átvitele erre a kockára.</value>
     <value>Turn the top-middle layer a quarter turn to the right side (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Változat:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Weboldal</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Igen</value>
   </data>
 </root>

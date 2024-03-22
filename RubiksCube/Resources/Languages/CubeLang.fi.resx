@@ -298,70 +298,73 @@ Mahdollinen syy on värien virheellinen siirto tähän kuutioon.</value>
     <value>Mitään henkilö- tai muita tietoja ei tallenneta tai luovuteta minulle tai muille.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>Sovellus käynnistetään uudelleen.</value>
   </data>
   <data name="ResultTime_Text" xml:space="preserve">
-    <value>Time in milliseconds:</value>
+    <value>Aika millisekunteina:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Number of turns:</value>
+    <value>Vuorojen määrä:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Nollaa</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Jotkut muutetut asetukset on tallennettava, jotta niitä voidaan käyttää.
+Tallennuksen jälkeen sovellus käynnistetään uudelleen ja kuutio nollataan.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Tallentaa</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Asetukset</value>
   </data>
   <data name="Solve_Text" xml:space="preserve">
-    <value>Solve</value>
+    <value>Ratkaista</value>
   </data>
   <data name="Stop_Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>Lopettaa</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.</value>
+    <value>Teksti sisältää yhden tai useamman merkin, jotka eivät ole sallittuja.
+
+Ei sallittu:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Tämä laite ei tue tekstistä puheeksi.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Tumma</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Valo</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Järjestelmä</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Teema:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>Mene takaisin</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>Mene eteenpäin</value>
   </data>
   <data name="ToolTipHelp_Text" xml:space="preserve">
-    <value>Help</value>
+    <value>Auta</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
-    <value>Open the cube</value>
+    <value>Avaa kuutio</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
-    <value>Save the cube</value>
+    <value>Tallenna kuutio</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Toggle button: Set the colors on the cube</value>
+    <value>Vaihtopainike: Aseta kuution värit</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Turn the back and middle layer together half a turn.</value>
@@ -520,12 +523,12 @@ Mahdollinen syy on värien virheellinen siirto tähän kuutioon.</value>
     <value>Turn the top-middle layer a quarter turn to the right side (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versio:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Verkkosivusto</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Joo</value>
   </data>
 </root>

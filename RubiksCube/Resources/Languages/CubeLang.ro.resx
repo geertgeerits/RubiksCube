@@ -298,70 +298,73 @@ Cauza posibilă este transferul incorect de culori în acest cub.</value>
     <value>Nicio dată cu caracter personal sau de altă natură nu este stocată sau transmisă mie și altora.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>Aplicația va fi repornită.</value>
   </data>
   <data name="ResultTime_Text" xml:space="preserve">
-    <value>Time in milliseconds:</value>
+    <value>Timp în milisecunde:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Number of turns:</value>
+    <value>Numărul de ture:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Resetați</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Unele setări modificate trebuie salvate pentru a le aplica.
+După salvare, aplicația este repornită și cubul este resetat.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvați</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Setări</value>
   </data>
   <data name="Solve_Text" xml:space="preserve">
-    <value>Solve</value>
+    <value>Rezolva</value>
   </data>
   <data name="Stop_Text" xml:space="preserve">
     <value>Stop</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.</value>
+    <value>Textul conține unul sau mai multe caractere care nu sunt permise.
+
+Nepermis:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Textul în vorbire nu este acceptat pe acest dispozitiv.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Întunecat</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Ușoară</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
-    <value>System</value>
+    <value>Sistem</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Temă:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>Întoarce-te</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>Mergi inainte</value>
   </data>
   <data name="ToolTipHelp_Text" xml:space="preserve">
-    <value>Help</value>
+    <value>Ajutor</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
-    <value>Open the cube</value>
+    <value>Deschide cubul</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
-    <value>Save the cube</value>
+    <value>Salvați cubul</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Toggle button: Set the colors on the cube</value>
+    <value>Butonul de comutare: setați culorile pe cub</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Turn the back and middle layer together half a turn.</value>
@@ -520,12 +523,12 @@ Cauza posibilă este transferul incorect de culori în acest cub.</value>
     <value>Turn the top-middle layer a quarter turn to the right side (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versiune:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Site-ul web</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Da</value>
   </data>
 </root>

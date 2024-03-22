@@ -298,70 +298,73 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>Ingen personlige og andre data gemmes eller videregives til mig selv og andre.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
-    <value>The application will be restarted.</value>
+    <value>Applikationen vil blive genstartet.</value>
   </data>
   <data name="ResultTime_Text" xml:space="preserve">
-    <value>Time in milliseconds:</value>
+    <value>Tid i millisekunder:</value>
   </data>
   <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Number of turns:</value>
+    <value>Antal omgange:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Nulstil</value>
   </data>
   <data name="SettingsSaved_Text" xml:space="preserve">
-    <value>Some changed settings must be saved in order to apply them.</value>
+    <value>Nogle ændrede indstillinger skal gemmes for at kunne anvende dem.
+Efter lagring genstartes applikationen, og kuben nulstilles.</value>
   </data>
   <data name="SettingsSave_Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Gemme</value>
   </data>
   <data name="Settings_Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Indstillinger</value>
   </data>
   <data name="Solve_Text" xml:space="preserve">
-    <value>Solve</value>
+    <value>Løse</value>
   </data>
   <data name="Stop_Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>Hold op</value>
   </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
-    <value>The text contains one or more characters that are not allowed.</value>
+    <value>Teksten indeholder et eller flere tegn, der ikke er tilladt.
+
+Ikke tilladt:</value>
   </data>
   <data name="TextToSpeechError_Text" xml:space="preserve">
-    <value>Text to speech is not supported on this device.</value>
+    <value>Tekst til tale understøttes ikke på denne enhed.</value>
   </data>
   <data name="ThemeDark_Text" xml:space="preserve">
-    <value>Dark</value>
+    <value>Mørk</value>
   </data>
   <data name="ThemeLight_Text" xml:space="preserve">
-    <value>Light</value>
+    <value>Lys</value>
   </data>
   <data name="ThemeSystem_Text" xml:space="preserve">
     <value>System</value>
   </data>
   <data name="Theme_Text" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Tema:</value>
   </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
-    <value>Go back</value>
+    <value>Gå tilbage</value>
   </data>
   <data name="ToolTipGoForward_Text" xml:space="preserve">
-    <value>Go forward</value>
+    <value>Gå fremad</value>
   </data>
   <data name="ToolTipHelp_Text" xml:space="preserve">
-    <value>Help</value>
+    <value>Hjælp</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
-    <value>Open the cube</value>
+    <value>Åbn terningen</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
-    <value>Save the cube</value>
+    <value>Gem terningen</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
-    <value>Toggle button: Set the colors on the cube</value>
+    <value>Til/fra-knap: Indstil farverne på terningen</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Turn the back and middle layer together half a turn.</value>
@@ -523,9 +526,9 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>Version:</value>
   </data>
   <data name="Website_Text" xml:space="preserve">
-    <value>Website</value>
+    <value>Internet side</value>
   </data>
   <data name="Yes_Text" xml:space="preserve">
-    <value>Yes</value>
+    <value>Ja</value>
   </data>
 </root>
