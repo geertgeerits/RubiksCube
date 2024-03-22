@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace RubiksCube;
 
@@ -26,26 +26,50 @@ public partial class PageSettings : ContentPage
         //// Set the current language in the picker
         pckLanguage.SelectedIndex = Globals.cLanguage switch
         {
-            // German (Deutsch)
-            "de" => 0,
+            // Čeština - Czech.
+            "cs" => 0,
 
-            // Spanish (Espa�ol)
-            "es" => 2,
+            // Dansk - Danish.
+            "da" => 1,
 
-            // French (Fran�ais)
-            "fr" => 3,
+            // Deutsch - German.
+            "de" => 2,
 
-            // Italian (Italiano)
-            "it" => 4,
+            // Español - Spanish.
+            "es" => 4,
 
-            // Dutch (Nederlands)
-            "nl" => 5,
+            // Français - French.
+            "fr" => 5,
 
-            // Portuguese (Portugu�s)
-            "pt" => 6,
+            // Italiano - Italian.
+            "it" => 6,
 
-            // English
-            _ => 1,
+            // Magyar - Hungarian.
+            "hu" => 7,
+
+            // Nederlands - Dutch.
+            "nl" => 8,
+
+            // Norsk Bokmål - Norwegian Bokmål.
+            "nb" => 9,
+
+            // Polski - Polish.
+            "pl" => 10,
+
+            // Português - Portuguese.
+            "pt" => 11,
+
+            // Română - Romanian.
+            "ro" => 12,
+
+            // Suomi - Finnish.
+            "fi" => 13,
+
+            // Svenska - Swedish.
+            "sv" => 14,
+
+            // English.
+            _ => 3,
         };
 
         //// Fill the picker with the speech languages and set the saved language in the picker
@@ -94,25 +118,49 @@ public partial class PageSettings : ContentPage
         {
             Globals.cLanguage = selectedIndex switch
             {
-                // German (Deutsch)
-                0 => "de",
+                // Čeština - Czech.
+                0 => "cs",
 
-                // Spanish (Espa�ol)
-                2 => "es",
+                // Dansk - Danish.
+                1 => "da",
 
-                // French (Fran�ais)
-                3 => "fr",
+                // Deutsch - German.
+                2 => "de",
 
-                // Italian (Italiano)
-                4 => "it",
+                // Español - Spanish.
+                4 => "es",
 
-                // Dutch (Nederlands)
-                5 => "nl",
+                // Français - French.
+                5 => "fr",
 
-                // Portuguese (Portugu�s)
-                6 => "pt",
+                // Italiano - Italian.
+                6 => "it",
 
-                // English
+                // Magyar - Hungarian.
+                7 => "hu",
+
+                // Nederlands - Dutch.
+                8 => "nl",
+
+                // Norsk Bokmål - Norwegian Bokmål.
+                9 => "nb",
+
+                // Polski - Polish.
+                10 => "pl",
+
+                // Português - Portuguese.
+                11 => "pt",
+
+                // Română - Romanian.
+                12 => "ro",
+
+                // Suomi - Finnish.
+                13 => "fi",
+
+                // Svenska - Swedish.
+                14 => "sv",
+
+                // English.
                 _ => "en",
             };
         }
