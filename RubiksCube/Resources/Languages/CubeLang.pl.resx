@@ -367,160 +367,160 @@ Niedozwolony:</value>
     <value>Przycisk przełączania: Ustaw kolory kostki</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
-    <value>Turn the back and middle layer together half a turn.</value>
+    <value>Obróć tylną i środkową warstwę razem o pół obrotu.</value>
   </data>
   <data name="Turn2LayersBackCCW_Text" xml:space="preserve">
-    <value>Turn the back and middle layer together a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć warstwę tylną i środkową o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="Turn2LayersBackCW_Text" xml:space="preserve">
-    <value>Turn the back and middle layer together a quarter turn 'clockwise' (+).</value>
+    <value>Obróć warstwę tylną i środkową o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="Turn2LayersDown2_Text" xml:space="preserve">
-    <value>Turn the bottom and middle layer together half a turn.</value>
+    <value>Obróć dolną i środkową warstwę razem o pół obrotu.</value>
   </data>
   <data name="Turn2LayersDownCCW_Text" xml:space="preserve">
-    <value>Turn the bottom and middle layer together a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć dolną i środkową warstwę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="Turn2LayersDownCW_Text" xml:space="preserve">
-    <value>Turn the bottom and middle layer together a quarter turn 'clockwise' (+).</value>
+    <value>Obróć dolną i środkową warstwę razem o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="Turn2LayersFront2_Text" xml:space="preserve">
-    <value>Turn the front and middle layer together half a turn.</value>
+    <value>Obróć przednią i środkową warstwę razem o pół obrotu.</value>
   </data>
   <data name="Turn2LayersFrontCCW_Text" xml:space="preserve">
-    <value>Turn the front and middle layer together a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć przednią i środkową warstwę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="Turn2LayersFrontCW_Text" xml:space="preserve">
-    <value>Turn the front and middle layer together a quarter turn 'clockwise' (+).</value>
+    <value>Obróć przednią i środkową warstwę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="Turn2LayersLeft2_Text" xml:space="preserve">
-    <value>Turn the left and middle layer together half a turn.</value>
+    <value>Obróć lewą i środkową warstwę razem o pół obrotu.</value>
   </data>
   <data name="Turn2LayersLeftCCW_Text" xml:space="preserve">
-    <value>Turn the left and middle layer together a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć lewą i środkową warstwę razem o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="Turn2LayersLeftCW_Text" xml:space="preserve">
-    <value>Turn the left and middle layer together a quarter turn 'clockwise' (+).</value>
+    <value>Obróć lewą i środkową warstwę razem o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="Turn2LayersRight2_Text" xml:space="preserve">
-    <value>Turn the right and middle layer together half a turn.</value>
+    <value>Obróć prawą i środkową warstwę razem o pół obrotu.</value>
   </data>
   <data name="Turn2LayersRightCCW_Text" xml:space="preserve">
-    <value>Turn the right and middle layer together a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć prawą i środkową warstwę razem o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="Turn2LayersRightCW_Text" xml:space="preserve">
-    <value>Turn the right and middle layer together a quarter turn 'clockwise' (+).</value>
+    <value>Obróć prawą i środkową warstwę razem o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="Turn2LayersUp2_Text" xml:space="preserve">
-    <value>Turn the top and middle layer together half a turn.</value>
+    <value>Obróć górną i środkową warstwę razem o pół obrotu.</value>
   </data>
   <data name="Turn2LayersUpCCW_Text" xml:space="preserve">
-    <value>Turn the top and middle layer together a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć górną i środkową warstwę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
-    <value>Turn the top and middle layer together a quarter turn 'clockwise' (+).</value>
+    <value>Obróć górną i środkową warstwę razem o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
-    <value>Turn the back side half a turn.</value>
+    <value>Obróć tylną stronę o pół obrotu.</value>
   </data>
   <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
-    <value>Turn the back side a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć tylną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="TurnBackFaceToRight_Text" xml:space="preserve">
-    <value>Turn the back side a quarter turn 'clockwise' (+).</value>
+    <value>Obróć tylną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the back, the right side remains at the right.</value>
+    <value>Obróć całą kostkę tak, aby przód przeszedł do tyłu, prawa strona pozostała po prawej stronie.</value>
   </data>
   <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the back, the top side remains at the top.</value>
+    <value>Obróć całą kostkę tak, aby przód znalazł się z tyłu, górna strona pozostała na górze.</value>
   </data>
   <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the bottom, the right side remains at the right.</value>
+    <value>Obróć całą kostkę tak, aby przód znalazł się na dole, prawa strona pozostała po prawej stronie.</value>
   </data>
   <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the left side, the top side remains at the top.</value>
+    <value>Obróć całą kostkę tak, aby przód znalazł się na lewej stronie, górna strona pozostała na górze.</value>
   </data>
   <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the right side, the top side remains at the top.</value>
+    <value>Obróć całą kostkę tak, aby przód znalazł się na prawej stronie, górna strona pozostała na górze.</value>
   </data>
   <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the front goes to the top, the right side remains at the right.</value>
+    <value>Obróć całą kostkę tak, aby przód skierował się do góry, prawa strona pozostała po prawej stronie.</value>
   </data>
   <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the top goes to the bottom, the front side remains at the front.</value>
+    <value>Obróć całą kostkę tak, aby góra znalazła się na dole, przód pozostał z przodu.</value>
   </data>
   <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the top goes to the left side, the front side remains at the front.</value>
+    <value>Obróć całą kostkę tak, aby góra znalazła się na lewą stronę, przód pozostał z przodu.</value>
   </data>
   <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Turn the entire cube so that the top goes to the right side, the front side remains at the front.</value>
+    <value>Obróć całą kostkę tak, aby góra znalazła się na prawej stronie, przód pozostał z przodu.</value>
   </data>
   <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
-    <value>Turn the bottom side half a turn.</value>
+    <value>Obróć dolną część o pół obrotu.</value>
   </data>
   <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
-    <value>Turn the bottom side a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć dolną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="TurnDownFaceToRight_Text" xml:space="preserve">
-    <value>Turn the bottom side a quarter turn 'clockwise' (+).</value>
+    <value>Obróć dolną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
-    <value>Turn the front side half a turn.</value>
+    <value>Obróć przednią stronę o pół obrotu.</value>
   </data>
   <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
-    <value>Turn the front side a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć przednią stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
-    <value>Turn the front side a quarter turn 'clockwise' (+).</value>
+    <value>Obróć przednią stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
-    <value>Turn the front-middle layer a quarter turn to the right side (-).</value>
+    <value>Obróć przednią warstwę środkową o ćwierć obrotu w prawą stronę (-).</value>
   </data>
   <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
-    <value>Turn the front-middle layer a quarter turn to the top side (+).</value>
+    <value>Obróć przednią środkową warstwę o ćwierć obrotu w górę (+).</value>
   </data>
   <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
-    <value>Turn the left side half a turn.</value>
+    <value>Obróć lewą stronę o pół obrotu.</value>
   </data>
   <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
-    <value>Turn the left side a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć lewą stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
-    <value>Turn the left side a quarter turn 'clockwise' (+).</value>
+    <value>Obróć lewą stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
-    <value>Turn the middle layer half a turn.</value>
+    <value>Obróć środkową warstwę o pół obrotu.</value>
   </data>
   <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
-    <value>Turn the right side half a turn.</value>
+    <value>Obróć prawą stronę o pół obrotu.</value>
   </data>
   <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
-    <value>Turn the right side a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć prawą stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="TurnRightFaceToRight_Text" xml:space="preserve">
-    <value>Turn the right side a quarter turn 'clockwise' (+).</value>
+    <value>Obróć prawą stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Turn the right-middle layer a quarter turn to the front side (+).</value>
+    <value>Obróć prawą środkową warstwę o ćwierć obrotu do przodu (+).</value>
   </data>
   <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
-    <value>Turn the right-middle layer a quarter turn to the top side (-).</value>
+    <value>Obróć prawą środkową warstwę o ćwierć obrotu w górę (-).</value>
   </data>
   <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
-    <value>Turn the top side half a turn.</value>
+    <value>Obróć górną stronę o pół obrotu.</value>
   </data>
   <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
-    <value>Turn the top side a quarter turn 'counter clockwise' (-).</value>
+    <value>Obróć górną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
   </data>
   <data name="TurnUpFaceToRight_Text" xml:space="preserve">
-    <value>Turn the top side a quarter turn 'clockwise' (+).</value>
+    <value>Obróć górną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
   <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Turn the top-middle layer a quarter turn to the front side (-).</value>
+    <value>Obróć górną środkową warstwę o ćwierć obrotu do przodu (-).</value>
   </data>
   <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
-    <value>Turn the top-middle layer a quarter turn to the right side (+).</value>
+    <value>Obróć górną środkową warstwę o ćwierć obrotu w prawą stronę (+).</value>
   </data>
   <data name="Version_Text" xml:space="preserve">
     <value>Wersja:</value>
