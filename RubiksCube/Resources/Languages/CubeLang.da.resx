@@ -316,13 +316,13 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>b'</value>
   </data>
   <data name="Rotate2Layers_d" xml:space="preserve">
-    <value>d</value>
+    <value>n</value>
   </data>
   <data name="Rotate2Layers_d2" xml:space="preserve">
-    <value>d2</value>
+    <value>n2</value>
   </data>
   <data name="Rotate2Layers_di" xml:space="preserve">
-    <value>d'</value>
+    <value>n'</value>
   </data>
   <data name="Rotate2Layers_f" xml:space="preserve">
     <value>f</value>
@@ -334,31 +334,31 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>f'</value>
   </data>
   <data name="Rotate2Layers_l" xml:space="preserve">
-    <value>l</value>
+    <value>v</value>
   </data>
   <data name="Rotate2Layers_l2" xml:space="preserve">
-    <value>l2</value>
+    <value>v2</value>
   </data>
   <data name="Rotate2Layers_li" xml:space="preserve">
-    <value>l'</value>
+    <value>v'</value>
   </data>
   <data name="Rotate2Layers_r" xml:space="preserve">
-    <value>r</value>
+    <value>h</value>
   </data>
   <data name="Rotate2Layers_r2" xml:space="preserve">
-    <value>r2</value>
+    <value>h2</value>
   </data>
   <data name="Rotate2Layers_ri" xml:space="preserve">
-    <value>r'</value>
+    <value>h'</value>
   </data>
   <data name="Rotate2Layers_u" xml:space="preserve">
-    <value>u</value>
+    <value>t</value>
   </data>
   <data name="Rotate2Layers_u2" xml:space="preserve">
-    <value>u2</value>
+    <value>t2</value>
   </data>
   <data name="Rotate2Layers_ui" xml:space="preserve">
-    <value>u'</value>
+    <value>t'</value>
   </data>
   <data name="RotateCube_x" xml:space="preserve">
     <value>x</value>
@@ -397,13 +397,13 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>B'</value>
   </data>
   <data name="RotateFace_D" xml:space="preserve">
-    <value>D</value>
+    <value>N</value>
   </data>
   <data name="RotateFace_D2" xml:space="preserve">
-    <value>D2</value>
+    <value>N2</value>
   </data>
   <data name="RotateFace_Di" xml:space="preserve">
-    <value>D'</value>
+    <value>N'</value>
   </data>
   <data name="RotateFace_F" xml:space="preserve">
     <value>F</value>
@@ -415,31 +415,31 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>F'</value>
   </data>
   <data name="RotateFace_L" xml:space="preserve">
-    <value>L</value>
+    <value>V</value>
   </data>
   <data name="RotateFace_L2" xml:space="preserve">
-    <value>L2</value>
+    <value>V2</value>
   </data>
   <data name="RotateFace_Li" xml:space="preserve">
-    <value>L'</value>
+    <value>V'</value>
   </data>
   <data name="RotateFace_R" xml:space="preserve">
-    <value>R</value>
+    <value>H</value>
   </data>
   <data name="RotateFace_R2" xml:space="preserve">
-    <value>R2</value>
+    <value>H2</value>
   </data>
   <data name="RotateFace_Ri" xml:space="preserve">
-    <value>R'</value>
+    <value>H'</value>
   </data>
   <data name="RotateFace_U" xml:space="preserve">
-    <value>U</value>
+    <value>T</value>
   </data>
   <data name="RotateFace_U2" xml:space="preserve">
-    <value>U2</value>
+    <value>T2</value>
   </data>
   <data name="RotateFace_Ui" xml:space="preserve">
-    <value>U'</value>
+    <value>T'</value>
   </data>
   <data name="RotateSlice_E" xml:space="preserve">
     <value>E</value>

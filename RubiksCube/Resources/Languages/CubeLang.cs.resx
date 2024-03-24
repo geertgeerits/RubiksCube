@@ -297,6 +297,15 @@ Možnou příčinou je nesprávný přenos barev na tuto kostku.</value>
   <data name="PrivacyPolicy_Text" xml:space="preserve">
     <value>Žádné osobní a jiné údaje nejsou ukládány ani předávány mně a ostatním.</value>
   </data>
+  <data name="RestartApp_Text" xml:space="preserve">
+    <value>Aplikace bude restartována.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Čas v milisekundách:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Počet otáček:</value>
+  </data>
   <data name="Rotate2Layers_b" xml:space="preserve">
     <value>b</value>
   </data>
