@@ -306,6 +306,168 @@ Möjlig orsak är felaktig överföring av färger till denna kub.</value>
   <data name="ResultTurns_Text" xml:space="preserve">
     <value>Antal omgångar:</value>
   </data>
+  <data name="Rotate2Layers_b" xml:space="preserve">
+    <value>b</value>
+  </data>
+  <data name="Rotate2Layers_b2" xml:space="preserve">
+    <value>b2</value>
+  </data>
+  <data name="Rotate2Layers_bi" xml:space="preserve">
+    <value>b'</value>
+  </data>
+  <data name="Rotate2Layers_d" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="Rotate2Layers_d2" xml:space="preserve">
+    <value>d2</value>
+  </data>
+  <data name="Rotate2Layers_di" xml:space="preserve">
+    <value>d'</value>
+  </data>
+  <data name="Rotate2Layers_f" xml:space="preserve">
+    <value>f</value>
+  </data>
+  <data name="Rotate2Layers_f2" xml:space="preserve">
+    <value>f2</value>
+  </data>
+  <data name="Rotate2Layers_fi" xml:space="preserve">
+    <value>f'</value>
+  </data>
+  <data name="Rotate2Layers_l" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="Rotate2Layers_l2" xml:space="preserve">
+    <value>l2</value>
+  </data>
+  <data name="Rotate2Layers_li" xml:space="preserve">
+    <value>l'</value>
+  </data>
+  <data name="Rotate2Layers_r" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="Rotate2Layers_r2" xml:space="preserve">
+    <value>r2</value>
+  </data>
+  <data name="Rotate2Layers_ri" xml:space="preserve">
+    <value>r'</value>
+  </data>
+  <data name="Rotate2Layers_u" xml:space="preserve">
+    <value>u</value>
+  </data>
+  <data name="Rotate2Layers_u2" xml:space="preserve">
+    <value>u2</value>
+  </data>
+  <data name="Rotate2Layers_ui" xml:space="preserve">
+    <value>u'</value>
+  </data>
+  <data name="RotateCube_x" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="RotateCube_x2" xml:space="preserve">
+    <value>x2</value>
+  </data>
+  <data name="RotateCube_xi" xml:space="preserve">
+    <value>x'</value>
+  </data>
+  <data name="RotateCube_y" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="RotateCube_y2" xml:space="preserve">
+    <value>y2</value>
+  </data>
+  <data name="RotateCube_yi" xml:space="preserve">
+    <value>y'</value>
+  </data>
+  <data name="RotateCube_z" xml:space="preserve">
+    <value>z</value>
+  </data>
+  <data name="RotateCube_z2" xml:space="preserve">
+    <value>z2</value>
+  </data>
+  <data name="RotateCube_zi" xml:space="preserve">
+    <value>z'</value>
+  </data>
+  <data name="RotateFace_B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="RotateFace_B2" xml:space="preserve">
+    <value>B2</value>
+  </data>
+  <data name="RotateFace_Bi" xml:space="preserve">
+    <value>B'</value>
+  </data>
+  <data name="RotateFace_D" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="RotateFace_D2" xml:space="preserve">
+    <value>D2</value>
+  </data>
+  <data name="RotateFace_Di" xml:space="preserve">
+    <value>D'</value>
+  </data>
+  <data name="RotateFace_F" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="RotateFace_F2" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="RotateFace_Fi" xml:space="preserve">
+    <value>F'</value>
+  </data>
+  <data name="RotateFace_L" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="RotateFace_L2" xml:space="preserve">
+    <value>L2</value>
+  </data>
+  <data name="RotateFace_Li" xml:space="preserve">
+    <value>L'</value>
+  </data>
+  <data name="RotateFace_R" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="RotateFace_R2" xml:space="preserve">
+    <value>R2</value>
+  </data>
+  <data name="RotateFace_Ri" xml:space="preserve">
+    <value>R'</value>
+  </data>
+  <data name="RotateFace_U" xml:space="preserve">
+    <value>U</value>
+  </data>
+  <data name="RotateFace_U2" xml:space="preserve">
+    <value>U2</value>
+  </data>
+  <data name="RotateFace_Ui" xml:space="preserve">
+    <value>U'</value>
+  </data>
+  <data name="RotateSlice_E" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="RotateSlice_E2" xml:space="preserve">
+    <value>E2</value>
+  </data>
+  <data name="RotateSlice_Ei" xml:space="preserve">
+    <value>E'</value>
+  </data>
+  <data name="RotateSlice_M" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RotateSlice_M2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="RotateSlice_Mi" xml:space="preserve">
+    <value>M'</value>
+  </data>
+  <data name="RotateSlice_S" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="RotateSlice_S2" xml:space="preserve">
+    <value>S2</value>
+  </data>
+  <data name="RotateSlice_Si" xml:space="preserve">
+    <value>S'</value>
+  </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
   </data>
