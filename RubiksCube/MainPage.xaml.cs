@@ -1552,8 +1552,10 @@ public partial class MainPage : ContentPage
                 return CubeLang.RotateCube_z2;
 
             default:
+#if DEBUG
                 DisplayAlert(CubeLang.ErrorTitle_Text, $"TranslateCubeRotations\ncRotation not found:\n{cRotation}", CubeLang.ButtonClose_Text);
-                return "";
+#endif
+                return cRotation;
         }
     }
 
