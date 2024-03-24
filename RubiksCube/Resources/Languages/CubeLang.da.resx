@@ -490,6 +490,9 @@ Efter lagring genstartes applikationen, og kuben nulstilles.</value>
   <data name="Stop_Text" xml:space="preserve">
     <value>Hold op</value>
   </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
     <value>Teksten indeholder et eller flere tegn, der ikke er tilladt.
 

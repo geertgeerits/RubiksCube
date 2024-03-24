@@ -490,6 +490,9 @@ După salvare, aplicația este repornită și cubul este resetat.</value>
   <data name="Stop_Text" xml:space="preserve">
     <value>Stop</value>
   </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
   <data name="TextContainsChar_Text" xml:space="preserve">
     <value>Textul conține unul sau mai multe caractere care nu sunt permise.
 

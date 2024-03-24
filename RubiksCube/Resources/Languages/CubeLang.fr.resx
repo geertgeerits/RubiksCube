@@ -693,4 +693,7 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
   <data name="RotateSlice_Si" xml:space="preserve">
     <value>S'</value>
   </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
 </root>
