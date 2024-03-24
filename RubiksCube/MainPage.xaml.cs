@@ -1,8 +1,8 @@
 ﻿// Program .....: RubiksCube.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
-// Version .....: 2.0.18
-// Date ........: 2024-03-23 (YYYY-MM-DD)
+// Version .....: 2.0.19
+// Date ........: 2024-03-24 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -279,6 +279,7 @@ public partial class MainPage : ContentPage
                 nTurns++;
                 lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
                 btnLetterTurn.Text = cItem;
+                //btnLetterTurn.Text = TranslateCubeRotations(cItem);
 
                 await MakeExplainTurnAsync(cItem);
             }
@@ -1427,6 +1428,133 @@ public partial class MainPage : ContentPage
         imgbtnTurnFrontFaceToLeft.IsEnabled = bEnableDisable;
         imgbtnTurnUpHorMiddleToLeftFace.IsEnabled = bEnableDisable;
         imgbtnTurnBackFaceToRight.IsEnabled = bEnableDisable;
+    }
+
+    //// Translate cube rotations to the language of the selected language
+    private string TranslateCubeRotations(string cRotation)
+    {
+        switch (cRotation)
+        {
+            // Face rotations
+            case Globals.turnFrontCW:
+                return CubeLang.RotateFace_F;
+            case Globals.turnFrontCCW:
+                return CubeLang.RotateFace_Fi;
+            case Globals.turnFront2:
+                return CubeLang.RotateFace_F2;
+            case Globals.turnRightCW:
+                return CubeLang.RotateFace_R;
+            case Globals.turnRightCCW:
+                return CubeLang.RotateFace_Ri;
+            case Globals.turnRight2:
+                return CubeLang.RotateFace_R2;
+            case Globals.turnBackCW:
+                return CubeLang.RotateFace_B;
+            case Globals.turnBackCCW:
+                return CubeLang.RotateFace_Bi;
+            case Globals.turnBack2:
+                return CubeLang.RotateFace_B2;
+            case Globals.turnLeftCW:
+                return CubeLang.RotateFace_L;
+            case Globals.turnLeftCCW:
+                return CubeLang.RotateFace_Li;
+            case Globals.turnLeft2:
+                return CubeLang.RotateFace_L2;
+            case Globals.turnUpCW:
+                return CubeLang.RotateFace_U;
+            case Globals.turnUpCCW:
+                return CubeLang.RotateFace_Ui;
+            case Globals.turnUp2:
+                return CubeLang.RotateFace_U2;
+            case Globals.turnDownCW:
+                return CubeLang.RotateFace_D;
+            case Globals.turnDownCCW:
+                return CubeLang.RotateFace_Di;
+            case Globals.turnDown2:
+                return CubeLang.RotateFace_D2;
+
+            // Slice turns
+            case Globals.turnUpVerMiddleFront:
+                return CubeLang.RotateSlice_M;
+            case Globals.turnUpVerMiddleBack:
+                return CubeLang.RotateSlice_Mi;
+            case Globals.turnUpVerMiddle2:
+                return CubeLang.RotateSlice_M2;
+            case Globals.turnFrontHorMiddleRight:
+                return CubeLang.RotateSlice_E;
+            case Globals.turnFrontHorMiddleLeft:
+                return CubeLang.RotateSlice_Ei;
+            case Globals.turnFrontHorMiddle2:
+                return CubeLang.RotateSlice_E2;
+            case Globals.turnUpHorMiddleRight:
+                return CubeLang.RotateSlice_S;
+            case Globals.turnUpHorMiddleLeft:
+                return CubeLang.RotateSlice_Si;
+            case Globals.turnUpHorMiddle2:
+                return CubeLang.RotateSlice_S2;
+
+            // Two layers at the same time
+            case Globals.turn2LayersFrontCW:
+                return CubeLang.Rotate2Layers_f;
+            case Globals.turn2LayersFrontCCW:
+                return CubeLang.Rotate2Layers_fi;
+            case Globals.turn2LayersFront2:
+                return CubeLang.Rotate2Layers_f2;
+            case Globals.turn2LayersRightCW:
+                return CubeLang.Rotate2Layers_r;
+            case Globals.turn2LayersRightCCW:
+                return CubeLang.Rotate2Layers_ri;
+            case Globals.turn2LayersRight2:
+                return CubeLang.Rotate2Layers_r2;
+            case Globals.turn2LayersBackCW:
+                return CubeLang.Rotate2Layers_b;
+            case Globals.turn2LayersBackCCW:
+                return CubeLang.Rotate2Layers_bi;
+            case Globals.turn2LayersBack2:
+                return CubeLang.Rotate2Layers_b2;
+            case Globals.turn2LayersLeftCW:
+                return CubeLang.Rotate2Layers_l;
+            case Globals.turn2LayersLeftCCW:
+                return CubeLang.Rotate2Layers_li;
+            case Globals.turn2LayersLeft2:
+                return CubeLang.Rotate2Layers_l2;
+            case Globals.turn2LayersUpCW:
+                return CubeLang.Rotate2Layers_u;
+            case Globals.turn2LayersUpCCW:
+                return CubeLang.Rotate2Layers_ui;
+            case Globals.turn2LayersUp2:
+                return CubeLang.Rotate2Layers_u2;
+            case Globals.turn2LayersDownCW:
+                return CubeLang.Rotate2Layers_d;
+            case Globals.turn2LayersDownCCW:
+                return CubeLang.Rotate2Layers_di;
+            case Globals.turn2LayersDown2:
+                return CubeLang.Rotate2Layers_d2;
+
+            // Whole cube turns
+            case Globals.turnCubeFrontToUp:
+                return CubeLang.RotateCube_x;
+            case Globals.turnCubeFrontToDown:
+                return CubeLang.RotateCube_xi;
+            case Globals.turnCubeFrontToUp2:
+                return CubeLang.RotateCube_x2;
+            case Globals.turnCubeFrontToLeft:
+                return CubeLang.RotateCube_y;
+            case Globals.turnCubeFrontToRight:
+                return CubeLang.RotateCube_yi;
+            case Globals.turnCubeFrontToLeft2:
+                return CubeLang.RotateCube_y2;
+            case Globals.turnCubeUpToRight:
+                return CubeLang.RotateCube_z;
+            case Globals.turnCubeUpToLeft:
+                return CubeLang.RotateCube_zi;
+            case Globals.turnCubeUpToRight2:
+                return CubeLang.RotateCube_z2;
+
+            default:
+                DisplayAlert(CubeLang.ErrorTitle_Text, $"TranslateCubeRotations\ncRotation not found:\n{cRotation}", CubeLang.ButtonClose_Text);
+                return "";
+        }
     }
 
     //// Show license using the Loaded event of the MainPage.xaml
