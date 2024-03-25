@@ -274,10 +274,10 @@ public partial class MainPage : ContentPage
             await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
             await Task.Delay(500);
+            bArrowButtonPressed = false;
 
             // Make the turns of the cube
             int nTurns = -1;
-            bArrowButtonPressed = false;
 
             foreach (string cItem in Globals.lCubeTurns)
             {
