@@ -669,7 +669,7 @@
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    WidthRequest="180"
+                    WidthRequest="200"
                     BackgroundColor="Gold"
                     TextColor="Black"
                     FontAttributes="Bold"

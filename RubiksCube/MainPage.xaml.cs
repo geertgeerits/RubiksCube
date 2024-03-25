@@ -277,6 +277,7 @@ public partial class MainPage : ContentPage
 
             // Make the turns of the cube
             int nTurns = -1;
+            bArrowButtonPressed = false;
 
             foreach (string cItem in Globals.lCubeTurns)
             {
