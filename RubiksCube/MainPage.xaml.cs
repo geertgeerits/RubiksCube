@@ -275,7 +275,7 @@ public partial class MainPage : ContentPage
 
             await Task.Delay(500);
             bArrowButtonPressed = false;
-            btnLetterTurn.Text = "";
+            btnLetterTurn.Text = " ";       // Needs a space to erase the text for iOS
 
             // Make the turns of the cube
             int nTurns = -1;
@@ -290,7 +290,7 @@ public partial class MainPage : ContentPage
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
-            btnLetterTurn.Text = "";
+            btnLetterTurn.Text = " ";                                   // Needs a space to erase the text for iOS
 
             await Task.Delay(500);
 
