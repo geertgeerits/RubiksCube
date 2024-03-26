@@ -40,31 +40,5 @@
 	<string>2.0.19</string>
 	<key>CFBundleVersion</key>
 	<string>19</string>
-	<key>NSPrivacyAccessedAPITypes</key>
-	<array>
-		<dict>
-			<key>NSPrivacyAccessedAPICategorySystemBootTime</key>
-			<string>35F9.1</string>
-			<key>NSPrivacyAccessedAPIReason</key>
-			<string>We use the system boot time to calculate uptime for diagnostic purposes.</string>
-		</dict>
-		<dict>
-			<key>NSPrivacyAccessedAPICategoryFileTimestamp</key>
-			<array>
-				<string>DDA9.1</string>
-				<string>3B52.1</string>
-			</array>
-			<key>NSPrivacyAccessedAPIReason</key>
-			<string>Access to file timestamps is essential for managing files and ensuring data integrity.</string>
-		</dict>
-		<dict>
-			<key>NSPrivacyAccessedAPICategoryDiskSpace</key>
-			<array>
-				<string>E174.1</string>
-			</array>
-			<key>NSPrivacyAccessedAPIReason</key>
-			<string>We check available disk space to ensure there is enough space before attempting to save the cube data.</string>
-		</dict>
-	</array>
 </dict>
 </plist>
