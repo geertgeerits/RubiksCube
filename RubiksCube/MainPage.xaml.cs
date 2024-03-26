@@ -1,7 +1,7 @@
 ﻿// Program .....: RubiksCube.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
-// Version .....: 2.0.19
+// Version .....: 2.0.20
 // Date ........: 2024-03-26 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
@@ -275,7 +275,7 @@ public partial class MainPage : ContentPage
 
             await Task.Delay(500);
             bArrowButtonPressed = false;
-            btnLetterTurn.Text = " ";       // Needs a space to erase the text for iOS
+            btnLetterTurn.Text = " ";       // Needs a space to erase the text for iOS (!!!BUG!!! ?)
 
             // Make the turns of the cube
             int nTurns = -1;
@@ -290,7 +290,7 @@ public partial class MainPage : ContentPage
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
-            btnLetterTurn.Text = " ";                                   // Needs a space to erase the text for iOS
+            btnLetterTurn.Text = " ";
 
             await Task.Delay(500);
 
