@@ -275,6 +275,7 @@ public partial class MainPage : ContentPage
 
             await Task.Delay(500);
             bArrowButtonPressed = false;
+            btnLetterTurn.Text = "";
 
             // Make the turns of the cube
             int nTurns = -1;
