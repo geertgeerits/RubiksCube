@@ -1,7 +1,7 @@
 ﻿// Program .....: RubiksCube.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
-// Version .....: 2.0.20
+// Version .....: 2.0.21
 // Date ........: 2024-03-26 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
