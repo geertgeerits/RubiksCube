@@ -1,8 +1,8 @@
 ﻿// Program .....: RubiksCube.sln
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
-// Version .....: 2.0.21
-// Date ........: 2024-03-26 (YYYY-MM-DD)
+// Version .....: 2.0.22
+// Date ........: 2024-04-16 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -275,7 +275,6 @@ public partial class MainPage : ContentPage
 
             await Task.Delay(500);
             bArrowButtonPressed = false;
-            btnLetterTurn.Text = " ";       // Needs a space to erase the text for iOS (!!!BUG!!! ?)
 
             // Make the turns of the cube
             int nTurns = -1;
@@ -290,7 +289,7 @@ public partial class MainPage : ContentPage
             }
 
             lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
-            btnLetterTurn.Text = " ";
+            btnLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
 
             await Task.Delay(500);
 
