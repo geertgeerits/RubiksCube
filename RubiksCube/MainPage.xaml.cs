@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.22
-// Date ........: 2024-04-26 (YYYY-MM-DD)
+// Date ........: 2024-05-02 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -868,16 +868,11 @@ public partial class MainPage : ContentPage
         ExplainTurnCubeSpeech(cTurnCubeText);
 
         // Start a program loop and wait for the arrow button to be pressed
-        while (true)
+        // If the button has been pressed then stop the loop
+        while (!bArrowButtonPressed)
         {
             // Wait for 300 milliseconds on the button click event handler
             await Task.Delay(300);
-
-            // Check if the button has been clicked and stop the loop if clicked
-            if (bArrowButtonPressed)
-            {
-                break;
-            }
         }
 
         // Restore settings
