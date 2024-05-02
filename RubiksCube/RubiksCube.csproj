@@ -75,7 +75,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.21" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
@@ -148,5 +147,9 @@
 		<ApplicationVersion>22</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.rubikscube</ApplicationId>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.21" />
+	</ItemGroup>
 
 </Project>
