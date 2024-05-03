@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.22
-// Date ........: 2024-05-02 (YYYY-MM-DD)
+// Date ........: 2024-05-03 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -347,6 +347,7 @@ public partial class MainPage : ContentPage
     private void OnBtnLetterTurnClicked(object sender, EventArgs e)
     {
         bArrowButtonPressed = true;
+        _ = _buttonPressed.TrySetResult(true);
     }
 
     //// Turn the front face clockwise (to right +)
@@ -355,6 +356,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -381,6 +383,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -401,6 +404,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -421,6 +425,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -447,6 +452,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -467,6 +473,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -487,6 +494,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -513,6 +521,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -533,6 +542,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -553,6 +563,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -579,6 +590,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -599,6 +611,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -619,6 +632,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -645,6 +659,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -665,6 +680,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -685,6 +701,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -711,6 +728,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -731,6 +749,7 @@ public partial class MainPage : ContentPage
         if (bSolvingCube)
         {
             bArrowButtonPressed = true;
+            _ = _buttonPressed.TrySetResult(true);
             return;
         }
 
@@ -842,6 +861,10 @@ public partial class MainPage : ContentPage
         }
     }
 
+    //// Initialize the _buttonPressed field with a new instance of TaskCompletionSource<bool>,
+    //   which can be used to create and control the lifecycle of a task that will eventually complete with a boolean result.
+    private TaskCompletionSource<bool> _buttonPressed = new();
+
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
     private async Task MakeExplainTurnAsync(string cTurn)
     {
@@ -869,11 +892,20 @@ public partial class MainPage : ContentPage
 
         // Start a program loop and wait for the arrow button to be pressed
         // If the button has been pressed then stop the loop
-        while (!bArrowButtonPressed)
-        {
-            // Wait for 300 milliseconds on the button click event handler
-            await Task.Delay(300);
-        }
+        //while (!bArrowButtonPressed)
+        //{
+        //    // Wait for 300 milliseconds on the button click event handler
+        //    await Task.Delay(300);
+        //}
+
+        // Wait for 200 milliseconds on the button click event handler
+        await Task.Delay(200);
+
+        // Wait for the button to be pressed before continuing
+        await _buttonPressed.Task;
+
+        // Reset for the next iteration
+        _buttonPressed = new TaskCompletionSource<bool>();
 
         // Restore settings
         bArrowButtonPressed = false;
