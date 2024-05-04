@@ -2,7 +2,7 @@
 // Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
 // Copyright ...: (C) 1981-2024
 // Version .....: 2.0.22
-// Date ........: 2024-05-03 (YYYY-MM-DD)
+// Date ........: 2024-05-04 (YYYY-MM-DD)
 // Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
 // Description .: Solving the Rubik's Cube
 // Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -16,12 +16,15 @@ namespace RubiksCube;
 
 public partial class MainPage : ContentPage
 {
-    // Local variables
+    //// Local variables
     private bool bColorDrop;
     private bool bSolvingCube;
     private bool bSolved;
-    private bool bArrowButtonPressed;
     private bool bTestSolveCube;
+
+    //// Initialize the _buttonPressed field with a new instance of TaskCompletionSource<bool>,
+    //   which can be used to create and control the lifecycle of a task that will eventually complete with a boolean result.
+    private TaskCompletionSource<bool> _buttonPressed = new();
 
     public MainPage()
 	{
@@ -242,8 +245,8 @@ public partial class MainPage : ContentPage
                 bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
             }
 
-            // For testing comment out the lines 187-188 and 228-243 (and change the line 268 to bTestSolveCube = true)
-            // and uncomment one of the lines 248-252/253 to test one of the solutions to solve the cube
+            // For testing comment out the lines 190-191 and 231-246 (and change the line 271 to bTestSolveCube = true)
+            // and uncomment one of the lines 251-255/256 to test one of the solutions to solve the cube
 
             //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
             //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -274,7 +277,6 @@ public partial class MainPage : ContentPage
             await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
             await Task.Delay(500);
-            bArrowButtonPressed = false;
 
             // Make the turns of the cube
             int nTurns = -1;
@@ -318,6 +320,9 @@ public partial class MainPage : ContentPage
         // Clear the list with the cube turns
         Globals.lCubeTurns.Clear();
 
+        // Reset for the next iteration
+        _buttonPressed = new TaskCompletionSource<bool>();
+
         // Settings
         lblExplainTurnCube.Text = "";
         lblExplainTurnCube.IsVisible = false;
@@ -346,7 +351,6 @@ public partial class MainPage : ContentPage
     //// On button letter turn clicked
     private void OnBtnLetterTurnClicked(object sender, EventArgs e)
     {
-        bArrowButtonPressed = true;
         _ = _buttonPressed.TrySetResult(true);
     }
 
@@ -355,7 +359,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -382,7 +385,6 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -403,7 +405,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -424,7 +425,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -451,7 +451,6 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -472,7 +471,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -493,7 +491,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -520,7 +517,6 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -541,7 +537,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -562,7 +557,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -589,7 +583,6 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -610,7 +603,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -631,7 +623,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -658,7 +649,6 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -679,7 +669,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -700,7 +689,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -727,7 +715,6 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -748,7 +735,6 @@ public partial class MainPage : ContentPage
     {
         if (bSolvingCube)
         {
-            bArrowButtonPressed = true;
             _ = _buttonPressed.TrySetResult(true);
             return;
         }
@@ -861,10 +847,6 @@ public partial class MainPage : ContentPage
         }
     }
 
-    //// Initialize the _buttonPressed field with a new instance of TaskCompletionSource<bool>,
-    //   which can be used to create and control the lifecycle of a task that will eventually complete with a boolean result.
-    private TaskCompletionSource<bool> _buttonPressed = new();
-
     //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
     private async Task MakeExplainTurnAsync(string cTurn)
     {
@@ -890,16 +872,9 @@ public partial class MainPage : ContentPage
         // Convert text to speech
         ExplainTurnCubeSpeech(cTurnCubeText);
 
-        // Start a program loop and wait for the arrow button to be pressed
-        // If the button has been pressed then stop the loop
-        //while (!bArrowButtonPressed)
-        //{
-        //    // Wait for 300 milliseconds on the button click event handler
-        //    await Task.Delay(300);
-        //}
-
-        // Wait for 200 milliseconds on the button click event handler
-        await Task.Delay(200);
+        // Wait for 300 milliseconds on the button click event handler
+        // because a possible error 'The operation was canceled' in the Task ClassSpeech.ConvertTextToSpeechAsync()
+        await Task.Delay(300);
 
         // Wait for the button to be pressed before continuing
         await _buttonPressed.Task;
@@ -908,7 +883,6 @@ public partial class MainPage : ContentPage
         _buttonPressed = new TaskCompletionSource<bool>();
 
         // Restore settings
-        bArrowButtonPressed = false;
         await SetImageButtonArrowIsEnabledAsync(cTurn, false);
 
         // Turn the faces of the cube
@@ -1314,7 +1288,7 @@ public partial class MainPage : ContentPage
 
         if (bSolvingCube)
         {
-            // Restart the application to get out of the loop in the Task MakeExplainTurnAsync()
+            // Restart the application to get out of the foreach loop in the method OnBtnSolveCubeClicked and task MakeExplainTurnAsync()
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
         else
