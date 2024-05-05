@@ -1496,7 +1496,6 @@ namespace RubiksCube
         }
     }
 
-
     /*
     Numbering of cube surfaces
     --------------------------
