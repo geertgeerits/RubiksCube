@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
+
 namespace RubiksCube
 {
-    internal class ClassSaveRestoreCube
+    internal sealed class ClassSaveRestoreCube
     {
         //// Save the cube
         public static bool CubeDataSave()

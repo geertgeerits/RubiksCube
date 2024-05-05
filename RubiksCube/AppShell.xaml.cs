@@ -1,9 +1,10 @@
-﻿namespace RubiksCube;
-
-public partial class AppShell : Shell
+﻿namespace RubiksCube
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+    public sealed partial class AppShell : Shell
+    {
+    	public AppShell()
+    	{
+    		InitializeComponent();
+    	}
+    }
 }

@@ -1,32 +1,33 @@
-﻿namespace RubiksCube;
-
-public partial class App : Application
+﻿namespace RubiksCube
 {
-	public App()
-	{
-		InitializeComponent();
-
-		//MainPage = new AppShell();
-        MainPage = new NavigationPage(new MainPage());
-    }
-
-    // Window dimensions and location for desktop apps
-    protected override Window CreateWindow(IActivationState activationState)
+    public sealed partial class App : Application
     {
-        var window = base.CreateWindow(activationState);
+    	public App()
+    	{
+    		InitializeComponent();
 
-        const int newHeight = 990;
-        const int newWidth = 900;
+    		//MainPage = new AppShell();
+            MainPage = new NavigationPage(new MainPage());
+        }
 
-        window.X = 300;
-        window.Y = 40;
+        // Window dimensions and location for desktop apps
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            var window = base.CreateWindow(activationState);
 
-        window.Height = newHeight;
-        window.Width = newWidth;
+            const int newHeight = 990;
+            const int newWidth = 900;
 
-        window.MinimumHeight = 800;
-        window.MinimumWidth = 800;
+            window.X = 300;
+            window.Y = 40;
 
-        return window;
+            window.Height = newHeight;
+            window.Width = newWidth;
+
+            window.MinimumHeight = 800;
+            window.MinimumWidth = 800;
+
+            return window;
+        }
     }
 }

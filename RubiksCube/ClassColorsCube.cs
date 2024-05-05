@@ -2,7 +2,7 @@
 
 namespace RubiksCube
 {
-    internal class ClassColorsCube
+    internal sealed class ClassColorsCube
     {
         //// Check the number of colors of the cube
         public static bool CheckNumberColors()

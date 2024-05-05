@@ -6,7 +6,7 @@ using static RubiksCube.Globals;
 
 namespace RubiksCube
 {
-    internal class ClassSolveCubeMain
+    internal sealed class ClassSolveCubeMain
     {
         private const string cNone = "None";
         private const char cApos = '\'';

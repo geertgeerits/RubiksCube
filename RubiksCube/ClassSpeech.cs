@@ -1,6 +1,6 @@
 ﻿namespace RubiksCube
 {
-    internal class ClassSpeech
+    internal sealed class ClassSpeech
     {
         private static IEnumerable<Locale> locales;
 

@@ -10,7 +10,7 @@ using static RubiksCube.Globals;
 
 namespace RubiksCube
 {
-    internal class ClassSolveCubeBasic
+    internal sealed class ClassSolveCubeBasic
     {
         //// Declare variables
         private const int nLoopTimesMax = 200;

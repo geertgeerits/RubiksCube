@@ -2,7 +2,7 @@
 
 namespace RubiksCube
 {
-    internal class ClassCubeTurns
+    internal sealed class ClassCubeTurns
     {
         //// Turn the layers of the cube (CW = Clockwise, CCW = Counter clockwise, 2 = two quarter turns or 1 half turn)
         public static async Task<bool> TurnCubeLayersAsync(string cTurn)
