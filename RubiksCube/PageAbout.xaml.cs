@@ -15,7 +15,7 @@ namespace RubiksCube
             }
 
             //// Put text in the chosen language in the controls and variables
-            lblVersion.Text = $"{CubeLang.Version_Text} 2.0.22";
+            lblVersion.Text = $"{CubeLang.Version_Text} 2.0.23";
             lblCopyright.Text = $"{CubeLang.Copyright_Text} © 1981-2024 Geert Geerits";
             lblEmail.Text = $"{CubeLang.Email_Text} geertgeerits@gmail.com";
             lblWebsite.Text = $"{CubeLang.Website_Text}: ../rubikscube";
