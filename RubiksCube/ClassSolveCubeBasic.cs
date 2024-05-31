@@ -66,7 +66,6 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Solve the top layer of the cube
         /// Solve the corners of the top layer - Chapter 6, page 16 
         /// </summary>
         /// <returns></returns>

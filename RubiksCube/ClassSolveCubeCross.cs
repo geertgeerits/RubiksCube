@@ -823,7 +823,7 @@ namespace RubiksCube
 
         /// <summary>
         /// Solve the middle layer - Part 2
-        /// If an edge cube at the top layer does not have the color of the up face center cube
+        /// <para>If an edge cube at the top layer does not have the color of the up face center cube</para>
         /// </summary>
         /// <returns></returns>
         private static async Task SolveMiddleLayer2Async()
@@ -840,8 +840,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Solve the middle layer - Part 3
-        /// Wrong orientation of the edge cubes at the middle layer
+        /// Solve the middle layer - Part 3 - Wrong orientation of the edge cubes at the middle layer
         /// </summary>
         /// <returns></returns>
         private static async Task SolveMiddleLayer3Async()
@@ -851,7 +850,7 @@ namespace RubiksCube
 
         /// <summary>
         /// Solve the middle layer - Part 4
-        /// If an edge cube at the top layer must switch with a cube at the middle layer - Right algorithm
+        /// <para>If an edge cube at the top layer must switch with a cube at the middle layer - Right algorithm</para>
         /// </summary>
         /// <returns></returns>
         private static async Task SolveMiddleLayer4RightAsync()
@@ -861,7 +860,7 @@ namespace RubiksCube
 
         /// <summary>
         /// Solve the middle layer - Part 4
-        /// If an edge cube at the top layer must switch with a cube at the middle layer - Left algorithm
+        /// <para>If an edge cube at the top layer must switch with a cube at the middle layer - Left algorithm</para>
         /// </summary>
         /// <returns></returns>
         private static async Task SolveMiddleLayer4LeftAsync()

@@ -90,7 +90,10 @@ namespace RubiksCube
         public const string turnCubeUpToRight2 = "z2";
 
         //// Global methods
-        // Set the theme
+
+        /// <summary>
+        /// Set the theme
+        /// </summary>
         public static void SetTheme()
         {
             Application.Current.UserAppTheme = cTheme switch
@@ -101,7 +104,9 @@ namespace RubiksCube
             };
         }
 
-        //// Set the current UI culture of the selected language
+        /// <summary>
+        /// Set the current UI culture of the selected language
+        /// </summary>
         public static void SetCultureSelectedLanguage()
         {
             try
@@ -115,7 +120,11 @@ namespace RubiksCube
             }
         }
 
-        //// Make a turn (with 1 letter [plus ' or 2]) of the cube/face/side
+        /// <summary>
+        /// Make a turn (with 1 letter [plus ' or 2]) of the cube/face/side
+        /// </summary>
+        /// <param name="cTurn"></param>
+        /// <returns></returns>
         public static async Task MakeTurnAsync(string cTurn)
         {
             // Remove leading and trailing whitespace

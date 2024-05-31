@@ -26,7 +26,11 @@ namespace RubiksCube
             lblExplanation.Text = $"\n{CubeLang.InfoExplanation_Text}";
         }
 
-        //// Open e-mail program
+        /// <summary>
+        /// Open e-mail program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnBtnEmailLinkClicked(object sender, EventArgs e)
         {
             if (Email.Default.IsComposeSupported)
@@ -54,7 +58,11 @@ namespace RubiksCube
             }
         }
 
-        // Open the website link in the default browser
+        /// <summary>
+        /// Open the website link in the default browser
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnBtnWebsiteLinkClicked(object sender, EventArgs e)
         {
             try

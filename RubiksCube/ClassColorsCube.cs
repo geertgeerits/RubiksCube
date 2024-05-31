@@ -468,16 +468,17 @@ namespace RubiksCube
 
         /// <summary>
         /// Check the neighbors and opposite center pieces of the cube
-        /// aFaceColors[1] -> Front face: Red 
-        /// aFaceColors[2] -> Right face: Blue 
-        /// aFaceColors[3] -> Back face: Orange 
-        /// aFaceColors[4] -> Left face: Green 
-        /// aFaceColors[5] -> Up face: White 
-        /// aFaceColors[6] -> Down face: Yellow 
         /// </summary>
         /// <returns></returns>
         private static bool CheckNeighborsCenterPieces()
         {
+            /* aFaceColors[1] -> Front face: Red 
+               aFaceColors[2] -> Right face: Blue 
+               aFaceColors[3] -> Back face: Orange 
+               aFaceColors[4] -> Left face: Green 
+               aFaceColors[5] -> Up face: White 
+               aFaceColors[6] -> Down face: Yellow */
+
             // Front face Red and Up face White
             if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[5])
             {

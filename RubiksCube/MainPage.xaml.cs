@@ -1,13 +1,13 @@
-﻿// Program .....: RubiksCube.sln
-// Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
-// Copyright ...: (C) 1981-2024
-// Version .....: 2.0.23
-// Date ........: 2024-05-15 (YYYY-MM-DD)
-// Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
-// Description .: Solving the Rubik's Cube
-// Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
-// Dependencies : None
-// Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI
+﻿/* Program .....: RubiksCube.sln
+ * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
+ * Copyright ...: (C) 1981-2024
+ * Version .....: 2.0.23
+ * Date ........: 2024-05-31 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
+ * Description .: Solving the Rubik's Cube
+ * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
+ * Dependencies : None
+ * Thanks to ...: Gerald Versluis for his video's on YouTube about .NET MAUI */
 
 using Microsoft.Maui.Controls.Shapes;
 using System.Diagnostics;
@@ -103,14 +103,22 @@ namespace RubiksCube
             await Navigation.PushAsync(new PageSettings());
         }
 
-        //// Select a color by tapping on a cube and put it in a tempory polygon
+        /// <summary>
+        /// Select a color by tapping on a cube and put it in a tempory polygon
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnGetColorTapped(object sender, TappedEventArgs args)
         {
             Polygon polygon = sender as Polygon;
             plgCubeColorSelect.Fill = polygon.Fill;
         }
 
-        //// Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
+        /// <summary>
+        /// Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSetColorTapped(object sender, TappedEventArgs args)
         {
             if (plgCubeColorSelect.Fill != null && bColorDrop)
@@ -122,7 +130,11 @@ namespace RubiksCube
             }
         }
 
-        //// Set the colors on the cube
+        /// <summary>
+        /// Set the colors on the cube
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnButtonSetColorsCubeClicked(object sender, EventArgs e)
         {
             bColorDrop = !bColorDrop;
@@ -175,7 +187,11 @@ namespace RubiksCube
             }
         }
 
-        //// Solve the cube
+        /// <summary>
+        /// Solve the cube
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnBtnSolveCubeClicked(object sender, EventArgs e)
         {
             // Check the number of colors of the cube
@@ -340,7 +356,11 @@ namespace RubiksCube
             imgbtnSaveCube.IsEnabled = true;
         }
 
-        //// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
+        /// <summary>
+        /// Make and explain the turn of the cube called from the main task SolveTheCubeAsync()
+        /// </summary>
+        /// <param name="cTurn"></param>
+        /// <returns></returns>
         private async Task MakeExplainTurnAsync(string cTurn)
         {
             // If bTestSolveCube = true then do not use the 'steps one at a time' to solve te cube
@@ -385,21 +405,31 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Check the number of colors of the cube
+        /// <summary>
+        /// Check the number of colors of the cube
+        /// </summary>
+        /// <returns></returns>
         private bool CheckNumberColorsCube()
         {
             SetCubeColorsInArrays();
             return ClassColorsCube.CheckNumberColors();
         }
 
-        //// Turn the faces of the cube
-        //// On button letter turn clicked
+        /// <summary>
+        /// Turn the faces of the cube - On button letter turn clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnBtnLetterTurnClicked(object sender, EventArgs e)
         {
             _ = _buttonPressed.TrySetResult(true);
         }
 
-        //// Turn the front face clockwise (to right +)
+        /// <summary>
+        /// Turn the front face clockwise (to right +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnFrontFaceToRightClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -419,7 +449,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the upper horizontal middle to the right face (+)
+        /// <summary>
+        /// Turn the upper horizontal middle to the right face (+)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnUpHorMiddleToRightFaceClicked(object sender, EventArgs e)
         {
             if (bColorDrop)
@@ -445,7 +479,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the back face counter clockwise (to left -)
+        /// <summary>
+        /// Turn the back face counter clockwise (to left -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnBackFaceToLeftClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -465,7 +503,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the left face clockwise (to right +)
+        /// <summary>
+        /// Turn the left face clockwise (to right +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnLeftFaceToRightClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -485,7 +527,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the upper vertical middle to the front face (-)
+        /// <summary>
+        /// Turn the upper vertical middle to the front face (-)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnUpVerMiddleToFrontFaceClicked(object sender, EventArgs e)
         {
             if (bColorDrop)
@@ -511,7 +557,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the right face counter clockwise (to left -)
+        /// <summary>
+        /// Turn the right face counter clockwise (to left -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnRightFaceToLeftClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -531,7 +581,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the upper face counter clockwise (to left -)
+        /// <summary>
+        /// Turn the upper face counter clockwise (to left -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnUpFaceToLeftClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -551,7 +605,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the front horizontal middle to the right face (-)
+        /// <summary>
+        /// Turn the front horizontal middle to the right face (-)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnFrontHorMiddleToRightFaceClicked(object sender, EventArgs e)
         {
             if (bColorDrop)
@@ -577,7 +635,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the down face clockwise (to right +)
+        /// <summary>
+        /// Turn the down face clockwise (to right +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnDownFaceToRightClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -597,7 +659,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the upper face clockwise (to right +)
+        /// <summary>
+        /// Turn the upper face clockwise (to right +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnUpFaceToRightClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -617,7 +683,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the front horizontal middle to the left face (+)
+        /// <summary>
+        /// Turn the front horizontal middle to the left face (+)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnFrontHorMiddleToLeftFaceClicked(object sender, EventArgs e)
         {
             if (bColorDrop)
@@ -643,7 +713,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the down face counter clockwise (to left -)
+        /// <summary>
+        /// Turn the down face counter clockwise (to left -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnDownFaceToLeftClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -663,7 +737,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the left face counter clockwise (to left -)
+        /// <summary>
+        /// Turn the left face counter clockwise (to left -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnLeftFaceToLeftClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -683,7 +761,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the upper vertical middle to the back face (+)
+        /// <summary>
+        /// Turn the upper vertical middle to the back face (+)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnUpVerMiddleToBackFaceClicked(object sender, EventArgs e)
         {
             if (bColorDrop)
@@ -709,7 +791,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the right face clockwise (to right +)
+        /// <summary>
+        /// Turn the right face clockwise (to right +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnRightFaceToRightClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -729,7 +815,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the front face counter clockwise (to left -)
+        /// <summary>
+        /// Turn the front face counter clockwise (to left -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnFrontFaceToLeftClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -749,7 +839,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the upper horizontal middle to the left face (-)
+        /// <summary>
+        /// Turn the upper horizontal middle to the left face (-)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnUpHorMiddleToLeftFaceClicked(object sender, EventArgs e)
         {
             if (bColorDrop)
@@ -775,7 +869,11 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the back face clockwise (to right +)
+        /// <summary>
+        /// Turn the back face clockwise (to right +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTurnBackFaceToRightClicked(object sender, EventArgs e)
         {
             if (bSolvingCube)
@@ -795,8 +893,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Turn the entire cube a quarter turn
-        //   Rotate the entire cube so that the front goes to the left face
+        /// <summary>
+        /// Rotate the entire cube a quarter turn so that the front goes to the left face
+        /// </summary>
         private void TurnCubeFrontFaceToLeftFace()
         {
             if (!bSolvingCube)
@@ -810,7 +909,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        // Rotate the entire cube so that the front goes to the right face
+        /// <summary>
+        /// Rotate the entire cube a quarter turn so that the front goes to the right face
+        /// </summary>
         private void TurnCubeFrontFaceToRightFace()
         {
             if (!bSolvingCube)
@@ -824,7 +925,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        // Rotate the entire cube so that the front goes to the upper face
+        /// <summary>
+        /// Rotate the entire cube a quarter turn so that the front goes to the upper face
+        /// </summary>
         private void TurnCubeFrontFaceToUpFace()
         {
             if (!bSolvingCube)
@@ -838,7 +941,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        // Rotate the entire cube so that the front goes to the down face
+        /// <summary>
+        /// Rotate the entire cube a quarter turn so that the front goes to the down face
+        /// </summary>
         private void TurnCubeFrontFaceToDownFace()
         {
             if (!bSolvingCube)
@@ -852,7 +957,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        // Rotate the entire cube so that the upper face goes to the right face
+        /// <summary>
+        /// Rotate the entire cube a quarter turn so that the upper face goes to the right face
+        /// </summary>
         private void TurnCubeUpFaceToRightFace()
         {
             if (!bSolvingCube)
@@ -866,7 +973,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        // Rotate the entire cube so that the upper face goes to the left face
+        /// <summary>
+        /// Rotate the entire cube a quarter turn so that the upper face goes to the left face
+        /// </summary>
         private void TurnCubeUpFaceToLeftFace()
         {
             if (!bSolvingCube)
@@ -880,7 +989,10 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
         }
 
-        //// Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods
+        /// <summary>
+        /// Explain the turn of the cube called from OnTurn....Clicked and Turn.... methods
+        /// </summary>
+        /// <param name="cTurnCubeText"></param>
         private async void ExplainTurnCube(string cTurnCubeText)
         {
             // Convert text to speech
@@ -892,7 +1004,12 @@ namespace RubiksCube
             }
         }
 
-        //// Enalbe or disable the arrow imagebuttons
+        /// <summary>
+        /// Enalbe or disable the arrow imagebuttons
+        /// </summary>
+        /// <param name="cTurn"></param>
+        /// <param name="bIsEnabled"></param>
+        /// <returns></returns>
         private async Task SetImageButtonArrowIsEnabledAsync(string cTurn, bool bIsEnabled)
         {
             switch (cTurn)
@@ -1061,7 +1178,11 @@ namespace RubiksCube
             }
         }
 
-        //// Set the explain text depending on the direction of rotation of the cube face
+        /// <summary>
+        /// Set the explain text depending on the direction of rotation of the cube face
+        /// </summary>
+        /// <param name="cTurn"></param>
+        /// <returns></returns>
         private async Task<string> SetExplainTextAsync(string cTurn)
         {
             string cTurnCubeText = "";
@@ -1248,7 +1369,10 @@ namespace RubiksCube
             return cTurnCubeText;
         }
 
-        //// Explain the turn of the cube with speech
+        /// <summary>
+        /// Explain the turn of the cube with speech
+        /// </summary>
+        /// <param name="cTurnCubeText"></param>
         private static void ExplainTurnCubeSpeech(string cTurnCubeText)
         {
             if (Globals.bExplainSpeech && !string.IsNullOrEmpty(cTurnCubeText))
@@ -1265,14 +1389,22 @@ namespace RubiksCube
             }
         }
 
-        //// On clicked event: Save the cube
+        /// <summary>
+        /// On clicked event: Save the cube
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnButtonSaveCubeClicked(object sender, EventArgs e)
         {
             SetCubeColorsInArrays();
             _ = ClassSaveRestoreCube.CubeDataSave();
         }
 
-        //// On clicked event: Open, restore the cube
+        /// <summary>
+        /// On clicked event: Open, restore the cube
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnButtonOpenCubeClicked(object sender, EventArgs e)
         {
             _ = ClassSaveRestoreCube.CubeDataOpen();
@@ -1281,7 +1413,11 @@ namespace RubiksCube
             Globals.lCubeTurns.Clear();
         }
 
-        //// On clicked event: Reset the colors of the cube or restart the app
+        /// <summary>
+        /// On clicked event: Reset the colors of the cube or restart the app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnBtnResetClicked(object sender, EventArgs e)
         {
             Globals.lCubeTurns.Clear();
@@ -1303,7 +1439,9 @@ namespace RubiksCube
             }
         }
 
-        //// Store the cube colors from the polygons in the arrays
+        /// <summary>
+        /// Store the cube colors from the polygons in the arrays
+        /// </summary>
         private void SetCubeColorsInArrays()
         {
             for (int i = 1; i < 7; i++)
@@ -1319,7 +1457,9 @@ namespace RubiksCube
             }
         }
 
-        //// Set the cube colors from the arrays in the polygons
+        /// <summary>
+        /// Set the cube colors from the arrays in the polygons
+        /// </summary>
         private void GetCubeColorsFromArrays()
         {
             for (int i = 1; i < 7; i++)
@@ -1335,7 +1475,11 @@ namespace RubiksCube
             }
         }
 
-        //// Get the hexadecimal color code from the polygon fill property
+        /// <summary>
+        /// Get the hexadecimal color code from the polygon fill property
+        /// </summary>
+        /// <param name="polygon"></param>
+        /// <returns></returns>
         private static string GetHexColorPolygon(Polygon polygon)
         {
             SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
@@ -1345,7 +1489,11 @@ namespace RubiksCube
             return color.ToHex();
         }
 
-        //// Get the decimal color code from the polygon fill property
+        ///// <summary>
+        ///// Get the decimal color code from the polygon fill property
+        ///// </summary>
+        ///// <param name="polygon"></param>
+        ///// <returns></returns>
         //private static int GetDecColorPolygon(Polygon polygon)
         //{
         //    SolidColorBrush brush = (SolidColorBrush)polygon.Fill;
@@ -1355,7 +1503,10 @@ namespace RubiksCube
         //    return int.Parse(color.ToHex().Replace("#", ""), NumberStyles.HexNumber);
         //}
 
-        //// Set the cube colors for drag and drop to visible or invisible
+        /// <summary>
+        /// Set the cube colors for drag and drop to visible or invisible
+        /// </summary>
+        /// <param name="bEnableDisable"></param>
         private void IsVisibleCubeColors(bool bEnableDisable)
         {
             plgCubeColorSelect.IsVisible = bEnableDisable;
@@ -1367,7 +1518,10 @@ namespace RubiksCube
             plgCubeColor6.IsVisible = bEnableDisable;
         }
 
-        //// Set the arrow buttons tooltip
+        /// <summary>
+        /// Set the arrow buttons tooltip
+        /// </summary>
+        /// <param name="bSetArrowTooltip"></param>
         private void SetArrowTooltips(bool bSetArrowTooltip)
         {
             if (bSetArrowTooltip)
@@ -1414,7 +1568,10 @@ namespace RubiksCube
             }
         }
 
-        //// Enable or Disable the arrows
+        /// <summary>
+        /// Enable or Disable the arrows
+        /// </summary>
+        /// <param name="bEnableDisable"></param>
         private void IsEnabledArrows(bool bEnableDisable)
         {
             imgbtnTurnFrontFaceToRight.IsEnabled = bEnableDisable;
@@ -1437,7 +1594,11 @@ namespace RubiksCube
             imgbtnTurnBackFaceToRight.IsEnabled = bEnableDisable;
         }
 
-        //// Show license using the Loaded event of the MainPage.xaml
+        /// <summary>
+        /// Show license using the Loaded event of the MainPage.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnPageLoad(object sender, EventArgs e)
         {
             // Show license
@@ -1472,7 +1633,11 @@ namespace RubiksCube
             }
         }
 
-        //// Set language using the Appearing event of the MainPage.xaml
+        /// <summary>
+        /// Set language using the Appearing event of the MainPage.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPageAppearing(object sender, EventArgs e)
         {
             if (Globals.bLanguageChanged)
@@ -1482,7 +1647,9 @@ namespace RubiksCube
             }
         }
 
-        //// Put text in the chosen language in the controls
+        /// <summary>
+        /// Put text in the chosen language in the controls
+        /// </summary>
         private void SetTextLanguage()
         {
             // Set the current UI culture of the selected language
@@ -1495,62 +1662,62 @@ namespace RubiksCube
             }
         }
     }
-
-    /*
-    Numbering of cube surfaces
-    --------------------------
-
-        Outside view              Up              Inside view              Back
-                         ______ ______ ______                      ______ ______ ______
-                       /      /      /      /|                   /|      !      !      |
-                     /  36  /  37  /  38  /  |                 /  |  20  !  19  !  18  |
-                   /______/______/______/ 11 |               / 27 |______!______!______|
-                 /      /      /      / !    /       Left  / !    |      !      !      |
-               /  39  /  40  /  41  /   !  / |           /   !  / |  23  !  22  !  21  |
-             /______/______/______/  10 !/ 14|         /  28 !/   |______!______!______|
-           /      /      /      / !    /!    /       /  !   /! 30 |      !      !      |
-         /  42  /  43  /  44  /   !  /  !  / |     /    ! /  !  / |  26  !  25  !  24  |
-       /______/______/______/  9  !/ 13 !/17 |    | 29  ! 31 !/   |______!______!______|
-       |      !      !      |    /!    /!    /    |   / !   /!33 /      /      /      /
-       |  0   !  1   !  2   |  /  !  /  !  /      | /   ! /  !  /  51  /  52 /  53  /
-       |______!______!______|/ 12 !/ 16 !/        | 32  ! 34 !/______/______/______/
-       |      !      !      |    /!    /          |   / !   /      /      /      /
-       |  3   !  4   !  5   |  /  !  /            | /   ! / 48   / 49   /  50  /
-       |______!______!______|/ 15 !/ Right        | 35  !______/______/______/
-       |      !      !      |    /                |   /      /      /      /
-       |  6   !  7   !  8   |  /                  | /  45  /  46  / 47   /
-       |______!______!______|/                    |______/______/______/
-               Front                                       Down
-
-                                      Back
-                            _________________________
-                            |       |       |       |
-                            |  26   |  25   |  24   |
-                            |_______|_______|_______|
-                            |       |       |       |
-                            |  23   |  22   |  21   |
-                            |_______|_______|_______|
-                            |       |       |       |
-               Left         |  20   |  19   |  18   |         Right                   Down
-    ________________________|_______|_______|_______|________________________________________________
-    |       |       |       |       |       |       |       |       |       |       |       |       |
-    |  33   |  30   |  27   |  36   |  37   |  38   |  11   |  14   |  17   |  53   |  52   |  51   |
-    |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-    |       |       |       |       |  Up   |       |       |       |       |       |       |       |
-    |  34   |  31   |  28   |  39   |  40   |  41   |  10   |  13   |  16   |  50   |  49   |  48   |
-    |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-    |       |       |       |       |       |       |       |       |       |       |       |       |
-    |  35   |  32   |  29   |  42   |  43   |  44   |   9   |  12   |  15   |  47   |  46   |  45   |
-    |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
-                            |       |       |       |
-                            |   0   |   1   |   2   |
-                            |_______|_______|_______|
-                            |       |       |       |
-                            |   3   |   4   |   5   |
-                            |_______|_______|_______|
-                            |       |       |       |
-                            |   6   |   7   |   8   |
-                            |_______|_______|_______|
-                                      Front
-    */
 }
+
+/*
+Numbering of cube surfaces
+--------------------------
+
+    Outside view              Up              Inside view              Back
+                     ______ ______ ______                      ______ ______ ______
+                   /      /      /      /|                   /|      !      !      |
+                 /  36  /  37  /  38  /  |                 /  |  20  !  19  !  18  |
+               /______/______/______/ 11 |               / 27 |______!______!______|
+             /      /      /      / !    /       Left  / !    |      !      !      |
+           /  39  /  40  /  41  /   !  / |           /   !  / |  23  !  22  !  21  |
+         /______/______/______/  10 !/ 14|         /  28 !/   |______!______!______|
+       /      /      /      / !    /!    /       /  !   /! 30 |      !      !      |
+     /  42  /  43  /  44  /   !  /  !  / |     /    ! /  !  / |  26  !  25  !  24  |
+   /______/______/______/  9  !/ 13 !/17 |    | 29  ! 31 !/   |______!______!______|
+   |      !      !      |    /!    /!    /    |   / !   /!33 /      /      /      /
+   |  0   !  1   !  2   |  /  !  /  !  /      | /   ! /  !  /  51  /  52 /  53  /
+   |______!______!______|/ 12 !/ 16 !/        | 32  ! 34 !/______/______/______/
+   |      !      !      |    /!    /          |   / !   /      /      /      /
+   |  3   !  4   !  5   |  /  !  /            | /   ! / 48   / 49   /  50  /
+   |______!______!______|/ 15 !/ Right        | 35  !______/______/______/
+   |      !      !      |    /                |   /      /      /      /
+   |  6   !  7   !  8   |  /                  | /  45  /  46  / 47   /
+   |______!______!______|/                    |______/______/______/
+           Front                                       Down
+
+                                  Back
+                        _________________________
+                        |       |       |       |
+                        |  26   |  25   |  24   |
+                        |_______|_______|_______|
+                        |       |       |       |
+                        |  23   |  22   |  21   |
+                        |_______|_______|_______|
+                        |       |       |       |
+           Left         |  20   |  19   |  18   |         Right                   Down
+________________________|_______|_______|_______|________________________________________________
+|       |       |       |       |       |       |       |       |       |       |       |       |
+|  33   |  30   |  27   |  36   |  37   |  38   |  11   |  14   |  17   |  53   |  52   |  51   |
+|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+|       |       |       |       |  Up   |       |       |       |       |       |       |       |
+|  34   |  31   |  28   |  39   |  40   |  41   |  10   |  13   |  16   |  50   |  49   |  48   |
+|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+|       |       |       |       |       |       |       |       |       |       |       |       |
+|  35   |  32   |  29   |  42   |  43   |  44   |   9   |  12   |  15   |  47   |  46   |  45   |
+|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|_______|
+                        |       |       |       |
+                        |   0   |   1   |   2   |
+                        |_______|_______|_______|
+                        |       |       |       |
+                        |   3   |   4   |   5   |
+                        |_______|_______|_______|
+                        |       |       |       |
+                        |   6   |   7   |   8   |
+                        |_______|_______|_______|
+                                  Front
+*/

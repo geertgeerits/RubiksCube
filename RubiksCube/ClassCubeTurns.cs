@@ -241,8 +241,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Turn the entire cube a quarter turn
-        /// Rotate the entire cube so that the front goes to the left face 
+        /// Rotate the entire cube a quarter turn so that the front goes to the left face
         /// </summary>
         private static void TurnCubeFrontFaceToLeftFace()
         {
@@ -252,7 +251,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Rotate the entire cube so that the front goes to the right face 
+        /// Rotate the entire cube a quarter turn so that the front goes to the right face 
         /// </summary>
         private static void TurnCubeFrontFaceToRightFace()
         {
@@ -262,7 +261,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Rotate the entire cube so that the front goes to the upper face 
+        /// Rotate the entire cube a quarter turn so that the front goes to the upper face 
         /// </summary>
         private static void TurnCubeFrontFaceToUpFace()
         {
@@ -272,7 +271,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Rotate the entire cube so that the front goes to the down face 
+        /// Rotate the entire cube a quarter turn so that the front goes to the down face 
         /// </summary>
         private static void TurnCubeFrontFaceToDownFace()
         {
@@ -282,7 +281,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Rotate the entire cube so that the upper face goes to the right face 
+        /// Rotate the entire cube a quarter turn so that the upper face goes to the right face 
         /// </summary>
         private static void TurnCubeUpFaceToRightFace()
         {
@@ -292,7 +291,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Rotate the entire cube so that the upper face goes to the left face 
+        /// Rotate the entire cube a quarter turn so that the upper face goes to the left face 
         /// </summary>
         private static void TurnCubeUpFaceToLeftFace()
         {

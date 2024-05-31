@@ -6,7 +6,7 @@
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
-        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
+        /// <para>.Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;</para>
         /// </summary>
         /// <param name="cCultureName"></param>
         public static async void InitializeTextToSpeech(string cCultureName)
