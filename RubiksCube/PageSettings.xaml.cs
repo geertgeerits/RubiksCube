@@ -26,50 +26,21 @@ namespace RubiksCube
             //// Set the current language in the picker
             pckLanguage.SelectedIndex = Globals.cLanguage switch
             {
-                // Čeština - Czech.
-                "cs" => 0,
-
-                // Dansk - Danish.
-                "da" => 1,
-
-                // Deutsch - German.
-                "de" => 2,
-
-                // Español - Spanish.
-                "es" => 4,
-
-                // Français - French.
-                "fr" => 5,
-
-                // Italiano - Italian.
-                "it" => 6,
-
-                // Magyar - Hungarian.
-                "hu" => 7,
-
-                // Nederlands - Dutch.
-                "nl" => 8,
-
-                // Norsk Bokmål - Norwegian Bokmål.
-                "nb" => 9,
-
-                // Polski - Polish.
-                "pl" => 10,
-
-                // Português - Portuguese.
-                "pt" => 11,
-
-                // Română - Romanian.
-                "ro" => 12,
-
-                // Suomi - Finnish.
-                "fi" => 13,
-
-                // Svenska - Swedish.
-                "sv" => 14,
-
-                // English.
-                _ => 3,
+                "cs" => 0,      // Čeština - Czech
+                "da" => 1,      // Dansk - Danish
+                "de" => 2,      // Deutsch - German
+                "es" => 4,      // Español - Spanish
+                "fr" => 5,      // Français - French
+                "it" => 6,      // Italiano - Italian
+                "hu" => 7,      // Magyar - Hungarian
+                "nl" => 8,      // Nederlands - Dutch
+                "nb" => 9,      // Norsk Bokmål - Norwegian Bokmål
+                "pl" => 10,     // Polski - Polish
+                "pt" => 11,     // Português - Portuguese
+                "ro" => 12,     // Română - Romanian
+                "fi" => 13,     // Suomi - Finnish
+                "sv" => 14,     // Svenska - Swedish
+                _ => 3,         // English
             };
 
             //// Fill the picker with the speech languages and set the saved language in the picker
@@ -106,7 +77,11 @@ namespace RubiksCube
             stopWatch.Start();
         }
 
-        //// Picker language clicked event
+        /// <summary>
+        /// Picker language clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerLanguageChanged(object sender, EventArgs e)
         {
             string cLanguageOld = Globals.cLanguage;
@@ -118,50 +93,21 @@ namespace RubiksCube
             {
                 Globals.cLanguage = selectedIndex switch
                 {
-                    // Čeština - Czech.
-                    0 => "cs",
-
-                    // Dansk - Danish.
-                    1 => "da",
-
-                    // Deutsch - German.
-                    2 => "de",
-
-                    // Español - Spanish.
-                    4 => "es",
-
-                    // Français - French.
-                    5 => "fr",
-
-                    // Italiano - Italian.
-                    6 => "it",
-
-                    // Magyar - Hungarian.
-                    7 => "hu",
-
-                    // Nederlands - Dutch.
-                    8 => "nl",
-
-                    // Norsk Bokmål - Norwegian Bokmål.
-                    9 => "nb",
-
-                    // Polski - Polish.
-                    10 => "pl",
-
-                    // Português - Portuguese.
-                    11 => "pt",
-
-                    // Română - Romanian.
-                    12 => "ro",
-
-                    // Suomi - Finnish.
-                    13 => "fi",
-
-                    // Svenska - Swedish.
-                    14 => "sv",
-
-                    // English.
-                    _ => "en",
+                    0 => "cs",      // Čeština - Czech
+                    1 => "da",      // Dansk - Danish
+                    2 => "de",      // Deutsch - German
+                    4 => "es",      // Español - Spanish
+                    5 => "fr",      // Français - French
+                    6 => "it",      // Italiano - Italian
+                    7 => "hu",      // Magyar - Hungarian
+                    8 => "nl",      // Nederlands - Dutch
+                    9 => "nb",      // Norsk Bokmål - Norwegian Bokmål
+                    10 => "pl",     // Polski - Polish
+                    11 => "pt",     // Português - Portuguese
+                    12 => "ro",     // Română - Romanian
+                    13 => "fi",     // Suomi - Finnish
+                    14 => "sv",     // Svenska - Swedish
+                    _ => "en",      // English
                 };
             }
 
@@ -189,7 +135,9 @@ namespace RubiksCube
             }
         }
 
-        //// Put text in the chosen language in the controls and variables
+        /// <summary>
+        /// Put text in the chosen language in the controls and variables
+        /// </summary>
         private void SetLanguage()
         {
             List<string> ThemeList =
@@ -203,21 +151,19 @@ namespace RubiksCube
             // Set the current theme in the picker
             pckTheme.SelectedIndex = Globals.cTheme switch
             {
-                // Light
-                "Light" => 1,
-
-                // Dark
-                "Dark" => 2,
-
-                // System
-                _ => 0,
+                "Light" => 1,       // Light
+                "Dark" => 2,        // Dark
+                _ => 0,             // System
             };
         }
 
-        //// Fill the picker with the speech languages from the array
-        //   .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// <summary>
+        /// Fill the picker with the speech languages from the array
+        /// </summary>
         private void FillPickerWithSpeechLanguages()
         {
+            // .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
+
             // If there are no locales then return
             bool bIsSetSelectedIndex = false;
 
@@ -248,7 +194,11 @@ namespace RubiksCube
             }
         }
 
-        //// Picker speech language clicked event
+        /// <summary>
+        /// Picker speech language clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerLanguageSpeechChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -260,7 +210,11 @@ namespace RubiksCube
             }
         }
 
-        //// Picker theme clicked event
+        /// <summary>
+        /// Picker theme clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnPickerThemeChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -270,14 +224,9 @@ namespace RubiksCube
             {
                 Globals.cTheme = selectedIndex switch
                 {
-                    // Light
-                    1 => "Light",
-
-                    // Dark
-                    2 => "Dark",
-
-                    // System
-                    _ => "System",
+                    1 => "Light",       // Light
+                    2 => "Dark",        // Dark
+                    _ => "System",      // System
                 };
             
                 // Set the theme
@@ -285,19 +234,31 @@ namespace RubiksCube
             }
         }
 
-        //// Switch explain text toggled
+        /// <summary>
+        /// Switch explain text toggled
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSwtExplainTextToggled(object sender, ToggledEventArgs e)
         {
             Globals.bExplainText = swtExplainText.IsToggled;
         }
 
-        //// Switch explain speech toggled
+        /// <summary>
+        /// Switch explain speech toggled
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSwtExplainSpeechToggled(object sender, ToggledEventArgs e)
         {
             Globals.bExplainSpeech = swtExplainSpeech.IsToggled;
         }
 
-        //// On entry HexColor text changed event
+        /// <summary>
+        /// On entry HexColor text changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EntryHexColorTextChanged(object sender, TextChangedEventArgs e)
         {
             Entry entry = (Entry)sender;
@@ -311,13 +272,19 @@ namespace RubiksCube
             }
         }
 
-        //// Radiobutton checked changed event
+        /// <summary>
+        /// Radiobutton checked changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnRbnCubeColorCheckedChanged(object sender, CheckedChangedEventArgs e)
         {
             SetCubeHexColor();
         }
 
-        //// Set the hex colorcode in the entry field and set the slider positions
+        /// <summary>
+        /// Set the hex colorcode in the entry field and set the slider positions
+        /// </summary>
         private void SetCubeHexColor()
         {
             int nRed = 0;
@@ -360,13 +327,21 @@ namespace RubiksCube
             sldColorBlue.Value = nBlue;
         }
 
-        //// Display help for Hex color
+        /// <summary>
+        /// Display help for Hex color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnSettingsHexColorClicked(object sender, EventArgs e)
         {
             await DisplayAlert("?", CubeLang.HexColorCodes_Text, CubeLang.ButtonClose_Text);
         }
 
-        //// Entry HexColor Unfocused event
+        /// <summary>
+        /// Entry HexColor Unfocused event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EntryHexColorUnfocused(object sender, EventArgs e)
         {
             // Length must be 6 characters
@@ -423,7 +398,12 @@ namespace RubiksCube
             _ = btnSettingsSave.Focus();
         }
 
-        //// Test for allowed characters in hex value
+        /// <summary>
+        /// Test for allowed characters in hex value
+        /// </summary>
+        /// <param name="cAllowedCharacters"></param>
+        /// <param name="cHexColor"></param>
+        /// <returns></returns>
         private bool TestAllowedCharacters(string cAllowedCharacters, string cHexColor)
         {
             if (string.IsNullOrEmpty(cHexColor))
@@ -451,7 +431,11 @@ namespace RubiksCube
             return true;
         }
 
-        //// Slider color cube value change
+        /// <summary>
+        /// Slider color cube value change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSliderColorValueChanged(object sender, ValueChangedEventArgs args)
         {
             int nColorRed = 0;
@@ -514,7 +498,13 @@ namespace RubiksCube
             }
         }
 
-        //// Convert RRGGBB Hex color to RGB color
+        /// <summary>
+        /// Convert RRGGBB Hex color to RGB color
+        /// </summary>
+        /// <param name="cHexColor"></param>
+        /// <param name="nRed"></param>
+        /// <param name="nGreen"></param>
+        /// <param name="nBlue"></param>
         private static void HexToRgbColor(string cHexColor, ref int nRed, ref int nGreen, ref int nBlue)
         {
             // Remove leading # if present
@@ -528,7 +518,11 @@ namespace RubiksCube
             nBlue = int.Parse(cHexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
         }
 
-        //// Button save settings clicked event
+        /// <summary>
+        /// Button save settings clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private static void OnSettingsSaveClicked(object sender, EventArgs e)
         {
             Preferences.Default.Set("SettingTheme", Globals.cTheme);
@@ -551,7 +545,11 @@ namespace RubiksCube
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
 
-        //// Button reset settings clicked event
+        /// <summary>
+        /// Button reset settings clicked event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSettingsResetClicked(object sender, EventArgs e)
         {
             // Get the elapsed time in milli seconds
