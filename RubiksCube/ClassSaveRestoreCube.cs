@@ -4,7 +4,10 @@ namespace RubiksCube
 {
     internal sealed class ClassSaveRestoreCube
     {
-        //// Save the cube
+        /// <summary>
+        /// Save the cube data
+        /// </summary>
+        /// <returns></returns>
         public static bool CubeDataSave()
         {
             string cFileName = Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
@@ -42,7 +45,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Open, restore the cube
+        /// <summary>
+        /// Open, restore the cube
+        /// </summary>
+        /// <returns></returns>
         public static bool CubeDataOpen()
         {
             string cFileName = FileSystem.CacheDirectory + "/RubiksCube.txt";
@@ -80,8 +86,12 @@ namespace RubiksCube
 
             return true;
         }
-        
-        //// Save the cube turns (for testing)
+
+        /// <summary>
+        /// Save the cube turns (for testing)
+        /// </summary>
+        /// <param name="cFile"></param>
+        /// <returns></returns>
         public static bool CubeTurnsSave(string cFile)
         {
             string cFileName = Path.Combine(FileSystem.AppDataDirectory, cFile);

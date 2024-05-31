@@ -4,7 +4,10 @@ namespace RubiksCube
 {
     internal sealed class ClassColorsCube
     {
-        //// Check the number of colors of the cube
+        /// <summary>
+        /// Check the number of colors of the cube
+        /// </summary>
+        /// <returns></returns>
         public static bool CheckNumberColors()
         {
             int nNumberOfColors1 = 0;
@@ -445,7 +448,14 @@ namespace RubiksCube
             return true;
         }
 
-        //// Check the opposite center pieces of the cube
+        /// <summary>
+        /// Check the opposite center pieces of the cube
+        /// </summary>
+        /// <param name="nPiece1"></param>
+        /// <param name="nColor1"></param>
+        /// <param name="nPiece2"></param>
+        /// <param name="nColor2"></param>
+        /// <returns></returns>
         private static bool CheckOppositeCenterPieces(int nPiece1, int nColor1, int nPiece2, int nColor2)
         {
             if (aPieces[nPiece1] == aFaceColors[nColor1] && aPieces[nPiece2] != aFaceColors[nColor2])
@@ -456,13 +466,16 @@ namespace RubiksCube
             return true;
         }
 
-        //// Check the neighbors and opposite center pieces of the cube
-        // aFaceColors[1] -> Front face: Red
-        // aFaceColors[2] -> Right face: Blue
-        // aFaceColors[3] -> Back face: Orange
-        // aFaceColors[4] -> Left face: Green
-        // aFaceColors[5] -> Up face: White
-        // aFaceColors[6] -> Down face: Yellow
+        /// <summary>
+        /// Check the neighbors and opposite center pieces of the cube
+        /// aFaceColors[1] -> Front face: Red 
+        /// aFaceColors[2] -> Right face: Blue 
+        /// aFaceColors[3] -> Back face: Orange 
+        /// aFaceColors[4] -> Left face: Green 
+        /// aFaceColors[5] -> Up face: White 
+        /// aFaceColors[6] -> Down face: Yellow 
+        /// </summary>
+        /// <returns></returns>
         private static bool CheckNeighborsCenterPieces()
         {
             // Front face Red and Up face White
@@ -684,7 +697,11 @@ namespace RubiksCube
             return true;
         }
 
-        //// Check the number of colors on the corner cubes
+        /// <summary>
+        /// Check the number of colors on the corner cubes
+        /// </summary>
+        /// <param name="aNumberOfColors"></param>
+        /// <param name="nColor"></param>
         private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)
         {
             // Up face
@@ -748,7 +765,11 @@ namespace RubiksCube
                 aNumberOfColors[nColor]++;
         }
 
-        //// Check the number of colors on the edge cubes
+        /// <summary>
+        /// Check the number of colors on the edge cubes
+        /// </summary>
+        /// <param name="aNumberOfColors"></param>
+        /// <param name="nColor"></param>
         private static void CheckNumberColorsEdgeCube(int[] aNumberOfColors, int nColor)
         {
             // Up face
@@ -812,7 +833,10 @@ namespace RubiksCube
                 aNumberOfColors[nColor]++;
         }
 
-        //// Check if the cube is solved
+        /// <summary>
+        /// Check if the cube is solved
+        /// </summary>
+        /// <returns></returns>
         public static bool CheckIfSolved()
         {
             bool bColorsUp = false;
@@ -846,7 +870,9 @@ namespace RubiksCube
             return true;
         }
 
-        //// Reset the colors of the cube
+        /// <summary>
+        /// Reset the colors of the cube
+        /// </summary>
         public static void ResetCube()
         {
             int nItem;

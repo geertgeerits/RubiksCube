@@ -5,7 +5,10 @@ namespace RubiksCube
 {
     internal sealed class ClassTestCubeTurns
     {
-        //// Test the turns of the cube
+        /// <summary>
+        /// Test the turns of the cube
+        /// </summary>
+        /// <returns></returns>
         public static async Task<bool> TestCubeTurnsAsync()
         {
             await TestCubeTurnsLetterAsync();
@@ -19,7 +22,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Use turn letters to test the turns of the cube
+        /// <summary>
+        /// Use turn letters to test the turns of the cube
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestCubeTurnsLetterAsync()
         {
             // Test the face turns
@@ -65,7 +71,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Test the cleaning process of the turns
+        /// <summary>
+        /// Test the cleaning process of the turns
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestCubeTurnsToCleanAsync()
         {
             await MakeTurnAsync("R");
@@ -91,7 +100,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Test the turns of the cube for the CFOP method
+        /// <summary>
+        /// Test the turns of the cube for the CFOP method
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestSolveCubeTurnsCFOP()
         {
             await MakeTurnAsync("y");
@@ -405,7 +417,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Test the turns of the cube for the Basic method
+        /// <summary>
+        /// Test the turns of the cube for the Basic method
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestSolveCubeTurnsBasic()
         {
             await MakeTurnAsync("U2");
@@ -488,7 +503,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Test the turns of the cube for the Daisy method
+        /// <summary>
+        /// Test the turns of the cube for the Daisy method
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestSolveCubeTurnsDaisy()
         {
             await MakeTurnAsync("y");
@@ -554,7 +572,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Test the turns of the cube for the Cross method
+        /// <summary>
+        /// Test the turns of the cube for the Cross method
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestSolveCubeTurnsCross()
         {
             await MakeTurnAsync("F2");
@@ -679,7 +700,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Test the solution of the cube with the use of only turns of 2 faces L' and U
+        /// <summary>
+        /// Test the solution of the cube with the use of only turns of 2 faces L' and U
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> TestSolveCubeOnly2Faces()
         {
             int nLoopTimes = 0;

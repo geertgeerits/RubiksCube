@@ -1,7 +1,7 @@
-﻿// This solution is based on:
-// https://www.youtube.com/watch?v=Lm9jRkikhlI
-// https://www.youtube.com/watch?v=lgm7NuQGgtw&list=PLfZ_bKS9WEOA-woYuj-_y3EmQqzhRboNw&index=57&t=706s
-// file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf
+﻿/* This solution is based on:
+   https://www.youtube.com/watch?v=Lm9jRkikhlI
+   https://www.youtube.com/watch?v=lgm7NuQGgtw&list=PLfZ_bKS9WEOA-woYuj-_y3EmQqzhRboNw&index=57&t=706s
+   file:///C:/Sources/MAUI/RubiksCube/Miscellaneous/Manuals/RubiksCubeBeginnerInstructions.pdf */
 
 using System.Diagnostics;
 using static RubiksCube.Globals;
@@ -13,7 +13,10 @@ namespace RubiksCube
         //// Declare variables
         private const int nLoopTimesMax = 200;
 
-        //// Solve the cube.
+        /// <summary>
+        /// Solve the cube
+        /// </summary>
+        /// <returns></returns>
         public static async Task<bool> SolveTheCubeDaisyAsync()
         {
             if (!await ClassSolveCubeCommon.SolveTopLayerEdgesAsync())
@@ -65,7 +68,10 @@ namespace RubiksCube
             return false;
         }
 
-        //// Solve the corners of the top layer but turned at the bottom
+        /// <summary>
+        /// Solve the corners of the top layer but turned at the bottom
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveTopLayerCornersAsync()
         {
             string cB = aPieces[49];
@@ -368,7 +374,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Solve the middle layer
+        /// <summary>
+        /// Solve the middle layer
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveMiddleLayerAsync()
         {
             int nLoopTimes = 0;
@@ -449,8 +458,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Solve the bottom layer
-        //   Make a cross
+        /// <summary>
+        /// Solve the bottom layer - Make a cross
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerEdgesAsync()
         {
             string cB = aPieces[40];
@@ -519,8 +530,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Solve the bottom layer
-        //   Put the edges on the correct place
+        /// <summary>
+        /// Solve the bottom layer - Put the edges on the correct place
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerEdges2Async()
         {
             string cB = aPieces[40];
@@ -556,8 +569,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Solve the bottom layer
-        //   Corners on their places
+        /// <summary>
+        /// Solve the bottom layer - Corners on their places - Part 1
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerCornersAsync()
         {
             int nLoopTimes = 0;
@@ -656,7 +671,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Corners on their places - Part 2
+        /// <summary>
+        /// Solve the bottom layer - Corners on their places - Part 2
+        /// </summary>
+        /// <returns></returns>
         private static bool SolveBottomLayerCheckCornersInRightPlace()
         {
             // Check if the corners are in the right place
@@ -701,8 +719,10 @@ namespace RubiksCube
             return bCorner36 && bCorner38 && bCorner42 && bCorner44;
         }
 
-        //// Solve the bottom layer
-        //   Tumbling the corners
+        /// <summary>
+        /// Solve the bottom layer - Tumbling the corners
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerTumblingCornersAsync()
         {
             int nLoopTimes = 0;
@@ -780,7 +800,10 @@ namespace RubiksCube
             }
         }
 
-        //// Switch the edge cubes at the top layer and bottom layer - Part 1
+        /// <summary>
+        /// Switch the edge cubes at the top layer and bottom layer - Part 1
+        /// </summary>
+        /// <returns></returns>
         private static async Task SwitchEdgeCubesTopLayerAsync()
         {
             string cB = aPieces[40];
@@ -828,7 +851,10 @@ namespace RubiksCube
             }
         }
 
-        //// Switch the edge cubes at the top layer - Part 2
+        /// <summary>
+        /// Switch the edge cubes at the top layer - Part 2
+        /// </summary>
+        /// <returns></returns>
         private static async Task SwitchEdgeCubesTopLayer2Async()
         {
             await MakeTurnAsync("R U R' U R U2 R' U");

@@ -1,5 +1,5 @@
-﻿// This module tries to solve the cube from 24 different starting positions.
-// The solution with the fewest rotations is then used.
+﻿/* This module tries to solve the cube from 24 different starting positions.
+   The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
 using static RubiksCube.Globals;
@@ -14,7 +14,11 @@ namespace RubiksCube
         private static readonly List<string> lCubeTurnsTemp = [];
         private static readonly List<string> lCubePositions = [];
 
-        //// Try to solve the cube from 24 different positions of the cube
+        /// <summary>
+        /// Try to solve the cube from 24 different positions of the cube
+        /// </summary>
+        /// <param name="cSolution"></param>
+        /// <returns></returns>
         public static async Task<bool> SolveCubeFromMultiplePositionsAsync(string cSolution)
         {
             // Clear the lists
@@ -65,7 +69,11 @@ namespace RubiksCube
             return false;
         }
 
-        //// Turn the front to the right, left and back
+        /// <summary>
+        /// Turn the front to the right, left and back
+        /// </summary>
+        /// <param name="cSolution"></param>
+        /// <returns></returns>
         private static async Task SolveCubeFromMultiplePositions2Async(string cSolution)
         {
             // Add 'None' to the list
@@ -98,7 +106,12 @@ namespace RubiksCube
             lCubePositions.Clear();
         }
 
-        //// Solve the cube from the start colors of the cube
+        /// <summary>
+        /// Solve the cube from the start colors of the cube
+        /// </summary>
+        /// <param name="cSolution"></param>
+        /// <param name="cTurn"></param>
+        /// <returns></returns>
         private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cSolution, string cTurn)
         {
             lCubeTurns.Clear();
@@ -155,7 +168,9 @@ namespace RubiksCube
             return false;
         }
 
-        //// Copy the list to the temp list if the list has less items than the temp list
+        /// <summary>
+        /// Copy the list to the temp list if the list has less items than the temp list
+        /// </summary>
         private static void CopyListToTemp()
         {
             Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
@@ -174,7 +189,9 @@ namespace RubiksCube
             }
         }
 
-        //// Clean the list with the cube turns by replacing or removing turns
+        /// <summary>
+        /// Clean the list with the cube turns by replacing or removing turns
+        /// </summary>
         public static void CleanListCubeTurns()
         {
 #if DEBUG

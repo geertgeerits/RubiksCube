@@ -10,7 +10,11 @@
             MainPage = new NavigationPage(new MainPage());
         }
 
-        // Window dimensions and location for desktop apps
+        /// <summary>
+        /// Window dimensions and location for desktop apps
+        /// </summary>
+        /// <param name="activationState"></param>
+        /// <returns></returns>
         protected override Window CreateWindow(IActivationState activationState)
         {
             var window = base.CreateWindow(activationState);

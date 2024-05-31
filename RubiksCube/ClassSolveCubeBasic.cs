@@ -1,9 +1,9 @@
-﻿// This solution is based on the program 'SolCube' I wrote in 1981 in Microsoft Basic-80 for a Commodore PET 2001.
-// The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
-// It is not the most efficient solution, but it works most of the time.
-// Basic-80 was a language with line numbers.
-// I haven't been able to get rid of all the line numbers, so there are still some 'goto' statements left.
-// The majority were replaced by tasks, while loops, continue and break statements.
+﻿/* This solution is based on the program 'SolCube' I wrote in 1981 in Microsoft Basic-80 for a Commodore PET 2001.
+   The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
+   It is not the most efficient solution, but it works most of the time.
+   Basic-80 was a language with line numbers.
+   I haven't been able to get rid of all the line numbers, so there are still some 'goto' statements left.
+   The majority were replaced by tasks, while loops, continue and break statements. */
 
 using System.Diagnostics;
 using static RubiksCube.Globals;
@@ -15,7 +15,10 @@ namespace RubiksCube
         //// Declare variables
         private const int nLoopTimesMax = 200;
 
-        //// Solve the cube.  From Basic-80 to C# - 1981-1984
+        /// <summary>
+        /// Solve the cube.  From Basic-80 to C# - 1981-1984
+        /// </summary>
+        /// <returns></returns>
         public static async Task<bool> SolveTheCubeBasicAsync()
         {
             if (!await SolveTopLayerCornersAsync())
@@ -62,8 +65,11 @@ namespace RubiksCube
             return false;
         }
 
+        /// <summary>
         /// Solve the top layer of the cube
-        // Solve the corners of the top layer - Chapter 6, page 16
+        /// Solve the corners of the top layer - Chapter 6, page 16 
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveTopLayerCornersAsync()
         {
             bool bO, bP, bQ, bR;
@@ -231,7 +237,10 @@ namespace RubiksCube
             return true;
         }
 
-        // Solve the edges of the top layer - Chapter 4, page 14-3
+        /// <summary>
+        /// Solve the edges of the top layer - Chapter 4, page 14-3 
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveTopLayerEdgesAsync()
         {
             bool bO, bP, bQ, bV, bX, bY, bZ;
@@ -389,7 +398,10 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the middle layer of the cube - Chapter 10, page 21
+        /// <summary>
+        /// Solve the middle layer of the cube - Chapter 10, page 21 
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveMiddleLayerAsync()
         {
             bool bO, bP, bQ, bR, bS;
@@ -684,8 +696,10 @@ namespace RubiksCube
             return true;
         }
 
-        /// Solve the bottom layer of the cube
-        // Corners on the right place
+        /// <summary>
+        /// Solve the bottom layer of the cube - Corners on the right place
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerCornersAsync()
         {
             bool bO, bP, bQ, bR;
@@ -851,7 +865,10 @@ namespace RubiksCube
             return true;
         }
 
-        // Edges on the right place
+        /// <summary>
+        /// Solve the bottom layer of the cube - Edges on the right place
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerEdgesAsync()
         {
             bool bO, bP, bQ, bR;
@@ -981,7 +998,10 @@ namespace RubiksCube
             return true;
         }
 
-        // Tumbling corners
+        /// <summary>
+        /// Solve the bottom layer of the cube - Tumbling corners
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerTumblingCornersAsync()
         {
             string cB;
@@ -1064,7 +1084,10 @@ namespace RubiksCube
             return true;
         }
 
-        // Tumbling edges
+        /// <summary>
+        /// Solve the bottom layer of the cube - Tumbling edges 
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerTumblingEdgesAsync()
         {
             bool bO, bP;

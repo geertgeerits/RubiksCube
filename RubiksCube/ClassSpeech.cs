@@ -4,8 +4,11 @@
     {
         private static IEnumerable<Locale> locales;
 
-        //// Initialize text to speech and fill the the array with the speech languages
-        //   .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ; 
+        /// <summary>
+        /// Initialize text to speech and fill the the array with the speech languages
+        /// .Country = KR ; .Id = ''  ; .Language = ko ; .Name = Korean (South Korea) ;
+        /// </summary>
+        /// <param name="cCultureName"></param>
         public static async void InitializeTextToSpeech(string cCultureName)
         {
             // Initialize text to speech
@@ -52,7 +55,10 @@
             //await Application.Current.MainPage.DisplayAlert("Globals.cLanguageSpeech", Globals.cLanguageSpeech, "OK");  // For testing
         }
 
-        //// Search for the language after a first start or reset of the application
+        /// <summary>
+        /// Search for the language after a first start or reset of the application
+        /// </summary>
+        /// <param name="cCultureName"></param>
         private static void SearchArrayWithSpeechLanguages(string cCultureName)
         {
             try
@@ -93,13 +99,18 @@
             }
         }
 
-        //// Convert text to speech
-        // If you do not wait long enough to press the arrow key in the Task 'MakeExplainTurnAsync()',
-        // an error message will sometimes appear: 'The operation was canceled'.
-        // This only occurs if the 'Explained by speech' setting is enabled.
-        // The error occurs in the method 'ConvertTextToSpeechAsync()'.
+        /// <summary>
+        /// Convert text to speech
+        /// </summary>
+        /// <param name="cTurnCubeText"></param>
+        /// <returns></returns>
         public static async Task ConvertTextToSpeechAsync(string cTurnCubeText)
         {
+            /* If you do not wait long enough to press the arrow key in the Task 'MakeExplainTurnAsync()',
+               an error message will sometimes appear: 'The operation was canceled'.
+               This only occurs if the 'Explained by speech' setting is enabled.
+               The error occurs in the method 'ConvertTextToSpeechAsync()'. */
+
             // Cancel the text to speech
             if (Globals.bTextToSpeechIsBusy)
             {
@@ -134,8 +145,10 @@
                 }
             }
         }
-        
-        //// Cancel speech if a cancellation token exists & hasn't been already requested
+
+        /// <summary>
+        /// Cancel speech if a cancellation token exists & hasn't been already requested
+        /// </summary>
         public static void CancelTextToSpeech()
         {
             if (Globals.bTextToSpeechIsBusy)

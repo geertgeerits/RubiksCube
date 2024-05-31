@@ -4,7 +4,11 @@ namespace RubiksCube
 {
     internal sealed class ClassCubeTurns
     {
-        //// Turn the layers of the cube (CW = Clockwise, CCW = Counter clockwise, 2 = two quarter turns or 1 half turn)
+        /// <summary>
+        /// Turn the layers of the cube (CW = Clockwise, CCW = Counter clockwise, 2 = two quarter turns or 1 half turn)
+        /// </summary>
+        /// <param name="cTurn"></param>
+        /// <returns></returns>
         public static async Task<bool> TurnCubeLayersAsync(string cTurn)
         {
             switch (cTurn)
@@ -236,8 +240,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Turn the entire cube a quarter turn
-        // Rotate the entire cube so that the front goes to the left face
+        /// <summary>
+        /// Turn the entire cube a quarter turn
+        /// Rotate the entire cube so that the front goes to the left face 
+        /// </summary>
         private static void TurnCubeFrontFaceToLeftFace()
         {
             TurnUpFaceTo("CW");
@@ -245,7 +251,9 @@ namespace RubiksCube
             TurnDownFaceTo("CCW");
         }
 
-        // Rotate the entire cube so that the front goes to the right face
+        /// <summary>
+        /// Rotate the entire cube so that the front goes to the right face 
+        /// </summary>
         private static void TurnCubeFrontFaceToRightFace()
         {
             TurnUpFaceTo("CCW");
@@ -253,7 +261,9 @@ namespace RubiksCube
             TurnDownFaceTo("CW");
         }
 
-        // Rotate the entire cube so that the front goes to the upper face
+        /// <summary>
+        /// Rotate the entire cube so that the front goes to the upper face 
+        /// </summary>
         private static void TurnCubeFrontFaceToUpFace()
         {
             TurnRightFaceTo("CW");
@@ -261,7 +271,9 @@ namespace RubiksCube
             TurnLeftFaceTo("CCW");
         }
 
-        // Rotate the entire cube so that the front goes to the down face
+        /// <summary>
+        /// Rotate the entire cube so that the front goes to the down face 
+        /// </summary>
         private static void TurnCubeFrontFaceToDownFace()
         {
             TurnRightFaceTo("CCW");
@@ -269,7 +281,9 @@ namespace RubiksCube
             TurnLeftFaceTo("CW");
         }
 
-        // Rotate the entire cube so that the upper face goes to the right face
+        /// <summary>
+        /// Rotate the entire cube so that the upper face goes to the right face 
+        /// </summary>
         private static void TurnCubeUpFaceToRightFace()
         {
             TurnFrontFaceTo("CW");
@@ -277,7 +291,9 @@ namespace RubiksCube
             TurnBackFaceTo("CCW");
         }
 
-        // Rotate the entire cube so that the upper face goes to the left face
+        /// <summary>
+        /// Rotate the entire cube so that the upper face goes to the left face 
+        /// </summary>
         private static void TurnCubeUpFaceToLeftFace()
         {
             TurnFrontFaceTo("CCW");
@@ -285,7 +301,10 @@ namespace RubiksCube
             TurnBackFaceTo("CW");
         }
 
-        //// Turn the entire front face clockwise or counter clockwise
+        /// <summary>
+        /// Turn the entire front face clockwise or counter clockwise
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnFrontFaceTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -347,7 +366,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the top horizontal middle layer to the right or left
+        /// <summary>
+        /// Turn the top horizontal middle layer to the right or left
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnUpHorMiddleTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -391,7 +413,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the entire back face clockwise or counter clockwise
+        /// <summary>
+        /// Turn the entire back face clockwise or counter clockwise
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnBackFaceTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -453,7 +478,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the entire left face clockwise or counter clockwise
+        /// <summary>
+        /// Turn the entire left face clockwise or counter clockwise
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnLeftFaceTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -515,7 +543,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the top vertical middle layer to back or front
+        /// <summary>
+        /// Turn the top vertical middle layer to back or front
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnUpVerMiddleTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -559,7 +590,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the entire right face clockwise or counter clockwise
+        /// <summary>
+        /// Turn the entire right face clockwise or counter clockwise
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnRightFaceTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -621,7 +655,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the entire upper face clockwise or counter clockwise
+        /// <summary>
+        /// Turn the entire upper face clockwise or counter clockwise
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnUpFaceTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -683,7 +720,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the front horizontal middle layer to right or left
+        /// <summary>
+        /// Turn the front horizontal middle layer to right or left
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnFrontHorMiddleTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);
@@ -727,7 +767,10 @@ namespace RubiksCube
             }
         }
 
-        //// Turn the entire down face clockwise or counter clockwise
+        /// <summary>
+        /// Turn the entire down face clockwise or counter clockwise
+        /// </summary>
+        /// <param name="cDirection"></param>
         public static void TurnDownFaceTo(string cDirection)
         {
             Array.Copy(aPieces, aPiecesTemp, 54);

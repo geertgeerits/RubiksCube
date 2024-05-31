@@ -8,7 +8,10 @@ namespace RubiksCube
         //// Declare variables
         private const int nLoopTimesMax = 200;
 
-        //// Solve the cube.
+        /// <summary>
+        /// Solve the cube
+        /// </summary>
+        /// <returns></returns>
         public static async Task<bool> SolveTheCubeCFOPAsync()
         {
             // Cross part 1 (Solving the first layer 4 edge pieces completely
@@ -50,7 +53,10 @@ namespace RubiksCube
             return false;
         }
 
-        //// Solve the first two layers (F2L)
+        /// <summary>
+        /// Solve the first two layers (F2L)
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveFirstTwoLayersAsync()
         {
             string cT;
@@ -2193,8 +2199,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// OLL (Orientation of Last Layer)
-        // 2-Look OLL
+        /// <summary>
+        /// OLL (Orientation of Last Layer) - 2-Look OLL
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerOrientationAsync()
         {
             int nLoopTimes = 0;
@@ -2624,7 +2632,10 @@ namespace RubiksCube
             return true;
         }
 
-        //// Permutate the last layer - PLL
+        /// <summary>
+        ///  Permutate the last layer - PLL
+        /// </summary>
+        /// <returns></returns>
         private static async Task<bool> SolveBottomLayerPermutationAsync()
         {
             await ClassSolveCubeCommon.SolveTopLayerLineUpCenterAsync();
