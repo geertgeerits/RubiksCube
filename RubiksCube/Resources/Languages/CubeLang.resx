@@ -531,4 +531,10 @@ Possible cause is incorrect transfer of colors to this cube.</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Turn the top and middle layer together a quarter turn 'clockwise' (+).</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Send an email to the author of this application</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Open the website of this application</value>
+  </data>
 </root>

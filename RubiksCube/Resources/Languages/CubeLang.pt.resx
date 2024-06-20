@@ -531,4 +531,10 @@ A possível causa é a transferência incorreta de cores para este cubo.</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Gire as camadas superior e intermediária juntas um quarto de volta no sentido horário (+).</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Envie um e-mail para o autor deste aplicativo</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Abra o site deste aplicativo</value>
+  </data>
 </root>

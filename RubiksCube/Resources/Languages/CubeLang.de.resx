@@ -531,4 +531,10 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Drehen Sie die obere und mittlere Schicht gemeinsam um eine Vierteldrehung im Uhrzeigersinn (+).</value>
   </data>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Senden Sie eine E-Mail an den Autor dieser Anwendung</value>
+  </data>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Öffnen Sie die Website dieser Anwendung</value>
+  </data>
 </root>
