@@ -6,17 +6,23 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="0.0.0.0" />
+  <Identity Name="GeertGeerits.RubiksCubegg" Publisher="CN=75951DE0-B465-4089-8AA1-8E9DD2C3CB22" Version="2.0.23.0" />
 
   <mp:PhoneIdentity PhoneProductId="D486D580-91F7-49CB-A7C3-FE7AE81BA1DA" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
-  <Properties>
+  <!--<Properties>
     <DisplayName>$placeholder$</DisplayName>
     <PublisherDisplayName>User Name</PublisherDisplayName>
     <Logo>$placeholder$.png</Logo>
-  </Properties>
+  </Properties>-->
 
-  <Dependencies>
+	<Properties>
+		<DisplayName>Rubik's Cube gg</DisplayName>
+		<PublisherDisplayName>Geert Geerits</PublisherDisplayName>
+		<Logo>cube_appicon_128p.png</Logo>
+	</Properties>
+
+	<Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
     <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
   </Dependencies>
@@ -35,6 +41,10 @@
         BackgroundColor="transparent">
         <uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png" />
         <uap:SplashScreen Image="$placeholder$.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="landscapeFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
