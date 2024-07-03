@@ -125,8 +125,8 @@
 		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
 		<AndroidSigningKeyPass></AndroidSigningKeyPass>
 		<AndroidSigningStorePass></AndroidSigningStorePass>
-		<ApplicationDisplayVersion>2.0.23</ApplicationDisplayVersion>
-		<ApplicationVersion>23</ApplicationVersion>
+		<ApplicationDisplayVersion>2.0.24</ApplicationDisplayVersion>
+		<ApplicationVersion>24</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.rubikscube</ApplicationId>
 	</PropertyGroup>
 
@@ -145,8 +145,8 @@
 		<ArchiveOnBuild>true</ArchiveOnBuild>
 		<TcpPort>58181</TcpPort>
 
-		<ApplicationDisplayVersion>2.0.23</ApplicationDisplayVersion>
-		<ApplicationVersion>23</ApplicationVersion>
+		<ApplicationDisplayVersion>2.0.24</ApplicationDisplayVersion>
+		<ApplicationVersion>24</ApplicationVersion>
 		<ApplicationId>com.geertgeerits.rubikscube</ApplicationId>
 	</PropertyGroup>
 </Project>
