@@ -233,7 +233,7 @@ namespace RubiksCube
                     break;
 
                 default:
-                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
+                    await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
                     return false;
             }
 

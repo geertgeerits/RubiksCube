@@ -13,7 +13,7 @@ namespace RubiksCube
         public object this[string resourceKey]
             => CubeLang.ResourceManager.GetObject(resourceKey, CubeLang.Culture) ?? Array.Empty<byte>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void SetCulture(CultureInfo culture) {
             CubeLang.Culture = culture;

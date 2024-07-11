@@ -2,7 +2,7 @@
 {
     internal sealed class ClassSpeech
     {
-        private static IEnumerable<Locale> locales;
+        private static IEnumerable<Locale>? locales;
 
         /// <summary>
         /// Initialize text to speech and fill the the array with the speech languages
@@ -28,7 +28,7 @@
             catch (Exception ex)
             {
                 // Text to speech is not supported on this device
-                await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
+                await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
                 Globals.bExplainSpeech = false;
                 return;
             }
@@ -63,26 +63,29 @@
         {
             try
             {
-                int nTotalItems = Globals.cLanguageLocales.Length;
-
-                for (int nItem = 0; nItem < nTotalItems; nItem++)
+                if (Globals.cLanguageLocales is not null)
                 {
-                    if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
-                    {
-                        Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
-                        break;
-                    }
-                }
+                    int nTotalItems = Globals.cLanguageLocales.Length;
 
-                // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
-                if (Globals.cLanguageSpeech == "")
-                {
                     for (int nItem = 0; nItem < nTotalItems; nItem++)
                     {
-                        if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                        if (Globals.cLanguageLocales[nItem].StartsWith(cCultureName))
                         {
                             Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
                             break;
+                        }
+                    }
+
+                    // If the language is not found try it with the language (Globals.cLanguage) of the user setting for this app
+                    if (Globals.cLanguageSpeech == "")
+                    {
+                        for (int nItem = 0; nItem < nTotalItems; nItem++)
+                        {
+                            if (Globals.cLanguageLocales[nItem].StartsWith(Globals.cLanguage))
+                            {
+                                Globals.cLanguageSpeech = Globals.cLanguageLocales[nItem];
+                                break;
+                            }
                         }
                     }
                 }
@@ -90,12 +93,12 @@
                 // If the language is still not found use the first language in the array
                 if (Globals.cLanguageSpeech == "")
                 {
-                    Globals.cLanguageSpeech = Globals.cLanguageLocales[0];
+                    Globals.cLanguageSpeech = Globals.cLanguageLocales![0];
                 }
             }
             catch (Exception ex)
             {
-                Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             }
         }
 
@@ -131,7 +134,7 @@
 
                     SpeechOptions options = new()
                     {
-                        Locale = locales.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
+                        Locale = locales?.Single(l => l.Language + "-" + l.Country + " " + l.Name == Globals.cLanguageSpeech)
                     };
 
                     await TextToSpeech.Default.SpeakAsync(cTurnCubeText, options, cancelToken: Globals.cts.Token);
@@ -140,14 +143,14 @@
                 catch (Exception ex)
                 {
 #if DEBUG
-                    await Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
+                    await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
 #endif
                 }
             }
         }
 
         /// <summary>
-        /// Cancel speech if a cancellation token exists & hasn't been already requested
+        /// Cancel speech if a cancellation token exists and hasn't been already requested
         /// </summary>
         public static void CancelTextToSpeech()
         {

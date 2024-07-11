@@ -8,16 +8,16 @@ namespace RubiksCube
     internal static class Globals
     {
         //// Global variables
-        public static string cTheme;
-        public static string cLanguage;
-        public static bool bLanguageChanged = false;
-        public static string cLanguageSpeech;
-        public static string[] cLanguageLocales;
-        public static bool bLanguageLocalesExist = false;
-        public static bool bExplainText = false;
-        public static bool bExplainSpeech = false;
-        public static bool bTextToSpeechIsBusy = false;
-        public static CancellationTokenSource cts;
+        public static string cTheme = "";
+        public static string cLanguage = "";
+        public static bool bLanguageChanged;
+        public static string cLanguageSpeech = "";
+        public static string[]? cLanguageLocales;
+        public static bool bLanguageLocalesExist;
+        public static bool bExplainText;
+        public static bool bExplainSpeech;
+        public static bool bTextToSpeechIsBusy;
+        public static CancellationTokenSource? cts;
         public static bool bLicense;
 
         public static string[] aFaceColors = new string[7];
@@ -96,7 +96,7 @@ namespace RubiksCube
         /// </summary>
         public static void SetTheme()
         {
-            Application.Current.UserAppTheme = cTheme switch
+            Application.Current!.UserAppTheme = cTheme switch
             {
                 "Light" => AppTheme.Light,
                 "Dark" => AppTheme.Dark,

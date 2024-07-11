@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.24
- * Date ........: 2024-07-03 (YYYY-MM-DD)
+ * Date ........: 2024-07-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -110,8 +110,8 @@ namespace RubiksCube
         /// <param name="args"></param>
         private void OnGetColorTapped(object sender, TappedEventArgs args)
         {
-            Polygon polygon = sender as Polygon;
-            plgCubeColorSelect.Fill = polygon.Fill;
+            Polygon? polygon = sender as Polygon;
+            plgCubeColorSelect.Fill = polygon!.Fill;
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace RubiksCube
         {
             if (plgCubeColorSelect.Fill != null && bColorDrop)
             {
-                Polygon polygon = sender as Polygon;
-                polygon.Fill = plgCubeColorSelect.Fill;
+                Polygon? polygon = sender as Polygon;
+                polygon!.Fill = plgCubeColorSelect.Fill;
 
                 SetCubeColorsInArrays();
             }
@@ -143,7 +143,7 @@ namespace RubiksCube
             {
                 btnSolveCube.IsEnabled = false;
                 grdCubeColorSelect.BackgroundColor = Color.FromArgb("#969696");
-                plgCubeColorSelect.Fill = null;
+                plgCubeColorSelect.Fill = new SolidColorBrush(Colors.Transparent);
                 IsVisibleCubeColors(true);
                 IsEnabledArrows(false);
 
@@ -1425,7 +1425,7 @@ namespace RubiksCube
             if (bSolvingCube)
             {
                 // Restart the application to get out of the foreach loop in the method OnBtnSolveCubeClicked and task MakeExplainTurnAsync()
-                Application.Current.MainPage = new NavigationPage(new MainPage());
+                Application.Current!.MainPage = new NavigationPage(new MainPage());
             }
             else
             {
@@ -1547,24 +1547,24 @@ namespace RubiksCube
             }
             else
             {
-                ToolTipProperties.SetText(imgbtnTurnFrontFaceToRight, null);
-                ToolTipProperties.SetText(imgbtnTurnUpHorMiddleToRightFace, null);
-                ToolTipProperties.SetText(imgbtnTurnBackFaceToLeft, null);
-                ToolTipProperties.SetText(imgbtnTurnLeftFaceToRight, null);
-                ToolTipProperties.SetText(imgbtnTurnUpVerMiddleToFrontFace, null);
-                ToolTipProperties.SetText(imgbtnTurnRightFaceToLeft, null);
-                ToolTipProperties.SetText(imgbtnTurnUpFaceToLeft, null);
-                ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToRightFace, null);
-                ToolTipProperties.SetText(imgbtnTurnDownFaceToRight, null);
-                ToolTipProperties.SetText(imgbtnTurnUpFaceToRight, null);
-                ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToLeftFace, null);
-                ToolTipProperties.SetText(imgbtnTurnDownFaceToLeft, null);
-                ToolTipProperties.SetText(imgbtnTurnLeftFaceToLeft, null);
-                ToolTipProperties.SetText(imgbtnTurnUpVerMiddleToBackFace, null);
-                ToolTipProperties.SetText(imgbtnTurnRightFaceToRight, null);
-                ToolTipProperties.SetText(imgbtnTurnFrontFaceToLeft, null);
-                ToolTipProperties.SetText(imgbtnTurnUpHorMiddleToLeftFace, null);
-                ToolTipProperties.SetText(imgbtnTurnBackFaceToRight, null);
+                ToolTipProperties.SetText(imgbtnTurnFrontFaceToRight, "");
+                ToolTipProperties.SetText(imgbtnTurnUpHorMiddleToRightFace, "");
+                ToolTipProperties.SetText(imgbtnTurnBackFaceToLeft, "");
+                ToolTipProperties.SetText(imgbtnTurnLeftFaceToRight, "");
+                ToolTipProperties.SetText(imgbtnTurnUpVerMiddleToFrontFace, "");
+                ToolTipProperties.SetText(imgbtnTurnRightFaceToLeft, "");
+                ToolTipProperties.SetText(imgbtnTurnUpFaceToLeft, "");
+                ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToRightFace, "");
+                ToolTipProperties.SetText(imgbtnTurnDownFaceToRight, "");
+                ToolTipProperties.SetText(imgbtnTurnUpFaceToRight, "");
+                ToolTipProperties.SetText(imgbtnTurnFrontHorMiddleToLeftFace, "");
+                ToolTipProperties.SetText(imgbtnTurnDownFaceToLeft, "");
+                ToolTipProperties.SetText(imgbtnTurnLeftFaceToLeft, "");
+                ToolTipProperties.SetText(imgbtnTurnUpVerMiddleToBackFace, "");
+                ToolTipProperties.SetText(imgbtnTurnRightFaceToRight, "");
+                ToolTipProperties.SetText(imgbtnTurnFrontFaceToLeft, "");
+                ToolTipProperties.SetText(imgbtnTurnUpHorMiddleToLeftFace, "");
+                ToolTipProperties.SetText(imgbtnTurnBackFaceToRight, "");
             }
         }
 
@@ -1606,7 +1606,7 @@ namespace RubiksCube
 
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Application.Current.MainPage.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
+                Globals.bLicense = await Application.Current!.MainPage!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {

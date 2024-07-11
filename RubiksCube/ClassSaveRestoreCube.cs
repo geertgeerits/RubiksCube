@@ -38,7 +38,7 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                _ = Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
 
@@ -67,12 +67,12 @@ namespace RubiksCube
 
                 for (nRow = 1; nRow < 7; nRow++)
                 {
-                    Globals.aFaceColors[nRow] = sr.ReadLine();
+                    Globals.aFaceColors[nRow] = sr.ReadLine() ?? string.Empty;
                 }
 
                 for (nRow = 0; nRow < 54; nRow++)
                 {
-                    Globals.aPieces[nRow] = sr.ReadLine();
+                    Globals.aPieces[nRow] = sr.ReadLine() ?? string.Empty;
                 }
 
                 // Close the StreamReader object
@@ -80,7 +80,7 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                _ = Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
 
@@ -118,7 +118,7 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                _ = Application.Current.MainPage.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                _ = Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
             
