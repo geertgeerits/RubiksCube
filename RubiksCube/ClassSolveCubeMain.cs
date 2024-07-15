@@ -51,7 +51,7 @@ namespace RubiksCube
             lCubePositions.Add(turnCubeUpToRight2);
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
-            // Copy the temp list to the list
+            // Copy the temp list to the list lCubeTurns
             if (lCubeTurnsTemp.Count > 0)
             {
                 lCubeTurns.Clear();
@@ -125,6 +125,7 @@ namespace RubiksCube
             // Copy the start colors of the cube to the array aPieces[]
             Array.Copy(aStartPieces, aPieces, 54);
 
+            // Add the items of the list lCubePositions to the list lCubeTurns without the items with the value 'None'
             if (lCubePositions.Count > 0)
             {
                 foreach (string cItem in lCubePositions)
@@ -175,7 +176,7 @@ namespace RubiksCube
         {
             Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
 
-            // If the list is empty, copy the list to the temp list
+            // If the list lCubeTurns is not empty and the list lCubeTurnsTemp is empty, copy the list to the temp list
             if (lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)
             {
                 lCubeTurnsTemp.AddRange(lCubeTurns);
