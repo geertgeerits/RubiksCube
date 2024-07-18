@@ -21,8 +21,6 @@ namespace RubiksCube
         /// <returns></returns>
         public static async Task<bool> SolveCubeFromMultiplePositionsAsync(string cSolution)
         {
-            bool bSolveWithFaceTurns = true;  // For testing
-
             // Clear the lists
             lCubeTurnsTemp.Clear();
             lCubePositions.Clear();

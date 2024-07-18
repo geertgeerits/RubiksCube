@@ -33,6 +33,22 @@
                 Text="{local:Translate NameProgram_Text}">
             </Label>
 
+            <Button
+                x:Name="btnSolveWithFaceTurns"
+                Grid.Row="0"
+                Grid.Column="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                WidthRequest="40"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                Text="">
+                <Button.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSolveWithFaceTurnsClicked" NumberOfTapsRequired="2" />
+                </Button.GestureRecognizers>
+            </Button>
+            
             <ImageButton
                 x:Name="imgbtnSettings"
                 Grid.Row="0"

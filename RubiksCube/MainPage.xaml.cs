@@ -90,12 +90,22 @@ namespace RubiksCube
             //// Reset the colors of the cube
             ClassColorsCube.ResetCube();
             GetCubeColorsFromArrays();
+
+#if DEBUG
+            //// Set the border color of the button in debug mode
+            btnSolveWithFaceTurns.BorderColor = Color.FromArgb("#000000");
+#endif
         }
 
         //// TitleView buttons clicked events
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PageAbout());
+        }
+
+        private void OnSolveWithFaceTurnsClicked(object sender, EventArgs e)
+        {
+            Globals.bSolveWithFaceTurns = !Globals.bSolveWithFaceTurns;
         }
 
         private async void OnPageSettingsClicked(object sender, EventArgs e)
