@@ -223,6 +223,8 @@ namespace RubiksCube
             lblCubeInsideView.IsVisible = false;
             btnLetterTurn.IsVisible = true;
 
+            Globals.nSolutions = 0;
+
             // Start the activity indicator
             activityIndicator.IsRunning = true;
             await Task.Delay(200);

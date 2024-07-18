@@ -1,4 +1,4 @@
-﻿/* This module tries to solve the cube from 12 x 24 different starting positions.
+﻿/* This module tries to solve the cube from minimum 300 different starting positions.
    The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
@@ -15,7 +15,7 @@ namespace RubiksCube
         private static readonly List<string> lCubePositions = [];
 
         /// <summary>
-        /// Try to solve the cube from x different start positions of the cube
+        /// Try to solve the cube from minimum 300 (12 x 24 + 12) different start positions of the cube
         /// </summary>
         /// <param name="cSolution"></param>
         /// <returns></returns>
@@ -72,7 +72,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Try to solve the cube from 24 different positions of the cube
+        /// Try to solve the cube from multiple different positions of the cube
         /// </summary>
         /// <param name="cSolution"></param>
         /// <returns></returns>
@@ -168,6 +168,7 @@ namespace RubiksCube
         private static async Task<bool> SolveCubeFromMultiplePositions3Async(string cSolution, string cTurn)
         {
             lCubeTurns.Clear();
+            nSolutions++;
 
             if (cTurn != "")
             {
@@ -227,7 +228,7 @@ namespace RubiksCube
         /// </summary>
         private static void CopyListToTemp()
         {
-            Debug.WriteLine($"lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
+            Debug.WriteLine($"nSolutions: {nSolutions}, lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
 
             // If the list lCubeTurns is not empty and the list lCubeTurnsTemp is empty, copy the list to the temp list
             if (lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)

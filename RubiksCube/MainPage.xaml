@@ -33,16 +33,6 @@
                 Text="{local:Translate NameProgram_Text}">
             </Label>
 
-            <ActivityIndicator
-                    x:Name="activityIndicator"
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    Color="#1186f8"
-                    IsRunning="False">
-            </ActivityIndicator>
-
             <ImageButton
                 x:Name="imgbtnSettings"
                 Grid.Row="0"
@@ -677,6 +667,18 @@
                     IsVisible="False"
                     Clicked="OnBtnLetterTurnClicked">
                 </Button>
+
+                <ActivityIndicator
+                    x:Name="activityIndicator"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    Color="#1186f8"
+                    IsRunning="False">
+                </ActivityIndicator>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
