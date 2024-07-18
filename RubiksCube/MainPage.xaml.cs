@@ -92,8 +92,10 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
 
 #if DEBUG
-            //// Set the border color of the button in debug mode
+            //// Set the button properties in debug mode for testing purposes
             btnSolveWithFaceTurns.BorderColor = Color.FromArgb("#000000");
+            btnSolveWithFaceTurns.TextColor = Color.FromArgb("#000000");
+            btnSolveWithFaceTurns.Text = "+";
 #endif
         }
 
@@ -106,6 +108,17 @@ namespace RubiksCube
         private void OnSolveWithFaceTurnsClicked(object sender, EventArgs e)
         {
             Globals.bSolveWithFaceTurns = !Globals.bSolveWithFaceTurns;
+
+#if DEBUG
+            if (Globals.bSolveWithFaceTurns)
+            {
+                btnSolveWithFaceTurns.Text = "+";
+            }
+            else
+            {
+                btnSolveWithFaceTurns.Text = "-";
+            }
+#endif
         }
 
         private async void OnPageSettingsClicked(object sender, EventArgs e)

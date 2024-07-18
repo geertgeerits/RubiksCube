@@ -43,6 +43,7 @@
                 WidthRequest="40"
                 BackgroundColor="Transparent"
                 BorderColor="Transparent"
+                TextColor="Transparent"
                 Text="">
                 <Button.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnSolveWithFaceTurnsClicked" NumberOfTapsRequired="2" />
