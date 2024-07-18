@@ -1,4 +1,4 @@
-﻿/* This module tries to solve the cube from 24 different starting positions.
+﻿/* This module tries to solve the cube from 12 x 24 different starting positions.
    The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
@@ -15,7 +15,7 @@ namespace RubiksCube
         private static readonly List<string> lCubePositions = [];
 
         /// <summary>
-        /// Try to solve the cube from 24 different positions of the cube
+        /// Try to solve the cube from x different start positions of the cube
         /// </summary>
         /// <param name="cSolution"></param>
         /// <returns></returns>
@@ -25,6 +25,59 @@ namespace RubiksCube
             lCubeTurnsTemp.Clear();
             lCubePositions.Clear();
 
+            // Start position
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            // Turn the front face clockwise and counterclockwise
+            lCubePositions.Add(turnFrontCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            lCubePositions.Add(turnFrontCCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            // Turn the back face clockwise and counterclockwise
+            lCubePositions.Add(turnBackCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            lCubePositions.Add(turnBackCCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            // Turn the left face clockwise and counterclockwise
+            lCubePositions.Add(turnLeftCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            lCubePositions.Add(turnLeftCCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            // Turn the right face clockwise and counterclockwise
+            lCubePositions.Add(turnRightCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            lCubePositions.Add(turnRightCCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            // Turn the up face clockwise and counterclockwise
+            lCubePositions.Add(turnUpCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            lCubePositions.Add(turnUpCCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            // Turn the down face clockwise and counterclockwise
+            lCubePositions.Add(turnDownCW);
+            await SolveCubeFromMultiplePositions1Async(cSolution);
+
+            lCubePositions.Add(turnDownCCW);
+            return await SolveCubeFromMultiplePositions1Async(cSolution);
+        }
+
+        /// <summary>
+        /// Try to solve the cube from 24 different positions of the cube
+        /// </summary>
+        /// <param name="cSolution"></param>
+        /// <returns></returns>
+        public static async Task<bool> SolveCubeFromMultiplePositions1Async(string cSolution)
+        {
             // 1. Start position
             await SolveCubeFromMultiplePositions2Async(cSolution);
 
