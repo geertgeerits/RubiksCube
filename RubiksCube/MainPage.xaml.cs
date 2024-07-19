@@ -97,6 +97,8 @@ namespace RubiksCube
             btnSolveWithFaceTurns.TextColor = Color.FromArgb("#000000");
             btnSolveWithFaceTurns.Text = "+";
 #endif
+            //// Set bSolveWithFaceTurns to true to solve the cube with face turns
+            Globals.bSolveWithFaceTurns = true;
         }
 
         //// TitleView buttons clicked events

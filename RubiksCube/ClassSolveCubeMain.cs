@@ -1,4 +1,4 @@
-﻿/* This module tries to solve the cube from minimum 300 different starting positions.
+﻿/* This module tries to solve the cube from minimum 312 different starting positions.
    The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
@@ -15,7 +15,7 @@ namespace RubiksCube
         private static readonly List<string> lCubePositions = [];
 
         /// <summary>
-        /// Try to solve the cube from minimum 300 (12 x 24 + 12) different start positions of the cube
+        /// Try to solve the cube from minimum 312 (13 x 6 x 4) different start positions of the cube
         /// </summary>
         /// <param name="cSolution"></param>
         /// <returns></returns>
@@ -25,47 +25,47 @@ namespace RubiksCube
             lCubeTurnsTemp.Clear();
             lCubePositions.Clear();
 
-            // Start position
+            // 1. Start position
             await SolveCubeFromMultiplePositions1Async(cSolution);
 
             if (bSolveWithFaceTurns)
             {
-                // Turn the front face clockwise and counterclockwise
+                // 2-3. Turn the front face clockwise and counterclockwise
                 lCubePositions.Add(turnFrontCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnFrontCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // Turn the back face clockwise and counterclockwise
+                // 4-5. Turn the back face clockwise and counterclockwise
                 lCubePositions.Add(turnBackCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnBackCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // Turn the left face clockwise and counterclockwise
+                // 6-7. Turn the left face clockwise and counterclockwise
                 lCubePositions.Add(turnLeftCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnLeftCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // Turn the right face clockwise and counterclockwise
+                // 8-9. Turn the right face clockwise and counterclockwise
                 lCubePositions.Add(turnRightCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnRightCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // Turn the up face clockwise and counterclockwise
+                // 10-11. Turn the up face clockwise and counterclockwise
                 lCubePositions.Add(turnUpCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnUpCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // Turn the down face clockwise and counterclockwise
+                // 12-13. Turn the down face clockwise and counterclockwise
                 lCubePositions.Add(turnDownCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
@@ -253,6 +253,7 @@ namespace RubiksCube
 
         /// <summary>
         /// Clean the list with the cube turns by replacing or removing turns
+        /// <para>The list is passed by reference. This means that the method receives a reference to the original list, not a copy of it. Therefore, any changes made to the list within the method will affect the original list.</para>
         /// </summary>
         /// <param name="lCubeTurnsToClean"></param>
         public static void CleanListCubeTurns(List<string> lCubeTurnsToClean)
@@ -266,7 +267,7 @@ namespace RubiksCube
             }
 
             // Do the cleaning two times
-            for (int NumberCleanings = 0; NumberCleanings < 2; NumberCleanings++)
+            for (int nNumberCleanings = 0; nNumberCleanings < 2; nNumberCleanings++)
             {
                 for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                 {
