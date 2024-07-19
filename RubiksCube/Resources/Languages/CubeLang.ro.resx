@@ -300,6 +300,9 @@ Cauza posibilă este transferul incorect de culori în acest cub.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplicația va fi repornită.</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Solutii testate:</value>
+  </data>
   <data name="ResultTime_Text" xml:space="preserve">
     <value>Timp în milisecunde:</value>
   </data>

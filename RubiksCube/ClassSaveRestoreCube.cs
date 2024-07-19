@@ -96,13 +96,13 @@ namespace RubiksCube
         {
             string cFileName = Path.Combine(FileSystem.AppDataDirectory, cFile);
 
-            if (File.Exists(cFileName))
-            {
-                File.Delete(cFileName);
-            }
-
             try
             {
+                if (File.Exists(cFileName))
+                {
+                    File.Delete(cFileName);
+                }
+
                 using StreamWriter sw = new(cFileName, false);
 
                 sw.WriteLine($"Turns: {Globals.lCubeTurns.Count}");

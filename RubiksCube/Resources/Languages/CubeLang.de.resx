@@ -537,4 +537,7 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="ToolTipAppWebsite_Text" xml:space="preserve">
     <value>Öffnen Sie die Website dieser Anwendung</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Getestete Lösungen:</value>
+  </data>
 </root>

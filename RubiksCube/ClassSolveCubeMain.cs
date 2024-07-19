@@ -81,10 +81,10 @@ namespace RubiksCube
 
                 if (lCubeTurns.Count > 0)
                 {
-                    // Clean the list with the cube turns by replacing or removing turns
-                    CleanListCubeTurns();
-                    //CleanListCubeTurns2(lCubeTurnsTemp);
-
+#if DEBUG
+                    // Save the list with the cube turns to a file
+                    _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfterSolved.txt");
+#endif
                     return true;
                 }
             }
@@ -234,15 +234,14 @@ namespace RubiksCube
         {
             Debug.WriteLine($"nTestedSolutions: {nTestedSolutions}, lCubeTurns / lCubeTurnsTemp: {lCubeTurns.Count} / {lCubeTurnsTemp.Count}");
 
-            // Clean the list with the cube turns by replacing or removing turns
-            //CleanListCubeTurns();
-            //CleanListCubeTurns2(lCubeTurns);
-
             // If the list lCubeTurns is not empty and the list lCubeTurnsTemp is empty, copy the list to the temp list
             if (lCubeTurns.Count > 0 && lCubeTurnsTemp.Count == 0)
             {
                 lCubeTurnsTemp.AddRange(lCubeTurns);
             }
+
+            // Clean the list with the cube turns by replacing or removing turns
+            CleanListCubeTurns(lCubeTurns);
 
             // If the list has less items than the temp list, copy the list to the temp list
             if (lCubeTurns.Count > 0 && lCubeTurns.Count < lCubeTurnsTemp.Count)
@@ -255,120 +254,11 @@ namespace RubiksCube
         /// <summary>
         /// Clean the list with the cube turns by replacing or removing turns
         /// </summary>
-        public static void CleanListCubeTurns()
+        /// <param name="lCubeTurnsToClean"></param>
+        public static void CleanListCubeTurns(List<string> lCubeTurnsToClean)
         {
 #if DEBUG
-            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
-#endif
-            if (lCubeTurns.Count < 4)
-            {
-                return;
-            }
-            
-            // Copy the list to the temp list
-            lCubeTurnsTemp.Clear();
-            lCubeTurnsTemp.AddRange(lCubeTurns);
-
-            // Do the cleaning two times
-            for (int NumberCleanings = 0; NumberCleanings < 2; NumberCleanings++)
-            {
-                for (int i = 0; i < lCubeTurnsTemp.Count - 1; i++)
-                {
-                    // Replace two same turns with one turn or no turn
-                    if (lCubeTurnsTemp[i] == lCubeTurnsTemp[i + 1])
-                    {
-                        // U & U -> U2
-                        if (lCubeTurnsTemp[i].Length == 1)
-                        {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i] + c2;
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U' & U' -> U2
-                        else if (lCubeTurnsTemp[i].EndsWith(cApos))
-                        {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "2";
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U2 & U2 -> None
-                        else if (lCubeTurnsTemp[i].EndsWith(c2))
-                        {
-                            lCubeTurnsTemp[i] = cNone;
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-                    }
-
-                    // Replace two same first letters of a turn with another turn or no turn
-                    else if (lCubeTurnsTemp[i][0] == lCubeTurnsTemp[i + 1][0])
-                    {
-                        // U & U' -> None
-                        if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith(cApos))
-                        {
-                            lCubeTurnsTemp[i] = cNone;
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U' & U -> None
-                        else if (lCubeTurnsTemp[i].EndsWith(cApos) && lCubeTurnsTemp[i + 1].Length == 1)
-                        {
-                            lCubeTurnsTemp[i] = cNone;
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U & U2 -> U'
-                        else if (lCubeTurnsTemp[i].Length == 1 && lCubeTurnsTemp[i + 1].EndsWith(c2))
-                        {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "'";
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U2 & U -> U'
-                        else if (lCubeTurnsTemp[i].EndsWith(c2) && lCubeTurnsTemp[i + 1].Length == 1)
-                        {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i + 1] + cApos;
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U' & U2 -> U
-                        else if (lCubeTurnsTemp[i].EndsWith(cApos) && lCubeTurnsTemp[i + 1].EndsWith(c2))
-                        {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "";
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-
-                        // U2 & U' -> U
-                        else if (lCubeTurnsTemp[i].EndsWith(c2) && lCubeTurnsTemp[i + 1].EndsWith(cApos))
-                        {
-                            lCubeTurnsTemp[i] = lCubeTurnsTemp[i][0] + "";
-                            lCubeTurnsTemp[i + 1] = cNone;
-                        }
-                    }
-                }
-
-                // Remove the last turn if it is turning the whole cube (starts with x, y or z)
-                if (lCubeTurnsTemp[^1].StartsWith('x') || lCubeTurnsTemp[^1].StartsWith('y') || lCubeTurnsTemp[^1].StartsWith('z'))
-                {
-                    lCubeTurnsTemp[^1] = cNone;
-                }
-
-                // Remove the items with 'None'
-                lCubeTurnsTemp.RemoveAll(x => x == cNone);
-            }
-
-            // Copy the temp list to the list
-            lCubeTurns.Clear();
-            lCubeTurns.AddRange(lCubeTurnsTemp);
-#if DEBUG
-            // Save the list with the cube turns to a file
-            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
-#endif
-        }
-
-        public static void CleanListCubeTurns2(List<string> lCubeTurnsTemporary)
-        {
-#if DEBUG
-            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBefore.txt");
+            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBeforeClean.txt");
 #endif
             if (lCubeTurns.Count < 4)
             {
@@ -378,128 +268,93 @@ namespace RubiksCube
             // Do the cleaning two times
             for (int NumberCleanings = 0; NumberCleanings < 2; NumberCleanings++)
             {
-                for (int i = 0; i < lCubeTurnsTemporary.Count - 1; i++)
+                for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                 {
                     // Replace two same turns with one turn or no turn
-                    if (lCubeTurnsTemporary[i] == lCubeTurnsTemporary[i + 1])
+                    if (lCubeTurnsToClean[i] == lCubeTurnsToClean[i + 1])
                     {
                         // U & U -> U2
-                        if (lCubeTurnsTemporary[i].Length == 1)
+                        if (lCubeTurnsToClean[i].Length == 1)
                         {
-                            lCubeTurnsTemporary[i] = lCubeTurnsTemporary[i] + c2;
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = lCubeTurnsToClean[i] + c2;
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U' & U' -> U2
-                        else if (lCubeTurnsTemporary[i].EndsWith(cApos))
+                        else if (lCubeTurnsToClean[i].EndsWith(cApos))
                         {
-                            lCubeTurnsTemporary[i] = lCubeTurnsTemporary[i][0] + "2";
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = lCubeTurnsToClean[i][0] + "2";
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U2 & U2 -> None
-                        else if (lCubeTurnsTemporary[i].EndsWith(c2))
+                        else if (lCubeTurnsToClean[i].EndsWith(c2))
                         {
-                            lCubeTurnsTemporary[i] = cNone;
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = cNone;
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
                     }
 
                     // Replace two same first letters of a turn with another turn or no turn
-                    else if (lCubeTurnsTemporary[i][0] == lCubeTurnsTemporary[i + 1][0])
+                    else if (lCubeTurnsToClean[i][0] == lCubeTurnsToClean[i + 1][0])
                     {
                         // U & U' -> None
-                        if (lCubeTurnsTemporary[i].Length == 1 && lCubeTurnsTemporary[i + 1].EndsWith(cApos))
+                        if (lCubeTurnsToClean[i].Length == 1 && lCubeTurnsToClean[i + 1].EndsWith(cApos))
                         {
-                            lCubeTurnsTemporary[i] = cNone;
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = cNone;
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U' & U -> None
-                        else if (lCubeTurnsTemporary[i].EndsWith(cApos) && lCubeTurnsTemporary[i + 1].Length == 1)
+                        else if (lCubeTurnsToClean[i].EndsWith(cApos) && lCubeTurnsToClean[i + 1].Length == 1)
                         {
-                            lCubeTurnsTemporary[i] = cNone;
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = cNone;
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U & U2 -> U'
-                        else if (lCubeTurnsTemporary[i].Length == 1 && lCubeTurnsTemporary[i + 1].EndsWith(c2))
+                        else if (lCubeTurnsToClean[i].Length == 1 && lCubeTurnsToClean[i + 1].EndsWith(c2))
                         {
-                            lCubeTurnsTemporary[i] = lCubeTurnsTemporary[i][0] + "'";
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = lCubeTurnsToClean[i][0] + "'";
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U2 & U -> U'
-                        else if (lCubeTurnsTemporary[i].EndsWith(c2) && lCubeTurnsTemporary[i + 1].Length == 1)
+                        else if (lCubeTurnsToClean[i].EndsWith(c2) && lCubeTurnsToClean[i + 1].Length == 1)
                         {
-                            lCubeTurnsTemporary[i] = lCubeTurnsTemporary[i + 1] + cApos;
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = lCubeTurnsToClean[i + 1] + cApos;
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U' & U2 -> U
-                        else if (lCubeTurnsTemporary[i].EndsWith(cApos) && lCubeTurnsTemporary[i + 1].EndsWith(c2))
+                        else if (lCubeTurnsToClean[i].EndsWith(cApos) && lCubeTurnsToClean[i + 1].EndsWith(c2))
                         {
-                            lCubeTurnsTemporary[i] = lCubeTurnsTemporary[i][0] + "";
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = lCubeTurnsToClean[i][0] + "";
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
 
                         // U2 & U' -> U
-                        else if (lCubeTurnsTemporary[i].EndsWith(c2) && lCubeTurnsTemporary[i + 1].EndsWith(cApos))
+                        else if (lCubeTurnsToClean[i].EndsWith(c2) && lCubeTurnsToClean[i + 1].EndsWith(cApos))
                         {
-                            lCubeTurnsTemporary[i] = lCubeTurnsTemporary[i][0] + "";
-                            lCubeTurnsTemporary[i + 1] = cNone;
+                            lCubeTurnsToClean[i] = lCubeTurnsToClean[i][0] + "";
+                            lCubeTurnsToClean[i + 1] = cNone;
                         }
                     }
                 }
 
                 // Remove the last turn if it is turning the whole cube (starts with x, y or z)
-                if (lCubeTurnsTemporary[^1].StartsWith('x') || lCubeTurnsTemporary[^1].StartsWith('y') || lCubeTurnsTemporary[^1].StartsWith('z'))
+                if (lCubeTurnsToClean[^1].StartsWith('x') || lCubeTurnsToClean[^1].StartsWith('y') || lCubeTurnsToClean[^1].StartsWith('z'))
                 {
-                    lCubeTurnsTemporary[^1] = cNone;
+                    lCubeTurnsToClean[^1] = cNone;
                 }
 
                 // Remove the items with 'None'
-                lCubeTurnsTemporary.RemoveAll(x => x == cNone);
+                lCubeTurnsToClean.RemoveAll(x => x == cNone);
             }
-
-            // Copy the temp list to the list
-            lCubeTurns.Clear();
-            lCubeTurns.AddRange(lCubeTurnsTemporary);
 #if DEBUG
             // Save the list with the cube turns to a file
-            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfter.txt");
+            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfterClean.txt");
 #endif
-            //return lCubeTurns;
         }
     }
 }
-
-/*
-using System;
-using System.Collections.Generic;
-
-class Program
-{
-    static void Main()
-    {
-        List<int> originalList = new List<int> { 1, 2, 3, 4, 5 };
-        List<int> modifiedList = ModifyList(originalList);
-
-        Console.WriteLine("Modified List:");
-        foreach (int item in modifiedList)
-        {
-            Console.WriteLine(item);
-        }
-    }
-
-    static List<int> ModifyList(List<int> inputList)
-    {
-        List<int> newList = new List<int>();
-        foreach (int item in inputList)
-        {
-            newList.Add(item * 2); // Example modification: doubling each item
-        }
-        return newList;
-    }
-}
-*/

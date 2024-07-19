@@ -537,4 +537,7 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
   <data name="ToolTipAppWebsite_Text" xml:space="preserve">
     <value>Ouvrez le site Web de cette application</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Solutions testées :</value>
+  </data>
 </root>

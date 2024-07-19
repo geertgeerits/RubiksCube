@@ -572,6 +572,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tested solutions:.
+        /// </summary>
+        internal static string ResultSolutions_Text {
+            get {
+                return ResourceManager.GetString("ResultSolutions_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time in milliseconds:.
         /// </summary>
         internal static string ResultTime_Text {

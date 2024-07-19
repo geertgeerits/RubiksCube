@@ -537,4 +537,7 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
   <data name="ToolTipAppWebsite_Text" xml:space="preserve">
     <value>Open de website van deze toepassing</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Geteste oplossingen:</value>
+  </data>
 </root>

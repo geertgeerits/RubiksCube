@@ -300,6 +300,9 @@ Możliwą przyczyną jest nieprawidłowe przeniesienie kolorów do tej kostki.</
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikacja zostanie ponownie uruchomiona.</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Przetestowane rozwiązania:</value>
+  </data>
   <data name="ResultTime_Text" xml:space="preserve">
     <value>Czas w milisekundach:</value>
   </data>

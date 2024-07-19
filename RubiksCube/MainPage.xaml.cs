@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.24
- * Date ........: 2024-07-18 (YYYY-MM-DD)
+ * Date ........: 2024-07-19 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -259,7 +259,7 @@ namespace RubiksCube
             if (Globals.lCubeTurns.Count > 0)
             {
                 Globals.lCubeTurns.Reverse();
-                ClassSolveCubeMain.CleanListCubeTurns();
+                ClassSolveCubeMain.CleanListCubeTurns(Globals.lCubeTurns);
                 bSolved = true;
             }
             // Solve the cube from the turns the program has made
@@ -315,7 +315,7 @@ namespace RubiksCube
             {
                 // Display the number of turns and the elapsed time in milliseconds
                 int nNumberOfTurns = Globals.lCubeTurns.Count;
-                await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+                await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultSolutions_Text} {Globals.nTestedSolutions}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
                 await Task.Delay(500);
 

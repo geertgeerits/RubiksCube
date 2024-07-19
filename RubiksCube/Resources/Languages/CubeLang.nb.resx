@@ -300,6 +300,9 @@ Mulig årsak er feil overføring av farger til denne kuben.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikasjonen vil bli startet på nytt.</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Testede løsninger:</value>
+  </data>
   <data name="ResultTime_Text" xml:space="preserve">
     <value>Tid i millisekunder:</value>
   </data>

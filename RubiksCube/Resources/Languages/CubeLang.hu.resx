@@ -300,6 +300,9 @@ Ennek lehetséges oka a színek helytelen átvitele erre a kockára.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Az alkalmazás újraindul.</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Tesztelt megoldások:</value>
+  </data>
   <data name="ResultTime_Text" xml:space="preserve">
     <value>Idő ezredmásodpercben:</value>
   </data>

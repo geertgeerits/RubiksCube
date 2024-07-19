@@ -300,6 +300,9 @@ Mahdollinen syy on värien virheellinen siirto tähän kuutioon.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Sovellus käynnistetään uudelleen.</value>
   </data>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Testatut ratkaisut:</value>
+  </data>
   <data name="ResultTime_Text" xml:space="preserve">
     <value>Aika millisekunteina:</value>
   </data>
