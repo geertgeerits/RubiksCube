@@ -44,6 +44,8 @@
                 BackgroundColor="Transparent"
                 BorderColor="Transparent"
                 TextColor="Transparent"
+                FontSize="14"
+                Padding="0"
                 Text="">
                 <Button.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnSolveWithFaceTurnsClicked" NumberOfTapsRequired="2" />
