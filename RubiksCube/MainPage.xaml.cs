@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.24
- * Date ........: 2024-07-19 (YYYY-MM-DD)
+ * Date ........: 2024-07-20 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -91,27 +91,35 @@ namespace RubiksCube
             ClassColorsCube.ResetCube();
             GetCubeColorsFromArrays();
 
-#if DEBUG
-            //// Set the button properties in debug mode for testing purposes
-            btnSolveWithFaceTurns.BorderColor = Color.FromArgb("#000000");
-            btnSolveWithFaceTurns.TextColor = Color.FromArgb("#000000");
-            btnSolveWithFaceTurns.Text = "+";
-#endif
             //// Set bSolveWithFaceTurns to true to solve the cube with face turns
             Globals.bSolveWithFaceTurns = true;
+#if DEBUG
+            //// Set the button to visible in debug mode for testing purposes
+            btnSolveWithFaceTurns.IsVisible = true;
+#endif
         }
 
         //// TitleView buttons clicked events
+        /// <summary>
+        /// Go to the About page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PageAbout());
         }
 
+        /// <summary>
+        /// Use the toggle button 'btnSolveWithFaceTurns' to solve the cube with or without face turns in debug mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSolveWithFaceTurnsClicked(object sender, EventArgs e)
         {
+#if DEBUG
             Globals.bSolveWithFaceTurns = !Globals.bSolveWithFaceTurns;
 
-#if DEBUG
             if (Globals.bSolveWithFaceTurns)
             {
                 btnSolveWithFaceTurns.Text = "+";
@@ -123,6 +131,11 @@ namespace RubiksCube
 #endif
         }
 
+        /// <summary>
+        /// Go to the Settings page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OnPageSettingsClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PageSettings());

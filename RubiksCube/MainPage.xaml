@@ -42,14 +42,13 @@
                 HeightRequest="40"
                 WidthRequest="40"
                 BackgroundColor="Transparent"
-                BorderColor="Transparent"
-                TextColor="Transparent"
+                BorderColor="Black"
+                TextColor="Black"
                 FontSize="14"
                 Padding="0"
-                Text="">
-                <Button.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnSolveWithFaceTurnsClicked" NumberOfTapsRequired="2" />
-                </Button.GestureRecognizers>
+                Text="+"
+                IsVisible="False"
+                Clicked="OnSolveWithFaceTurnsClicked">
             </Button>
             
             <ImageButton
