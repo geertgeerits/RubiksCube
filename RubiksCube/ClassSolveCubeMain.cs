@@ -1,4 +1,4 @@
-﻿/* This module tries to solve the cube from minimum 312 different starting positions.
+﻿/* This module tries to solve the cube from minimum 456 different starting positions.
    The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
@@ -15,7 +15,7 @@ namespace RubiksCube
         private static readonly List<string> lCubePositions = [];
 
         /// <summary>
-        /// Try to solve the cube from minimum 312 (13 x 6 x 4) different start positions of the cube
+        /// Try to solve the cube from minimum 456 (19 x 6 x 4) different start positions of the cube
         /// </summary>
         /// <param name="cSolution"></param>
         /// <returns></returns>
@@ -30,46 +30,65 @@ namespace RubiksCube
 
             if (bSolveWithFaceTurns)
             {
-                // 2-3. Turn the front face clockwise and counterclockwise
+                // Turn the 6 faces clockwise, counterclockwise and a half turn
+                // 2-3-4. Turn the front face
                 lCubePositions.Add(turnFrontCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnFrontCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // 4-5. Turn the back face clockwise and counterclockwise
+                lCubePositions.Add(turnFront2);
+                await SolveCubeFromMultiplePositions1Async(cSolution);
+
+                // 5-6-7. Turn the back face
                 lCubePositions.Add(turnBackCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnBackCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // 6-7. Turn the left face clockwise and counterclockwise
+                lCubePositions.Add(turnBack2);
+                await SolveCubeFromMultiplePositions1Async(cSolution);
+
+                // 8-9-10. Turn the left face
                 lCubePositions.Add(turnLeftCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnLeftCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // 8-9. Turn the right face clockwise and counterclockwise
+                lCubePositions.Add(turnLeft2);
+                await SolveCubeFromMultiplePositions1Async(cSolution);
+
+                // 11-12-13. Turn the right face
                 lCubePositions.Add(turnRightCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnRightCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // 10-11. Turn the up face clockwise and counterclockwise
+                lCubePositions.Add(turnRight2);
+                await SolveCubeFromMultiplePositions1Async(cSolution);
+
+                // 14-15-16. Turn the up face
                 lCubePositions.Add(turnUpCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnUpCCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
-                // 12-13. Turn the down face clockwise and counterclockwise
+                lCubePositions.Add(turnUp2);
+                await SolveCubeFromMultiplePositions1Async(cSolution);
+
+                // 17-18-19. Turn the down face
                 lCubePositions.Add(turnDownCW);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
 
                 lCubePositions.Add(turnDownCCW);
+                await SolveCubeFromMultiplePositions1Async(cSolution);
+
+                lCubePositions.Add(turnDown2);
                 await SolveCubeFromMultiplePositions1Async(cSolution);
             }
 
@@ -241,7 +260,7 @@ namespace RubiksCube
             }
 
             // Clean the list with the cube turns by replacing or removing turns
-            CleanListCubeTurns(lCubeTurns);
+            CleanListCubeTurns(lCubeTurns, false);
 
             // If the list has less items than the temp list, copy the list to the temp list
             if (lCubeTurns.Count > 0 && lCubeTurns.Count < lCubeTurnsTemp.Count)
@@ -256,10 +275,15 @@ namespace RubiksCube
         /// <para>The list is passed by reference. This means that the method receives a reference to the original list, not a copy of it. Therefore, any changes made to the list within the method will affect the original list.</para>
         /// </summary>
         /// <param name="lCubeTurnsToClean"></param>
-        public static void CleanListCubeTurns(List<string> lCubeTurnsToClean)
+        /// <param name="bCubeTurnsSave"></param>
+        public static void CleanListCubeTurns(List<string> lCubeTurnsToClean, bool bCubeTurnsSave)
         {
 #if DEBUG
-            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBeforeClean.txt");
+            // Save the list with the cube turns before the cleaning to a file, for testing purposes
+            if (bCubeTurnsSave)
+            {
+                _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBeforeClean.txt");
+            }
 #endif
             if (lCubeTurns.Count < 4)
             {
@@ -353,8 +377,11 @@ namespace RubiksCube
                 lCubeTurnsToClean.RemoveAll(x => x == cNone);
             }
 #if DEBUG
-            // Save the list with the cube turns to a file
-            _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfterClean.txt");
+            // Save the list with the cube turns after the cleaning to a file, for testing purposes
+            if (bCubeTurnsSave)
+            {
+                _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfterClean.txt");
+            }
 #endif
         }
     }

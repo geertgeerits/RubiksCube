@@ -95,7 +95,7 @@ namespace RubiksCube
             await MakeTurnAsync("x");
             await MakeTurnAsync("y'");
 
-            ClassSolveCubeMain.CleanListCubeTurns(lCubeTurns);
+            ClassSolveCubeMain.CleanListCubeTurns(lCubeTurns, true);
 
             return true;
         }
