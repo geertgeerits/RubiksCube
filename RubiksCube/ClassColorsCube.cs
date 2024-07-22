@@ -24,222 +24,294 @@ namespace RubiksCube
             for (nItem = 0; nItem < 9; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[1])
+                {
                     nNumberOfColors1++;
+                }
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[2])
+                {
                     nNumberOfColors2++;
+                }
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[3])
+                {
                     nNumberOfColors3++;
+                }
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[4])
+                {
                     nNumberOfColors4++;
+                }
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[5])
+                {
                     nNumberOfColors5++;
+                }
             }
 
             for (nItem = 0; nItem < 9; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[6])
+                {
                     nNumberOfColors6++;
+                }
             }
 
             // Right face
             for (nItem = 9; nItem < 18; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[1])
+                {
                     nNumberOfColors1++;
+                }
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[2])
+                {
                     nNumberOfColors2++;
+                }
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[3])
+                {
                     nNumberOfColors3++;
+                }
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[4])
+                {
                     nNumberOfColors4++;
+                }
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[5])
+                {
                     nNumberOfColors5++;
+                }
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[6])
+                {
                     nNumberOfColors6++;
+                }
             }
 
             // Back face
             for (nItem = 18; nItem < 27; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[1])
+                {
                     nNumberOfColors1++;
+                }
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[2])
+                {
                     nNumberOfColors2++;
+                }
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[3])
+                {
                     nNumberOfColors3++;
+                }
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[4])
+                {
                     nNumberOfColors4++;
+                }
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[5])
+                {
                     nNumberOfColors5++;
+                }
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[6])
+                {
                     nNumberOfColors6++;
+                }
             }
 
             // Left face
             for (nItem = 27; nItem < 36; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[1])
+                {
                     nNumberOfColors1++;
+                }
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[2])
+                {
                     nNumberOfColors2++;
+                }
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[3])
+                {
                     nNumberOfColors3++;
+                }
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[4])
+                {
                     nNumberOfColors4++;
+                }
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[5])
+                {
                     nNumberOfColors5++;
+                }
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[6])
+                {
                     nNumberOfColors6++;
+                }
             }
 
             // Top layer
             for (nItem = 36; nItem < 45; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[1])
+                {
                     nNumberOfColors1++;
+                }
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[2])
+                {
                     nNumberOfColors2++;
+                }
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[3])
+                {
                     nNumberOfColors3++;
+                }
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[4])
+                {
                     nNumberOfColors4++;
+                }
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[5])
+                {
                     nNumberOfColors5++;
+                }
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[6])
+                {
                     nNumberOfColors6++;
+                }
             }
 
             // Bottom layer
             for (nItem = 45; nItem < 54; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[1])
+                {
                     nNumberOfColors1++;
+                }
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[2])
+                {
                     nNumberOfColors2++;
+                }
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[3])
+                {
                     nNumberOfColors3++;
+                }
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[4])
+                {
                     nNumberOfColors4++;
+                }
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[5])
+                {
                     nNumberOfColors5++;
+                }
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
                 if (aPieces[nItem] == aFaceColors[6])
+                {
                     nNumberOfColors6++;
+                }
             }
 
             if (nNumberOfColors1 != 9 || nNumberOfColors2 != 9 || nNumberOfColors3 != 9 || nNumberOfColors4 != 9 || nNumberOfColors5 != 9 || nNumberOfColors6 != 9)
@@ -252,22 +324,34 @@ namespace RubiksCube
             bool bColorCenterCube = true;
 
             if (aPieces[40] == aPieces[4] || aPieces[40] == aPieces[13] || aPieces[40] == aPieces[31] || aPieces[40] == aPieces[22] || aPieces[40] == aPieces[49])
+            {
                 bColorCenterCube = false;
+            }
 
             if (aPieces[4] == aPieces[40] || aPieces[4] == aPieces[13] || aPieces[4] == aPieces[31] || aPieces[4] == aPieces[22] || aPieces[4] == aPieces[49])
+            {
                 bColorCenterCube = false;
+            }
 
             if (aPieces[13] == aPieces[4] || aPieces[13] == aPieces[40] || aPieces[13] == aPieces[31] || aPieces[13] == aPieces[22] || aPieces[13] == aPieces[49])
+            {
                 bColorCenterCube = false;
+            }
 
             if (aPieces[31] == aPieces[4] || aPieces[31] == aPieces[13] || aPieces[31] == aPieces[40] || aPieces[31] == aPieces[22] || aPieces[31] == aPieces[49])
+            {
                 bColorCenterCube = false;
+            }
 
             if (aPieces[22] == aPieces[4] || aPieces[22] == aPieces[13] || aPieces[22] == aPieces[31] || aPieces[22] == aPieces[40] || aPieces[22] == aPieces[49])
+            {
                 bColorCenterCube = false;
+            }
 
             if (aPieces[49] == aPieces[4] || aPieces[49] == aPieces[13] || aPieces[49] == aPieces[31] || aPieces[49] == aPieces[22] || aPieces[49] == aPieces[40])
+            {
                 bColorCenterCube = false;
+            }
 
             if (!bColorCenterCube)
             {
@@ -279,28 +363,44 @@ namespace RubiksCube
             bool bColorCornerCube = true;
 
             if (aPieces[42] == aPieces[29] || aPieces[42] == aPieces[0] || aPieces[0] == aPieces[29])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[36] == aPieces[27] || aPieces[36] == aPieces[20] || aPieces[27] == aPieces[20])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[38] == aPieces[11] || aPieces[38] == aPieces[18] || aPieces[11] == aPieces[18])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[44] == aPieces[2] || aPieces[44] == aPieces[9] || aPieces[2] == aPieces[9])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[45] == aPieces[35] || aPieces[45] == aPieces[6] || aPieces[6] == aPieces[35])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[51] == aPieces[33] || aPieces[51] == aPieces[26] || aPieces[26] == aPieces[33])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[53] == aPieces[17] || aPieces[53] == aPieces[24] || aPieces[24] == aPieces[17])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[47] == aPieces[15] || aPieces[47] == aPieces[8] || aPieces[8] == aPieces[15])
+            {
                 bColorCornerCube = false;
+            }
 
             if (!bColorCornerCube)
             {
@@ -328,10 +428,14 @@ namespace RubiksCube
             bColorCornerCube = true;
 
             if (aPieces[37] == aPieces[19] || aPieces[39] == aPieces[28] || aPieces[41] == aPieces[10] || aPieces[43] == aPieces[1])
+            {
                 bColorCornerCube = false;
+            }
 
             if (aPieces[46] == aPieces[7] || aPieces[48] == aPieces[34] || aPieces[50] == aPieces[16] || aPieces[52] == aPieces[25])
+            {
                 bColorCornerCube = false;
+            }
 
             if (!bColorCornerCube)
             {
@@ -707,63 +811,129 @@ namespace RubiksCube
         {
             // Up face
             if (aPieces[0] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[2] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[6] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[8] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Right face
             if (aPieces[9] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[11] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[15] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[17] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Back face
             if (aPieces[18] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[20] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[24] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[26] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Left face
             if (aPieces[27] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[29] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[33] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[35] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Up face
             if (aPieces[36] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[38] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[42] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[44] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Down face
             if (aPieces[45] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[47] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[51] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[53] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
         }
 
         /// <summary>
@@ -775,63 +945,129 @@ namespace RubiksCube
         {
             // Up face
             if (aPieces[1] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[3] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[5] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[7] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Right face
             if (aPieces[10] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[12] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[14] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[16] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Back face
             if (aPieces[19] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[21] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[23] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[25] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Left face
             if (aPieces[28] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[30] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[32] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[34] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Up face
             if (aPieces[37] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[39] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[41] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[43] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
 
             // Down face
             if (aPieces[46] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[48] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[50] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
+
             if (aPieces[52] == aFaceColors[nColor])
+            {
                 aNumberOfColors[nColor]++;
+            }
         }
 
         /// <summary>
@@ -848,25 +1084,39 @@ namespace RubiksCube
             bool bColorsDown = false;
 
             if (aPieces[36] == aPieces[37] && aPieces[36] == aPieces[38] && aPieces[36] == aPieces[39] && aPieces[36] == aPieces[40] && aPieces[36] == aPieces[41] && aPieces[36] == aPieces[42] && aPieces[36] == aPieces[43] && aPieces[36] == aPieces[44])
+            {
                 bColorsUp = true;
+            }
 
             if (aPieces[0] == aPieces[1] && aPieces[0] == aPieces[2] && aPieces[0] == aPieces[3] && aPieces[0] == aPieces[4] && aPieces[0] == aPieces[5] && aPieces[0] == aPieces[6] && aPieces[0] == aPieces[7] && aPieces[0] == aPieces[8])
+            {
                 bColorsFront = true;
+            }
 
             if (aPieces[9] == aPieces[10] && aPieces[9] == aPieces[11] && aPieces[9] == aPieces[12] && aPieces[9] == aPieces[13] && aPieces[9] == aPieces[14] && aPieces[9] == aPieces[15] && aPieces[9] == aPieces[16] && aPieces[9] == aPieces[17])
+            {
                 bColorsRight = true;
+            }
 
             if (aPieces[27] == aPieces[28] && aPieces[27] == aPieces[29] && aPieces[27] == aPieces[30] && aPieces[27] == aPieces[31] && aPieces[27] == aPieces[32] && aPieces[27] == aPieces[33] && aPieces[27] == aPieces[34] && aPieces[27] == aPieces[35])
+            {
                 bColorsLeft = true;
+            }
 
             if (aPieces[18] == aPieces[19] && aPieces[18] == aPieces[20] && aPieces[18] == aPieces[21] && aPieces[18] == aPieces[22] && aPieces[18] == aPieces[23] && aPieces[18] == aPieces[24] && aPieces[18] == aPieces[25] && aPieces[18] == aPieces[26])
+            {
                 bColorsBack = true;
+            }
 
             if (aPieces[45] == aPieces[46] && aPieces[45] == aPieces[47] && aPieces[45] == aPieces[48] && aPieces[45] == aPieces[49] && aPieces[45] == aPieces[50] && aPieces[45] == aPieces[51] && aPieces[45] == aPieces[52] && aPieces[45] == aPieces[53])
+            {
                 bColorsDown = true;
+            }
 
             if (!bColorsUp || !bColorsFront || !bColorsRight || !bColorsLeft || !bColorsBack || !bColorsDown)
+            {
                 return false;
+            }
 
             return true;
         }

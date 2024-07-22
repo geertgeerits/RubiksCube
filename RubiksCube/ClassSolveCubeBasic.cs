@@ -1,4 +1,4 @@
-﻿/* This solution is based on the program 'SolCube' I wrote in 1981 in Microsoft Basic-80 for a Commodore PET 2001.
+﻿/* This solution is based on the program 'SolCube' I wrote in 1981 in Microsoft Basic-80 for the Commodore PET 2001.
    The solution for solving the cube is based on a book by Don Taylor, Mastering Rubik's Cube, Dutch version 1981.
    It is not the most efficient solution, but it works most of the time.
    Basic-80 was a language with line numbers.
