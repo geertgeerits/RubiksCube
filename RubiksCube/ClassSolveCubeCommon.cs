@@ -204,6 +204,33 @@ namespace RubiksCube
                     }
                 }
 
+                // The upper edge and the side center are in the correct position
+                while (true)
+                {
+                    if (cB == aPieces[43] && aPieces[1] == aPieces[4])
+                    {
+                        await MakeTurnAsync("F2");
+                    }
+
+                    if (cB == aPieces[41] && aPieces[10] == aPieces[13])
+                    {
+                        await MakeTurnAsync("R2");
+                    }
+
+                    if (cB == aPieces[37] && aPieces[19] == aPieces[22])
+                    {
+                        await MakeTurnAsync("B2");
+                    }
+
+                    if (cB == aPieces[39] && aPieces[28] == aPieces[31])
+                    {
+                        await MakeTurnAsync("L2");
+                    }
+
+                    break;
+                }
+
+                // The upper edge and the side center are not in the correct position
                 while (true)
                 {
                     if (cB == aPieces[43] && aPieces[1] == aPieces[4])
