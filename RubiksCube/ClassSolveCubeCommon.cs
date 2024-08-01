@@ -198,10 +198,6 @@ namespace RubiksCube
                         Debug.WriteLine("Daisy: number of turns top layer edges 2: " + lCubeTurns.Count);
                         break;
                     }
-                    else
-                    {
-                        //await SwitchEdgeCubesTopLayerAsync();
-                    }
                 }
 
                 // The upper edge and the side center are in the correct position
