@@ -301,8 +301,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 190-191 and 231-246 (and change the line 271 to bTestSolveCube = true)
-                // and uncomment one of the lines 251-255/256 to test one of the solutions to solve the cube
+                // For testing comment out the lines 209-210 and 287-302 (and change the line 327 to bTestSolveCube = true)
+                // and uncomment one of the lines 307-311/312 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
