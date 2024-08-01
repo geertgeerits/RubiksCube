@@ -17,6 +17,7 @@ namespace RubiksCube
             //await TestSolveCubeTurnsBasic();
             //await TestSolveCubeTurnsDaisy();
             //await TestSolveCubeTurnsCross();
+            //await TestSolveCubeTurnsCommon();
             //await TestSolveCubeOnly2Faces();
 
             return true;
@@ -696,6 +697,61 @@ namespace RubiksCube
             await MakeTurnAsync("y U");
             await MakeTurnAsync("y2");
             await MakeTurnAsync("R U R' U R U2 R' U");
+
+            return true;
+        }
+
+        /// <summary>
+        /// Test the turns of the cube for the Common method
+        /// </summary>
+        /// <returns></returns>
+        private static async Task<bool> TestSolveCubeTurnsCommon()
+        {
+            await MakeTurnAsync("F'");
+            await MakeTurnAsync("U'");
+            await MakeTurnAsync("U");
+            await MakeTurnAsync("U2");
+            await MakeTurnAsync("L'");
+            await MakeTurnAsync("F'");
+            await MakeTurnAsync("U");
+            await MakeTurnAsync("U'");
+            await MakeTurnAsync("U2");
+            await MakeTurnAsync("R");
+            await MakeTurnAsync("U");
+            await MakeTurnAsync("U'");
+            await MakeTurnAsync("U2");
+            await MakeTurnAsync("R2");
+            await MakeTurnAsync("y");
+            await MakeTurnAsync("y2");
+            await MakeTurnAsync("y'");
+            await MakeTurnAsync("F2");
+            await MakeTurnAsync("R2");
+            await MakeTurnAsync("B2");
+            await MakeTurnAsync("L2");
+            await MakeTurnAsync("F2");
+            await MakeTurnAsync("U' R2");
+            await MakeTurnAsync("U L2");
+            await MakeTurnAsync("U2 B2");
+            await MakeTurnAsync("y");
+            await MakeTurnAsync("U");
+            await MakeTurnAsync("U2");
+            await MakeTurnAsync("U'");
+            await MakeTurnAsync("R2 L2 D R2 L2 U2 R2 L2 D R2 L2");
+            await MakeTurnAsync("R B U B' U' R2 F' U' F U R");
+            await MakeTurnAsync("F2 U L R' F2 L' R U F2");
+            await MakeTurnAsync("y");
+            await MakeTurnAsync("y'");
+            await MakeTurnAsync("y2");
+            await MakeTurnAsync("F2 U L R' F2 L' R U F2");
+            await MakeTurnAsync("F2 U' L R' F2 L' R U' F2");
+            await MakeTurnAsync("F U' B' U F' U' B U2");
+            await MakeTurnAsync("R' F R' B2 R F' R' B2 R2");
+            await MakeTurnAsync("F R U' R' U' R U R' F' R U R' U' R' F R F'");
+            await MakeTurnAsync("U F U R U' R' F'");
+            await MakeTurnAsync("L' U R U' L U R' U'");
+            await MakeTurnAsync("U R U' L' U R' U' L");
+            await MakeTurnAsync("l' U R' D2 R U' R' D2 R2");
+            await MakeTurnAsync("x' R U' R' D R U R' D' R U R' D R U' R' D'");
 
             return true;
         }
