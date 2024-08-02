@@ -540,4 +540,7 @@ A possível causa é a transferência incorreta de cores para este cubo.</value>
   <data name="ResultSolutions_Text" xml:space="preserve">
     <value>Soluções testadas:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Número médio de voltas para resolver o cubo:</value>
+  </data>
 </root>

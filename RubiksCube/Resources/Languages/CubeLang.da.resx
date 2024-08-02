@@ -126,6 +126,9 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Tilladte tegn:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Gennemsnitligt antal omgange for at løse terningen:</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Luk</value>
   </data>

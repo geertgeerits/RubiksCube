@@ -540,4 +540,7 @@ La possibile causa è un trasferimento errato dei colori su questo cubo.</value>
   <data name="ResultSolutions_Text" xml:space="preserve">
     <value>Soluzioni testate:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Numero medio di giri per risolvere il cubo:</value>
+  </data>
 </root>

@@ -126,6 +126,9 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Tillåtna tecken:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Genomsnittligt antal varv för att lösa kuben:</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Stänga</value>
   </data>

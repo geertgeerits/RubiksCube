@@ -126,6 +126,9 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Engedélyezett karakterek:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Átlagos fordulatok száma a kocka megoldásához:</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zárja be</value>
   </data>

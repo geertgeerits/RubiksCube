@@ -126,6 +126,9 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Sallitut merkit:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Keskimääräinen kierrosten lukumäärä kuution ratkaisemiseksi:</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Sulkea</value>
   </data>

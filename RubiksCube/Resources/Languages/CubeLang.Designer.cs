@@ -88,6 +88,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average number of turns to solve the cube:.
+        /// </summary>
+        internal static string AverageTurns_Text {
+            get {
+                return ResourceManager.GetString("AverageTurns_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         internal static string ButtonClose_Text {

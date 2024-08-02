@@ -126,6 +126,9 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Dozwolone znaki:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Średnia liczba tur potrzebnych do ułożenia kostki:</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zamknąć</value>
   </data>

@@ -126,6 +126,9 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Caractere permise:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Numărul mediu de ture pentru a rezolva cubul:</value>
+  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Închide</value>
   </data>

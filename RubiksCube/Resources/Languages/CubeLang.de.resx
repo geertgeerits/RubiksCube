@@ -540,4 +540,7 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="ResultSolutions_Text" xml:space="preserve">
     <value>Getestete Lösungen:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Durchschnittliche Anzahl der Runden zum Lösen des Würfels:</value>
+  </data>
 </root>

@@ -540,4 +540,7 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
   <data name="ResultSolutions_Text" xml:space="preserve">
     <value>Geteste oplossingen:</value>
   </data>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Gemiddeld aantal draaibewigingen om de kubus op te lossen:</value>
+  </data>
 </root>
