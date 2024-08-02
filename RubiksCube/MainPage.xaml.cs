@@ -97,6 +97,11 @@ namespace RubiksCube
             //// Set the button to visible in debug mode for testing purposes
             btnSolveWithFaceTurns.IsVisible = true;
 #endif
+
+#if IOS
+            // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' for iOS
+            lblExplainTurnCube.Margin = new Thickness(5, 0, 5, 0);
+#endif
         }
 
         //// TitleView buttons clicked events
