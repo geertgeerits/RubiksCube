@@ -8,10 +8,10 @@ namespace RubiksCube
     internal static class Globals
     {
         //// Global variables
-        public static string cTheme = "";
-        public static string cLanguage = "";
+        public static string cTheme = string.Empty;
+        public static string cLanguage = string.Empty;
         public static bool bLanguageChanged;
-        public static string cLanguageSpeech = "";
+        public static string cLanguageSpeech = string.Empty;
         public static string[]? cLanguageLocales;
         public static bool bLanguageLocalesExist;
         public static bool bExplainText;
