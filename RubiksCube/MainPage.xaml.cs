@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.26
- * Date ........: 2024-08-02 (YYYY-MM-DD)
+ * Date ........: 2024-08-03 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -90,16 +90,9 @@ namespace RubiksCube
             //// Reset the colors of the cube
             ClassColorsCube.ResetCube();
             GetCubeColorsFromArrays();
-
-            //// Set bSolveWithFaceTurns to true to solve the cube with face turns
-            Globals.bSolveWithFaceTurns = true;
-#if DEBUG
-            //// Set the button to visible in debug mode for testing purposes
-            btnSolveWithFaceTurns.IsVisible = true;
-#endif
-
 #if IOS
             // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' for iOS
+            // Padding does not work in iOS
             lblExplainTurnCube.Margin = new Thickness(5, 0, 5, 0);
 #endif
         }
@@ -113,27 +106,6 @@ namespace RubiksCube
         private async void OnPageAboutClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PageAbout());
-        }
-
-        /// <summary>
-        /// Use the toggle button 'btnSolveWithFaceTurns' to solve the cube with or without face turns in debug mode
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnSolveWithFaceTurnsClicked(object sender, EventArgs e)
-        {
-#if DEBUG
-            Globals.bSolveWithFaceTurns = !Globals.bSolveWithFaceTurns;
-
-            if (Globals.bSolveWithFaceTurns)
-            {
-                btnSolveWithFaceTurns.Text = "+";
-            }
-            else
-            {
-                btnSolveWithFaceTurns.Text = "-";
-            }
-#endif
         }
 
         /// <summary>

@@ -19,7 +19,6 @@ namespace RubiksCube
         public static bool bTextToSpeechIsBusy;
         public static CancellationTokenSource? cts;
         public static bool bLicense;
-        public static bool bSolveWithFaceTurns;
         public static int nTestedSolutions;
 
         public static string[] aFaceColors = new string[7];
