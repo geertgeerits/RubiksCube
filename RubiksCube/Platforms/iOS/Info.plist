@@ -37,8 +37,8 @@
 	<key>CFBundleDisplayName</key>
 	<string>Rubik's Cube</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.26</string>
+	<string>2.0.27</string>
 	<key>CFBundleVersion</key>
-	<string>26</string>
+	<string>27</string>
 </dict>
 </plist>
