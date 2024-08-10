@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.27
- * Date ........: 2024-08-05 (YYYY-MM-DD)
+ * Date ........: 2024-08-10 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -90,6 +90,11 @@ namespace RubiksCube
             //// Reset the colors of the cube
             ClassColorsCube.ResetCube();
             GetCubeColorsFromArrays();
+
+#if DEBUG
+            imgbtnCubeScrambleGenerator.IsVisible = true;
+#endif
+
 #if IOS
             // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' for iOS
             // Padding does not work in iOS
@@ -1677,6 +1682,49 @@ namespace RubiksCube
             {
                 SetArrowTooltips(true);
             }
+        }
+
+        /// <summary>
+        /// On clicked event: Scramble the cube
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnCubeScrambleGeneratorClicked(object sender, EventArgs e)
+        {
+            // Instantiate random number generator using system-supplied value as seed
+            Random rand = new();
+
+            // Generate a random integer from 20 to 50
+            int nNumberOfTurns = rand.Next(20, 51);
+            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns}");
+
+            // Generate random indexes for cube turns
+            Random rnd = new();
+
+            string[] cCubeTurns = [
+                Globals.turnFrontCW, Globals.turnFrontCCW, Globals.turnFront2,
+                Globals.turnRightCW, Globals.turnRightCCW, Globals.turnRight2,
+                Globals.turnBackCW, Globals.turnBackCCW, Globals.turnBack2,
+                Globals.turnLeftCW, Globals.turnLeftCCW, Globals.turnLeft2,
+                Globals.turnUpCW, Globals.turnUpCCW, Globals.turnUp2,
+                Globals.turnDownCW, Globals.turnDownCCW, Globals.turnDown2
+                ];
+
+            bTestSolveCube = true;
+
+            for (int ctr = 0; ctr <= nNumberOfTurns; ctr++)
+            {
+                // Generate random indexes for cube turns
+                int mIndex = rnd.Next(cCubeTurns.Length);
+
+                await MakeExplainTurnAsync(cCubeTurns[mIndex]);
+
+                // Display the cube turns in the output window
+                Debug.WriteLine($"nIndex: {cCubeTurns[mIndex]}");
+            }
+            
+            bTestSolveCube = false;
+
         }
     }
 }

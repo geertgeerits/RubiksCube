@@ -34,6 +34,20 @@
             </Label>
 
             <ImageButton
+                x:Name="imgbtnCubeScrambleGenerator"
+                Grid.Row="0"
+                Grid.Column="2"
+                Source="cube_mixedcolors_48p.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="32"
+                WidthRequest="32"
+                ToolTipProperties.Text="{local:Translate Settings_Text}"
+                IsVisible="False"
+                Clicked="OnCubeScrambleGeneratorClicked">
+            </ImageButton>
+            
+            <ImageButton
                 x:Name="imgbtnSettings"
                 Grid.Row="0"
                 Grid.Column="3"
