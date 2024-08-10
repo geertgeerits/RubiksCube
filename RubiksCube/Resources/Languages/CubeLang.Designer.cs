@@ -791,6 +791,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scramble the cube.
+        /// </summary>
+        internal static string ToolTipScrambleCube_Text {
+            get {
+                return ResourceManager.GetString("ToolTipScrambleCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toggle button: Set the colors on the cube.
         /// </summary>
         internal static string ToolTipSetColorsCube_Text {

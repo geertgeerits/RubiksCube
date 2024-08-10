@@ -543,4 +543,7 @@ A possível causa é a transferência incorreta de cores para este cubo.</value>
   <data name="AverageTurns_Text" xml:space="preserve">
     <value>Número médio de voltas para resolver o cubo:</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Embaralhe o cubo</value>
+  </data>
 </root>

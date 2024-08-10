@@ -543,4 +543,7 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="AverageTurns_Text" xml:space="preserve">
     <value>Durchschnittliche Anzahl der Runden zum Lösen des Würfels:</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Verwirre den Würfel</value>
+  </data>
 </root>

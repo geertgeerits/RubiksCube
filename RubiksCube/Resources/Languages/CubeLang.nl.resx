@@ -543,4 +543,7 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
   <data name="AverageTurns_Text" xml:space="preserve">
     <value>Gemiddeld aantal draaibewigingen om de kubus op te lossen:</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Gooi de kubus door elkaar</value>
+  </data>
 </root>

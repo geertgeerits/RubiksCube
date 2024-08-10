@@ -22,6 +22,15 @@ namespace RubiksCube
         private bool bSolved;
         private bool bTestSolveCube;
 
+        // Array with cube turns for the cube scramble generator
+        private string[] ScrambledCubeTurns = [
+            Globals.turnFrontCW, Globals.turnFrontCCW, Globals.turnFront2,
+            Globals.turnRightCW, Globals.turnRightCCW, Globals.turnRight2,
+            Globals.turnBackCW, Globals.turnBackCCW, Globals.turnBack2,
+            Globals.turnLeftCW, Globals.turnLeftCCW, Globals.turnLeft2,
+            Globals.turnUpCW, Globals.turnUpCCW, Globals.turnUp2,
+            Globals.turnDownCW, Globals.turnDownCCW, Globals.turnDown2 ];
+
         //// Initialize the _buttonPressed field with a new instance of TaskCompletionSource<bool>,
         //   which can be used to create and control the lifecycle of a task that will eventually complete with a boolean result.
         private TaskCompletionSource<bool> _buttonPressed = new();
@@ -283,8 +292,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 209-210 and 287-302 (and change the line 327 to bTestSolveCube = true)
-                // and uncomment one of the lines 307-311/312 to test one of the solutions to solve the cube
+                // For testing comment out the lines 235-236 and 278-293 (and change the line 318 to bTestSolveCube = true)
+                // and uncomment one of the lines 298-302/303 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -1692,39 +1701,30 @@ namespace RubiksCube
         private async void OnCubeScrambleGeneratorClicked(object sender, EventArgs e)
         {
             // Instantiate random number generator using system-supplied value as seed
-            Random rand = new();
+            Random randNumber = new();
 
-            // Generate a random integer from 20 to 50
-            int nNumberOfTurns = rand.Next(20, 51);
-            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns}");
+            // Generate a random integer from 20 to 40
+            int nNumberOfTurns = randNumber.Next(20, 40);
+            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns + 1}");
 
-            // Generate random indexes for cube turns
-            Random rnd = new();
-
-            string[] cCubeTurns = [
-                Globals.turnFrontCW, Globals.turnFrontCCW, Globals.turnFront2,
-                Globals.turnRightCW, Globals.turnRightCCW, Globals.turnRight2,
-                Globals.turnBackCW, Globals.turnBackCCW, Globals.turnBack2,
-                Globals.turnLeftCW, Globals.turnLeftCCW, Globals.turnLeft2,
-                Globals.turnUpCW, Globals.turnUpCCW, Globals.turnUp2,
-                Globals.turnDownCW, Globals.turnDownCCW, Globals.turnDown2
-                ];
-
+            // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
             bTestSolveCube = true;
 
+            // Loop through the random number of turns
             for (int ctr = 0; ctr <= nNumberOfTurns; ctr++)
             {
                 // Generate random indexes for cube turns
-                int mIndex = rnd.Next(cCubeTurns.Length);
+                int nIndex = randNumber.Next(ScrambledCubeTurns.Length);
 
-                await MakeExplainTurnAsync(cCubeTurns[mIndex]);
+                // Make the cube turn
+                await MakeExplainTurnAsync(ScrambledCubeTurns[nIndex]);
 
                 // Display the cube turns in the output window
-                Debug.WriteLine($"nIndex: {cCubeTurns[mIndex]}");
+                Debug.WriteLine($"nIndex: {ScrambledCubeTurns[nIndex]}");
             }
             
+            // Reset the test variable
             bTestSolveCube = false;
-
         }
     }
 }

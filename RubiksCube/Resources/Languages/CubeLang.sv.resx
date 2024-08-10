@@ -375,6 +375,9 @@ Inte tillåtet:</value>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Spara kuben</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Skruva ihop kuben</value>
+  </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Växlingsknapp: Ställ in färgerna på kuben</value>
   </data>

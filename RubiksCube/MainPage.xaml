@@ -37,12 +37,12 @@
                 x:Name="imgbtnCubeScrambleGenerator"
                 Grid.Row="0"
                 Grid.Column="2"
-                Source="cube_mixedcolors_48p.png"
+                Source="ic_action_playback_schuffle.png"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
-                ToolTipProperties.Text="{local:Translate Settings_Text}"
+                ToolTipProperties.Text="{local:Translate ToolTipScrambleCube_Text}"
                 IsVisible="False"
                 Clicked="OnCubeScrambleGeneratorClicked">
             </ImageButton>

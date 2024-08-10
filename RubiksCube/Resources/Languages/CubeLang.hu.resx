@@ -375,6 +375,9 @@ Nem megengedett:</value>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Mentse el a kockát</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Rántsd össze a kockát</value>
+  </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Váltógomb: Állítsa be a kocka színeit</value>
   </data>

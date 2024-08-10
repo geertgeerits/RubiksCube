@@ -375,6 +375,9 @@ Ei sallittu:</value>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Tallenna kuutio</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Sekoita kuutio</value>
+  </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Vaihtopainike: Aseta kuution värit</value>
   </data>

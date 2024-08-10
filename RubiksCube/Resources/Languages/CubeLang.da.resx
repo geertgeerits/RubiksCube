@@ -375,6 +375,9 @@ Ikke tilladt:</value>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Gem terningen</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Rør terningen sammen</value>
+  </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Til/fra-knap: Indstil farverne på terningen</value>
   </data>

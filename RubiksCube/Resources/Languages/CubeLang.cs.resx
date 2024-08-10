@@ -375,6 +375,9 @@ Nepovoleno:</value>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Uložte kostku</value>
   </data>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Rozdrťte kostku</value>
+  </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Přepínací tlačítko: Nastavte barvy na krychli</value>
   </data>
