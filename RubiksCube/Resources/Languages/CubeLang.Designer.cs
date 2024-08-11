@@ -336,11 +336,29 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset the cube..
+        /// </summary>
+        internal static string HelpResetCube_Text {
+            get {
+                return ResourceManager.GetString("HelpResetCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save the current cube..
         /// </summary>
         internal static string HelpSaveCube_Text {
             get {
                 return ResourceManager.GetString("HelpSaveCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scramble the cube..
+        /// </summary>
+        internal static string HelpScrambleCube_Text {
+            get {
+                return ResourceManager.GetString("HelpScrambleCube_Text", resourceCulture);
             }
         }
         
@@ -778,6 +796,15 @@ namespace RubiksCube.Resources.Languages {
         internal static string ToolTipOpenCube_Text {
             get {
                 return ResourceManager.GetString("ToolTipOpenCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset the cube.
+        /// </summary>
+        internal static string ToolTipResetCube_Text {
+            get {
+                return ResourceManager.GetString("ToolTipResetCube_Text", resourceCulture);
             }
         }
         

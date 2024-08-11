@@ -212,8 +212,14 @@ U ostatních stran si vždy musíte „představit“, že jste přímo před st
 2. Stejné jako u první možnosti, ale vyřešte kostku tlačítkem 'Solve'. Kostka se pak řeší v opačném pořadí.
 3. Použijte tlačítko ve spodní části s kostkou (viz vysvětlení tohoto tlačítka). Kostka je vyřešena aplikací. Poté přeneste navržené pohyby do skutečné krychle. To není zárukou, že všechny kostky lze vyřešit.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Resetujte kostku.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Uložte aktuální krychli.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Rozdrťte kostku.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Přeneste barvy z neuspořádané kostky na tuto kostku. Vyberte barvu z pruhu barev v horní části a poté klepnutím na kousky kostky je změňte. Dalším stisknutím tohoto tlačítka opustíte tuto sekci a stiskněte tlačítko 'Solve'.</value>
@@ -371,6 +377,9 @@ Nepovoleno:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Otevřete kostku</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Resetujte kostku</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Uložte kostku</value>

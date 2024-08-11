@@ -100,10 +100,6 @@ namespace RubiksCube
             ClassColorsCube.ResetCube();
             GetCubeColorsFromArrays();
 
-#if DEBUG
-            imgbtnCubeScrambleGenerator.IsVisible = true;
-#endif
-
 #if IOS
             // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' for iOS
             // Padding does not work in iOS
@@ -241,6 +237,7 @@ namespace RubiksCube
             imgbtnSetColorsCube.IsEnabled = false;
             imgbtnOpenCube.IsEnabled = false;
             imgbtnSaveCube.IsEnabled = false;
+            imgbtnScrambleCube.IsEnabled = false;
 
             bColorDrop = false;
             bSolvingCube = true;
@@ -385,6 +382,7 @@ namespace RubiksCube
             imgbtnSetColorsCube.IsEnabled = true;
             imgbtnOpenCube.IsEnabled = true;
             imgbtnSaveCube.IsEnabled = true;
+            imgbtnScrambleCube.IsEnabled = true;
         }
 
         /// <summary>
@@ -1449,7 +1447,7 @@ namespace RubiksCube
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnBtnResetClicked(object sender, EventArgs e)
+        private void OnButtonResetClicked(object sender, EventArgs e)
         {
             Globals.lCubeTurns.Clear();
 
@@ -1653,7 +1651,8 @@ namespace RubiksCube
                     imgbtnSetColorsCube.IsEnabled = false;
                     imgbtnOpenCube.IsEnabled = false;
                     imgbtnSaveCube.IsEnabled = false;
-                    btnReset.IsEnabled = false;
+                    imgbtnScrambleCube.IsEnabled = false;
+                    imgbtnResetCube.IsEnabled = false;
                     IsEnabledArrows(false);
 
                     await DisplayAlert(CubeLang.LicenseTitle_Text, CubeLang.CloseApplication_Text, CubeLang.ButtonClose_Text);
@@ -1698,7 +1697,7 @@ namespace RubiksCube
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void OnCubeScrambleGeneratorClicked(object sender, EventArgs e)
+        private async void OnButtonScrambleCubeClicked(object sender, EventArgs e)
         {
             // Instantiate random number generator using system-supplied value as seed
             Random randNumber = new();

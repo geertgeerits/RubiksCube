@@ -212,8 +212,14 @@ För de andra sidorna måste du alltid 'föreställa dig' att du är direkt fram
 2. Samma som det första alternativet, men lös kuben med 'Solve'-knappen. Kuben löses sedan i omvänd ordning.
 3. Använd knappen längst ner med kuben (se förklaringen till den knappen). Kuben löses av applikationen. Överför sedan de föreslagna rörelserna till den riktiga kuben. Detta är inte en garanti för att alla kuber kan lösas.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Återställ kuben.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Spara den aktuella kuben.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Skruva ihop kuben.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Överför färgerna från den blandade kuben till den här kuben. Välj en färg från färgfältet högst upp och tryck sedan på bitarna i kuben för att ändra dem. Tryck på den här knappen igen för att lämna det här avsnittet och tryck på 'Lös'-knappen.</value>
@@ -371,6 +377,9 @@ Inte tillåtet:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Öppna kuben</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Återställ kuben</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Spara kuben</value>

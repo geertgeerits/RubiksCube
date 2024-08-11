@@ -34,20 +34,6 @@
             </Label>
 
             <ImageButton
-                x:Name="imgbtnCubeScrambleGenerator"
-                Grid.Row="0"
-                Grid.Column="2"
-                Source="ic_action_playback_schuffle.png"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="32"
-                WidthRequest="32"
-                ToolTipProperties.Text="{local:Translate ToolTipScrambleCube_Text}"
-                IsVisible="False"
-                Clicked="OnCubeScrambleGeneratorClicked">
-            </ImageButton>
-            
-            <ImageButton
                 x:Name="imgbtnSettings"
                 Grid.Row="0"
                 Grid.Column="3"
@@ -1031,6 +1017,7 @@
         <HorizontalStackLayout
             Grid.Row="3"
             Grid.Column="1"
+            Grid.ColumnSpan="2"
             HorizontalOptions="Center"
             Spacing="10">
             
@@ -1057,17 +1044,23 @@
                 ToolTipProperties.Text="{local:Translate ToolTipSaveCube_Text}"
                 Clicked="OnButtonSaveCubeClicked">
             </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnScrambleCube"
+                Style="{StaticResource imageButtonMenu}"
+                Source="ic_action_playback_schuffle.png"
+                ToolTipProperties.Text="{local:Translate ToolTipScrambleCube_Text}"
+                Clicked="OnButtonScrambleCubeClicked">
+            </ImageButton>
+
+            <ImageButton
+                x:Name="imgbtnResetCube"
+                Style="{StaticResource imageButtonMenu}"
+                Source="ic_action_reload.png"
+                ToolTipProperties.Text="{local:Translate ToolTipResetCube_Text}"
+                Clicked="OnButtonResetClicked">
+            </ImageButton>
         </HorizontalStackLayout>
 
-        <Button
-            x:Name="btnReset"
-            Style="{StaticResource buttonStyleDefault}"
-            Grid.Row="3"
-            Grid.Column="2"
-            Text="{local:Translate ButtonReset_Text}"
-            ToolTipProperties.Text="{local:Translate ButtonReset_Text}"
-            Clicked="OnBtnResetClicked">
-        </Button>
-        
     </Grid>
 </ContentPage>

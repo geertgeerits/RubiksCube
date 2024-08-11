@@ -212,8 +212,14 @@ W przypadku pozostałych stron zawsze musisz „wyobrazić sobie”, że znajduj
 2. Podobnie jak w przypadku pierwszej opcji, ale ułóż kostkę za pomocą przycisku „Ułóż”. Następnie kostkę układa się w odwrotnej kolejności.
 3. Użyj przycisku na dole z kostką (patrz objaśnienie tego przycisku). Kostka jest rozwiązywana przez aplikację. Następnie przenieś proponowane ruchy na prawdziwą kostkę. Nie gwarantuje to, że uda się ułożyć wszystkie kostki.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Zresetuj kostkę.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Zapisz bieżącą kostkę.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Wymieszaj kostkę.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Przenieś kolory z pomieszanej kostki do tej kostki. Wybierz kolor z paska kolorów u góry, a następnie dotknij elementów sześcianu, aby je zmienić. Naciśnij ten przycisk ponownie, aby opuścić tę sekcję i naciśnij przycisk „Rozwiąż”.</value>
@@ -371,6 +377,9 @@ Niedozwolony:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Otwórz kostkę</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Zresetuj kostkę</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Zapisz kostkę</value>

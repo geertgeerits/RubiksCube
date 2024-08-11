@@ -546,4 +546,13 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
   <data name="ToolTipScrambleCube_Text" xml:space="preserve">
     <value>Gooi de kubus door elkaar</value>
   </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Reset de kubus</value>
+  </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Reset de kubus.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Gooi de kubus door elkaar.</value>
+  </data>
 </root>

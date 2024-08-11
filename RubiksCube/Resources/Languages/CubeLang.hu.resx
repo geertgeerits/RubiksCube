@@ -212,8 +212,14 @@ A másik oldalon mindig „el kell képzelnie”, hogy közvetlenül a megfordí
 2. Ugyanaz, mint az első opció, de oldja meg a kockát a „Megoldás” gombbal. Ezután a kockát fordított sorrendben oldjuk meg.
 3. Használja az alján lévő gombot a kockával (lásd a gomb magyarázatát). A kockát az alkalmazás oldja meg. Ezután vigye át a javasolt mozgásokat a valódi kockába. Ez nem garancia arra, hogy minden kocka megoldható.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Állítsa vissza a kockát.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Az aktuális kocka mentése.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Rántsd össze a kockát.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Vigye át a színeket az összekevert kockából ebbe a kockába. Válasszon egy színt a felső színsávból, majd érintse meg a kocka darabjait a módosításhoz. Nyomja meg újra ezt a gombot, hogy kilépjen ebből a szakaszból, és nyomja meg a „Megoldás” gombot.</value>
@@ -371,6 +377,9 @@ Nem megengedett:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Nyissa ki a kockát</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Állítsa vissza a kockát</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Mentse el a kockát</value>

@@ -546,4 +546,13 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
   <data name="ToolTipScrambleCube_Text" xml:space="preserve">
     <value>Brouiller le cube</value>
   </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Réinitialiser le cube</value>
+  </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Réinitialisez le cube.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Brouillez le cube.</value>
+  </data>
 </root>

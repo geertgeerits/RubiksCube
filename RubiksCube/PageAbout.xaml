@@ -97,7 +97,7 @@
                         </Label>
 
                         <Grid
-                            RowDefinitions="Auto, Auto, Auto"
+                            RowDefinitions="Auto, Auto, Auto, Auto, Auto"
                             ColumnDefinitions="50, 250*"
                             RowSpacing="5"
                             ColumnSpacing="10"
@@ -150,6 +150,38 @@
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 Text="{x:Static resx:CubeLang.HelpSaveCube_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Source="ic_action_playback_schuffle.png"
+                                SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipScrambleCube_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipScrambleCube_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Text="{x:Static resx:CubeLang.HelpScrambleCube_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Source="ic_action_reload.png"
+                                SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipResetCube_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipResetCube_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Text="{x:Static resx:CubeLang.HelpResetCube_Text}">
                             </Label>
                         </Grid>
                     

@@ -212,8 +212,14 @@ Pentru celelalte părți trebuie să vă „imaginați” întotdeauna că vă a
 2. La fel ca prima opțiune, dar rezolvați cubul cu butonul „Rezolvare”. Cubul este apoi rezolvat în ordine inversă.
 3. Folosiți butonul din partea de jos cu cubul (vezi explicația butonului respectiv). Cubul este rezolvat de aplicație. Apoi transferați mișcările propuse în cubul real. Aceasta nu este o garanție că toate cuburile pot fi rezolvate.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Resetați cubul.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Salvați cubul curent.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Amestecă cubul.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Transferați culorile din cubul amestecat în acest cub. Selectați o culoare din bara de culori din partea de sus și apoi atingeți bucățile cubului pentru a le schimba. Apăsați din nou acest buton pentru a părăsi această secțiune și apăsați butonul „Rezolvare”.</value>
@@ -371,6 +377,9 @@ Nepermis:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Deschide cubul</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Resetați cubul</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Salvați cubul</value>

@@ -212,8 +212,14 @@ For de andre sidene må du alltid 'forestille deg' at du er rett foran siden som
 2. Samme som det første alternativet, men løs kuben med 'Løs'-knappen. Terningen løses deretter i omvendt rekkefølge.
 3. Bruk knappen nederst med kuben (se forklaring av den knappen). Kuben løses av applikasjonen. Overfør deretter de foreslåtte bevegelsene til den virkelige kuben. Dette er ikke en garanti for at alle kuber kan løses.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Tilbakestill kuben.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Lagre den gjeldende kuben.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Bland kuben.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Overfør fargene fra den roterte kuben til denne kuben. Velg en farge fra fargelinjen øverst og trykk deretter på bitene av kuben for å endre dem. Trykk på denne knappen igjen for å forlate denne delen og trykk på 'Løs'-knappen.</value>
@@ -371,6 +377,9 @@ Ikke tillatt:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Åpne kuben</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Tilbakestill kuben</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Lagre kuben</value>

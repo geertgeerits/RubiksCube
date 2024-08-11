@@ -212,8 +212,14 @@ Til de andre sider skal du altid 'forstille dig', at du er direkte foran den sid
 2. Samme som den første mulighed, men løs terningen med 'Løs'-knappen. Terningen løses derefter i omvendt rækkefølge.
 3. Brug knappen nederst med terningen (se forklaring på den knap). Terningen løses af applikationen. Overfør derefter de foreslåede bevægelser til den rigtige terning. Dette er ikke en garanti for, at alle terninger kan løses.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Nulstil kuben.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Gem den aktuelle terning.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Rør terningen sammen.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Overfør farverne fra den rodede terning til denne terning. Vælg en farve fra farvelinjen øverst, og tryk derefter på stykkerne af terningen for at ændre dem. Tryk på denne knap igen for at forlade denne sektion og tryk på 'Løs'-knappen.</value>
@@ -371,6 +377,9 @@ Ikke tilladt:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Åbn terningen</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Nulstil kuben</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Gem terningen</value>

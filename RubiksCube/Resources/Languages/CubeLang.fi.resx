@@ -212,8 +212,14 @@ Muilla puolilla sinun täytyy aina "kuvitella", että olet suoraan käännettäv
 2. Sama kuin ensimmäinen vaihtoehto, mutta ratkaise kuutio 'Solve'-painikkeella. Kuutio ratkaistaan sitten käänteisessä järjestyksessä.
 3. Käytä alaosassa olevaa painiketta kuution kanssa (katso painikkeen selitys). Kuutio on ratkaistu sovelluksella. Siirrä sitten ehdotetut liikkeet todelliseen kuutioon. Tämä ei takaa, että kaikki kuutiot voidaan ratkaista.</value>
   </data>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Nollaa kuutio.</value>
+  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Tallenna nykyinen kuutio.</value>
+  </data>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Sekoita kuutio.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Siirrä värit sekavasta kuutiosta tähän kuutioon. Valitse väri yläreunan väripalkista ja napauta sitten kuution osia muuttaaksesi niitä. Paina tätä painiketta uudelleen poistuaksesi tästä osiosta ja paina 'Ratkaise'-painiketta.</value>
@@ -371,6 +377,9 @@ Ei sallittu:</value>
   </data>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Avaa kuutio</value>
+  </data>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Nollaa kuutio</value>
   </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Tallenna kuutio</value>
