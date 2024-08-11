@@ -390,6 +390,9 @@ Niedozwolony:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Przycisk przełączania: Ustaw kolory kostki</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Rozwiąż kostkę</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Obróć tylną i środkową warstwę razem o pół obrotu.</value>
   </data>

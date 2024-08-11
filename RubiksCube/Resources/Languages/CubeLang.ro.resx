@@ -390,6 +390,9 @@ Nepermis:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Butonul de comutare: setați culorile pe cub</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Rezolvați cubul</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Întoarceți stratul din spate și din mijloc împreună o jumătate de tură.</value>
   </data>

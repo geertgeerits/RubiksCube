@@ -69,6 +69,8 @@
 	  <None Remove="Resources\Images\arrow_right.png" />
 	  <None Remove="Resources\Images\circled_envelope_24p.png" />
 	  <None Remove="Resources\Images\cube_mixedcolors_48p.png" />
+	  <None Remove="Resources\Images\ic_action_arrow_bottom.png" />
+	  <None Remove="Resources\Images\ic_action_arrow_top.png" />
 	  <None Remove="Resources\Images\ic_action_playback_schuffle.png" />
 	  <None Remove="Resources\Images\ic_action_reload.png" />
 	  <None Remove="Resources\Images\info_32p.png" />

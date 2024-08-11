@@ -390,6 +390,9 @@ Ei sallittu:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Vaihtopainike: Aseta kuution värit</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Ratkaise kuutio</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Käännä taka- ja keskikerros yhteen puoli kierrosta.</value>
   </data>

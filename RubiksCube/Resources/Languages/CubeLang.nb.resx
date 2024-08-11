@@ -390,6 +390,9 @@ Ikke tillatt:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Veksleknapp: Still inn fargene på kuben</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Løs kuben</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Snu bak- og mellomlaget sammen en halv omgang.</value>
   </data>

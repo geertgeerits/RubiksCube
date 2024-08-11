@@ -555,4 +555,7 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="HelpScrambleCube_Text" xml:space="preserve">
     <value>Bringe den Würfel durcheinander.</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Löse den Würfel</value>
+  </data>
 </root>

@@ -390,6 +390,9 @@ Nem megengedett:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Váltógomb: Állítsa be a kocka színeit</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Oldja meg a kockát</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Fordítsa össze a hátsó és a középső réteget fél fordulattal.</value>
   </data>

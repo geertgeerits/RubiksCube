@@ -390,6 +390,9 @@ Nepovoleno:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Přepínací tlačítko: Nastavte barvy na krychli</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Vyřešte kostku</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Otočte zadní a střední vrstvu dohromady o půl otáčky.</value>
   </data>

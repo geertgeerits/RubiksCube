@@ -123,7 +123,7 @@
                                 Style="{StaticResource imageButtonMenu}"
                                 Grid.Row="1"
                                 Grid.Column="0"
-                                Source="arrow_up_32p.png"
+                                Source="ic_action_arrow_top.png"
                                 SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipOpenCube_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipOpenCube_Text}">
                                 
@@ -140,7 +140,7 @@
                                 Style="{StaticResource imageButtonMenu}"
                                 Grid.Row="2"
                                 Grid.Column="0"
-                                Source="arrow_down_32p.png"
+                                Source="ic_action_arrow_bottom.png"
                                 SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipSaveCube_Text}"
                                 ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipSaveCube_Text}">
                             </ImageButton>

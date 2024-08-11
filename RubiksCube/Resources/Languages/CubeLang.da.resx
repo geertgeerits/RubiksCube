@@ -390,6 +390,9 @@ Ikke tilladt:</value>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Til/fra-knap: Indstil farverne på terningen</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Løs terningen</value>
+  </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Vend bag- og mellemlaget sammen en halv omgang.</value>
   </data>

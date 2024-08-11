@@ -836,6 +836,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solve the cube.
+        /// </summary>
+        internal static string ToolTipSolveCube_Text {
+            get {
+                return ResourceManager.GetString("ToolTipSolveCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turn the back and middle layer together half a turn..
         /// </summary>
         internal static string Turn2LayersBack2_Text {

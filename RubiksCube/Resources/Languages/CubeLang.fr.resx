@@ -555,4 +555,7 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
   <data name="HelpScrambleCube_Text" xml:space="preserve">
     <value>Brouillez le cube.</value>
   </data>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Résoudre le cube</value>
+  </data>
 </root>
