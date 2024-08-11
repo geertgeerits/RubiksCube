@@ -289,8 +289,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 235-236 and 278-293 (and change the line 318 to bTestSolveCube = true)
-                // and uncomment one of the lines 298-302/303 to test one of the solutions to solve the cube
+                // For testing comment out the lines 231-232 and 275-290 (and change the line 315 to bTestSolveCube = true)
+                // and uncomment one of the lines 295-299/300 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -1419,6 +1419,19 @@ namespace RubiksCube
         }
 
         /// <summary>
+        /// On clicked event: Open, restore the cube
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonOpenCubeClicked(object sender, EventArgs e)
+        {
+            _ = ClassSaveRestoreCube.CubeDataOpen();
+
+            GetCubeColorsFromArrays();
+            Globals.lCubeTurns.Clear();
+        }
+
+        /// <summary>
         /// On clicked event: Save the cube
         /// </summary>
         /// <param name="sender"></param>
@@ -1430,16 +1443,41 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// On clicked event: Open, restore the cube
+        /// On clicked event: Scramble the cube
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnButtonOpenCubeClicked(object sender, EventArgs e)
+        private async void OnButtonScrambleCubeClicked(object sender, EventArgs e)
         {
-            _ = ClassSaveRestoreCube.CubeDataOpen();
+            // Instantiate random number generator using system-supplied value as seed
+            Random randNumber = new();
 
-            GetCubeColorsFromArrays();
-            Globals.lCubeTurns.Clear();
+            // Generate a random integer from 20 to 40
+            int nNumberOfTurns = randNumber.Next(20, 41);
+            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns}");
+
+            // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
+            bTestSolveCube = true;
+
+            string cTurns = string.Empty;
+
+            // Loop through the random number of turns
+            for (int ctr = 0; ctr <= nNumberOfTurns - 1; ctr++)
+            {
+                // Generate random indexes for cube turns
+                int nIndex = randNumber.Next(ScrambledCubeTurns.Length);
+
+                // Make the cube turn
+                await MakeExplainTurnAsync(ScrambledCubeTurns[nIndex]);
+
+                cTurns = $"{cTurns}{ScrambledCubeTurns[nIndex]} ";
+            }
+
+            // Display the cube turns in the output window
+            Debug.WriteLine($"ScrambledCubeTurns: {cTurns}");
+
+            // Reset the test variable
+            bTestSolveCube = false;
         }
 
         /// <summary>
@@ -1690,44 +1728,6 @@ namespace RubiksCube
             {
                 SetArrowTooltips(true);
             }
-        }
-
-        /// <summary>
-        /// On clicked event: Scramble the cube
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void OnButtonScrambleCubeClicked(object sender, EventArgs e)
-        {
-            // Instantiate random number generator using system-supplied value as seed
-            Random randNumber = new();
-
-            // Generate a random integer from 20 to 40
-            int nNumberOfTurns = randNumber.Next(20, 41);
-            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns}");
-
-            // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
-            bTestSolveCube = true;
-
-            string cTurns = string.Empty;
-
-            // Loop through the random number of turns
-            for (int ctr = 0; ctr <= nNumberOfTurns - 1; ctr++)
-            {
-                // Generate random indexes for cube turns
-                int nIndex = randNumber.Next(ScrambledCubeTurns.Length);
-
-                // Make the cube turn
-                await MakeExplainTurnAsync(ScrambledCubeTurns[nIndex]);
-
-                cTurns = $"{cTurns}{ScrambledCubeTurns[nIndex]} ";
-            }
-
-            // Display the cube turns in the output window
-            Debug.WriteLine($"ScrambledCubeTurns: {cTurns}");
-
-            // Reset the test variable
-            bTestSolveCube = false;
         }
     }
 }
