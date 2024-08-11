@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.27
- * Date ........: 2024-08-10 (YYYY-MM-DD)
+ * Date ........: 2024-08-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -22,8 +22,8 @@ namespace RubiksCube
         private bool bSolved;
         private bool bTestSolveCube;
 
-        // Array with cube turns for the cube scramble generator
-        private string[] ScrambledCubeTurns = [
+        //// Array with cube turns for the cube scramble generator
+        private readonly string[] ScrambledCubeTurns = [
             Globals.turnFrontCW, Globals.turnFrontCCW, Globals.turnFront2,
             Globals.turnRightCW, Globals.turnRightCCW, Globals.turnRight2,
             Globals.turnBackCW, Globals.turnBackCCW, Globals.turnBack2,
@@ -133,7 +133,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Select a color by tapping on a cube and put it in a tempory polygon
+        /// Select a color by tapping on a cube and put it in a temporary polygon
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -144,7 +144,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Set the color by tapping on a cube and fill the cube with the color from the tempory polygon
+        /// Set the color by tapping on a cube and fill the cube with the color from the temporary polygon
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -1704,14 +1704,16 @@ namespace RubiksCube
             Random randNumber = new();
 
             // Generate a random integer from 20 to 40
-            int nNumberOfTurns = randNumber.Next(20, 40);
-            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns + 1}");
+            int nNumberOfTurns = randNumber.Next(20, 41);
+            Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns}");
 
             // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
             bTestSolveCube = true;
 
+            string cTurns = string.Empty;
+
             // Loop through the random number of turns
-            for (int ctr = 0; ctr <= nNumberOfTurns; ctr++)
+            for (int ctr = 0; ctr <= nNumberOfTurns - 1; ctr++)
             {
                 // Generate random indexes for cube turns
                 int nIndex = randNumber.Next(ScrambledCubeTurns.Length);
@@ -1719,10 +1721,12 @@ namespace RubiksCube
                 // Make the cube turn
                 await MakeExplainTurnAsync(ScrambledCubeTurns[nIndex]);
 
-                // Display the cube turns in the output window
-                Debug.WriteLine($"nIndex: {ScrambledCubeTurns[nIndex]}");
+                cTurns = $"{cTurns}{ScrambledCubeTurns[nIndex]} ";
             }
-            
+
+            // Display the cube turns in the output window
+            Debug.WriteLine($"ScrambledCubeTurns: {cTurns}");
+
             // Reset the test variable
             bTestSolveCube = false;
         }
