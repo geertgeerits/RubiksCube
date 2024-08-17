@@ -38,6 +38,75 @@ namespace RubiksCube
                     break;
                 }
 
+                //------------------------------------------------------------------------------------------------------------
+
+                //// Edge is at the bottom
+                //if (cB == aPieces[46] && cB != aPieces[43])
+                //{
+                //    await MakeTurnAsync("F2");
+                //}
+
+                //if (cB == aPieces[50] && cB != aPieces[41])
+                //{
+                //    await MakeTurnAsync("R2");
+                //}
+
+                //if (cB == aPieces[52] && cB != aPieces[37])
+                //{
+                //    await MakeTurnAsync("B2");
+                //}
+
+                //if (cB == aPieces[48] && cB != aPieces[39])
+                //{
+                //    await MakeTurnAsync("L2");
+                //}
+
+                //// Edge is at the front
+                //if (cB == aPieces[5] && cB != aPieces[41])
+                //{
+                //    await MakeTurnAsync("R");
+                //}
+
+                //if (cB == aPieces[3] && cB != aPieces[39])
+                //{
+                //    await MakeTurnAsync("L'");
+                //}
+
+                //// Edge is at the right
+                //if (cB == aPieces[12] && cB != aPieces[43])
+                //{
+                //    await MakeTurnAsync("F'");
+                //}
+
+                //if (cB == aPieces[14] && cB != aPieces[37])
+                //{
+                //    await MakeTurnAsync("B");
+                //}
+
+                //// Edge is at the back
+                //if (cB == aPieces[21] && cB != aPieces[41])
+                //{
+                //    await MakeTurnAsync("R'");
+                //}
+
+                //if (cB == aPieces[23] && cB != aPieces[39])
+                //{
+                //    await MakeTurnAsync("L");
+                //}
+
+                //// Edge is at the left
+                //if (cB == aPieces[30] && cB != aPieces[37])
+                //{
+                //    await MakeTurnAsync("B'");
+                //}
+
+                //if (cB == aPieces[32] && cB != aPieces[43])
+                //{
+                //    await MakeTurnAsync("F");
+                //}
+
+                //------------------------------------------------------------------------------------------------------------
+
                 // Move 1 -> 3
                 if (aPieces[49] == aPieces[1])
                 {
