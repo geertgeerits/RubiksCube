@@ -38,7 +38,9 @@ namespace RubiksCube
                     break;
                 }
 
-                //------------------------------------------------------------------------------------------------------------
+                //---------------------------------------------------------------------------------------
+                // With this direct method there is a profit of the average number of turns of 0.30%
+                // There are slightly more situations of profit than of loss in the number of turns
 
                 //// Edge is at the bottom
                 //if (cB == aPieces[46] && cB != aPieces[43])
@@ -105,7 +107,7 @@ namespace RubiksCube
                 //    await MakeTurnAsync("F");
                 //}
 
-                //------------------------------------------------------------------------------------------------------------
+                //---------------------------------------------------------------------------------------
 
                 // Move 1 -> 3
                 if (aPieces[49] == aPieces[1])
@@ -139,7 +141,6 @@ namespace RubiksCube
 
                             break;
                         }
-
                     }
 
                     await MakeTurnAsync("L'");
@@ -233,9 +234,6 @@ namespace RubiksCube
                     await MakeTurnAsync("y'");
                     continue;
                 }
-
-                //await MakeTurnAsync("y");
-                continue;
             }
 
             return true;
