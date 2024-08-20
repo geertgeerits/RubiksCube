@@ -42,70 +42,137 @@ namespace RubiksCube
                 // With this direct method there is a profit of the average number of turns of 0.30%
                 // There are slightly more situations of profit than of loss in the number of turns
 
-                //// Edge is at the bottom
-                //if (cB == aPieces[46] && cB != aPieces[43])
-                //{
-                //    await MakeTurnAsync("F2");
-                //}
+                if (bSolveTest)
+                {
+                    // Edge is at the bottom
+                    if (cB == aPieces[46])
+                    {
+                        if (cB != aPieces[43])
+                        {
+                        }
+                        else if (cB != aPieces[41])
+                        {
+                            await MakeTurnAsync("U");
+                        }
+                        else if (cB != aPieces[39])
+                        {
+                            await MakeTurnAsync("U'");
+                        }
+                        else if (cB != aPieces[37])
+                        {
+                            await MakeTurnAsync("U2");
+                        }
 
-                //if (cB == aPieces[50] && cB != aPieces[41])
-                //{
-                //    await MakeTurnAsync("R2");
-                //}
+                        await MakeTurnAsync("F2");
+                    }
 
-                //if (cB == aPieces[52] && cB != aPieces[37])
-                //{
-                //    await MakeTurnAsync("B2");
-                //}
+                    if (cB == aPieces[50])
+                    {
+                        if (cB != aPieces[41])
+                        {
+                        }
+                        else if (cB != aPieces[37])
+                        {
+                            await MakeTurnAsync("U");
+                        }
+                        else if (cB != aPieces[43])
+                        {
+                            await MakeTurnAsync("U'");
+                        }
+                        else if (cB != aPieces[39])
+                        {
+                            await MakeTurnAsync("U2");
+                        }
 
-                //if (cB == aPieces[48] && cB != aPieces[39])
-                //{
-                //    await MakeTurnAsync("L2");
-                //}
+                        await MakeTurnAsync("R2");
+                    }
 
-                //// Edge is at the front
-                //if (cB == aPieces[5] && cB != aPieces[41])
-                //{
-                //    await MakeTurnAsync("R");
-                //}
+                    if (cB == aPieces[52])
+                    {
+                        if (cB != aPieces[37])
+                        {
+                        }
+                        else if (cB != aPieces[39])
+                        {
+                            await MakeTurnAsync("U");
+                        }
+                        else if (cB != aPieces[41])
+                        {
+                            await MakeTurnAsync("U'");
+                        }
+                        else if (cB != aPieces[43])
+                        {
+                            await MakeTurnAsync("U2");
+                        }
 
-                //if (cB == aPieces[3] && cB != aPieces[39])
-                //{
-                //    await MakeTurnAsync("L'");
-                //}
+                        await MakeTurnAsync("B2");
+                    }
 
-                //// Edge is at the right
-                //if (cB == aPieces[12] && cB != aPieces[43])
-                //{
-                //    await MakeTurnAsync("F'");
-                //}
+                    if (cB == aPieces[48])
+                    {
+                        if (cB != aPieces[39])
+                        {
+                        }
+                        else if (cB != aPieces[43])
+                        {
+                            await MakeTurnAsync("U");
+                        }
+                        else if (cB != aPieces[37])
+                        {
+                            await MakeTurnAsync("U'");
+                        }
+                        else if (cB != aPieces[41])
+                        {
+                            await MakeTurnAsync("U2");
+                        }
 
-                //if (cB == aPieces[14] && cB != aPieces[37])
-                //{
-                //    await MakeTurnAsync("B");
-                //}
+                        await MakeTurnAsync("L2");
+                    }
 
-                //// Edge is at the back
-                //if (cB == aPieces[21] && cB != aPieces[41])
-                //{
-                //    await MakeTurnAsync("R'");
-                //}
+                    // Edge is at the front
+                    if (cB == aPieces[5] && cB != aPieces[41])
+                    {
+                        await MakeTurnAsync("R");
+                    }
 
-                //if (cB == aPieces[23] && cB != aPieces[39])
-                //{
-                //    await MakeTurnAsync("L");
-                //}
+                    if (cB == aPieces[3] && cB != aPieces[39])
+                    {
+                        await MakeTurnAsync("L'");
+                    }
 
-                //// Edge is at the left
-                //if (cB == aPieces[30] && cB != aPieces[37])
-                //{
-                //    await MakeTurnAsync("B'");
-                //}
+                    // Edge is at the right
+                    if (cB == aPieces[12] && cB != aPieces[43])
+                    {
+                        await MakeTurnAsync("F'");
+                    }
 
-                //if (cB == aPieces[32] && cB != aPieces[43])
-                //{
-                //    await MakeTurnAsync("F");
-                //}
+                    if (cB == aPieces[14] && cB != aPieces[37])
+                    {
+                        await MakeTurnAsync("B");
+                    }
+
+                    // Edge is at the back
+                    if (cB == aPieces[21] && cB != aPieces[41])
+                    {
+                        await MakeTurnAsync("R'");
+                    }
+
+                    if (cB == aPieces[23] && cB != aPieces[39])
+                    {
+                        await MakeTurnAsync("L");
+                    }
+
+                    // Edge is at the left
+                    if (cB == aPieces[30] && cB != aPieces[37])
+                    {
+                        await MakeTurnAsync("B'");
+                    }
+
+                    if (cB == aPieces[32] && cB != aPieces[43])
+                    {
+                        await MakeTurnAsync("F");
+                    }
+                }
 
                 //---------------------------------------------------------------------------------------
 
