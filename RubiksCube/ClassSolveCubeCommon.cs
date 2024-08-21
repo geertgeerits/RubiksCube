@@ -42,7 +42,7 @@ namespace RubiksCube
                 // With this direct method there is a profit of the average number of turns of 1.00%
                 // There are slightly more situations of profit than of loss in the number of turns
 
-                if (bSolveTest)
+                if (bSolveNewSolutionsTest)
                 {
                     // Edge is at the bottom
                     if (cB == aPieces[46])

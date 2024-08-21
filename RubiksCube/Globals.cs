@@ -20,7 +20,7 @@ namespace RubiksCube
         public static CancellationTokenSource? cts;
         public static bool bLicense;
         public static int nTestedSolutions;
-        public static bool bSolveTest;
+        public static bool bSolveNewSolutionsTest;
 
         public static string[] aFaceColors = new string[7];
         public static string[] aPieces = new string[54];

@@ -100,11 +100,9 @@ namespace RubiksCube
             ClassColorsCube.ResetCube();
             GetCubeColorsFromArrays();
 
-            //// Set bSolveTest to true to solve the cube with the new test turns in debug mode
-            Globals.bSolveTest = true;
 #if DEBUG
             //// Set the button to visible in debug mode for testing purposes
-            btnSolveTest.IsVisible = true;
+            btnSolveNewSolutionsTest.IsVisible = true;
 #endif
 
 #if IOS
@@ -126,22 +124,22 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Use the toggle button 'btnSolveTest' to solve the cube with or without new test turns in debug mode
+        /// Use the toggle button 'btnSolveNewSolutionsTest' to solve the cube with or without new test turns in debug mode
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnSolveTestClicked(object sender, EventArgs e)
+        private void OnBtnSolveNewSolutionsTestClicked(object sender, EventArgs e)
         {
 #if DEBUG
-            Globals.bSolveTest = !Globals.bSolveTest;
+            Globals.bSolveNewSolutionsTest = !Globals.bSolveNewSolutionsTest;
 
-            if (Globals.bSolveTest)
+            if (Globals.bSolveNewSolutionsTest)
             {
-                btnSolveTest.Text = "+";
+                btnSolveNewSolutionsTest.Text = "+";
             }
             else
             {
-                btnSolveTest.Text = "-";
+                btnSolveNewSolutionsTest.Text = "-";
             }
 #endif
         }
@@ -317,8 +315,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 259-260 and 303-318 (and change the line 343 to bTestSolveCube = true)
-                // and uncomment one of the lines 323-327/328 to test one of the solutions to solve the cube
+                // For testing comment out the lines 257-258 and 301-316 (and change the line 341 to bTestSolveCube = true)
+                // and uncomment one of the lines 321-325/326 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution

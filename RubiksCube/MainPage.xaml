@@ -34,7 +34,7 @@
             </Label>
 
             <Button
-                x:Name="btnSolveTest"
+                x:Name="btnSolveNewSolutionsTest"
                 Grid.Row="0"
                 Grid.Column="2"
                 HorizontalOptions="Center"
@@ -46,9 +46,9 @@
                 TextColor="Black"
                 FontSize="14"
                 Padding="0"
-                Text="+"
+                Text="-"
                 IsVisible="False"
-                Clicked="OnSolveTestClicked">
+                Clicked="OnBtnSolveNewSolutionsTestClicked">
             </Button>
 
             <ImageButton
