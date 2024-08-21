@@ -21,7 +21,7 @@ namespace RubiksCube
             lblWebsite.Text = $"{CubeLang.Website_Text}: ../rubikscube";
             lblPrivacyPolicy.Text = $"\n{CubeLang.PrivacyPolicyTitle_Text} {CubeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CubeLang.LicenseTitle_Text}: {CubeLang.License_Text}";
-            lblHelpOptionsSolveCube.Text = $"\n{CubeLang.HelpOptionsSolveCube_Text} {CubeLang.AverageTurns_Text} 70.";
+            lblHelpOptionsSolveCube.Text = $"\n{CubeLang.HelpOptionsSolveCube_Text} {CubeLang.AverageTurns_Text} 69.";
             lblHelp.Text = $"\n{CubeLang.HelpCube_Text}";
             lblExplanation.Text = $"\n{CubeLang.InfoExplanation_Text}";
         }
