@@ -101,8 +101,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
 
 #if DEBUG
-            //// Set the button to visible in debug mode for testing purposes
+            //// Set the button to visible and 'bSolveNewSolutionsTest' to false in debug mode for testing purposes
             btnSolveNewSolutionsTest.IsVisible = true;
+            Globals.bSolveNewSolutionsTest = false;
 #endif
 
 #if IOS
@@ -315,8 +316,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 257-258 and 301-316 (and change the line 341 to bTestSolveCube = true)
-                // and uncomment one of the lines 321-325/326 to test one of the solutions to solve the cube
+                // For testing comment out the lines 258-259 and 302-317 (and change the line 342 to bTestSolveCube = true)
+                // and uncomment one of the lines 322-326/327 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
