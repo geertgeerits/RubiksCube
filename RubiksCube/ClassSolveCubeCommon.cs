@@ -38,11 +38,11 @@ namespace RubiksCube
                     break;
                 }
 
-                //---------------------------------------------------------------------------------------
-                // With this direct method there is a profit of the average number of turns of 1.00%
-                // There are slightly more situations of profit than of loss in the number of turns
+                //------------------------------------------------------------------------------------------
+                // With this direct method there is a profit of the average number of 1.40 turns or 1.99%
+                // There are slightly more situations of profit than of loss or equal in the number of turns
 
-                if (bSolveSecondTime)
+                if (bSolveSolution2)
                 {
                     // Edge is at the bottom
                     if (cB == aPieces[46])
@@ -302,7 +302,7 @@ namespace RubiksCube
                     }
                 }
 
-                //---------------------------------------------------------------------------------------
+                //------------------------------------------------------------------------------------------
 
                 // Move 1 -> 3
                 if (aPieces[49] == aPieces[1])
