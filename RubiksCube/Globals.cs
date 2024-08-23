@@ -21,7 +21,6 @@ namespace RubiksCube
         public static bool bLicense;
         public static int nTestedSolutions;
         public static bool bSolveSolution2;
-        public static bool bSolveNewSolutionsTest;
 
         public static string[] aFaceColors = new string[7];
         public static string[] aPieces = new string[54];
@@ -29,6 +28,11 @@ namespace RubiksCube
         public static string[] aStartPieces = new string[54];
         public static List<string> lCubeTurns = [];
 
+#if DEBUG
+        // Test variable
+        public static bool bSolveNewSolutionsTest;
+#endif
+        
         // Cube turns
         // Face rotations
         public const string turnFrontCW = "F";
