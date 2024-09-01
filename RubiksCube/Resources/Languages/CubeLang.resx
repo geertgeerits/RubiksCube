@@ -558,4 +558,10 @@ Possible cause is incorrect transfer of colors to this cube.</value>
   <data name="ToolTipSolveCube_Text" xml:space="preserve">
     <value>Solve the cube</value>
   </data>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Go back one turn</value>
+  </data>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Go one turn forward</value>
+  </data>
 </root>

@@ -558,4 +558,10 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
   <data name="ToolTipSolveCube_Text" xml:space="preserve">
     <value>Los de kubus op</value>
   </data>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Ga één draai terug</value>
+  </data>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Ga één draai vooruit</value>
+  </data>
 </root>

@@ -244,7 +244,7 @@ Sie können mich jederzeit für Korrekturen kontaktieren.</value>
     <value>Diese Anwendung darf für nichtkommerzielle Zwecke frei verwendet werden.
 Verwenden Sie dieses Programm ausschließlich auf eigene Gefahr.</value>
   </data>
-  <data name="MessageColorcentralSquare_Text" xml:space="preserve">
+  <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Die Farbe des zentralen Quadrats darf nur einmal vorkommen.</value>
   </data>
   <data name="MessageColorCornerCube_Text" xml:space="preserve">
@@ -557,5 +557,11 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   </data>
   <data name="ToolTipSolveCube_Text" xml:space="preserve">
     <value>Löse den Würfel</value>
+  </data>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Gehe eine Runde zurück</value>
+  </data>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Gehe eine Runde vorwärts</value>
   </data>
 </root>

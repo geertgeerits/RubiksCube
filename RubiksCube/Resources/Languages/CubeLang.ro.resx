@@ -126,9 +126,6 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Caractere permise:</value>
   </data>
-  <data name="AverageTurns_Text" xml:space="preserve">
-    <value>Numărul mediu de ture pentru a rezolva cubul:</value>
-  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Închide</value>
   </data>
@@ -153,11 +150,11 @@
   <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Fața din spate</value>
   </data>
-  <data name="CubeColors_Text" xml:space="preserve">
-    <value>Culorile cubului:</value>
-  </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Fața în jos</value>
+  </data>
+  <data name="CubeColors_Text" xml:space="preserve">
+    <value>Culorile cubului:</value>
   </data>
   <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Fața din față</value>
@@ -206,20 +203,8 @@ Pentru celelalte părți trebuie să vă „imaginați” întotdeauna că vă a
   <data name="HelpOpenCube_Text" xml:space="preserve">
     <value>Deschideți cubul salvat.</value>
   </data>
-  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Există trei opțiuni pentru a rezolva cubul:
-1. Pe ecranul de start, utilizați tastele săgeți pentru a amesteca culorile și pentru a rezolva cubul însuși cu tastele săgeți.
-2. La fel ca prima opțiune, dar rezolvați cubul cu butonul „Rezolvare”. Cubul este apoi rezolvat în ordine inversă.
-3. Folosiți butonul din partea de jos cu cubul (vezi explicația butonului respectiv). Cubul este rezolvat de aplicație. Apoi transferați mișcările propuse în cubul real. Aceasta nu este o garanție că toate cuburile pot fi rezolvate.</value>
-  </data>
-  <data name="HelpResetCube_Text" xml:space="preserve">
-    <value>Resetați cubul.</value>
-  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Salvați cubul curent.</value>
-  </data>
-  <data name="HelpScrambleCube_Text" xml:space="preserve">
-    <value>Amestecă cubul.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Transferați culorile din cubul amestecat în acest cub. Selectați o culoare din bara de culori din partea de sus și apoi atingeți bucățile cubului pentru a le schimba. Apăsați din nou acest buton pentru a părăsi această secțiune și apăsați butonul „Rezolvare”.</value>
@@ -259,9 +244,6 @@ Mă puteți contacta oricând pentru orice corecturi.</value>
     <value>Această aplicație poate fi folosită gratuit în scopuri necomerciale.
 Utilizați acest program în întregime pe propriul risc.</value>
   </data>
-  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Culorile pieselor centrale sunt greșite.</value>
-  </data>
   <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Culoarea pătratului central poate apărea o singură dată.</value>
   </data>
@@ -271,25 +253,11 @@ Utilizați acest program în întregime pe propriul risc.</value>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
     <value>Culorile unui cub de margine trebuie să fie diferite.</value>
   </data>
-  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
-    <value>Cubul este din nou în starea anterioară.</value>
-  </data>
-  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Cubul nu poate fi rezolvat.
-
-Cauza posibilă este transferul incorect de culori în acest cub.</value>
-  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Felicitări, cubul a fost rezolvat.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
     <value>Cubul nu este rezolvat.</value>
-  </data>
-  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
-    <value>Din fiecare culoare disponibilă, trebuie să existe patru de aceeași culoare pe un cub de colț.</value>
-  </data>
-  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
-    <value>Din fiecare culoare disponibilă, trebuie să existe patru de aceeași culoare pe un cub de margine.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
     <value>Din fiecare culoare disponibilă, trebuie să existe nouă de aceeași culoare.</value>
@@ -308,15 +276,6 @@ Cauza posibilă este transferul incorect de culori în acest cub.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplicația va fi repornită.</value>
-  </data>
-  <data name="ResultSolutions_Text" xml:space="preserve">
-    <value>Solutii testate:</value>
-  </data>
-  <data name="ResultTime_Text" xml:space="preserve">
-    <value>Timp în milisecunde:</value>
-  </data>
-  <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Numărul de ture:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -360,12 +319,6 @@ Nepermis:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Temă:</value>
   </data>
-  <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Trimiteți un e-mail autorului acestei aplicații</value>
-  </data>
-  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Deschide site-ul acestei aplicații</value>
-  </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Întoarce-te</value>
   </data>
@@ -378,20 +331,151 @@ Nepermis:</value>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Deschide cubul</value>
   </data>
-  <data name="ToolTipResetCube_Text" xml:space="preserve">
-    <value>Resetați cubul</value>
-  </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Salvați cubul</value>
-  </data>
-  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
-    <value>Amestecă cubul</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Butonul de comutare: setați culorile pe cub</value>
   </data>
-  <data name="ToolTipSolveCube_Text" xml:space="preserve">
-    <value>Rezolvați cubul</value>
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
+    <value>Întoarceți partea din spate o jumătate de tură.</value>
+  </data>
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
+    <value>Rotiți partea din spate un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  </data>
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
+    <value>Rotiți partea din spate un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  </data>
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
+    <value>Rotiți partea de jos o jumătate de tură.</value>
+  </data>
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
+    <value>Rotiți partea de jos un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  </data>
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
+    <value>Rotiți partea de jos un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  </data>
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea din față să meargă în jos, partea dreaptă să rămână la dreapta.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea din față să meargă în partea stângă, partea de sus să rămână în partea de sus.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea din față să meargă în partea dreaptă, partea de sus să rămână în partea de sus.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea din față să meargă în sus, partea dreaptă să rămână la dreapta.</value>
+  </data>
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea de sus să meargă în partea stângă, partea din față să rămână în față.</value>
+  </data>
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea de sus să meargă în partea dreaptă, partea din față să rămână în față.</value>
+  </data>
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
+    <value>Rotiți stratul din față-mijloc un sfert de tură spre partea dreaptă (-).</value>
+  </data>
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
+    <value>Rotiți stratul din față-mijloc un sfert de tură spre partea de sus (+).</value>
+  </data>
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
+    <value>Rotiți partea din față o jumătate de tură.</value>
+  </data>
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
+    <value>Rotiți partea din față un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  </data>
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
+    <value>Rotiți partea din față un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  </data>
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
+    <value>Rotiți partea stângă o jumătate de tură.</value>
+  </data>
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
+    <value>Rotiți partea stângă un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  </data>
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
+    <value>Rotiți partea stângă un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Întoarceți stratul din mijloc o jumătate de tură.</value>
+  </data>
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Rotiți stratul din dreapta-mijloc un sfert de tură spre partea din față (+).</value>
+  </data>
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
+    <value>Întoarceți stratul din mijloc dreapta un sfert de tură spre partea de sus (-).</value>
+  </data>
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
+    <value>Rotiți partea dreaptă o jumătate de tură.</value>
+  </data>
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
+    <value>Rotiți partea dreaptă un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  </data>
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
+    <value>Rotiți partea dreaptă un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  </data>
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Întoarceți stratul de sus-mijloc un sfert de tură spre partea din față (-).</value>
+  </data>
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
+    <value>Rotiți stratul de sus-mijloc un sfert de tură spre partea dreaptă (+).</value>
+  </data>
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
+    <value>Rotiți partea de sus o jumătate de tură.</value>
+  </data>
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
+    <value>Rotiți partea superioară un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  </data>
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
+    <value>Rotiți partea superioară un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Versiune:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Site-ul web</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
+    <value>Cubul nu poate fi rezolvat.
+
+Cauza posibilă este transferul incorect de culori în acest cub.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea din față să meargă în spate, partea dreaptă să rămână la dreapta.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea din față să meargă în spate, partea de sus să rămână în partea de sus.</value>
+  </data>
+  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
+    <value>Întoarceți întregul cub astfel încât partea de sus să meargă în jos, partea din față să rămână în față.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Timp în milisecunde:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Numărul de ture:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Există trei opțiuni pentru a rezolva cubul:
+1. Pe ecranul de start, utilizați tastele săgeți pentru a amesteca culorile și pentru a rezolva cubul însuși cu tastele săgeți.
+2. La fel ca prima opțiune, dar rezolvați cubul cu butonul „Rezolvare”. Cubul este apoi rezolvat în ordine inversă.
+3. Folosiți butonul din partea de jos cu cubul (vezi explicația butonului respectiv). Cubul este rezolvat de aplicație. Apoi transferați mișcările propuse în cubul real. Aceasta nu este o garanție că toate cuburile pot fi rezolvate.</value>
+  </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Cubul este din nou în starea anterioară.</value>
+  </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Culorile pieselor centrale sunt greșite.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>Din fiecare culoare disponibilă, trebuie să existe patru de aceeași culoare pe un cub de margine.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Din fiecare culoare disponibilă, trebuie să existe patru de aceeași culoare pe un cub de colț.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Întoarceți stratul din spate și din mijloc împreună o jumătate de tură.</value>
@@ -447,115 +531,37 @@ Nepermis:</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Întoarceți stratul superior și mijlociu împreună un sfert de tură „în sensul acelor de ceasornic” (+).</value>
   </data>
-  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
-    <value>Întoarceți partea din spate o jumătate de tură.</value>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Trimiteți un e-mail autorului acestei aplicații</value>
   </data>
-  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
-    <value>Rotiți partea din spate un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Deschide site-ul acestei aplicații</value>
   </data>
-  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
-    <value>Rotiți partea din spate un sfert de tură „în sensul acelor de ceasornic” (+).</value>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Solutii testate:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea din față să meargă în spate, partea dreaptă să rămână la dreapta.</value>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Numărul mediu de ture pentru a rezolva cubul:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea din față să meargă în spate, partea de sus să rămână în partea de sus.</value>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Amestecă cubul</value>
   </data>
-  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea din față să meargă în jos, partea dreaptă să rămână la dreapta.</value>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Resetați cubul</value>
   </data>
-  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea din față să meargă în partea stângă, partea de sus să rămână în partea de sus.</value>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Resetați cubul.</value>
   </data>
-  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea din față să meargă în partea dreaptă, partea de sus să rămână în partea de sus.</value>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Amestecă cubul.</value>
   </data>
-  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea din față să meargă în sus, partea dreaptă să rămână la dreapta.</value>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Rezolvați cubul</value>
   </data>
-  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea de sus să meargă în jos, partea din față să rămână în față.</value>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Întoarce-te cu o tură</value>
   </data>
-  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea de sus să meargă în partea stângă, partea din față să rămână în față.</value>
-  </data>
-  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Întoarceți întregul cub astfel încât partea de sus să meargă în partea dreaptă, partea din față să rămână în față.</value>
-  </data>
-  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
-    <value>Rotiți partea de jos o jumătate de tură.</value>
-  </data>
-  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
-    <value>Rotiți partea de jos un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
-  </data>
-  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
-    <value>Rotiți partea de jos un sfert de tură „în sensul acelor de ceasornic” (+).</value>
-  </data>
-  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
-    <value>Rotiți partea din față o jumătate de tură.</value>
-  </data>
-  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
-    <value>Rotiți partea din față un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
-  </data>
-  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
-    <value>Rotiți partea din față un sfert de tură „în sensul acelor de ceasornic” (+).</value>
-  </data>
-  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
-    <value>Rotiți stratul din față-mijloc un sfert de tură spre partea dreaptă (-).</value>
-  </data>
-  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
-    <value>Rotiți stratul din față-mijloc un sfert de tură spre partea de sus (+).</value>
-  </data>
-  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
-    <value>Rotiți partea stângă o jumătate de tură.</value>
-  </data>
-  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
-    <value>Rotiți partea stângă un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
-  </data>
-  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
-    <value>Rotiți partea stângă un sfert de tură „în sensul acelor de ceasornic” (+).</value>
-  </data>
-  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
-    <value>Întoarceți stratul din mijloc o jumătate de tură.</value>
-  </data>
-  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
-    <value>Rotiți partea dreaptă o jumătate de tură.</value>
-  </data>
-  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
-    <value>Rotiți partea dreaptă un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
-  </data>
-  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
-    <value>Rotiți partea dreaptă un sfert de tură „în sensul acelor de ceasornic” (+).</value>
-  </data>
-  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Rotiți stratul din dreapta-mijloc un sfert de tură spre partea din față (+).</value>
-  </data>
-  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
-    <value>Întoarceți stratul din mijloc dreapta un sfert de tură spre partea de sus (-).</value>
-  </data>
-  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
-    <value>Rotiți partea de sus o jumătate de tură.</value>
-  </data>
-  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
-    <value>Rotiți partea superioară un sfert de tură „în sensul invers acelor de ceasornic” (-).</value>
-  </data>
-  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
-    <value>Rotiți partea superioară un sfert de tură „în sensul acelor de ceasornic” (+).</value>
-  </data>
-  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Întoarceți stratul de sus-mijloc un sfert de tură spre partea din față (-).</value>
-  </data>
-  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
-    <value>Rotiți stratul de sus-mijloc un sfert de tură spre partea dreaptă (+).</value>
-  </data>
-  <data name="Version_Text" xml:space="preserve">
-    <value>Versiune:</value>
-  </data>
-  <data name="Website_Text" xml:space="preserve">
-    <value>Site-ul web</value>
-  </data>
-  <data name="Yes_Text" xml:space="preserve">
-    <value>Da</value>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Du-te cu o tură înainte</value>
   </data>
 </root>

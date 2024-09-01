@@ -1,8 +1,8 @@
 ﻿/* Program .....: RubiksCube.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
- * Version .....: 2.0.27
- * Date ........: 2024-08-23 (YYYY-MM-DD)
+ * Version .....: 2.0.28
+ * Date ........: 2024-09-01 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -21,6 +21,8 @@ namespace RubiksCube
         private bool bSolvingCube;
         private bool bSolved;
         private bool bTestSolveCube;
+        private bool bTurnIsBackwards;
+        private int nTurnNumber;
 
         //// Array with cube turns for the cube scramble generator
         private readonly string[] ScrambledCubeTurns = [
@@ -274,8 +276,10 @@ namespace RubiksCube
             lblCubeOutsideView.IsVisible = false;
             lblExplainTurnCube.IsVisible = true;
             lblCubeInsideView.IsVisible = false;
+            imgbtnGoOneTurnBackward.IsVisible = true;
             btnLetterTurn.IsVisible = true;
-
+            imgbtnGoOneTurnForward.IsVisible = true;
+            
             Globals.nTestedSolutions = 0;
 
             // Start the activity indicator
@@ -398,7 +402,9 @@ namespace RubiksCube
             lblExplainTurnCube.Text = "";
             lblExplainTurnCube.IsVisible = false;
             lblCubeOutsideView.IsVisible = true;
+            imgbtnGoOneTurnBackward.IsVisible = false;
             btnLetterTurn.IsVisible = false;
+            imgbtnGoOneTurnForward.IsVisible = false;
             lblCubeInsideView.IsVisible = true;
 
             IsEnabledArrows(true);
@@ -459,6 +465,9 @@ namespace RubiksCube
 
             // Set the cube colors from the arrays in the polygons
             GetCubeColorsFromArrays();
+
+            // Set bTurnIsBackwards to false
+            bTurnIsBackwards = false;
         }
 
         /// <summary>
@@ -469,6 +478,30 @@ namespace RubiksCube
         {
             SetCubeColorsInArrays();
             return ClassColorsCube.CheckNumberColors();
+        }
+
+        /// <summary>
+        /// Go one turn backwards
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonGoOneTurnBackwardClicked(object sender, EventArgs e)
+        {
+            bTurnIsBackwards = true;
+            nTurnNumber--;
+            _ = _buttonPressed.TrySetResult(true);
+        }
+
+        /// <summary>
+        /// Go one turn forwards
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonGoOneTurnForwardClicked(object sender, EventArgs e)
+        {
+            bTurnIsBackwards = false;
+            nTurnNumber++;
+            _ = _buttonPressed.TrySetResult(true);
         }
 
         /// <summary>

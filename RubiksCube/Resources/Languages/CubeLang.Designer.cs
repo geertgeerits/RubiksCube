@@ -782,6 +782,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go back one turn.
+        /// </summary>
+        internal static string ToolTipGoOneTurnBackward_Text {
+            get {
+                return ResourceManager.GetString("ToolTipGoOneTurnBackward_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go one turn forward.
+        /// </summary>
+        internal static string ToolTipGoOneTurnForward_Text {
+            get {
+                return ResourceManager.GetString("ToolTipGoOneTurnForward_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         internal static string ToolTipHelp_Text {

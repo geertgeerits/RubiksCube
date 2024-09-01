@@ -126,9 +126,6 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Povolené znaky:</value>
   </data>
-  <data name="AverageTurns_Text" xml:space="preserve">
-    <value>Průměrný počet otočení k vyřešení kostky:</value>
-  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zavřít</value>
   </data>
@@ -153,11 +150,11 @@
   <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Zadní obličej</value>
   </data>
-  <data name="CubeColors_Text" xml:space="preserve">
-    <value>Barvy kostek:</value>
-  </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Dolů obličej</value>
+  </data>
+  <data name="CubeColors_Text" xml:space="preserve">
+    <value>Barvy kostek:</value>
   </data>
   <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Přední strana</value>
@@ -206,20 +203,8 @@ U ostatních stran si vždy musíte „představit“, že jste přímo před st
   <data name="HelpOpenCube_Text" xml:space="preserve">
     <value>Otevřete uloženou kostku.</value>
   </data>
-  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Existují tři možnosti, jak vyřešit kostku:
-1. Na domovské obrazovce pomocí kláves se šipkami promíchejte barvy a vyřešte samotnou kostku pomocí kláves se šipkami.
-2. Stejné jako u první možnosti, ale vyřešte kostku tlačítkem 'Solve'. Kostka se pak řeší v opačném pořadí.
-3. Použijte tlačítko ve spodní části s kostkou (viz vysvětlení tohoto tlačítka). Kostka je vyřešena aplikací. Poté přeneste navržené pohyby do skutečné krychle. To není zárukou, že všechny kostky lze vyřešit.</value>
-  </data>
-  <data name="HelpResetCube_Text" xml:space="preserve">
-    <value>Resetujte kostku.</value>
-  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Uložte aktuální krychli.</value>
-  </data>
-  <data name="HelpScrambleCube_Text" xml:space="preserve">
-    <value>Rozdrťte kostku.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Přeneste barvy z neuspořádané kostky na tuto kostku. Vyberte barvu z pruhu barev v horní části a poté klepnutím na kousky kostky je změňte. Dalším stisknutím tohoto tlačítka opustíte tuto sekci a stiskněte tlačítko 'Solve'.</value>
@@ -259,9 +244,6 @@ Pro případné opravy mě můžete vždy kontaktovat.</value>
     <value>Tuto aplikaci lze volně používat pro nekomerční účely.
 Používejte tento program zcela na vlastní nebezpečí.</value>
   </data>
-  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Barvy středových dílů jsou špatné.</value>
-  </data>
   <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Barva centrálního čtverce se může objevit pouze jednou.</value>
   </data>
@@ -271,25 +253,11 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
     <value>Barvy hranové krychle musí být různé.</value>
   </data>
-  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
-    <value>Kostka je zpět ve svém předchozím stavu.</value>
-  </data>
-  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Kostku nelze vyřešit.
-
-Možnou příčinou je nesprávný přenos barev na tuto kostku.</value>
-  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Gratulujeme, kostka je vyřešena.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
     <value>Kostka není vyřešena.</value>
-  </data>
-  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
-    <value>Z každé dostupné barvy musí být na rohové kostce čtyři stejné barvy.</value>
-  </data>
-  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
-    <value>Z každé dostupné barvy musí být na hranové krychli čtyři stejné barvy.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
     <value>Z každé dostupné barvy musí být devět stejné barvy.</value>
@@ -308,15 +276,6 @@ Možnou příčinou je nesprávný přenos barev na tuto kostku.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikace bude restartována.</value>
-  </data>
-  <data name="ResultSolutions_Text" xml:space="preserve">
-    <value>Testovaná řešení:</value>
-  </data>
-  <data name="ResultTime_Text" xml:space="preserve">
-    <value>Čas v milisekundách:</value>
-  </data>
-  <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Počet otáček:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -360,12 +319,6 @@ Nepovoleno:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Téma:</value>
   </data>
-  <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Pošlete e-mail autorovi této aplikace</value>
-  </data>
-  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Otevřete webovou stránku této aplikace</value>
-  </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Vraťte se</value>
   </data>
@@ -378,20 +331,151 @@ Nepovoleno:</value>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Otevřete kostku</value>
   </data>
-  <data name="ToolTipResetCube_Text" xml:space="preserve">
-    <value>Resetujte kostku</value>
-  </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Uložte kostku</value>
-  </data>
-  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
-    <value>Rozdrťte kostku</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Přepínací tlačítko: Nastavte barvy na krychli</value>
   </data>
-  <data name="ToolTipSolveCube_Text" xml:space="preserve">
-    <value>Vyřešte kostku</value>
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
+    <value>Otočte zadní stranu o půl otáčky.</value>
+  </data>
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
+    <value>Otočte zadní stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  </data>
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
+    <value>Otočte zadní stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  </data>
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
+    <value>Otočte spodní stranu o půl otáčky.</value>
+  </data>
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
+    <value>Otočte spodní stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  </data>
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
+    <value>Otočte spodní stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  </data>
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby přední strana šla dolů, pravá strana zůstala vpravo.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby přední strana šla na levou stranu, horní strana zůstala nahoře.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby přední strana šla na pravou stranu, horní strana zůstala nahoře.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby přední část šla nahoru, pravá strana zůstala vpravo.</value>
+  </data>
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby vršek šel na levou stranu, přední strana zůstala vpředu.</value>
+  </data>
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby vršek šel na pravou stranu, přední strana zůstala vepředu.</value>
+  </data>
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
+    <value>Otočte přední střední vrstvu o čtvrt otáčky na pravou stranu (-).</value>
+  </data>
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
+    <value>Otočte přední prostřední vrstvu o čtvrt otáčky k horní straně (+).</value>
+  </data>
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
+    <value>Otočte přední stranu o půl otáčky.</value>
+  </data>
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
+    <value>Otočte přední stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  </data>
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
+    <value>Otočte přední stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  </data>
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
+    <value>Otočte levou stranu o půl otáčky.</value>
+  </data>
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
+    <value>Otočte levou stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  </data>
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
+    <value>Otočte levou stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Otočte střední vrstvu o půl otáčky.</value>
+  </data>
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Otočte pravou prostřední vrstvu o čtvrt otáčky na přední stranu (+).</value>
+  </data>
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
+    <value>Otočte pravou prostřední vrstvu o čtvrt otáčky k horní straně (-).</value>
+  </data>
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
+    <value>Otočte pravou stranu o půl otáčky.</value>
+  </data>
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
+    <value>Otočte pravou stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  </data>
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
+    <value>Otočte pravou stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  </data>
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Otočte horní střední vrstvu o čtvrt otáčky na přední stranu (-).</value>
+  </data>
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
+    <value>Otočte horní střední vrstvu o čtvrt otáčky doprava (+).</value>
+  </data>
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
+    <value>Otočte horní stranu o půl otáčky.</value>
+  </data>
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
+    <value>Otočte horní stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  </data>
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
+    <value>Otočte horní stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Verze:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Webová stránka</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
+    <value>Kostku nelze vyřešit.
+
+Možnou příčinou je nesprávný přenos barev na tuto kostku.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby přední strana šla dozadu, pravá strana zůstane vpravo.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby přední strana šla dozadu, horní strana zůstala nahoře.</value>
+  </data>
+  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
+    <value>Otočte celou kostku tak, aby vršek šel dolů, přední strana zůstala vepředu.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Čas v milisekundách:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Počet otáček:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Existují tři možnosti, jak vyřešit kostku:
+1. Na domovské obrazovce pomocí kláves se šipkami promíchejte barvy a vyřešte samotnou kostku pomocí kláves se šipkami.
+2. Stejné jako u první možnosti, ale vyřešte kostku tlačítkem 'Solve'. Kostka se pak řeší v opačném pořadí.
+3. Použijte tlačítko ve spodní části s kostkou (viz vysvětlení tohoto tlačítka). Kostka je vyřešena aplikací. Poté přeneste navržené pohyby do skutečné krychle. To není zárukou, že všechny kostky lze vyřešit.</value>
+  </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Kostka je zpět ve svém předchozím stavu.</value>
+  </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Barvy středových dílů jsou špatné.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>Z každé dostupné barvy musí být na hranové krychli čtyři stejné barvy.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Z každé dostupné barvy musí být na rohové kostce čtyři stejné barvy.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Otočte zadní a střední vrstvu dohromady o půl otáčky.</value>
@@ -447,115 +531,37 @@ Nepovoleno:</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Otočte horní a střední vrstvu dohromady o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
   </data>
-  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
-    <value>Otočte zadní stranu o půl otáčky.</value>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Pošlete e-mail autorovi této aplikace</value>
   </data>
-  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
-    <value>Otočte zadní stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Otevřete webovou stránku této aplikace</value>
   </data>
-  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
-    <value>Otočte zadní stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Testovaná řešení:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby přední strana šla dozadu, pravá strana zůstane vpravo.</value>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Průměrný počet otočení k vyřešení kostky:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby přední strana šla dozadu, horní strana zůstala nahoře.</value>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Rozdrťte kostku</value>
   </data>
-  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby přední strana šla dolů, pravá strana zůstala vpravo.</value>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Resetujte kostku</value>
   </data>
-  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby přední strana šla na levou stranu, horní strana zůstala nahoře.</value>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Resetujte kostku.</value>
   </data>
-  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby přední strana šla na pravou stranu, horní strana zůstala nahoře.</value>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Rozdrťte kostku.</value>
   </data>
-  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby přední část šla nahoru, pravá strana zůstala vpravo.</value>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Vyřešte kostku</value>
   </data>
-  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby vršek šel dolů, přední strana zůstala vepředu.</value>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Vraťte se o jednu otáčku zpět</value>
   </data>
-  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby vršek šel na levou stranu, přední strana zůstala vpředu.</value>
-  </data>
-  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Otočte celou kostku tak, aby vršek šel na pravou stranu, přední strana zůstala vepředu.</value>
-  </data>
-  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
-    <value>Otočte spodní stranu o půl otáčky.</value>
-  </data>
-  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
-    <value>Otočte spodní stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
-  </data>
-  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
-    <value>Otočte spodní stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
-  </data>
-  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
-    <value>Otočte přední stranu o půl otáčky.</value>
-  </data>
-  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
-    <value>Otočte přední stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
-  </data>
-  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
-    <value>Otočte přední stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
-  </data>
-  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
-    <value>Otočte přední střední vrstvu o čtvrt otáčky na pravou stranu (-).</value>
-  </data>
-  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
-    <value>Otočte přední prostřední vrstvu o čtvrt otáčky k horní straně (+).</value>
-  </data>
-  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
-    <value>Otočte levou stranu o půl otáčky.</value>
-  </data>
-  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
-    <value>Otočte levou stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
-  </data>
-  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
-    <value>Otočte levou stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
-  </data>
-  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
-    <value>Otočte střední vrstvu o půl otáčky.</value>
-  </data>
-  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
-    <value>Otočte pravou stranu o půl otáčky.</value>
-  </data>
-  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
-    <value>Otočte pravou stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
-  </data>
-  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
-    <value>Otočte pravou stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
-  </data>
-  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Otočte pravou prostřední vrstvu o čtvrt otáčky na přední stranu (+).</value>
-  </data>
-  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
-    <value>Otočte pravou prostřední vrstvu o čtvrt otáčky k horní straně (-).</value>
-  </data>
-  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
-    <value>Otočte horní stranu o půl otáčky.</value>
-  </data>
-  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
-    <value>Otočte horní stranu o čtvrt otáčky „proti směru hodinových ručiček“ (-).</value>
-  </data>
-  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
-    <value>Otočte horní stranu o čtvrt otáčky „ve směru hodinových ručiček“ (+).</value>
-  </data>
-  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Otočte horní střední vrstvu o čtvrt otáčky na přední stranu (-).</value>
-  </data>
-  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
-    <value>Otočte horní střední vrstvu o čtvrt otáčky doprava (+).</value>
-  </data>
-  <data name="Version_Text" xml:space="preserve">
-    <value>Verze:</value>
-  </data>
-  <data name="Website_Text" xml:space="preserve">
-    <value>Webová stránka</value>
-  </data>
-  <data name="Yes_Text" xml:space="preserve">
-    <value>Ano</value>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Jděte o jednu otáčku vpřed</value>
   </data>
 </root>

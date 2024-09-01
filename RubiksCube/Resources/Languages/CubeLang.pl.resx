@@ -126,9 +126,6 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Dozwolone znaki:</value>
   </data>
-  <data name="AverageTurns_Text" xml:space="preserve">
-    <value>Średnia liczba tur potrzebnych do ułożenia kostki:</value>
-  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Zamknąć</value>
   </data>
@@ -153,11 +150,11 @@
   <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Tylna strona</value>
   </data>
-  <data name="CubeColors_Text" xml:space="preserve">
-    <value>Kolory kostek:</value>
-  </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Opuszczona twarz</value>
+  </data>
+  <data name="CubeColors_Text" xml:space="preserve">
+    <value>Kolory kostek:</value>
   </data>
   <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Przód twarzy</value>
@@ -206,20 +203,8 @@ W przypadku pozostałych stron zawsze musisz „wyobrazić sobie”, że znajduj
   <data name="HelpOpenCube_Text" xml:space="preserve">
     <value>Otwórz zapisaną kostkę.</value>
   </data>
-  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Istnieją trzy możliwości ułożenia sześcianu:
-1. Na ekranie głównym użyj klawiszy strzałek, aby wymieszać kolory i ułożyć samą kostkę za pomocą klawiszy strzałek.
-2. Podobnie jak w przypadku pierwszej opcji, ale ułóż kostkę za pomocą przycisku „Ułóż”. Następnie kostkę układa się w odwrotnej kolejności.
-3. Użyj przycisku na dole z kostką (patrz objaśnienie tego przycisku). Kostka jest rozwiązywana przez aplikację. Następnie przenieś proponowane ruchy na prawdziwą kostkę. Nie gwarantuje to, że uda się ułożyć wszystkie kostki.</value>
-  </data>
-  <data name="HelpResetCube_Text" xml:space="preserve">
-    <value>Zresetuj kostkę.</value>
-  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Zapisz bieżącą kostkę.</value>
-  </data>
-  <data name="HelpScrambleCube_Text" xml:space="preserve">
-    <value>Wymieszaj kostkę.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Przenieś kolory z pomieszanej kostki do tej kostki. Wybierz kolor z paska kolorów u góry, a następnie dotknij elementów sześcianu, aby je zmienić. Naciśnij ten przycisk ponownie, aby opuścić tę sekcję i naciśnij przycisk „Rozwiąż”.</value>
@@ -259,9 +244,6 @@ Zawsze możesz się ze mną skontaktować w celu wprowadzenia ewentualnych popra
     <value>Z tej aplikacji można swobodnie korzystać w celach niekomercyjnych.
 Korzystaj z tego programu całkowicie na własne ryzyko.</value>
   </data>
-  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Kolory środkowych elementów są nieprawidłowe.</value>
-  </data>
   <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Kolor centralnego kwadratu może wystąpić tylko raz.</value>
   </data>
@@ -271,25 +253,11 @@ Korzystaj z tego programu całkowicie na własne ryzyko.</value>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
     <value>Kolory krawędzi sześcianu muszą być różne.</value>
   </data>
-  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
-    <value>Kostka wróciła do poprzedniego stanu.</value>
-  </data>
-  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Sześcianu nie można ułożyć.
-
-Możliwą przyczyną jest nieprawidłowe przeniesienie kolorów do tej kostki.</value>
-  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Gratulacje, kostka została ułożona.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
     <value>Sześcian nie jest ułożony.</value>
-  </data>
-  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
-    <value>Z każdego dostępnego koloru na narożnej kostce muszą znajdować się cztery tego samego koloru.</value>
-  </data>
-  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
-    <value>Z każdego dostępnego koloru na krawędzi kostki muszą znajdować się cztery tego samego koloru.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
     <value>Z każdego dostępnego koloru musi być dziewięć tego samego koloru.</value>
@@ -308,15 +276,6 @@ Możliwą przyczyną jest nieprawidłowe przeniesienie kolorów do tej kostki.</
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplikacja zostanie ponownie uruchomiona.</value>
-  </data>
-  <data name="ResultSolutions_Text" xml:space="preserve">
-    <value>Przetestowane rozwiązania:</value>
-  </data>
-  <data name="ResultTime_Text" xml:space="preserve">
-    <value>Czas w milisekundach:</value>
-  </data>
-  <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Liczba tur:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -360,12 +319,6 @@ Niedozwolony:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Temat:</value>
   </data>
-  <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Wyślij e-mail do autora tej aplikacji</value>
-  </data>
-  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Otwórz stronę internetową tej aplikacji</value>
-  </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Wróć</value>
   </data>
@@ -378,20 +331,151 @@ Niedozwolony:</value>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Otwórz kostkę</value>
   </data>
-  <data name="ToolTipResetCube_Text" xml:space="preserve">
-    <value>Zresetuj kostkę</value>
-  </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Zapisz kostkę</value>
-  </data>
-  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
-    <value>Pomieszaj kostkę</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Przycisk przełączania: Ustaw kolory kostki</value>
   </data>
-  <data name="ToolTipSolveCube_Text" xml:space="preserve">
-    <value>Rozwiąż kostkę</value>
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
+    <value>Obróć tylną stronę o pół obrotu.</value>
+  </data>
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
+    <value>Obróć tylną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  </data>
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
+    <value>Obróć tylną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  </data>
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
+    <value>Obróć dolną część o pół obrotu.</value>
+  </data>
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
+    <value>Obróć dolną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  </data>
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
+    <value>Obróć dolną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  </data>
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby przód znalazł się na dole, prawa strona pozostała po prawej stronie.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby przód znalazł się na lewej stronie, górna strona pozostała na górze.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby przód znalazł się na prawej stronie, górna strona pozostała na górze.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby przód skierował się do góry, prawa strona pozostała po prawej stronie.</value>
+  </data>
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby góra znalazła się na lewą stronę, przód pozostał z przodu.</value>
+  </data>
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby góra znalazła się na prawej stronie, przód pozostał z przodu.</value>
+  </data>
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
+    <value>Obróć przednią warstwę środkową o ćwierć obrotu w prawą stronę (-).</value>
+  </data>
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
+    <value>Obróć przednią środkową warstwę o ćwierć obrotu w górę (+).</value>
+  </data>
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
+    <value>Obróć przednią stronę o pół obrotu.</value>
+  </data>
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
+    <value>Obróć przednią stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  </data>
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
+    <value>Obróć przednią stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  </data>
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
+    <value>Obróć lewą stronę o pół obrotu.</value>
+  </data>
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
+    <value>Obróć lewą stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  </data>
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
+    <value>Obróć lewą stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Obróć środkową warstwę o pół obrotu.</value>
+  </data>
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Obróć prawą środkową warstwę o ćwierć obrotu do przodu (+).</value>
+  </data>
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
+    <value>Obróć prawą środkową warstwę o ćwierć obrotu w górę (-).</value>
+  </data>
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
+    <value>Obróć prawą stronę o pół obrotu.</value>
+  </data>
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
+    <value>Obróć prawą stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  </data>
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
+    <value>Obróć prawą stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  </data>
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Obróć górną środkową warstwę o ćwierć obrotu do przodu (-).</value>
+  </data>
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
+    <value>Obróć górną środkową warstwę o ćwierć obrotu w prawą stronę (+).</value>
+  </data>
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
+    <value>Obróć górną stronę o pół obrotu.</value>
+  </data>
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
+    <value>Obróć górną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  </data>
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
+    <value>Obróć górną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Wersja:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Strona internetowa</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
+    <value>Sześcianu nie można ułożyć.
+
+Możliwą przyczyną jest nieprawidłowe przeniesienie kolorów do tej kostki.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby przód przeszedł do tyłu, prawa strona pozostała po prawej stronie.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby przód znalazł się z tyłu, górna strona pozostała na górze.</value>
+  </data>
+  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
+    <value>Obróć całą kostkę tak, aby góra znalazła się na dole, przód pozostał z przodu.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Czas w milisekundach:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Liczba tur:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Istnieją trzy możliwości ułożenia sześcianu:
+1. Na ekranie głównym użyj klawiszy strzałek, aby wymieszać kolory i ułożyć samą kostkę za pomocą klawiszy strzałek.
+2. Podobnie jak w przypadku pierwszej opcji, ale ułóż kostkę za pomocą przycisku „Ułóż”. Następnie kostkę układa się w odwrotnej kolejności.
+3. Użyj przycisku na dole z kostką (patrz objaśnienie tego przycisku). Kostka jest rozwiązywana przez aplikację. Następnie przenieś proponowane ruchy na prawdziwą kostkę. Nie gwarantuje to, że uda się ułożyć wszystkie kostki.</value>
+  </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Kostka wróciła do poprzedniego stanu.</value>
+  </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Kolory środkowych elementów są nieprawidłowe.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>Z każdego dostępnego koloru na krawędzi kostki muszą znajdować się cztery tego samego koloru.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Z każdego dostępnego koloru na narożnej kostce muszą znajdować się cztery tego samego koloru.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Obróć tylną i środkową warstwę razem o pół obrotu.</value>
@@ -447,115 +531,37 @@ Niedozwolony:</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Obróć górną i środkową warstwę razem o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
   </data>
-  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
-    <value>Obróć tylną stronę o pół obrotu.</value>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Wyślij e-mail do autora tej aplikacji</value>
   </data>
-  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
-    <value>Obróć tylną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Otwórz stronę internetową tej aplikacji</value>
   </data>
-  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
-    <value>Obróć tylną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Przetestowane rozwiązania:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby przód przeszedł do tyłu, prawa strona pozostała po prawej stronie.</value>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Średnia liczba tur potrzebnych do ułożenia kostki:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby przód znalazł się z tyłu, górna strona pozostała na górze.</value>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Pomieszaj kostkę</value>
   </data>
-  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby przód znalazł się na dole, prawa strona pozostała po prawej stronie.</value>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Zresetuj kostkę</value>
   </data>
-  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby przód znalazł się na lewej stronie, górna strona pozostała na górze.</value>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Zresetuj kostkę.</value>
   </data>
-  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby przód znalazł się na prawej stronie, górna strona pozostała na górze.</value>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Wymieszaj kostkę.</value>
   </data>
-  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby przód skierował się do góry, prawa strona pozostała po prawej stronie.</value>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Rozwiąż kostkę</value>
   </data>
-  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby góra znalazła się na dole, przód pozostał z przodu.</value>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Wróć o jeden obrót</value>
   </data>
-  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby góra znalazła się na lewą stronę, przód pozostał z przodu.</value>
-  </data>
-  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Obróć całą kostkę tak, aby góra znalazła się na prawej stronie, przód pozostał z przodu.</value>
-  </data>
-  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
-    <value>Obróć dolną część o pół obrotu.</value>
-  </data>
-  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
-    <value>Obróć dolną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
-  </data>
-  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
-    <value>Obróć dolną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
-  </data>
-  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
-    <value>Obróć przednią stronę o pół obrotu.</value>
-  </data>
-  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
-    <value>Obróć przednią stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
-  </data>
-  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
-    <value>Obróć przednią stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
-  </data>
-  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
-    <value>Obróć przednią warstwę środkową o ćwierć obrotu w prawą stronę (-).</value>
-  </data>
-  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
-    <value>Obróć przednią środkową warstwę o ćwierć obrotu w górę (+).</value>
-  </data>
-  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
-    <value>Obróć lewą stronę o pół obrotu.</value>
-  </data>
-  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
-    <value>Obróć lewą stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
-  </data>
-  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
-    <value>Obróć lewą stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
-  </data>
-  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
-    <value>Obróć środkową warstwę o pół obrotu.</value>
-  </data>
-  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
-    <value>Obróć prawą stronę o pół obrotu.</value>
-  </data>
-  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
-    <value>Obróć prawą stronę o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
-  </data>
-  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
-    <value>Obróć prawą stronę o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
-  </data>
-  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Obróć prawą środkową warstwę o ćwierć obrotu do przodu (+).</value>
-  </data>
-  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
-    <value>Obróć prawą środkową warstwę o ćwierć obrotu w górę (-).</value>
-  </data>
-  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
-    <value>Obróć górną stronę o pół obrotu.</value>
-  </data>
-  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
-    <value>Obróć górną część o ćwierć obrotu w kierunku przeciwnym do ruchu wskazówek zegara (-).</value>
-  </data>
-  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
-    <value>Obróć górną część o ćwierć obrotu w kierunku zgodnym z ruchem wskazówek zegara (+).</value>
-  </data>
-  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Obróć górną środkową warstwę o ćwierć obrotu do przodu (-).</value>
-  </data>
-  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
-    <value>Obróć górną środkową warstwę o ćwierć obrotu w prawą stronę (+).</value>
-  </data>
-  <data name="Version_Text" xml:space="preserve">
-    <value>Wersja:</value>
-  </data>
-  <data name="Website_Text" xml:space="preserve">
-    <value>Strona internetowa</value>
-  </data>
-  <data name="Yes_Text" xml:space="preserve">
-    <value>Tak</value>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Przejdź o jeden obrót do przodu</value>
   </data>
 </root>

@@ -659,19 +659,55 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="3">
                 </Border>
-                
-                <Label
-                    x:Name="lblCubeInsideView"
-                    Style="{StaticResource labelStyleExplanation}"
-                    Grid.Row="6"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
-                    HorizontalOptions="Center"
-                    BackgroundColor="Transparent"
-                    Text="{local:Translate CubeInsideView_Text}">
-                </Label>
 
-                <Button
+
+                <Grid
+                    Grid.Row="6"
+                    Grid.ColumnSpan="3">
+                    
+                    <Label
+                        x:Name="lblCubeInsideView"
+                        Style="{StaticResource labelStyleExplanation}"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Transparent"
+                        Text="{local:Translate CubeInsideView_Text}">
+                    </Label>
+
+                    <ImageButton
+                        x:Name="imgbtnGoOneTurnBackward"
+                        Style="{StaticResource imageButtonMenu}"
+                        Margin="5,0,0,0"
+                        HorizontalOptions="Start"
+                        WidthRequest="100"
+                        Source="ic_action_navigate_backward.png"
+                        ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
+                        IsVisible="False"
+                        Clicked="OnButtonGoOneTurnBackwardClicked">
+                    </ImageButton>
+
+                    <Label
+                        x:Name="btnLetterTurn"
+                        Style="{StaticResource labelStyleExplanation}"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Transparent"
+                        FontSize="20"
+                        IsVisible="False">
+                    </Label>
+
+                    <ImageButton
+                        x:Name="imgbtnGoOneTurnForward"
+                        Style="{StaticResource imageButtonMenu}"
+                        Margin="0,0,5,0"
+                        HorizontalOptions="End"                  
+                        WidthRequest="100"
+                        Source="ic_action_navigate_forward.png"
+                        ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
+                        IsVisible="False"
+                        Clicked="OnButtonGoOneTurnForwardClicked">
+                    </ImageButton>
+                </Grid>
+
+                <!--<Button
                     x:Name="btnLetterTurn"
                     Style="{StaticResource buttonStyleDefault}"
                     Grid.Row="6"
@@ -684,7 +720,7 @@
                     FontSize="20"
                     IsVisible="False"
                     Clicked="OnBtnLetterTurnClicked">
-                </Button>
+                </Button>-->
 
                 <ActivityIndicator
                     x:Name="activityIndicator"

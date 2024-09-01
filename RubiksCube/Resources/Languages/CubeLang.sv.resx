@@ -126,9 +126,6 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Tillåtna tecken:</value>
   </data>
-  <data name="AverageTurns_Text" xml:space="preserve">
-    <value>Genomsnittligt antal varv för att lösa kuben:</value>
-  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Stänga</value>
   </data>
@@ -153,11 +150,11 @@
   <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Baksida</value>
   </data>
-  <data name="CubeColors_Text" xml:space="preserve">
-    <value>Kubfärger:</value>
-  </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Nedåt ansiktet</value>
+  </data>
+  <data name="CubeColors_Text" xml:space="preserve">
+    <value>Kubfärger:</value>
   </data>
   <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Framsida</value>
@@ -206,20 +203,8 @@ För de andra sidorna måste du alltid 'föreställa dig' att du är direkt fram
   <data name="HelpOpenCube_Text" xml:space="preserve">
     <value>Öppna den sparade kuben.</value>
   </data>
-  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Det finns tre alternativ för att lösa kuben:
-1. På hemskärmen använder du piltangenterna för att blanda ihop färgerna och löser själva kuben med piltangenterna.
-2. Samma som det första alternativet, men lös kuben med 'Solve'-knappen. Kuben löses sedan i omvänd ordning.
-3. Använd knappen längst ner med kuben (se förklaringen till den knappen). Kuben löses av applikationen. Överför sedan de föreslagna rörelserna till den riktiga kuben. Detta är inte en garanti för att alla kuber kan lösas.</value>
-  </data>
-  <data name="HelpResetCube_Text" xml:space="preserve">
-    <value>Återställ kuben.</value>
-  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Spara den aktuella kuben.</value>
-  </data>
-  <data name="HelpScrambleCube_Text" xml:space="preserve">
-    <value>Skruva ihop kuben.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Överför färgerna från den blandade kuben till den här kuben. Välj en färg från färgfältet högst upp och tryck sedan på bitarna i kuben för att ändra dem. Tryck på den här knappen igen för att lämna det här avsnittet och tryck på 'Lös'-knappen.</value>
@@ -259,9 +244,6 @@ Du kan alltid kontakta mig för eventuella korrigeringar.</value>
     <value>Denna applikation får användas fritt för icke-kommersiella ändamål.
 Använd detta program helt på egen risk.</value>
   </data>
-  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Färgerna på mittstyckena är fel.</value>
-  </data>
   <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Färgen på den centrala fyrkanten kan bara förekomma en gång.</value>
   </data>
@@ -271,25 +253,11 @@ Använd detta program helt på egen risk.</value>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
     <value>Färgerna på en kantkub måste vara olika.</value>
   </data>
-  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
-    <value>Kuben är tillbaka i sitt tidigare tillstånd.</value>
-  </data>
-  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Kuben går inte att lösa.
-
-Möjlig orsak är felaktig överföring av färger till denna kub.</value>
-  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Grattis, kuben är löst.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
     <value>Kuben är inte löst.</value>
-  </data>
-  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
-    <value>Av varje tillgänglig färg måste det finnas fyra av samma färg på en hörnkub.</value>
-  </data>
-  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
-    <value>Av varje tillgänglig färg måste det finnas fyra av samma färg på en kantkub.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
     <value>Av varje tillgänglig färg måste det finnas nio av samma färg.</value>
@@ -308,15 +276,6 @@ Möjlig orsak är felaktig överföring av färger till denna kub.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen kommer att startas om.</value>
-  </data>
-  <data name="ResultSolutions_Text" xml:space="preserve">
-    <value>Testade lösningar:</value>
-  </data>
-  <data name="ResultTime_Text" xml:space="preserve">
-    <value>Tid i millisekunder:</value>
-  </data>
-  <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Antal omgångar:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -360,12 +319,6 @@ Inte tillåtet:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
   </data>
-  <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Skicka ett e-postmeddelande till författaren av den här applikationen</value>
-  </data>
-  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Öppna webbplatsen för denna applikation</value>
-  </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Gå tillbaka</value>
   </data>
@@ -378,20 +331,151 @@ Inte tillåtet:</value>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Öppna kuben</value>
   </data>
-  <data name="ToolTipResetCube_Text" xml:space="preserve">
-    <value>Återställ kuben</value>
-  </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Spara kuben</value>
-  </data>
-  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
-    <value>Skruva ihop kuben</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Växlingsknapp: Ställ in färgerna på kuben</value>
   </data>
-  <data name="ToolTipSolveCube_Text" xml:space="preserve">
-    <value>Lös kuben</value>
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
+    <value>Vänd baksidan ett halvt varv.</value>
+  </data>
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
+    <value>Vrid baksidan ett kvarts varv "moturs" (-).</value>
+  </data>
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
+    <value>Vrid baksidan ett kvarts varv 'medurs' (+).</value>
+  </data>
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
+    <value>Vänd undersidan ett halvt varv.</value>
+  </data>
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
+    <value>Vrid undersidan ett kvarts varv 'moturs' (-).</value>
+  </data>
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
+    <value>Vrid undersidan ett kvarts varv 'medurs' (+).</value>
+  </data>
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att framsidan går till botten, höger sida förblir till höger.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att framsidan går till vänster sida, översidan förblir överst.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att framsidan går åt höger sida, översidan blir kvar på toppen.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att fronten går till toppen, höger sida förblir till höger.</value>
+  </data>
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att toppen går till vänster sida, framsidan blir kvar längst fram.</value>
+  </data>
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att toppen går åt höger sida, framsidan blir kvar längst fram.</value>
+  </data>
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
+    <value>Vrid det främre och mittersta lagret ett kvarts varv till höger sida (-).</value>
+  </data>
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
+    <value>Vrid det främre-mellanlagret ett kvarts varv till översidan (+).</value>
+  </data>
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
+    <value>Vrid framsidan ett halvt varv.</value>
+  </data>
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
+    <value>Vrid framsidan ett kvarts varv 'moturs' (-).</value>
+  </data>
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
+    <value>Vrid framsidan ett kvarts varv 'medurs' (+).</value>
+  </data>
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
+    <value>Vrid vänster sida ett halvt varv.</value>
+  </data>
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
+    <value>Vrid vänster sida ett kvarts varv "moturs" (-).</value>
+  </data>
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
+    <value>Vrid vänster sida ett kvarts varv 'medurs' (+).</value>
+  </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Vänd mellanlagret ett halvt varv.</value>
+  </data>
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Vrid det högra mittenskiktet ett kvarts varv till framsidan (+).</value>
+  </data>
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
+    <value>Vrid det högra mittenskiktet ett kvarts varv till översidan (-).</value>
+  </data>
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
+    <value>Vrid höger ett halvt varv.</value>
+  </data>
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
+    <value>Vrid höger sida ett kvarts varv "moturs" (-).</value>
+  </data>
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
+    <value>Vrid höger sida ett kvarts varv 'medurs' (+).</value>
+  </data>
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Vrid det övre och mittersta lagret ett kvarts varv till framsidan (-).</value>
+  </data>
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
+    <value>Vrid det övre och mittersta lagret ett kvarts varv till höger sida (+).</value>
+  </data>
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
+    <value>Vänd ovansidan ett halvt varv.</value>
+  </data>
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
+    <value>Vrid ovansidan ett kvarts varv "moturs" (-).</value>
+  </data>
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
+    <value>Vrid ovansidan ett kvarts varv 'medurs' (+).</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Hemsida</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
+    <value>Kuben går inte att lösa.
+
+Möjlig orsak är felaktig överföring av färger till denna kub.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att framsidan går bakåt, höger sida förblir till höger.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att framsidan går bakåt, översidan förblir upptill.</value>
+  </data>
+  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
+    <value>Vänd hela kuben så att toppen går till botten, framsidan blir kvar längst fram.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Tid i millisekunder:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Antal omgångar:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Det finns tre alternativ för att lösa kuben:
+1. På hemskärmen använder du piltangenterna för att blanda ihop färgerna och löser själva kuben med piltangenterna.
+2. Samma som det första alternativet, men lös kuben med 'Solve'-knappen. Kuben löses sedan i omvänd ordning.
+3. Använd knappen längst ner med kuben (se förklaringen till den knappen). Kuben löses av applikationen. Överför sedan de föreslagna rörelserna till den riktiga kuben. Detta är inte en garanti för att alla kuber kan lösas.</value>
+  </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Kuben är tillbaka i sitt tidigare tillstånd.</value>
+  </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Färgerna på mittstyckena är fel.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>Av varje tillgänglig färg måste det finnas fyra av samma färg på en kantkub.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Av varje tillgänglig färg måste det finnas fyra av samma färg på en hörnkub.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Vänd ihop bak- och mellanlagret ett halvt varv.</value>
@@ -447,115 +531,37 @@ Inte tillåtet:</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Vrid ihop det övre och mittersta lagret ett kvarts varv 'medurs' (+).</value>
   </data>
-  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
-    <value>Vänd baksidan ett halvt varv.</value>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Skicka ett e-postmeddelande till författaren av den här applikationen</value>
   </data>
-  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
-    <value>Vrid baksidan ett kvarts varv "moturs" (-).</value>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Öppna webbplatsen för denna applikation</value>
   </data>
-  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
-    <value>Vrid baksidan ett kvarts varv 'medurs' (+).</value>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Testade lösningar:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att framsidan går bakåt, höger sida förblir till höger.</value>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Genomsnittligt antal varv för att lösa kuben:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att framsidan går bakåt, översidan förblir upptill.</value>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Skruva ihop kuben</value>
   </data>
-  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att framsidan går till botten, höger sida förblir till höger.</value>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Återställ kuben</value>
   </data>
-  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att framsidan går till vänster sida, översidan förblir överst.</value>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Återställ kuben.</value>
   </data>
-  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att framsidan går åt höger sida, översidan blir kvar på toppen.</value>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Skruva ihop kuben.</value>
   </data>
-  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att fronten går till toppen, höger sida förblir till höger.</value>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Lös kuben</value>
   </data>
-  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att toppen går till botten, framsidan blir kvar längst fram.</value>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Gå tillbaka ett varv</value>
   </data>
-  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att toppen går till vänster sida, framsidan blir kvar längst fram.</value>
-  </data>
-  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Vänd hela kuben så att toppen går åt höger sida, framsidan blir kvar längst fram.</value>
-  </data>
-  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
-    <value>Vänd undersidan ett halvt varv.</value>
-  </data>
-  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
-    <value>Vrid undersidan ett kvarts varv 'moturs' (-).</value>
-  </data>
-  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
-    <value>Vrid undersidan ett kvarts varv 'medurs' (+).</value>
-  </data>
-  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
-    <value>Vrid framsidan ett halvt varv.</value>
-  </data>
-  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
-    <value>Vrid framsidan ett kvarts varv 'moturs' (-).</value>
-  </data>
-  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
-    <value>Vrid framsidan ett kvarts varv 'medurs' (+).</value>
-  </data>
-  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
-    <value>Vrid det främre och mittersta lagret ett kvarts varv till höger sida (-).</value>
-  </data>
-  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
-    <value>Vrid det främre-mellanlagret ett kvarts varv till översidan (+).</value>
-  </data>
-  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
-    <value>Vrid vänster sida ett halvt varv.</value>
-  </data>
-  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
-    <value>Vrid vänster sida ett kvarts varv "moturs" (-).</value>
-  </data>
-  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
-    <value>Vrid vänster sida ett kvarts varv 'medurs' (+).</value>
-  </data>
-  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
-    <value>Vänd mellanlagret ett halvt varv.</value>
-  </data>
-  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
-    <value>Vrid höger ett halvt varv.</value>
-  </data>
-  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
-    <value>Vrid höger sida ett kvarts varv "moturs" (-).</value>
-  </data>
-  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
-    <value>Vrid höger sida ett kvarts varv 'medurs' (+).</value>
-  </data>
-  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Vrid det högra mittenskiktet ett kvarts varv till framsidan (+).</value>
-  </data>
-  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
-    <value>Vrid det högra mittenskiktet ett kvarts varv till översidan (-).</value>
-  </data>
-  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
-    <value>Vänd ovansidan ett halvt varv.</value>
-  </data>
-  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
-    <value>Vrid ovansidan ett kvarts varv "moturs" (-).</value>
-  </data>
-  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
-    <value>Vrid ovansidan ett kvarts varv 'medurs' (+).</value>
-  </data>
-  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Vrid det övre och mittersta lagret ett kvarts varv till framsidan (-).</value>
-  </data>
-  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
-    <value>Vrid det övre och mittersta lagret ett kvarts varv till höger sida (+).</value>
-  </data>
-  <data name="Version_Text" xml:space="preserve">
-    <value>Version:</value>
-  </data>
-  <data name="Website_Text" xml:space="preserve">
-    <value>Hemsida</value>
-  </data>
-  <data name="Yes_Text" xml:space="preserve">
-    <value>Ja</value>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Gå ett varv framåt</value>
   </data>
 </root>

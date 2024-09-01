@@ -126,9 +126,6 @@
   <data name="AllowedChar_Text" xml:space="preserve">
     <value>Tillatte tegn:</value>
   </data>
-  <data name="AverageTurns_Text" xml:space="preserve">
-    <value>Gjennomsnittlig antall omdreininger for å løse kuben:</value>
-  </data>
   <data name="ButtonClose_Text" xml:space="preserve">
     <value>Lukk</value>
   </data>
@@ -153,11 +150,11 @@
   <data name="CubeBackFace_Text" xml:space="preserve">
     <value>Bakside</value>
   </data>
-  <data name="CubeColors_Text" xml:space="preserve">
-    <value>Kubefarger:</value>
-  </data>
   <data name="CubeDownFace_Text" xml:space="preserve">
     <value>Ned ansikt</value>
+  </data>
+  <data name="CubeColors_Text" xml:space="preserve">
+    <value>Kubefarger:</value>
   </data>
   <data name="CubeFrontFace_Text" xml:space="preserve">
     <value>Forside</value>
@@ -206,20 +203,8 @@ For de andre sidene må du alltid 'forestille deg' at du er rett foran siden som
   <data name="HelpOpenCube_Text" xml:space="preserve">
     <value>Åpne den lagrede kuben.</value>
   </data>
-  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Det er tre alternativer for å løse kuben:
-1. På startskjermen bruker du piltastene til å blande fargene og løser selve kuben med piltastene.
-2. Samme som det første alternativet, men løs kuben med 'Løs'-knappen. Terningen løses deretter i omvendt rekkefølge.
-3. Bruk knappen nederst med kuben (se forklaring av den knappen). Kuben løses av applikasjonen. Overfør deretter de foreslåtte bevegelsene til den virkelige kuben. Dette er ikke en garanti for at alle kuber kan løses.</value>
-  </data>
-  <data name="HelpResetCube_Text" xml:space="preserve">
-    <value>Tilbakestill kuben.</value>
-  </data>
   <data name="HelpSaveCube_Text" xml:space="preserve">
     <value>Lagre den gjeldende kuben.</value>
-  </data>
-  <data name="HelpScrambleCube_Text" xml:space="preserve">
-    <value>Bland kuben.</value>
   </data>
   <data name="HelpSetColorsCube_Text" xml:space="preserve">
     <value>Overfør fargene fra den roterte kuben til denne kuben. Velg en farge fra fargelinjen øverst og trykk deretter på bitene av kuben for å endre dem. Trykk på denne knappen igjen for å forlate denne delen og trykk på 'Løs'-knappen.</value>
@@ -259,9 +244,6 @@ Du kan alltid kontakte meg for eventuelle rettelser.</value>
     <value>Denne applikasjonen kan brukes fritt til ikke-kommersielle formål.
 Bruk dette programmet helt på egen risiko.</value>
   </data>
-  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
-    <value>Fargene på midtstykkene er feil.</value>
-  </data>
   <data name="MessageColorCentralCube_Text" xml:space="preserve">
     <value>Fargen på den sentrale firkanten kan bare forekomme én gang.</value>
   </data>
@@ -271,25 +253,11 @@ Bruk dette programmet helt på egen risiko.</value>
   <data name="MessageColorEdgeCube_Text" xml:space="preserve">
     <value>Fargene på en kantkube må være forskjellige.</value>
   </data>
-  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
-    <value>Kuben er tilbake i sin forrige tilstand.</value>
-  </data>
-  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
-    <value>Kuben kan ikke løses.
-
-Mulig årsak er feil overføring av farger til denne kuben.</value>
-  </data>
   <data name="MessageCubeIsSolved_Text" xml:space="preserve">
     <value>Gratulerer, kuben er løst.</value>
   </data>
   <data name="MessageCubeNotSolved_Text" xml:space="preserve">
     <value>Kuben er ikke løst.</value>
-  </data>
-  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
-    <value>Av hver tilgjengelig farge må det være fire av samme farge på en hjørneterning.</value>
-  </data>
-  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
-    <value>Av hver tilgjengelig farge må det være fire av samme farge på en kantkube.</value>
   </data>
   <data name="MessageNineSameColor_Text" xml:space="preserve">
     <value>Av hver tilgjengelig farge må det være ni av samme farge.</value>
@@ -308,15 +276,6 @@ Mulig årsak er feil overføring av farger til denne kuben.</value>
   </data>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikasjonen vil bli startet på nytt.</value>
-  </data>
-  <data name="ResultSolutions_Text" xml:space="preserve">
-    <value>Testede løsninger:</value>
-  </data>
-  <data name="ResultTime_Text" xml:space="preserve">
-    <value>Tid i millisekunder:</value>
-  </data>
-  <data name="ResultTurns_Text" xml:space="preserve">
-    <value>Antall svinger:</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
     <value>Rubik's Cube</value>
@@ -360,12 +319,6 @@ Ikke tillatt:</value>
   <data name="Theme_Text" xml:space="preserve">
     <value>Tema:</value>
   </data>
-  <data name="ToolTipAppEmail_Text" xml:space="preserve">
-    <value>Send en e-post til forfatteren av denne applikasjonen</value>
-  </data>
-  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
-    <value>Åpne nettstedet til denne applikasjonen</value>
-  </data>
   <data name="ToolTipGoBack_Text" xml:space="preserve">
     <value>Gå tilbake</value>
   </data>
@@ -378,20 +331,151 @@ Ikke tillatt:</value>
   <data name="ToolTipOpenCube_Text" xml:space="preserve">
     <value>Åpne kuben</value>
   </data>
-  <data name="ToolTipResetCube_Text" xml:space="preserve">
-    <value>Tilbakestill kuben</value>
-  </data>
   <data name="ToolTipSaveCube_Text" xml:space="preserve">
     <value>Lagre kuben</value>
-  </data>
-  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
-    <value>Bland kuben</value>
   </data>
   <data name="ToolTipSetColorsCube_Text" xml:space="preserve">
     <value>Veksleknapp: Still inn fargene på kuben</value>
   </data>
-  <data name="ToolTipSolveCube_Text" xml:space="preserve">
-    <value>Løs kuben</value>
+  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
+    <value>Snu baksiden en halv omgang.</value>
+  </data>
+  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
+    <value>Snu baksiden en kvart omdreining 'mot klokken' (-).</value>
+  </data>
+  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
+    <value>Vri baksiden en kvart omdreining 'med klokken' (+).</value>
+  </data>
+  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
+    <value>Snu undersiden en halv omgang.</value>
+  </data>
+  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
+    <value>Vri undersiden en kvart omdreining 'mot klokken' (-).</value>
+  </data>
+  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
+    <value>Vri undersiden en kvart omdreining 'med klokken' (+).</value>
+  </data>
+  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at fronten går til bunnen, høyre side forblir til høyre.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at fronten går til venstre side, toppsiden forblir øverst.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at fronten går til høyre side, oversiden forblir øverst.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at fronten går til toppen, høyre side forblir til høyre.</value>
+  </data>
+  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at toppen går til venstre side, forsiden forblir foran.</value>
+  </data>
+  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at toppen går til høyre side, forsiden forblir foran.</value>
+  </data>
+  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
+    <value>Vri det fremre-midtste laget en kvart omdreining til høyre side (-).</value>
+  </data>
+  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
+    <value>Vri det fremre og midtre laget en kvart omdreining til oversiden (+).</value>
+  </data>
+  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
+    <value>Snu forsiden en halv omgang.</value>
+  </data>
+  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
+    <value>Vri forsiden en kvart omdreining 'mot klokken' (-).</value>
+  </data>
+  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
+    <value>Vri forsiden en kvart omdreining med klokken (+).</value>
+  </data>
+  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
+    <value>Snu venstre side en halv omgang.</value>
+  </data>
+  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
+    <value>Vri venstre side en kvart omdreining 'mot klokken' (-).</value>
+  </data>
+  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
+    <value>Vri venstre side en kvart omdreining 'med klokken' (+).</value>
+  </data>
+  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
+    <value>Snu mellomlaget en halv omgang.</value>
+  </data>
+  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Snu høyre-midtlaget en kvart omdreining til forsiden (+).</value>
+  </data>
+  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
+    <value>Snu høyre-midtlaget en kvart omdreining til oversiden (-).</value>
+  </data>
+  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
+    <value>Snu høyre side en halv omgang.</value>
+  </data>
+  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
+    <value>Vri høyre side en kvart omdreining 'mot klokken' (-).</value>
+  </data>
+  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
+    <value>Vri høyre side en kvart omdreining 'med klokken' (+).</value>
+  </data>
+  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
+    <value>Vri det øverste og midtre laget en kvart omdreining til forsiden (-).</value>
+  </data>
+  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
+    <value>Vri det øverste og midtre laget en kvart omdreining til høyre side (+).</value>
+  </data>
+  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
+    <value>Snu oversiden en halv omgang.</value>
+  </data>
+  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
+    <value>Vri oversiden en kvart omdreining 'mot klokken' (-).</value>
+  </data>
+  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
+    <value>Vri oversiden en kvart omdreining 'med klokken' (+).</value>
+  </data>
+  <data name="Version_Text" xml:space="preserve">
+    <value>Versjon:</value>
+  </data>
+  <data name="Website_Text" xml:space="preserve">
+    <value>Nettsted</value>
+  </data>
+  <data name="Yes_Text" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="MessageCubeCannotBeSolved_Text" xml:space="preserve">
+    <value>Kuben kan ikke løses.
+
+Mulig årsak er feil overføring av farger til denne kuben.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at forsiden går bakover, høyre side forblir til høyre.</value>
+  </data>
+  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at fronten går bakover, oversiden forblir øverst.</value>
+  </data>
+  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
+    <value>Snu hele kuben slik at toppen går til bunnen, forsiden forblir foran.</value>
+  </data>
+  <data name="ResultTime_Text" xml:space="preserve">
+    <value>Tid i millisekunder:</value>
+  </data>
+  <data name="ResultTurns_Text" xml:space="preserve">
+    <value>Antall svinger:</value>
+  </data>
+  <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
+    <value>Det er tre alternativer for å løse kuben:
+1. På startskjermen bruker du piltastene til å blande fargene og løser selve kuben med piltastene.
+2. Samme som det første alternativet, men løs kuben med 'Løs'-knappen. Terningen løses deretter i omvendt rekkefølge.
+3. Bruk knappen nederst med kuben (se forklaring av den knappen). Kuben løses av applikasjonen. Overfør deretter de foreslåtte bevegelsene til den virkelige kuben. Dette er ikke en garanti for at alle kuber kan løses.</value>
+  </data>
+  <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
+    <value>Kuben er tilbake i sin forrige tilstand.</value>
+  </data>
+  <data name="MessageColorCenterPiece_Text" xml:space="preserve">
+    <value>Fargene på midtstykkene er feil.</value>
+  </data>
+  <data name="MessageFourSameColorEdgeCube_Text" xml:space="preserve">
+    <value>Av hver tilgjengelig farge må det være fire av samme farge på en kantkube.</value>
+  </data>
+  <data name="MessageFourSameColorCornerCube_Text" xml:space="preserve">
+    <value>Av hver tilgjengelig farge må det være fire av samme farge på en hjørneterning.</value>
   </data>
   <data name="Turn2LayersBack2_Text" xml:space="preserve">
     <value>Snu bak- og mellomlaget sammen en halv omgang.</value>
@@ -447,115 +531,37 @@ Ikke tillatt:</value>
   <data name="Turn2LayersUpCW_Text" xml:space="preserve">
     <value>Vri det øverste og midterste laget sammen en kvart omdreining 'med klokken' (+).</value>
   </data>
-  <data name="TurnBackFaceHalfTurn_Text" xml:space="preserve">
-    <value>Snu baksiden en halv omgang.</value>
+  <data name="ToolTipAppEmail_Text" xml:space="preserve">
+    <value>Send en e-post til forfatteren av denne applikasjonen</value>
   </data>
-  <data name="TurnBackFaceToLeft_Text" xml:space="preserve">
-    <value>Snu baksiden en kvart omdreining 'mot klokken' (-).</value>
+  <data name="ToolTipAppWebsite_Text" xml:space="preserve">
+    <value>Åpne nettstedet til denne applikasjonen</value>
   </data>
-  <data name="TurnBackFaceToRight_Text" xml:space="preserve">
-    <value>Vri baksiden en kvart omdreining 'med klokken' (+).</value>
+  <data name="ResultSolutions_Text" xml:space="preserve">
+    <value>Testede løsninger:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceRightStays_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at forsiden går bakover, høyre side forblir til høyre.</value>
+  <data name="AverageTurns_Text" xml:space="preserve">
+    <value>Gjennomsnittlig antall omdreininger for å løse kuben:</value>
   </data>
-  <data name="TurnCubeFrontFaceToBackFaceUpStays_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at fronten går bakover, oversiden forblir øverst.</value>
+  <data name="ToolTipScrambleCube_Text" xml:space="preserve">
+    <value>Bland kuben</value>
   </data>
-  <data name="TurnCubeFrontFaceToDownFace_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at fronten går til bunnen, høyre side forblir til høyre.</value>
+  <data name="ToolTipResetCube_Text" xml:space="preserve">
+    <value>Tilbakestill kuben</value>
   </data>
-  <data name="TurnCubeFrontFaceToLeftFace_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at fronten går til venstre side, toppsiden forblir øverst.</value>
+  <data name="HelpResetCube_Text" xml:space="preserve">
+    <value>Tilbakestill kuben.</value>
   </data>
-  <data name="TurnCubeFrontFaceToRightFace_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at fronten går til høyre side, oversiden forblir øverst.</value>
+  <data name="HelpScrambleCube_Text" xml:space="preserve">
+    <value>Bland kuben.</value>
   </data>
-  <data name="TurnCubeFrontFaceToUpFace_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at fronten går til toppen, høyre side forblir til høyre.</value>
+  <data name="ToolTipSolveCube_Text" xml:space="preserve">
+    <value>Løs kuben</value>
   </data>
-  <data name="TurnCubeUpFaceToDownFaceFrontStays_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at toppen går til bunnen, forsiden forblir foran.</value>
+  <data name="ToolTipGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Gå tilbake en sving</value>
   </data>
-  <data name="TurnCubeUpFaceToLeftFace_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at toppen går til venstre side, forsiden forblir foran.</value>
-  </data>
-  <data name="TurnCubeUpFaceToRightFace_Text" xml:space="preserve">
-    <value>Snu hele kuben slik at toppen går til høyre side, forsiden forblir foran.</value>
-  </data>
-  <data name="TurnDownFaceHalfTurn_Text" xml:space="preserve">
-    <value>Snu undersiden en halv omgang.</value>
-  </data>
-  <data name="TurnDownFaceToLeft_Text" xml:space="preserve">
-    <value>Vri undersiden en kvart omdreining 'mot klokken' (-).</value>
-  </data>
-  <data name="TurnDownFaceToRight_Text" xml:space="preserve">
-    <value>Vri undersiden en kvart omdreining 'med klokken' (+).</value>
-  </data>
-  <data name="TurnFrontFaceHalfTurn_Text" xml:space="preserve">
-    <value>Snu forsiden en halv omgang.</value>
-  </data>
-  <data name="TurnFrontFaceToLeft_Text" xml:space="preserve">
-    <value>Vri forsiden en kvart omdreining 'mot klokken' (-).</value>
-  </data>
-  <data name="TurnFrontFaceToRight_Text" xml:space="preserve">
-    <value>Vri forsiden en kvart omdreining med klokken (+).</value>
-  </data>
-  <data name="TurnFrontMiddleToRightFace_Text" xml:space="preserve">
-    <value>Vri det fremre-midtste laget en kvart omdreining til høyre side (-).</value>
-  </data>
-  <data name="TurnFrontMiddleToUpFace_Text" xml:space="preserve">
-    <value>Vri det fremre og midtre laget en kvart omdreining til oversiden (+).</value>
-  </data>
-  <data name="TurnLeftFaceHalfTurn_Text" xml:space="preserve">
-    <value>Snu venstre side en halv omgang.</value>
-  </data>
-  <data name="TurnLeftFaceToLeft_Text" xml:space="preserve">
-    <value>Vri venstre side en kvart omdreining 'mot klokken' (-).</value>
-  </data>
-  <data name="TurnLeftFaceToRight_Text" xml:space="preserve">
-    <value>Vri venstre side en kvart omdreining 'med klokken' (+).</value>
-  </data>
-  <data name="TurnMiddleLayerHalfTurn_Text" xml:space="preserve">
-    <value>Snu mellomlaget en halv omgang.</value>
-  </data>
-  <data name="TurnRightFaceHalfTurn_Text" xml:space="preserve">
-    <value>Snu høyre side en halv omgang.</value>
-  </data>
-  <data name="TurnRightFaceToLeft_Text" xml:space="preserve">
-    <value>Vri høyre side en kvart omdreining 'mot klokken' (-).</value>
-  </data>
-  <data name="TurnRightFaceToRight_Text" xml:space="preserve">
-    <value>Vri høyre side en kvart omdreining 'med klokken' (+).</value>
-  </data>
-  <data name="TurnRightMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Snu høyre-midtlaget en kvart omdreining til forsiden (+).</value>
-  </data>
-  <data name="TurnRightMiddleToUpFace_Text" xml:space="preserve">
-    <value>Snu høyre-midtlaget en kvart omdreining til oversiden (-).</value>
-  </data>
-  <data name="TurnUpFaceHalfTurn_Text" xml:space="preserve">
-    <value>Snu oversiden en halv omgang.</value>
-  </data>
-  <data name="TurnUpFaceToLeft_Text" xml:space="preserve">
-    <value>Vri oversiden en kvart omdreining 'mot klokken' (-).</value>
-  </data>
-  <data name="TurnUpFaceToRight_Text" xml:space="preserve">
-    <value>Vri oversiden en kvart omdreining 'med klokken' (+).</value>
-  </data>
-  <data name="TurnUpMiddleToFrontFace_Text" xml:space="preserve">
-    <value>Vri det øverste og midtre laget en kvart omdreining til forsiden (-).</value>
-  </data>
-  <data name="TurnUpMiddleToRightFace_Text" xml:space="preserve">
-    <value>Vri det øverste og midtre laget en kvart omdreining til høyre side (+).</value>
-  </data>
-  <data name="Version_Text" xml:space="preserve">
-    <value>Versjon:</value>
-  </data>
-  <data name="Website_Text" xml:space="preserve">
-    <value>Nettsted</value>
-  </data>
-  <data name="Yes_Text" xml:space="preserve">
-    <value>Ja</value>
+  <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
+    <value>Gå en sving fremover</value>
   </data>
 </root>
