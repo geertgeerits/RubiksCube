@@ -241,6 +241,242 @@ namespace RubiksCube
         }
 
         /// <summary>
+        /// Turn the layers of the cube in reverse order
+        /// </summary>
+        /// <param name="cTurn"></param>
+        /// <returns></returns>
+        public static async Task<bool> TurnCubeLayersReversedAsync(string cTurn)
+        {
+            switch (cTurn)
+            {
+                // Face rotations
+                case turnFrontCW:
+                    TurnFrontFaceTo("CCW");
+                    break;
+                case turnFrontCCW:
+                    TurnFrontFaceTo("CW");
+                    break;
+                case turnFront2:
+                    TurnFrontFaceTo("CW");
+                    TurnFrontFaceTo("CW");
+                    break;
+                case turnRightCW:
+                    TurnRightFaceTo("CCW");
+                    break;
+                case turnRightCCW:
+                    TurnRightFaceTo("CW");
+                    break;
+                case turnRight2:
+                    TurnRightFaceTo("CW");
+                    TurnRightFaceTo("CW");
+                    break;
+                case turnBackCW:
+                    TurnBackFaceTo("CCW");
+                    break;
+                case turnBackCCW:
+                    TurnBackFaceTo("CW");
+                    break;
+                case turnBack2:
+                    TurnBackFaceTo("CW");
+                    TurnBackFaceTo("CW");
+                    break;
+                case turnLeftCW:
+                    TurnLeftFaceTo("CCW");
+                    break;
+                case turnLeftCCW:
+                    TurnLeftFaceTo("CW");
+                    break;
+                case turnLeft2:
+                    TurnLeftFaceTo("CW");
+                    TurnLeftFaceTo("CW");
+                    break;
+                case turnUpCW:
+                    TurnUpFaceTo("CCW");
+                    break;
+                case turnUpCCW:
+                    TurnUpFaceTo("CW");
+                    break;
+                case turnUp2:
+                    TurnUpFaceTo("CW");
+                    TurnUpFaceTo("CW");
+                    break;
+                case turnDownCW:
+                    TurnDownFaceTo("CCW");
+                    break;
+                case turnDownCCW:
+                    TurnDownFaceTo("CW");
+                    break;
+                case turnDown2:
+                    TurnDownFaceTo("CW");
+                    TurnDownFaceTo("CW");
+                    break;
+
+                // Middle layer rotations
+                case turnUpHorMiddleRight:
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+                case turnUpHorMiddleLeft:
+                    TurnUpHorMiddleTo("CW");
+                    break;
+                case turnUpHorMiddle2:
+                    TurnUpHorMiddleTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+
+                case turnUpVerMiddleBack:
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+                case turnUpVerMiddleFront:
+                    TurnUpVerMiddleTo("CW");
+                    break;
+                case turnUpVerMiddle2:
+                    TurnUpVerMiddleTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+
+                case turnFrontHorMiddleLeft:
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+                case turnFrontHorMiddleRight:
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+                case turnFrontHorMiddle2:
+                    TurnFrontHorMiddleTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+
+                // Two layers at the same time
+                case turn2LayersFrontCW:
+                    TurnFrontFaceTo("CCW");
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+                case turn2LayersFrontCCW:
+                    TurnFrontFaceTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+                case turn2LayersFront2:
+                    TurnFrontFaceTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    TurnFrontFaceTo("CW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+
+                case turn2LayersRightCW:
+                    TurnRightFaceTo("CCW");
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+                case turn2LayersRightCCW:
+                    TurnRightFaceTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+                case turn2LayersRight2:
+                    TurnRightFaceTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    TurnRightFaceTo("CW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+
+                case turn2LayersBackCW:
+                    TurnBackFaceTo("CCW");
+                    TurnUpHorMiddleTo("CW");
+                    break;
+                case turn2LayersBackCCW:
+                    TurnBackFaceTo("CW");
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+                case turn2LayersBack2:
+                    TurnBackFaceTo("CW");
+                    TurnUpHorMiddleTo("CCW");
+                    TurnBackFaceTo("CW");
+                    TurnUpHorMiddleTo("CCW");
+                    break;
+
+                case turn2LayersLeftCW:
+                    TurnLeftFaceTo("CCW");
+                    TurnUpVerMiddleTo("CW");
+                    break;
+                case turn2LayersLeftCCW:
+                    TurnLeftFaceTo("CW");
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+                case turn2LayersLeft2:
+                    TurnLeftFaceTo("CW");
+                    TurnUpVerMiddleTo("CCW");
+                    TurnLeftFaceTo("CW");
+                    TurnUpVerMiddleTo("CCW");
+                    break;
+
+                case turn2LayersUpCW:
+                    TurnUpFaceTo("CCW");
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+                case turn2LayersUpCCW:
+                    TurnUpFaceTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+                case turn2LayersUp2:
+                    TurnUpFaceTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    TurnUpFaceTo("CW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+
+                case turn2LayersDownCW:
+                    TurnDownFaceTo("CCW");
+                    TurnFrontHorMiddleTo("CW");
+                    break;
+                case turn2LayersDownCCW:
+                    TurnDownFaceTo("CW");
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+                case turn2LayersDown2:
+                    TurnDownFaceTo("CW");
+                    TurnFrontHorMiddleTo("CCW");
+                    TurnDownFaceTo("CW");
+                    TurnFrontHorMiddleTo("CCW");
+                    break;
+
+                // Cube rotations
+                case turnCubeFrontToRight:
+                    TurnCubeFrontFaceToLeftFace();
+                    break;
+                case turnCubeFrontToLeft:
+                    TurnCubeFrontFaceToRightFace();
+                    break;
+                case turnCubeFrontToLeft2:
+                    TurnCubeFrontFaceToLeftFace();
+                    TurnCubeFrontFaceToLeftFace();
+                    break;
+                case turnCubeFrontToUp:
+                    TurnCubeFrontFaceToDownFace();
+                    break;
+                case turnCubeFrontToUp2:
+                    TurnCubeFrontFaceToUpFace();
+                    TurnCubeFrontFaceToUpFace();
+                    break;
+                case turnCubeFrontToDown:
+                    TurnCubeFrontFaceToUpFace();
+                    break;
+                case turnCubeUpToRight:
+                    TurnCubeUpFaceToLeftFace();
+                    break;
+                case turnCubeUpToRight2:
+                    TurnCubeUpFaceToRightFace();
+                    TurnCubeUpFaceToRightFace();
+                    break;
+                case turnCubeUpToLeft:
+                    TurnCubeUpFaceToRightFace();
+                    break;
+
+                default:
+                    await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
+                    return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Rotate the entire cube a quarter turn so that the front goes to the left face
         /// </summary>
         private static void TurnCubeFrontFaceToLeftFace()

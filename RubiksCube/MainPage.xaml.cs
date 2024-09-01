@@ -365,6 +365,13 @@ namespace RubiksCube
                     await MakeExplainTurnAsync(cItem);
                 }
 
+                while (true)
+                {
+                    
+                    
+                    break;
+                }
+                
                 lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
                 btnLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
 
@@ -462,6 +469,14 @@ namespace RubiksCube
 
             // Turn the faces of the cube
             await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
+            //if (!bTurnIsBackwards)
+            //{
+            //    await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
+            //}
+            //else
+            //{
+            //    await ClassCubeTurns.TurnCubeLayersReversedAsync(cTurn);
+            //}
 
             // Set the cube colors from the arrays in the polygons
             GetCubeColorsFromArrays();
@@ -1789,8 +1804,36 @@ namespace RubiksCube
                 SetArrowTooltips(true);
             }
         }
+
+        //int currentIndex = 0;
+
+        //private async void OnButtonGoOneTurnBackwardClicked(object sender, EventArgs e)
+        //{
+        //    if (currentIndex > 0)
+        //    {
+        //        currentIndex--;
+        //        await MakeExplainTurnAsync(Globals.lCubeTurns[currentIndex]);
+        //        UpdateTurnCounter();
+        //    }
+        //}
+
+        //private async void OnButtonGoOneTurnForwardClicked(object sender, EventArgs e)
+        //{
+        //    if (currentIndex < Globals.lCubeTurns.Count - 1)
+        //    {
+        //        currentIndex++;
+        //        await MakeExplainTurnAsync(Globals.lCubeTurns[currentIndex]);
+        //        UpdateTurnCounter();
+        //    }
+        //}
+
+        //private void UpdateTurnCounter()
+        //{
+        //    lblNumberTurns.Text = $"{currentIndex + 1}/{Globals.lCubeTurns.Count}";
+        //}
     }
 }
+
 
 /*
 Numbering of cube surfaces
