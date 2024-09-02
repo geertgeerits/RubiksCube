@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-01 (YYYY-MM-DD)
+ * Date ........: 2024-09-02 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -22,7 +22,6 @@ namespace RubiksCube
         private bool bSolved;
         private bool bTestSolveCube;
         private bool bTurnIsBackwards;
-        private int nTurnNumber;
 
         //// Array with cube turns for the cube scramble generator
         private readonly string[] ScrambledCubeTurns = [
@@ -276,10 +275,12 @@ namespace RubiksCube
             lblCubeOutsideView.IsVisible = false;
             lblExplainTurnCube.IsVisible = true;
             lblCubeInsideView.IsVisible = false;
+            imgbtnGoOneTurnBackward.IsEnabled = false;
             imgbtnGoOneTurnBackward.IsVisible = true;
-            btnLetterTurn.IsVisible = true;
+            lblLetterTurn.IsVisible = true;
+            imgbtnGoOneTurnForward.IsEnabled = false;
             imgbtnGoOneTurnForward.IsVisible = true;
-            
+
             Globals.nTestedSolutions = 0;
 
             // Start the activity indicator
@@ -354,26 +355,59 @@ namespace RubiksCube
                 await Task.Delay(500);
 
                 // Make the turns of the cube
-                int nTurns = -1;
+                imgbtnGoOneTurnForward.IsEnabled = true;
+                bTurnIsBackwards = false;
+                int nTurnNumber = -1;
+                int nTurnIndex = -1;
+                int nTurnIndexOffset;
 
-                foreach (string cItem in Globals.lCubeTurns)
+                do
                 {
-                    nTurns++;
-                    lblNumberTurns.Text = $"{nTurns}/{nNumberOfTurns}";
-                    btnLetterTurn.Text = cItem;
+                    if (!bTurnIsBackwards)
+                    {
+                        nTurnNumber++;
+                        nTurnIndex++;
+                        nTurnIndexOffset = 0;
+                    }
+                    else
+                    {
+                        if (nTurnIndex > 0)
+                        {
+                            nTurnNumber--;
+                            nTurnIndex--;
+                        }
 
-                    await MakeExplainTurnAsync(cItem);
-                }
+                        nTurnIndexOffset = 1;
+                    }
 
-                while (true)
-                {
+                    if (nTurnIndex < 1)
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;
+                    }
+                    else
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = true;
+                    }
+
+                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
+                    lblLetterTurn.Text = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
+
+                    //await Task.Delay(500);
                     
-                    
-                    break;
+                    string cTurn = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
+
+                    //await DisplayAlert("cTurn", cTurn, "OK");   // For testing
+
+                    //await MakeExplainTurnAsync(Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset]);
+                    await MakeExplainTurnAsync(cTurn);
+
+
+                    //await MakeExplainTurnAsync(lblLetterTurn.Text);
                 }
-                
-                lblNumberTurns.Text = $"{nTurns + 1}/{nNumberOfTurns}";
-                btnLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
+                while (nTurnIndex < nNumberOfTurns - 1);
+
+                lblNumberTurns.Text = $"{nTurnIndex + 1}/{nNumberOfTurns}";
+                lblLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
 
                 await Task.Delay(500);
 
@@ -410,7 +444,7 @@ namespace RubiksCube
             lblExplainTurnCube.IsVisible = false;
             lblCubeOutsideView.IsVisible = true;
             imgbtnGoOneTurnBackward.IsVisible = false;
-            btnLetterTurn.IsVisible = false;
+            lblLetterTurn.IsVisible = false;
             imgbtnGoOneTurnForward.IsVisible = false;
             lblCubeInsideView.IsVisible = true;
 
@@ -468,21 +502,19 @@ namespace RubiksCube
             await SetImageButtonArrowIsEnabledAsync(cTurn, false);
 
             // Turn the faces of the cube
-            await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
-            //if (!bTurnIsBackwards)
-            //{
-            //    await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
-            //}
-            //else
-            //{
-            //    await ClassCubeTurns.TurnCubeLayersReversedAsync(cTurn);
-            //}
+            if (!bTurnIsBackwards)
+            {
+                await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
+            }
+            else
+            {
+                await ClassCubeTurns.TurnCubeLayersReversedAsync(cTurn);
+            }
+            
+            //await DisplayAlert("cTurn", cTurn, "OK");   // For testing
 
             // Set the cube colors from the arrays in the polygons
             GetCubeColorsFromArrays();
-
-            // Set bTurnIsBackwards to false
-            bTurnIsBackwards = false;
         }
 
         /// <summary>
@@ -503,7 +535,6 @@ namespace RubiksCube
         private void OnButtonGoOneTurnBackwardClicked(object sender, EventArgs e)
         {
             bTurnIsBackwards = true;
-            nTurnNumber--;
             _ = _buttonPressed.TrySetResult(true);
         }
 
@@ -515,19 +546,18 @@ namespace RubiksCube
         private void OnButtonGoOneTurnForwardClicked(object sender, EventArgs e)
         {
             bTurnIsBackwards = false;
-            nTurnNumber++;
             _ = _buttonPressed.TrySetResult(true);
         }
 
-        /// <summary>
-        /// Turn the faces of the cube - On button letter turn clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnBtnLetterTurnClicked(object sender, EventArgs e)
-        {
-            _ = _buttonPressed.TrySetResult(true);
-        }
+        ///// <summary>
+        ///// Turn the faces of the cube - On button letter turn clicked
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void OnlblLetterTurnClicked(object sender, EventArgs e)
+        //{
+        //    _ = _buttonPressed.TrySetResult(true);
+        //}
 
         /// <summary>
         /// Turn the front face clockwise (to right +)

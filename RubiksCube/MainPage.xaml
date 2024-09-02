@@ -686,7 +686,7 @@
                     </ImageButton>
 
                     <Label
-                        x:Name="btnLetterTurn"
+                        x:Name="lblLetterTurn"
                         Style="{StaticResource labelStyleExplanation}"
                         HorizontalOptions="Center"
                         BackgroundColor="Transparent"
@@ -706,21 +706,6 @@
                         Clicked="OnButtonGoOneTurnForwardClicked">
                     </ImageButton>
                 </Grid>
-
-                <!--<Button
-                    x:Name="btnLetterTurn"
-                    Style="{StaticResource buttonStyleDefault}"
-                    Grid.Row="6"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
-                    WidthRequest="200"
-                    BackgroundColor="Gold"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    FontSize="20"
-                    IsVisible="False"
-                    Clicked="OnBtnLetterTurnClicked">
-                </Button>-->
 
                 <ActivityIndicator
                     x:Name="activityIndicator"
