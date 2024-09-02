@@ -361,6 +361,7 @@ namespace RubiksCube
                 int nTurnIndex = -1;
                 int nTurnIndexOffset;
                 string cTurn = "";
+                string cTurnLast = "";
 
                 do
                 {
@@ -378,7 +379,7 @@ namespace RubiksCube
                             nTurnIndex--;
                         }
 
-                        nTurnIndexOffset = 1;
+                        nTurnIndexOffset = 0;
                     }
 
                     if (nTurnIndex < 1)
@@ -390,14 +391,26 @@ namespace RubiksCube
                         imgbtnGoOneTurnBackward.IsEnabled = true;
                     }
 
+                    if (nTurnIndex > 0)
+                    {
+                        cTurnLast = Globals.lCubeTurns[nTurnIndex - 1];
+                    }
+
                     cTurn = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
 
                     lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
                     lblLetterTurn.Text = cTurn;
 
-                    //await DisplayAlert("cTurn", cTurn, "OK");   // For testing
+                    //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
 
-                    await MakeExplainTurnAsync(cTurn);
+                    if (!bTurnIsBackwards)
+                    {
+                        await MakeExplainTurnAsync(cTurn);
+                    }
+                    else
+                    {
+                        await MakeExplainTurnAsync(cTurnLast);
+                    }
                 }
                 while (nTurnIndex < nNumberOfTurns - 1);
 
