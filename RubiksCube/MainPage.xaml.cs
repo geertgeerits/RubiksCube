@@ -360,6 +360,7 @@ namespace RubiksCube
                 int nTurnNumber = -1;
                 int nTurnIndex = -1;
                 int nTurnIndexOffset;
+                string cTurn = "";
 
                 do
                 {
@@ -389,20 +390,14 @@ namespace RubiksCube
                         imgbtnGoOneTurnBackward.IsEnabled = true;
                     }
 
-                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
-                    lblLetterTurn.Text = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
+                    cTurn = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
 
-                    //await Task.Delay(500);
-                    
-                    string cTurn = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
+                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
+                    lblLetterTurn.Text = cTurn;
 
                     //await DisplayAlert("cTurn", cTurn, "OK");   // For testing
 
-                    //await MakeExplainTurnAsync(Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset]);
                     await MakeExplainTurnAsync(cTurn);
-
-
-                    //await MakeExplainTurnAsync(lblLetterTurn.Text);
                 }
                 while (nTurnIndex < nNumberOfTurns - 1);
 
@@ -548,16 +543,6 @@ namespace RubiksCube
             bTurnIsBackwards = false;
             _ = _buttonPressed.TrySetResult(true);
         }
-
-        ///// <summary>
-        ///// Turn the faces of the cube - On button letter turn clicked
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void OnlblLetterTurnClicked(object sender, EventArgs e)
-        //{
-        //    _ = _buttonPressed.TrySetResult(true);
-        //}
 
         /// <summary>
         /// Turn the front face clockwise (to right +)
