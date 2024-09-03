@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-02 (YYYY-MM-DD)
+ * Date ........: 2024-09-03 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -357,14 +357,32 @@ namespace RubiksCube
                 // Make the turns of the cube
                 imgbtnGoOneTurnForward.IsEnabled = true;
                 bTurnIsBackwards = false;
-                int nTurnNumber = -1;
-                int nTurnIndex = -1;
-                int nTurnIndexOffset;
+                int nTurnNumber = 0;
+                int nTurnIndex = 0;
+                int nTurnIndexOffset = 0;
                 string cTurn = "";
                 string cTurnLast = "";
 
                 do
                 {
+                    if (nTurnIndex < 1)
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;
+                    }
+                    else
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;  // Set to true
+                    }
+
+                    cTurn = Globals.lCubeTurns[nTurnIndex];
+
+                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
+                    lblLetterTurn.Text = cTurn;
+
+                    //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
+
+                    await MakeExplainTurnAsync(cTurn);
+
                     if (!bTurnIsBackwards)
                     {
                         nTurnNumber++;
@@ -380,41 +398,12 @@ namespace RubiksCube
                         }
 
                         nTurnIndexOffset = 0;
-                    }
-
-                    if (nTurnIndex < 1)
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;
-                    }
-                    else
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = true;
-                    }
-
-                    if (nTurnIndex > 0)
-                    {
-                        cTurnLast = Globals.lCubeTurns[nTurnIndex - 1];
-                    }
-
-                    cTurn = Globals.lCubeTurns[nTurnIndex - nTurnIndexOffset];
-
-                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
-                    lblLetterTurn.Text = cTurn;
-
-                    //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
-
-                    if (!bTurnIsBackwards)
-                    {
                         await MakeExplainTurnAsync(cTurn);
                     }
-                    else
-                    {
-                        await MakeExplainTurnAsync(cTurnLast);
-                    }
                 }
-                while (nTurnIndex < nNumberOfTurns - 1);
+                while (nTurnIndex < nNumberOfTurns);
 
-                lblNumberTurns.Text = $"{nTurnIndex + 1}/{nNumberOfTurns}";
+                lblNumberTurns.Text = $"{nTurnIndex}/{nNumberOfTurns}";
                 lblLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
 
                 await Task.Delay(500);
