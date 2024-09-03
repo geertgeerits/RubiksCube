@@ -355,34 +355,18 @@ namespace RubiksCube
                 await Task.Delay(500);
 
                 // Make the turns of the cube
+                // Variables for the turns of the cube
                 imgbtnGoOneTurnForward.IsEnabled = true;
                 bTurnIsBackwards = false;
-                int nTurnNumber = 0;
-                int nTurnIndex = 0;
+                int nTurnNumber = -1;
+                int nTurnIndex = -1;
                 int nTurnIndexOffset = 0;
                 string cTurn = "";
                 string cTurnLast = "";
 
                 do
                 {
-                    if (nTurnIndex < 1)
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;
-                    }
-                    else
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;  // Set to true
-                    }
-
-                    cTurn = Globals.lCubeTurns[nTurnIndex];
-
-                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
-                    lblLetterTurn.Text = cTurn;
-
-                    //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
-
-                    await MakeExplainTurnAsync(cTurn);
-
+                    // Forward and backward settings
                     if (!bTurnIsBackwards)
                     {
                         nTurnNumber++;
@@ -398,12 +382,38 @@ namespace RubiksCube
                         }
 
                         nTurnIndexOffset = 0;
-                        await MakeExplainTurnAsync(cTurn);
                     }
-                }
-                while (nTurnIndex < nNumberOfTurns);
 
-                lblNumberTurns.Text = $"{nTurnIndex}/{nNumberOfTurns}";
+                    // Get the turn of the cube
+                    if (nTurnIndex < nNumberOfTurns)
+                    {
+                        cTurn = Globals.lCubeTurns[nTurnIndex];
+                    }
+
+                    //cTurn = Globals.lCubeTurns[nTurnIndex];
+
+                    // Set the turn number of the cube
+                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
+                    lblLetterTurn.Text = cTurn;
+
+                    // Enable or disable the button to go one turn backward
+                    if (nTurnIndex < 1)
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;
+                    }
+                    else
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;  // Set to true
+                    }
+
+                    //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
+                    // Make and explain the turn of the cube
+                    await MakeExplainTurnAsync(cTurn);
+                }
+                while (nTurnIndex < nNumberOfTurns - 1);
+
+                // Set the last turn number of the cube
+                lblNumberTurns.Text = $"{nTurnIndex + 1}/{nNumberOfTurns}";
                 lblLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
 
                 await Task.Delay(500);
