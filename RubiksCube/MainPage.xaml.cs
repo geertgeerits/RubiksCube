@@ -366,14 +366,28 @@ namespace RubiksCube
 
                 do
                 {
+                    // Enable or disable the button to go one turn backward
+                    if (nTurnIndex < 1)
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;
+                    }
+                    else
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;  // Set to true
+                    }
+
                     // Forward and backward settings
                     if (!bTurnIsBackwards)
                     {
-                        nTurnNumber++;
-                        nTurnIndex++;
+                        if (nTurnIndex < nNumberOfTurns)
+                        {
+                            nTurnNumber++;
+                            nTurnIndex++;
+                        }
+
                         nTurnIndexOffset = 0;
                     }
-                    else
+                    else if (bTurnIsBackwards)
                     {
                         if (nTurnIndex > 0)
                         {
@@ -390,21 +404,9 @@ namespace RubiksCube
                         cTurn = Globals.lCubeTurns[nTurnIndex];
                     }
 
-                    //cTurn = Globals.lCubeTurns[nTurnIndex];
-
                     // Set the turn number of the cube
                     lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
                     lblLetterTurn.Text = cTurn;
-
-                    // Enable or disable the button to go one turn backward
-                    if (nTurnIndex < 1)
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;
-                    }
-                    else
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;  // Set to true
-                    }
 
                     //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
                     // Make and explain the turn of the cube
@@ -513,7 +515,7 @@ namespace RubiksCube
             {
                 await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
             }
-            else
+            else if (bTurnIsBackwards)
             {
                 await ClassCubeTurns.TurnCubeLayersReversedAsync(cTurn);
             }
