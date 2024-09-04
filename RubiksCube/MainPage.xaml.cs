@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-03 (YYYY-MM-DD)
+ * Date ........: 2024-09-04 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -354,48 +354,50 @@ namespace RubiksCube
 
                 await Task.Delay(500);
 
-                // Make the turns of the cube
                 // Variables for the turns of the cube
                 imgbtnGoOneTurnForward.IsEnabled = true;
                 bTurnIsBackwards = false;
                 int nTurnNumber = -1;
                 int nTurnIndex = -1;
-                int nTurnIndexOffset = 0;
                 string cTurn = "";
-                string cTurnLast = "";
 
                 do
                 {
-                    // Enable or disable the button to go one turn backward
-                    if (nTurnIndex < 1)
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;
-                    }
-                    else
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;  // Set to true
-                    }
-
-                    // Forward and backward settings
+                    // Forward turn
                     if (!bTurnIsBackwards)
                     {
+                        // Forward settings
                         if (nTurnIndex < nNumberOfTurns)
                         {
                             nTurnNumber++;
                             nTurnIndex++;
                         }
-
-                        nTurnIndexOffset = 0;
                     }
+                    // Backward turn
                     else if (bTurnIsBackwards)
                     {
+                        // Backward settings
                         if (nTurnIndex > 0)
                         {
                             nTurnNumber--;
                             nTurnIndex--;
                         }
 
-                        nTurnIndexOffset = 0;
+                        // Turn the faces of the cube in reverse order
+                        await ClassCubeTurns.TurnCubeLayersReversedAsync(Globals.lCubeTurns[nTurnIndex]);
+                        
+                        // Set the cube colors from the arrays in the polygons
+                        GetCubeColorsFromArrays();
+                    }
+
+                    // Enable or disable the button to go one turn backward
+                    if (nTurnIndex < 1 || nTurnIndex > nNumberOfTurns - 2)
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = false;
+                    }
+                    else
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = true;  // Set to true
                     }
 
                     // Get the turn of the cube
@@ -408,7 +410,6 @@ namespace RubiksCube
                     lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
                     lblLetterTurn.Text = cTurn;
 
-                    //await DisplayAlert("cTurnLast - cTurn", cTurnLast + "-" + cTurn, "OK");   // For testing
                     // Make and explain the turn of the cube
                     await MakeExplainTurnAsync(cTurn);
                 }
@@ -510,17 +511,11 @@ namespace RubiksCube
             // Restore settings
             await SetImageButtonArrowIsEnabledAsync(cTurn, false);
 
-            // Turn the faces of the cube
+            // Forward turn
             if (!bTurnIsBackwards)
             {
                 await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
             }
-            else if (bTurnIsBackwards)
-            {
-                await ClassCubeTurns.TurnCubeLayersReversedAsync(cTurn);
-            }
-            
-            //await DisplayAlert("cTurn", cTurn, "OK");   // For testing
 
             // Set the cube colors from the arrays in the polygons
             GetCubeColorsFromArrays();
