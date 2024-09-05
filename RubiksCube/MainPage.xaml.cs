@@ -357,48 +357,39 @@ namespace RubiksCube
                 // Variables for the turns of the cube
                 imgbtnGoOneTurnForward.IsEnabled = true;
                 bTurnIsBackwards = false;
-                int nTurnNumber = -1;
                 int nTurnIndex = -1;
                 string cTurn = "";
 
-                do
+                // Loop through the turns of the cube
+                while (true)
                 {
                     // Forward turn
                     if (!bTurnIsBackwards)
                     {
-                        // Forward settings
+                        // Add 1 to the turn index
                         if (nTurnIndex < nNumberOfTurns)
                         {
-                            nTurnNumber++;
                             nTurnIndex++;
                         }
                     }
                     // Backward turn
                     else if (bTurnIsBackwards)
                     {
-                        // Backward settings
+                        // Decrease the turn index by 1
                         if (nTurnIndex > 0)
                         {
-                            nTurnNumber--;
                             nTurnIndex--;
                         }
 
                         // Turn the faces of the cube in reverse order
                         await ClassCubeTurns.TurnCubeLayersReversedAsync(Globals.lCubeTurns[nTurnIndex]);
-                        
+
                         // Set the cube colors from the arrays in the polygons
                         GetCubeColorsFromArrays();
                     }
 
                     // Enable or disable the button to go one turn backward
-                    if (nTurnIndex < 1 || nTurnIndex > nNumberOfTurns - 2)
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = false;
-                    }
-                    else
-                    {
-                        imgbtnGoOneTurnBackward.IsEnabled = true;  // Set to true
-                    }
+                    imgbtnGoOneTurnBackward.IsEnabled = nTurnIndex >= 1 && nTurnIndex <= nNumberOfTurns - 1;
 
                     // Get the turn of the cube
                     if (nTurnIndex < nNumberOfTurns)
@@ -407,13 +398,18 @@ namespace RubiksCube
                     }
 
                     // Set the turn number of the cube
-                    lblNumberTurns.Text = $"{nTurnNumber}/{nNumberOfTurns}";
+                    lblNumberTurns.Text = $"{nTurnIndex}/{nNumberOfTurns}";
                     lblLetterTurn.Text = cTurn;
 
                     // Make and explain the turn of the cube
                     await MakeExplainTurnAsync(cTurn);
+
+                    // Exit the loop
+                    if ((!bTurnIsBackwards && nTurnIndex >= nNumberOfTurns - 1) || (bTurnIsBackwards && nTurnIndex >= nNumberOfTurns))
+                    {
+                        break;
+                    }
                 }
-                while (nTurnIndex < nNumberOfTurns - 1);
 
                 // Set the last turn number of the cube
                 lblNumberTurns.Text = $"{nTurnIndex + 1}/{nNumberOfTurns}";
@@ -421,6 +417,7 @@ namespace RubiksCube
 
                 await Task.Delay(500);
 
+                // Check if the cube is solved and display a message
                 if (ClassColorsCube.CheckIfSolved())
                 {
                     if (Globals.bExplainSpeech)
@@ -515,10 +512,8 @@ namespace RubiksCube
             if (!bTurnIsBackwards)
             {
                 await ClassCubeTurns.TurnCubeLayersAsync(cTurn);
+                GetCubeColorsFromArrays();
             }
-
-            // Set the cube colors from the arrays in the polygons
-            GetCubeColorsFromArrays();
         }
 
         /// <summary>
