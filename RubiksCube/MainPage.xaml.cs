@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-04 (YYYY-MM-DD)
+ * Date ........: 2024-09-05 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -321,8 +321,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 258-259 and 302-317 (and change the line 342 to bTestSolveCube = true)
-                // and uncomment one of the lines 322-326/327 to test one of the solutions to solve the cube
+                // For testing comment out the lines 259-260 and 306-322 (and change the line 347 to bTestSolveCube = true)
+                // and uncomment one of the lines 327-331/332 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -1551,7 +1551,7 @@ namespace RubiksCube
             // Instantiate random number generator using system-supplied value as seed
             Random randNumber = new();
 
-            // Generate a random integer from 20 to 40
+            // Generate a random integer from 20 to 40 turns
             int nNumberOfTurns = randNumber.Next(20, 41);
             Debug.WriteLine($"nNumberOfTurns: {nNumberOfTurns}");
 
@@ -1828,33 +1828,6 @@ namespace RubiksCube
                 SetArrowTooltips(true);
             }
         }
-
-        //int currentIndex = 0;
-
-        //private async void OnButtonGoOneTurnBackwardClicked(object sender, EventArgs e)
-        //{
-        //    if (currentIndex > 0)
-        //    {
-        //        currentIndex--;
-        //        await MakeExplainTurnAsync(Globals.lCubeTurns[currentIndex]);
-        //        UpdateTurnCounter();
-        //    }
-        //}
-
-        //private async void OnButtonGoOneTurnForwardClicked(object sender, EventArgs e)
-        //{
-        //    if (currentIndex < Globals.lCubeTurns.Count - 1)
-        //    {
-        //        currentIndex++;
-        //        await MakeExplainTurnAsync(Globals.lCubeTurns[currentIndex]);
-        //        UpdateTurnCounter();
-        //    }
-        //}
-
-        //private void UpdateTurnCounter()
-        //{
-        //    lblNumberTurns.Text = $"{currentIndex + 1}/{Globals.lCubeTurns.Count}";
-        //}
     }
 }
 

@@ -660,7 +660,6 @@
                     Grid.ColumnSpan="3">
                 </Border>
 
-
                 <Grid
                     Grid.Row="6"
                     Grid.ColumnSpan="3">
@@ -705,19 +704,16 @@
                         IsVisible="False"
                         Clicked="OnButtonGoOneTurnForwardClicked">
                     </ImageButton>
-                </Grid>
 
-                <ActivityIndicator
-                    x:Name="activityIndicator"
-                    Grid.Row="6"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    BackgroundColor="Transparent"
-                    Color="#1186f8"
-                    IsRunning="False">
-                </ActivityIndicator>
+                    <ActivityIndicator
+                        x:Name="activityIndicator"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Transparent"
+                        Color="{AppThemeBinding Light='Gold', Dark='#1186f8'}"
+                        IsRunning="False">
+                    </ActivityIndicator>
+                </Grid>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
