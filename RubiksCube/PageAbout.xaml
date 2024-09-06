@@ -97,7 +97,7 @@
                         </Label>
 
                         <Grid
-                            RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                             ColumnDefinitions="50, 250*"
                             RowSpacing="5"
                             ColumnSpacing="10"
@@ -182,6 +182,38 @@
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 Text="{x:Static resx:CubeLang.HelpResetCube_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Source="ic_action_navigate_backward.png"
+                                SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipGoOneTurnBackward_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipGoOneTurnBackward_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Text="{x:Static resx:CubeLang.HelpGoOneTurnBackward_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="6"
+                                Grid.Column="0"
+                                Source="ic_action_navigate_forward.png"
+                                SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipGoOneTurnForward_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipGoOneTurnForward_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Text="{x:Static resx:CubeLang.HelpGoOneTurnForward_Text}">
                             </Label>
                         </Grid>
                     

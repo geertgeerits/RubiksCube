@@ -564,4 +564,10 @@ A possível causa é a transferência incorreta de cores para este cubo.</value>
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Vá uma volta para frente</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Volte uma volta.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Vá uma volta para frente.</value>
+  </data>
 </root>

@@ -564,4 +564,10 @@ Mahdollinen syy on värien virheellinen siirto tähän kuutioon.</value>
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Mene yksi kierros eteenpäin</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Palaa yksi kierros.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Mene yksi kierros eteenpäin.</value>
+  </data>
 </root>

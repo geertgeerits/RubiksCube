@@ -564,4 +564,10 @@ Możliwą przyczyną jest nieprawidłowe przeniesienie kolorów do tej kostki.</
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Przejdź o jeden obrót do przodu</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Wróć o jeden obrót.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Przejdź o jeden obrót do przodu.</value>
+  </data>
 </root>

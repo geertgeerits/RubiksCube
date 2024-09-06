@@ -564,4 +564,10 @@ Možnou příčinou je nesprávný přenos barev na tuto kostku.</value>
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Jděte o jednu otáčku vpřed</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Vraťte se o jednu otáčku zpět.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Jděte o jednu otáčku vpřed.</value>
+  </data>
 </root>

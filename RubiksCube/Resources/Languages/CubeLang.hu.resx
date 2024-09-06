@@ -564,4 +564,10 @@ Ennek lehetséges oka a színek helytelen átvitele erre a kockára.</value>
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Menj egy fordulatot előre</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Menj vissza egy fordulatot.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Menj egy fordulatot előre.</value>
+  </data>
 </root>

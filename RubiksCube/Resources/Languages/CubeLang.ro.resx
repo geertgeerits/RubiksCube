@@ -564,4 +564,10 @@ Cauza posibilă este transferul incorect de culori în acest cub.</value>
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Du-te cu o tură înainte</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Întoarce-te cu o tură.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Du-te cu o tură înainte.</value>
+  </data>
 </root>

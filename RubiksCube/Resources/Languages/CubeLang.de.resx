@@ -564,4 +564,10 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Gehe eine Runde vorwärts</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Gehe eine Runde zurück.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Gehe eine Runde vorwärts.</value>
+  </data>
 </root>

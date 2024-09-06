@@ -22,14 +22,14 @@ namespace RubiksCube.Resources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CubeLang {
+    internal class CubeLang___Copy {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CubeLang() {
+        internal CubeLang___Copy() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace RubiksCube.Resources.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RubiksCube.Resources.Languages.CubeLang", typeof(CubeLang).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RubiksCube.Resources.Languages.CubeLang - Copy", typeof(CubeLang___Copy).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

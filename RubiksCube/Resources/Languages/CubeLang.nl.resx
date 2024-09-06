@@ -564,4 +564,10 @@ Mogelijke oorzaak is een onjuiste overdracht van kleuren naar deze kubus.</value
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Ga één draai vooruit</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Ga één draai terug.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Ga één draai vooruit.</value>
+  </data>
 </root>

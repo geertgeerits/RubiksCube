@@ -564,4 +564,10 @@ Mulig årsak er feil overføring av farger til denne kuben.</value>
   <data name="ToolTipGoOneTurnForward_Text" xml:space="preserve">
     <value>Gå en sving fremover</value>
   </data>
+  <data name="HelpGoOneTurnBackward_Text" xml:space="preserve">
+    <value>Gå tilbake en sving.</value>
+  </data>
+  <data name="HelpGoOneTurnForward_Text" xml:space="preserve">
+    <value>Gå en sving fremover.</value>
+  </data>
 </root>
