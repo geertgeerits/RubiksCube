@@ -460,10 +460,10 @@ Möjlig orsak är felaktig överföring av färger till denna kub.</value>
     <value>Antal omgångar:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Det finns tre alternativ för att lösa kuben:
-1. På hemskärmen använder du piltangenterna för att blanda ihop färgerna och löser själva kuben med piltangenterna.
+    <value>Alternativ för att lösa kuben:
+1. På hemskärmen använder du piltangenterna för att blanda ihop kuben och löser kuben med piltangenterna.
 2. Samma som det första alternativet, men lös kuben med 'Solve'-knappen. Kuben löses sedan i omvänd ordning.
-3. Använd knappen längst ner med kuben (se förklaringen till den knappen). Kuben löses av applikationen. Överför sedan de föreslagna rörelserna till den riktiga kuben. Detta är inte en garanti för att alla kuber kan lösas.</value>
+3. Använd knappen med kuben längst ner på skärmen för att överföra färgerna på din kub till denna kub (se förklaringen till den knappen). Kuben kommer att lösas av applikationen. Överför sedan de föreslagna dragen till den riktiga kuben. Detta är inte en garanti för att alla kuber kan lösas.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Kuben är tillbaka i sitt tidigare tillstånd.</value>

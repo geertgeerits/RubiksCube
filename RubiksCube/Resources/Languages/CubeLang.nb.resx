@@ -460,10 +460,10 @@ Mulig årsak er feil overføring av farger til denne kuben.</value>
     <value>Antall svinger:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Det er tre alternativer for å løse kuben:
-1. På startskjermen bruker du piltastene til å blande fargene og løser selve kuben med piltastene.
+    <value>Alternativer for å løse kuben:
+1. På startskjermen bruker du piltastene til å blande kuben og løser kuben med piltastene.
 2. Samme som det første alternativet, men løs kuben med 'Løs'-knappen. Terningen løses deretter i omvendt rekkefølge.
-3. Bruk knappen nederst med kuben (se forklaring av den knappen). Kuben løses av applikasjonen. Overfør deretter de foreslåtte bevegelsene til den virkelige kuben. Dette er ikke en garanti for at alle kuber kan løses.</value>
+3. Bruk knappen med kuben nederst på skjermen for å overføre fargene på kuben din til denne kuben (se forklaringen til den knappen). Kuben vil bli løst av applikasjonen. Overfør deretter de foreslåtte trekkene til den virkelige kuben. Dette er ikke en garanti for at alle kuber kan løses.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Kuben er tilbake i sin forrige tilstand.</value>

@@ -460,10 +460,10 @@ La cause possible est un transfert incorrect des couleurs vers ce cube.</value>
     <value>Nombre de tours:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Il existe trois options pour résoudre le cube:
-1. Sur l'écran d'accueil, utilisez les touches fléchées pour mélanger les couleurs et résolvez le cube lui-même avec les touches fléchées.
-2. Identique à la première option, mais résolvez le cube avec le bouton 'Résoudre'. Le cube est ensuite résolu dans l'ordre inverse.
-3. Utilisez le bouton en bas avec le cube (voir explication de ce bouton). Le cube est résolu par l'application. Transférez ensuite les mouvements proposés sur le cube réel. Cela ne garantit pas que tous les cubes puissent être résolus.</value>
+    <value>Options pour résoudre le cube :
+1. Sur l'écran d'accueil, utilisez les touches fléchées pour mélanger le cube et résolvez le cube avec les touches fléchées.
+2. Même chose que la première option, mais résolvez le cube avec le bouton « Résoudre ». Le cube est alors résolu dans l'ordre inverse.
+3. Utilisez le bouton avec le cube en bas de l'écran pour transférer les couleurs de votre cube sur ce cube (voir l'explication de ce bouton). Le cube sera résolu par l'application. Transférez ensuite les mouvements proposés sur le cube réel. Cela ne garantit pas que tous les cubes puissent être résolus.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Le cube est revenu à son état précédent.</value>

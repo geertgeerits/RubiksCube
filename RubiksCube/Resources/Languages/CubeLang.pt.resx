@@ -460,10 +460,10 @@ A possível causa é a transferência incorreta de cores para este cubo.</value>
     <value>Número de voltas:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Existem três opções para resolver o cubo:
-1. Na tela inicial, use as setas do teclado para misturar as cores e resolver o próprio cubo com as setas do teclado.
-2. Igual à primeira opção, mas resolva o cubo com o botão 'Resolver'. O cubo é então resolvido na ordem inversa.
-3. Use o botão na parte inferior com o cubo (veja a explicação desse botão). O cubo é resolvido pelo aplicativo. Em seguida, transfira os movimentos propostos para o cubo real. Isto não é uma garantia de que todos os cubos possam ser resolvidos.</value>
+    <value>Opções para resolver o cubo:
+1. Na tela inicial, use as teclas de seta para misturar o cubo e resolver o cubo com as teclas de seta.
+2. Igual à primeira opção, mas resolva o cubo com o botão "Resolver". O cubo é então resolvido na ordem inversa.
+3. Use o botão com o cubo na parte inferior da tela para transferir as cores do seu cubo para este cubo (veja a explicação desse botão). O cubo será resolvido pelo aplicativo. Em seguida, transfira os movimentos propostos para o cubo real. Isso não é uma garantia de que todos os cubos podem ser resolvidos.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>O cubo está de volta ao seu estado anterior.</value>

@@ -460,10 +460,10 @@ Mulig årsag er forkert overførsel af farver til denne terning.</value>
     <value>Antal omgange:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Der er tre muligheder for at løse terningen:
-1. På startskærmen skal du bruge piletasterne til at blande farverne og løse selve terningen med piletasterne.
-2. Samme som den første mulighed, men løs terningen med 'Løs'-knappen. Terningen løses derefter i omvendt rækkefølge.
-3. Brug knappen nederst med terningen (se forklaring på den knap). Terningen løses af applikationen. Overfør derefter de foreslåede bevægelser til den rigtige terning. Dette er ikke en garanti for, at alle terninger kan løses.</value>
+    <value>Muligheder for at løse terningen:
+1. På startskærmen skal du bruge piletasterne til at blande terningen og løse terningen med piletasterne.
+2. Samme som den første mulighed, men løs terningen med 'Løs'-knappen. Terningen løses så i omvendt rækkefølge.
+3. Brug knappen med terningen i bunden af ​​skærmen til at overføre farverne på din terning til denne terning (se forklaringen af ​​den knap). Terningen vil blive løst af applikationen. Overfør derefter de foreslåede træk til den rigtige terning. Dette er ikke en garanti for, at alle terninger kan løses.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Terningen er tilbage i sin tidligere tilstand.</value>

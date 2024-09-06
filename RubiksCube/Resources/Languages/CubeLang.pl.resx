@@ -460,10 +460,10 @@ Możliwą przyczyną jest nieprawidłowe przeniesienie kolorów do tej kostki.</
     <value>Liczba tur:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Istnieją trzy możliwości ułożenia sześcianu:
-1. Na ekranie głównym użyj klawiszy strzałek, aby wymieszać kolory i ułożyć samą kostkę za pomocą klawiszy strzałek.
-2. Podobnie jak w przypadku pierwszej opcji, ale ułóż kostkę za pomocą przycisku „Ułóż”. Następnie kostkę układa się w odwrotnej kolejności.
-3. Użyj przycisku na dole z kostką (patrz objaśnienie tego przycisku). Kostka jest rozwiązywana przez aplikację. Następnie przenieś proponowane ruchy na prawdziwą kostkę. Nie gwarantuje to, że uda się ułożyć wszystkie kostki.</value>
+    <value>Opcje rozwiązania kostki:
+1. Na ekranie głównym użyj klawiszy strzałek, aby wymieszać kostkę i rozwiązać kostkę za pomocą klawiszy strzałek.
+2. Tak samo jak w pierwszej opcji, ale rozwiąż kostkę za pomocą przycisku „Rozwiąż”. Następnie kostka jest rozwiązywana w odwrotnej kolejności.
+3. Użyj przycisku z kostką na dole ekranu, aby przenieść kolory swojej kostki do tej kostki (zobacz wyjaśnienie tego przycisku). Kostka zostanie rozwiązana przez aplikację. Następnie przenieś proponowane ruchy do prawdziwej kostki. Nie jest to gwarancja, że ​​wszystkie kostki można rozwiązać.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Kostka wróciła do poprzedniego stanu.</value>

@@ -342,10 +342,10 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are three options to solve the cube:
-        ///1. On the home screen, use the arrow keys to mix up the colors and solve the cube itself with the arrow keys.
+        ///   Looks up a localized string similar to Options to solve the cube:
+        ///1. On the home screen, use the arrow keys to mix up the cube and solve the cube with the arrow keys.
         ///2. Same as the first option, but solve the cube with the &apos;Solve&apos; button. The cube is then solved in reverse order.
-        ///3. Use the button at the bottom with the cube (see explanation of that button). The cube is solved by the application. Then transfer the proposed movements to the real cube. This is not a guarantee that all cubes can be solved..
+        ///3. Use the button with the cube at the bottom of the screen to transfer the colors of your cube to this cube (see the explanation of that button). The cube will be solved by the application. Then transfer the proposed moves to the real cube. This is not a guarantee  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HelpOptionsSolveCube_Text {
             get {

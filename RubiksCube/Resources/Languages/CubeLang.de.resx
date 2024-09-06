@@ -460,10 +460,10 @@ Mögliche Ursache ist eine fehlerhafte Farbübertragung auf diesen Würfel.</val
     <value>Anzahl der Züge:</value>
   </data>
   <data name="HelpOptionsSolveCube_Text" xml:space="preserve">
-    <value>Es gibt drei Möglichkeiten, den Würfel zu lösen:
-1. Mischen Sie auf dem Startbildschirm mit den Pfeiltasten die Farben und lösen Sie den Würfel selbst mit den Pfeiltasten.
-2. Wie die erste Option, aber lösen Sie den Würfel mit der Schaltfläche 'Lösen'. Anschließend wird der Würfel in umgekehrter Reihenfolge gelöst.
-3. Benutzen Sie die Schaltfläche unten mit dem Würfel (siehe Erklärung dieser Schaltfläche). Der Würfel wird durch die Anwendung gelöst. Anschließend übertragen Sie die vorgeschlagenen Bewegungen auf den realen Würfel. Dies ist keine Garantie dafür, dass alle Würfel gelöst werden können.</value>
+    <value>Möglichkeiten zum Lösen des Würfels:
+1. Auf dem Startbildschirm mit den Pfeiltasten den Würfel durchmischen und mit den Pfeiltasten den Würfel lösen.
+2. Wie bei der ersten Möglichkeit, aber den Würfel mit der Schaltfläche „Lösen“ lösen. Der Würfel wird dann in umgekehrter Reihenfolge gelöst.
+3. Mit der Schaltfläche mit dem Würfel am unteren Bildschirmrand können Sie die Farben Ihres Würfels auf diesen Würfel übertragen (siehe Erklärung dieser Schaltfläche). Der Würfel wird von der Anwendung gelöst. Übertragen Sie dann die vorgeschlagenen Züge auf den echten Würfel. Dies ist keine Garantie dafür, dass alle Würfel gelöst werden können.</value>
   </data>
   <data name="MessageCubeBackInPreviousState_Text" xml:space="preserve">
     <value>Der Würfel befindet sich wieder in seinem vorherigen Zustand.</value>
