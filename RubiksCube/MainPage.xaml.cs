@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-06 (YYYY-MM-DD)
+ * Date ........: 2024-09-07 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -276,10 +276,7 @@ namespace RubiksCube
             lblExplainTurnCube.IsVisible = true;
             lblCubeInsideView.IsVisible = false;
             imgbtnGoOneTurnBackward.IsEnabled = false;
-            imgbtnGoOneTurnBackward.IsVisible = true;
-            lblLetterTurn.IsVisible = true;
-            imgbtnGoOneTurnForward.IsEnabled = false;
-            imgbtnGoOneTurnForward.IsVisible = true;
+            btnGoOneTurnForward.IsEnabled = false;
 
             Globals.nTestedSolutions = 0;
 
@@ -321,8 +318,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 259-260 and 306-322 (and change the line 347 to bTestSolveCube = true)
-                // and uncomment one of the lines 327-331/332 to test one of the solutions to solve the cube
+                // For testing comment out the lines 259-260 and 303-319 (and change the line 344 to bTestSolveCube = true)
+                // and uncomment one of the lines 324-328/329 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -348,6 +345,10 @@ namespace RubiksCube
 
             if (bSolved)
             {
+                // Control settings
+                imgbtnGoOneTurnBackward.IsVisible = true;
+                btnGoOneTurnForward.IsVisible = true;
+
                 // Display the number of turns and the elapsed time in milliseconds
                 int nNumberOfTurns = Globals.lCubeTurns.Count;
                 await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultSolutions_Text} {Globals.nTestedSolutions}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
@@ -355,7 +356,7 @@ namespace RubiksCube
                 await Task.Delay(500);
 
                 // Variables for the turns of the cube
-                imgbtnGoOneTurnForward.IsEnabled = true;
+                btnGoOneTurnForward.IsEnabled = true;
                 bTurnIsBackwards = false;
                 int nTurnIndex = -1;
                 string cTurn = "";
@@ -399,7 +400,7 @@ namespace RubiksCube
 
                     // Set the turn number of the cube
                     lblNumberTurns.Text = $"{nTurnIndex}/{nNumberOfTurns}";
-                    lblLetterTurn.Text = cTurn;
+                    btnGoOneTurnForward.Text = cTurn;
 
                     // Make and explain the turn of the cube
                     await MakeExplainTurnAsync(cTurn);
@@ -413,7 +414,7 @@ namespace RubiksCube
 
                 // Set the last turn number of the cube
                 lblNumberTurns.Text = $"{nTurnIndex + 1}/{nNumberOfTurns}";
-                lblLetterTurn.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
+                btnGoOneTurnForward.Text = " ";  // Needs a space to erase the text for iOS (!!!BUG!!!) string.Empty or "" does not work
 
                 await Task.Delay(500);
 
@@ -451,8 +452,7 @@ namespace RubiksCube
             lblExplainTurnCube.IsVisible = false;
             lblCubeOutsideView.IsVisible = true;
             imgbtnGoOneTurnBackward.IsVisible = false;
-            lblLetterTurn.IsVisible = false;
-            imgbtnGoOneTurnForward.IsVisible = false;
+            btnGoOneTurnForward.IsVisible = false;
             lblCubeInsideView.IsVisible = true;
 
             IsEnabledArrows(true);

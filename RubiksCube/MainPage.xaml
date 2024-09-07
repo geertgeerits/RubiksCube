@@ -660,70 +660,70 @@
                     Grid.ColumnSpan="3">
                 </Border>
 
-                <Grid
+                <Label
+                    x:Name="lblCubeInsideView"
+                    Style="{StaticResource labelStyleExplanation}"
                     Grid.Row="6"
+                    Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    ColumnDefinitions="130, 100*, 130"
-                    ColumnSpacing="5">
-                    
-                    <Label
-                        x:Name="lblCubeInsideView"
-                        Style="{StaticResource labelStyleExplanation}"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="3"
-                        HorizontalOptions="Center"
-                        BackgroundColor="Transparent"
-                        Text="{local:Translate CubeInsideView_Text}">
-                    </Label>
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    Text="{local:Translate CubeInsideView_Text}">
+                </Label>
 
-                    <ImageButton
-                        x:Name="imgbtnGoOneTurnBackward"
-                        Style="{StaticResource imageButtonMenu}"
-                        Grid.Column="0"
-                        Margin="5,0,0,0"
-                        HorizontalOptions="Start"
-                        WidthRequest="110"
-                        Source="ic_action_navigate_backward.png"
-                        ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
-                        IsVisible="False"
-                        Clicked="OnButtonGoOneTurnBackwardClicked">
-                    </ImageButton>
+                <ActivityIndicator
+                    x:Name="activityIndicator"
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    Color="{AppThemeBinding Light='Gold', Dark='#1186f8'}"
+                    IsRunning="False">
+                </ActivityIndicator>
 
-                    <Label
-                        x:Name="lblLetterTurn"
-                        Style="{StaticResource labelStyleExplanation}"
-                        Grid.Column="1"
-                        HorizontalOptions="End"
-                        WidthRequest="60"
-                        BackgroundColor="Transparent"
-                        HorizontalTextAlignment="End"
-                        FontSize="22"
-                        IsVisible="False">
-                    </Label>
+                <ImageButton
+                    x:Name="imgbtnGoOneTurnBackward"
+                    Style="{StaticResource imageButtonMenu}"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Margin="5,0,0,0"
+                    HorizontalOptions="Start"
+                    Source="ic_action_undo.png"
+                    ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
+                    IsVisible="False"
+                    Clicked="OnButtonGoOneTurnBackwardClicked">
+                </ImageButton>
 
-                    <ImageButton
-                        x:Name="imgbtnGoOneTurnForward"
-                        Style="{StaticResource imageButtonMenu}"
-                        Grid.Column="2"
-                        Margin="0,0,5,0"
-                        HorizontalOptions="End"                  
-                        WidthRequest="110"
-                        Source="ic_action_navigate_forward.png"
-                        ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
-                        IsVisible="False"
-                        Clicked="OnButtonGoOneTurnForwardClicked">
-                    </ImageButton>
-
-                    <ActivityIndicator
-                        x:Name="activityIndicator"
-                        Grid.Column="1"
-                        VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        BackgroundColor="Transparent"
-                        Color="{AppThemeBinding Light='Gold', Dark='#1186f8'}"
-                        IsRunning="False">
-                    </ActivityIndicator>
-                </Grid>
+                <Button
+                    x:Name="btnGoOneTurnForward"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
+                    Margin="0,5,0,5"
+                    Padding="0"
+                    MinimumHeightRequest="38"
+                    WidthRequest="200"
+                    BackgroundColor="Gold"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
+                    IsVisible="False"
+                    Clicked="OnButtonGoOneTurnForwardClicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="Black" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
