@@ -97,7 +97,7 @@
                         </Label>
 
                         <Grid
-                            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+                            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                             ColumnDefinitions="50, 250*"
                             RowSpacing="5"
                             ColumnSpacing="10"
@@ -232,6 +232,29 @@
                                 Text="{x:Static resx:CubeLang.HelpTurnNoButtonPressStop_Text}">
                             </Label>
 
+                            <HorizontalStackLayout
+                                Grid.Row="8"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2">
+                                
+                                <Button
+                                    Style="{StaticResource buttonStyleMenu}"
+                                    HorizontalOptions="Start"
+                                    WidthRequest="100"
+                                    Margin="0,5,0,5"
+                                    Padding="0"
+                                    FontSize="20"
+                                    Text="U"
+                                    ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipGoOneTurnForward_Text}">
+                                </Button>
+
+                                <Label
+                                    Style="{StaticResource labelStyleInfo}"
+                                    Margin="15,0,0,0"
+                                    Text="{x:Static resx:CubeLang.HelpTurnNoButtonPressStop_Text}">
+                                </Label>
+                            </HorizontalStackLayout>
+                            
                         </Grid>
                     
                         <Label

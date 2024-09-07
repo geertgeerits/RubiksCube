@@ -698,37 +698,17 @@
 
                 <Button
                     x:Name="btnGoOneTurnForward"
+                    Style="{StaticResource buttonStyleMenu}"
                     Grid.Row="6"
                     Grid.Column="1"
                     HorizontalOptions="Center"
+                    WidthRequest="200"
                     Margin="0,5,0,5"
                     Padding="0"
-                    MinimumHeightRequest="38"
-                    WidthRequest="200"
-                    BorderWidth="2"
-                    BackgroundColor="Gold"
-                    TextColor="Black"
-                    FontAttributes="Bold"
                     FontSize="20"
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
                     IsVisible="False"
                     Clicked="OnButtonGoOneTurnForwardClicked">
-                    <Button.Triggers>
-                        <Trigger TargetType="Button" Property="IsEnabled" Value="False">
-                            <Setter Property="BackgroundColor" Value="LightGray" />
-                        </Trigger>
-                    </Button.Triggers>
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroupList>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal">
-                                    <VisualState.Setters>
-                                        <Setter Property="TextColor" Value="Black" />
-                                    </VisualState.Setters>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateGroupList>
-                    </VisualStateManager.VisualStateGroups>
                 </Button>
 
                 <ImageButton
