@@ -22,6 +22,7 @@ namespace RubiksCube
         private bool bSolved;
         private bool bTestSolveCube;
         private bool bTurnIsBackwards;
+        private bool bTurnNoButtonPress;
 
         //// Array with cube turns for the cube scramble generator
         private readonly string[] ScrambledCubeTurns = [
@@ -318,8 +319,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 259-260 and 303-319 (and change the line 344 to bTestSolveCube = true)
-                // and uncomment one of the lines 324-328/329 to test one of the solutions to solve the cube
+                // For testing comment out the lines 260-261 and 304-320 (and change the line 345 to bTestSolveCube = true)
+                // and uncomment one of the lines 325-329/330 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -348,6 +349,7 @@ namespace RubiksCube
                 // Control settings
                 imgbtnGoOneTurnBackward.IsVisible = true;
                 btnGoOneTurnForward.IsVisible = true;
+                imgbtnTurnNoButtonPress.IsVisible = true;
 
                 // Display the number of turns and the elapsed time in milliseconds
                 int nNumberOfTurns = Globals.lCubeTurns.Count;
@@ -390,7 +392,10 @@ namespace RubiksCube
                     }
 
                     // Enable or disable the button to go one turn backward
-                    imgbtnGoOneTurnBackward.IsEnabled = nTurnIndex >= 1 && nTurnIndex <= nNumberOfTurns - 1;
+                    if (!bTurnNoButtonPress)
+                    {
+                        imgbtnGoOneTurnBackward.IsEnabled = nTurnIndex >= 1 && nTurnIndex <= nNumberOfTurns - 1;
+                    }
 
                     // Get the turn of the cube
                     if (nTurnIndex < nNumberOfTurns)
@@ -448,11 +453,14 @@ namespace RubiksCube
             _buttonPressed = new TaskCompletionSource<bool>();
 
             // Settings
+            bTurnNoButtonPress = false;
+            imgbtnTurnNoButtonPress.Source = "ic_action_playback_play.png";
             lblExplainTurnCube.Text = "";
             lblExplainTurnCube.IsVisible = false;
             lblCubeOutsideView.IsVisible = true;
             imgbtnGoOneTurnBackward.IsVisible = false;
             btnGoOneTurnForward.IsVisible = false;
+            imgbtnTurnNoButtonPress.IsVisible = false;
             lblCubeInsideView.IsVisible = true;
 
             IsEnabledArrows(true);
@@ -499,11 +507,19 @@ namespace RubiksCube
             // because of a possible error 'The operation was canceled' in the Task ClassSpeech.ConvertTextToSpeechAsync()
             await Task.Delay(300);
 
-            // Wait for the button to be pressed before continuing
-            await _buttonPressed.Task;
+            // Wait or not wait for the button to be pressed before continuing
+            if (!bTurnNoButtonPress)
+            {
+                // Wait for the button to be pressed before continuing
+                _ = await _buttonPressed.Task;
 
-            // Reset for the next iteration
-            _buttonPressed = new TaskCompletionSource<bool>();
+                // Reset for the next iteration
+                _buttonPressed = new TaskCompletionSource<bool>();
+            }
+            else if (bTurnNoButtonPress)
+            {
+                await Task.Delay(200);
+            }
 
             // Restore settings
             await SetImageButtonArrowIsEnabledAsync(cTurn, false);
@@ -545,6 +561,32 @@ namespace RubiksCube
         private void OnButtonGoOneTurnForwardClicked(object sender, EventArgs e)
         {
             bTurnIsBackwards = false;
+            _ = _buttonPressed.TrySetResult(true);
+        }
+
+        /// <summary>
+        /// Turn the cube without pressing a button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnButtonTurnNoButtonPressClicked(object sender, EventArgs e)
+        {
+            bTurnNoButtonPress = !bTurnNoButtonPress;
+            bTurnIsBackwards = false;
+
+            if (bTurnNoButtonPress)
+            {
+                imgbtnTurnNoButtonPress.Source = "ic_action_playback_stop.png";
+                imgbtnGoOneTurnBackward.IsEnabled = false;
+                btnGoOneTurnForward.IsEnabled = false;
+            }
+            else if (!bTurnNoButtonPress)
+            {
+                imgbtnTurnNoButtonPress.Source = "ic_action_playback_play.png";
+                imgbtnGoOneTurnBackward.IsEnabled = true;
+                btnGoOneTurnForward.IsEnabled = true;
+            }
+
             _ = _buttonPressed.TrySetResult(true);
         }
 

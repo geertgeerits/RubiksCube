@@ -689,6 +689,7 @@
                     Grid.Column="0"
                     Margin="5,0,0,0"
                     HorizontalOptions="Start"
+                    BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                     Source="ic_action_undo.png"
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
                     IsVisible="False"
@@ -698,13 +699,13 @@
                 <Button
                     x:Name="btnGoOneTurnForward"
                     Grid.Row="6"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
+                    Grid.Column="1"
                     HorizontalOptions="Center"
                     Margin="0,5,0,5"
                     Padding="0"
                     MinimumHeightRequest="38"
                     WidthRequest="200"
+                    BorderWidth="2"
                     BackgroundColor="Gold"
                     TextColor="Black"
                     FontAttributes="Bold"
@@ -712,6 +713,11 @@
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
                     IsVisible="False"
                     Clicked="OnButtonGoOneTurnForwardClicked">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                            <Setter Property="BackgroundColor" Value="LightGray" />
+                        </Trigger>
+                    </Button.Triggers>
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroupList>
                             <VisualStateGroup x:Name="CommonStates">
@@ -724,6 +730,20 @@
                         </VisualStateGroupList>
                     </VisualStateManager.VisualStateGroups>
                 </Button>
+
+                <ImageButton
+                    x:Name="imgbtnTurnNoButtonPress"
+                    Style="{StaticResource imageButtonMenu}"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    Margin="0,0,5,0"
+                    HorizontalOptions="End"
+                    BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                    Source="ic_action_playback_play.png"
+                    ToolTipProperties.Text="{local:Translate ToolTipTurnNoButtonPress_Text}"
+                    IsVisible="False"
+                    Clicked="OnButtonTurnNoButtonPressClicked">
+                </ImageButton>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"

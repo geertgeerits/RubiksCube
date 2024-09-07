@@ -97,7 +97,7 @@
                         </Label>
 
                         <Grid
-                            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+                            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                             ColumnDefinitions="50, 250*"
                             RowSpacing="5"
                             ColumnSpacing="10"
@@ -199,6 +199,39 @@
                                 Grid.Column="1"
                                 Text="{x:Static resx:CubeLang.HelpGoOneTurnBackward_Text}">
                             </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="6"
+                                Grid.Column="0"
+                                Source="ic_action_playback_play.png"
+                                SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipTurnNoButtonPressPlay_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipTurnNoButtonPressPlay_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Text="{x:Static resx:CubeLang.HelpTurnNoButtonPressPlay_Text}">
+                            </Label>
+
+                            <ImageButton
+                                Style="{StaticResource imageButtonMenu}"
+                                Grid.Row="7"
+                                Grid.Column="0"
+                                Source="ic_action_playback_stop.png"
+                                SemanticProperties.Description="{x:Static resx:CubeLang.ToolTipTurnNoButtonPressStop_Text}"
+                                ToolTipProperties.Text="{x:Static resx:CubeLang.ToolTipTurnNoButtonPressStop_Text}">
+                            </ImageButton>
+
+                            <Label
+                                Style="{StaticResource labelStyleInfo}"
+                                Grid.Row="7"
+                                Grid.Column="1"
+                                Text="{x:Static resx:CubeLang.HelpTurnNoButtonPressStop_Text}">
+                            </Label>
+
                         </Grid>
                     
                         <Label

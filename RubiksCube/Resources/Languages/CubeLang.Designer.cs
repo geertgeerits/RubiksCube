@@ -390,6 +390,24 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solve the cube without intervention..
+        /// </summary>
+        internal static string HelpTurnNoButtonPressPlay_Text {
+            get {
+                return ResourceManager.GetString("HelpTurnNoButtonPressPlay_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solve the cube with intervention..
+        /// </summary>
+        internal static string HelpTurnNoButtonPressStop_Text {
+            get {
+                return ResourceManager.GetString("HelpTurnNoButtonPressStop_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hexadecimal color codes:
         ///
         ///Characters 1-2: Red
@@ -877,6 +895,33 @@ namespace RubiksCube.Resources.Languages {
         internal static string ToolTipSolveCube_Text {
             get {
                 return ResourceManager.GetString("ToolTipSolveCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle button: Solve the cube with or without intervention.
+        /// </summary>
+        internal static string ToolTipTurnNoButtonPress_Text {
+            get {
+                return ResourceManager.GetString("ToolTipTurnNoButtonPress_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solve the cube without intervention.
+        /// </summary>
+        internal static string ToolTipTurnNoButtonPressPlay_Text {
+            get {
+                return ResourceManager.GetString("ToolTipTurnNoButtonPressPlay_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solve the cube with intervention.
+        /// </summary>
+        internal static string ToolTipTurnNoButtonPressStop_Text {
+            get {
+                return ResourceManager.GetString("ToolTipTurnNoButtonPressStop_Text", resourceCulture);
             }
         }
         
