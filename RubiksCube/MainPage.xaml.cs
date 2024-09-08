@@ -261,24 +261,26 @@ namespace RubiksCube
                 return;
             }
 
-            // Settings
+            // Control settings
             btnSolveCube.IsEnabled = false;
             imgbtnSetColorsCube.IsEnabled = false;
             imgbtnOpenCube.IsEnabled = false;
             imgbtnSaveCube.IsEnabled = false;
             imgbtnScrambleCube.IsEnabled = false;
+            imgbtnResetCube.IsEnabled = false;
+            imgbtnGoOneTurnBackward.IsEnabled = false;
+            btnGoOneTurnForward.IsEnabled = false;
+            imgbtnTurnNoButtonPress.IsEnabled = false;
+            
+            lblCubeOutsideView.IsVisible = false;
+            lblExplainTurnCube.IsVisible = true;
+            lblCubeInsideView.IsVisible = false;
 
+            // Settings
             bColorDrop = false;
             bSolvingCube = true;
             SetArrowTooltips(false);
             IsEnabledArrows(false);
-
-            lblCubeOutsideView.IsVisible = false;
-            lblExplainTurnCube.IsVisible = true;
-            lblCubeInsideView.IsVisible = false;
-            imgbtnGoOneTurnBackward.IsEnabled = false;
-            btnGoOneTurnForward.IsEnabled = false;
-            imgbtnResetCube.IsEnabled = false;
 
             Globals.nTestedSolutions = 0;
 
@@ -320,8 +322,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 260-261 and 305-321 (and change the line 346 to bTestSolveCube = true)
-                // and uncomment one of the lines 326-330/331 to test one of the solutions to solve the cube
+                // For testing comment out the lines 260-261 and 307-323 (and change the line 348 to bTestSolveCube = true)
+                // and uncomment one of the lines 328-332/333 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -347,20 +349,22 @@ namespace RubiksCube
 
             if (bSolved)
             {
-                // Control settings
-                imgbtnGoOneTurnBackward.IsVisible = true;
-                btnGoOneTurnForward.IsVisible = true;
-                imgbtnTurnNoButtonPress.IsVisible = true;
-                imgbtnResetCube.IsEnabled = true;
-
                 // Display the number of turns and the elapsed time in milliseconds
                 int nNumberOfTurns = Globals.lCubeTurns.Count;
                 await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultSolutions_Text} {Globals.nTestedSolutions}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
 
                 await Task.Delay(500);
 
-                // Variables for the turns of the cube
+                // Control settings
+                imgbtnGoOneTurnBackward.IsVisible = true;
+                btnGoOneTurnForward.IsVisible = true;
+                imgbtnTurnNoButtonPress.IsVisible = true;
+                
                 btnGoOneTurnForward.IsEnabled = true;
+                imgbtnTurnNoButtonPress.IsEnabled = true;
+                imgbtnResetCube.IsEnabled = true;
+
+                // Variables for the turns of the cube
                 bTurnIsBackwards = false;
                 int nTurnIndex = -1;
                 string cTurn = "";
