@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-07 (YYYY-MM-DD)
+ * Date ........: 2024-09-08 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -278,6 +278,7 @@ namespace RubiksCube
             lblCubeInsideView.IsVisible = false;
             imgbtnGoOneTurnBackward.IsEnabled = false;
             btnGoOneTurnForward.IsEnabled = false;
+            imgbtnResetCube.IsEnabled = false;
 
             Globals.nTestedSolutions = 0;
 
@@ -319,8 +320,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 260-261 and 304-320 (and change the line 345 to bTestSolveCube = true)
-                // and uncomment one of the lines 325-329/330 to test one of the solutions to solve the cube
+                // For testing comment out the lines 260-261 and 305-321 (and change the line 346 to bTestSolveCube = true)
+                // and uncomment one of the lines 326-330/331 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -350,6 +351,7 @@ namespace RubiksCube
                 imgbtnGoOneTurnBackward.IsVisible = true;
                 btnGoOneTurnForward.IsVisible = true;
                 imgbtnTurnNoButtonPress.IsVisible = true;
+                imgbtnResetCube.IsEnabled = true;
 
                 // Display the number of turns and the elapsed time in milliseconds
                 int nNumberOfTurns = Globals.lCubeTurns.Count;
@@ -398,7 +400,8 @@ namespace RubiksCube
                     }
 
                     // Get the turn of the cube
-                    if (nTurnIndex < nNumberOfTurns)
+                    // Use 'Globals.lCubeTurns.Count' instead of 'nNumberOfTurns' because the list can be empty after a reset
+                    if (nTurnIndex < Globals.lCubeTurns.Count)
                     {
                         cTurn = Globals.lCubeTurns[nTurnIndex];
                     }
@@ -501,7 +504,10 @@ namespace RubiksCube
             lblExplainTurnCube.Text = cTurnCubeText;
 
             // Convert text to speech
-            ExplainTurnCubeSpeech(cTurnCubeText);
+            if (!bTurnNoButtonPress)
+            {
+                ExplainTurnCubeSpeech(cTurnCubeText);
+            }
 
             // Wait for 300 milliseconds on the button click event handler
             // because of a possible error 'The operation was canceled' in the Task ClassSpeech.ConvertTextToSpeechAsync()
@@ -518,7 +524,8 @@ namespace RubiksCube
             }
             else if (bTurnNoButtonPress)
             {
-                await Task.Delay(200);
+                // Wait for 400 milliseconds between two turns
+                await Task.Delay(400);
             }
 
             // Restore settings
