@@ -610,6 +610,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -640,6 +641,7 @@ namespace RubiksCube
 
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -664,6 +666,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -688,6 +691,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -718,6 +722,7 @@ namespace RubiksCube
 
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -742,6 +747,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -766,6 +772,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -796,6 +803,7 @@ namespace RubiksCube
 
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -820,6 +828,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -844,6 +853,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -874,6 +884,7 @@ namespace RubiksCube
 
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -898,6 +909,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -922,6 +934,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -952,6 +965,7 @@ namespace RubiksCube
 
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -976,6 +990,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -1000,6 +1015,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -1030,6 +1046,7 @@ namespace RubiksCube
 
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -1054,6 +1071,7 @@ namespace RubiksCube
         {
             if (bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 _ = _buttonPressed.TrySetResult(true);
                 return;
             }
@@ -1076,6 +1094,7 @@ namespace RubiksCube
         {
             if (!bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 ExplainTurnCube(CubeLang.TurnCubeFrontFaceToLeftFace_Text);
             }
             
@@ -1092,6 +1111,7 @@ namespace RubiksCube
         {
             if (!bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 ExplainTurnCube(CubeLang.TurnCubeFrontFaceToRightFace_Text);
             }
 
@@ -1108,6 +1128,7 @@ namespace RubiksCube
         {
             if (!bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 ExplainTurnCube(CubeLang.TurnCubeFrontFaceToUpFace_Text);
             }
 
@@ -1124,6 +1145,7 @@ namespace RubiksCube
         {
             if (!bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 ExplainTurnCube(CubeLang.TurnCubeFrontFaceToDownFace_Text);
             }
 
@@ -1140,6 +1162,7 @@ namespace RubiksCube
         {
             if (!bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 ExplainTurnCube(CubeLang.TurnCubeUpFaceToRightFace_Text);
             }
 
@@ -1156,6 +1179,7 @@ namespace RubiksCube
         {
             if (!bSolvingCube)
             {
+                bTurnIsBackwards = false;
                 ExplainTurnCube(CubeLang.TurnCubeUpFaceToLeftFace_Text);
             }
 
