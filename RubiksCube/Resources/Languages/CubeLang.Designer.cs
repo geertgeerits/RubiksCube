@@ -390,6 +390,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solve the cube..
+        /// </summary>
+        internal static string HelpSolveCube_Text {
+            get {
+                return ResourceManager.GetString("HelpSolveCube_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Solve the cube without intervention..
         /// </summary>
         internal static string HelpTurnNoButtonPressPlay_Text {

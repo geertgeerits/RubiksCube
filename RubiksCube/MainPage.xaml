@@ -22,6 +22,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
+                SemanticProperties.Description="local:Translate Info_Text}"
                 ToolTipProperties.Text="{local:Translate Info_Text}"
                 Clicked="OnPageAboutClicked">
             </ImageButton>
@@ -60,6 +61,7 @@
                 VerticalOptions="Center"
                 HeightRequest="32"
                 WidthRequest="32"
+                SemanticProperties.Description="local:Translate Settings_Text}"
                 ToolTipProperties.Text="{local:Translate Settings_Text}"
                 Clicked="OnPageSettingsClicked">
             </ImageButton>
@@ -691,6 +693,7 @@
                     HorizontalOptions="Start"
                     BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                     Source="ic_action_undo.png"
+                    SemanticProperties.Description="local:Translate ToolTipGoOneTurnBackward_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
                     IsVisible="False"
                     Clicked="OnButtonGoOneTurnBackwardClicked">
@@ -706,6 +709,7 @@
                     Margin="0,5,0,5"
                     Padding="0"
                     FontSize="20"
+                    SemanticProperties.Description="local:Translate ToolTipGoOneTurnForward_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
                     IsVisible="False"
                     Clicked="OnButtonGoOneTurnForwardClicked">
@@ -720,6 +724,7 @@
                     HorizontalOptions="End"
                     BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                     Source="ic_action_playback_play.png"
+                    SemanticProperties.Description="local:Translate ToolTipTurnNoButtonPress_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipTurnNoButtonPress_Text}"
                     IsVisible="False"
                     Clicked="OnButtonTurnNoButtonPressClicked">
@@ -1051,10 +1056,12 @@
 
         <Button
             x:Name="btnSolveCube"
-            Style="{StaticResource buttonStyleDefault}"
+            Style="{StaticResource buttonStyleMenu}"
+            BorderColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
             Grid.Row="3"
             Grid.Column="0"
             Text="{local:Translate ButtonSolve_Text}"
+            SemanticProperties.Description="local:Translate ToolTipSolveCube_Text}"
             ToolTipProperties.Text="{local:Translate ToolTipSolveCube_Text}"
             Clicked="OnBtnSolveCubeClicked">
         </Button>
@@ -1070,6 +1077,7 @@
                 x:Name="imgbtnSetColorsCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="cube_mixedcolors_48p.png"
+                SemanticProperties.Description="local:Translate ToolTipSetColorsCube_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipSetColorsCube_Text}"
                 Clicked="OnButtonSetColorsCubeClicked">
             </ImageButton>
@@ -1078,6 +1086,7 @@
                 x:Name="imgbtnOpenCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="ic_action_arrow_top.png"
+                SemanticProperties.Description="local:Translate ToolTipOpenCube_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipOpenCube_Text}"
                 Clicked="OnButtonOpenCubeClicked">
             </ImageButton>
@@ -1086,6 +1095,7 @@
                 x:Name="imgbtnSaveCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="ic_action_arrow_bottom.png"
+                SemanticProperties.Description="local:Translate ToolTipSaveCube_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipSaveCube_Text}"
                 Clicked="OnButtonSaveCubeClicked">
             </ImageButton>
@@ -1094,6 +1104,7 @@
                 x:Name="imgbtnScrambleCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="ic_action_playback_schuffle.png"
+                SemanticProperties.Description="local:Translate ToolTipScrambleCube_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipScrambleCube_Text}"
                 Clicked="OnButtonScrambleCubeClicked">
             </ImageButton>
@@ -1102,6 +1113,7 @@
                 x:Name="imgbtnResetCube"
                 Style="{StaticResource imageButtonMenu}"
                 Source="ic_action_reload.png"
+                SemanticProperties.Description="local:Translate ToolTipResetCube_Text}"
                 ToolTipProperties.Text="{local:Translate ToolTipResetCube_Text}"
                 Clicked="OnButtonResetClicked">
             </ImageButton>

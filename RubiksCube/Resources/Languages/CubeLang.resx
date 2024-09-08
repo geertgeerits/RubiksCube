@@ -585,4 +585,7 @@ Possible cause is incorrect transfer of colors to this cube.</value>
   <data name="ToolTipTurnNoButtonPress_Text" xml:space="preserve">
     <value>Toggle button: Solve the cube with or without intervention</value>
   </data>
+  <data name="HelpSolveCube_Text" xml:space="preserve">
+    <value>Solve the cube.</value>
+  </data>
 </root>
