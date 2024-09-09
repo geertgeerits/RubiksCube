@@ -13,7 +13,10 @@ namespace RubiksCube
                 DisplayAlert("InitializeComponent: PageAbout", ex.Message, "OK");
                 return;
             }
-
+#if WINDOWS
+            // Set the left margin of the title for windows
+            lblTitlePage.Margin = new Thickness(40, 0, 0, 0);
+#endif
             //// Put text in the chosen language in the controls and variables
             lblVersion.Text = $"{CubeLang.Version_Text} 2.0.28";
             lblCopyright.Text = $"{CubeLang.Copyright_Text} © 1981-2024 Geert Geerits";

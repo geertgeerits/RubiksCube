@@ -8,6 +8,7 @@
 
     <NavigationPage.TitleView>
         <Grid
+            x:Name="grdTitleView"
             RowDefinitions="50"
             ColumnDefinitions="60, 140*, 50, 60"
             Margin="4"

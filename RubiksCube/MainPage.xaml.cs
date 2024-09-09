@@ -48,7 +48,20 @@ namespace RubiksCube
                 DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
                 return;
             }
+#if WINDOWS
+            // !!!BUG!!! in Windows - Set the ColumnDefinitions for the TitleView because XAML 140* does not work in Windows
+            grdTitleView.ColumnDefinitions.Clear();
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(625) });
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
+            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
 
+            imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
+#endif
+#if IOS
+            // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' because Padding does not work in iOS
+            lblExplainTurnCube.Margin = new Thickness(5, 0, 5, 0);
+#endif
             //// Get the saved settings
             Globals.cTheme = Preferences.Default.Get("SettingTheme", "System");
             Globals.cLanguage = Preferences.Default.Get("SettingLanguage", "");
@@ -103,15 +116,9 @@ namespace RubiksCube
             GetCubeColorsFromArrays();
 
 #if DEBUG
-            //// Set the button to visible and 'bSolveNewSolutionsTest' to false in debug mode for testing purposes
-            btnSolveNewSolutionsTest.IsVisible = true;
+            //// Set the button to true and 'bSolveNewSolutionsTest' to false in debug mode for testing purposes
+            btnSolveNewSolutionsTest.IsVisible = false;
             Globals.bSolveNewSolutionsTest = false;
-#endif
-
-#if IOS
-            // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' for iOS
-            // Padding does not work in iOS
-            lblExplainTurnCube.Margin = new Thickness(5, 0, 5, 0);
 #endif
         }
 
@@ -319,8 +326,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 260-261 and 304-320 (and change the line 345 to bTestSolveCube = true)
-                // and uncomment one of the lines 325-329/330 to test one of the solutions to solve the cube
+                // For testing comment out the lines 267-268 and 311-327 (and change the line 352 to bTestSolveCube = true)
+                // and uncomment one of the lines 332-336/337 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution

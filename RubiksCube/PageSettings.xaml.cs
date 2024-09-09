@@ -19,7 +19,21 @@ namespace RubiksCube
                 DisplayAlert("InitializeComponent: PageSettings", ex.Message, "OK");
                 return;
             }
+#if WINDOWS
+            // Set the left margin of the title for windows
+            lblTitlePage.Margin = new Thickness(40, 0, 0, 0);
+#endif
+#if IOS
+            // Workaround for !!!BUG!!! in iOS with the Slider right margin
+            Slider slider = new()
+            {
+                Margin = new Thickness(0, 0, 25, 0)
+            };
 
+            sldColorRed.Margin = slider.Margin;
+            sldColorGreen.Margin = slider.Margin;
+            sldColorBlue.Margin = slider.Margin;
+#endif
             //// Put text in the chosen language in the controls and variables
             SetLanguage();
 
@@ -57,18 +71,6 @@ namespace RubiksCube
             plgCubeColor4.Fill = Color.FromArgb(Globals.aFaceColors[4]);
             plgCubeColor5.Fill = Color.FromArgb(Globals.aFaceColors[5]);
             plgCubeColor6.Fill = Color.FromArgb(Globals.aFaceColors[6]);
-
-            // Workaround for !!!BUG!!! in iOS with the Slider right margin
-#if IOS
-            Slider slider = new()
-            {
-                Margin = new Thickness(0, 0, 25, 0)
-            };
-
-            sldColorRed.Margin = slider.Margin;
-            sldColorGreen.Margin = slider.Margin;
-            sldColorBlue.Margin = slider.Margin;
-#endif
 
             // Set the first hex colorcode in the entry field and set the slider positions
             SetCubeHexColor();
