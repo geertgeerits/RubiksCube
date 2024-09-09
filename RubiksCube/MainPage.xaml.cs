@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.28
- * Date ........: 2024-09-08 (YYYY-MM-DD)
+ * Date ........: 2024-09-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -271,9 +271,6 @@ namespace RubiksCube
             imgbtnGoOneTurnBackward.IsEnabled = false;
             btnGoOneTurnForward.IsEnabled = false;
             imgbtnTurnNoButtonPress.IsEnabled = false;
-            
-            lblCubeOutsideView.IsVisible = false;
-            lblExplainTurnCube.IsVisible = true;
             lblCubeInsideView.IsVisible = false;
 
             // Settings
@@ -322,8 +319,8 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 260-261 and 307-323 (and change the line 348 to bTestSolveCube = true)
-                // and uncomment one of the lines 328-332/333 to test one of the solutions to solve the cube
+                // For testing comment out the lines 260-261 and 304-320 (and change the line 345 to bTestSolveCube = true)
+                // and uncomment one of the lines 325-329/330 to test one of the solutions to solve the cube
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
@@ -356,10 +353,11 @@ namespace RubiksCube
                 await Task.Delay(500);
 
                 // Control settings
+                lblCubeOutsideView.IsVisible = false;
+                lblExplainTurnCube.IsVisible = true;
                 imgbtnGoOneTurnBackward.IsVisible = true;
                 btnGoOneTurnForward.IsVisible = true;
                 imgbtnTurnNoButtonPress.IsVisible = true;
-                
                 btnGoOneTurnForward.IsEnabled = true;
                 imgbtnTurnNoButtonPress.IsEnabled = true;
                 imgbtnResetCube.IsEnabled = true;
@@ -459,7 +457,7 @@ namespace RubiksCube
             // Reset for the next iteration
             _buttonPressed = new TaskCompletionSource<bool>();
 
-            // Settings
+            // Control settings
             bTurnNoButtonPress = false;
             imgbtnTurnNoButtonPress.Source = "ic_action_playback_play.png";
             lblExplainTurnCube.Text = "";
@@ -470,10 +468,12 @@ namespace RubiksCube
             imgbtnTurnNoButtonPress.IsVisible = false;
             lblCubeInsideView.IsVisible = true;
 
+            // Settings
             IsEnabledArrows(true);
             SetArrowTooltips(true);
             bSolvingCube = false;
 
+            // Control settings
             btnSolveCube.IsEnabled = true;
             imgbtnSetColorsCube.IsEnabled = true;
             imgbtnOpenCube.IsEnabled = true;
@@ -1902,7 +1902,6 @@ namespace RubiksCube
         }
     }
 }
-
 
 /*
 Numbering of cube surfaces
