@@ -30,7 +30,7 @@
 
             window.MinimumHeight = 850;
             window.MinimumWidth = newWidth;
-            window.MaximumHeight = newHeight;
+            window.MaximumHeight = 1000;
             window.MaximumWidth = newWidth;
 
             return window;
