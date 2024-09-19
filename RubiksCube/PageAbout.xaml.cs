@@ -18,7 +18,7 @@ namespace RubiksCube
             lblTitlePage.Margin = new Thickness(40, 0, 0, 0);
 #endif
             //// Put text in the chosen language in the controls and variables
-            lblVersion.Text = $"{CubeLang.Version_Text} 2.0.28";
+            lblVersion.Text = $"{CubeLang.Version_Text} 2.0.29";
             lblCopyright.Text = $"{CubeLang.Copyright_Text} © 1981-2024 Geert Geerits";
             lblEmail.Text = $"{CubeLang.Email_Text} geertgeerits@gmail.com";
             lblWebsite.Text = $"{CubeLang.Website_Text}: ../rubikscube";

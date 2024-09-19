@@ -1,8 +1,8 @@
 ﻿/* Program .....: RubiksCube.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
- * Version .....: 2.0.28
- * Date ........: 2024-09-10 (YYYY-MM-DD)
+ * Version .....: 2.0.29
+ * Date ........: 2024-09-19 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -514,10 +514,16 @@ namespace RubiksCube
             string cTurnCubeText = await SetExplainTextAsync(cTurn);
             lblExplainTurnCube.Text = cTurnCubeText;
 
-            // Convert text to speech
+            // Convert or cancel text to speech
             if (!bTurnNoButtonPress)
             {
+                // Convert text to speech
                 ExplainTurnCubeSpeech(cTurnCubeText);
+            }
+            else if (bTurnNoButtonPress && Globals.bTextToSpeechIsBusy)
+            {
+                // Cancel text to speech
+                ClassSpeech.CancelTextToSpeech();
             }
 
             // Wait for 300 milliseconds on the button click event handler
