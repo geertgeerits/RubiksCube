@@ -276,7 +276,7 @@ namespace RubiksCube
             if (TestAllowedCharacters(cHexCharacters, entry.Text) == false)
             {
                 entry.Text = oldText;
-                entry.Focus();
+                _ = entry.Focus();
             }
         }
 
@@ -355,7 +355,7 @@ namespace RubiksCube
             // Length must be 6 characters
             if (entHexColor.Text.Length != 6)
             {
-                entHexColor.Focus();
+                _ = entHexColor.Focus();
                 return;
             }
 
