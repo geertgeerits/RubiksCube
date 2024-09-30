@@ -399,6 +399,17 @@ namespace RubiksCube
 
                 // Remove the items with 'None'
                 lCubeTurnsToClean.RemoveAll(x => x == cNone);
+
+                //if (lCubeTurnsToClean.Contains(cNone))
+                //{
+                //    // Remove the items with 'None'
+                //    lCubeTurnsToClean.RemoveAll(x => x == cNone);
+                //}
+                //else if (nNumberCleanings > 2)
+                //{
+                //    // If the loop runs more than 2 times, break the loop
+                //    break;
+                //}
             }
 #if DEBUG
             // Save the list with the cube turns after the cleaning to a file, for testing purposes
