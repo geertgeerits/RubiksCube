@@ -314,8 +314,8 @@ namespace RubiksCube
                 return;
             }
 
-            // Do the cleaning two times
-            for (int nNumberCleanings = 0; nNumberCleanings < 2; nNumberCleanings++)
+            // Do the cleaning five times
+            for (int nNumberCleanings = 0; nNumberCleanings < 5; nNumberCleanings++)
             {
                 for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                 {
