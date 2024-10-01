@@ -1,4 +1,4 @@
-﻿/* This module tries to solve the cube from minimum 456 different starting positions.
+﻿/* This module tries to solve the cube from minimum 912 different starting positions.
    The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
@@ -314,8 +314,8 @@ namespace RubiksCube
                 return;
             }
 
-            // Do the cleaning five times
-            for (int nNumberCleanings = 0; nNumberCleanings < 5; nNumberCleanings++)
+            // Do the cleaning between 3 and 10 times
+            for (int nNumberCleanings = 1; nNumberCleanings < 11; nNumberCleanings++)
             {
                 for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                 {
@@ -397,19 +397,18 @@ namespace RubiksCube
                     lCubeTurnsToClean[^1] = cNone;
                 }
 
-                // Remove the items with 'None'
-                lCubeTurnsToClean.RemoveAll(x => x == cNone);
+                Debug.WriteLine($"nNumberCleanings: {nNumberCleanings}, lCubeTurnsToClean: {lCubeTurnsToClean.Count}");  // For testing purposes
 
-                //if (lCubeTurnsToClean.Contains(cNone))
-                //{
-                //    // Remove the items with 'None'
-                //    lCubeTurnsToClean.RemoveAll(x => x == cNone);
-                //}
-                //else if (nNumberCleanings > 2)
-                //{
-                //    // If the loop runs more than 2 times, break the loop
-                //    break;
-                //}
+                if (lCubeTurnsToClean.Contains(cNone))
+                {
+                    // Remove the items with 'None'
+                    lCubeTurnsToClean.RemoveAll(x => x == cNone);
+                }
+                else if (nNumberCleanings > 2)
+                {
+                    // If the for loop was executed 3 times, break the loop
+                    break;
+                }
             }
 #if DEBUG
             // Save the list with the cube turns after the cleaning to a file, for testing purposes
