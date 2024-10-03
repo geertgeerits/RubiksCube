@@ -20,7 +20,11 @@ public partial class PageWebsite : ContentPage
         wvWebpage.Navigated += OnNavigated;
     }
 
-    //// Navigating event that's raised when page navigation starts
+    /// <summary>
+    /// Navigating event that's raised when page navigation starts
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void OnNavigating(object sender, WebNavigatingEventArgs e)
     {
         // If 'mailto' link in webpage then open the e-mail app
@@ -31,7 +35,11 @@ public partial class PageWebsite : ContentPage
         }
     }
 
-    //// Navigated event that's raised when page navigation completes
+    /// <summary>
+    /// Navigated event that's raised when page navigation completes
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void OnNavigated(object sender, WebNavigatedEventArgs e)
     {
         // Enable or disable the back and forward buttons
@@ -59,7 +67,11 @@ public partial class PageWebsite : ContentPage
         }
     }
 
-    //// Go backwards, if allowed
+    /// <summary>
+    /// Go backwards, if allowed
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void OnGoBackClicked(object sender, EventArgs e)
     {
         if (wvWebpage.CanGoBack)
@@ -68,7 +80,11 @@ public partial class PageWebsite : ContentPage
         }
     }
 
-    //// Go forwards, if allowed
+    /// <summary>
+    /// Go forwards, if allowed
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void OnGoForwardClicked(object sender, EventArgs e)
     {
         if (wvWebpage.CanGoForward)

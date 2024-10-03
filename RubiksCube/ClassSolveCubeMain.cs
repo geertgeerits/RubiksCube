@@ -13,7 +13,7 @@ namespace RubiksCube
         private const char c2 = '2';
         private static readonly List<string> lCubeTurnsTemp = [];
         private static readonly List<string> lCubePositions = [];
-        private static bool bSolveCubeFromMultiplePositions = true;  // Default = true - Enable or disable the solving of the cube from multiple positions for testing
+        private static readonly bool bSolveCubeFromMultiplePositions = true;  // Default = true - Enable or disable the solving of the cube from multiple positions for testing
 
         /// <summary>
         /// Try to solve the cube 2 times
