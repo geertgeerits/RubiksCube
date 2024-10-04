@@ -314,8 +314,8 @@ namespace RubiksCube
                 return;
             }
 
-            // Do the cleaning between 3 and 10 times
-            for (int nNumberCleanings = 1; nNumberCleanings < 11; nNumberCleanings++)
+            // Do the cleaning between 2 and 9 times
+            for (int nNumberCleanings = 1; nNumberCleanings < 10; nNumberCleanings++)
             {
                 for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                 {
@@ -404,9 +404,9 @@ namespace RubiksCube
                     // Remove the items with 'None'
                     lCubeTurnsToClean.RemoveAll(x => x == cNone);
                 }
-                else if (nNumberCleanings > 2)
+                else if (nNumberCleanings > 1)
                 {
-                    // If the for loop was executed 3 times, break the loop
+                    // If the for loop was executed 2 times, break the loop
                     break;
                 }
             }
