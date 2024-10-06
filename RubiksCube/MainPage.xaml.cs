@@ -1658,7 +1658,7 @@ namespace RubiksCube
                 cTurns = $"{cTurns}{ScrambledCubeTurns[nIndex]} ";
             }
 
-            // Display the cube turns in the output window
+            // Display the cube turns in the output window for testing purposes
             Debug.WriteLine($"ScrambledCubeTurns: {cTurns}");
 
             // Reset the test variable
