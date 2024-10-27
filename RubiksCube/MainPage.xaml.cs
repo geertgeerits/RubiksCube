@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-10-17 (YYYY-MM-DD)
+ * Date ........: 2024-10-27 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -1696,16 +1696,19 @@ namespace RubiksCube
         /// </summary>
         private void SetCubeColorsInArrays()
         {
+            Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
+            Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
+
             for (int i = 1; i < 7; i++)
             {
                 Polygon polygon = this.FindByName<Polygon>($"plgCubeColor{i}");
-                Globals.aFaceColors[i] = GetHexColorPolygon(polygon);
+                aFaceColorsSpan[i] = GetHexColorPolygon(polygon);
             }
 
             for (int i = 0; i < 54; i++)
             {
                 Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
-                Globals.aPieces[i] = GetHexColorPolygon(polygon);
+                aPiecesSpan[i] = GetHexColorPolygon(polygon);
             }
         }
 
@@ -1714,16 +1717,19 @@ namespace RubiksCube
         /// </summary>
         private void GetCubeColorsFromArrays()
         {
+            Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
+            Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
+
             for (int i = 1; i < 7; i++)
             {
                 Polygon polygon = this.FindByName<Polygon>($"plgCubeColor{i}");
-                polygon.Fill = Color.FromArgb(Globals.aFaceColors[i]);
+                polygon.Fill = Color.FromArgb(aFaceColorsSpan[i]);
             }
 
             for (int i = 0; i < 54; i++)
             {
                 Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
-                polygon.Fill = Color.FromArgb(Globals.aPieces[i]);
+                polygon.Fill = Color.FromArgb(aPiecesSpan[i]);
             }
         }
 
