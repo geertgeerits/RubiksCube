@@ -120,6 +120,8 @@ namespace RubiksCube
             btnSolveNewSolutionsTest.IsVisible = false;
             Globals.bSolveNewSolutionsTest = false;
 #endif
+            //// Test the time it takes
+            //ClassTestCubeTurns.TestTime();
         }
 
         //// TitleView buttons clicked events
@@ -1677,7 +1679,7 @@ namespace RubiksCube
             if (bSolvingCube)
             {
                 // Restart the application to get out of the foreach loop in the method OnBtnSolveCubeClicked and task MakeExplainTurnAsync()
-                Application.Current!.MainPage = new NavigationPage(new MainPage());
+                Microsoft.Maui.Controls.Application.Current!.MainPage = new NavigationPage(new MainPage());
             }
             else
             {
@@ -1696,8 +1698,6 @@ namespace RubiksCube
         /// </summary>
         private void SetCubeColorsInArrays()
         {
-            //Stopwatch stopwatch = Stopwatch.StartNew();
-
             Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
             Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
 
@@ -1712,10 +1712,6 @@ namespace RubiksCube
                 Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
                 aPiecesSpan[i] = GetHexColorPolygon(polygon);
             }
-
-            //stopwatch.Stop();
-            //Debug.WriteLine($"Benchmark elapsedMs: {stopwatch.ElapsedMilliseconds}");
-            //Debug.WriteLine($"Benchmark elapsedTicks: {stopwatch.ElapsedTicks}");
         }
 
         /// <summary>
@@ -1723,8 +1719,8 @@ namespace RubiksCube
         /// </summary>
         private void GetCubeColorsFromArrays()
         {
-            Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
-            Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
+            ReadOnlySpan<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = Globals.aPieces.AsSpan();
 
             for (int i = 1; i < 7; i++)
             {
@@ -1870,7 +1866,7 @@ namespace RubiksCube
 
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Application.Current!.MainPage!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
+                Globals.bLicense = await Microsoft.Maui.Controls.Application.Current!.MainPage!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {
@@ -1892,7 +1888,7 @@ namespace RubiksCube
 
                     await DisplayAlert(CubeLang.LicenseTitle_Text, CubeLang.CloseApplication_Text, CubeLang.ButtonClose_Text);
 #else
-                    Application.Current.Quit();
+                    Microsoft.Maui.Controls.Application.Current.Quit();
 #endif
                 }
             }

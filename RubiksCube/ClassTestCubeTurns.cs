@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Maui.Controls.Shapes;
+using System.Diagnostics;
 using static RubiksCube.Globals;
 
 namespace RubiksCube
@@ -783,5 +784,23 @@ namespace RubiksCube
 
             return true;
         }
+
+        /// <summary>
+        /// Test the time it takes
+        /// </summary>
+        //public static void TestTime()
+        //{
+        //    // Start the stopwatch
+        //    var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+
+        //    // The code that you want to measure comes here
+        //    MainPage mainPage = new MainPage();
+        //    mainPage.GetCubeColorsFromArrays();
+
+        //    // Stop the stopwatch
+        //    stopwatch.Stop();
+        //    Debug.WriteLine($"Time elapsedMs: {stopwatch.ElapsedMilliseconds}");
+        //    Debug.WriteLine($"Time elapsedTicks: {stopwatch.ElapsedTicks}");
+        //}
     }
 }
