@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-10-27 (YYYY-MM-DD)
+ * Date ........: 2024-10-28 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -1696,6 +1696,8 @@ namespace RubiksCube
         /// </summary>
         private void SetCubeColorsInArrays()
         {
+            //Stopwatch stopwatch = Stopwatch.StartNew();
+
             Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
             Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
 
@@ -1710,6 +1712,10 @@ namespace RubiksCube
                 Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
                 aPiecesSpan[i] = GetHexColorPolygon(polygon);
             }
+
+            //stopwatch.Stop();
+            //Debug.WriteLine($"Benchmark elapsedMs: {stopwatch.ElapsedMilliseconds}");
+            //Debug.WriteLine($"Benchmark elapsedTicks: {stopwatch.ElapsedTicks}");
         }
 
         /// <summary>

@@ -147,6 +147,19 @@ namespace RubiksCube
                     }
                 }
 
+                //ReadOnlySpan<string> piecesSpan = aPieces;
+
+                //if (piecesSpan[49] == piecesSpan[0] || piecesSpan[49] == piecesSpan[29] || piecesSpan[49] == piecesSpan[42])
+                //{
+                //    if (piecesSpan[4] == piecesSpan[0] || piecesSpan[4] == piecesSpan[29] || piecesSpan[4] == piecesSpan[42])
+                //    {
+                //        if (piecesSpan[13] == piecesSpan[0] || piecesSpan[13] == piecesSpan[29] || piecesSpan[13] == piecesSpan[42])
+                //        {
+                //            await MakeTurnAsync("U'");
+                //        }
+                //    }
+                //}
+
                 //--------------------------------------------------------------------------------------------------------------
 
                 // https://kubuspuzzel.nl/3x3-kubus-oplossen/f2l/
