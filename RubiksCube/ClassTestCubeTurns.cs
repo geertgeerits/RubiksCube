@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls.Shapes;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls.Shapes;
 using System.Diagnostics;
 using static RubiksCube.Globals;
 
@@ -788,19 +789,19 @@ namespace RubiksCube
         /// <summary>
         /// Test the time it takes
         /// </summary>
-        //public static void TestTime()
-        //{
-        //    // Start the stopwatch
-        //    var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+        public static void TestTime()
+        {
+            // Get the current time
+            long startTime = Stopwatch.GetTimestamp();
 
-        //    // The code that you want to measure comes here
-        //    MainPage mainPage = new MainPage();
-        //    mainPage.GetCubeColorsFromArrays();
+            // The code that you want to measure comes here
+            //Task.Delay(1000).Wait();
+            //MainPage mainPage = new MainPage();  // Create an instance of the MainPage class - does not work: hangs the app
+            //mainPage.GetCubeColorsFromArrays();
 
-        //    // Stop the stopwatch
-        //    stopwatch.Stop();
-        //    Debug.WriteLine($"Time elapsedMs: {stopwatch.ElapsedMilliseconds}");
-        //    Debug.WriteLine($"Time elapsedTicks: {stopwatch.ElapsedTicks}");
-        //}
+            // Get the elapsed time and show it in the ouput window
+            TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
+            Debug.WriteLine($"Time elapsed (hh:mm:ss.xxxxxxx): {delta}");
+        }
     }
 }
