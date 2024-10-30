@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Shapes;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using static RubiksCube.Globals;
 
 namespace RubiksCube
@@ -802,6 +800,7 @@ namespace RubiksCube
             // Get the elapsed time and show it in the ouput window
             TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
             Debug.WriteLine($"Time elapsed (hh:mm:ss.xxxxxxx): {delta}");
+            Application.Current!.MainPage!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
         }
     }
 }

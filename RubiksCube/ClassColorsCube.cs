@@ -10,6 +10,10 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CheckNumberColors()
         {
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = aPieces.AsSpan();
+
             int nNumberOfColors1 = 0;
             int nNumberOfColors2 = 0;
             int nNumberOfColors3 = 0;
@@ -23,7 +27,7 @@ namespace RubiksCube
             // Front face
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[1])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[1])
                 {
                     nNumberOfColors1++;
                 }
@@ -31,7 +35,7 @@ namespace RubiksCube
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[2])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[2])
                 {
                     nNumberOfColors2++;
                 }
@@ -39,7 +43,7 @@ namespace RubiksCube
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[3])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[3])
                 {
                     nNumberOfColors3++;
                 }
@@ -47,7 +51,7 @@ namespace RubiksCube
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[4])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[4])
                 {
                     nNumberOfColors4++;
                 }
@@ -55,7 +59,7 @@ namespace RubiksCube
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[5])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[5])
                 {
                     nNumberOfColors5++;
                 }
@@ -63,7 +67,7 @@ namespace RubiksCube
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[6])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[6])
                 {
                     nNumberOfColors6++;
                 }
@@ -72,7 +76,7 @@ namespace RubiksCube
             // Right face
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[1])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[1])
                 {
                     nNumberOfColors1++;
                 }
@@ -80,7 +84,7 @@ namespace RubiksCube
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[2])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[2])
                 {
                     nNumberOfColors2++;
                 }
@@ -88,7 +92,7 @@ namespace RubiksCube
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[3])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[3])
                 {
                     nNumberOfColors3++;
                 }
@@ -96,7 +100,7 @@ namespace RubiksCube
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[4])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[4])
                 {
                     nNumberOfColors4++;
                 }
@@ -104,7 +108,7 @@ namespace RubiksCube
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[5])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[5])
                 {
                     nNumberOfColors5++;
                 }
@@ -112,7 +116,7 @@ namespace RubiksCube
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[6])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[6])
                 {
                     nNumberOfColors6++;
                 }
@@ -121,7 +125,7 @@ namespace RubiksCube
             // Back face
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[1])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[1])
                 {
                     nNumberOfColors1++;
                 }
@@ -129,7 +133,7 @@ namespace RubiksCube
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[2])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[2])
                 {
                     nNumberOfColors2++;
                 }
@@ -137,7 +141,7 @@ namespace RubiksCube
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[3])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[3])
                 {
                     nNumberOfColors3++;
                 }
@@ -145,7 +149,7 @@ namespace RubiksCube
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[4])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[4])
                 {
                     nNumberOfColors4++;
                 }
@@ -153,7 +157,7 @@ namespace RubiksCube
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[5])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[5])
                 {
                     nNumberOfColors5++;
                 }
@@ -161,7 +165,7 @@ namespace RubiksCube
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[6])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[6])
                 {
                     nNumberOfColors6++;
                 }
@@ -170,7 +174,7 @@ namespace RubiksCube
             // Left face
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[1])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[1])
                 {
                     nNumberOfColors1++;
                 }
@@ -178,7 +182,7 @@ namespace RubiksCube
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[2])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[2])
                 {
                     nNumberOfColors2++;
                 }
@@ -186,7 +190,7 @@ namespace RubiksCube
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[3])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[3])
                 {
                     nNumberOfColors3++;
                 }
@@ -194,7 +198,7 @@ namespace RubiksCube
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[4])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[4])
                 {
                     nNumberOfColors4++;
                 }
@@ -202,7 +206,7 @@ namespace RubiksCube
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[5])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[5])
                 {
                     nNumberOfColors5++;
                 }
@@ -210,7 +214,7 @@ namespace RubiksCube
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[6])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[6])
                 {
                     nNumberOfColors6++;
                 }
@@ -219,7 +223,7 @@ namespace RubiksCube
             // Top layer
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[1])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[1])
                 {
                     nNumberOfColors1++;
                 }
@@ -227,7 +231,7 @@ namespace RubiksCube
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[2])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[2])
                 {
                     nNumberOfColors2++;
                 }
@@ -235,7 +239,7 @@ namespace RubiksCube
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[3])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[3])
                 {
                     nNumberOfColors3++;
                 }
@@ -243,7 +247,7 @@ namespace RubiksCube
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[4])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[4])
                 {
                     nNumberOfColors4++;
                 }
@@ -251,7 +255,7 @@ namespace RubiksCube
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[5])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[5])
                 {
                     nNumberOfColors5++;
                 }
@@ -259,7 +263,7 @@ namespace RubiksCube
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[6])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[6])
                 {
                     nNumberOfColors6++;
                 }
@@ -268,7 +272,7 @@ namespace RubiksCube
             // Bottom layer
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[1])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[1])
                 {
                     nNumberOfColors1++;
                 }
@@ -276,7 +280,7 @@ namespace RubiksCube
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[2])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[2])
                 {
                     nNumberOfColors2++;
                 }
@@ -284,7 +288,7 @@ namespace RubiksCube
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[3])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[3])
                 {
                     nNumberOfColors3++;
                 }
@@ -292,7 +296,7 @@ namespace RubiksCube
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[4])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[4])
                 {
                     nNumberOfColors4++;
                 }
@@ -300,7 +304,7 @@ namespace RubiksCube
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[5])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[5])
                 {
                     nNumberOfColors5++;
                 }
@@ -308,7 +312,7 @@ namespace RubiksCube
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                if (aPieces[nItem] == aFaceColors[6])
+                if (aPiecesSpan[nItem] == aFaceColorsSpan[6])
                 {
                     nNumberOfColors6++;
                 }
@@ -323,32 +327,32 @@ namespace RubiksCube
             //// Check the number of colors of the central square of the cube
             bool bColorCenterCube = true;
 
-            if (aPieces[40] == aPieces[4] || aPieces[40] == aPieces[13] || aPieces[40] == aPieces[31] || aPieces[40] == aPieces[22] || aPieces[40] == aPieces[49])
+            if (aPiecesSpan[40] == aPiecesSpan[4] || aPiecesSpan[40] == aPiecesSpan[13] || aPiecesSpan[40] == aPiecesSpan[31] || aPiecesSpan[40] == aPiecesSpan[22] || aPiecesSpan[40] == aPiecesSpan[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (aPieces[4] == aPieces[40] || aPieces[4] == aPieces[13] || aPieces[4] == aPieces[31] || aPieces[4] == aPieces[22] || aPieces[4] == aPieces[49])
+            if (aPiecesSpan[4] == aPiecesSpan[40] || aPiecesSpan[4] == aPiecesSpan[13] || aPiecesSpan[4] == aPiecesSpan[31] || aPiecesSpan[4] == aPiecesSpan[22] || aPiecesSpan[4] == aPiecesSpan[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (aPieces[13] == aPieces[4] || aPieces[13] == aPieces[40] || aPieces[13] == aPieces[31] || aPieces[13] == aPieces[22] || aPieces[13] == aPieces[49])
+            if (aPiecesSpan[13] == aPiecesSpan[4] || aPiecesSpan[13] == aPiecesSpan[40] || aPiecesSpan[13] == aPiecesSpan[31] || aPiecesSpan[13] == aPiecesSpan[22] || aPiecesSpan[13] == aPiecesSpan[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (aPieces[31] == aPieces[4] || aPieces[31] == aPieces[13] || aPieces[31] == aPieces[40] || aPieces[31] == aPieces[22] || aPieces[31] == aPieces[49])
+            if (aPiecesSpan[31] == aPiecesSpan[4] || aPiecesSpan[31] == aPiecesSpan[13] || aPiecesSpan[31] == aPiecesSpan[40] || aPiecesSpan[31] == aPiecesSpan[22] || aPiecesSpan[31] == aPiecesSpan[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (aPieces[22] == aPieces[4] || aPieces[22] == aPieces[13] || aPieces[22] == aPieces[31] || aPieces[22] == aPieces[40] || aPieces[22] == aPieces[49])
+            if (aPiecesSpan[22] == aPiecesSpan[4] || aPiecesSpan[22] == aPiecesSpan[13] || aPiecesSpan[22] == aPiecesSpan[31] || aPiecesSpan[22] == aPiecesSpan[40] || aPiecesSpan[22] == aPiecesSpan[49])
             {
                 bColorCenterCube = false;
             }
 
-            if (aPieces[49] == aPieces[4] || aPieces[49] == aPieces[13] || aPieces[49] == aPieces[31] || aPieces[49] == aPieces[22] || aPieces[49] == aPieces[40])
+            if (aPiecesSpan[49] == aPiecesSpan[4] || aPiecesSpan[49] == aPiecesSpan[13] || aPiecesSpan[49] == aPiecesSpan[31] || aPiecesSpan[49] == aPiecesSpan[22] || aPiecesSpan[49] == aPiecesSpan[40])
             {
                 bColorCenterCube = false;
             }
@@ -362,42 +366,42 @@ namespace RubiksCube
             //// Check the number of colors of the corner cubes of the cube if there are no corner cubes with the same color
             bool bColorCornerCube = true;
 
-            if (aPieces[42] == aPieces[29] || aPieces[42] == aPieces[0] || aPieces[0] == aPieces[29])
+            if (aPiecesSpan[42] == aPiecesSpan[29] || aPiecesSpan[42] == aPiecesSpan[0] || aPiecesSpan[0] == aPiecesSpan[29])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[36] == aPieces[27] || aPieces[36] == aPieces[20] || aPieces[27] == aPieces[20])
+            if (aPiecesSpan[36] == aPiecesSpan[27] || aPiecesSpan[36] == aPiecesSpan[20] || aPiecesSpan[27] == aPiecesSpan[20])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[38] == aPieces[11] || aPieces[38] == aPieces[18] || aPieces[11] == aPieces[18])
+            if (aPiecesSpan[38] == aPiecesSpan[11] || aPiecesSpan[38] == aPiecesSpan[18] || aPiecesSpan[11] == aPiecesSpan[18])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[44] == aPieces[2] || aPieces[44] == aPieces[9] || aPieces[2] == aPieces[9])
+            if (aPiecesSpan[44] == aPiecesSpan[2] || aPiecesSpan[44] == aPiecesSpan[9] || aPiecesSpan[2] == aPiecesSpan[9])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[45] == aPieces[35] || aPieces[45] == aPieces[6] || aPieces[6] == aPieces[35])
+            if (aPiecesSpan[45] == aPiecesSpan[35] || aPiecesSpan[45] == aPiecesSpan[6] || aPiecesSpan[6] == aPiecesSpan[35])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[51] == aPieces[33] || aPieces[51] == aPieces[26] || aPieces[26] == aPieces[33])
+            if (aPiecesSpan[51] == aPiecesSpan[33] || aPiecesSpan[51] == aPiecesSpan[26] || aPiecesSpan[26] == aPiecesSpan[33])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[53] == aPieces[17] || aPieces[53] == aPieces[24] || aPieces[24] == aPieces[17])
+            if (aPiecesSpan[53] == aPiecesSpan[17] || aPiecesSpan[53] == aPiecesSpan[24] || aPiecesSpan[24] == aPiecesSpan[17])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[47] == aPieces[15] || aPieces[47] == aPieces[8] || aPieces[8] == aPieces[15])
+            if (aPiecesSpan[47] == aPiecesSpan[15] || aPiecesSpan[47] == aPiecesSpan[8] || aPiecesSpan[8] == aPiecesSpan[15])
             {
                 bColorCornerCube = false;
             }
@@ -427,12 +431,12 @@ namespace RubiksCube
             //// Check the number of colors of the edge cubes if there are no edge cubes with the same color
             bColorCornerCube = true;
 
-            if (aPieces[37] == aPieces[19] || aPieces[39] == aPieces[28] || aPieces[41] == aPieces[10] || aPieces[43] == aPieces[1])
+            if (aPiecesSpan[37] == aPiecesSpan[19] || aPiecesSpan[39] == aPiecesSpan[28] || aPiecesSpan[41] == aPiecesSpan[10] || aPiecesSpan[43] == aPiecesSpan[1])
             {
                 bColorCornerCube = false;
             }
 
-            if (aPieces[46] == aPieces[7] || aPieces[48] == aPieces[34] || aPieces[50] == aPieces[16] || aPieces[52] == aPieces[25])
+            if (aPiecesSpan[46] == aPiecesSpan[7] || aPiecesSpan[48] == aPiecesSpan[34] || aPiecesSpan[50] == aPiecesSpan[16] || aPiecesSpan[52] == aPiecesSpan[25])
             {
                 bColorCornerCube = false;
             }
@@ -562,7 +566,11 @@ namespace RubiksCube
         /// <returns></returns>
         private static bool CheckOppositeCenterPieces(int nPiece1, int nColor1, int nPiece2, int nColor2)
         {
-            if (aPieces[nPiece1] == aFaceColors[nColor1] && aPieces[nPiece2] != aFaceColors[nColor2])
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = aPieces.AsSpan();
+
+            if (aPiecesSpan[nPiece1] == aFaceColorsSpan[nColor1] && aPiecesSpan[nPiece2] != aFaceColorsSpan[nColor2])
             {
                 return false;
             }
@@ -576,224 +584,228 @@ namespace RubiksCube
         /// <returns></returns>
         private static bool CheckNeighborsCenterPieces()
         {
-            /* aFaceColors[1] -> Front face: Red 
-               aFaceColors[2] -> Right face: Blue 
-               aFaceColors[3] -> Back face: Orange 
-               aFaceColors[4] -> Left face: Green 
-               aFaceColors[5] -> Up face: White 
-               aFaceColors[6] -> Down face: Yellow */
+            /* aFaceColorsSpan[1] -> Front face: Red 
+               aFaceColorsSpan[2] -> Right face: Blue 
+               aFaceColorsSpan[3] -> Back face: Orange 
+               aFaceColorsSpan[4] -> Left face: Green 
+               aFaceColorsSpan[5] -> Up face: White 
+               aFaceColorsSpan[6] -> Down face: Yellow */
+
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = aPieces.AsSpan();
 
             // Front face Red and Up face White
-            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[5])
+            if (aPiecesSpan[4] == aFaceColorsSpan[1] && aPiecesSpan[40] == aFaceColorsSpan[5])
             {
-                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[6])
+                if (aPiecesSpan[13] != aFaceColorsSpan[2] || aPiecesSpan[22] != aFaceColorsSpan[3] || aPiecesSpan[31] != aFaceColorsSpan[4] || aPiecesSpan[49] != aFaceColorsSpan[6])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face White
-            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[5])
+            if (aPiecesSpan[4] == aFaceColorsSpan[2] && aPiecesSpan[40] == aFaceColorsSpan[5])
             {
-                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[6])
+                if (aPiecesSpan[13] != aFaceColorsSpan[3] || aPiecesSpan[22] != aFaceColorsSpan[4] || aPiecesSpan[31] != aFaceColorsSpan[1] || aPiecesSpan[49] != aFaceColorsSpan[6])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face White
-            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[5])
+            if (aPiecesSpan[4] == aFaceColorsSpan[3] && aPiecesSpan[40] == aFaceColorsSpan[5])
             {
-                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[6])
+                if (aPiecesSpan[13] != aFaceColorsSpan[4] || aPiecesSpan[22] != aFaceColorsSpan[1] || aPiecesSpan[31] != aFaceColorsSpan[2] || aPiecesSpan[49] != aFaceColorsSpan[6])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face White
-            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[5])
+            if (aPiecesSpan[4] == aFaceColorsSpan[4] && aPiecesSpan[40] == aFaceColorsSpan[5])
             {
-                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[6])
+                if (aPiecesSpan[13] != aFaceColorsSpan[1] || aPiecesSpan[22] != aFaceColorsSpan[2] || aPiecesSpan[31] != aFaceColorsSpan[3] || aPiecesSpan[49] != aFaceColorsSpan[6])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Red
-            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[1])
+            if (aPiecesSpan[4] == aFaceColorsSpan[5] && aPiecesSpan[40] == aFaceColorsSpan[1])
             {
-                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[3])
+                if (aPiecesSpan[13] != aFaceColorsSpan[4] || aPiecesSpan[22] != aFaceColorsSpan[6] || aPiecesSpan[31] != aFaceColorsSpan[2] || aPiecesSpan[49] != aFaceColorsSpan[3])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face Red
-            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[1])
+            if (aPiecesSpan[4] == aFaceColorsSpan[4] && aPiecesSpan[40] == aFaceColorsSpan[1])
             {
-                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[3])
+                if (aPiecesSpan[13] != aFaceColorsSpan[6] || aPiecesSpan[22] != aFaceColorsSpan[2] || aPiecesSpan[31] != aFaceColorsSpan[5] || aPiecesSpan[49] != aFaceColorsSpan[3])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Red
-            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[1])
+            if (aPiecesSpan[4] == aFaceColorsSpan[6] && aPiecesSpan[40] == aFaceColorsSpan[1])
             {
-                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[3])
+                if (aPiecesSpan[13] != aFaceColorsSpan[2] || aPiecesSpan[22] != aFaceColorsSpan[5] || aPiecesSpan[31] != aFaceColorsSpan[4] || aPiecesSpan[49] != aFaceColorsSpan[3])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face Red
-            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[1])
+            if (aPiecesSpan[4] == aFaceColorsSpan[2] && aPiecesSpan[40] == aFaceColorsSpan[1])
             {
-                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[3])
+                if (aPiecesSpan[13] != aFaceColorsSpan[5] || aPiecesSpan[22] != aFaceColorsSpan[4] || aPiecesSpan[31] != aFaceColorsSpan[6] || aPiecesSpan[49] != aFaceColorsSpan[3])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Green
-            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[4])
+            if (aPiecesSpan[4] == aFaceColorsSpan[5] && aPiecesSpan[40] == aFaceColorsSpan[4])
             {
-                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[2])
+                if (aPiecesSpan[13] != aFaceColorsSpan[3] || aPiecesSpan[22] != aFaceColorsSpan[6] || aPiecesSpan[31] != aFaceColorsSpan[1] || aPiecesSpan[49] != aFaceColorsSpan[2])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face Green
-            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[4])
+            if (aPiecesSpan[4] == aFaceColorsSpan[3] && aPiecesSpan[40] == aFaceColorsSpan[4])
             {
-                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[2])
+                if (aPiecesSpan[13] != aFaceColorsSpan[6] || aPiecesSpan[22] != aFaceColorsSpan[1] || aPiecesSpan[31] != aFaceColorsSpan[5] || aPiecesSpan[49] != aFaceColorsSpan[2])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Green
-            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[4])
+            if (aPiecesSpan[4] == aFaceColorsSpan[6] && aPiecesSpan[40] == aFaceColorsSpan[4])
             {
-                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[2])
+                if (aPiecesSpan[13] != aFaceColorsSpan[1] || aPiecesSpan[22] != aFaceColorsSpan[5] || aPiecesSpan[31] != aFaceColorsSpan[3] || aPiecesSpan[49] != aFaceColorsSpan[2])
                 {
                     return false;
                 }
             }
 
             // Front face Red and Up face Green
-            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[4])
+            if (aPiecesSpan[4] == aFaceColorsSpan[1] && aPiecesSpan[40] == aFaceColorsSpan[4])
             {
-                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[2])
+                if (aPiecesSpan[13] != aFaceColorsSpan[5] || aPiecesSpan[22] != aFaceColorsSpan[3] || aPiecesSpan[31] != aFaceColorsSpan[6] || aPiecesSpan[49] != aFaceColorsSpan[2])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Orange
-            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[3])
+            if (aPiecesSpan[4] == aFaceColorsSpan[5] && aPiecesSpan[40] == aFaceColorsSpan[3])
             {
-                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[1])
+                if (aPiecesSpan[13] != aFaceColorsSpan[2] || aPiecesSpan[22] != aFaceColorsSpan[6] || aPiecesSpan[31] != aFaceColorsSpan[4] || aPiecesSpan[49] != aFaceColorsSpan[1])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face Orange
-            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[3])
+            if (aPiecesSpan[4] == aFaceColorsSpan[2] && aPiecesSpan[40] == aFaceColorsSpan[3])
             {
-                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[1])
+                if (aPiecesSpan[13] != aFaceColorsSpan[6] || aPiecesSpan[22] != aFaceColorsSpan[4] || aPiecesSpan[31] != aFaceColorsSpan[5] || aPiecesSpan[49] != aFaceColorsSpan[1])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Orange
-            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[3])
+            if (aPiecesSpan[4] == aFaceColorsSpan[6] && aPiecesSpan[40] == aFaceColorsSpan[3])
             {
-                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[1])
+                if (aPiecesSpan[13] != aFaceColorsSpan[4] || aPiecesSpan[22] != aFaceColorsSpan[5] || aPiecesSpan[31] != aFaceColorsSpan[2] || aPiecesSpan[49] != aFaceColorsSpan[1])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face Orange
-            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[3])
+            if (aPiecesSpan[4] == aFaceColorsSpan[4] && aPiecesSpan[40] == aFaceColorsSpan[3])
             {
-                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[1])
+                if (aPiecesSpan[13] != aFaceColorsSpan[5] || aPiecesSpan[22] != aFaceColorsSpan[2] || aPiecesSpan[31] != aFaceColorsSpan[6] || aPiecesSpan[49] != aFaceColorsSpan[1])
                 {
                     return false;
                 }
             }
 
             // Front face White and Up face Blue
-            if (aPieces[4] == aFaceColors[5] && aPieces[40] == aFaceColors[2])
+            if (aPiecesSpan[4] == aFaceColorsSpan[5] && aPiecesSpan[40] == aFaceColorsSpan[2])
             {
-                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[6] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[4])
+                if (aPiecesSpan[13] != aFaceColorsSpan[1] || aPiecesSpan[22] != aFaceColorsSpan[6] || aPiecesSpan[31] != aFaceColorsSpan[3] || aPiecesSpan[49] != aFaceColorsSpan[4])
                 {
                     return false;
                 }
             }
 
             // Front face Red and Up face Blue
-            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[2])
+            if (aPiecesSpan[4] == aFaceColorsSpan[1] && aPiecesSpan[40] == aFaceColorsSpan[2])
             {
-                if (aPieces[13] != aFaceColors[6] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[5] || aPieces[49] != aFaceColors[4])
+                if (aPiecesSpan[13] != aFaceColorsSpan[6] || aPiecesSpan[22] != aFaceColorsSpan[3] || aPiecesSpan[31] != aFaceColorsSpan[5] || aPiecesSpan[49] != aFaceColorsSpan[4])
                 {
                     return false;
                 }
             }
 
             // Front face Yellow and Up face Blue
-            if (aPieces[4] == aFaceColors[6] && aPieces[40] == aFaceColors[2])
+            if (aPiecesSpan[4] == aFaceColorsSpan[6] && aPiecesSpan[40] == aFaceColorsSpan[2])
             {
-                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[5] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[4])
+                if (aPiecesSpan[13] != aFaceColorsSpan[3] || aPiecesSpan[22] != aFaceColorsSpan[5] || aPiecesSpan[31] != aFaceColorsSpan[1] || aPiecesSpan[49] != aFaceColorsSpan[4])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face Blue
-            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[2])
+            if (aPiecesSpan[4] == aFaceColorsSpan[3] && aPiecesSpan[40] == aFaceColorsSpan[2])
             {
-                if (aPieces[13] != aFaceColors[5] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[6] || aPieces[49] != aFaceColors[4])
+                if (aPiecesSpan[13] != aFaceColorsSpan[5] || aPiecesSpan[22] != aFaceColorsSpan[1] || aPiecesSpan[31] != aFaceColorsSpan[6] || aPiecesSpan[49] != aFaceColorsSpan[4])
                 {
                     return false;
                 }
             }
 
             // Front face Red and Up face Yellow
-            if (aPieces[4] == aFaceColors[1] && aPieces[40] == aFaceColors[6])
+            if (aPiecesSpan[4] == aFaceColorsSpan[1] && aPiecesSpan[40] == aFaceColorsSpan[6])
             {
-                if (aPieces[13] != aFaceColors[4] || aPieces[22] != aFaceColors[3] || aPieces[31] != aFaceColors[2] || aPieces[49] != aFaceColors[5])
+                if (aPiecesSpan[13] != aFaceColorsSpan[4] || aPiecesSpan[22] != aFaceColorsSpan[3] || aPiecesSpan[31] != aFaceColorsSpan[2] || aPiecesSpan[49] != aFaceColorsSpan[5])
                 {
                     return false;
                 }
             }
 
             // Front face Green and Up face Yellow
-            if (aPieces[4] == aFaceColors[4] && aPieces[40] == aFaceColors[6])
+            if (aPiecesSpan[4] == aFaceColorsSpan[4] && aPiecesSpan[40] == aFaceColorsSpan[6])
             {
-                if (aPieces[13] != aFaceColors[3] || aPieces[22] != aFaceColors[2] || aPieces[31] != aFaceColors[1] || aPieces[49] != aFaceColors[5])
+                if (aPiecesSpan[13] != aFaceColorsSpan[3] || aPiecesSpan[22] != aFaceColorsSpan[2] || aPiecesSpan[31] != aFaceColorsSpan[1] || aPiecesSpan[49] != aFaceColorsSpan[5])
                 {
                     return false;
                 }
             }
 
             // Front face Orange and Up face Yellow
-            if (aPieces[4] == aFaceColors[3] && aPieces[40] == aFaceColors[6])
+            if (aPiecesSpan[4] == aFaceColorsSpan[3] && aPiecesSpan[40] == aFaceColorsSpan[6])
             {
-                if (aPieces[13] != aFaceColors[2] || aPieces[22] != aFaceColors[1] || aPieces[31] != aFaceColors[4] || aPieces[49] != aFaceColors[5])
+                if (aPiecesSpan[13] != aFaceColorsSpan[2] || aPiecesSpan[22] != aFaceColorsSpan[1] || aPiecesSpan[31] != aFaceColorsSpan[4] || aPiecesSpan[49] != aFaceColorsSpan[5])
                 {
                     return false;
                 }
             }
 
             // Front face Blue and Up face Yellow
-            if (aPieces[4] == aFaceColors[2] && aPieces[40] == aFaceColors[6])
+            if (aPiecesSpan[4] == aFaceColorsSpan[2] && aPiecesSpan[40] == aFaceColorsSpan[6])
             {
-                if (aPieces[13] != aFaceColors[1] || aPieces[22] != aFaceColors[4] || aPieces[31] != aFaceColors[3] || aPieces[49] != aFaceColors[5])
+                if (aPiecesSpan[13] != aFaceColorsSpan[1] || aPiecesSpan[22] != aFaceColorsSpan[4] || aPiecesSpan[31] != aFaceColorsSpan[3] || aPiecesSpan[49] != aFaceColorsSpan[5])
                 {
                     return false;
                 }
@@ -809,128 +821,132 @@ namespace RubiksCube
         /// <param name="nColor"></param>
         private static void CheckNumberColorsCornerCube(int[] aNumberOfColors, int nColor)
         {
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = aPieces.AsSpan();
+
             // Up face
-            if (aPieces[0] == aFaceColors[nColor])
+            if (aPiecesSpan[0] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[2] == aFaceColors[nColor])
+            if (aPiecesSpan[2] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[6] == aFaceColors[nColor])
+            if (aPiecesSpan[6] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[8] == aFaceColors[nColor])
+            if (aPiecesSpan[8] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Right face
-            if (aPieces[9] == aFaceColors[nColor])
+            if (aPiecesSpan[9] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[11] == aFaceColors[nColor])
+            if (aPiecesSpan[11] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[15] == aFaceColors[nColor])
+            if (aPiecesSpan[15] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[17] == aFaceColors[nColor])
+            if (aPiecesSpan[17] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Back face
-            if (aPieces[18] == aFaceColors[nColor])
+            if (aPiecesSpan[18] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[20] == aFaceColors[nColor])
+            if (aPiecesSpan[20] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[24] == aFaceColors[nColor])
+            if (aPiecesSpan[24] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[26] == aFaceColors[nColor])
+            if (aPiecesSpan[26] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Left face
-            if (aPieces[27] == aFaceColors[nColor])
+            if (aPiecesSpan[27] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[29] == aFaceColors[nColor])
+            if (aPiecesSpan[29] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[33] == aFaceColors[nColor])
+            if (aPiecesSpan[33] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[35] == aFaceColors[nColor])
+            if (aPiecesSpan[35] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Up face
-            if (aPieces[36] == aFaceColors[nColor])
+            if (aPiecesSpan[36] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[38] == aFaceColors[nColor])
+            if (aPiecesSpan[38] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[42] == aFaceColors[nColor])
+            if (aPiecesSpan[42] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[44] == aFaceColors[nColor])
+            if (aPiecesSpan[44] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Down face
-            if (aPieces[45] == aFaceColors[nColor])
+            if (aPiecesSpan[45] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[47] == aFaceColors[nColor])
+            if (aPiecesSpan[47] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[51] == aFaceColors[nColor])
+            if (aPiecesSpan[51] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[53] == aFaceColors[nColor])
+            if (aPiecesSpan[53] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
@@ -943,128 +959,132 @@ namespace RubiksCube
         /// <param name="nColor"></param>
         private static void CheckNumberColorsEdgeCube(int[] aNumberOfColors, int nColor)
         {
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = aPieces.AsSpan();
+
             // Up face
-            if (aPieces[1] == aFaceColors[nColor])
+            if (aPiecesSpan[1] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[3] == aFaceColors[nColor])
+            if (aPiecesSpan[3] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[5] == aFaceColors[nColor])
+            if (aPiecesSpan[5] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[7] == aFaceColors[nColor])
+            if (aPiecesSpan[7] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Right face
-            if (aPieces[10] == aFaceColors[nColor])
+            if (aPiecesSpan[10] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[12] == aFaceColors[nColor])
+            if (aPiecesSpan[12] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[14] == aFaceColors[nColor])
+            if (aPiecesSpan[14] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[16] == aFaceColors[nColor])
+            if (aPiecesSpan[16] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Back face
-            if (aPieces[19] == aFaceColors[nColor])
+            if (aPiecesSpan[19] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[21] == aFaceColors[nColor])
+            if (aPiecesSpan[21] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[23] == aFaceColors[nColor])
+            if (aPiecesSpan[23] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[25] == aFaceColors[nColor])
+            if (aPiecesSpan[25] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Left face
-            if (aPieces[28] == aFaceColors[nColor])
+            if (aPiecesSpan[28] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[30] == aFaceColors[nColor])
+            if (aPiecesSpan[30] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[32] == aFaceColors[nColor])
+            if (aPiecesSpan[32] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[34] == aFaceColors[nColor])
+            if (aPiecesSpan[34] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Up face
-            if (aPieces[37] == aFaceColors[nColor])
+            if (aPiecesSpan[37] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[39] == aFaceColors[nColor])
+            if (aPiecesSpan[39] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[41] == aFaceColors[nColor])
+            if (aPiecesSpan[41] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[43] == aFaceColors[nColor])
+            if (aPiecesSpan[43] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
             // Down face
-            if (aPieces[46] == aFaceColors[nColor])
+            if (aPiecesSpan[46] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[48] == aFaceColors[nColor])
+            if (aPiecesSpan[48] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[50] == aFaceColors[nColor])
+            if (aPiecesSpan[50] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
 
-            if (aPieces[52] == aFaceColors[nColor])
+            if (aPiecesSpan[52] == aFaceColorsSpan[nColor])
             {
                 aNumberOfColors[nColor]++;
             }
@@ -1076,6 +1096,10 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CheckIfSolved()
         {
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            ReadOnlySpan<string> aPiecesSpan = aPieces.AsSpan();
+
             bool bColorsUp = false;
             bool bColorsFront = false;
             bool bColorsRight = false;
@@ -1083,32 +1107,32 @@ namespace RubiksCube
             bool bColorsBack = false;
             bool bColorsDown = false;
 
-            if (aPieces[36] == aPieces[37] && aPieces[36] == aPieces[38] && aPieces[36] == aPieces[39] && aPieces[36] == aPieces[40] && aPieces[36] == aPieces[41] && aPieces[36] == aPieces[42] && aPieces[36] == aPieces[43] && aPieces[36] == aPieces[44])
+            if (aPiecesSpan[36] == aPiecesSpan[37] && aPiecesSpan[36] == aPiecesSpan[38] && aPiecesSpan[36] == aPiecesSpan[39] && aPiecesSpan[36] == aPiecesSpan[40] && aPiecesSpan[36] == aPiecesSpan[41] && aPiecesSpan[36] == aPiecesSpan[42] && aPiecesSpan[36] == aPiecesSpan[43] && aPiecesSpan[36] == aPiecesSpan[44])
             {
                 bColorsUp = true;
             }
 
-            if (aPieces[0] == aPieces[1] && aPieces[0] == aPieces[2] && aPieces[0] == aPieces[3] && aPieces[0] == aPieces[4] && aPieces[0] == aPieces[5] && aPieces[0] == aPieces[6] && aPieces[0] == aPieces[7] && aPieces[0] == aPieces[8])
+            if (aPiecesSpan[0] == aPiecesSpan[1] && aPiecesSpan[0] == aPiecesSpan[2] && aPiecesSpan[0] == aPiecesSpan[3] && aPiecesSpan[0] == aPiecesSpan[4] && aPiecesSpan[0] == aPiecesSpan[5] && aPiecesSpan[0] == aPiecesSpan[6] && aPiecesSpan[0] == aPiecesSpan[7] && aPiecesSpan[0] == aPiecesSpan[8])
             {
                 bColorsFront = true;
             }
 
-            if (aPieces[9] == aPieces[10] && aPieces[9] == aPieces[11] && aPieces[9] == aPieces[12] && aPieces[9] == aPieces[13] && aPieces[9] == aPieces[14] && aPieces[9] == aPieces[15] && aPieces[9] == aPieces[16] && aPieces[9] == aPieces[17])
+            if (aPiecesSpan[9] == aPiecesSpan[10] && aPiecesSpan[9] == aPiecesSpan[11] && aPiecesSpan[9] == aPiecesSpan[12] && aPiecesSpan[9] == aPiecesSpan[13] && aPiecesSpan[9] == aPiecesSpan[14] && aPiecesSpan[9] == aPiecesSpan[15] && aPiecesSpan[9] == aPiecesSpan[16] && aPiecesSpan[9] == aPiecesSpan[17])
             {
                 bColorsRight = true;
             }
 
-            if (aPieces[27] == aPieces[28] && aPieces[27] == aPieces[29] && aPieces[27] == aPieces[30] && aPieces[27] == aPieces[31] && aPieces[27] == aPieces[32] && aPieces[27] == aPieces[33] && aPieces[27] == aPieces[34] && aPieces[27] == aPieces[35])
+            if (aPiecesSpan[27] == aPiecesSpan[28] && aPiecesSpan[27] == aPiecesSpan[29] && aPiecesSpan[27] == aPiecesSpan[30] && aPiecesSpan[27] == aPiecesSpan[31] && aPiecesSpan[27] == aPiecesSpan[32] && aPiecesSpan[27] == aPiecesSpan[33] && aPiecesSpan[27] == aPiecesSpan[34] && aPiecesSpan[27] == aPiecesSpan[35])
             {
                 bColorsLeft = true;
             }
 
-            if (aPieces[18] == aPieces[19] && aPieces[18] == aPieces[20] && aPieces[18] == aPieces[21] && aPieces[18] == aPieces[22] && aPieces[18] == aPieces[23] && aPieces[18] == aPieces[24] && aPieces[18] == aPieces[25] && aPieces[18] == aPieces[26])
+            if (aPiecesSpan[18] == aPiecesSpan[19] && aPiecesSpan[18] == aPiecesSpan[20] && aPiecesSpan[18] == aPiecesSpan[21] && aPiecesSpan[18] == aPiecesSpan[22] && aPiecesSpan[18] == aPiecesSpan[23] && aPiecesSpan[18] == aPiecesSpan[24] && aPiecesSpan[18] == aPiecesSpan[25] && aPiecesSpan[18] == aPiecesSpan[26])
             {
                 bColorsBack = true;
             }
 
-            if (aPieces[45] == aPieces[46] && aPieces[45] == aPieces[47] && aPieces[45] == aPieces[48] && aPieces[45] == aPieces[49] && aPieces[45] == aPieces[50] && aPieces[45] == aPieces[51] && aPieces[45] == aPieces[52] && aPieces[45] == aPieces[53])
+            if (aPiecesSpan[45] == aPiecesSpan[46] && aPiecesSpan[45] == aPiecesSpan[47] && aPiecesSpan[45] == aPiecesSpan[48] && aPiecesSpan[45] == aPiecesSpan[49] && aPiecesSpan[45] == aPiecesSpan[50] && aPiecesSpan[45] == aPiecesSpan[51] && aPiecesSpan[45] == aPiecesSpan[52] && aPiecesSpan[45] == aPiecesSpan[53])
             {
                 bColorsDown = true;
             }
@@ -1126,36 +1150,40 @@ namespace RubiksCube
         /// </summary>
         public static void ResetCube()
         {
+            // Create a span for the arrays
+            ReadOnlySpan<string> aFaceColorsSpan = aFaceColors.AsSpan();
+            Span<string> aPiecesSpan = aPieces.AsSpan();
+
             int nItem;
 
             for (nItem = 0; nItem < 9; nItem++)
             {
-                aPieces[nItem] = aFaceColors[1];
+                aPiecesSpan[nItem] = aFaceColorsSpan[1];
             }
 
             for (nItem = 9; nItem < 18; nItem++)
             {
-                aPieces[nItem] = aFaceColors[2];
+                aPiecesSpan[nItem] = aFaceColorsSpan[2];
             }
 
             for (nItem = 18; nItem < 27; nItem++)
             {
-                aPieces[nItem] = aFaceColors[3];
+                aPiecesSpan[nItem] = aFaceColorsSpan[3];
             }
 
             for (nItem = 27; nItem < 36; nItem++)
             {
-                aPieces[nItem] = aFaceColors[4];
+                aPiecesSpan[nItem] = aFaceColorsSpan[4];
             }
 
             for (nItem = 36; nItem < 45; nItem++)
             {
-                aPieces[nItem] = aFaceColors[5];
+                aPiecesSpan[nItem] = aFaceColorsSpan[5];
             }
 
             for (nItem = 45; nItem < 54; nItem++)
             {
-                aPieces[nItem] = aFaceColors[6];
+                aPiecesSpan[nItem] = aFaceColorsSpan[6];
             }
         }
     }

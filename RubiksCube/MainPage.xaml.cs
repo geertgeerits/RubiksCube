@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-10-29 (YYYY-MM-DD)
+ * Date ........: 2024-10-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -1698,6 +1698,7 @@ namespace RubiksCube
         /// </summary>
         private void SetCubeColorsInArrays()
         {
+            // Create a span for the arrays
             Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
             Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
 
@@ -1721,6 +1722,7 @@ namespace RubiksCube
         {
             //long startTime = Stopwatch.GetTimestamp();
 
+            // Create a span for the arrays
             ReadOnlySpan<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
             ReadOnlySpan<string> aPiecesSpan = Globals.aPieces.AsSpan();
 
@@ -1738,6 +1740,7 @@ namespace RubiksCube
 
             //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
             //Debug.WriteLine($"Time elapsed (hh:mm:ss.xxxxxxx): {delta}");
+            //_ = DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
         }
 
         /// <summary>
@@ -1871,7 +1874,7 @@ namespace RubiksCube
 
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Microsoft.Maui.Controls.Application.Current!.MainPage!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
+                Globals.bLicense = await Application.Current!.MainPage!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {
