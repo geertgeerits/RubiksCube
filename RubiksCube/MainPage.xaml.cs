@@ -295,7 +295,7 @@ namespace RubiksCube
             await Task.Delay(200);
 
             // Create and start a stopwatch instance
-            Stopwatch stopwatch = Stopwatch.StartNew();
+            long startTime = Stopwatch.GetTimestamp();
 
             // Solve the cube from the turns the user has made in reverse order
             if (Globals.lCubeTurns.Count > 0)
@@ -346,8 +346,9 @@ namespace RubiksCube
             activityIndicator.IsRunning = false;
 
             // Stop the stopwatch and get the elapsed time
-            stopwatch.Stop();
-            long elapsedMs = stopwatch.ElapsedMilliseconds;
+            TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
+            string elapsedMilliseconds = delta.TotalMilliseconds.ToString("F0");
+
 
             // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
             // If not testing the solution to solve the cube then set bTestSolveCube = false
@@ -357,7 +358,7 @@ namespace RubiksCube
             {
                 // Display the number of turns and the elapsed time in milliseconds
                 int nNumberOfTurns = Globals.lCubeTurns.Count;
-                await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultSolutions_Text} {Globals.nTestedSolutions}\n{CubeLang.ResultTime_Text} {elapsedMs}", CubeLang.ButtonClose_Text);
+                await DisplayAlert("", $"{CubeLang.ResultTurns_Text} {nNumberOfTurns}\n{CubeLang.ResultSolutions_Text} {Globals.nTestedSolutions}\n{CubeLang.ResultTime_Text} {elapsedMilliseconds}", CubeLang.ButtonClose_Text);
 
                 await Task.Delay(500);
 
