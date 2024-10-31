@@ -349,7 +349,6 @@ namespace RubiksCube
             TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
             string elapsedMilliseconds = delta.TotalMilliseconds.ToString("F0");
 
-
             // Test variable to disable the 'steps one at a time' to solve te cube in the task MakeExplainTurnAsync()
             // If not testing the solution to solve the cube then set bTestSolveCube = false
             bTestSolveCube = false;
