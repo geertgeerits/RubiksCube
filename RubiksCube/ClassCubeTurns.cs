@@ -542,9 +542,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnFrontFaceTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -610,9 +612,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnUpHorMiddleTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
+            
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -660,9 +664,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnBackFaceTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -728,9 +734,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnLeftFaceTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -796,9 +804,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnUpVerMiddleTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -846,9 +856,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnRightFaceTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -914,9 +926,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnUpFaceTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -982,9 +996,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnFrontHorMiddleTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
@@ -1032,9 +1048,11 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnDownFaceTo(string cDirection)
         {
+            // Create a span for the arrays
             Span<string> aPiecesSpan = aPieces.AsSpan();
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
+            // Copy the pieces to the temporary array
             aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")

@@ -785,9 +785,9 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Test the time it takes
+        /// Get the time it takes to execute a certain code
         /// </summary>
-        public static void TestTime()
+        public static void GetTimeExecutingCode()
         {
             // Get the current time
             long startTime = Stopwatch.GetTimestamp();

@@ -121,7 +121,7 @@ namespace RubiksCube
             Globals.bSolveNewSolutionsTest = false;
 #endif
             //// Test the time it takes
-            //ClassTestCubeTurns.TestTime();
+            //ClassTestCubeTurns.GetTimeExecutingCode();
         }
 
         //// TitleView buttons clicked events
