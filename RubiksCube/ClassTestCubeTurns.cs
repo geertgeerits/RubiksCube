@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using static RubiksCube.Globals;
+﻿using static RubiksCube.Globals;
 
 namespace RubiksCube
 {
@@ -18,7 +17,6 @@ namespace RubiksCube
             //await TestSolveCubeTurnsDaisy();
             //await TestSolveCubeTurnsCross();
             //await TestSolveCubeTurnsCommon();
-            //await TestSolveCubeOnly2Faces();
 
             return true;
         }
@@ -754,53 +752,6 @@ namespace RubiksCube
             await MakeTurnAsync("x' R U' R' D R U R' D' R U R' D R U' R' D'");
 
             return true;
-        }
-
-        /// <summary>
-        /// Test the solution of the cube with the use of only turns of 2 faces L' and U
-        /// </summary>
-        /// <returns></returns>
-        private static async Task<bool> TestSolveCubeOnly2Faces()
-        {
-            int nLoopTimes = 0;
-
-            while (true)
-            {
-                nLoopTimes++;
-                if (nLoopTimes > 10000)
-                {
-                    Debug.WriteLine("nLoopTimes TestSolveCubeOnly2Faces: " + nLoopTimes);
-                    return false;
-                }
-                
-                await MakeTurnAsync("L' U");
-                
-                if (ClassColorsCube.CheckIfSolved())
-                {
-                    break;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Get the time it takes to execute a certain code
-        /// </summary>
-        public static void GetTimeExecutingCode()
-        {
-            // Get the current time
-            long startTime = Stopwatch.GetTimestamp();
-
-            // The code that you want to measure comes here
-            //Task.Delay(1000).Wait();
-            //MainPage mainPage = new MainPage();  // Create an instance of the MainPage class - does not work: hangs the app
-            //mainPage.GetCubeColorsFromArrays();
-
-            // Get the elapsed time and show it in the ouput window
-            TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
-            Debug.WriteLine($"Time elapsed (hh:mm:ss.xxxxxxx): {delta}");
-            Application.Current!.MainPage!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
         }
     }
 }

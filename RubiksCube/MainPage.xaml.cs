@@ -120,8 +120,6 @@ namespace RubiksCube
             btnSolveNewSolutionsTest.IsVisible = false;
             Globals.bSolveNewSolutionsTest = false;
 #endif
-            //// Test the time it takes
-            //ClassTestCubeTurns.GetTimeExecutingCode();
         }
 
         //// TitleView buttons clicked events
