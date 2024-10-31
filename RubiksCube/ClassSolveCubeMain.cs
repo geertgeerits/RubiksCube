@@ -1,4 +1,4 @@
-﻿/* This module tries to solve the cube from minimum 912 different starting positions.
+﻿/* This module tries to solve the cube from minimum 1632 different starting positions.
    The solution with the fewest rotations is then used. */
 
 using System.Diagnostics;
@@ -55,7 +55,7 @@ namespace RubiksCube
         }
 
         /// <summary>
-        /// Try to solve the cube from minimum 456 (19 x 6 x 4) different start positions of the cube
+        /// Try to solve the cube from minimum 816 (34 x 6 x 4) different start positions of the cube
         /// </summary>
         /// <param name="cSolution"></param>
         /// <returns></returns>
@@ -125,6 +125,74 @@ namespace RubiksCube
                 await SolveCubeFromMultiplePositions2Async(cSolution);
 
                 lCubePositions.Add(turnDown2);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                // Turn the 6 faces clockwise, counterclockwise and a half turn when turning two opposite faces together in same direction
+                // 20-21-22. Turn the front and back face together in same direction
+                lCubePositions.Add(turnFrontCW);
+                lCubePositions.Add(turnBackCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnFrontCCW);
+                lCubePositions.Add(turnBackCCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnFront2);
+                lCubePositions.Add(turnBack2);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                // 23-24-25. Turn the left and right face together in same direction
+                lCubePositions.Add(turnLeftCW);
+                lCubePositions.Add(turnRightCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnLeftCCW);
+                lCubePositions.Add(turnRightCCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnLeft2);
+                lCubePositions.Add(turnRight2);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                // 26-27-28. Turn the up and down face together in same direction
+                lCubePositions.Add(turnUpCW);
+                lCubePositions.Add(turnDownCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnUpCCW);
+                lCubePositions.Add(turnDownCCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnUp2);
+                lCubePositions.Add(turnDown2);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                // Turn the 6 faces clockwise, counterclockwise and a half turn when turning two opposite faces together in opposite direction
+                // 29-30. Turn the front and back face together in opposite direction
+                lCubePositions.Add(turnFrontCW);
+                lCubePositions.Add(turnBackCCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnFrontCCW);
+                lCubePositions.Add(turnBackCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                // 31-32. Turn the left and right face together in opposite direction
+                lCubePositions.Add(turnLeftCW);
+                lCubePositions.Add(turnRightCCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnLeftCCW);
+                lCubePositions.Add(turnRightCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                // 33-34. Turn the up and down face together in opposite direction
+                lCubePositions.Add(turnUpCW);
+                lCubePositions.Add(turnDownCCW);
+                await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                lCubePositions.Add(turnUpCCW);
+                lCubePositions.Add(turnDownCW);
                 await SolveCubeFromMultiplePositions2Async(cSolution);
             }
         }
