@@ -55,6 +55,7 @@
 	  <Compile Remove="ClassSolveCubeBas1.cs" />
 	  <Compile Remove="ClassSolveCubeBas2.cs" />
 	  <Compile Remove="ClassSolveCubeBas3.cs" />
+	  <Compile Remove="ClassTestCubeTurns.cs" />
 	  <Compile Remove="PageWebsite.xaml.cs" />
 	</ItemGroup>
 

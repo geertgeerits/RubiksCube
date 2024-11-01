@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-10-31 (YYYY-MM-DD)
+ * Date ........: 2024-11-01 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -326,8 +326,10 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 267-268 and 311-327 (and change the line 352 to bTestSolveCube = true)
-                // and uncomment one of the lines 332-336/337 to test one of the solutions to solve the cube
+                // For testing comment out the lines 267-268 and 311-327 (and change the line 354 to bTestSolveCube = true)
+                // and uncomment one of the lines 334-338/339 to test one of the solutions to solve the cube.
+                // If using the method 'TestCubeTurnsAsync()' then include the file 'ClassTestCubeTurns.cs' in the project,
+                // otherwise exclude the file 'ClassTestCubeTurns.cs' from the project.
 
                 //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
                 //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
