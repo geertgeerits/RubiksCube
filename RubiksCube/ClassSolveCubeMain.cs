@@ -370,6 +370,7 @@ namespace RubiksCube
         /// <param name="bCubeTurnsSave"></param>
         public static void CleanListCubeTurns(List<string> lCubeTurnsToClean, bool bCubeTurnsSave)
         {
+            //long startTime = Stopwatch.GetTimestamp();
 #if DEBUG
             // Save the list with the cube turns before the cleaning to a file, for testing purposes
             if (bCubeTurnsSave)
@@ -478,6 +479,9 @@ namespace RubiksCube
                     break;
                 }
             }
+
+            //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
+            //_ = Application.Current!.MainPage!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
 #if DEBUG
             // Save the list with the cube turns after the cleaning to a file, for testing purposes
             if (bCubeTurnsSave)

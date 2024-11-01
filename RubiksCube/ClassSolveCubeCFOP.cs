@@ -147,13 +147,13 @@ namespace RubiksCube
                     }
                 }
 
-                //ReadOnlySpan<string> piecesSpan = aPieces;
+                //ReadOnlySpan<string> aPiecesSpan = aPieces;
 
-                //if (piecesSpan[49] == piecesSpan[0] || piecesSpan[49] == piecesSpan[29] || piecesSpan[49] == piecesSpan[42])
+                //if (aPiecesSpan[49] == aPiecesSpan[0] || aPiecesSpan[49] == aPiecesSpan[29] || aPiecesSpan[49] == aPiecesSpan[42])
                 //{
-                //    if (piecesSpan[4] == piecesSpan[0] || piecesSpan[4] == piecesSpan[29] || piecesSpan[4] == piecesSpan[42])
+                //    if (aPiecesSpan[4] == aPiecesSpan[0] || aPiecesSpan[4] == aPiecesSpan[29] || aPiecesSpan[4] == aPiecesSpan[42])
                 //    {
-                //        if (piecesSpan[13] == piecesSpan[0] || piecesSpan[13] == piecesSpan[29] || piecesSpan[13] == piecesSpan[42])
+                //        if (aPiecesSpan[13] == aPiecesSpan[0] || aPiecesSpan[13] == aPiecesSpan[29] || aPiecesSpan[13] == aPiecesSpan[42])
                 //        {
                 //            await MakeTurnAsync("U'");
                 //        }
