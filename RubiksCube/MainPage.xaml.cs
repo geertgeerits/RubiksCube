@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-11-01 (YYYY-MM-DD)
+ * Date ........: 2024-11-02 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -1698,6 +1698,9 @@ namespace RubiksCube
         /// </summary>
         private void SetCubeColorsInArrays()
         {
+            // Create and start a stopwatch instance
+            //long startTime = Stopwatch.GetTimestamp();
+
             // Create a span for the arrays
             Span<string> aFaceColorsSpan = Globals.aFaceColors.AsSpan();
             Span<string> aPiecesSpan = Globals.aPieces.AsSpan();
@@ -1713,6 +1716,10 @@ namespace RubiksCube
                 Polygon polygon = this.FindByName<Polygon>($"plgPiece{i}");
                 aPiecesSpan[i] = GetHexColorPolygon(polygon);
             }
+
+            // Stop the stopwatch and get the elapsed time
+            //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
+            //_ = DisplayAlert("SetCubeColorsInArrays", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
         }
 
         /// <summary>
@@ -1720,6 +1727,7 @@ namespace RubiksCube
         /// </summary>
         private void GetCubeColorsFromArrays()
         {
+            // Create and start a stopwatch instance
             //long startTime = Stopwatch.GetTimestamp();
 
             // Create a span for the arrays
@@ -1738,9 +1746,9 @@ namespace RubiksCube
                 polygon.Fill = Color.FromArgb(aPiecesSpan[i]);
             }
 
+            // Stop the stopwatch and get the elapsed time
             //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
-            //Debug.WriteLine($"Time elapsed (hh:mm:ss.xxxxxxx): {delta}");
-            //_ = DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
+            //_ = DisplayAlert("GetCubeColorsFromArrays", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
         }
 
         /// <summary>

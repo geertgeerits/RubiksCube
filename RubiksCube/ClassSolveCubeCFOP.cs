@@ -14,6 +14,9 @@ namespace RubiksCube
         /// <returns></returns>
         public static async Task<bool> SolveTheCubeCFOPAsync()
         {
+            // Create and start a stopwatch instance
+            //long startTime = Stopwatch.GetTimestamp();
+
             // Cross part 1 (Solving the first layer 4 edge pieces completely
             if (!await ClassSolveCubeCommon.SolveTopLayerEdgesAsync())
             {
@@ -47,6 +50,10 @@ namespace RubiksCube
             // Check if the cube is solved
             if (ClassColorsCube.CheckIfSolved())
             {
+                // Stop the stopwatch and get the elapsed time
+                //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
+                //await Application.Current!.MainPage!.DisplayAlert("SolveTheCubeCFOPAsync", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
+
                 return true;
             }
 
@@ -59,6 +66,9 @@ namespace RubiksCube
         /// <returns></returns>
         private static async Task<bool> SolveFirstTwoLayersAsync()
         {
+            // Create a span for the arrays
+            //ReadOnlySpan<string> aPiecesSpan = aPieces;
+
             string cT;
             int nLoopTimes = 0;
 
@@ -146,19 +156,6 @@ namespace RubiksCube
                         }
                     }
                 }
-
-                //ReadOnlySpan<string> aPiecesSpan = aPieces;
-
-                //if (aPiecesSpan[49] == aPiecesSpan[0] || aPiecesSpan[49] == aPiecesSpan[29] || aPiecesSpan[49] == aPiecesSpan[42])
-                //{
-                //    if (aPiecesSpan[4] == aPiecesSpan[0] || aPiecesSpan[4] == aPiecesSpan[29] || aPiecesSpan[4] == aPiecesSpan[42])
-                //    {
-                //        if (aPiecesSpan[13] == aPiecesSpan[0] || aPiecesSpan[13] == aPiecesSpan[29] || aPiecesSpan[13] == aPiecesSpan[42])
-                //        {
-                //            await MakeTurnAsync("U'");
-                //        }
-                //    }
-                //}
 
                 //--------------------------------------------------------------------------------------------------------------
 
