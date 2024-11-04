@@ -2,12 +2,9 @@
 {
     public sealed partial class App : Application
     {
-    	public App()
-    	{
-    		InitializeComponent();
-
-    		//MainPage = new AppShell();
-            MainPage = new NavigationPage(new MainPage());
+        public App()
+        {
+            InitializeComponent();
         }
 
         /// <summary>
@@ -17,21 +14,17 @@
         /// <returns></returns>
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var window = base.CreateWindow(activationState);
-
-            const int newHeight = 1000;
-            const int newWidth = 850;
-
-            window.X = 300;
-            window.Y = 40;
-
-            window.Height = newHeight;
-            window.Width = newWidth;
-
-            window.MinimumHeight = 700;
-            window.MinimumWidth = newWidth;
-            window.MaximumHeight = newHeight;
-            window.MaximumWidth = newWidth;
+            var window = new Microsoft.Maui.Controls.Window(new NavigationPage(new MainPage()))
+            {
+                X = 300,
+                Y = 40,
+                Height = 1000,
+                Width = 850,
+                MinimumHeight = 700,
+                MinimumWidth = 850,
+                MaximumHeight = 1000,
+                MaximumWidth = 850
+            };
 
             return window;
         }

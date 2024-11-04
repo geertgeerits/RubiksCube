@@ -233,7 +233,7 @@ namespace RubiksCube
                     break;
 
                 default:
-                    await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
                     return false;
             }
 
@@ -469,7 +469,7 @@ namespace RubiksCube
                     break;
 
                 default:
-                    await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, $"TurnCubeLayersAsync\ncTurn not found:\n{cTurn}", CubeLang.ButtonClose_Text);
                     return false;
             }
 
@@ -547,7 +547,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -617,7 +617,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
             
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -669,7 +669,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -739,7 +739,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -809,7 +809,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -861,7 +861,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -931,7 +931,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -1001,7 +1001,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {
@@ -1053,7 +1053,7 @@ namespace RubiksCube
             Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan.Slice(0, 54).CopyTo(aPiecesTempSpan);
+            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
 
             if (cDirection == "CW")
             {

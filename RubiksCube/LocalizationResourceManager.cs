@@ -2,9 +2,10 @@
 
 namespace RubiksCube
 {
-    public sealed class LocalizationResourceManager : INotifyPropertyChanged
+    public sealed partial class LocalizationResourceManager : INotifyPropertyChanged
     {
-        private LocalizationResourceManager() {
+        private LocalizationResourceManager()
+        {
             CubeLang.Culture = CultureInfo.CurrentCulture;
         }
 
@@ -15,7 +16,8 @@ namespace RubiksCube
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public void SetCulture(CultureInfo culture) {
+        public void SetCulture(CultureInfo culture)
+        {
             CubeLang.Culture = culture;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         }

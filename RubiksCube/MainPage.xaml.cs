@@ -2,8 +2,8 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-11-02 (YYYY-MM-DD)
- * Language ....: Microsoft Visual Studio 2022: .NET MAUI 8 - C# 12.0
+ * Date ........: 2024-11-04 (YYYY-MM-DD)
+ * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
  * Dependencies : None
@@ -1679,7 +1679,7 @@ namespace RubiksCube
             if (bSolvingCube)
             {
                 // Restart the application to get out of the foreach loop in the method OnBtnSolveCubeClicked and task MakeExplainTurnAsync()
-                Microsoft.Maui.Controls.Application.Current!.MainPage = new NavigationPage(new MainPage());
+                Application.Current!.Windows[0].Page = new NavigationPage(new MainPage());
             }
             else
             {
@@ -1882,7 +1882,7 @@ namespace RubiksCube
 
             if (Globals.bLicense == false)
             {
-                Globals.bLicense = await Application.Current!.MainPage!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
+                Globals.bLicense = await Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.LicenseTitle_Text, cLicense, CubeLang.Agree_Text, CubeLang.Disagree_Text);
 
                 if (Globals.bLicense)
                 {

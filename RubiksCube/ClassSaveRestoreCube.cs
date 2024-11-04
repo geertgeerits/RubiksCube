@@ -38,7 +38,7 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                _ = Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                _ = Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
 
@@ -80,7 +80,7 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                _ = Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                _ = Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
 
@@ -118,7 +118,7 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                _ = Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                _ = Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
                 return false;
             }
             

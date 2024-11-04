@@ -28,7 +28,7 @@
             catch (Exception ex)
             {
                 // Text to speech is not supported on this device
-                await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
+                await Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message + "\n\n" + CubeLang.TextToSpeechError_Text, CubeLang.ButtonClose_Text);
                 Globals.bExplainSpeech = false;
                 return;
             }
@@ -98,7 +98,7 @@
             }
             catch (Exception ex)
             {
-                Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
+                Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, ex.Message, CubeLang.ButtonClose_Text);
             }
         }
 
@@ -143,7 +143,7 @@
                 catch (Exception ex)
                 {
 #if DEBUG
-                    await Application.Current!.MainPage!.DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
+                    await Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, $"{ex.Message}\n{ex.StackTrace}", CubeLang.ButtonClose_Text);
 #endif
                 }
             }

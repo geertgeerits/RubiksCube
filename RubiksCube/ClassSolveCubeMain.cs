@@ -481,7 +481,7 @@ namespace RubiksCube
             }
 
             //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
-            //_ = Application.Current!.MainPage!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
+            //_ = Application.Current!.Windows[0].Page!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
 #if DEBUG
             // Save the list with the cube turns after the cleaning to a file, for testing purposes
             if (bCubeTurnsSave)
