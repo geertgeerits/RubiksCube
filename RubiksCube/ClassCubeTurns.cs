@@ -542,68 +542,76 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnFrontFaceTo(string cDirection)
         {
+            // Create and start a stopwatch instance
+            //long startTime = Stopwatch.GetTimestamp();
+
             // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
+            //Span<string> aPiecesSpan = aPieces.AsSpan();
+            //Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
 
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            //aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[0] = aPiecesTempSpan[6];
-                aPiecesSpan[1] = aPiecesTempSpan[3];
-                aPiecesSpan[2] = aPiecesTempSpan[0];
-                aPiecesSpan[3] = aPiecesTempSpan[7];
-                aPiecesSpan[5] = aPiecesTempSpan[1];
-                aPiecesSpan[6] = aPiecesTempSpan[8];
-                aPiecesSpan[7] = aPiecesTempSpan[5];
-                aPiecesSpan[8] = aPiecesTempSpan[2];
+                aPieces[0] = aPiecesTemp[6];
+                aPieces[1] = aPiecesTemp[3];
+                aPieces[2] = aPiecesTemp[0];
+                aPieces[3] = aPiecesTemp[7];
+                aPieces[5] = aPiecesTemp[1];
+                aPieces[6] = aPiecesTemp[8];
+                aPieces[7] = aPiecesTemp[5];
+                aPieces[8] = aPiecesTemp[2];
 
-                aPiecesSpan[42] = aPiecesTempSpan[35];
-                aPiecesSpan[43] = aPiecesTempSpan[32];
-                aPiecesSpan[44] = aPiecesTempSpan[29];
+                aPieces[42] = aPiecesTemp[35];
+                aPieces[43] = aPiecesTemp[32];
+                aPieces[44] = aPiecesTemp[29];
 
-                aPiecesSpan[9] = aPiecesTempSpan[42];
-                aPiecesSpan[12] = aPiecesTempSpan[43];
-                aPiecesSpan[15] = aPiecesTempSpan[44];
+                aPieces[9] = aPiecesTemp[42];
+                aPieces[12] = aPiecesTemp[43];
+                aPieces[15] = aPiecesTemp[44];
 
-                aPiecesSpan[45] = aPiecesTempSpan[15];
-                aPiecesSpan[46] = aPiecesTempSpan[12];
-                aPiecesSpan[47] = aPiecesTempSpan[9];
+                aPieces[45] = aPiecesTemp[15];
+                aPieces[46] = aPiecesTemp[12];
+                aPieces[47] = aPiecesTemp[9];
 
-                aPiecesSpan[29] = aPiecesTempSpan[45];
-                aPiecesSpan[32] = aPiecesTempSpan[46];
-                aPiecesSpan[35] = aPiecesTempSpan[47];
+                aPieces[29] = aPiecesTemp[45];
+                aPieces[32] = aPiecesTemp[46];
+                aPieces[35] = aPiecesTemp[47];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[0] = aPiecesTempSpan[2];
-                aPiecesSpan[1] = aPiecesTempSpan[5];
-                aPiecesSpan[2] = aPiecesTempSpan[8];
-                aPiecesSpan[3] = aPiecesTempSpan[1];
-                aPiecesSpan[5] = aPiecesTempSpan[7];
-                aPiecesSpan[6] = aPiecesTempSpan[0];
-                aPiecesSpan[7] = aPiecesTempSpan[3];
-                aPiecesSpan[8] = aPiecesTempSpan[6];
+                aPieces[0] = aPiecesTemp[2];
+                aPieces[1] = aPiecesTemp[5];
+                aPieces[2] = aPiecesTemp[8];
+                aPieces[3] = aPiecesTemp[1];
+                aPieces[5] = aPiecesTemp[7];
+                aPieces[6] = aPiecesTemp[0];
+                aPieces[7] = aPiecesTemp[3];
+                aPieces[8] = aPiecesTemp[6];
 
-                aPiecesSpan[42] = aPiecesTempSpan[9];
-                aPiecesSpan[43] = aPiecesTempSpan[12];
-                aPiecesSpan[44] = aPiecesTempSpan[15];
+                aPieces[42] = aPiecesTemp[9];
+                aPieces[43] = aPiecesTemp[12];
+                aPieces[44] = aPiecesTemp[15];
 
-                aPiecesSpan[9] = aPiecesTempSpan[47];
-                aPiecesSpan[12] = aPiecesTempSpan[46];
-                aPiecesSpan[15] = aPiecesTempSpan[45];
+                aPieces[9] = aPiecesTemp[47];
+                aPieces[12] = aPiecesTemp[46];
+                aPieces[15] = aPiecesTemp[45];
 
-                aPiecesSpan[45] = aPiecesTempSpan[29];
-                aPiecesSpan[46] = aPiecesTempSpan[32];
-                aPiecesSpan[47] = aPiecesTempSpan[35];
+                aPieces[45] = aPiecesTemp[29];
+                aPieces[46] = aPiecesTemp[32];
+                aPieces[47] = aPiecesTemp[35];
 
-                aPiecesSpan[29] = aPiecesTempSpan[44];
-                aPiecesSpan[32] = aPiecesTempSpan[43];
-                aPiecesSpan[35] = aPiecesTempSpan[42];
+                aPieces[29] = aPiecesTemp[44];
+                aPieces[32] = aPiecesTemp[43];
+                aPieces[35] = aPiecesTemp[42];
             }
+
+            // Stop the stopwatch and get the elapsed time
+            //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
+            //_ = Application.Current!.Windows[0].Page!.DisplayAlert("TurnFrontFaceTo", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
         }
 
         /// <summary>
@@ -612,49 +620,45 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnUpHorMiddleTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-            
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[39] = aPiecesTempSpan[34];
-                aPiecesSpan[40] = aPiecesTempSpan[31];
-                aPiecesSpan[41] = aPiecesTempSpan[28];
+                aPieces[39] = aPiecesTemp[34];
+                aPieces[40] = aPiecesTemp[31];
+                aPieces[41] = aPiecesTemp[28];
 
-                aPiecesSpan[10] = aPiecesTempSpan[39];
-                aPiecesSpan[13] = aPiecesTempSpan[40];
-                aPiecesSpan[16] = aPiecesTempSpan[41];
+                aPieces[10] = aPiecesTemp[39];
+                aPieces[13] = aPiecesTemp[40];
+                aPieces[16] = aPiecesTemp[41];
 
-                aPiecesSpan[48] = aPiecesTempSpan[16];
-                aPiecesSpan[49] = aPiecesTempSpan[13];
-                aPiecesSpan[50] = aPiecesTempSpan[10];
+                aPieces[48] = aPiecesTemp[16];
+                aPieces[49] = aPiecesTemp[13];
+                aPieces[50] = aPiecesTemp[10];
 
-                aPiecesSpan[28] = aPiecesTempSpan[48];
-                aPiecesSpan[31] = aPiecesTempSpan[49];
-                aPiecesSpan[34] = aPiecesTempSpan[50];
+                aPieces[28] = aPiecesTemp[48];
+                aPieces[31] = aPiecesTemp[49];
+                aPieces[34] = aPiecesTemp[50];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[39] = aPiecesTempSpan[10];
-                aPiecesSpan[40] = aPiecesTempSpan[13];
-                aPiecesSpan[41] = aPiecesTempSpan[16];
+                aPieces[39] = aPiecesTemp[10];
+                aPieces[40] = aPiecesTemp[13];
+                aPieces[41] = aPiecesTemp[16];
 
-                aPiecesSpan[10] = aPiecesTempSpan[50];
-                aPiecesSpan[13] = aPiecesTempSpan[49];
-                aPiecesSpan[16] = aPiecesTempSpan[48];
+                aPieces[10] = aPiecesTemp[50];
+                aPieces[13] = aPiecesTemp[49];
+                aPieces[16] = aPiecesTemp[48];
 
-                aPiecesSpan[48] = aPiecesTempSpan[28];
-                aPiecesSpan[49] = aPiecesTempSpan[31];
-                aPiecesSpan[50] = aPiecesTempSpan[34];
+                aPieces[48] = aPiecesTemp[28];
+                aPieces[49] = aPiecesTemp[31];
+                aPieces[50] = aPiecesTemp[34];
 
-                aPiecesSpan[28] = aPiecesTempSpan[41];
-                aPiecesSpan[31] = aPiecesTempSpan[40];
-                aPiecesSpan[34] = aPiecesTempSpan[39];
+                aPieces[28] = aPiecesTemp[41];
+                aPieces[31] = aPiecesTemp[40];
+                aPieces[34] = aPiecesTemp[39];
             }
         }
 
@@ -664,67 +668,63 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnBackFaceTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[18] = aPiecesTempSpan[24];
-                aPiecesSpan[19] = aPiecesTempSpan[21];
-                aPiecesSpan[20] = aPiecesTempSpan[18];
-                aPiecesSpan[21] = aPiecesTempSpan[25];
-                aPiecesSpan[23] = aPiecesTempSpan[19];
-                aPiecesSpan[24] = aPiecesTempSpan[26];
-                aPiecesSpan[25] = aPiecesTempSpan[23];
-                aPiecesSpan[26] = aPiecesTempSpan[20];
+                aPieces[18] = aPiecesTemp[24];
+                aPieces[19] = aPiecesTemp[21];
+                aPieces[20] = aPiecesTemp[18];
+                aPieces[21] = aPiecesTemp[25];
+                aPieces[23] = aPiecesTemp[19];
+                aPieces[24] = aPiecesTemp[26];
+                aPieces[25] = aPiecesTemp[23];
+                aPieces[26] = aPiecesTemp[20];
 
-                aPiecesSpan[36] = aPiecesTempSpan[11];
-                aPiecesSpan[37] = aPiecesTempSpan[14];
-                aPiecesSpan[38] = aPiecesTempSpan[17];
+                aPieces[36] = aPiecesTemp[11];
+                aPieces[37] = aPiecesTemp[14];
+                aPieces[38] = aPiecesTemp[17];
 
-                aPiecesSpan[11] = aPiecesTempSpan[53];
-                aPiecesSpan[14] = aPiecesTempSpan[52];
-                aPiecesSpan[17] = aPiecesTempSpan[51];
+                aPieces[11] = aPiecesTemp[53];
+                aPieces[14] = aPiecesTemp[52];
+                aPieces[17] = aPiecesTemp[51];
 
-                aPiecesSpan[51] = aPiecesTempSpan[27];
-                aPiecesSpan[52] = aPiecesTempSpan[30];
-                aPiecesSpan[53] = aPiecesTempSpan[33];
+                aPieces[51] = aPiecesTemp[27];
+                aPieces[52] = aPiecesTemp[30];
+                aPieces[53] = aPiecesTemp[33];
 
-                aPiecesSpan[27] = aPiecesTempSpan[38];
-                aPiecesSpan[30] = aPiecesTempSpan[37];
-                aPiecesSpan[33] = aPiecesTempSpan[36];
+                aPieces[27] = aPiecesTemp[38];
+                aPieces[30] = aPiecesTemp[37];
+                aPieces[33] = aPiecesTemp[36];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[18] = aPiecesTempSpan[20];
-                aPiecesSpan[19] = aPiecesTempSpan[23];
-                aPiecesSpan[20] = aPiecesTempSpan[26];
-                aPiecesSpan[21] = aPiecesTempSpan[19];
-                aPiecesSpan[23] = aPiecesTempSpan[25];
-                aPiecesSpan[24] = aPiecesTempSpan[18];
-                aPiecesSpan[25] = aPiecesTempSpan[21];
-                aPiecesSpan[26] = aPiecesTempSpan[24];
+                aPieces[18] = aPiecesTemp[20];
+                aPieces[19] = aPiecesTemp[23];
+                aPieces[20] = aPiecesTemp[26];
+                aPieces[21] = aPiecesTemp[19];
+                aPieces[23] = aPiecesTemp[25];
+                aPieces[24] = aPiecesTemp[18];
+                aPieces[25] = aPiecesTemp[21];
+                aPieces[26] = aPiecesTemp[24];
 
-                aPiecesSpan[36] = aPiecesTempSpan[33];
-                aPiecesSpan[37] = aPiecesTempSpan[30];
-                aPiecesSpan[38] = aPiecesTempSpan[27];
+                aPieces[36] = aPiecesTemp[33];
+                aPieces[37] = aPiecesTemp[30];
+                aPieces[38] = aPiecesTemp[27];
 
-                aPiecesSpan[11] = aPiecesTempSpan[36];
-                aPiecesSpan[14] = aPiecesTempSpan[37];
-                aPiecesSpan[17] = aPiecesTempSpan[38];
+                aPieces[11] = aPiecesTemp[36];
+                aPieces[14] = aPiecesTemp[37];
+                aPieces[17] = aPiecesTemp[38];
 
-                aPiecesSpan[51] = aPiecesTempSpan[17];
-                aPiecesSpan[52] = aPiecesTempSpan[14];
-                aPiecesSpan[53] = aPiecesTempSpan[11];
+                aPieces[51] = aPiecesTemp[17];
+                aPieces[52] = aPiecesTemp[14];
+                aPieces[53] = aPiecesTemp[11];
 
-                aPiecesSpan[27] = aPiecesTempSpan[51];
-                aPiecesSpan[30] = aPiecesTempSpan[52];
-                aPiecesSpan[33] = aPiecesTempSpan[53];
+                aPieces[27] = aPiecesTemp[51];
+                aPieces[30] = aPiecesTemp[52];
+                aPieces[33] = aPiecesTemp[53];
             }
         }
 
@@ -734,67 +734,63 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnLeftFaceTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[27] = aPiecesTempSpan[33];
-                aPiecesSpan[28] = aPiecesTempSpan[30];
-                aPiecesSpan[29] = aPiecesTempSpan[27];
-                aPiecesSpan[30] = aPiecesTempSpan[34];
-                aPiecesSpan[32] = aPiecesTempSpan[28];
-                aPiecesSpan[33] = aPiecesTempSpan[35];
-                aPiecesSpan[34] = aPiecesTempSpan[32];
-                aPiecesSpan[35] = aPiecesTempSpan[29];
+                aPieces[27] = aPiecesTemp[33];
+                aPieces[28] = aPiecesTemp[30];
+                aPieces[29] = aPiecesTemp[27];
+                aPieces[30] = aPiecesTemp[34];
+                aPieces[32] = aPiecesTemp[28];
+                aPieces[33] = aPiecesTemp[35];
+                aPieces[34] = aPiecesTemp[32];
+                aPieces[35] = aPiecesTemp[29];
 
-                aPiecesSpan[36] = aPiecesTempSpan[26];
-                aPiecesSpan[39] = aPiecesTempSpan[23];
-                aPiecesSpan[42] = aPiecesTempSpan[20];
+                aPieces[36] = aPiecesTemp[26];
+                aPieces[39] = aPiecesTemp[23];
+                aPieces[42] = aPiecesTemp[20];
 
-                aPiecesSpan[0] = aPiecesTempSpan[36];
-                aPiecesSpan[3] = aPiecesTempSpan[39];
-                aPiecesSpan[6] = aPiecesTempSpan[42];
+                aPieces[0] = aPiecesTemp[36];
+                aPieces[3] = aPiecesTemp[39];
+                aPieces[6] = aPiecesTemp[42];
 
-                aPiecesSpan[45] = aPiecesTempSpan[0];
-                aPiecesSpan[48] = aPiecesTempSpan[3];
-                aPiecesSpan[51] = aPiecesTempSpan[6];
+                aPieces[45] = aPiecesTemp[0];
+                aPieces[48] = aPiecesTemp[3];
+                aPieces[51] = aPiecesTemp[6];
 
-                aPiecesSpan[20] = aPiecesTempSpan[51];
-                aPiecesSpan[23] = aPiecesTempSpan[48];
-                aPiecesSpan[26] = aPiecesTempSpan[45];
+                aPieces[20] = aPiecesTemp[51];
+                aPieces[23] = aPiecesTemp[48];
+                aPieces[26] = aPiecesTemp[45];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[27] = aPiecesTempSpan[29];
-                aPiecesSpan[28] = aPiecesTempSpan[32];
-                aPiecesSpan[29] = aPiecesTempSpan[35];
-                aPiecesSpan[30] = aPiecesTempSpan[28];
-                aPiecesSpan[32] = aPiecesTempSpan[34];
-                aPiecesSpan[33] = aPiecesTempSpan[27];
-                aPiecesSpan[34] = aPiecesTempSpan[30];
-                aPiecesSpan[35] = aPiecesTempSpan[33];
+                aPieces[27] = aPiecesTemp[29];
+                aPieces[28] = aPiecesTemp[32];
+                aPieces[29] = aPiecesTemp[35];
+                aPieces[30] = aPiecesTemp[28];
+                aPieces[32] = aPiecesTemp[34];
+                aPieces[33] = aPiecesTemp[27];
+                aPieces[34] = aPiecesTemp[30];
+                aPieces[35] = aPiecesTemp[33];
 
-                aPiecesSpan[36] = aPiecesTempSpan[0];
-                aPiecesSpan[39] = aPiecesTempSpan[3];
-                aPiecesSpan[42] = aPiecesTempSpan[6];
+                aPieces[36] = aPiecesTemp[0];
+                aPieces[39] = aPiecesTemp[3];
+                aPieces[42] = aPiecesTemp[6];
 
-                aPiecesSpan[0] = aPiecesTempSpan[45];
-                aPiecesSpan[3] = aPiecesTempSpan[48];
-                aPiecesSpan[6] = aPiecesTempSpan[51];
+                aPieces[0] = aPiecesTemp[45];
+                aPieces[3] = aPiecesTemp[48];
+                aPieces[6] = aPiecesTemp[51];
 
-                aPiecesSpan[45] = aPiecesTempSpan[26];
-                aPiecesSpan[48] = aPiecesTempSpan[23];
-                aPiecesSpan[51] = aPiecesTempSpan[20];
+                aPieces[45] = aPiecesTemp[26];
+                aPieces[48] = aPiecesTemp[23];
+                aPieces[51] = aPiecesTemp[20];
 
-                aPiecesSpan[20] = aPiecesTempSpan[42];
-                aPiecesSpan[23] = aPiecesTempSpan[39];
-                aPiecesSpan[26] = aPiecesTempSpan[36];
+                aPieces[20] = aPiecesTemp[42];
+                aPieces[23] = aPiecesTemp[39];
+                aPieces[26] = aPiecesTemp[36];
             }
         }
         
@@ -804,49 +800,45 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnUpVerMiddleTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[37] = aPiecesTempSpan[1];
-                aPiecesSpan[40] = aPiecesTempSpan[4];
-                aPiecesSpan[43] = aPiecesTempSpan[7];
+                aPieces[37] = aPiecesTemp[1];
+                aPieces[40] = aPiecesTemp[4];
+                aPieces[43] = aPiecesTemp[7];
 
-                aPiecesSpan[1] = aPiecesTempSpan[46];
-                aPiecesSpan[4] = aPiecesTempSpan[49];
-                aPiecesSpan[7] = aPiecesTempSpan[52];
+                aPieces[1] = aPiecesTemp[46];
+                aPieces[4] = aPiecesTemp[49];
+                aPieces[7] = aPiecesTemp[52];
 
-                aPiecesSpan[46] = aPiecesTempSpan[25];
-                aPiecesSpan[49] = aPiecesTempSpan[22];
-                aPiecesSpan[52] = aPiecesTempSpan[19];
+                aPieces[46] = aPiecesTemp[25];
+                aPieces[49] = aPiecesTemp[22];
+                aPieces[52] = aPiecesTemp[19];
 
-                aPiecesSpan[19] = aPiecesTempSpan[43];
-                aPiecesSpan[22] = aPiecesTempSpan[40];
-                aPiecesSpan[25] = aPiecesTempSpan[37];
+                aPieces[19] = aPiecesTemp[43];
+                aPieces[22] = aPiecesTemp[40];
+                aPieces[25] = aPiecesTemp[37];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[37] = aPiecesTempSpan[25];
-                aPiecesSpan[40] = aPiecesTempSpan[22];
-                aPiecesSpan[43] = aPiecesTempSpan[19];
+                aPieces[37] = aPiecesTemp[25];
+                aPieces[40] = aPiecesTemp[22];
+                aPieces[43] = aPiecesTemp[19];
 
-                aPiecesSpan[1] = aPiecesTempSpan[37];
-                aPiecesSpan[4] = aPiecesTempSpan[40];
-                aPiecesSpan[7] = aPiecesTempSpan[43];
+                aPieces[1] = aPiecesTemp[37];
+                aPieces[4] = aPiecesTemp[40];
+                aPieces[7] = aPiecesTemp[43];
 
-                aPiecesSpan[46] = aPiecesTempSpan[1];
-                aPiecesSpan[49] = aPiecesTempSpan[4];
-                aPiecesSpan[52] = aPiecesTempSpan[7];
+                aPieces[46] = aPiecesTemp[1];
+                aPieces[49] = aPiecesTemp[4];
+                aPieces[52] = aPiecesTemp[7];
 
-                aPiecesSpan[19] = aPiecesTempSpan[52];
-                aPiecesSpan[22] = aPiecesTempSpan[49];
-                aPiecesSpan[25] = aPiecesTempSpan[46];
+                aPieces[19] = aPiecesTemp[52];
+                aPieces[22] = aPiecesTemp[49];
+                aPieces[25] = aPiecesTemp[46];
             }
         }
 
@@ -856,67 +848,63 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnRightFaceTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[9] = aPiecesTempSpan[15];
-                aPiecesSpan[10] = aPiecesTempSpan[12];
-                aPiecesSpan[11] = aPiecesTempSpan[9];
-                aPiecesSpan[12] = aPiecesTempSpan[16];
-                aPiecesSpan[14] = aPiecesTempSpan[10];
-                aPiecesSpan[15] = aPiecesTempSpan[17];
-                aPiecesSpan[16] = aPiecesTempSpan[14];
-                aPiecesSpan[17] = aPiecesTempSpan[11];
+                aPieces[9] = aPiecesTemp[15];
+                aPieces[10] = aPiecesTemp[12];
+                aPieces[11] = aPiecesTemp[9];
+                aPieces[12] = aPiecesTemp[16];
+                aPieces[14] = aPiecesTemp[10];
+                aPieces[15] = aPiecesTemp[17];
+                aPieces[16] = aPiecesTemp[14];
+                aPieces[17] = aPiecesTemp[11];
 
-                aPiecesSpan[38] = aPiecesTempSpan[2];
-                aPiecesSpan[41] = aPiecesTempSpan[5];
-                aPiecesSpan[44] = aPiecesTempSpan[8];
+                aPieces[38] = aPiecesTemp[2];
+                aPieces[41] = aPiecesTemp[5];
+                aPieces[44] = aPiecesTemp[8];
 
-                aPiecesSpan[2] = aPiecesTempSpan[47];
-                aPiecesSpan[5] = aPiecesTempSpan[50];
-                aPiecesSpan[8] = aPiecesTempSpan[53];
+                aPieces[2] = aPiecesTemp[47];
+                aPieces[5] = aPiecesTemp[50];
+                aPieces[8] = aPiecesTemp[53];
 
-                aPiecesSpan[47] = aPiecesTempSpan[24];
-                aPiecesSpan[50] = aPiecesTempSpan[21];
-                aPiecesSpan[53] = aPiecesTempSpan[18];
+                aPieces[47] = aPiecesTemp[24];
+                aPieces[50] = aPiecesTemp[21];
+                aPieces[53] = aPiecesTemp[18];
 
-                aPiecesSpan[18] = aPiecesTempSpan[44];
-                aPiecesSpan[21] = aPiecesTempSpan[41];
-                aPiecesSpan[24] = aPiecesTempSpan[38];
+                aPieces[18] = aPiecesTemp[44];
+                aPieces[21] = aPiecesTemp[41];
+                aPieces[24] = aPiecesTemp[38];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[9] = aPiecesTempSpan[11];
-                aPiecesSpan[10] = aPiecesTempSpan[14];
-                aPiecesSpan[11] = aPiecesTempSpan[17];
-                aPiecesSpan[12] = aPiecesTempSpan[10];
-                aPiecesSpan[14] = aPiecesTempSpan[16];
-                aPiecesSpan[15] = aPiecesTempSpan[9];
-                aPiecesSpan[16] = aPiecesTempSpan[12];
-                aPiecesSpan[17] = aPiecesTempSpan[15];
+                aPieces[9] = aPiecesTemp[11];
+                aPieces[10] = aPiecesTemp[14];
+                aPieces[11] = aPiecesTemp[17];
+                aPieces[12] = aPiecesTemp[10];
+                aPieces[14] = aPiecesTemp[16];
+                aPieces[15] = aPiecesTemp[9];
+                aPieces[16] = aPiecesTemp[12];
+                aPieces[17] = aPiecesTemp[15];
 
-                aPiecesSpan[38] = aPiecesTempSpan[24];
-                aPiecesSpan[41] = aPiecesTempSpan[21];
-                aPiecesSpan[44] = aPiecesTempSpan[18];
+                aPieces[38] = aPiecesTemp[24];
+                aPieces[41] = aPiecesTemp[21];
+                aPieces[44] = aPiecesTemp[18];
 
-                aPiecesSpan[2] = aPiecesTempSpan[38];
-                aPiecesSpan[5] = aPiecesTempSpan[41];
-                aPiecesSpan[8] = aPiecesTempSpan[44];
+                aPieces[2] = aPiecesTemp[38];
+                aPieces[5] = aPiecesTemp[41];
+                aPieces[8] = aPiecesTemp[44];
 
-                aPiecesSpan[47] = aPiecesTempSpan[2];
-                aPiecesSpan[50] = aPiecesTempSpan[5];
-                aPiecesSpan[53] = aPiecesTempSpan[8];
+                aPieces[47] = aPiecesTemp[2];
+                aPieces[50] = aPiecesTemp[5];
+                aPieces[53] = aPiecesTemp[8];
 
-                aPiecesSpan[18] = aPiecesTempSpan[53];
-                aPiecesSpan[21] = aPiecesTempSpan[50];
-                aPiecesSpan[24] = aPiecesTempSpan[47];
+                aPieces[18] = aPiecesTemp[53];
+                aPieces[21] = aPiecesTemp[50];
+                aPieces[24] = aPiecesTemp[47];
             }
         }
 
@@ -926,67 +914,63 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnUpFaceTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[36] = aPiecesTempSpan[42];
-                aPiecesSpan[37] = aPiecesTempSpan[39];
-                aPiecesSpan[38] = aPiecesTempSpan[36];
-                aPiecesSpan[39] = aPiecesTempSpan[43];
-                aPiecesSpan[41] = aPiecesTempSpan[37];
-                aPiecesSpan[42] = aPiecesTempSpan[44];
-                aPiecesSpan[43] = aPiecesTempSpan[41];
-                aPiecesSpan[44] = aPiecesTempSpan[38];
+                aPieces[36] = aPiecesTemp[42];
+                aPieces[37] = aPiecesTemp[39];
+                aPieces[38] = aPiecesTemp[36];
+                aPieces[39] = aPiecesTemp[43];
+                aPieces[41] = aPiecesTemp[37];
+                aPieces[42] = aPiecesTemp[44];
+                aPieces[43] = aPiecesTemp[41];
+                aPieces[44] = aPiecesTemp[38];
 
-                aPiecesSpan[27] = aPiecesTempSpan[0];
-                aPiecesSpan[28] = aPiecesTempSpan[1];
-                aPiecesSpan[29] = aPiecesTempSpan[2];
+                aPieces[27] = aPiecesTemp[0];
+                aPieces[28] = aPiecesTemp[1];
+                aPieces[29] = aPiecesTemp[2];
 
-                aPiecesSpan[0] = aPiecesTempSpan[9];
-                aPiecesSpan[1] = aPiecesTempSpan[10];
-                aPiecesSpan[2] = aPiecesTempSpan[11];
+                aPieces[0] = aPiecesTemp[9];
+                aPieces[1] = aPiecesTemp[10];
+                aPieces[2] = aPiecesTemp[11];
 
-                aPiecesSpan[9] = aPiecesTempSpan[18];
-                aPiecesSpan[10] = aPiecesTempSpan[19];
-                aPiecesSpan[11] = aPiecesTempSpan[20];
+                aPieces[9] = aPiecesTemp[18];
+                aPieces[10] = aPiecesTemp[19];
+                aPieces[11] = aPiecesTemp[20];
 
-                aPiecesSpan[18] = aPiecesTempSpan[27];
-                aPiecesSpan[19] = aPiecesTempSpan[28];
-                aPiecesSpan[20] = aPiecesTempSpan[29];
+                aPieces[18] = aPiecesTemp[27];
+                aPieces[19] = aPiecesTemp[28];
+                aPieces[20] = aPiecesTemp[29];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[36] = aPiecesTempSpan[38];
-                aPiecesSpan[37] = aPiecesTempSpan[41];
-                aPiecesSpan[38] = aPiecesTempSpan[44];
-                aPiecesSpan[39] = aPiecesTempSpan[37];
-                aPiecesSpan[41] = aPiecesTempSpan[43];
-                aPiecesSpan[42] = aPiecesTempSpan[36];
-                aPiecesSpan[43] = aPiecesTempSpan[39];
-                aPiecesSpan[44] = aPiecesTempSpan[42];
+                aPieces[36] = aPiecesTemp[38];
+                aPieces[37] = aPiecesTemp[41];
+                aPieces[38] = aPiecesTemp[44];
+                aPieces[39] = aPiecesTemp[37];
+                aPieces[41] = aPiecesTemp[43];
+                aPieces[42] = aPiecesTemp[36];
+                aPieces[43] = aPiecesTemp[39];
+                aPieces[44] = aPiecesTemp[42];
 
-                aPiecesSpan[27] = aPiecesTempSpan[18];
-                aPiecesSpan[28] = aPiecesTempSpan[19];
-                aPiecesSpan[29] = aPiecesTempSpan[20];
+                aPieces[27] = aPiecesTemp[18];
+                aPieces[28] = aPiecesTemp[19];
+                aPieces[29] = aPiecesTemp[20];
 
-                aPiecesSpan[0] = aPiecesTempSpan[27];
-                aPiecesSpan[1] = aPiecesTempSpan[28];
-                aPiecesSpan[2] = aPiecesTempSpan[29];
+                aPieces[0] = aPiecesTemp[27];
+                aPieces[1] = aPiecesTemp[28];
+                aPieces[2] = aPiecesTemp[29];
 
-                aPiecesSpan[9] = aPiecesTempSpan[0];
-                aPiecesSpan[10] = aPiecesTempSpan[1];
-                aPiecesSpan[11] = aPiecesTempSpan[2];
+                aPieces[9] = aPiecesTemp[0];
+                aPieces[10] = aPiecesTemp[1];
+                aPieces[11] = aPiecesTemp[2];
 
-                aPiecesSpan[18] = aPiecesTempSpan[9];
-                aPiecesSpan[19] = aPiecesTempSpan[10];
-                aPiecesSpan[20] = aPiecesTempSpan[11];
+                aPieces[18] = aPiecesTemp[9];
+                aPieces[19] = aPiecesTemp[10];
+                aPieces[20] = aPiecesTemp[11];
             }
         }
 
@@ -996,49 +980,45 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnFrontHorMiddleTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[3] = aPiecesTempSpan[12];
-                aPiecesSpan[4] = aPiecesTempSpan[13];
-                aPiecesSpan[5] = aPiecesTempSpan[14];
+                aPieces[3] = aPiecesTemp[12];
+                aPieces[4] = aPiecesTemp[13];
+                aPieces[5] = aPiecesTemp[14];
 
-                aPiecesSpan[12] = aPiecesTempSpan[21];
-                aPiecesSpan[13] = aPiecesTempSpan[22];
-                aPiecesSpan[14] = aPiecesTempSpan[23];
+                aPieces[12] = aPiecesTemp[21];
+                aPieces[13] = aPiecesTemp[22];
+                aPieces[14] = aPiecesTemp[23];
 
-                aPiecesSpan[21] = aPiecesTempSpan[30];
-                aPiecesSpan[22] = aPiecesTempSpan[31];
-                aPiecesSpan[23] = aPiecesTempSpan[32];
+                aPieces[21] = aPiecesTemp[30];
+                aPieces[22] = aPiecesTemp[31];
+                aPieces[23] = aPiecesTemp[32];
 
-                aPiecesSpan[30] = aPiecesTempSpan[3];
-                aPiecesSpan[31] = aPiecesTempSpan[4];
-                aPiecesSpan[32] = aPiecesTempSpan[5];
+                aPieces[30] = aPiecesTemp[3];
+                aPieces[31] = aPiecesTemp[4];
+                aPieces[32] = aPiecesTemp[5];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[3] = aPiecesTempSpan[30];
-                aPiecesSpan[4] = aPiecesTempSpan[31];
-                aPiecesSpan[5] = aPiecesTempSpan[32];
+                aPieces[3] = aPiecesTemp[30];
+                aPieces[4] = aPiecesTemp[31];
+                aPieces[5] = aPiecesTemp[32];
 
-                aPiecesSpan[12] = aPiecesTempSpan[3];
-                aPiecesSpan[13] = aPiecesTempSpan[4];
-                aPiecesSpan[14] = aPiecesTempSpan[5];
+                aPieces[12] = aPiecesTemp[3];
+                aPieces[13] = aPiecesTemp[4];
+                aPieces[14] = aPiecesTemp[5];
 
-                aPiecesSpan[21] = aPiecesTempSpan[12];
-                aPiecesSpan[22] = aPiecesTempSpan[13];
-                aPiecesSpan[23] = aPiecesTempSpan[14];
+                aPieces[21] = aPiecesTemp[12];
+                aPieces[22] = aPiecesTemp[13];
+                aPieces[23] = aPiecesTemp[14];
 
-                aPiecesSpan[30] = aPiecesTempSpan[21];
-                aPiecesSpan[31] = aPiecesTempSpan[22];
-                aPiecesSpan[32] = aPiecesTempSpan[23];
+                aPieces[30] = aPiecesTemp[21];
+                aPieces[31] = aPiecesTemp[22];
+                aPieces[32] = aPiecesTemp[23];
             }
         }
 
@@ -1048,67 +1028,63 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnDownFaceTo(string cDirection)
         {
-            // Create a span for the arrays
-            Span<string> aPiecesSpan = aPieces.AsSpan();
-            Span<string> aPiecesTempSpan = aPiecesTemp.AsSpan();
-
             // Copy the pieces to the temporary array
-            aPiecesSpan[..54].CopyTo(aPiecesTempSpan);
+            Array.Copy(aPieces, aPiecesTemp, 54);
 
             if (cDirection == "CW")
             {
-                aPiecesSpan[45] = aPiecesTempSpan[51];
-                aPiecesSpan[46] = aPiecesTempSpan[48];
-                aPiecesSpan[47] = aPiecesTempSpan[45];
-                aPiecesSpan[48] = aPiecesTempSpan[52];
-                aPiecesSpan[50] = aPiecesTempSpan[46];
-                aPiecesSpan[51] = aPiecesTempSpan[53];
-                aPiecesSpan[52] = aPiecesTempSpan[50];
-                aPiecesSpan[53] = aPiecesTempSpan[47];
+                aPieces[45] = aPiecesTemp[51];
+                aPieces[46] = aPiecesTemp[48];
+                aPieces[47] = aPiecesTemp[45];
+                aPieces[48] = aPiecesTemp[52];
+                aPieces[50] = aPiecesTemp[46];
+                aPieces[51] = aPiecesTemp[53];
+                aPieces[52] = aPiecesTemp[50];
+                aPieces[53] = aPiecesTemp[47];
 
-                aPiecesSpan[33] = aPiecesTempSpan[24];
-                aPiecesSpan[34] = aPiecesTempSpan[25];
-                aPiecesSpan[35] = aPiecesTempSpan[26];
+                aPieces[33] = aPiecesTemp[24];
+                aPieces[34] = aPiecesTemp[25];
+                aPieces[35] = aPiecesTemp[26];
 
-                aPiecesSpan[6] = aPiecesTempSpan[33];
-                aPiecesSpan[7] = aPiecesTempSpan[34];
-                aPiecesSpan[8] = aPiecesTempSpan[35];
+                aPieces[6] = aPiecesTemp[33];
+                aPieces[7] = aPiecesTemp[34];
+                aPieces[8] = aPiecesTemp[35];
 
-                aPiecesSpan[15] = aPiecesTempSpan[6];
-                aPiecesSpan[16] = aPiecesTempSpan[7];
-                aPiecesSpan[17] = aPiecesTempSpan[8];
+                aPieces[15] = aPiecesTemp[6];
+                aPieces[16] = aPiecesTemp[7];
+                aPieces[17] = aPiecesTemp[8];
 
-                aPiecesSpan[24] = aPiecesTempSpan[15];
-                aPiecesSpan[25] = aPiecesTempSpan[16];
-                aPiecesSpan[26] = aPiecesTempSpan[17];
+                aPieces[24] = aPiecesTemp[15];
+                aPieces[25] = aPiecesTemp[16];
+                aPieces[26] = aPiecesTemp[17];
             }
 
             if (cDirection == "CCW")
             {
-                aPiecesSpan[45] = aPiecesTempSpan[47];
-                aPiecesSpan[46] = aPiecesTempSpan[50];
-                aPiecesSpan[47] = aPiecesTempSpan[53];
-                aPiecesSpan[48] = aPiecesTempSpan[46];
-                aPiecesSpan[50] = aPiecesTempSpan[52];
-                aPiecesSpan[51] = aPiecesTempSpan[45];
-                aPiecesSpan[52] = aPiecesTempSpan[48];
-                aPiecesSpan[53] = aPiecesTempSpan[51];
+                aPieces[45] = aPiecesTemp[47];
+                aPieces[46] = aPiecesTemp[50];
+                aPieces[47] = aPiecesTemp[53];
+                aPieces[48] = aPiecesTemp[46];
+                aPieces[50] = aPiecesTemp[52];
+                aPieces[51] = aPiecesTemp[45];
+                aPieces[52] = aPiecesTemp[48];
+                aPieces[53] = aPiecesTemp[51];
 
-                aPiecesSpan[33] = aPiecesTempSpan[6];
-                aPiecesSpan[34] = aPiecesTempSpan[7];
-                aPiecesSpan[35] = aPiecesTempSpan[8];
+                aPieces[33] = aPiecesTemp[6];
+                aPieces[34] = aPiecesTemp[7];
+                aPieces[35] = aPiecesTemp[8];
 
-                aPiecesSpan[6] = aPiecesTempSpan[15];
-                aPiecesSpan[7] = aPiecesTempSpan[16];
-                aPiecesSpan[8] = aPiecesTempSpan[17];
+                aPieces[6] = aPiecesTemp[15];
+                aPieces[7] = aPiecesTemp[16];
+                aPieces[8] = aPiecesTemp[17];
 
-                aPiecesSpan[15] = aPiecesTempSpan[24];
-                aPiecesSpan[16] = aPiecesTempSpan[25];
-                aPiecesSpan[17] = aPiecesTempSpan[26];
+                aPieces[15] = aPiecesTemp[24];
+                aPieces[16] = aPiecesTemp[25];
+                aPieces[17] = aPiecesTemp[26];
 
-                aPiecesSpan[24] = aPiecesTempSpan[33];
-                aPiecesSpan[25] = aPiecesTempSpan[34];
-                aPiecesSpan[26] = aPiecesTempSpan[35];
+                aPieces[24] = aPiecesTemp[33];
+                aPieces[25] = aPiecesTemp[34];
+                aPieces[26] = aPiecesTemp[35];
             }
         }
     }

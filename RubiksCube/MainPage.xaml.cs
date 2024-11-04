@@ -1998,3 +1998,34 @@ ________________________|_______|_______|_______|_______________________________
                         |_______|_______|_______|
                                   Front
 */
+
+/*
+SPAN ARRAYS ARE SLOWER THAN REGULAR ARRAYS IN THIS APP
+------------------------------------------------------
+Is het possible that string span array of 54 elements are slower than regular sting arrays in c# ?
+
+Yes, it is possible for a `Span<string>` array of 54 elements to be slower than a regular `string[]` array in C#.
+The performance difference can depend on several factors:
+1. **Memory Allocation**: `Span<T>` is a stack-only type, which means it is allocated on the stack and cannot be used
+   in asynchronous methods or stored in heap-allocated objects. This can sometimes lead to performance benefits,
+   but in cases where the stack space is limited or the span is used in a way that requires frequent copying, it might be slower¹.
+
+2. **Bounds Checking**: `Span<T>` includes bounds checking to prevent out-of-bounds errors, which can add a slight overhead
+   compared to regular arrays².
+
+3. **Usage Patterns**: If the `Span<string>` is being sliced or manipulated frequently, the overhead of these operations
+   can add up. Regular arrays might be faster in scenarios where the data is accessed in a straightforward manner without
+   much slicing or manipulation².
+
+4. **Garbage Collection**: Regular arrays are heap-allocated and subject to garbage collection, which can introduce pauses
+   in your application. `Span<T>`, being stack-allocated, avoids this but at the cost of limited lifetime and scope¹.
+
+In summary, while `Span<T>` can offer performance benefits in many scenarios, there are cases where a regular array
+might be more efficient, especially if the usage pattern involves minimal slicing and manipulation.
+
+If you have a specific use case or performance issue, feel free to share more details, and I can help you analyze it further!
+
+Source: Conversation with Copilot, 2024-11-04
+(1) Improve C# code performance with Span<T> - NDepend Blog. https://blog.ndepend.com/improve-c-code-performance-with-spant/.
+(2) Spans in C#: Your Best Friend for Efficient Coding - Habr. https://habr.com/en/articles/831844/.
+*/

@@ -66,10 +66,6 @@ namespace RubiksCube
         /// <returns></returns>
         private static async Task<bool> SolveFirstTwoLayersAsync()
         {
-            // Create a span for the arrays
-            //ReadOnlySpan<string> aPiecesSpan = aPieces;
-            //ReadOnlyMemory<string> aPiecesMemory = new Memory<string>(aPieces);
-
             string cT;
             int nLoopTimes = 0;
 
