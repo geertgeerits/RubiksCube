@@ -1,11 +1,9 @@
-﻿// Using span arrays is slower than using normal arays
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using static RubiksCube.Globals;
 
 namespace RubiksCube
 {
-    internal sealed class ClassSolveCubeCFOPspan
+    internal sealed class ClassSolveCubeCFOPSpan
     {
         //// Declare variables
         private const int nLoopTimesMax = 200;
