@@ -314,8 +314,11 @@ namespace RubiksCube
             // Solve the cube (CFOP solution)
             if (cSolution == "CFOP")
             {
-                //return await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();
+#if WINDOWS
+                return await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();
+#else
                 return await ClassSolveCubeCFOPSpan.SolveTheCubeCFOPAsync();
+#endif
             }
 
             // Solve the cube (Basic-80 solution)

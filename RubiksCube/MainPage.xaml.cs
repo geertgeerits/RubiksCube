@@ -2002,7 +2002,7 @@ ________________________|_______|_______|_______|_______________________________
 /*
 SPEED SPAN ARRAYS VERSUS REGULAR ARRAYS IN THIS APP
 ---------------------------------------------------
-My own tests: Android: Span - iOS: Span - Windows: Regular
+My own tests - which one is faster: Android: Span - iOS: Span - Windows: Regular
 
 Is het possible that string span array of 54 elements are slower than regular sting arrays in c# ?
 
