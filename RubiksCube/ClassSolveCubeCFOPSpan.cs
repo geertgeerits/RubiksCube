@@ -30,19 +30,19 @@ namespace RubiksCube
             }
 
             // F2L (Solving the first two layers completely)
-            if (!await SolveFirstTwoLayersAsync())
+            if (!await SolveFirstTwoLayers())
             {
                 return false;
             }
 
             // OLL (Orientation of last layer) Bottom layer
-            if (!await SolveBottomLayerOrientationAsync())
+            if (!await SolveBottomLayerOrientation())
             {
                 return false;
             }
 
             // OLL (Permutation of last layer) Bottom layer
-            if (!await SolveBottomLayerPermutationAsync())
+            if (!await SolveBottomLayerPermutation())
             {
                 return false;
             }
@@ -64,7 +64,7 @@ namespace RubiksCube
         /// Solve the first two layers (F2L)
         /// </summary>
         /// <returns></returns>
-        private static Task<bool> SolveFirstTwoLayersAsync()
+        private static Task<bool> SolveFirstTwoLayers()
         {
             // Create a span for the arrays
             ReadOnlySpan<string> aPiecesSpan = aPieces;
@@ -2202,7 +2202,7 @@ namespace RubiksCube
         /// OLL (Orientation of Last Layer) - 2-Look OLL
         /// </summary>
         /// <returns></returns>
-        private static Task<bool> SolveBottomLayerOrientationAsync()
+        private static Task<bool> SolveBottomLayerOrientation()
         {
             // Create a span for the arrays
             ReadOnlySpan<string> aPiecesSpan = aPieces;
@@ -2639,7 +2639,7 @@ namespace RubiksCube
         ///  Permutate the last layer - PLL
         /// </summary>
         /// <returns></returns>
-        private static Task<bool> SolveBottomLayerPermutationAsync()
+        private static Task<bool> SolveBottomLayerPermutation()
         {
             // Create a span for the arrays
             ReadOnlySpan<string> aPiecesSpan = aPieces;

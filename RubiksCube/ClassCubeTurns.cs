@@ -542,6 +542,8 @@ namespace RubiksCube
         /// <param name="cDirection"></param>
         public static void TurnFrontFaceTo(string cDirection)
         {
+            // In this case are regular arrays faster than span arrays
+
             // Create and start a stopwatch instance
             //long startTime = Stopwatch.GetTimestamp();
 
