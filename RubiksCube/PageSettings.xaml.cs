@@ -20,8 +20,8 @@ namespace RubiksCube
                 return;
             }
 #if WINDOWS
-            // Set the left margin of the title for windows
-            lblTitlePage.Margin = new Thickness(40, 0, 0, 0);
+            // Set the margins of the title for windows
+            lblTitlePage.Margin = new Thickness(40, 10, 0, 0);
 #endif
 #if IOS
             // Workaround for !!!BUG!!! in iOS with the Slider right margin

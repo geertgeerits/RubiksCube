@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-11-07 (YYYY-MM-DD)
+ * Date ........: 2024-11-11 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -55,7 +55,8 @@ namespace RubiksCube
             grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(625) });
             grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
             grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
-
+            
+            lblTitlePage.Margin = new Thickness(0, 5, 0, 0);
             imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
 #endif
 #if IOS

@@ -29,6 +29,7 @@
             </ImageButton>
 
             <Label
+                x:Name="lblTitlePage"
                 Style="{StaticResource labelStyleTitleView}"
                 Grid.Row="0"
                 Grid.Column="1"
