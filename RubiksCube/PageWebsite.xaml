@@ -4,7 +4,7 @@
              xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
              x:Class="RubiksCube.PageWebsite">
 
-    <NavigationPage.TitleView>
+    <Shell.TitleView>
         <Grid
             RowDefinitions="50"
             ColumnDefinitions="200*, 60, 60"
@@ -42,7 +42,7 @@
                 IsEnabled="False">
             </Button>
         </Grid>
-    </NavigationPage.TitleView>
+    </Shell.TitleView>
 
     <WebView
         x:Name="wvWebpage"

@@ -8,25 +8,23 @@
         }
 
         /// <summary>
-        /// Window dimensions and location for desktop apps
+        /// Create a window and set the dimensions and location for desktop apps
         /// </summary>
         /// <param name="activationState"></param>
         /// <returns></returns>
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var window = new Microsoft.Maui.Controls.Window(new NavigationPage(new MainPage()))
+            return new Window(new AppShell())
             {
                 X = 300,
                 Y = 40,
                 Height = 1000,
-                Width = 850,
-                MinimumHeight = 700,
-                MinimumWidth = 850,
-                MaximumHeight = 1000,
-                MaximumWidth = 850
+                Width = 900,
+                MinimumHeight = 800,
+                MinimumWidth = 900,
+                MaximumHeight = 1200,
+                MaximumWidth = 1100
             };
-
-            return window;
         }
     }
 }
