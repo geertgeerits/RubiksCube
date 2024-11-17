@@ -11,8 +11,7 @@
             x:Name="grdTitleView"
             RowDefinitions="50"
             ColumnDefinitions="60, 140*, 50, 60"
-            Margin="4"
-            BackgroundColor="Gold">
+            Margin="4">
 
             <ImageButton
                 x:Name="imgbtnAbout"
