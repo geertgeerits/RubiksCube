@@ -2,7 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RubiksCube"
              x:Class="RubiksCube.MainPage"
-             NavigationPage.HasBackButton="False"
              Loaded="OnPageLoad"
              Appearing="OnPageAppearing">
 
