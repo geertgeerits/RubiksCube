@@ -48,6 +48,11 @@ namespace RubiksCube
                 DisplayAlert("InitializeComponent: MainPage", ex.Message, "OK");
                 return;
             }
+#if WINDOWS
+            //// Set the margins for the controls in the title bar for Windows
+            imgbtnAbout.Margin = new Thickness(20, 0, 0, 0);
+            lblTitlePage.Margin = new Thickness(20, 10, 0, 0);
+#endif
 #if IOS
             // !!!BUG!!!? in iOS - Set the margin for the label 'lblExplainTurnCube' because Padding does not work in iOS
             lblExplainTurnCube.Margin = new Thickness(5, 0, 5, 0);
