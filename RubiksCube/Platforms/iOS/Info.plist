@@ -40,5 +40,9 @@
 	<string>2.0.29</string>
 	<key>CFBundleVersion</key>
 	<string>29</string>
+	<key>UIBackgroundModes</key>
+    <array>
+       <string>fetch</string>
+    </array>
 </dict>
 </plist>

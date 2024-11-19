@@ -8,7 +8,7 @@
     <Shell.TitleView>
         <Grid
             x:Name="grdTitleView"
-            RowDefinitions="50"
+            RowDefinitions="Auto"
             ColumnDefinitions="60, 140*, 50, 60"
             Margin="4">
 

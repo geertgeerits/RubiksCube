@@ -378,11 +378,11 @@
     </Style>
 
     <Style x:Key="sliderStyleColor" TargetType="Slider">
-        <!--<Setter Property="HorizontalOptions" Value="Center" /> !!!BUG!!!-->
+        <!--<Setter Property="HorizontalOptions" Value="Center" />--> <!--!!!BUG!!!-->
         <Setter Property="VerticalOptions" Value="Center" />
-        <!--<Setter Property="MinimumHeightRequest" Value="30" /> !!!BUG!!!-->
+        <!--<Setter Property="MinimumHeightRequest" Value="30" />--> <!--!!!BUG!!!-->
         <Setter Property="HeightRequest" Value="30" />
-        <Setter Property="Margin" Value="{OnPlatform '0,0,6,0', Android='0,0,6,0', iOS='0,0,6,0', WinUI='6,0,6,0'}" />
+        <Setter Property="Margin" Value="{OnPlatform '0,0,6,0', Android='6,0,6,0', iOS='10,0,6,0', WinUI='10,8,10,0'}" /> <!--!!!BUG!!! iOS-->
         <Setter Property="Minimum" Value="0" />
         <Setter Property="Maximum" Value="255" />
     </Style>
@@ -392,7 +392,7 @@
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="GroupName" Value="rbgCubeColors" />
         <Setter Property="WidthRequest" Value="30" />
-        <Setter Property="Margin" Value="{OnPlatform 0, iOS=0, Android=0, WinUI='10,0,0,0'}" />
+        <Setter Property="Margin" Value="{OnPlatform 0, iOS='2,0,0,0', Android=0, WinUI='10,0,0,0'}" />
     </Style>
 
     <Style x:Key="polygonStyleColor" TargetType="Polygon">
