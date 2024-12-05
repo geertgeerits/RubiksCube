@@ -4,13 +4,13 @@
              xmlns:resx="clr-namespace:RubiksCube.Resources.Languages"
              x:Class="RubiksCube.PageAbout">
 
-    <Shell.TitleView>
+    <NavigationPage.TitleView>
         <Label
             x:Name="lblTitlePage"
             Style="{StaticResource labelStyleTitleView}"
             Text="{x:Static resx:CubeLang.Info_Text}">
         </Label>
-    </Shell.TitleView>
+    </NavigationPage.TitleView>
 
     <ScrollView>
         <StackLayout>

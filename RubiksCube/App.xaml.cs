@@ -14,7 +14,8 @@
         /// <returns></returns>
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell())
+            //return new Window(new AppShell())
+            return new Window(new NavigationPage(new MainPage()))
             {
                 X = 300,
                 Y = 40,
@@ -23,7 +24,7 @@
                 MinimumHeight = 800,
                 MinimumWidth = 900,
                 MaximumHeight = 1200,
-                MaximumWidth = 1100
+                MaximumWidth = 900
             };
         }
     }
