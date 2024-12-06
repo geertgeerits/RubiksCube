@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-12-05 (YYYY-MM-DD)
+ * Date ........: 2024-12-06 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -54,13 +54,10 @@ namespace RubiksCube
             //            lblTitlePage.Margin = new Thickness(20, 10, 0, 0);
             //#endif
 #if WINDOWS
-            // !!!BUG!!! in Windows - Set the ColumnDefinitions for the TitleView because XAML 140* does not work in Windows if using the NavigationPage
-            grdTitleView.ColumnDefinitions.Clear();
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(675) });
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(50) });
-            grdTitleView.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
+            //// !!!BUG!!! in Windows: Set the width for the 2e colomn of the grid because 'GridUnitType.Star' does not work in Windows if using the 'NavigationPage.TitleView'
+            grdTitleView.ColumnDefinitions[1].Width = new GridLength(675);
 
+            //// Set the margins for the controls in the title bar for Windows
             imgbtnAbout.HorizontalOptions = LayoutOptions.Center;
             lblTitlePage.Margin = new Thickness(16, 10, 0, 0);
 #endif

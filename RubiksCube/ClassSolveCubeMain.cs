@@ -462,6 +462,14 @@ namespace RubiksCube
                             lCubeTurnsToClean[i + 1] = cNone;
                         }
                     }
+                    // Whole cube turns
+                    // Replace y' & x & y -> z
+                    else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
+                    {
+                        lCubeTurnsToClean[i] = "z";
+                        lCubeTurnsToClean[i + 1] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
                 }
 
                 // Remove the last turn if it is turning the whole cube (starts with x, y or z)
