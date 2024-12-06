@@ -477,6 +477,13 @@ namespace RubiksCube
                         lCubeTurnsToClean[i + 1] = cNone;
                         lCubeTurnsToClean[i + 2] = cNone;
                     }
+                    // Replace y2 & x & y2 -> x'
+                    else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
+                    {
+                        lCubeTurnsToClean[i] = "x'";
+                        lCubeTurnsToClean[i + 1] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
                 }
 
                 // Remove the last turn if it is turning the whole cube (starts with x, y or z)
