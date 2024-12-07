@@ -382,7 +382,7 @@ namespace RubiksCube
                 _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBeforeClean.txt");
             }
 #endif
-            if (lCubeTurns.Count < 4)
+            if (lCubeTurns.Count < 5)
             {
                 return;
             }
@@ -466,24 +466,31 @@ namespace RubiksCube
                     // Replace y' & x & y -> z
                     else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
                     {
-                        lCubeTurnsToClean[i] = "z";
-                        lCubeTurnsToClean[i + 1] = cNone;
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 1] = "z";
                         lCubeTurnsToClean[i + 2] = cNone;
                     }
                     // Replace y & x & y' -> z'
                     else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y'")
                     {
-                        lCubeTurnsToClean[i] = "z'";
-                        lCubeTurnsToClean[i + 1] = cNone;
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 1] = "z'";
                         lCubeTurnsToClean[i + 2] = cNone;
                     }
                     // Replace y2 & x & y2 -> x'
                     else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
                     {
-                        lCubeTurnsToClean[i] = "x'";
-                        lCubeTurnsToClean[i + 1] = cNone;
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 1] = "x'";
                         lCubeTurnsToClean[i + 2] = cNone;
                     }
+                    // Delete the first and the third half turn who are the same and leave the second turn that is on the opposite face
+                    // Replace U2 & D & U2 -> D
+                    //else if (lCubeTurnsToClean[i] == "U2" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U2")
+                    //{
+                    //    lCubeTurnsToClean[i] = cNone;
+                    //    lCubeTurnsToClean[i + 2] = cNone;
+                    //}
                 }
 
                 // Remove the last turn if it is turning the whole cube (starts with x, y or z)
