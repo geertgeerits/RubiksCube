@@ -462,6 +462,7 @@ namespace RubiksCube
                             lCubeTurnsToClean[i + 1] = cNone;
                         }
                     }
+                    
                     // Whole cube turns
                     // Replace y' & x & y -> z
                     else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
@@ -484,7 +485,8 @@ namespace RubiksCube
                         lCubeTurnsToClean[i + 1] = "x'";
                         lCubeTurnsToClean[i + 2] = cNone;
                     }
-                    // Delete the first and the third half turn who are the same and leave the second turn that is on the opposite face
+                    
+                    // Delete the first and the third 1/2 turn who are the same and leave the second turn that is on the opposite face
                     // Replace U2 & D & U2 -> D
                     else if (lCubeTurnsToClean[i] == "U2" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U2")
                     {
@@ -517,6 +519,20 @@ namespace RubiksCube
                     }
                     // Replace R2 & L & R2 -> L
                     else if (lCubeTurnsToClean[i] == "R2" && lCubeTurnsToClean[i + 1].StartsWith('L') && lCubeTurnsToClean[i + 2] == "R2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    
+                    // Delete the first and the third 1/4 turn who are reversed and leave the second turn that is on the opposite face
+                    // Replace U & D & U' -> D
+                    else if (lCubeTurnsToClean[i] == "U" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U'")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    // Replace U' & D & U -> D
+                    else if (lCubeTurnsToClean[i] == "U'" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U")
                     {
                         lCubeTurnsToClean[i] = cNone;
                         lCubeTurnsToClean[i + 2] = cNone;
