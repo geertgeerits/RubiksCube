@@ -486,11 +486,41 @@ namespace RubiksCube
                     }
                     // Delete the first and the third half turn who are the same and leave the second turn that is on the opposite face
                     // Replace U2 & D & U2 -> D
-                    //else if (lCubeTurnsToClean[i] == "U2" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U2")
-                    //{
-                    //    lCubeTurnsToClean[i] = cNone;
-                    //    lCubeTurnsToClean[i + 2] = cNone;
-                    //}
+                    else if (lCubeTurnsToClean[i] == "U2" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    // Replace D2 & U & D2 -> U
+                    else if (lCubeTurnsToClean[i] == "D2" && lCubeTurnsToClean[i + 1].StartsWith('U') && lCubeTurnsToClean[i + 2] == "D2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    // Replace F2 & B & F2 -> B
+                    else if (lCubeTurnsToClean[i] == "F2" && lCubeTurnsToClean[i + 1].StartsWith('B') && lCubeTurnsToClean[i + 2] == "F2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    // Replace B2 & F & B2 -> F
+                    else if (lCubeTurnsToClean[i] == "B2" && lCubeTurnsToClean[i + 1].StartsWith('F') && lCubeTurnsToClean[i + 2] == "B2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    // Replace L2 & R & L2 -> R
+                    else if (lCubeTurnsToClean[i] == "L2" && lCubeTurnsToClean[i + 1].StartsWith('R') && lCubeTurnsToClean[i + 2] == "L2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
+                    // Replace R2 & L & R2 -> L
+                    else if (lCubeTurnsToClean[i] == "R2" && lCubeTurnsToClean[i + 1].StartsWith('L') && lCubeTurnsToClean[i + 2] == "R2")
+                    {
+                        lCubeTurnsToClean[i] = cNone;
+                        lCubeTurnsToClean[i + 2] = cNone;
+                    }
                 }
 
                 // Remove the last turn if it is turning the whole cube (starts with x, y or z)
