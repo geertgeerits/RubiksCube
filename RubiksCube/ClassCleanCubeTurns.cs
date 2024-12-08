@@ -19,7 +19,7 @@ namespace RubiksCube
         {
             //long startTime = Stopwatch.GetTimestamp();
 
-            // Copy the list with the cube turns to a new list to return to it in case of an error (like RRRR RRR R L R')
+            // Copy the list with the cube turns to a new list to return in case of an error (like RRRR RRR R L R')
             List<string> lCubeTurnsToCleanOriginal = new(lCubeTurnsToClean);
 #if DEBUG
             // Save the list with the cube turns before the cleaning to a file, for testing purposes
@@ -28,11 +28,6 @@ namespace RubiksCube
                 _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBeforeFirstClean.txt");
             }
 #endif
-            if (lCubeTurnsToClean.Count < 7)
-            {
-                return;
-            }
-
             // Do the cleaning between 2 and 10 times
             try
             {
@@ -40,7 +35,8 @@ namespace RubiksCube
                 {
                     for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                     {
-                        if (i + 1 < lCubeTurnsToClean.Count)
+                        // Prevent the IndexOutOfRangeException
+                        if (i + 2 < lCubeTurnsToClean.Count)
                         {
                             // Replace two same turns with one turn or no turn
                             if (lCubeTurnsToClean[i] == lCubeTurnsToClean[i + 1])
@@ -51,14 +47,12 @@ namespace RubiksCube
                                     lCubeTurnsToClean[i] = lCubeTurnsToClean[i] + c2;
                                     lCubeTurnsToClean[i + 1] = cNone;
                                 }
-
                                 // U' & U' -> U2
                                 else if (lCubeTurnsToClean[i].EndsWith(cApos))
                                 {
                                     lCubeTurnsToClean[i] = lCubeTurnsToClean[i][0] + "2";
                                     lCubeTurnsToClean[i + 1] = cNone;
                                 }
-
                                 // U2 & U2 -> None
                                 else if (lCubeTurnsToClean[i].EndsWith(c2))
                                 {
@@ -112,13 +106,10 @@ namespace RubiksCube
                                     lCubeTurnsToClean[i + 1] = cNone;
                                 }
                             }
-                        }
 
-                        if (i + 2 < lCubeTurnsToClean.Count)
-                        {
-                        // Whole cube turns
-                        // Replace y' & x & y -> z
-                        else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
+                            // Whole cube turns
+                            // Replace y' & x & y -> z
+                            else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
                             {
                                 lCubeTurnsToClean[i] = cNone;
                                 lCubeTurnsToClean[i + 1] = "z";
