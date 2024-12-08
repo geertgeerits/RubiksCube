@@ -2,7 +2,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2024
  * Version .....: 2.0.29
- * Date ........: 2024-12-07 (YYYY-MM-DD)
+ * Date ........: 2024-12-08 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -302,7 +302,7 @@ namespace RubiksCube
             if (Globals.lCubeTurns.Count > 0)
             {
                 Globals.lCubeTurns.Reverse();
-                ClassSolveCubeMain.CleanListCubeTurns(Globals.lCubeTurns, true);
+                ClassCleanCubeTurns.CleanListCubeTurns(Globals.lCubeTurns, true);
                 bSolved = true;
             }
             // Solve the cube from the turns the program has made
@@ -329,17 +329,17 @@ namespace RubiksCube
                     bSolved = await ClassSolveCubeMain.SolveCubeFromMultiplePositionsAsync("Cross");
                 }
 
-                // For testing comment out the lines 267-268 and 311-327 (and change the line 354 to bTestSolveCube = true)
-                // and uncomment one of the lines 334-338/339 to test one of the solutions to solve the cube.
+                // For testing comment out the lines 270-271 and 315-330 (and change the line 357 to bTestSolveCube = true)
+                // and uncomment one of the lines 337-341/342 to test one of the solutions to solve the cube.
                 // If using the method 'TestCubeTurnsAsync()' then include the file 'ClassTestCubeTurns.cs' in the project,
                 // otherwise exclude the file 'ClassTestCubeTurns.cs' from the project.
 
-                //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();        // Test the turns of the cube
-                //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();     // For testing CFOP solution
-                //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();   // For testing Basic solution
-                //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();   // For testing Daisy solution
-                //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();   // For testing Cross solution
-                //ClassSolveCubeMain.CleanListCubeTurns();                        // For testing the clean list cube turns
+                //bSolved = await ClassTestCubeTurns.TestCubeTurnsAsync();          // Test the turns of the cube
+                //bSolved = await ClassSolveCubeCFOP.SolveTheCubeCFOPAsync();       // For testing CFOP solution
+                //bSolved = await ClassSolveCubeBasic.SolveTheCubeBasicAsync();     // For testing Basic solution
+                //bSolved = await ClassSolveCubeDaisy.SolveTheCubeDaisyAsync();     // For testing Daisy solution
+                //bSolved = await ClassSolveCubeCross.SolveTheCubeCrossAsync();     // For testing Cross solution
+                //ClassCleanCubeTurns.CleanListCubeTurns(Globals.lCubeTurns, true);   // For testing the clean list cube turns
 
                 // Restore the start colors of the cube from array aStartPieces[]
                 Array.Copy(Globals.aStartPieces, Globals.aPieces, 54);
