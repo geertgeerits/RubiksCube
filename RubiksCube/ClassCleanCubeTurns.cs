@@ -4,11 +4,6 @@ namespace RubiksCube
 {
     internal sealed class ClassCleanCubeTurns
     {
-        //// Declare the variables
-        private const string cNone = "None";
-        private const char cApos = '\'';
-        private const char c2 = '2';
-
         /// <summary>
         /// Clean the list with the cube turns by replacing or removing turns
         /// <para>The list is passed by reference. This means that the method receives a reference to the original list, not a copy of it. Therefore, any changes made to the list within the method will affect the original list.</para>
@@ -17,7 +12,13 @@ namespace RubiksCube
         /// <param name="bCubeTurnsSave"></param>
         public static void CleanListCubeTurns(List<string> lCubeTurnsToClean, bool bCubeTurnsSave)
         {
+            // Start the stopwatch
             //long startTime = Stopwatch.GetTimestamp();
+
+            // Declare the variables
+            const string cNone = "None";
+            const char cApos = '\'';
+            const char c2 = '2';
 
             // Copy the list with the cube turns to a new list to return in case of an error (like RRRR RRR R L R')
             List<string> lCubeTurnsToCleanOriginal = new(lCubeTurnsToClean);
@@ -36,7 +37,7 @@ namespace RubiksCube
                     for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                     {
                         // Prevent the IndexOutOfRangeException
-                        if (i + 2 < lCubeTurnsToClean.Count)
+                        if (i + 1 < lCubeTurnsToClean.Count)
                         {
                             // Replace two same turns with one turn or no turn
                             if (lCubeTurnsToClean[i] == lCubeTurnsToClean[i + 1])
@@ -106,10 +107,14 @@ namespace RubiksCube
                                     lCubeTurnsToClean[i + 1] = cNone;
                                 }
                             }
-
+                        }                            
+                        
+                        // Prevent the IndexOutOfRangeException
+                        if (i + 2 < lCubeTurnsToClean.Count)
+                        {
                             // Whole cube turns
                             // Replace y' & x & y -> z
-                            else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
+                            if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
                             {
                                 lCubeTurnsToClean[i] = cNone;
                                 lCubeTurnsToClean[i + 1] = "z";
@@ -276,6 +281,7 @@ namespace RubiksCube
                 return;
             }
 
+            // Stop the stopwatch
             //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
             //_ = Application.Current!.Windows[0].Page!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
 #if DEBUG
