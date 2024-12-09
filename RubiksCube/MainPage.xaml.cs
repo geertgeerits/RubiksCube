@@ -1,6 +1,6 @@
 ﻿/* Program .....: RubiksCube.sln
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
- * Copyright ...: (C) 1981-2024
+ * Copyright ...: (C) 1981-2025
  * Version .....: 2.0.29
  * Date ........: 2024-12-09 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
