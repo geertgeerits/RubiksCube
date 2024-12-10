@@ -145,9 +145,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
-		<ProvisioningType>automatic</ProvisioningType>
-		<CodesignKey>Apple Development: Created via API (KL96X68Q72)</CodesignKey>
-		<CodesignProvision></CodesignProvision>
+		<ProvisioningType>manual</ProvisioningType>
+		<CodesignKey>Apple Distribution: Geert Geerits (S6CWMSSJ54)</CodesignKey>
+		<CodesignProvision>provisioningprofile01iOSRubiksCube</CodesignProvision>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
