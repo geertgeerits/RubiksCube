@@ -20,7 +20,7 @@ namespace RubiksCube
             const char cApos = '\'';
             const char c2 = '2';
 
-            // Copy the list with the cube turns to a new list to return in case of an error (like RRRR RRR R L R')
+            // Copy the list with the cube turns to a new list to return in case of an error (IndexOutOfRangeException RRRR RRR R L R')
             List<string> lCubeTurnsToCleanOriginal = new(lCubeTurnsToClean);
 #if DEBUG
             // Save the list with the cube turns before the cleaning to a file, for testing purposes
@@ -266,7 +266,7 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
 
-                            // Replace the first turn with a 1/2 turn (first and third turn) and the second turn with another face
+                            // Replace the first turn with a 1/2 turn (first and third turn) and the second turn with another face turn
                             // Replace y F y -> L
                             else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F" && lCubeTurnsToClean[i + 2] == "y")
                             {
