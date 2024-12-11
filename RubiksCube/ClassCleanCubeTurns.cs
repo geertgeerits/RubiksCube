@@ -450,9 +450,10 @@ namespace RubiksCube
             }
             catch (Exception ex)
             {
-                //_ = Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, "CleanListCubeTurns: " + ex.Message, CubeLang.ButtonClose_Text);
+#if DEBUG                
                 Debug.WriteLine("Error in method CleanListCubeTurns: " + ex.Message);
-
+                _ = Application.Current!.Windows[0].Page!.DisplayAlert(CubeLang.ErrorTitle_Text, "CleanListCubeTurns: " + ex.Message, CubeLang.ButtonClose_Text);
+#endif
                 // Restore the list with the original cube turns
                 lCubeTurnsToClean.Clear();
                 lCubeTurnsToClean.AddRange(lCubeTurnsToCleanOriginal);
