@@ -14,11 +14,16 @@ namespace RubiksCube
         {
             // Start the stopwatch
             //long startTime = Stopwatch.GetTimestamp();
-
+            
             // Declare the variables
             const string cNone = "None";
             const char cApos = '\'';
             const char c2 = '2';
+
+            // For testing purposes - See class ClassTestCubeTurns.cs, method TestCleanListCubeTurns
+            //List<string> lCubeTurns1 = ["U", "U", "U'", "U'", "U2", "U2", "U", "U'", "U'", "U", "U", "U2", "U2", "U", "U'", "U2", "U2", "U'"];
+            //lCubeTurnsToClean.AddRange(lCubeTurns1);
+            //Debug.WriteLine($"lCubeTurnsToClean: {lCubeTurnsToClean.Count}");
 
             // Copy the list with the cube turns to a new list to return in case of an error (IndexOutOfRangeException RRRR RRR R L R')
             List<string> lCubeTurnsToCleanOriginal = new(lCubeTurnsToClean);

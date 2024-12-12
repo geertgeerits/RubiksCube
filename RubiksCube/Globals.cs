@@ -32,27 +32,27 @@ namespace RubiksCube
         // Test variable
         public static bool bSolveNewSolutionsTest;
 #endif
-        
+
         // Cube turns
         // Face rotations
-        public const string turnFrontCW = "F";
-        public const string turnFrontCCW = "F'";
-        public const string turnFront2 = "F2";
-        public const string turnRightCW = "R";
-        public const string turnRightCCW = "R'";
-        public const string turnRight2 = "R2";
-        public const string turnBackCW = "B";
-        public const string turnBackCCW = "B'";
-        public const string turnBack2 = "B2";
-        public const string turnLeftCW = "L";
-        public const string turnLeftCCW = "L'";
-        public const string turnLeft2 = "L2";
         public const string turnUpCW = "U";
         public const string turnUpCCW = "U'";
         public const string turnUp2 = "U2";
         public const string turnDownCW = "D";
         public const string turnDownCCW = "D'";
         public const string turnDown2 = "D2";
+        public const string turnFrontCW = "F";
+        public const string turnFrontCCW = "F'";
+        public const string turnFront2 = "F2";
+        public const string turnBackCW = "B";
+        public const string turnBackCCW = "B'";
+        public const string turnBack2 = "B2";
+        public const string turnRightCW = "R";
+        public const string turnRightCCW = "R'";
+        public const string turnRight2 = "R2";
+        public const string turnLeftCW = "L";
+        public const string turnLeftCCW = "L'";
+        public const string turnLeft2 = "L2";
 
         // Slice turns
         public const string turnUpVerMiddleFront = "M";
@@ -66,24 +66,24 @@ namespace RubiksCube
         public const string turnUpHorMiddle2 = "S2";
 
         // Two layers at the same time
-        public const string turn2LayersFrontCW = "f";
-        public const string turn2LayersFrontCCW = "f'";
-        public const string turn2LayersFront2 = "f2";
-        public const string turn2LayersRightCW = "r";
-        public const string turn2LayersRightCCW = "r'";
-        public const string turn2LayersRight2 = "r2";
-        public const string turn2LayersBackCW = "b";
-        public const string turn2LayersBackCCW = "b'";
-        public const string turn2LayersBack2 = "b2";
-        public const string turn2LayersLeftCW = "l";
-        public const string turn2LayersLeftCCW = "l'";
-        public const string turn2LayersLeft2 = "l2";
         public const string turn2LayersUpCW = "u";
         public const string turn2LayersUpCCW = "u'";
         public const string turn2LayersUp2 = "u2";
         public const string turn2LayersDownCW = "d";
         public const string turn2LayersDownCCW = "d'";
         public const string turn2LayersDown2 = "d2";
+        public const string turn2LayersFrontCW = "f";
+        public const string turn2LayersFrontCCW = "f'";
+        public const string turn2LayersFront2 = "f2";
+        public const string turn2LayersBackCW = "b";
+        public const string turn2LayersBackCCW = "b'";
+        public const string turn2LayersBack2 = "b2";
+        public const string turn2LayersRightCW = "r";
+        public const string turn2LayersRightCCW = "r'";
+        public const string turn2LayersRight2 = "r2";
+        public const string turn2LayersLeftCW = "l";
+        public const string turn2LayersLeftCCW = "l'";
+        public const string turn2LayersLeft2 = "l2";
 
         // Whole cube turns
         public const string turnCubeFrontToUp = "x";

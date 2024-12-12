@@ -12,6 +12,7 @@ namespace RubiksCube
         {
             await TestCubeTurnsLetterAsync();
             //await TestCubeTurnsToCleanAsync();
+            //await TestCubeTurnsToCleanAsync();
             //await TestSolveCubeTurnsCFOP();
             //await TestSolveCubeTurnsBasic();
             //await TestSolveCubeTurnsDaisy();
@@ -28,12 +29,12 @@ namespace RubiksCube
         private static async Task<bool> TestCubeTurnsLetterAsync()
         {
             // Test the face turns
-            await MakeTurnAsync("F F' F2");
-            await MakeTurnAsync("R R' R2");
-            await MakeTurnAsync("B B' B2");
-            await MakeTurnAsync("L L' L2");
             await MakeTurnAsync("U U' U2");
             await MakeTurnAsync("D D' D2");
+            await MakeTurnAsync("F F' F2");
+            await MakeTurnAsync("B B' B2");
+            await MakeTurnAsync("L L' L2");
+            await MakeTurnAsync("R R' R2");
 
             // Test the middle layer turns
             await MakeTurnAsync("M M' M2");
@@ -41,12 +42,12 @@ namespace RubiksCube
             await MakeTurnAsync("S S' S2");
 
             // Test two layers at the same time
-            await MakeTurnAsync("f f' f2");
-            await MakeTurnAsync("r r' r2");
-            await MakeTurnAsync("b b' b2");
-            await MakeTurnAsync("l l' l2");
             await MakeTurnAsync("u u' u2");
             await MakeTurnAsync("d d' d2");
+            await MakeTurnAsync("f f' f2");
+            await MakeTurnAsync("b b' b2");
+            await MakeTurnAsync("l l' l2");
+            await MakeTurnAsync("r r' r2");
 
             // Test the cube turns
             await MakeTurnAsync("x x' x2");
@@ -68,6 +69,23 @@ namespace RubiksCube
             await MakeTurnAsync("L RR R2' U D");
 
             return true;
+        }
+
+        /// <summary>
+        /// Test the cleaning process of the turns
+        /// </summary>
+        /// <returns></returns>
+        private static async Task<bool> TestCubeTurnsToCleanAsync()
+        {
+            List<string> lCubeTurns1 = ["U", "U", "U'", "U'", "U2", "U2", "U", "U'", "U'", "U", "U", "U2", "U2", "U", "U'", "U2", "U2", "U'"];
+            List<string> lCubeTurns2 = ["y'", "x", "y", "y", "x", "y'", "y2", "x", "y2", "y2", "x", "y"];
+            List<string> lCubeTurns3 = ["U2", "D", "U2", "D2", "U", "D2", "F2", "B", "F2", "B2", "F", "B2", "L2", "R", "L2", "R2", "L", "R2"];
+            List<string> lCubeTurns4A = ["y2", "F", "y2", "y2", "F'", "y2", "y2", "F2", "y2", "y2", "B", "y2", "y2", "B'", "y2", "y2", "B2", "y2"];
+            List<string> lCubeTurns4B = ["y2", "R", "y2", "y2", "R'", "y2", "y2", "R2", "y2", "y2", "L", "y2", "y2", "L'", "y2", "y2", "L2", "y2"];
+            List<string> lCubeTurns5A = ["y", "F", "y", "y", "F'", "y", "y", "F2", "y", "y", "B", "y", "y", "B'", "y", "y", "B2", "y"];
+            List<string> lCubeTurns5B = ["y", "R", "y", "y", "R'", "y", "y", "R2", "y", "y", "L", "y", "y", "L'", "y", "y", "L2", "y"];
+            List<string> lCubeTurns6A = ["U", "D", "U'", "U'", "D", "U", "D", "U", "D'", "D'", "U", "D", "F", "B", "F'", "F'", "B", "F"];
+            List<string> lCubeTurns6B = ["B", "F", "B'", "B'", "F", "B", "L", "R", "L'", "L'", "R", "L", "R", "L", "R'", "R'", "L", "R"];
         }
 
         /// <summary>
