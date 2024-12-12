@@ -21,6 +21,10 @@ namespace RubiksCube
             const char c2 = '2';
 
             // For testing purposes - See class ClassTestCubeTurns.cs, method TestCleanListCubeTurns
+            //List<string> lCubeTurnsStart = ["D", "F2", "U", "F'", "y2", "F'", "U", "L'", "F2", "y", "U'", "R2", "y2", "F2", "y", "U'", "R2", "y2", "U2", "R", "U", "R'", "d", "R'", "U'", "R", "y2", "U'", "R", "U", "R'", "y2", "F'", "U2", "F", "U'", "F'", "U", "F", "y'", "U'", "R", "U2", "R'", "U'", "R", "U'", "R2", "y'", "R'", "U'", "R", "U", "B", "U", "x", "z'", "R2", "U2", "R'", "D'", "R", "U2", "R'", "D", "R'"];
+            //lCubeTurnsToClean.Clear();
+            //lCubeTurnsToClean.AddRange(lCubeTurnsStart);
+
             //List<string> lCubeTurns1 = ["U", "U", "U'", "U'", "U2", "U2", "U", "U'", "U'", "U", "U", "U2", "U2", "U", "U'", "U2", "U2", "U'"];
             //lCubeTurnsToClean.AddRange(lCubeTurns1);
             //Debug.WriteLine($"lCubeTurnsToClean: {lCubeTurnsToClean.Count}");

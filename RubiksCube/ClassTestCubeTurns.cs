@@ -77,6 +77,8 @@ namespace RubiksCube
         /// <returns></returns>
         private static async Task<bool> TestCubeTurnsToCleanAsync()
         {
+            List<string> lCubeTurnsStart = ["D","F2","U","F'","y2","F'","U","L'","F2","y","U'","R2","y2","F2","y","U'","R2","y2","U2","R","U","R'","d","R'","U'","R","y2","U'","R","U","R'","y2","F'","U2","F","U'","F'","U","F","y'","U'","R","U2","R'","U'","R","U'","R2","y'","R'","U'","R","U","B","U","x","z'","R2","U2","R'","D'","R","U2","R'","D","R'];
+
             List<string> lCubeTurns1 = ["U", "U", "U'", "U'", "U2", "U2", "U", "U'", "U'", "U", "U", "U2", "U2", "U", "U'", "U2", "U2", "U'"];
             List<string> lCubeTurns2 = ["y'", "x", "y", "y", "x", "y'", "y2", "x", "y2", "y2", "x", "y"];
             List<string> lCubeTurns3 = ["U2", "D", "U2", "D2", "U", "D2", "F2", "B", "F2", "B2", "F", "B2", "L2", "R", "L2", "R2", "L", "R2"];
