@@ -10,9 +10,9 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CubeDataSave()
         {
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
-            
-            //Debug.WriteLine("FileSystem.CacheDirectory: " + FileSystem.CacheDirectory);  // For testing
+            string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "RubiksCube.txt");
+
+            //Debug.WriteLine("FileSystem.Current.CacheDirectory: " + FileSystem.Current.CacheDirectory);  // For testing
 
             if (File.Exists(cFileName))
             {
@@ -53,7 +53,7 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CubeDataOpen()
         {
-            string cFileName = Path.Combine(FileSystem.CacheDirectory, "RubiksCube.txt");
+            string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, "RubiksCube.txt");
 
             if (File.Exists(cFileName) == false)
             {
@@ -96,9 +96,9 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CubeTurnsSave(string cFile)
         {
-            string cFileName = Path.Combine(FileSystem.AppDataDirectory, cFile);
-            
-            //Debug.WriteLine("FileSystem.AppDataDirectory: " + FileSystem.AppDataDirectory);  // For testing
+            string cFileName = Path.Combine(FileSystem.Current.AppDataDirectory, cFile);
+
+            //Debug.WriteLine("FileSystem.Current.AppDataDirectory: " + FileSystem.Current.AppDataDirectory);  // For testing
 
             try
             {
