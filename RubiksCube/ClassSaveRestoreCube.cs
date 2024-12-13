@@ -96,9 +96,9 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CubeTurnsSave(string cFile)
         {
-            string cFileName = Path.Combine(FileSystem.Current.AppDataDirectory, cFile);
+            string cFileName = Path.Combine(FileSystem.Current.CacheDirectory, cFile);
 
-            //Debug.WriteLine("FileSystem.Current.AppDataDirectory: " + FileSystem.Current.AppDataDirectory);  // For testing
+            //Debug.WriteLine("FileSystem.Current.CacheDirectory: " + FileSystem.Current.CacheDirectory);  // For testing
 
             try
             {
