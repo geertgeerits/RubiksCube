@@ -12,15 +12,15 @@ namespace RubiksCube
         /// <param name="bCubeTurnsSave"></param>
         public static void CleanListCubeTurns(List<string> lCubeTurnsToClean, bool bCubeTurnsSave)
         {
-            // Start the stopwatch
+            //// Start the stopwatch
             //long startTime = Stopwatch.GetTimestamp();
             
-            // Declare the variables
+            //// Declare the variables
             const string cNone = "None";
             const char cApos = '\'';
             const char c2 = '2';
 
-            // For testing purposes - See class ClassTestCubeTurns.cs, method TestCleanListCubeTurns
+            ////// For testing purposes - See class ClassTestCubeTurns.cs, method TestCleanListCubeTurns
             //List<string> lCubeTurnsStart = ["D", "F2", "U", "F'", "y2", "F'", "U", "L'", "F2", "y", "U'", "R2", "y2", "F2", "y", "U'", "R2", "y2", "U2", "R", "U", "R'", "d", "R'", "U'", "R", "y2", "U'", "R", "U", "R'", "y2", "F'", "U2", "F", "U'", "F'", "U", "F", "y'", "U'", "R", "U2", "R'", "U'", "R", "U'", "R2", "y'", "R'", "U'", "R", "U", "B", "U", "x", "z'", "R2", "U2", "R'", "D'", "R", "U2", "R'", "D", "R'"];
             //lCubeTurnsToClean.Clear();
             //lCubeTurnsToClean.AddRange(lCubeTurnsStart);
@@ -29,26 +29,26 @@ namespace RubiksCube
             //lCubeTurnsToClean.AddRange(lCubeTurns1);
             //Debug.WriteLine($"lCubeTurnsToClean: {lCubeTurnsToClean.Count}");
 
-            // Copy the list with the cube turns to a new list to return in case of an error (IndexOutOfRangeException RRRR RRR R L R')
+            //// Copy the list with the cube turns to a new list to return in case of an error (IndexOutOfRangeException RRRR RRR R L R')
             List<string> lCubeTurnsToCleanOriginal = new(lCubeTurnsToClean);
 #if DEBUG
-            // Save the list with the cube turns before the cleaning to a file, for testing purposes
+            //// Save the list with the cube turns before the cleaning to a file, for testing purposes
             if (bCubeTurnsSave)
             {
                 _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsBeforeFirstClean.txt");
             }
 #endif
-            // Do the cleaning between 2 and 10 times
+            //// Do the cleaning between 2 and 10 times
             try
             {
                 for (int nNumberCleanings = 1; nNumberCleanings < 11; nNumberCleanings++)
                 {
                     for (int i = 0; i < lCubeTurnsToClean.Count - 1; i++)
                     {
-                        // Prevent the IndexOutOfRangeException
+                        //// Prevent the IndexOutOfRangeException
                         if (i + 1 < lCubeTurnsToClean.Count)
                         {
-                            // Replace two same turns with one turn or no turn
+                            //// Replace two same turns with one turn or no turn
                             if (lCubeTurnsToClean[i] == lCubeTurnsToClean[i + 1])
                             {
                                 // U U -> U2
@@ -71,7 +71,7 @@ namespace RubiksCube
                                 }
                             }
 
-                            // Replace two same first letters of a turn with another turn or no turn
+                            //// Replace two same first letters of a turn with another turn or no turn
                             else if (lCubeTurnsToClean[i][0] == lCubeTurnsToClean[i + 1][0])
                             {
                                 // U U' -> None
@@ -118,22 +118,22 @@ namespace RubiksCube
                             }
                         }                            
                         
-                        // Prevent the IndexOutOfRangeException
+                        //// Prevent the IndexOutOfRangeException
                         if (i + 2 < lCubeTurnsToClean.Count)
                         {
-                            // Whole cube turns
-                            // Replace y' x y -> z
-                            if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "z";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
+                            //// Whole cube turns (x, y, z)
                             // Replace y x y' -> z'
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y'")
+                            if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y'")
                             {
                                 lCubeTurnsToClean[i] = cNone;
                                 lCubeTurnsToClean[i + 1] = "z'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y' x y -> z
+                            else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "z";
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
                             // Replace y2 x y2 -> x'
@@ -151,7 +151,376 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 2] = "y'";
                             }
 
-                            // Delete the first and the third 1/2 turn who are the same and leave the second turn that is on the opposite face
+                            //// Whole cube turns (y face y)
+                            // Replace y U y -> y2 U
+                            // Replace y U' y -> y2 U'
+                            // Replace y U2 y -> y2 U2
+
+                            // Replace y D y -> y2 D
+                            // Replace y D' y -> y2 D'
+                            // Replace y D2 y -> y2 D2
+
+                            // Replace y F y -> y2 L
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "L";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y F' y -> y2 L'
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F'" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "L'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y F2 y -> y2 L2
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F2" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "L2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y B y -> y2 R
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "B" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "R";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y B' y -> y2 R'
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "B'" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "R'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y B2 y -> y2 R2
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "B2" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "R2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y L y -> y2 B
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "L" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "B";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y L' y -> y2 B'
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "L'" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "B'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y L2 y -> y2 B2
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "L2" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "B2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y R y -> y2 F
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "R" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "F";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y R' y -> y2 F'
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "R'" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "F'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y R2 y -> y2 F2
+                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "R2" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "F2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            //// Whole cube turns (y face y')
+                            // Replace y U y' -> U
+                            // Replace y U' y' -> U'
+                            // Replace y U2 y' -> U2
+
+                            // Replace y D y' -> D
+                            // Replace y D' y' -> D'
+                            // Replace y D2 y' -> D2
+
+                            // Replace y F y' -> R
+                            // Replace y F' y' -> R'
+                            // Replace y F2 y' -> R2
+
+                            // Replace y B y' -> L
+                            // Replace y B' y' -> L'
+                            // Replace y B2 y' -> L2
+
+                            // Replace y L y' -> F
+                            // Replace y L' y' -> F'
+                            // Replace y L2 y' -> F2
+
+                            // Replace y R y' -> B
+                            // Replace y R' y' -> B'
+                            // Replace y R2 y' -> B2
+
+                            //// Whole cube turns (y face y2)
+                            // Replace y U y2 -> y' U
+                            // Replace y U' y2 -> y' U'
+                            // Replace y U2 y2 -> y' U2
+
+                            // Replace y D y2 -> y' D
+                            // Replace y D' y2 -> y' D'
+                            // Replace y D2 y2 -> y' D2
+
+                            // Replace y F y2 -> y' B
+                            // Replace y F' y2 -> y' B'
+                            // Replace y F2 y2 -> y' B2
+
+                            // Replace y B y2 -> y' F
+                            // Replace y B' y2 -> y' F'
+                            // Replace y B2 y2 -> y' F2
+
+                            // Replace y L y2 -> y' R
+                            // Replace y L' y2 -> y' R'
+                            // Replace y L2 y2 -> y' R2
+
+                            // Replace y R y2 -> y' L
+                            // Replace y R' y2 -> y' L'
+                            // Replace y R2 y2 -> y' L2
+
+                            //// Whole cube turns (y' face y)
+                            // Replace y' U y -> U
+                            // Replace y' U' y -> U'
+                            // Replace y' U2 y -> U2
+
+                            // Replace y' D y -> D
+                            // Replace y' D' y -> D'
+                            // Replace y' D2 y -> D2
+
+                            // Replace y' F y -> L
+                            // Replace y' F' y -> L'
+                            // Replace y' F2 y -> L2
+
+                            // Replace y' B y -> R
+                            // Replace y' B' y -> R'
+                            // Replace y' B2 y -> R2
+
+                            // Replace y' L y -> B
+                            // Replace y' L' y -> B'
+                            // Replace y' L2 y -> B2
+
+                            // Replace y' R y -> F
+                            // Replace y' R' y -> F'
+                            // Replace y' R2 y -> F2
+
+                            //// Whole cube turns (y' face y')
+                            // Replace y' U y' -> y2 U
+                            // Replace y' U' y' -> y2 U'
+                            // Replace y' U2 y' -> y2 U2
+
+                            // Replace y' D y' -> y2 D
+                            // Replace y' D' y' -> y2 D'
+                            // Replace y' D2 y' -> y2 D2
+
+                            // Replace y' F y' -> y2 R
+                            // Replace y' F' y' -> y2 R'
+                            // Replace y' F2 y' -> y2 R2
+
+                            // Replace y' B y' -> y2 L
+                            // Replace y' B' y' -> y2 L'
+                            // Replace y' B2 y' -> y2 L2
+
+                            // Replace y' L y' -> y2 F
+                            // Replace y' L' y' -> y2 F'
+                            // Replace y' L2 y' -> y2 F2
+
+                            // Replace y' R y' -> y2 B
+                            // Replace y' R' y' -> y2 B'
+                            // Replace y' R2 y' -> y2 B2
+
+                            //// Whole cube turns (y' face y2)
+                            // Replace y' U y2 -> y U
+                            // Replace y' U' y2 -> y U'
+                            // Replace y' U2 y2 -> y U2
+
+                            // Replace y' D y2 -> y D
+                            // Replace y' D' y2 -> y D'
+                            // Replace y' D2 y2 -> y D2
+
+                            // Replace y' F y2 -> y B
+                            // Replace y' F' y2 -> y B'
+                            // Replace y' F2 y2 -> y B2
+
+                            // Replace y' B y2 -> y F
+                            // Replace y' B' y2 -> y F'
+                            // Replace y' B2 y2 -> y F2
+
+                            // Replace y' L y2 -> y R
+                            // Replace y' L' y2 -> y R'
+                            // Replace y' L2 y2 -> y R2
+
+                            // Replace y' R y2 -> y L
+                            // Replace y' R' y2 -> y L'
+                            // Replace y' R2 y2 -> y L2
+
+                            //// Whole cube turns (y2 face y)
+                            // Replace y2 U y -> y' U
+                            // Replace y2 U' y -> y' U'
+                            // Replace y2 U2 y -> y' U2
+
+                            // Replace y2 D y -> y' D
+                            // Replace y2 D' y -> y' D'
+                            // Replace y2 D2 y -> y' D2
+
+                            // Replace y2 F y -> y' L
+                            // Replace y2 F' y -> y' L'
+                            // Replace y2 F2 y -> y' L2
+
+                            // Replace y2 B y -> y' R
+                            // Replace y2 B' y -> y' R'
+                            // Replace y2 B2 y -> y' R2
+
+                            // Replace y2 L y -> y' B
+                            // Replace y2 L' y -> y' B'
+                            // Replace y2 L2 y -> y' B2
+
+                            // Replace y2 R y -> y' F
+                            // Replace y2 R' y -> y' F'
+                            // Replace y2 R2 y -> y' F2
+
+                            //// Whole cube turns (y2 face y')
+                            // Replace y2 U y' -> y U
+                            // Replace y2 U' y' -> y U'
+                            // Replace y2 U2 y' -> y U2
+
+                            // Replace y2 D y' -> y D
+                            // Replace y2 D' y' -> y D'
+                            // Replace y2 D2 y' -> y D2
+
+                            // Replace y2 F y' -> y R
+                            // Replace y2 F' y' -> y R'
+                            // Replace y2 F2 y' -> y R2
+
+                            // Replace y2 B y' -> y L
+                            // Replace y2 B' y' -> y L'
+                            // Replace y2 B2 y' -> y L2
+
+                            // Replace y2 L y' -> y F
+                            // Replace y2 L' y' -> y F'
+                            // Replace y2 L2 y' -> y F2
+
+                            // Replace y2 R y' -> y B
+                            // Replace y2 R' y' -> y B'
+                            // Replace y2 R2 y' -> y B2
+
+                            //// Whole cube turns (y2 face y2)
+                            // Replace y2 U y2 -> U
+                            // Replace y2 U' y2 -> U'
+                            // Replace y2 U2 y2 -> U2
+
+                            // Replace y2 D y2 -> D
+                            // Replace y2 D' y2 -> D'
+                            // Replace y2 D2 y2 -> D2
+
+                            // Replace y2 F y2 -> B
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "F" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "B";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 F' y2 -> B'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "F'" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "B'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 F2 y2 -> B2
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "F2" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "B2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y2 B y2 -> F
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "B" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "F";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 B' y2 -> F'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "B'" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "F'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 B2 y2 -> F2
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "B2" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "F2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y2 L y2 -> R
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "L" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "R";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 L' y2 -> R'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "L'" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "R'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 L2 y2 -> R2
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "L2" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "R2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y2 R y2 -> L
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "R" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "L";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 R' y2 -> L'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "R'" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "L'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+                            // Replace y2 R2 y2 -> L2
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "R2" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "L2";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            //// Delete the first and the third 1/2 turn who are the same and leave the second turn that is on the opposite face
                             // Replace U2 D U2 -> D
                             else if (lCubeTurnsToClean[i] == "U2" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U2")
                             {
@@ -189,179 +558,7 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
 
-                            // Delete the first and the third 1/2 turn who are the same and replace the second turn with the opposite face
-                            // Replace y2 F y2 -> B
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "F" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "B";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 F' y2 -> B'
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "F'" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "B'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 F2 y2 -> B2
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "F2" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "B2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 B y2 -> F
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "B" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "F";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 B' y2 -> F'
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "B'" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "F'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 B2 y2 -> F2
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "B2" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "F2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 R y2 -> L
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "R" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "L";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 R' y2 -> L'
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "R'" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "L'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 R2 y2 -> L2
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "R2" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "L2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 L y2 -> R
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "L" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "R";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 L' y2 -> R'
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "L'" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "R'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y2 L2 y2 -> R2
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "L2" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "R2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-
-                            // Replace the first turn with a 1/2 turn (first and third turn) and the second turn with another face turn
-                            // Replace y F y -> L
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "L";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y F' y -> L'
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F'" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "L'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y F2 y -> L2
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "F2" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "L2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y B y -> R
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "B" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "R";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y B' y -> R'
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "B'" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "R'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y B2 y -> R2
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "B2" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "R2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y R y -> F
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "R" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "F";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y R' y -> F'
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "R'" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "F'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y R2 y -> F2
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "R2" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "F2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y L y -> B
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "L" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "B";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y L' y -> B'
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "L'" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "B'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            // Replace y L2 y -> B2
-                            else if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "L2" && lCubeTurnsToClean[i + 2] == "y")
-                            {
-                                lCubeTurnsToClean[i] = "y2";
-                                lCubeTurnsToClean[i + 1] = "B2";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-
-                            // Delete the first and the third 1/4 turn who are reversed and leave the second turn that is on the opposite face
+                            //// Delete the first and the third 1/4 turn who are reversed and leave the second turn that is on the opposite face
                             // Replace U D U' -> D
                             else if (lCubeTurnsToClean[i] == "U" && lCubeTurnsToClean[i + 1].StartsWith('D') && lCubeTurnsToClean[i + 2] == "U'")
                             {
@@ -437,7 +634,7 @@ namespace RubiksCube
                         }
                     }
 
-                    // Remove the last turn if it is turning the whole cube (starts with x, y or z)
+                    //// Remove the last turn if it is turning the whole cube (starts with x, y or z)
                     if (lCubeTurnsToClean[^1].StartsWith('x') || lCubeTurnsToClean[^1].StartsWith('y') || lCubeTurnsToClean[^1].StartsWith('z'))
                     {
                         lCubeTurnsToClean[^1] = cNone;
@@ -470,11 +667,11 @@ namespace RubiksCube
                 return;
             }
 
-            // Stop the stopwatch
+            //// Stop the stopwatch
             //TimeSpan delta = Stopwatch.GetElapsedTime(startTime);
             //_ = Application.Current!.Windows[0].Page!.DisplayAlert("Time", $"Time elapsed (hh:mm:ss.xxxxxxx): {delta}", "OK");
 #if DEBUG
-            // Save the list with the cube turns after the cleaning to a file, for testing purposes
+            //// Save the list with the cube turns after the cleaning to a file, for testing purposes
             if (bCubeTurnsSave)
             {
                 _ = ClassSaveRestoreCube.CubeTurnsSave("CubeTurnsAfterLastClean.txt");
