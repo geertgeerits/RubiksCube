@@ -20,15 +20,6 @@ namespace RubiksCube
             const char cApos = '\'';
             const char c2 = '2';
 
-            ////// For testing purposes - See class ClassTestCubeTurns.cs, method TestCleanListCubeTurns
-            //List<string> lCubeTurnsStart = ["D", "F2", "U", "F'", "y2", "F'", "U", "L'", "F2", "y", "U'", "R2", "y2", "F2", "y", "U'", "R2", "y2", "U2", "R", "U", "R'", "d", "R'", "U'", "R", "y2", "U'", "R", "U", "R'", "y2", "F'", "U2", "F", "U'", "F'", "U", "F", "y'", "U'", "R", "U2", "R'", "U'", "R", "U'", "R2", "y'", "R'", "U'", "R", "U", "B", "U", "x", "z'", "R2", "U2", "R'", "D'", "R", "U2", "R'", "D", "R'"];
-            //lCubeTurnsToClean.Clear();
-            //lCubeTurnsToClean.AddRange(lCubeTurnsStart);
-
-            //List<string> lCubeTurns1 = ["U", "U", "U'", "U'", "U2", "U2", "U", "U'", "U'", "U", "U", "U2", "U2", "U", "U'", "U2", "U2", "U'"];
-            //lCubeTurnsToClean.AddRange(lCubeTurns1);
-            //Debug.WriteLine($"lCubeTurnsToClean: {lCubeTurnsToClean.Count}");
-
             //// Copy the list with the cube turns to a new list to return in case of an error (IndexOutOfRangeException RRRR RRR R L R')
             List<string> lCubeTurnsToCleanOriginal = new(lCubeTurnsToClean);
 #if DEBUG
@@ -124,6 +115,14 @@ namespace RubiksCube
                         if (i + 2 < lCubeTurnsToClean.Count)
                         {
                             //// Whole cube turns (x, y, z)
+                            // Replace y x y -> y2 z
+                            if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "z";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
                             // Replace y x y' -> z'
                             if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y'")
                             {
@@ -147,21 +146,21 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 1] = "y";
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
-                            
-                            // Replace y2 x y2 -> x'
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
-                            {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "x'";
-                                lCubeTurnsToClean[i + 2] = cNone;
-                            }
-                            
+
                             // Replace y2 x y -> x' y'
                             else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
                             {
                                 lCubeTurnsToClean[i] = cNone;
                                 lCubeTurnsToClean[i + 1] = "x'";
                                 lCubeTurnsToClean[i + 2] = "y'";
+                            }
+
+                            // Replace y2 x y2 -> x'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "x'";
+                                lCubeTurnsToClean[i + 2] = cNone;
                             }
 
                             //// Whole cube turns (y face y)
