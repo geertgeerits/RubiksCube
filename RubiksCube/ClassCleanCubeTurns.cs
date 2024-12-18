@@ -138,12 +138,12 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 1] = "z";
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
-                            
-                            // Replace y' x y2 -> z y (or y x')
+
+                            // Replace y' x y2 -> y x' (or z y)
                             else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
                             {
-                                lCubeTurnsToClean[i] = "z";
-                                lCubeTurnsToClean[i + 1] = "y";
+                                lCubeTurnsToClean[i] = "y";
+                                lCubeTurnsToClean[i + 1] = "x'";
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
 
