@@ -130,7 +130,23 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 1] = "z'";
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
-                            
+
+                            // Replace y x y2 -> y' x'
+                            if (lCubeTurnsToClean[i] == "y" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = "y'";
+                                lCubeTurnsToClean[i + 1] = "x'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
+                            // Replace y' x y' -> y2 z'
+                            if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y'")
+                            {
+                                lCubeTurnsToClean[i] = "y2";
+                                lCubeTurnsToClean[i + 1] = "z'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
                             // Replace y' x y -> z
                             else if (lCubeTurnsToClean[i] == "y'" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
                             {
@@ -147,6 +163,14 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
 
+                            // Replace y2 x y2 -> x'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
+                            {
+                                lCubeTurnsToClean[i] = cNone;
+                                lCubeTurnsToClean[i + 1] = "x'";
+                                lCubeTurnsToClean[i + 2] = cNone;
+                            }
+
                             // Replace y2 x y -> x' y'
                             else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y")
                             {
@@ -155,11 +179,11 @@ namespace RubiksCube
                                 lCubeTurnsToClean[i + 2] = "y'";
                             }
 
-                            // Replace y2 x y2 -> x'
-                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y2")
+                            // Replace y2 x y' -> y z'
+                            else if (lCubeTurnsToClean[i] == "y2" && lCubeTurnsToClean[i + 1] == "x" && lCubeTurnsToClean[i + 2] == "y'")
                             {
-                                lCubeTurnsToClean[i] = cNone;
-                                lCubeTurnsToClean[i + 1] = "x'";
+                                lCubeTurnsToClean[i] = "y";
+                                lCubeTurnsToClean[i + 1] = "z'";
                                 lCubeTurnsToClean[i + 2] = cNone;
                             }
 
