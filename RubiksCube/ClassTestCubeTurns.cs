@@ -12,7 +12,6 @@ namespace RubiksCube
         {
             await TestCubeTurnsLetterAsync();
             //await TestCubeTurnsToCleanAsync();
-            //await TestCubeTurnsToCleanAsync();
             //await TestSolveCubeTurnsCFOP();
             //await TestSolveCubeTurnsBasic();
             //await TestSolveCubeTurnsDaisy();
@@ -69,25 +68,6 @@ namespace RubiksCube
             await MakeTurnAsync("L RR R2' U D");
 
             return true;
-        }
-
-        /// <summary>
-        /// Test the cleaning process of the turns
-        /// </summary>
-        /// <returns></returns>
-        private static async Task<bool> TestCubeTurnsToCleanAsync()
-        {
-            List<string> lCubeTurnsStart = ["D","F2","U","F'","y2","F'","U","L'","F2","y","U'","R2","y2","F2","y","U'","R2","y2","U2","R","U","R'","d","R'","U'","R","y2","U'","R","U","R'","y2","F'","U2","F","U'","F'","U","F","y'","U'","R","U2","R'","U'","R","U'","R2","y'","R'","U'","R","U","B","U","x","z'","R2","U2","R'","D'","R","U2","R'","D","R'];
-
-            List<string> lCubeTurns1 = ["U", "U", "U'", "U'", "U2", "U2", "U", "U'", "U'", "U", "U", "U2", "U2", "U", "U'", "U2", "U2", "U'"];
-            List<string> lCubeTurns2 = ["y'", "x", "y", "y", "x", "y'", "y2", "x", "y2", "y2", "x", "y"];
-            List<string> lCubeTurns3 = ["U2", "D", "U2", "D2", "U", "D2", "F2", "B", "F2", "B2", "F", "B2", "L2", "R", "L2", "R2", "L", "R2"];
-            List<string> lCubeTurns4A = ["y2", "F", "y2", "y2", "F'", "y2", "y2", "F2", "y2", "y2", "B", "y2", "y2", "B'", "y2", "y2", "B2", "y2"];
-            List<string> lCubeTurns4B = ["y2", "R", "y2", "y2", "R'", "y2", "y2", "R2", "y2", "y2", "L", "y2", "y2", "L'", "y2", "y2", "L2", "y2"];
-            List<string> lCubeTurns5A = ["y", "F", "y", "y", "F'", "y", "y", "F2", "y", "y", "B", "y", "y", "B'", "y", "y", "B2", "y"];
-            List<string> lCubeTurns5B = ["y", "R", "y", "y", "R'", "y", "y", "R2", "y", "y", "L", "y", "y", "L'", "y", "y", "L2", "y"];
-            List<string> lCubeTurns6A = ["U", "D", "U'", "U'", "D", "U", "D", "U", "D'", "D'", "U", "D", "F", "B", "F'", "F'", "B", "F"];
-            List<string> lCubeTurns6B = ["B", "F", "B'", "B'", "F", "B", "L", "R", "L'", "L'", "R", "L", "R", "L", "R'", "R'", "L", "R"];
         }
 
         /// <summary>
