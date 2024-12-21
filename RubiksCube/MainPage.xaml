@@ -710,6 +710,7 @@
                     Margin="0,5,0,5"
                     Padding="0"
                     FontSize="20"
+                    CharacterSpacing="2"
                     SemanticProperties.Description="local:Translate ToolTipGoOneTurnForward_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
                     IsVisible="False"
