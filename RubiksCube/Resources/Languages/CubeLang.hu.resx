@@ -263,7 +263,7 @@ Ezt a programot kizárólag saját felelősségére használja.</value>
     <value>Minden elérhető színből kilencnek kell lennie egyforma színűnek.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Nem</value>
@@ -278,7 +278,7 @@ Ezt a programot kizárólag saját felelősségére használja.</value>
     <value>Az alkalmazás újraindul.</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Visszaállítás</value>

@@ -263,7 +263,7 @@ Bruk dette programmet helt på egen risiko.</value>
     <value>Av hver tilgjengelig farge må det være ni av samme farge.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Nei</value>
@@ -278,7 +278,7 @@ Bruk dette programmet helt på egen risiko.</value>
     <value>Applikasjonen vil bli startet på nytt.</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Nullstille</value>

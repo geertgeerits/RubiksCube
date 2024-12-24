@@ -263,7 +263,7 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
     <value>Z každé dostupné barvy musí být devět stejné barvy.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Ne</value>
@@ -278,7 +278,7 @@ Používejte tento program zcela na vlastní nebezpečí.</value>
     <value>Aplikace bude restartována.</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Resetovat</value>

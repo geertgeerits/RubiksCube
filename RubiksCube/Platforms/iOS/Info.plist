@@ -37,9 +37,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>Rubik&apos;s Cube</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.30</string>
+	<string>2.0.31</string>
 	<key>CFBundleVersion</key>
-	<string>30</string>
+	<string>31</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

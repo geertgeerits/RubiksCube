@@ -572,7 +572,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rubik&apos;s Cube.
+        ///   Looks up a localized string similar to Cube Solver gg.
         /// </summary>
         internal static string NameProgram_Text {
             get {
@@ -644,7 +644,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rubik&apos;s Cube.
+        ///   Looks up a localized string similar to Cube Solver gg.
         /// </summary>
         internal static string RubiksCube_Text {
             get {

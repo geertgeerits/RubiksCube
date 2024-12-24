@@ -263,7 +263,7 @@ Korzystaj z tego programu całkowicie na własne ryzyko.</value>
     <value>Z każdego dostępnego koloru musi być dziewięć tego samego koloru.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Nei</value>
@@ -278,7 +278,7 @@ Korzystaj z tego programu całkowicie na własne ryzyko.</value>
     <value>Aplikacja zostanie ponownie uruchomiona.</value>
   </data>
   <data name="RubiksCube_Text" xml:space="preserve">
-    <value>Rubik's Cube</value>
+    <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">
     <value>Resetowanie</value>
