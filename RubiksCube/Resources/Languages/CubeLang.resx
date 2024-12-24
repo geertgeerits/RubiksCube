@@ -263,7 +263,7 @@ Use this program entirely at your own risk.</value>
     <value>Of each available color, there must be nine of the same color.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Cube Solver gg</value>
+    <value>Cube Solver</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>No</value>
@@ -277,7 +277,7 @@ Use this program entirely at your own risk.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>The application will be restarted.</value>
   </data>
-  <data name="RubiksCube_Text" xml:space="preserve">
+  <data name="CubeSolver_Text" xml:space="preserve">
     <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">

@@ -263,7 +263,7 @@ Utilizați acest program în întregime pe propriul risc.</value>
     <value>Din fiecare culoare disponibilă, trebuie să existe nouă de aceeași culoare.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Cube Solver gg</value>
+    <value>Cube Solver</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Nu</value>
@@ -277,7 +277,7 @@ Utilizați acest program în întregime pe propriul risc.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Aplicația va fi repornită.</value>
   </data>
-  <data name="RubiksCube_Text" xml:space="preserve">
+  <data name="CubeSolver_Text" xml:space="preserve">
     <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">

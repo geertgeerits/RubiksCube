@@ -232,6 +232,15 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cube Solver gg.
+        /// </summary>
+        internal static string CubeSolver_Text {
+            get {
+                return ResourceManager.GetString("CubeSolver_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upper face.
         /// </summary>
         internal static string CubeUpFace_Text {
@@ -599,7 +608,7 @@ namespace RubiksCube.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cube Solver gg.
+        ///   Looks up a localized string similar to Cube Solver.
         /// </summary>
         internal static string NameProgram_Text {
             get {
@@ -667,15 +676,6 @@ namespace RubiksCube.Resources.Languages {
         internal static string ResultTurns_Text {
             get {
                 return ResourceManager.GetString("ResultTurns_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cube Solver gg.
-        /// </summary>
-        internal static string RubiksCube_Text {
-            get {
-                return ResourceManager.GetString("RubiksCube_Text", resourceCulture);
             }
         }
         

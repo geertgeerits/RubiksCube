@@ -263,7 +263,7 @@ Brug dette program helt på egen risiko.</value>
     <value>Af hver tilgængelig farve skal der være ni af samme farve.</value>
   </data>
   <data name="NameProgram_Text" xml:space="preserve">
-    <value>Cube Solver gg</value>
+    <value>Cube Solver</value>
   </data>
   <data name="No_Text" xml:space="preserve">
     <value>Ingen</value>
@@ -277,7 +277,7 @@ Brug dette program helt på egen risiko.</value>
   <data name="RestartApp_Text" xml:space="preserve">
     <value>Applikationen vil blive genstartet.</value>
   </data>
-  <data name="RubiksCube_Text" xml:space="preserve">
+  <data name="CubeSolver_Text" xml:space="preserve">
     <value>Cube Solver gg</value>
   </data>
   <data name="SettingsReset_Text" xml:space="preserve">

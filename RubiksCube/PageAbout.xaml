@@ -21,7 +21,7 @@
                 <VerticalStackLayout>
                     <Label
                         Style="{StaticResource labelStyleInfo}"
-                        Text="{x:Static resx:CubeLang.NameProgram_Text}"
+                        Text="{x:Static resx:CubeLang.CubeSolver_Text}"
                         FontSize="16">
                     </Label>
 
