@@ -21,7 +21,7 @@ namespace RubiksCube
             lblVersion.Text = $"{CubeLang.Version_Text} 2.0.31";
             lblCopyright.Text = $"{CubeLang.Copyright_Text} © 1981-2025 Geert Geerits";
             lblEmail.Text = $"{CubeLang.Email_Text} geertgeerits@gmail.com";
-            lblWebsite.Text = $"{CubeLang.Website_Text}: ../rubikscube";
+            lblWebsite.Text = $"{CubeLang.Website_Text}: ../cube-solver";
             lblPrivacyPolicy.Text = $"\n{CubeLang.PrivacyPolicyTitle_Text} {CubeLang.PrivacyPolicy_Text}";
             lblLicense.Text = $"\n{CubeLang.LicenseTitle_Text}: {CubeLang.License_Text}";
             lblHelpOptionsSolveCube.Text = $"\n{CubeLang.HelpOptionsSolveCube_Text} {CubeLang.AverageTurns_Text} 63.";
@@ -70,7 +70,7 @@ namespace RubiksCube
         {
             try
             {
-                Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/rubiks-cube");
+                Uri uri = new("https://geertgeerits.wixsite.com/geertgeerits/cube-solver");
                 BrowserLaunchOptions options = new()
                 {
                     LaunchMode = BrowserLaunchMode.SystemPreferred,
