@@ -10,7 +10,7 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CubeDataSave()
         {
-            string cFileName = Path.Combine(FileSystem.Current.AppDataDirectory, "RubiksCube.txt");
+            string cFileName = Path.Combine(FileSystem.Current.AppDataDirectory, "CubeSolver.txt");
 
             //Debug.WriteLine("FileSystem.Current.AppDataDirectory: " + FileSystem.Current.AppDataDirectory);  // For testing
 
@@ -53,7 +53,7 @@ namespace RubiksCube
         /// <returns></returns>
         public static bool CubeDataOpen()
         {
-            string cFileName = Path.Combine(FileSystem.Current.AppDataDirectory, "RubiksCube.txt");
+            string cFileName = Path.Combine(FileSystem.Current.AppDataDirectory, "CubeSolver.txt");
 
             if (File.Exists(cFileName) == false)
             {
