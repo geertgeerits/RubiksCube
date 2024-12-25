@@ -1,8 +1,8 @@
-Rubik's Cube
-____________
+Cube Solver gg
+______________
 
 
-Solve your Rubik's Cube.
+Solve your Cube.
 
 Supporting languages: Czech, Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Polish, Portuguese, Romanian, Spanish and Swedish.
 
