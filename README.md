@@ -12,7 +12,7 @@ Link to the Google Play Store:
 https://play.google.com/store/apps/details?id=com.geertgeerits.rubikscube
 
 Link to the Apple App Store:
-https://apps.apple.com/us/app/rubiks-cube-solver/id6479165194
+https://apps.apple.com/us/app/cube-solver-gg/id6479165194
 
 Link to the Microsoft Store:
 https://apps.microsoft.com/detail/9p6tx258jbk7
