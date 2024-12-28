@@ -476,7 +476,7 @@ namespace RubiksCube
 
             // Control settings
             bTurnNoButtonPress = false;
-            imgbtnTurnNoButtonPress.Source = "ic_action_playback_play.png";
+            imgbtnTurnNoButtonPress.ImageSource = "ic_action_playback_play.png";
             lblExplainTurnCube.Text = "";
             lblExplainTurnCube.IsVisible = false;
             lblCubeOutsideView.IsVisible = true;
@@ -610,13 +610,13 @@ namespace RubiksCube
 
             if (bTurnNoButtonPress)
             {
-                imgbtnTurnNoButtonPress.Source = "ic_action_playback_stop.png";
+                imgbtnTurnNoButtonPress.ImageSource = "ic_action_playback_stop.png";
                 imgbtnGoOneTurnBackward.IsEnabled = false;
                 btnGoOneTurnForward.IsEnabled = false;
             }
             else if (!bTurnNoButtonPress)
             {
-                imgbtnTurnNoButtonPress.Source = "ic_action_playback_play.png";
+                imgbtnTurnNoButtonPress.ImageSource = "ic_action_playback_play.png";
                 imgbtnGoOneTurnBackward.IsEnabled = true;
                 btnGoOneTurnForward.IsEnabled = true;
             }

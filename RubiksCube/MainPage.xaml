@@ -685,12 +685,14 @@
                     IsRunning="False">
                 </ActivityIndicator>
 
-                <ImageButton
+                <!--!!!BUG!!! in Android 15: The border of the Imagebutton is not displayed-->
+                <!--<ImageButton
                     x:Name="imgbtnGoOneTurnBackward"
                     Style="{StaticResource imageButtonMenu}"
                     Grid.Row="6"
                     Grid.Column="0"
                     Margin="5,0,0,0"
+                    Padding="0"
                     HorizontalOptions="Start"
                     BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                     Source="ic_action_undo.png"
@@ -698,7 +700,21 @@
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
                     IsVisible="False"
                     Clicked="OnButtonGoOneTurnBackwardClicked">
-                </ImageButton>
+                </ImageButton>-->
+
+                <Button
+                    x:Name="imgbtnGoOneTurnBackward"
+                    Style="{StaticResource ButtonMakeTurns}"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Margin="5,0,0,0"
+                    HorizontalOptions="Start"
+                    ImageSource="ic_action_undo.png"
+                    SemanticProperties.Description="local:Translate ToolTipGoOneTurnBackward_Text}"
+                    ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnBackward_Text}"
+                    IsVisible="False"
+                    Clicked="OnButtonGoOneTurnBackwardClicked">
+                </Button>
 
                 <Button
                     x:Name="btnGoOneTurnForward"
@@ -718,12 +734,14 @@
                     Clicked="OnButtonGoOneTurnForwardClicked">
                 </Button>
 
-                <ImageButton
+                <!--!!!BUG!!! in Android 15: The border of the Imagebutton is not displayed-->
+                <!--<ImageButton
                     x:Name="imgbtnTurnNoButtonPress"
                     Style="{StaticResource imageButtonMenu}"
                     Grid.Row="6"
                     Grid.Column="2"
                     Margin="0,0,5,0"
+                    Padding="0"
                     HorizontalOptions="End"
                     BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
                     Source="ic_action_playback_play.png"
@@ -731,7 +749,21 @@
                     ToolTipProperties.Text="{local:Translate ToolTipTurnNoButtonPress_Text}"
                     IsVisible="False"
                     Clicked="OnButtonTurnNoButtonPressClicked">
-                </ImageButton>
+                </ImageButton>-->
+
+                <Button
+                    x:Name="imgbtnTurnNoButtonPress"
+                    Style="{StaticResource ButtonMakeTurns}"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    Margin="0,0,5,0"
+                    HorizontalOptions="End"
+                    ImageSource="ic_action_playback_play.png"
+                    SemanticProperties.Description="local:Translate ToolTipTurnNoButtonPress_Text}"
+                    ToolTipProperties.Text="{local:Translate ToolTipTurnNoButtonPress_Text}"
+                    IsVisible="False"
+                    Clicked="OnButtonTurnNoButtonPressClicked">
+                </Button>
 
                 <Label
                     Style="{StaticResource labelStyleDefault}"
@@ -1060,6 +1092,7 @@
         <Button
             x:Name="btnSolveCube"
             Style="{StaticResource buttonStyleMenu}"
+            HeightRequest="38"
             BorderColor="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}"
             Grid.Row="3"
             Grid.Column="0"

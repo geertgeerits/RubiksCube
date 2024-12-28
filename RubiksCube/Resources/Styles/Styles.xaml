@@ -505,4 +505,20 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="ButtonMakeTurns" TargetType="Button">
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+        <Setter Property="Padding" Value="0" />
+        <Style.Triggers>
+            <Trigger TargetType="Button" Property="IsEnabled" Value="True">
+                <Setter Property="BackgroundColor" Value="Gold" />
+            </Trigger>
+            <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>
