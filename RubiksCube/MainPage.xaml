@@ -685,7 +685,7 @@
                     IsRunning="False">
                 </ActivityIndicator>
 
-                <!--!!!BUG!!! in Android 15: The border of the Imagebutton is not displayed-->
+                <!--!!!BUG!!! in Android .NET9.0: The border of the Imagebutton is not displayed-->
                 <!--<ImageButton
                     x:Name="imgbtnGoOneTurnBackward"
                     Style="{StaticResource imageButtonMenu}"
@@ -716,6 +716,7 @@
                     Clicked="OnButtonGoOneTurnBackwardClicked">
                 </Button>
 
+                <!--!!!BUG!!! in iOS .NET9.0: CharacterSpacing of the Button is not working-->
                 <Button
                     x:Name="btnGoOneTurnForward"
                     Style="{StaticResource buttonStyleMenu}"
@@ -728,13 +729,13 @@
                     FontFamily="PublicSansBold"
                     FontSize="22"
                     CharacterSpacing="2"
-                    SemanticProperties.Description="local:Translate ToolTipGoOneTurnForward_Text}"
+                    SemanticProperties.Description="{local:Translate ToolTipGoOneTurnForward_Text}"
                     ToolTipProperties.Text="{local:Translate ToolTipGoOneTurnForward_Text}"
                     IsVisible="False"
                     Clicked="OnButtonGoOneTurnForwardClicked">
                 </Button>
 
-                <!--!!!BUG!!! in Android 15: The border of the Imagebutton is not displayed-->
+                <!--!!!BUG!!! in Android .NET9.0: The border of the Imagebutton is not displayed-->
                 <!--<ImageButton
                     x:Name="imgbtnTurnNoButtonPress"
                     Style="{StaticResource imageButtonMenu}"

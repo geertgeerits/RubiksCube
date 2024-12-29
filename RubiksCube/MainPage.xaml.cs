@@ -2,8 +2,8 @@
  * Display name : Cube Solver gg
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2025
- * Version .....: 2.0.33
- * Date ........: 2024-12-28 (YYYY-MM-DD)
+ * Version .....: 2.0.34
+ * Date ........: 2024-12-29 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
