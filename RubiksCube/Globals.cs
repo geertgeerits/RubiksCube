@@ -34,6 +34,7 @@ namespace RubiksCube
 #endif
 
         // Cube turns
+        // https://jperm.net/3x3/moves ; https://ruwix.com/the-rubiks-cube/notation/advanced/
         // Face rotations
         public const string turnUpCW = "U";
         public const string turnUpCCW = "U'";
@@ -55,6 +56,9 @@ namespace RubiksCube
         public const string turnLeft2 = "L2";
 
         // Slice turns
+        // M - Middle layer turn - in the same direction as an L turn between L and R
+        // E - Equatorial layer - direction as a D turn between U and D
+        // S - Standing layer - direction as an F turn between F and B
         public const string turnUpVerMiddleFront = "M";
         public const string turnUpVerMiddleBack = "M'";
         public const string turnUpVerMiddle2 = "M2";

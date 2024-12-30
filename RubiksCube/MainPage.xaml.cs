@@ -3,7 +3,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2025
  * Version .....: 2.0.34
- * Date ........: 2024-12-29 (YYYY-MM-DD)
+ * Date ........: 2024-12-30 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -426,7 +426,22 @@ namespace RubiksCube
 
                     // Set the turn number of the cube
                     lblNumberTurns.Text = $"{nTurnIndex}/{nNumberOfTurns}";
+
+                    // Set the turn of the cube
+#if IOS
+                    // !!!BUG!!! in iOS.NET9.0: CharacterSpacing of the Button is not working
+                    if (cTurn.Length == 2)
+                    {
+                        // Add a space between the two characters of the turn
+                        btnGoOneTurnForward.Text = $"{cTurn[0]} {cTurn[1]}";
+                    }
+                    else
+                    {
+                        btnGoOneTurnForward.Text = cTurn;
+                    }
+#else
                     btnGoOneTurnForward.Text = cTurn;
+#endif
 
                     // Make and explain the turn of the cube
                     await MakeExplainTurnAsync(cTurn);
