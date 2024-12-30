@@ -174,13 +174,121 @@ namespace RubiksCube
                             // E - Equatorial layer - direction as a D turn between U and D
                             else if (lCubeTurnsToClean[i].Contains('E') || lCubeTurnsToClean[i + 1].Contains('E'))
                             {
+                                // Replace E U' -> u'
+                                if (lCubeTurnsToClean[i] == "E" && lCubeTurnsToClean[i + 1] == "U'")
+                                {
+                                    lCubeTurnsToClean[i] = "u'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
 
+                                // Replace E' U -> u
+                                else if (lCubeTurnsToClean[i] == "E'" && lCubeTurnsToClean[i + 1] == "U")
+                                {
+                                    lCubeTurnsToClean[i] = "u";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace U' E -> u'
+                                else if (lCubeTurnsToClean[i] == "U'" && lCubeTurnsToClean[i + 1] == "E")
+                                {
+                                    lCubeTurnsToClean[i] = "u'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace U E' -> u
+                                else if (lCubeTurnsToClean[i] == "U" && lCubeTurnsToClean[i + 1] == "E'")
+                                {
+                                    lCubeTurnsToClean[i] = "u";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace E D -> d
+                                else if (lCubeTurnsToClean[i] == "E" && lCubeTurnsToClean[i + 1] == "D")
+                                {
+                                    lCubeTurnsToClean[i] = "d";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace E' D' -> d'
+                                else if (lCubeTurnsToClean[i] == "E'" && lCubeTurnsToClean[i + 1] == "D'")
+                                {
+                                    lCubeTurnsToClean[i] = "d'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace D E -> d
+                                else if (lCubeTurnsToClean[i] == "D" && lCubeTurnsToClean[i + 1] == "E")
+                                {
+                                    lCubeTurnsToClean[i] = "d";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace D' E' -> d'
+                                else if (lCubeTurnsToClean[i] == "D'" && lCubeTurnsToClean[i + 1] == "E'")
+                                {
+                                    lCubeTurnsToClean[i] = "d'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
                             }
 
                             // S - Standing layer - direction as an F turn between F and B
                             else if (lCubeTurnsToClean[i].Contains('S') || lCubeTurnsToClean[i + 1].Contains('S'))
                             {
+                                // Replace S F -> f
+                                if (lCubeTurnsToClean[i] == "S" && lCubeTurnsToClean[i + 1] == "F")
+                                {
+                                    lCubeTurnsToClean[i] = "f";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
 
+                                // Replace S' F' -> f'
+                                else if (lCubeTurnsToClean[i] == "S'" && lCubeTurnsToClean[i + 1] == "F'")
+                                {
+                                    lCubeTurnsToClean[i] = "f'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace F S -> f
+                                else if (lCubeTurnsToClean[i] == "F" && lCubeTurnsToClean[i + 1] == "S")
+                                {
+                                    lCubeTurnsToClean[i] = "f";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace F' S' -> f'
+                                else if (lCubeTurnsToClean[i] == "F'" && lCubeTurnsToClean[i + 1] == "S'")
+                                {
+                                    lCubeTurnsToClean[i] = "f'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace S B' -> b'
+                                else if (lCubeTurnsToClean[i] == "S" && lCubeTurnsToClean[i + 1] == "B'")
+                                {
+                                    lCubeTurnsToClean[i] = "b'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace S' B -> b
+                                else if (lCubeTurnsToClean[i] == "S'" && lCubeTurnsToClean[i + 1] == "B")
+                                {
+                                    lCubeTurnsToClean[i] = "b";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace B' S -> b'
+                                else if (lCubeTurnsToClean[i] == "B'" && lCubeTurnsToClean[i + 1] == "S")
+                                {
+                                    lCubeTurnsToClean[i] = "b'";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
+
+                                // Replace B S' -> b
+                                else if (lCubeTurnsToClean[i] == "B" && lCubeTurnsToClean[i + 1] == "S'")
+                                {
+                                    lCubeTurnsToClean[i] = "b";
+                                    lCubeTurnsToClean[i + 1] = cNone;
+                                }
                             }
                         }
 
