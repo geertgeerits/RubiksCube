@@ -12,10 +12,10 @@
 
 using Microsoft.Maui.Controls.Shapes;
 using System.Diagnostics;
+// Workaround for !!!BUG!!! in iOS.NET9.0: if CharacterSpacing is set, the text of the Button is not updaded
+#if IOS
 using Microsoft.Maui.Platform;
-//using static System.Net.Mime.MediaTypeNames;
-//using System.Diagnostics.Metrics;
-using Application = Microsoft.Maui.Controls.Application;
+#endif
 
 namespace RubiksCube
 {
@@ -179,8 +179,10 @@ namespace RubiksCube
         /// <param name="args"></param>
         private void OnGetColorTapped(object sender, TappedEventArgs args)
         {
-            Polygon? polygon = sender as Polygon;
-            plgCubeColorSelect.Fill = polygon!.Fill;
+            if (sender is Polygon polygon)
+            {
+                plgCubeColorSelect.Fill = polygon.Fill;
+            }
         }
 
         /// <summary>
@@ -190,11 +192,9 @@ namespace RubiksCube
         /// <param name="args"></param>
         private void OnSetColorTapped(object sender, TappedEventArgs args)
         {
-            if (plgCubeColorSelect.Fill != null && bColorDrop)
+            if (plgCubeColorSelect.Fill != null && bColorDrop && sender is Polygon polygon)
             {
-                Polygon? polygon = sender as Polygon;
-                polygon!.Fill = plgCubeColorSelect.Fill;
-
+                polygon.Fill = plgCubeColorSelect.Fill;
                 SetCubeColorsInArrays();
             }
         }
@@ -434,9 +434,8 @@ namespace RubiksCube
                     // Set the turn of the cube
                     btnGoOneTurnForward.Text = cTurn;
 #if IOS
-                    // !!!BUG!!! in iOS.NET9.0: CharacterSpacing of the Button is not working
-                    var platformButton = btnGoOneTurnForward.Handler?.PlatformView as UIKit.UIButton;
-                    if (platformButton != null)
+                    // Workaround for !!!BUG!!! in iOS.NET9.0: if CharacterSpacing is set, the text of the Button is not updaded
+                    if (btnGoOneTurnForward.Handler?.PlatformView is UIKit.UIButton platformButton)
                     {
                         var titleLabel = platformButton.TitleLabel;
                         titleLabel.Text = btnGoOneTurnForward.Text;
