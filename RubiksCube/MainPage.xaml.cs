@@ -3,7 +3,7 @@
  * Author ......: Geert Geerits - E-mail: geertgeerits@gmail.com
  * Copyright ...: (C) 1981-2025
  * Version .....: 2.0.34
- * Date ........: 2025-01-01 (YYYY-MM-DD)
+ * Date ........: 2025-01-02 (YYYY-MM-DD)
  * Language ....: Microsoft Visual Studio 2022: .NET MAUI 9 - C# 13.0
  * Description .: Solving the Rubik's Cube
  * Note ........: This program is based on the program 'SolCube' I wrote in 1981 in MS Basic-80 for a Commodore PET 2001
@@ -12,6 +12,10 @@
 
 using Microsoft.Maui.Controls.Shapes;
 using System.Diagnostics;
+using Microsoft.Maui.Platform;
+//using static System.Net.Mime.MediaTypeNames;
+//using System.Diagnostics.Metrics;
+using Application = Microsoft.Maui.Controls.Application;
 
 namespace RubiksCube
 {
@@ -428,20 +432,18 @@ namespace RubiksCube
                     lblNumberTurns.Text = $"{nTurnIndex}/{nNumberOfTurns}";
 
                     // Set the turn of the cube
-                    //btnGoOneTurnForward.Text = cTurn;
+                    btnGoOneTurnForward.Text = cTurn;
 #if IOS
                     // !!!BUG!!! in iOS.NET9.0: CharacterSpacing of the Button is not working
-                    if (cTurn.Length == 2)
+                    var platformButton = btnGoOneTurnForward.Handler?.PlatformView as UIKit.UIButton;
+                    if (platformButton != null)
                     {
-                        // Add a space between the two characters of the turn
-                        btnGoOneTurnForward.Text = $"{cTurn[0]} {cTurn[1]}";
+                        var titleLabel = platformButton.TitleLabel;
+                        titleLabel.Text = btnGoOneTurnForward.Text;
+
+                        var attributedText = titleLabel.AttributedText?.WithCharacterSpacing(btnGoOneTurnForward.CharacterSpacing);
+                        platformButton.SetAttributedTitle(attributedText, UIKit.UIControlState.Normal);
                     }
-                    else
-                    {
-                        btnGoOneTurnForward.Text = cTurn;
-                    }
-#else
-                    btnGoOneTurnForward.Text = cTurn;
 #endif
                     // Make and explain the turn of the cube
                     await MakeExplainTurnAsync(cTurn);
