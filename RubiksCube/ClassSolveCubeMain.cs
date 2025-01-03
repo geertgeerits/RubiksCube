@@ -193,6 +193,31 @@ namespace RubiksCube
                 lCubePositions.Add(turnUpCCW);
                 lCubePositions.Add(turnDownCW);
                 await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                //// Turn the 6 faces and the adjacent face clockwise
+                //lCubePositions.Add(turnUpCW);
+                //lCubePositions.Add(turnFrontCW);
+                //await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                //lCubePositions.Add(turnDownCW);
+                //lCubePositions.Add(turnBackCW);
+                //await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                //lCubePositions.Add(turnFrontCW);
+                //lCubePositions.Add(turnRightCW);
+                //await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                //lCubePositions.Add(turnRightCW);
+                //lCubePositions.Add(turnBackCW);
+                //await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                //lCubePositions.Add(turnBackCW);
+                //lCubePositions.Add(turnLeftCW);
+                //await SolveCubeFromMultiplePositions2Async(cSolution);
+
+                //lCubePositions.Add(turnLeftCW);
+                //lCubePositions.Add(turnFrontCW);
+                //await SolveCubeFromMultiplePositions2Async(cSolution);
             }
         }
 

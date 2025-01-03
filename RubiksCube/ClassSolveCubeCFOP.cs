@@ -9,7 +9,7 @@ namespace RubiksCube
         private const int nLoopTimesMax = 200;
 
         /// <summary>
-        /// Solve the cube
+        /// Solve the cube using the CFOP method
         /// </summary>
         /// <returns></returns>
         public static async Task<bool> SolveTheCubeCFOPAsync()
